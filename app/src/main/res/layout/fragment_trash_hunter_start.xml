@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingEnd="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingStart="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/trashHunter.huntingArea"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold" />
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/trash_hunter_start_area_500_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingStart="5dp"
+                        android:text="500 m"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/trash_hunter_start_area_500"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:buttonTint="@color/colorPrimary" />
+
+                </LinearLayout>
+
+                <View style="@style/Divider.Margin" />
+
+                <LinearLayout
+                    android:id="@+id/trash_hunter_start_area_1000_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingStart="5dp"
+                        android:text="1 km"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/trash_hunter_start_area_1000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:buttonTint="@color/colorPrimary" />
+
+                </LinearLayout>
+
+                <View style="@style/Divider.Margin" />
+
+                <LinearLayout
+                    android:id="@+id/trash_hunter_start_area_5000_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingStart="5dp"
+                        android:text="5 km"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/trash_hunter_start_area_5000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:buttonTint="@color/colorPrimary" />
+
+                </LinearLayout>
+
+                <View style="@style/Divider.Margin" />
+
+                <LinearLayout
+                    android:id="@+id/trash_hunter_start_area_20000_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingStart="5dp"
+                        android:text="20 km"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/trash_hunter_start_area_20000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        app:buttonTint="@color/colorPrimary" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/event.duration"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/trash_hunter_start_duration_10_min_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingStart="5dp"
+                        android:text="10 min"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/trash_hunter_start_duration_10_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:buttonTint="@color/colorPrimary" />
+
+                </LinearLayout>
+
+                <View style="@style/Divider.Margin" />
+
+                <LinearLayout
+                    android:id="@+id/trash_hunter_start_duration_30_min_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingStart="5dp"
+                        android:text="30 min"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/trash_hunter_start_duration_30_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTint="@color/colorPrimary" />
+
+                </LinearLayout>
+
+                <View style="@style/Divider.Margin" />
+
+                <LinearLayout
+                    android:id="@+id/trash_hunter_start_duration_60_min_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingEnd="5dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingStart="5dp"
+                        android:text="1 hour"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/trash_hunter_start_duration_60_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTint="@color/colorPrimary" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/trash_hunter_start_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/button_color_green_dark"
+            android:text="@string/trashHunter.startHunting"
+            android:textColor="@color/text_color_white"
+            app:backgroundTint="@color/button_color_green_dark" />
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

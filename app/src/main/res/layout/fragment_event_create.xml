@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/sides_margin">
+
+            <TextView
+                android:id="@+id/create_event_about_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:padding="5dp"
+                android:text="@string/event.about"
+                android:textSize="@dimen/text_size_large" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/create_event_about_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/event.name" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/create_event_about_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/event.description.hint" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/create_event_meeting_point_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:text="@string/event.meetingPoint"
+                android:textSize="@dimen/text_size_large" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/create_event_meeting_point_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginRight="@dimen/sides_margin"
+                android:layout_marginTop="@dimen/sides_margin"
+                android:backgroundTint="@color/button_color_green_dark"
+                android:text="@string/event.create.setLocationOnMap"
+                android:textColor="@color/text_color_white"
+                app:backgroundTint="@color/button_color_green_dark" />
+
+            <TextView
+                android:id="@+id/create_event_meeting_point_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/global.city"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/create_event_meeting_point_street"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/global.street"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/create_event_dumps_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:text="@string/event.create.dumpsToBeCleaned"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:id="@+id/create_event_dumps_selected"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:padding="5dp"
+                android:text="@string/event.create.youSelectedDumps_X"
+                android:textColor="@color/text_color_green"
+                android:textSize="@dimen/text_size_small" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/create_event_dumps_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginRight="@dimen/sides_margin"
+                android:layout_marginTop="@dimen/sides_margin"
+                android:backgroundTint="@color/button_color_green_dark"
+                android:text="@string/event.create.selectDumpsOnMap"
+                android:textColor="@color/text_color_white"
+                app:backgroundTint="@color/button_color_green_dark" />
+
+            <TextView
+                android:id="@+id/create_event_meeting_date_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:text="@string/create_event_meeting_date_title"
+                android:textSize="@dimen/text_size_large" />
+
+            <EditText
+                android:id="@+id/create_event_meeting_date_date_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/event.filter.startTimeFrom"
+                android:inputType="datetime"
+                android:textSize="@dimen/text_size_normal" />
+
+            <EditText
+                android:id="@+id/create_event_meeting_date_date_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/event.filter.startTimeTo"
+                android:inputType="datetime"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/create_event_equipment_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:text="@string/event.equipment"
+                android:textSize="@dimen/text_size_large" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/create_event_equipment_bring"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/event.whatBringFull" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/create_event_equipment_have"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/event.whatWeHaveFull" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/create_event_contact_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:text="Contact"
+                android:textSize="@dimen/text_size_large" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/create_event_contact_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/global.email"
+                    android:inputType="textEmailAddress" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/create_event_contact_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/global.phone"
+                    android:inputType="phone" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/create_event_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sides_margin"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginRight="@dimen/sides_margin"
+                android:layout_marginTop="@dimen/sides_margin"
+                android:backgroundTint="@color/button_color_green"
+                android:text="@string/event.create.header"
+                android:textColor="@color/text_color_white"
+                app:backgroundTint="@color/button_color_green" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

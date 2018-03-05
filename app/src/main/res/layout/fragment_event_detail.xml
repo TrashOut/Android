@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_gray"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/event_detail_info_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/event_detail_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="Event Name"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/event_detail_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:padding="@dimen/button_padding"
+                    android:text="21.10.2016 08:00, 6hours"
+                    android:textColor="@color/text_color_grey"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/event_detail_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:padding="3dp"
+                    android:text="We will meet right behind the city park..." />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/event_detail_join_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:backgroundTint="@color/button_color_green_dark"
+                    android:text="@string/event.join"
+                    android:textColor="@color/text_color_white"
+                    app:backgroundTint="@color/button_color_green_dark" />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/event_detail_phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingEnd="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp">
+
+
+            <ImageView
+                android:id="@+id/event_detail_phone_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_phone_vec" />
+
+            <TextView
+                android:id="@+id/event_detail_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@+id/event_detail_phone_icon"
+                android:layout_toRightOf="@+id/event_detail_phone_icon"
+                android:text="+420 123 456 789"
+                android:textSize="@dimen/text_size_small" />
+
+
+            <TextView
+                android:id="@+id/event_detail_phone_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/event_detail_phone"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@+id/event_detail_phone_icon"
+                android:layout_toRightOf="@+id/event_detail_phone_icon"
+                android:text="@string/global.phone"
+                android:textColor="@color/text_color_grey" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/event_detail_email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingEnd="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp">
+
+
+            <ImageView
+                android:id="@+id/event_detail_email_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_email_vec" />
+
+            <TextView
+                android:id="@+id/event_detail_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@+id/event_detail_email_icon"
+                android:layout_toRightOf="@+id/event_detail_email_icon"
+                android:text="cleaning.group@domain.com"
+                android:textSize="@dimen/text_size_small" />
+
+
+            <TextView
+                android:id="@+id/event_detail_email_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/event_detail_email"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@+id/event_detail_email_icon"
+                android:layout_toRightOf="@+id/event_detail_email_icon"
+                android:text="@string/global.email"
+                android:textColor="@color/text_color_grey" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/event_detail_location_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/event_detail_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/test_map" />
+
+                <TextView
+                    android:id="@+id/event_detail_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/event_detail_place"
+                    android:layout_alignStart="@+id/event_detail_place"
+                    android:layout_below="@+id/event_detail_place"
+                    android:layout_marginTop="8dp"
+                    android:drawableLeft="@drawable/ic_gps"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_gps"
+                    android:padding="@dimen/button_padding"
+                    android:text="49.55454, 18.54545454"
+                    android:textColor="@color/text_color_grey"
+                    android:textIsSelectable="true" />
+
+
+                <TextView
+                    android:id="@+id/event_detail_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/event_detail_direction_btn"
+                    android:layout_alignStart="@+id/event_detail_direction_btn"
+                    android:layout_below="@+id/event_detail_map"
+                    android:layout_marginTop="25dp"
+                    android:padding="3dp"
+                    android:text="Praha, Praga Region, Czech Republic"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/event_detail_direction_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/event_detail_position"
+                    android:layout_marginBottom="@dimen/base_layout_padding"
+                    android:layout_marginLeft="@dimen/base_layout_padding"
+                    android:layout_marginStart="@dimen/base_layout_padding"
+                    android:backgroundTint="@color/button_color_green_dark"
+                    android:text="@string/global.direction"
+                    android:textColor="@color/text_color_white"
+                    app:backgroundTint="@color/button_color_green_dark" />
+
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/event_detail_equipment_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/event_detail_we_have_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/sides_margin"
+                    android:layout_marginStart="@dimen/sides_margin"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:text="@string/event.whatWeHave"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:id="@+id/event_detail_we_have"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="@dimen/sides_margin"
+                    android:layout_marginStart="@dimen/sides_margin"
+                    android:paddingEnd="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingStart="5dp"
+                    android:text="Gloves, bags, beverages"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/text_size_small" />
+
+                <View
+                    android:id="@+id/divider"
+                    style="@style/Divider.Margin"
+                    android:layout_marginBottom="@dimen/half_layout_padding" />
+
+
+                <TextView
+                    android:id="@+id/event_detail_bring_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/sides_margin"
+                    android:layout_marginStart="@dimen/sides_margin"
+                    android:padding="5dp"
+                    android:text="@string/event.detail.pleaseBring"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:id="@+id/event_detail_bring"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="@dimen/sides_margin"
+                    android:layout_marginStart="@dimen/sides_margin"
+                    android:paddingEnd="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingStart="5dp"
+                    android:text="Shovel, good mood"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/text_size_small" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/event_detail_list_of_trash_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/sides_margin"
+            android:layout_marginStart="@dimen/sides_margin"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:text="@string/event.listOfDumpsToBeCleaned"
+            android:textSize="@dimen/text_size_large" />
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/event_detail_trash_list_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:id="@+id/event_detail_trash_list_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

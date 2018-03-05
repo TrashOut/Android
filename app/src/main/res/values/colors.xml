@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#8CC947</color>
+    <color name="colorPrimaryDark">#73B02E</color>
+    <color name="colorAccent">#8BC34A</color>
+
+    <color name="text_color">#262626</color>
+    <color name="text_color_green">#8CC947</color>
+    <color name="text_color_green_dark">#1e6d51</color>
+    <color name="text_color_grey">#ef8b8b8b</color>
+    <color name="text_color_blue">#007ac2</color>
+    <color name="text_color_black">#000000</color>
+    <color name="text_color_white">#ffffff</color>
+    <color name="text_color_red">#DE371C</color>
+
+    <color name="cluster_color_red">#DE371C</color>
+    <color name="cluster_color_green">@color/colorPrimary</color>
+    <color name="cluster_color_yellow">#FFDC00</color>
+
+    <color name="button_color_green">#8BC34A</color>
+    <color name="button_color_green_dark">#8CC947</color>
+    <color name="button_color_red">#DE371C</color>
+    <color name="button_color_blue">#3B5998</color>
+
+    <color name="divider_grey">#d8d8d8</color>
+    <color name="divider_list">#cfe7e7</color>
+
+    <color name="separator_dark">#27FFFFFF</color>
+    <color name="separator_light">#27000000</color>
+
+    <color name="tutorial_bottom_text_background">#8cffffff</color>
+
+    <color name="page_indicator_dark">#50000000</color>
+    <color name="page_indicator_light">#aacccccc</color>
+
+    <color name="semi_transparent">#66000000</color>
+    <color name="semi_transparent_light">#99FFFFFF</color>
+    <color name="semi_transparent_heavy">#dd000000</color>
+    <color name="full_transparent">#00000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#ff0000</color>
+    <color name="gray">#27FFFFFF</color>
+    <color name="map_cluster_shadow">#33000000</color>
+    <color name="background_color_gray">#EEEEEE</color>
+    <color name="background_color_placeholder_gray">#E5E5E5</color>
+
+    <color name="background_trash_type_household">#B88854</color>
+    <color name="background_trash_type_automotive">#567980</color>
+    <color name="background_trash_type_construction">#FF904E</color>
+    <color name="background_trash_type_plastic">#6DBAE1</color>
+    <color name="background_trash_type_electronic">#35567B</color>
+    <color name="background_trash_type_organic">#80A920</color>
+    <color name="background_trash_type_metal">#D1D1D1</color>
+    <color name="background_trash_type_liquid">#E0DB39</color>
+    <color name="background_trash_type_dangerous">#FF4444</color>
+    <color name="background_trash_type_dead_animals">#C2660B</color>
+    <color name="background_trash_type_glass">#0c874e</color>
+
+    <color name="linkColor">#8CC947</color>
+
+    <color name="tab_text_color">#8CC947</color>
+    <color name="tab_selected_text_color">#ce8cc947</color>
+
+    <color name="dashboard_collection_point_dustbin_background">#EFC94C</color>
+    <color name="dashboard_collection_point_scrapyard_background">#B65232</color>
+    <color name="background_collection_point_type">#00000000</color>
+    <color name="statistics_chart_cleaned">#14B169</color>
+    <color name="statistics_chart_reported">#DE371C</color>
+
+    <color name="progress_bar_color">#0E8A51</color>
+</resources>

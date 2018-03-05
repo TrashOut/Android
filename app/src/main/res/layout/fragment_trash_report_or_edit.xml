@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color_gray"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/trash_report_take_another_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/full_layout_padding"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trash.create.takeAnotherPhoto"
+                    android:textSize="@dimen/text_size_xlarge" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trash.detail.fromDifferentAngle"
+                    android:textColor="@color/text_color_grey" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/trash_report_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:padding="5dp"
+                android:text="@string/trash.trashSize"
+                android:textSize="@dimen/text_size_large" />
+
+            <include layout="@layout/include_choose_trash_size" />
+
+            <TextView
+                android:id="@+id/trash_report_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:padding="5dp"
+                android:text="@string/trash.trashType"
+                android:textSize="@dimen/text_size_large" />
+
+            <include layout="@layout/include_choose_trash_type" />
+
+            <TextView
+                android:id="@+id/trash_report_accessibility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:padding="5dp"
+                android:text="@string/trash.accessibility"
+                android:textSize="@dimen/text_size_large" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/trash_report_accessibility_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/base_layout_padding">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/trash_report_accessibility_car_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/trash_report_accessibility_car"
+                        android:layout_alignBottom="@+id/trash_report_accessibility_car"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/trash_report_accessibility_in_cave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/trash_report_accessibility_car"
+                        android:padding="10dp"
+                        android:text="@string/trash.accessibility.inCave" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/trash_report_accessibility_in_cave_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/trash_report_accessibility_in_cave"
+                        android:layout_alignBottom="@+id/trash_report_accessibility_in_cave"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/trash_report_accessibility_under_water"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/trash_report_accessibility_in_cave"
+                        android:padding="10dp"
+                        android:text="@string/trash.accessibility.underWater" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/trash_report_accessibility_under_water_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/trash_report_accessibility_under_water"
+                        android:layout_alignBottom="@+id/trash_report_accessibility_under_water"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
+
+
+                    <TextView
+                        android:id="@+id/trash_report_accessibility_not_for_general_cleanup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/trash_report_accessibility_under_water"
+                        android:padding="10dp"
+                        android:text="@string/trash.accessibility.notForGeneralCleanup" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/trash_report_accessibility_not_for_general_cleanup_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/trash_report_accessibility_not_for_general_cleanup"
+                        android:layout_alignBottom="@+id/trash_report_accessibility_not_for_general_cleanup"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/trash_report_accessibility_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dp"
+                        android:text="@string/trash.accessibility.byCar" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/trash_report_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:padding="5dp"
+                android:text="@string/global.status"
+                android:textSize="@dimen/text_size_large" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/trash_report_status_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/base_layout_padding">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/trash_report_status_still_here_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/trash_report_status_still_here"
+                        android:layout_alignBottom="@+id/trash_report_status_still_here"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/trash_report_status_still_here"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="@string/trash.status.stillHere" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/trash_report_status_its_cleaned_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/trash_report_status_its_cleaned"
+                        android:layout_alignBottom="@+id/trash_report_status_its_cleaned"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/trash_report_status_its_cleaned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/trash_report_status_still_here"
+                        android:padding="10dp"
+                        android:text="@string/trash.status.cleaned" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/trash_report_status_cleaned_by_me_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/trash_report_status_cleaned_by_me"
+                        android:layout_alignBottom="@+id/trash_report_status_cleaned_by_me"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:id="@+id/trash_report_status_cleaned_by_me"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/trash_report_status_its_cleaned"
+                        android:padding="10dp"
+                        android:text="@string/trash.cleanedByMe" />
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/trash_report_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/sides_margin"
+                    android:layout_marginStart="@dimen/sides_margin"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="@string/trash.address"
+                    android:textSize="@dimen/text_size_large" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/trash_report_location_better_accuracy_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:visibility="gone"
+                app:cardCornerRadius="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/base_layout_padding">
+
+                    <ImageView
+                        android:id="@+id/trash_report_location_better_accuracy_icon"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_warning" />
+
+                    <TextView
+                        android:id="@+id/trash_report_location_better_accuracy_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/trash_report_location_better_accuracy_icon"
+                        android:layout_toLeftOf="@+id/trash_report_location_better_accuracy_distance"
+                        android:layout_toRightOf="@+id/trash_report_location_better_accuracy_icon"
+                        android:layout_toStartOf="@+id/trash_report_location_better_accuracy_distance"
+                        android:text="@string/trash.report.locationAccuracyMessage"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/trash_report_location_better_accuracy_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginStart="10dp"
+                        android:text="~ 100m"
+                        android:textColor="@color/text_color_grey" />
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/trash_report_location_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="4dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/trash_report_map"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/test_map" />
+
+                    <TextView
+                        android:id="@+id/trash_report_position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/trash_report_place"
+                        android:layout_alignStart="@+id/trash_report_place"
+                        android:layout_below="@+id/trash_report_place"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="8dp"
+                        android:drawableLeft="@drawable/ic_gps"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/ic_gps"
+                        android:padding="@dimen/button_padding"
+                        android:text="49.55454, 18.54545454"
+                        android:textColor="@color/text_color_grey" />
+
+                    <TextView
+                        android:id="@+id/trash_report_place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/trash_report_map"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="25dp"
+                        android:padding="3dp"
+                        android:text="Praha, Praga Region, Czech Republic"
+                        android:textSize="@dimen/text_size_normal" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/trash_report_Additional_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:padding="5dp"
+                android:text="@string/trash.note"
+                android:textSize="@dimen/text_size_large" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/trash_report_additional_information_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:hint="@string/trash.create.additionalInfo.hint" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/base_layout_padding"
+                android:padding="@dimen/base_layout_padding">
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/trash_report_send_anonymously_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/trash_report_send_anonymously"
+                    android:layout_alignBottom="@+id/trash_report_send_anonymously"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+                <TextView
+                    android:id="@+id/trash_report_send_anonymously"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/trash.sendAnonymously" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/trash_report_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/photo_container_height"
+                android:layout_marginTop="?attr/actionBarSize">
+
+                <LinearLayout
+                    android:id="@+id/trash_report_images_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/trash_report_take_images_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/trash.create.takeAtLeastOnePhoto"
+                        android:textSize="@dimen/text_size_xlarge" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/trash.detail.ofThisIllegalDump"
+                        android:textColor="@color/text_color_grey" />
+
+                </LinearLayout>
+
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end|right"
+                    android:layout_margin="@dimen/full_layout_padding"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_8">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/margin_8"
+                        android:paddingStart="@dimen/margin_8"
+                        android:paddingTop="@dimen/margin_8"
+                        android:src="@drawable/ic_camera" />
+
+                    <TextView
+                        android:id="@+id/trash_detail_photo_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_8"
+                        android:text="0"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/text_size_normal" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/trash_report_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/trash_report_toolbar_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_ab_back" />
+
+                </LinearLayout>
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/trash_report_take_image_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_add_photo"
+        app:layout_anchor="@id/trash_report_appbar"
+        app:layout_anchorGravity="bottom|right|center" />
+
+
+</android.support.design.widget.CoordinatorLayout>

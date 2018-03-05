@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/trash_event_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:text="Help us to clean it!"
+        android:textSize="@dimen/text_size_large" />
+
+    <TextView
+        android:id="@+id/trash_event_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trash_event_name"
+        android:layout_marginTop="3dp"
+        android:padding="@dimen/button_padding"
+        android:text="21.10.2016"
+        android:textColor="@color/text_color_grey"
+        android:textIsSelectable="true" />
+
+    <TextView
+        android:id="@+id/trash_event_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trash_event_time"
+        android:layout_marginTop="3dp"
+        android:padding="3dp"
+        android:text="Come and help us to clean this mess in our city park." />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/trash_event_join_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trash_event_description"
+        android:layout_marginTop="3dp"
+        android:backgroundTint="@color/button_color_green_dark"
+        android:text="@string/event.join"
+        android:textColor="@color/text_color_white"
+        app:backgroundTint="@color/button_color_green_dark" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/trash_event_detail_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trash_event_description"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/trash_event_join_btn"
+        android:layout_toRightOf="@+id/trash_event_join_btn"
+        android:backgroundTint="@color/button_color_green_dark"
+        android:text="@string/global.detail"
+        android:textColor="@color/text_color_white"
+        app:backgroundTint="@color/button_color_green_dark" />
+
+
+</RelativeLayout>

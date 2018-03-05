@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout android:id="@+id/trash_report_type_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:stretchColumns="3"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TableRow android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <me.trashout.ui.SelectableImageButton
+                android:id="@+id/trash_report_type_household_btn"
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_household"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_household" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/trash.types.domestic" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <me.trashout.ui.SelectableImageButton
+                android:id="@+id/trash_report_type_automotive_btn"
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_automotive"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_automotive" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/trash.types.automotive" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <me.trashout.ui.SelectableImageButton
+                android:id="@+id/trash_report_type_construction_btn"
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_construction"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_construction" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/trash.types.construction" />
+
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <me.trashout.ui.SelectableImageButton
+                android:id="@+id/trash_report_type_plastic_btn"
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_plastic"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_plastic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/trash.types.plastic" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <me.trashout.ui.SelectableImageButton
+                android:id="@+id/trash_report_type_electronic_btn"
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_electronic"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_electronic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/trash.types.electronic" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <me.trashout.ui.SelectableImageButton
+                android:id="@+id/trash_report_type_organic_btn"
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_organic"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_organic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/trash.types.organic" />
+
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <me.trashout.ui.SelectableImageButton
+                android:id="@+id/trash_report_type_metal_btn"
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_metal"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_metal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/trash.types.metal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <me.trashout.ui.SelectableImageButton
+                android:id="@+id/trash_report_type_liquid_btn"
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_liquid"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_liquid" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/trash.types.liquid" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <me.trashout.ui.SelectableImageButton
+                android:id="@+id/trash_report_type_dangerous_btn"
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_dangerous"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_dangerous" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/trash.types.dangerous" />
+
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <me.trashout.ui.SelectableImageButton
+                android:id="@+id/trash_report_type_dead_animals_btn"
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_dead_animals"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_dead_animals" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/trash.types.deadAnimals" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <me.trashout.ui.SelectableImageButton
+                android:id="@+id/trash_report_type_glass_btn"
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_glass"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_glass" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/trash.types.glass" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <me.trashout.ui.SelectableImageButton
+                android:layout_width="@dimen/trash_selectable_circle_button_size"
+                android:layout_height="@dimen/trash_selectable_circle_button_size"
+                android:background="@drawable/trash_circle_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_trash_type_glass"
+                app:sibBackgroundSelectedColor="@color/background_trash_type_glass" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="" />
+
+        </LinearLayout>
+
+    </TableRow>
+
+</TableLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_xxsmall">10sp</dimen>
+    <dimen name="text_size_xsmall">12sp</dimen>
+    <dimen name="text_size_small">15sp</dimen>
+    <dimen name="text_size_normal">18sp</dimen>
+    <dimen name="text_size_medium">20sp</dimen>
+    <dimen name="text_size_large">22sp</dimen>
+    <dimen name="text_size_xlarge">25sp</dimen>
+    <dimen name="cluster_map_point">40dp</dimen>
+    <dimen name="cluster_map_point_padding">5dp</dimen>
+    <dimen name="base_layout_padding">10dp</dimen>
+    <dimen name="sides_margin">8dp</dimen>
+
+    <dimen name="primary_text_top_padding">24dp</dimen>
+    <dimen name="full_layout_padding">16dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_48">48dp</dimen>
+    <dimen name="half_layout_padding">8dp</dimen>
+    <dimen name="medium_layout_padding">12dp</dimen>
+    <dimen name="button_padding">3dp</dimen>
+    <dimen name="update_image_size">150dp</dimen>
+    <dimen name="news_image_size">75dp</dimen>
+    <dimen name="activity_image_size">120dp</dimen>
+    <dimen name="photo_fullscreen_page_margin">20dp</dimen>
+    <dimen name="photo_page_margin">10dp</dimen>
+    <dimen name="photo_container_height">250dp</dimen>
+    <dimen name="trash_selectable_circle_button_size">90dp</dimen>
+    <dimen name="trash_type_circle_button_size">60dp</dimen>
+    <dimen name="trash_type_circle_button_size_list">42dp</dimen>
+    <dimen name="trash_type_layout_size">138dp</dimen>
+    <dimen name="thank_you_page_background_height">180dp</dimen>
+    <dimen name="tutorial_page_indicator_size">4dp</dimen>
+
+</resources>

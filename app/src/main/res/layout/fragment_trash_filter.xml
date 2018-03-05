@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:id="@+id/trash_report_take_another_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/full_layout_padding">
+
+        <TextView
+            android:id="@+id/trash_filter_status_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/trash.status"
+            android:textSize="@dimen/text_size_large" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/trash_filter_status_updated_reported"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile.reported"
+                app:buttonTint="@color/colorPrimary" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/trash_filter_status_updated_needed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash.updateNeeded"
+                app:buttonTint="@color/colorPrimary" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/trash_filter_status_cleaned"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash.status.cleaned"
+                app:buttonTint="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/trash_filter_last_update_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/full_layout_padding"
+            android:text="@string/trash.filter.dateOfLastUpdate"
+            android:textSize="@dimen/text_size_large" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/trash_filter_last_update_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/trash_filter_last_update_text"
+                android:text="@string/trash.filter.lastUpdate.today" />
+
+            <SeekBar
+                android:id="@+id/trash_filter_last_update_seek_bar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/trash_filter_last_update_text"
+                android:layout_toEndOf="@+id/trash_filter_last_update_from"
+                android:layout_toLeftOf="@+id/trash_filter_last_update_to"
+                android:layout_toRightOf="@+id/trash_filter_last_update_from"
+                android:layout_toStartOf="@+id/trash_filter_last_update_to"
+                android:layout_weight="1"
+                android:max="4"
+                android:progress="4" />
+
+            <TextView
+                android:id="@+id/trash_filter_last_update_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/trash_filter_last_update_text"
+                android:text="@string/trash.filter.lastUpdate.noLimit" />
+
+            <TextView
+                android:id="@+id/trash_filter_last_update_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/trash_filter_last_update_seek_bar"
+                android:layout_alignLeft="@+id/trash_filter_last_update_seek_bar"
+                android:layout_alignRight="@+id/trash_filter_last_update_seek_bar"
+                android:layout_alignStart="@+id/trash_filter_last_update_seek_bar"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/trash.filter.lastUpdate.noLimit" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/trash_filter_size_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/full_layout_padding"
+            android:text="@string/trash.trashSize"
+            android:textSize="@dimen/text_size_large" />
+
+        <include layout="@layout/include_choose_trash_size" />
+
+        <TextView
+            android:id="@+id/trash_filter_type_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/full_layout_padding"
+            android:text="@string/trash.trashType"
+            android:textSize="@dimen/text_size_large" />
+
+        <include layout="@layout/include_choose_trash_type" />
+
+        <TextView
+            android:id="@+id/trash_filter_accessibility_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/full_layout_padding"
+            android:text="@string/trash.accessibility"
+            android:textSize="@dimen/text_size_large" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/trash_filter_accessibility_by_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash.accessibility.byCar"
+                app:buttonTint="@color/colorPrimary" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/trash_filter_accessibility_in_cave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash.accessibility.inCave"
+                app:buttonTint="@color/colorPrimary" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/trash_filter_accessibility_under_water"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash.accessibility.underWater"
+                app:buttonTint="@color/colorPrimary" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/trash_filter_accessibility_not_for_general_cleanup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trash.accessibility.notForGeneralCleanup"
+                app:buttonTint="@color/colorPrimary" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

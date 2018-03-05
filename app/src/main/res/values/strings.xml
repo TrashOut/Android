@@ -1,0 +1,1416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">TrashOut</string>
+    <string name="facebook_app_id" translatable="false">310706718951561</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb310706718951561</string>
+
+    <string name="tab.profile">"Profile"</string>
+    <string name="global.nearby">"Nearby"</string>
+    <string name="tab.home">"Home"</string>
+    <string name="tab.dumps">"Dumps"</string>
+    <string name="tab.news">"News"</string>
+    <string name="tab.recycling">"Recycling"</string>
+    <string name="global.menu.events">"Events"</string>
+    <string name="global.menu.geoAreas">"Geographical Areas"</string>
+    <string name="global.menu.notifications">"Notifications"</string>
+    <string name="global.menu.organizations">"Organizations"</string>
+    <string name="global.menu.dumps">"Dumps"</string>
+    <string name="global.menu.collectionPoints">"Recycling Points"</string>
+    <string name="global.showAll">"Show all"</string>
+    <string name="global.save">"Save"</string>
+    <string name="global.back">"Back"</string>
+    <string name="global.cancel">"Cancel"</string>
+    <string name="global.signIn">"Sign In"</string>
+    <string name="global.signOut">"Sign Out"</string>
+    <string name="global.createNewAccount">"Create new account"</string>
+    <string name="global.saveImage">"Save picture"</string>
+    <string name="global.email">"E-mail"</string>
+    <string name="global.password">"Password"</string>
+    <string name="global.showDetail">"Show Detail"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.processSigning">"Process Signing"</string>
+    <string name="global.update">"update"</string>
+    <string name="global.deleteError">"There was an error while deleting this entry"</string>
+    <string name="global.cancelFilter">"Cancel filter"</string>
+    <string name="global.export">"Export"</string>
+    <string name="global.hideFilter">"Hide filter"</string>
+    <string name="global.showFilter">"Show filter"</string>
+    <string name="global.nextStep">"Next step"</string>
+    <string name="global.submitFilter">"Submit filter"</string>
+    <string name="global.reportSpam">"Report as SPAM"</string>
+    <string name="global.loading">"Loading"</string>
+    <string name="global.ok">"OK"</string>
+    <string name="global.yes">"Yes"</string>
+    <string name="global.no">"No"</string>
+    <string name="global.or">"or"</string>
+    <string name="global.saving">"Saving"</string>
+    <string name="global.sending">"Sending"</string>
+    <string name="global.iUnderstand">"I understand"</string>
+    <string name="global.done">"Done"</string>
+    <string name="global.optional">"optional"</string>
+    <string name="trash.types.automotive">"Automotive"</string>
+    <string name="trash.types.construction">"Construction"</string>
+    <string name="trash.types.plastic">"Plastic"</string>
+    <string name="trash.types.domestic">"Household"</string>
+    <string name="trash.types.electronic">"Electronic"</string>
+    <string name="trash.types.deadAnimals">"Animal Carcass"</string>
+    <string name="trash.types.metal">"Metal"</string>
+    <string name="trash.types.liquid">"Liquid"</string>
+    <string name="trash.types.dangerous">"Dangerous"</string>
+    <string name="trash.types.organic">"Organic"</string>
+    <string name="trash.validation.typeRequired">"Type is required"</string>
+    <string name="global.meters">"meters"</string>
+    <string name="global.km">"km"</string>
+    <string name="global.generalError">"We are sorry, but something went wrong."</string>
+    <string name="global.noInternetConnection">"Sorry, I have no internet connection."</string>
+    <string name="global.uknownLocality">"Unknown locality"</string>
+    <string name="global.pleaseUpdateApp">"There is a new version of TrashOut app. Please update your current version."</string>
+    <string name="global.successfullySignedOut">"You have been successfully signed out"</string>
+    <string name="global.geoTurnedOff">"Your device has geo turned off - please turn it on in Settings -&gt; Location services."</string>
+    <string name="global.geoDisallowed">"You have disallowed TrashOut app from running geolocation services. Please turn it on in Settings -&gt; Location services."</string>
+    <string name="global.geoDisallowedBySystem">"Your system has disallowed TrashOut app from running geolocation services. "</string>
+    <string name="global.close">"Close"</string>
+    <string name="global.userNotLogged">"Sorry for inconvenience, you are now logged out.
+Please sign in again."</string>
+    <string name="global.now">"now"</string>
+    <string name="profile.header">"Profile"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.welcomeText">"Report Trash allows you report illegal dump anywhere in the world. Reporting is the first step which leads to cleaning.
+
+GO, locate illegal dump by pressing the button “Report Trash”!"</string>
+    <string name="info.header.aboutApp">"About TrashOut App"</string>
+    <string name="global.aboutProject">"TrashOut is an environmental project which aims to map and monitor all illegal dumps around the world.
+
+Our goal is to involve citizens, governments, municipalities and organizations so we can together contribute to cleaner world for everyone.
+
+Thank You for joining TrashOut environmental community and keeping it running."</string>
+    <string name="global.writeReview">"Write Review"</string>
+    <string name="info.privatePolicy">"Privacy Policy"</string>
+    <string name="info.termsAndConditions">"Terms and Conditions"</string>
+    <string name="info.feedbackAndSupport">"Feedback &amp; Support"</string>
+    <string name="info.donate">"Donate"</string>
+    <string name="info.whyDonate">"Why donate to TrashOut?"</string>
+    <string name="info.donateText">"Thanks to your donations we can run our servers, update and improve TrashOut application, add new functionalities and most importantly continue out mission to clean the world. "</string>
+    <string name="profile.gpsCoordinatesFormat">"GPS Coordinates Format"</string>
+    <string name="user.facebook">"Facebook"</string>
+    <string name="user.twitter">"Twitter"</string>
+    <string name="globa.cancel">"Cancel changes"</string>
+    <string name="profile.reported">"Reported"</string>
+    <string name="profile.confirmed">"Confirmed"</string>
+    <string name="profile.cleaned">"Cleaned"</string>
+    <string name="trash.removingTrash">"Removing trash…"</string>
+    <string name="global.confirm">"confirm"</string>
+    <string name="global.error.noData">"Oops, we are waiting for server to give us more information. Please give us a second."</string>
+    <string name="trash.youHaveToBeClose">"You have to be near the dump to update it."</string>
+    <string name="global.allow">"Allow"</string>
+    <string name="trash.loadingTrashMap">"Loading TrashMap..."</string>
+    <string name="user.username">"Username"</string>
+
+    <!-- Fuzzy -->
+    <string name="profile.wrongPassword">"Oops, you entered wrong password."</string>
+    <string name="global.organization">"Organization"</string>
+    <string name="profile.assignOrganization">"Assign organization"</string>
+    <string name="profile.assign">"Assign"</string>
+    <string name="global.organizations">"Organizations"</string>
+    <string name="profile.badges">"Your Green Points"</string>
+    <string name="profile.info">"Info"</string>
+    <string name="profile.noInfo">"Share some information with TrashOut community."</string>
+    <string name="profile.authorizing">"Authorizing"</string>
+    <string name="profile.syncing">"Syncing"</string>
+    <string name="profile.badge">"Badge"</string>
+    <string name="user.roles.administrator">"Administrator"</string>
+    <string name="profile.logoutQuestion">"Do you really want to log out?"</string>
+    <string name="profile.whyRegister">"All your activity will be synced.
+You will get points for your activities."</string>
+    <string name="profile.validation.invalidEmail">"Oops, the e-mail you entered looks invalid"</string>
+    <string name="profile.validation.enterPassword">"Oops, please enter your password"</string>
+    <string name="profile.validation.invalidPasswordOrEmail">"Oops, your password and e-mail don't match"</string>
+    <string name="profile.enterEmail">"Please enter an email address you used previously to register to TrashOut"</string>
+    <string name="profile.emailExists">"Oops, it looks like somebody is already registered with this e-mail"</string>
+    <string name="profile.resetPassword">"Forgot password"</string>
+    <string name="profile.signedInStatus">"Now you are signed in… "</string>
+    <string name="user.firstName">"First name"</string>
+    <string name="user.lastName">"Last name"</string>
+
+    <!-- Fuzzy -->
+    <string name="user.name">"Name"</string>
+    <string name="user.password">"Password"</string>
+    <string name="user.reEnterPassword">"Re-enter password"</string>
+    <string name="user.validation.passwordTooShort">"Oops, please enter longer password. At least 8 characters."</string>
+    <string name="user.validation.passwordsNotMatch">"Oops, your re-entered password doesn't match."</string>
+    <string name="user.info">"About you"</string>
+    <string name="user.header">"Users"</string>
+    <string name="user.changePassword">"Change Password"</string>
+    <string name="user.bulk.changeRole">"Change role"</string>
+    <string name="profile.noInternetWhileRegister">"Oops, we cannot register you without internet access.
+Please come back when you are back online"</string>
+    <string name="profile.noInternetWhileSignIn">"Oops, we cannot sign you in without internet access.
+Please come back when you are back online."</string>
+    <string name="profile.noName">"No name provided"</string>
+    <string name="profile.resetPasswordInfoToMail">"Info how to reset your password was sent to your e-mail address."</string>
+    <string name="profile.welcome">"Welcome"</string>
+    <string name="profile.signOut">"Sign Out"</string>
+    <string name="profile.validation.passwordRequired">"Please fill in your password."</string>
+    <string name="profile.validation.emailRequired">"Please enter an e-mail address."</string>
+    <string name="profile.validation.mailAndPasswordrequired">"Please fill in your e-mail address and password."</string>
+    <string name="profile.validation.somethingMissing">"Oops, you haven't filled in all fields."</string>
+    <string name="profile.userNotRegistered">"Oops, this user is not registered"</string>
+    <string name="profile.signOutNoInternet">"Oops, we cannot sign you out without internet access.
+Please come back when you are online"</string>
+    <string name="profile.organization.remove">"Cancel membership"</string>
+    <string name="trash.accuracy">"Accuracy"</string>
+    <string name="trash.metersAway">"meters away"</string>
+    <string name="trash.trashType">"Type of Trash"</string>
+    <string name="trash.trashSize">"Size of Trash"</string>
+    <string name="trash.cameraError">"Oops, something went wrong with camera"</string>
+    <string name="trash.create.notEnoughtData">"Please, can you provide us with more data?"</string>
+    <string name="trash.create.takeAtLeastOnePhoto">"Take at least one photo "</string>
+    <string name="trash.removeImage">"Remove image"</string>
+    <string name="trash.removeImageConfirm">"Do you want to delete selected photo?"</string>
+    <string name="trash.create.noGps">"No gps"</string>
+    <string name="trash.create.noInternetHeader">"You are offline!"</string>
+    <string name="trash.create.noInternetText">"This illegal dump will be submitted later, because your phone is offline.
+
+When you get online please turn on TrashOut app and your report will be submitted automatically."</string>
+    <string name="trash.create.sendWasInterruptedHeader">"Sending has been interrupted."</string>
+    <string name="trash.create.sendWasInterruptedText">"Don't worry. We saved your progress and we will try to send your report right after you start TrashOut again."</string>
+    <string name="trash.status.cleaned">"Cleaned"</string>
+    <string name="trash.status.less">"Less"</string>
+    <string name="trash.status.more">"More"</string>
+    <string name="trash.status.stillHere">"It`s still here"</string>
+    <string name="trash.updated">"Updated"</string>
+    <string name="trash.address">"Location"</string>
+    <string name="trash.gpsLocation">"GPS Location"</string>
+    <string name="trash.accuracyOfLocation">"Accuracy of location"</string>
+    <string name="trash.delete.confirmation">"Do you really want to delete this report?"</string>
+    <string name="trash.delete.success">"Trash was successfully deleted."</string>
+    <string name="trash.create.success">"Trash was successfully reported. Thank you."</string>
+    <string name="trash.photosOfTrash">"Photos of this Trash"</string>
+    <string name="trash.comments">"Comments"</string>
+    <string name="global.fetchError">"Something went wrong.
+The server is not responding right now or you do not have internet connection."</string>
+    <string name="trash.discardChanges">"Discard all changes?"</string>
+    <string name="trash.spam.comfirmation">"Do you really want to report this trash as spam?"</string>
+    <string name="global.detail">"Detail"</string>
+    <string name="global.serviceUnavaliable">"Our service is temporary unavailable, please try again later"</string>
+    <string name="global.markedAsSpam">"Marked as SPAM"</string>
+    <string name="global.spams.false">"don't want spams"</string>
+    <string name="global.spams.true">"want spams"</string>
+    <string name="global.pickAll">"Pick all"</string>
+    <string name="global.share">"Share"</string>
+    <string name="global.facebookShare">"Share on Facebook"</string>
+    <string name="trash.isCleaned">"It`s already cleaned"</string>
+    <string name="trash.cleanedByMe">"I`ve cleaned it"</string>
+    <string name="home.loadingNearDumps">"Loading nearby illegal dumps"</string>
+    <string name="home.noDumpsNear">"No illegal dumps nearby"</string>
+    <string name="global.enableGps">"Allow location services"</string>
+    <string name="trash.loadingDumps">"Loading dumps in your area..."</string>
+    <string name="global.loadingError">"Loading failed"</string>
+    <string name="trash.edit.betterLocation">"Trying to get better location"</string>
+    <string name="trash.create.error">"Sending has been interrupted."</string>
+    <string name="global.dbError">"Oops, we could NOT save the data."</string>
+    <string name="global.gps">"GPS"</string>
+    <string name="global.search">"search"</string>
+    <string name="global.remove">"Remove"</string>
+    <string name="global.allowGpsInPhone">"TrashOut wants to use your location to display dumps around you. Please enable it in your phone settings."</string>
+    <string name="global.settings">"Settings"</string>
+    <string name="trash.detail.header">"Trash detail"</string>
+    <string name="organizations.assignToOrganization">"Assign to available organizations"</string>
+    <string name="statistics.header">"Statistics"</string>
+    <string name="statistics.hint">"View worldwide statistics or statistics for countries."</string>
+    <string name="statistics.show">"show statistics"</string>
+    <string name="global.selectArea">"Select area"</string>
+    <string name="notifications.reported">"Reported"</string>
+    <string name="global.cleaned">"Cleaned"</string>
+    <string name="notification.noEmailAddress">"Sorry, we don't have any email address set for this area. Please insert it manually."</string>
+    <string name="event.header">"Cleaning Events"</string>
+    <string name="event.create.header">"Create an event"</string>
+    <string name="event.name">"Event name"</string>
+    <string name="event.duration">"Choose duration of an event"</string>
+    <string name="event.about">"About an event"</string>
+    <string name="event.equipment">"Equipment"</string>
+    <string name="event.whatWeHave">"What We Already Have"</string>
+    <string name="event.whatBring">"What attendees can bring"</string>
+    <string name="event.whatWeHave.hint">"E.g.: Gloves, bags, wheelbarrows..."</string>
+    <string name="event.wahtBring.hint">"E.g.: Shovel, bags, water..."</string>
+    <string name="event.meetingPoint">"Meeting point"</string>
+    <string name="global.city">"City"</string>
+    <string name="global.street">"Street and number"</string>
+    <string name="event.contact">"Contact"</string>
+    <string name="global.phone">"Phone"</string>
+    <string name="global.create">"Create"</string>
+    <string name="event.startDate">"Start date of an event"</string>
+    <string name="event.startTime">"Start time of an event"</string>
+    <string name="event.days">"days"</string>
+    <string name="event.hours">"hours"</string>
+    <string name="event.validation.checkName">"Please check name of an event."</string>
+    <string name="event.validation.durationInvalid">"Please check the date and duration of an event."</string>
+    <string name="event.validation.checkAddress">"Please check the address."</string>
+    <string name="event.validation.checkEmail">"Please check the e-mail in contact information."</string>
+    <string name="event.validation.checkPhone">"Please check the phone number in contact information."</string>
+    <string name="event.created">"Event was successfully created."</string>
+    <string name="event.signToJoin">"Please log in to join this event."</string>
+    <string name="event.join">"Join"</string>
+    <string name="event.leave">"Leave"</string>
+    <string name="event.share">"Share"</string>
+    <string name="event.delete">"Cancel it"</string>
+    <string name="event.delete.confirmation">"Do you want to cancel this event?"</string>
+    <string name="event.deleteSuccess">"Event was canceled."</string>
+    <string name="event.meetingAddress">"Meeting address"</string>
+    <string name="event.when">"When"</string>
+    <string name="event.navigateTo">"Would you like to navigate to this place?"</string>
+    <string name="home.nearestDumps">"Nearest Dumps"</string>
+    <string name="home.goAndFindDumps">"Go, find and update these dumps"</string>
+    <string name="home.didYouKnow">"News and Updates"</string>
+    <string name="home.nearestRecyclingPoints">"Nearest Recycling Point"</string>
+    <string name="collectionPoint.size.recyclingBin">"Bin"</string>
+    <string name="collectionPoint.size.recyclingCenter">"Center"</string>
+    <string name="collectionPoint.size.all">"All"</string>
+    <string name="collectionPoint.header">"Recycling Points"</string>
+    <string name="collectionPoint.list.header">"Recycling Point List"</string>
+    <string name="collectionPoint.create.header">"Create Recycling Point"</string>
+    <string name="collectionPoint.edit.header">"Edit Recycling Point"</string>
+    <string name="collectionPoint.edit.firstStep">"General Information"</string>
+    <string name="collectionPoint.edit.secondStep">"Opening Hours and Description"</string>
+    <string name="collectionPoint.edit.thirdStep">"Choose Images"</string>
+    <string name="collectionPoint.id">"ID"</string>
+    <string name="collectionPoint.name">"Name"</string>
+    <string name="collectionPoint.location">"Address of recycling point"</string>
+    <string name="collectionPoint.size">"Size of Recycling Point"</string>
+    <string name="collectionPoint.type">"Recycling point type"</string>
+    <string name="home.recentActivity.header">"Recent Activity on Dumps You Follow"</string>
+    <string name="home.recentActivity.noActivity">"No recent activity."</string>
+    <string name="events.header">"Events"</string>
+    <string name="home.events.text">"Upcoming events in your neighborhood"</string>
+    <string name="home.numberDumpsWorldwide">"Number of dumps worldwide"</string>
+    <string name="home.more">"More statistics"</string>
+    <string name="global.noCameraSupport">"Your device does not support camera."</string>
+    <string name="global.create.send">"Send"</string>
+    <string name="trash.edit.header">"Edit trash point"</string>
+    <string name="trash.create.addPhoto">"Add photo"</string>
+    <string name="trash.create.takeAnotherPhoto">"Take another photo"</string>
+    <string name="trash.create.takeAtLeast2Photos">"Take at least two photos"</string>
+    <string name="trash.create.ofIllegalDump">"of the illegal dump"</string>
+    <string name="trash.size.bag">"Fits in a bag"</string>
+    <string name="trash.size.wheelbarrow">"Fits in a wheelbarrow"</string>
+    <string name="trash.size.carNeeded">"Car needed"</string>
+    <string name="trash.validation.sizeRequired">"Size required"</string>
+    <string name="trash.id">"ID"</string>
+    <string name="trash.url">"Url"</string>
+    <string name="trash.updateTime">"Update time"</string>
+    <string name="trash.accessibility">"Trash Accessibility"</string>
+    <string name="trash.accessibility.byCar">"Accessible by car"</string>
+    <string name="trash.accessibility.inCave">"Located in a cave"</string>
+    <string name="trash.accessibility.underWater">"Located under water"</string>
+    <string name="trash.accessibility.notForGeneralCleanup">"Not for general cleanup"</string>
+    <string name="trash.valiadation.accessibilityRequired">"Accessibility required"</string>
+    <string name="global.status">"Status"</string>
+    <string name="trash.status">"Status of Trash"</string>
+    <string name="trash.note">"Additional Information"</string>
+    <string name="global.note">"Note"</string>
+    <string name="global.validation.noteRequired">"Note required"</string>
+    <string name="trash.sendAnonymously">"Send anonymously"</string>
+    <string name="trash.create.additionalInfo.hint">"It is nearby... It contains products of specific brand... I found it when..."</string>
+    <string name="trash.create.takeLeastOnePhoto">"You must take at least one photo"</string>
+    <string name="trash.create.takeLeastTwoPhotos">"You must take at least one photo"</string>
+    <string name="trash.edit.youAreMoreThan100FromDump">"You are more than 100 m from dump or you have bad accuracy"</string>
+    <string name="trash.edit.badAccurancy">"You have bad accuracy"</string>
+    <string name="trash.create.validation.notFilledRequiredFileds">"You didn’t fill all fields"</string>
+    <string name="trash.create.uploadPhotoError">"Can not upload photos, please try it again later"</string>
+    <string name="trash.create.successfullyReported">"This dump was succesfully reported"</string>
+    <string name="trash.create.successfullyUpdated">"This dump was succesfully updated"</string>
+    <string name="trash.dumpsDistance">"Dumps Distance"</string>
+    <string name="trash.edit.getCloser">"Get closer than 100 m"</string>
+    <string name="event.create.dumpsToBeCleaned">"Dumps to be cleaned"</string>
+    <string name="event.create.dumpIsAlreadySelected">"Dump is already selected"</string>
+    <string name="event.eventDate">"Event Date"</string>
+    <string name="event.start">"Start of the Event"</string>
+    <string name="event.end">"End"</string>
+    <string name="event.description.hint">"Description (e.g.: Let's meet next to...)"</string>
+    <string name="event.whatBringFull">"What attendees need to bring (e.g.: gloves, water...)"</string>
+    <string name="event.whatWeHaveFull">"What we have (e.g.: Gloves...)"</string>
+    <string name="event.create.setLocationOnMap">"Set location on map"</string>
+    <string name="event.create.selectDumpsOnMap">"Select dumps on map"</string>
+    <string name="event.create.saved">"Thank you, event was successfully created. You can edit your event and see attendees at www.admin.trashout.ngo."</string>
+    <string name="event.create.validation.setStartFirst">"You must set start of a meeting first"</string>
+    <string name="event.create.validation.setMeetingPointFirst">"You must set meeting point first"</string>
+    <string name="event.create.setLocation">"Set Location"</string>
+    <string name="event.searchForLocation">"Search for location"</string>
+    <string name="event.noAddressFound">"No address found"</string>
+    <string name="event.nearbyDumps">"Nearby Dumps"</string>
+    <string name="event.create.youSelectedDumps_X">"You have selected %d dumps"</string>
+    <string name="event.create.setDate">"Set Date"</string>
+    <string name="event.listOfDumpsToBeCleaned">"List of Dumps to Be Cleaned"</string>
+    <string name="global.direction">"Directions"</string>
+    <string name="global.minutes">"minutes"</string>
+    <string name="global.noAddress">"No address"</string>
+    <string name="global.noDateToSave">"No date to save"</string>
+    <string name="event.header_X">"Cleaning event: %s"</string>
+    <string name="event.validation.cannotBeAddedToCalendar">"Cleaning event can not be added to your calendar"</string>
+    <string name="event.addedToCalender.success">"Cleaning event was added to your calendar"</string>
+    <string name="global.enableAccessToCalendar">"Enable access to calendar in settings"</string>
+    <string name="collectionPoint.allowedTypes">"Type of waste you can dispose here"</string>
+    <string name="collectionPoint.other">"More Recycling Points Around You"</string>
+    <string name="global.filter.noResult">"No results, change filter options"</string>
+    <string name="collectionPoint.filter.header">"Recycling Point Filter"</string>
+    <string name="trash.filter.header">"Trash Filter"</string>
+    <string name="global.filter">"Filter"</string>
+
+    <!-- Fuzzy -->
+    <string name="collectionPoint.filter.size">"Size of Recycling Point"</string>
+
+    <!-- Fuzzy -->
+    <string name="collectionPoint.filter.types">"Type of Trash to Dispose"</string>
+
+    <!-- Fuzzy -->
+    <string name="collectionPoint.openingHours">"Opening Hours"</string>
+    <string name="global.noLongerExistQuestion">"Does not exist?"</string>
+    <string name="global.forgotPassword">"Forgot Password?"</string>
+    <string name="user.validation.firstNameRequired">"First name is required"</string>
+    <string name="user.validation.lastNameRequired">"Last name is required"</string>
+    <string name="profile.yourActivities">"Your Activities"</string>
+    <string name="profile.other">"Other"</string>
+    <string name="profile.logout">"Logout"</string>
+    <string name="global.edit">"Edit"</string>
+    <string name="trash.anonymous">"Anonymous"</string>
+    <string name="global.phoneNotSet">"Phone not set"</string>
+    <string name="profile.earnedPoints_X">"You have earned %d points so far! Update more dumps to receive more. Thank you!"</string>
+    <string name="profile.points_X">"%d points"</string>
+    <string name="global.numberOfTimes_X">"%dx"</string>
+    <string name="profile.youReported">"Your reports"</string>
+    <string name="profile.youUpdated">"Your updates"</string>
+    <string name="profile.youCleaned">"Dumps cleaned"</string>
+    <string name="profile.header.editProfile.header">"Edit Profile"</string>
+    <string name="profile.yourProfile">"Your Profile"</string>
+
+    <!-- Fuzzy -->
+    <string name="profile.selectOrganization">"Select an Organization"</string>
+    <string name="profile.uploadFotoError">"Can not upload photo, please try it again later"</string>
+    <string name="profile.edit.error">"Can not update user profile, try it again later"</string>
+    <string name="profile.edit.success">"Your profile was successfully updated"</string>
+    <string name="global.pullToRefresh">"Pull to refresh"</string>
+    <string name="trash.accuracyOfLocationSmaller">"Accuracy of location: &lt; "</string>
+    <string name="global.sendEmail.error">"It is not possible to send an e-mail."</string>
+    <string name="trash.illegalDumpIn_X">"Illegal Dump in %s"</string>
+    <string name="trash.reportedDetailsonWeb_X">"Illegal dump was reported! Details about illegal dump can be found on website: %s"</string>
+    <string name="trash.messageWasReceived">"Thank you, message was received"</string>
+    <string name="global.noDate">"No date"</string>
+    <string name="global.unknow">"unknown"</string>
+    <string name="trash.filter.dateOfLastUpdate">"Date of Last Update"</string>
+    <string name="trashHunter">"Trash Hunter"</string>
+    <string name="trashHunter.text">"Turn on \"Trash Hunter mode\" to receive notifications about illegal dumps around you"</string>
+    <string name="trashHunter.startHunting">"Start Hunting"</string>
+    <string name="trashHunter.huntingArea">"Hunting Area"</string>
+    <string name="trashHunter.stopHunting">"STOP HUNTING"</string>
+    <string name="trash.foundDumps_X">"Found dumps: %d"</string>
+    <string name="trashHunter.turnedOnInfo">"\"Trash Hunter mode\" has been turned on and will be active for following period."</string>
+    <string name="trash.updateNeeded">"Update needed"</string>
+    <string name="trash.filter.lastUpdate.noLimit">"No limit"</string>
+    <string name="trash.filter.lastUpdate.lastWeek">"Last Week"</string>
+    <string name="trash.filter.lastUpdate.lastYear">"Last Year"</string>
+    <string name="trash.filter.lastUpdate.today">"Today"</string>
+    <string name="trash.filter.lastUpdate.lastMonth">"Last Month"</string>
+    <string name="collectionPoint.types.paper">"paper"</string>
+    <string name="collectionPoint.types.glassAll">"all glass"</string>
+    <string name="collectionPoint.types.glassGreen">"green glass"</string>
+    <string name="collectionPoint.types.glassGold">"gold glass"</string>
+    <string name="collectionPoint.types.glassWhite">"white glass"</string>
+    <string name="collectionPoint.types.metal">"metal"</string>
+    <string name="collectionPoint.types.plastic">"plastic"</string>
+    <string name="collectionPoint.types.dangerous">"dangerous"</string>
+    <string name="collectionPoint.types.cardboard">"cardboard"</string>
+    <string name="collectionPoint.types.clothes">"clothes"</string>
+    <string name="collectionPoint.types.biodegradable">"biodegradable"</string>
+
+    <!-- Fuzzy -->
+    <string name="collectionPoint.types.electronic">"electronic"</string>
+    <string name="collectionPoint.types.everything">"everything"</string>
+    <string name="collectionPoint.types.recyclables">"recyclables"</string>
+    <string name="collectionPoint.types.wiredGlass">"wired glass"</string>
+    <string name="collectionPoint.types.battery">"batteries"</string>
+    <string name="collectionPoint.types.tires">"tires"</string>
+    <string name="collectionPoint.types.iron">"iron"</string>
+    <string name="collectionPoint.types.woodenAndUpholsteredFurniture">"wooden and upholstered furniture"</string>
+    <string name="collectionPoint.types.carpets">"carpets"</string>
+    <string name="collectionPoint.types.wooden">"wooden"</string>
+    <string name="collectionPoint.types.window">"window"</string>
+    <string name="collectionPoint.types.buildingRubble">"building rubble"</string>
+    <string name="collectionPoint.types.oil">"oil"</string>
+    <string name="collectionPoint.types.fluorescentLamps">"fluorescent lamps"</string>
+    <string name="collectionPoint.types.neonLamps">"neon lamps"</string>
+    <string name="collectionPoint.types.lightBulbs">"light bulbs"</string>
+    <string name="collectionPoint.types.color">"color"</string>
+    <string name="collectionPoint.types.thinner">"thinner"</string>
+    <string name="collectionPoint.types.mirror">"mirror"</string>
+    <string name="collectionPoint.types.carParts">"car parts"</string>
+    <string name="collectionPoint.types.medicines">"medicines"</string>
+    <string name="collectionPoint.types.materialsFromBituminousPaper">"materials from bituminous paper"</string>
+    <string name="collectionPoint.types.eternitCoverings">"eternit coverings"</string>
+    <string name="collectionPoint.types.asbestos">"asbestos"</string>
+    <string name="collectionPoint.types.fireplaces">"fireplaces"</string>
+    <string name="collectionPoint.types.slag">"slag"</string>
+    <string name="collectionPoint.types.glassWool">"glass wool"</string>
+    <string name="collectionPoint.types.cinder">"cinder"</string>
+    <string name="collectionPoint.types.asphalt">"asphalt"</string>
+    <string name="collectionPoint.types.bitumenPaper">"bitumen paper"</string>
+    <string name="global.undefined">"undefined"</string>
+    <string name="trash.lastUpdate.today">"today"</string>
+    <string name="trash.lastUpdate.yesterday">"yesterday"</string>
+    <string name="trash.lastUpdate.thisWeek">"this week"</string>
+    <string name="trash.lastUpdate.moreThanWeekAgo">"more than a week ago"</string>
+    <string name="trash.lastUpdate.moreThanMonthAgo">"more than a month ago"</string>
+    <string name="trash.lastUpdate.moreThanSixMonthAgo">"more than 6 months ago"</string>
+    <string name="trash.lastUpdate.moreThanYearAgo">"more than a year ago"</string>
+    <string name="global.validation.imagesRequired">"Images are required"</string>
+    <string name="trash.create.firstStep">"General Information"</string>
+    <string name="trash.create.secondStep">"Additional Information"</string>
+    <string name="trash.create.thirdStep">"Choose Images"</string>
+    <string name="trash.header">"Trash Management"</string>
+    <string name="trash.history">"History"</string>
+    <string name="trash.created">"Reported"</string>
+    <string name="global.facebookLogin">"Log in with Facebook"</string>
+    <string name="global.login">"Log in"</string>
+    <string name="global.backToLogin">"Back to login"</string>
+    <string name="notifications.header">"Notifications"</string>
+    <string name="collectionPoint.filter.ids">"Recycling Points IDs"</string>
+    <string name="collectionPoint.create.openDaysAddException">"Add Exception Hours"</string>
+    <string name="collectionPoint.note">"Note"</string>
+    <string name="global.reviewed">"Reviewed"</string>
+    <string name="global.reviewed.true">"only reviewed"</string>
+    <string name="global.reviewed.false">"only unreviewed"</string>
+    <string name="trash.filter.ids">"Trash IDs"</string>
+    <string name="trash.filter.userIds">"User IDs"</string>
+    <string name="notifications.unreviewedUsers">"Unreviewed users"</string>
+    <string name="notifications.reportedTrashes">"Reported trashes"</string>
+    <string name="notifications.reportedCollectionPoints">"Reported Recycling Points"</string>
+    <string name="notifications.users.approve">"Approve"</string>
+    <string name="notifications.users.deny">"Remove Activities"</string>
+    <string name="notifications.spam.confirm">"Confirm as Spam"</string>
+    <string name="notifications.spam.deny">"Not Spam"</string>
+    <string name="global.days.Friday">"Friday"</string>
+    <string name="global.days.Monday">"Monday"</string>
+    <string name="global.days.Saturday">"Saturday"</string>
+    <string name="global.days.Sunday">"Sunday"</string>
+    <string name="global.days.Thursday">"Thursday"</string>
+    <string name="global.days.Tuesday">"Tuesday"</string>
+    <string name="global.days.Wednesday">"Wednesday"</string>
+    <string name="global.form.aa1">"Administrative Area 1"</string>
+    <string name="global.form.aa2">"Administrative Area 2"</string>
+    <string name="global.form.aa3">"Administrative Area 3"</string>
+    <string name="event.childFriendly">"Child friendly"</string>
+    <string name="event.childFriendly.false">"No"</string>
+    <string name="event.childFriendly.true">"Yes"</string>
+    <string name="event.edit.header">"Edit event"</string>
+    <string name="event.description">"Description"</string>
+    <string name="event.filter.header">"Event filter"</string>
+    <string name="event.id">"ID"</string>
+    <string name="event.filter.ids">"Event IDs"</string>
+    <string name="event.list.header">"List of Events"</string>
+    <string name="user.birthday">"Birthday"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.form.continent">"Continent"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.form.country">"Country"</string>
+
+    <!-- Fuzzy -->
+    <string name="trash.filter.anyActivityDateFrom">"Any Activity From"</string>
+
+    <!-- Fuzzy -->
+    <string name="trash.filter.anyActivityDateTo">"Any Activity To"</string>
+    <string name="global.day">"Day"</string>
+    <string name="event.filter.startTimeFrom">"Event Start: Date and Time"</string>
+    <string name="event.filter.startTimeTo">"Event End: Date and Time"</string>
+    <string name="global.pickOne">"Pick One"</string>
+    <string name="profile.edit.profileImage">"Profile Image"</string>
+    <string name="global.table">"List"</string>
+    <string name="event.confirmation.createEvent">"Do you really want to create event?"</string>
+    <string name="trash.confirmation.deleteActivity">"Do you really want to delete activity?"</string>
+    <string name="trash.confirmation.deleteImage">"Do you really want to delete image?"</string>
+    <string name="trash.confirmation.deleteTrash">"Do you really want to delete trash?"</string>
+    <string name="global.confirmation.header">"Confirmation"</string>
+    <string name="event.confirmation.joinEvent">"Do you really want to join event?"</string>
+    <string name="trash.confirmation.markSpam">"Do you really want to mark this dump as spam?"</string>
+    <string name="global.confirmation.reject">"really want to reject"</string>
+    <string name="event.confirmation.unjoinEvent">"Really want to leave event?"</string>
+    <string name="global.unsubscribe">"Do you really want to unsubscribe?"</string>
+    <string name="notifications.user.approve">"Really want to approve user?"</string>
+    <string name="global.selectFile">"Select File"</string>
+    <string name="global.selectFiles">"Select Files"</string>
+    <string name="trash.removeActivity">"Remove Activity"</string>
+    <string name="event.validation.areaToBig">"Area too big"</string>
+    <string name="event.validation.areaRequired">"Area required"</string>
+    <string name="global.required">"Required"</string>
+    <string name="global.typeAddress">"Type address"</string>
+    <string name="user.filter.header">"User filter"</string>
+    <string name="user.filter.userIds">"User IDs"</string>
+    <string name="user.list.header">"List of Users"</string>
+    <string name="user.roles.admin">"Admin"</string>
+    <string name="user.roles.manager">"Manager"</string>
+    <string name="user.roles.user">"User"</string>
+    <string name="profile.edit.header">"Update Profile"</string>
+    <string name="profile.edit.mainInfo">"Main information"</string>
+    <string name="profile.edit.otherInfo">"Other information"</string>
+    <string name="profile.changePassword">"Change Password"</string>
+    <string name="user.filter.emails">"List of E-mails (Separated by a comma without space)"</string>
+    <string name="user.filter.organizationIds">"Organization IDs"</string>
+    <string name="global.pageNotFound.header">"This page isn't available"</string>
+    <string name="global.pageNotFound.text">"The link may be broken, or the page may have been removed."</string>
+    <string name="global.pageNotFound.continue">"Continue here please."</string>
+    <string name="collectionPoint.create.everyDayFromAm">"Open from (AM)"</string>
+    <string name="collectionPoint.create.everyDayFromPm">"Open from (PM)"</string>
+    <string name="collectionPoint.create.everyDayToAm">"Open to (AM)"</string>
+    <string name="collectionPoint.create.everyDayToPm">"Open to (PM)"</string>
+    <string name="collectionPoint.create.chooseDay">"Choose day"</string>
+    <string name="global.map">"Map"</string>
+    <string name="collectionPoint.validation.timeFromMustBeGreater">"Time FROM (PM) must be greater"</string>
+    <string name="collectionPoint.validation.timeToMustBeGreater">"Time TO must be greater than time FROM"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.validation.tooLong">"Value is too long"</string>
+    <string name="global.validation.urlInvalid">"Invalid URL (e.g.: http://www.google.com)"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.validation.passwordTooLong">"Password is too long"</string>
+    <string name="global.validation.phoneInvalid">"Oops, the phone you entered looks invalid :("</string>
+    <string name="global.validation.phoneRequired">"Please fill phone number"</string>
+    <string name="trash.validation.statusRequired">"Status is required"</string>
+    <string name="event.validation.nameRequired">"Name is required"</string>
+    <string name="global.validation.locationRequired">"Location Required"</string>
+    <string name="user.validation.passwordShouldContain">"Passwords must contain at least 1 uppercase letter, 1 lowercase letter and 1 number."</string>
+    <string name="organizations.name">"Organization Name"</string>
+    <string name="organizations.id">"Organization ID"</string>
+    <string name="profile.newPassword">"New Password"</string>
+    <string name="profile.oldPassword">"Old Password"</string>
+    <string name="user.google">"Google"</string>
+    <string name="user.newsletter">"Sending newsletter e-mails"</string>
+    <string name="collectionPoint.openDays">"Open Days"</string>
+    <string name="collectionPoint.fromAm">"From AM"</string>
+    <string name="collectionPoint.fromPm">"From PM"</string>
+    <string name="collectionPoint.toAm">"To AM"</string>
+    <string name="collectionPoint.toPm">"To PM"</string>
+    <string name="collectionPoint.startTime">"Start Time"</string>
+    <string name="global.image">"Image"</string>
+    <string name="global.images">"Images"</string>
+    <string name="global.url">"Webpage (URL)"</string>
+    <string name="global.menu.users">"Users"</string>
+    <string name="global.menu.news">"News"</string>
+    <string name="user.points">"Points"</string>
+    <string name="global.itemsPerPage">"Items per Page"</string>
+    <string name="news.id">"ID"</string>
+    <string name="news.title">"Title"</string>
+    <string name="news.language">"Language"</string>
+    <string name="event.create.failed">"Event creation failed"</string>
+    <string name="home.helpUsToCleanIt">"Help us to clean it!"</string>
+    <string name="global.processing">"Processing"</string>
+    <string name="global.validation.unknownError">"Unknown error"</string>
+    <string name="trash.message.noNearByTrash">"No nearby trash"</string>
+    <string name="trash.message.updateThisTrash">"Update this dumpsite"</string>
+    <string name="trash.create.TakeSomePictures">"Take some pictures of this place"</string>
+    <string name="global.information">"Information"</string>
+    <string name="trash.detail.reportToMunicipality">"Send by Email"</string>
+    <string name="trash.detail.sendNotification">"Send notification"</string>
+    <string name="trash.detail.spam">"Is This Report a Spam?"</string>
+    <string name="trash.detail.spamText">"Do you think this report is not relevant or contains anything unwanted?"</string>
+    <string name="trash.detail.municipalityText">"Send this report by e-mail to local municipality or environmental NGO"</string>
+    <string name="trash.detail.noCleaningEvent">"There is no cleaning event for this dump"</string>
+    <string name="trash.detail.ofThisIllegalDump">"of this illegal dump"</string>
+    <string name="trash.detail.fromDifferentAngle">"from different angle / distance"</string>
+    <string name="global.camera">"Camera"</string>
+    <string name="global.gallery">"Gallery"</string>
+    <string name="global.camera.photoSource">"Photo source"</string>
+    <string name="global.time.year">"year"</string>
+    <string name="global.time.month">"month"</string>
+    <string name="global.time.week">"week"</string>
+    <string name="global.time.day">"day"</string>
+    <string name="global.time.hour">"hour"</string>
+    <string name="global.time.minute">"minute"</string>
+    <string name="global.time.second">"second"</string>
+    <string name="global.time.0secAgo">"0 seconds ago"</string>
+    <string name="global.time.0sec">"0 seconds"</string>
+    <string name="global.time.ago">"\"ago\""</string>
+    <string name="global.sendEmail">"Send e-mail"</string>
+    <string name="global.validation.warning">"Warning"</string>
+    <string name="global.validation.noEmailClientInstalled">"No e-mail client insttaled"</string>
+    <string name="trash.edit.greaterDistanceText">"Distance is greater than 100m from trash. You must be close to the dump."</string>
+    <string name="trash.edit.minPhotosText">"To create or update trash you have to take at least %d photo"</string>
+    <string name="trash.validation.mustSelectMeetingPoint">"You must first choose the position of meeting"</string>
+    <string name="event.detail.bring">"Bring"</string>
+    <string name="event.detail.pleaseBring">"What We Need"</string>
+    <string name="global.cropImage">"Crop Image"</string>
+    <string name="collectionPoint.disposeTypes">"Type of Trash to Dispose"</string>
+    <string name="global.readMore">"Read more"</string>
+    <string name="user.validation.nonEmptyOrganization">"You did not select an organization. Select company or organization in edit profile."</string>
+    <string name="global.gpsFormat">"GPS Coordinates Format"</string>
+    <string name="global.locationFormatDegreesExample">"48.654684, 19.1676514"</string>
+    <string name="global.signup">"Sign up"</string>
+    <string name="user.login.validation.unknownError">"Login Error - unknown server error"</string>
+    <string name="user.login.validation.notFirebaseUser">"Login Error - not a firebase user"</string>
+    <string name="user.login.validation.autentification_filed">"Authentication failed."</string>
+    <string name="user.validation.confirmPasswordRequired">"Confirm Password must by entered"</string>
+    <string name="user.login.create.error">"Login Error - create user error"</string>
+    <string name="user.login.linkError">"Linking user Error"</string>
+    <string name="user.register.notExists">"User does not exist. Please change the email address or register."</string>
+    <string name="user.register.success">"Sign Up success"</string>
+    <string name="user.login.success">"Login successful"</string>
+    <string name="user.login.getToken">"Get user token failed"</string>
+    <string name="user.login.anonymous.linkError">"Link with anonymous user failed"</string>
+    <string name="user.login.canceled">"Sign in canceled"</string>
+    <string name="global.validation.noNetwork">"No network"</string>
+    <string name="global.commingSoon">"Coming soon"</string>
+    <string name="trash.edit.spamText">"Do you really want to mark this trash point as SPAM?"</string>
+    <string name="trash.detail.loadingFailed">"Loading trash detail failed."</string>
+    <string name="trash.create.markAsSpamFailed">"Marking trash as SPAM failed"</string>
+    <string name="trash.create.markAsSpamSuccessful">"Marking trash point as SPAM successful"</string>
+    <string name="event.joinEventFailed">"Joining to event failed"</string>
+    <string name="event.joinEventSuccessful">"Event was joined"</string>
+    <string name="event.joinEventConfirmationMessage">"Do you really want to join in on the event?"</string>
+    <string name="trash.report.locationAccuracyMessage">"Location Accuracy Trying to get better location"</string>
+    <string name="user.resetPassword.message">"Do you really want to reset password?"</string>
+    <string name="user.validation.resetPassword.failed">"Reset password failed"</string>
+    <string name="user.validation.resetPassword.success">"Password reset successful. Please check your e-mail."</string>
+    <string name="trash.validation.createFailed">"Create Trash failed"</string>
+    <string name="trash.validation.updateFailed">"Update Trash failed"</string>
+    <string name="collectionPoint.zeroNearbyAvailable">"No collection points available nearby"</string>
+    <string name="user.validation.authFbMalformed">"Facebook token is credential or malformed or expired"</string>
+    <string name="user.validation.authFbCollision">"An account already exists. Please sign in with e-mail."</string>
+    <string name="user.validation.authFbInvalid">"User\'s account has been disabled, deleted, or its credentials are no longer valid"</string>
+    <string name="collectionPoint.validation.markAsNoLongerExistsFailed">"Marking collection point that no longer exists failed"</string>
+    <string name="collectionPoint.validation.markAsNoLongerExistsFailed.success">"Marking collection point that no longer exists successful"</string>
+    <string name="collectionPoint.markAsNoLongerExistsFailed.message">"Do you really want to mark collection point that it does not longer exists?"</string>
+    <string name="event.validation.selectTrash">"You must select  at least one trash"</string>
+    <string name="news.other">"Other News"</string>
+    <string name="news.empty">"No news"</string>
+    <string name="news.detail.attachedPhoto">"Attached photo"</string>
+    <string name="news.detail.attachedVideo">"Attached videos"</string>
+    <string name="event.organizeAction">"I want to organize a cleaning action"</string>
+    <string name="event.actionNotification">"I want to receive notifications about cleaning actions"</string>
+    <string name="event.user.email">"Your e-mail"</string>
+    <string name="event.user.phone">"Your phone"</string>
+    <string name="event.cleaningAction">"Cleaning action"</string>
+    <string name="collectionPoint.activity">"Trash point activity"</string>
+    <string name="event.activity">"Event activity"</string>
+    <string name="global.worldwide">"Worldwide"</string>
+    <string name="home.statisticsInArea">"Statistics for Selected Area"</string>
+    <string name="trashHunter.finished">"Hunting mode finished"</string>
+    <string name="global.noData">"No data"</string>
+    <string name="home.upcommingEvents">"Upcoming events in your neighborhood"</string>
+    <string name="home.noUserActivities">"No user activities found"</string>
+    <string name="home.userActivities">"User activities"</string>
+    <string name="widget.statistics.barChart">"Bar chart"</string>
+    <string name="widget.statistics.donutChart">"Donut chart"</string>
+    <string name="widget.statistics.chartStatus">"By status"</string>
+    <string name="widget.statistics.chartAccessibility">"By accessibility"</string>
+    <string name="widget.statistics.chartSize">"By size"</string>
+    <string name="widget.statistics.chartType">"By type"</string>
+    <string name="widget.statistics.breakdownOfDumps">"Breakdown of illegal dumps in"</string>
+    <string name="widget.statistics.lastUpdatedDumps">"Last updated dumps in"</string>
+    <string name="profile.validation.emptyOrganization">"You don't have selected any organization"</string>
+    <string name="news.noArticles">"There are no articles yet, please come back later."</string>
+    <string name="event.dontWantOrganize">"I don't want to organize or help with organization of any cleaning event"</string>
+    <string name="event.dontWantReceiveNotification">"I don't want to receive any information about cleaning events"</string>
+    <string name="global.language.english">"English"</string>
+    <string name="global.language.czech">"Czech"</string>
+    <string name="global.language.germany">"German"</string>
+    <string name="global.language.espana">"Spanish"</string>
+    <string name="global.language.slovakia">"Slovak"</string>
+    <string name="global.locationFormatDrmsExample">"49°10'24\" N, 18°49'0\" E"</string>
+    <string name="trash.create.ofCleanedDump">"of the cleaned dump"</string>
+    <string name="trash.edit.title">"Update a Dump"</string>
+    <string name="trash.create.title">"Report Dump"</string>
+    <string name="tutorial.title.1">"We are happy to see you!"</string>
+    <string name="tutorial.text.1">"Use TrashOut to locate and monitor illegal dumps all around the world."</string>
+    <string name="tutorial.title.2">"It's easy!"</string>
+    <string name="tutorial.text.2">"When you see an illegal dump, tap plus or report button, take a picture and fill in all the details."</string>
+    <string name="tutorial.title.3">"Illegal dump is reported!"</string>
+    <string name="tutorial.text.3">"Local municipalities, citizens or NGOs can be notified about illegal dumps in their neighborhood."</string>
+    <string name="tutorial.title.4">"TrashOut offers more!"</string>
+    <string name="tutorial.text.4">"Find the nearest collection point for your bulky trash, organize cleaning event, or learn more about environment."</string>
+    <string name="tutorial.title.5">"Join us!"</string>
+    <string name="tutorial.text.5">"Create your account to track your activities and earn green points. Make sure to allow GPS and notifications to take full advantage of TrashOut."</string>
+    <string name="profile.update.success">"Your profile was successfully updated"</string>
+    <string name="profile.myAreas">"My Areas"</string>
+    <string name="profile.myOrganizations">"My Organizations"</string>
+    <string name="profile.role">"Role"</string>
+    <string name="geo.header">"Geographical Areas"</string>
+
+    <!-- Fuzzy -->
+    <string name="geo.admin.myAreas">"Areas I Administrate"</string>
+    <string name="geo.admin.areaDetail">"Area Detail"</string>
+    <string name="geo.id">"ID"</string>
+    <string name="geo.type">"Area Type"</string>
+    <string name="geo.name">"Area Name"</string>
+    <string name="geo.addManager">"Add Manager"</string>
+    <string name="geo.selectSpecificArea">"Select Specific Area"</string>
+    <string name="geo.selectedArea">"Selected Area"</string>
+    <string name="geo.selectArea.header">"Select Area"</string>
+    <string name="geo.selectArea">"Select"</string>
+    <string name="geo.managers">"Managers"</string>
+
+    <!-- Fuzzy -->
+    <string name="geo.users">"Users"</string>
+    <string name="geo.aliases">"Aliases"</string>
+    <string name="geo.admins">"Administrators"</string>
+    <string name="user.id">"ID"</string>
+    <string name="geo.continent">"Continent"</string>
+    <string name="geo.country">"Country"</string>
+    <string name="geo.aa1">"Administrative Area 1"</string>
+    <string name="geo.aa2">"Administrative Area 2"</string>
+    <string name="geo.aa3">"Administrative Area 3"</string>
+    <string name="global.form.locality">"Locality"</string>
+    <string name="geo.locality">"Locality"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.form.subLocality">"Sublocality"</string>
+    <string name="geo.sublocality">"Sublocality"</string>
+    <string name="geo.removeAdmin">"Remove Administrator"</string>
+    <string name="geo.removeAlias">"Remove Alias"</string>
+    <string name="geo.addAdmin">"Add Admin"</string>
+    <string name="geo.addAlias">"Add Alias"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.findUser">"Find Users by E-mail"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.selectUser">"Select User"</string>
+    <string name="organizations.header">"Organizations"</string>
+    <string name="organizations.list.header">"List of Organizations"</string>
+    <string name="news.header">"News"</string>
+    <string name="news.list.header">"List of News"</string>
+    <string name="trash.create">"Report"</string>
+    <string name="global.accountCreated">"Account was created"</string>
+    <string name="global.activateAccount">"Go to your e-mail to activate your account"</string>
+    <string name="user.myProfile">"My Profile"</string>
+    <string name="user.addArea">"Add Areas of Interest"</string>
+    <string name="user.generateApiKey">"Generate API Key"</string>
+    <string name="user.aboutMe">"About me"</string>
+    <string name="trash.markedAsSpam.success">"Thank you for keeping our database up to date! Our admins will review your report."</string>
+    <string name="trash.markedAsSpam.alreadyMarked">"This trash is already marked as SPAM."</string>
+    <string name="profile.avatar">"Your Avatar"</string>
+    <string name="user.contacts">"Contacts"</string>
+    <string name="user.roles.superAdmin">"SuperAdministrator"</string>
+    <string name="profile.myEvents">"My Events"</string>
+    <string name="organization.description">"Description"</string>
+    <string name="user.geo.notificationFrequency">"Notification Frequency"</string>
+    <string name="user.reviewed">"Reviewed User"</string>
+    <string name="user.created">"Account created"</string>
+    <string name="trash.create.successs">"Thank you for keeping our database up to date and taking care of our environment."</string>
+    <string name="collectionPoint.create.images">"Please select Image or Logo of Recycling Point. It's not necessary, but it helps others to find the place easier. "</string>
+    <string name="global.phone.placeholder">"+420123456789"</string>
+    <string name="global.email.placeholder">"john@example.com"</string>
+    <string name="organization.detail.header">"Organization detail"</string>
+    <string name="organization.join">"Join Organization"</string>
+    <string name="organization.leave">"Leave Organization"</string>
+    <string name="organization.edit">"Edit Organization"</string>
+    <string name="trash.removeActivity.success">"Trash Activity was successfully deleted."</string>
+    <string name="trash.update.success">"Trash was successfully updated."</string>
+    <string name="geo.noAliasExists">"No Alias exists for selected Area"</string>
+    <string name="collectionPoint.contact.header">"Contacts"</string>
+    <string name="global.url.placeholder">"https://www.trashout.ngo"</string>
+    <string name="collectionPoint.update.success">"Recycling point was successfully updated."</string>
+    <string name="user.editArea">"Edit Area of interest"</string>
+    <string name="user.geo.notificationFrequency.perHour">"Per hour"</string>
+    <string name="user.geo.notificationFrequency.never">"Never"</string>
+    <string name="user.geo.notificationFrequency.perDay">"Per day"</string>
+    <string name="user.geo.notificationFrequency.perWeek">"Per week"</string>
+    <string name="user.geo.notificationFrequency.perMonth">"Per month"</string>
+    <string name="user.level">"Level"</string>
+    <string name="geo.userAdd.success">"User was added successfully."</string>
+    <string name="geo.userDelete.success">"User's role was successfully removed."</string>
+    <string name="global.validation.noteTooLong">"Note is too long. Maximum is 180 characters."</string>
+    <string name="user.newsletter.enabled.true">"Newsletter enabled"</string>
+    <string name="user.newsletter.enabled.false">"Newsletter disabled"</string>
+
+    <!-- Fuzzy -->
+    <string name="profile.removeAccount.title">"Delete profile"</string>
+    <string name="profile.removeAccount">"Delete profile"</string>
+    <string name="user.filter.minPoints">"Minimum points"</string>
+    <string name="user.filter.maxPoints">"Maximum points"</string>
+    <string name="profile.statistics.title">"Statistics about your activities"</string>
+    <string name="user.detail.header">"User Detail"</string>
+    <string name="organization.sendInvitations">"Send invitation"</string>
+    <string name="organization.addManager">"Add manager of organization"</string>
+    <string name="organization.contacts">"Contacts"</string>
+    <string name="organization.created">"Created"</string>
+    <string name="organization.members">"Members"</string>
+    <string name="collectionPoint.delete.confirmation">"Do you really want to delete this Recycling Point?"</string>
+    <string name="collectionPoint.detail.header">"Recycling Point Detail"</string>
+    <string name="collectionPoint.create.success">"Recycling point was successfully created."</string>
+
+    <!-- Fuzzy -->
+    <string name="organization.create.success">"Organization was successfully created."</string>
+
+    <!-- Fuzzy -->
+    <string name="organization.create.firstStep">"General Information"</string>
+    <string name="organization.create.secondStep">"Organization Area and Parent Organization"</string>
+    <string name="organization.create.thirdStep">"Choose Logo"</string>
+    <string name="organization.join.success">"You successfully joined this organization at TrashOut platform."</string>
+    <string name="organization.leave.success">"Leaving Organization was successful"</string>
+    <string name="organization.update.success">"Organization was successfully updated"</string>
+    <string name="organization.parent">"Parent organization"</string>
+    <string name="organization.logo">"Organization Logo"</string>
+    <string name="organization.confirmation.leave">"Do you really want to leave this Organization?"</string>
+    <string name="organization.confirmation.join">"Do you want to join this Organization?"</string>
+    <string name="organization.confirmation.delete">"Do you really want delete Organization?"</string>
+    <string name="organization.invitation.selectFile">"Select file with one e-mail on each line (.csv, .txt)"</string>
+    <string name="organization.invitation.writeEmails">"Write e-mails separated by comma or on new line"</string>
+    <string name="organization.invitation.writeEmails.placeholder">"john@doe.com, john@example.com"</string>
+    <string name="collectionPoint.validation.nameRequired">"Name is required"</string>
+    <string name="collectionPoint.validation.dayRequired">"Please select at least one day"</string>
+    <string name="collectionPoint.validation.timeFromRequired">"Time From is required"</string>
+    <string name="collectionPoint.validation.timeToRequired">"Time To is required"</string>
+    <string name="collectionPoint.validation.typeRequired">"Type is required"</string>
+
+    <!-- Fuzzy -->
+    <string name="user.roles.organization.member">"Member"</string>
+    <string name="organization.create.fourthStep">"Invitation mail template"</string>
+    <string name="organization.mailSubject">"Mail Subject"</string>
+    <string name="organization.mailBody">"Mail Body"</string>
+    <string name="organization.parentOrganization.select">"Select parent organization"</string>
+    <string name="organization.validation.nameRequired">"Organization Name required"</string>
+    <string name="organization.location">"Organization location"</string>
+    <string name="event.detail.header">"Cleaning Event Detail"</string>
+    <string name="user.levelDescription">"You have {currentPoints} points. Get {nextLevel} more to reach next level. Report and update dumps or attend cleaning events."</string>
+    <string name="profile.preferences">"My preferences"</string>
+    <string name="user.eventOrganizer">"I want to organize or help with organization of cleaning events"</string>
+    <string name="user.volunteerCleanup">"I want to take part in cleaning events"</string>
+    <string name="profile.myAreas.description">"Areas that you selected to monitor in your profile settings. Set
+regular e-mail notifications about reported and cleaned dumps. Get notified
+daily, weekly or monthly to stay informed about activities in the location you care about."</string>
+    <string name="profile.myOrganizations.description">"Organizations that you created or are part of in TrashOut app."</string>
+    <string name="profile.myEvents.description">"All events, future and past, that you organized or joined."</string>
+    <string name="profile.myEvents.userRole">"Creator / Joined"</string>
+    <string name="profile.myEvents.timeDecision">"Future / Past"</string>
+    <string name="profile.myEvents.userRole.creator">"Creator"</string>
+    <string name="profile.myEvents.userRole.joined">"Joined"</string>
+    <string name="profile.myEvents.timeDecision.future">"Future"</string>
+    <string name="profile.myEvents.timeDecision.past">"Past"</string>
+    <string name="event.create.firstStep">"General Information"</string>
+    <string name="event.create.secondStep">"Select Dumps to be cleaned"</string>
+    <string name="event.create.thirdStep">"Meeting Point"</string>
+    <string name="global.findPlace">"Find Place"</string>
+
+    <!-- Fuzzy -->
+    <string name="event.map.removeRectangle">"Remove rectangle"</string>
+    <string name="event.detail.duration">"Event Duration"</string>
+    <string name="collectionPoint.gpsLocation">"Recycling point GPS"</string>
+    <string name="collectionPoint.gpsMap">"Recycling point on map"</string>
+    <string name="collectionPoint.category.recyclabes">"Recyclabes"</string>
+    <string name="collectionPoint.category.dangerous">"Dangerous"</string>
+    <string name="collectionPoint.category.construction">"Construction"</string>
+    <string name="collectionPoint.category.household">"Household"</string>
+    <string name="collectionPoint.category.automotive">"Automotive"</string>
+    <string name="collectionPoint.category.other">"Other"</string>
+    <string name="collectionPoint.category.everything">"Everything"</string>
+    <string name="collectionPoint.category">"Recycle Point Type Category"</string>
+    <string name="user.editArea.success">"Area was successfully updated"</string>
+    <string name="user.roles.organization.manager">"Manager"</string>
+    <string name="user.roles.organization">"Organization Role"</string>
+    <string name="profile.changeEmail">"Change E-mail"</string>
+    <string name="profile.newEmail">"New E-mail"</string>
+    <string name="collectionPoint.remove.success">"Recycling point was successfully removed."</string>
+    <string name="collectionPoint.markedAsSpam.alreadyMarked">"This Recycling Point is already marked as SPAM."</string>
+    <string name="event.detail.when">"When"</string>
+    <string name="event.detail.date">"Date"</string>
+    <string name="event.detail.time">"Time"</string>
+    <string name="event.detail.timeZone">"Time Zone"</string>
+    <string name="event.detail.dumpsCount">"Number of dumps to be cleaned"</string>
+
+    <!-- Fuzzy -->
+    <string name="event.detail.organizer">"Organizer"</string>
+    <string name="event.detail.organizer.name">"Name"</string>
+
+    <!-- Fuzzy -->
+    <string name="event.detail.organizer.function">"Organization, Role within Organization"</string>
+    <string name="event.detail.map">"Map with meeting point and area to be cleaned"</string>
+    <string name="event.detail.images">"Images from Event"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.showWholeGallery">"Show whole gallery"</string>
+    <string name="event.detail.dumpsToBeCleaned">"Dumps to be cleaned"</string>
+    <string name="event.detail.collectionPoints">"Recycling Points"</string>
+    <string name="event.detail.joinedUsers">"Joined Users"</string>
+    <string name="event.feedback.header">"Feedback"</string>
+    <string name="event.feedback.guessGuestCount">"Guess guest count"</string>
+    <string name="event.feedback.guessCollectTrashCount">"Guess amount of cleaned trash"</string>
+    <string name="event.feedback.addFeedback">"Add feedback"</string>
+    <string name="event.userConfirm.header">"Confirm user"</string>
+    <string name="event.userConfirm">"Confirm"</string>
+    <string name="event.userConfirm.send">"Send confirmation"</string>
+    <string name="event.edit.otherInformation">"Other Information"</string>
+    <string name="event.detail.attendeesCount">"Attendees Count"</string>
+    <string name="event.organizer.phone">"Phone:"</string>
+    <string name="event.organizer.email">"E-mail:"</string>
+    <string name="event.detail.reports">"Reports"</string>
+    <string name="event.detail.start">"Start"</string>
+    <string name="event.detail.end">"End"</string>
+    <string name="global.imageRemoved.success">"Image was successfully deleted."</string>
+    <string name="organization.usersCount">"Users of TrashOut that are members of this organization"</string>
+    <string name="event.validation.durationRequired">"Duration is required."</string>
+    <string name="event.validation.startDateRequired">"Start Date of Event is required"</string>
+    <string name="event.validation.startTimeRequired">"Start time is required"</string>
+    <string name="global.noResult">"No result."</string>
+    <string name="event.create.collectionPoints">"Recycling Points in area"</string>
+    <string name="event.filter.upcomingOrOld">"Show Upcoming or Old"</string>
+    <string name="event.filter.showUpcoming">"Show only upcoming"</string>
+    <string name="event.filter.showOld">"Show only passed"</string>
+    <string name="event.feedback.images">"Add photos from event"</string>
+    <string name="event.create.setLocationDescription">"Please draw rectangle to map. If you draw rectangle smaller than 30 km you will be able to select specific Dumps on the map."</string>
+    <string name="event.create.largeAreaDescription">"You selected large area. Its larger than 30 km. Specific dumps will not be shown on the map."</string>
+    <string name="event.create.smallAreaDescription">"You selected small area. Dumps will be shown."</string>
+    <string name="organization.invitation.description">"From here you can send email invitations to other TrashOut users or outside people with suggestion to join this organization and TrashOut platform. They will receive template email invitation, that was created and can be edited by the managers of this organization."</string>
+    <string name="global.signingOut">"Signing Out"</string>
+    <string name="user.detail.organizations">"Organizations"</string>
+    <string name="user.detail.areas">"Areas"</string>
+    <string name="user.detail.events">"Events"</string>
+    <string name="user.detail.reportedDumps">"Reported Dumps"</string>
+    <string name="user.detail.updatedDumps">"Updated Dumps"</string>
+
+    <!-- Fuzzy -->
+    <string name="user.filter.areaIds">"Area Ids"</string>
+    <string name="news.tags">"Tags"</string>
+    <string name="news.author">"Author"</string>
+    <string name="news.created">"Created"</string>
+    <string name="news.area">"Geographical area"</string>
+    <string name="news.timesShared">"times shared"</string>
+    <string name="news.create.firstStep">"Basic information"</string>
+    <string name="news.create.secondStep">"Content and Tags"</string>
+    <string name="news.create.thirdStep">"Images"</string>
+    <string name="news.content">"Content"</string>
+    <string name="news.body">"Body"</string>
+    <string name="news.images">"Images"</string>
+    <string name="news.success.update">"Article was successfully updated."</string>
+    <string name="news.success.deleted">"Article was successfully deleted."</string>
+    <string name="news.success.created">"Article was successfully created."</string>
+    <string name="news.detail.header">"Article detail"</string>
+    <string name="news.delete.confirmation">"Do you want to remove this article?"</string>
+    <string name="notifications.reviewedUser.detail">"Unreviewed User Detail"</string>
+    <string name="notifications.reviewedUser.trash.image">"Image of Dump"</string>
+    <string name="notifications.reviewedUser.trash.id">"Dump ID"</string>
+    <string name="notifications.reviewedUser.trash.action">"Action"</string>
+    <string name="notifications.reviewedUser.trash.created">"Dump Created"</string>
+    <string name="event.endDate">"End date of an event"</string>
+    <string name="event.endTime">"End time of an event"</string>
+    <string name="event.addFeedback.success">"Feedback was successfully submitted. Thank you."</string>
+    <string name="news.filter.keyword">"Keyword"</string>
+    <string name="global.note.hint">"Keyword"</string>
+    <string name="global.form.selectArea">"Select Area"</string>
+    <string name="event.meetingPoint.listHeader">"Meeting Point"</string>
+    <string name="global.select">"Select"</string>
+    <string name="export.selectAttributes">"Select Attributes to Export"</string>
+    <string name="export.itemsPerFile">"Items per file"</string>
+    <string name="export.itemsPerFile.currentValue">"Value"</string>
+    <string name="export.preparingExport">"Export is being prepared..."</string>
+    <string name="global.latitude">"Latitude"</string>
+    <string name="global.longitude">"Longitude"</string>
+    <string name="collectionPoint.created">"Created Time"</string>
+    <string name="user.language">"Language preference for email notifications"</string>
+    <string name="user.export.eventOrganizer">"Event Organizer"</string>
+    <string name="user.export.volunteerCleanup">"Volunteer Cleanup"</string>
+    <string name="trash.image">"Image of Trash"</string>
+    <string name="user.generateWidget">"Generate Widget"</string>
+    <string name="user.eventOrganizer.yes">"I want to organize or help with organization of any cleaning event"</string>
+    <string name="user.eventOrganizer.no">"I don't want to organize or help with organization of any cleaning event"</string>
+    <string name="user.volunteerCleanup.yes">"I want to take part in cleaning events"</string>
+    <string name="user.volunteerCleanup.no">"I do not want to participate in cleaning events as volunteer"</string>
+    <string name="user.widget.firstStep">"Choose widget type"</string>
+    <string name="user.widget.secondStep">"Parameters"</string>
+    <string name="user.widget.thirdStep">"Widget Code"</string>
+    <string name="user.widget.type">"Widget type"</string>
+    <string name="user.widget.trashDetail">"Trash detail Widget"</string>
+    <string name="user.widget.trashMap">"Trash Map"</string>
+    <string name="user.widget.eventDetail">"Event detail"</string>
+    <string name="user.widget.trashStatistics">"Trash statistics Widget"</string>
+    <string name="user.apiKey">"API key"</string>
+    <string name="user.apiKey.description">"This is your API key, than can be used for widgets or API"</string>
+    <string name="user.apiKey.generate">"Generate"</string>
+    <string name="user.apiKey.regenerate">"Re-generate"</string>
+    <string name="user.apiKey.yourKey">"Your API key"</string>
+    <string name="user.apiKey.copy">"Copy to clipboard"</string>
+    <string name="user.apiKey.notFound">"API key not found"</string>
+    <string name="user.widget.codeDescription">"This is Widget Code. You just put it to your webpage code."</string>
+    <string name="organizations.logo">"Logo"</string>
+    <string name="organizations.address">"Address"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.greeting">"Dear"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.eventInfo1">"we noticed you joined event"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.eventInfo2">"in TrashOut application. It takes place tomorrow"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.eventInfo3">"at"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.eventInfo4">"The meeting point is at"</string>
+
+    <!--  please? -->
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.eventInfo5">"Can you confirm your attendance?"</string>
+
+    <!--  I will come -->
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.confirmButton">"Yes"</string>
+
+    <!--  please see -->
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.eventDetail1">"For more details and contacts"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.eventDetail2">"event detail"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.eventDetail3">"in TrashOut application."</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.thanks">"Thank you for making our World cleaner for everyone."</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.organizer">"Organizer of event is"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventConfirm.footer">"You received this e-mail because you joined this event in TrashOut application and agreed to terms and conditions of TrashOut app."</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventCreate.greeting">"Dear"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventCreate.eventInfo1">"we noticed you created an event called"</string>
+
+    <!--  you are awesome! -->
+    <!-- Fuzzy -->
+    <string name="mail.eventCreate.eventInfo2">"in TrashOut application. Thank you for taking care of environment."</string>
+
+    <!--  or see joined attendees -->
+    <!-- Fuzzy -->
+    <string name="mail.eventCreate.eventEdit">"In case you would like to edit or cancel your event"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventCreate.detailButton">"See event detail"</string>
+
+    <!--  how many bags of trash were collected and if they want to share some pictures from event. You can check it on event detail in section “reports”. -->
+    <string name="mail.eventCreate.eventConfirmation">"Please know that one day before your event we will ask people who joined to confirm their attendance. One day after the event we will ask for their guess of how many people came, how many bags of trash were collected and if they want to share some pictures. Check event detail on admin.trashout.ngo to see this information. "</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventCreate.wishing">"We wish you successful event!"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventCreate.thanks">"Thank you for making our World cleaner for everyone. Don't forget to use TrashOut mobile application to find and update illegal dumps and learn about environment."</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventCreate.footer">"You received this e-mail because you created an event in TrashOut application and agreed to terms and conditions of TrashOut app."</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventFeedback.greeting">"Dear"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventFeedback.eventFeedback1">"we want to THANK YOU for participating in a cleaning event"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventFeedback.eventFeedback2">"that took place yesterday. You are awesome! Thanks to your effort this location is now cleaner."</string>
+
+    <!--  bags of trash collected or share your photos. Inspire others to make the World cleaner. -->
+    <!-- Fuzzy -->
+    <string name="mail.eventFeedback.eventFeedback3">"Let others know how successful you were. Fill in number of bags collected, number of attendees and share your photos. Inspire others to make the World cleaner."</string>
+
+    <!--  I want to inspire others -->
+    <!-- Fuzzy -->
+    <string name="mail.eventFeedback.feedbackButton">"Yes"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventFeedback.team">"&amp; TrashOut team."</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventFeedback.thanks">"Thank you for making our World cleaner for everyone. Don't forget to use TrashOut mobile application to find and update illegal dumps and learn about environment."</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.eventFeedback.footer">"You received this e-mail because you joined an event in TrashOut application and agreed to terms and conditions of TrashOut app."</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.organizationInvitation.greeting">"Dear"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.organizationInvitation.join1">"You were invited to join"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.organizationInvitation.join2">"in TrashOut application by its manager. Your invitation:"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.organizationInvitation.organizationButton">"See detail of organisation"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.organizationInvitation.mobileApp1">"TrashOut application allows people to map and monitor illegal dumps and trash all around the world. This data is then used by various organisations and municipalities to make our World cleaner. Download TrashOut mobile application for Android"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.organizationInvitation.mobileApp2">"here"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.organizationInvitation.mobileApp3">"and for iOS"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.organizationInvitation.mobileApp4">"here"</string>
+
+    <!--  TrashOut does not have your email address and thus cannot and will not contact you in any way. -->
+    <!-- Fuzzy -->
+    <string name="mail.organizationInvitation.footer">"You received this e-mail because some user of TrashOut application has invited you. In order to do so this user has to be member or manager of organization you were invited to join. Users decide who to invite and what to write in invitation. Until you join TrashOut as user"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.greeting">"Dear"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.p1">"thank you for taking care of our environment. You are awesome! Please see below recent activities in area you selected in TrashOut application."</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.area">"Area"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.heading1">"New reported dumps"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.heading2">"Updated dumps that are still there"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.heading3">"Cleaned dumps"</string>
+
+    <!--  you can do it from your -->
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.p2">"If you want to change frequency of this email notification"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.p3">"profile"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.p4">"in TrashOut application."</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.p5">"Thank you for making our World cleaner for everyone. Don't forget to use TrashOut mobile application to find and update illegal dumps and learn about environment."</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.footer">"You received this e-mail because you subscribed to monitor this area in TrashOut application and agreed to terms and conditions of TrashOut app. You can change your preferences any time"</string>
+
+    <!-- Fuzzy -->
+    <string name="mail.newsletter.footerLink">"here"</string>
+    <string name="global.language.russia">"Russian"</string>
+    <string name="user.stats.userReported">"User Reported"</string>
+    <string name="user.stats.userUpdated">"User Updated"</string>
+    <string name="user.stats.userCleaned">"User Cleaned"</string>
+    <string name="global.activateAccount.header">"Please verify e-mail and activate account"</string>
+    <string name="profile.changePassword.header">"Change password header"</string>
+    <string name="global.validation.invalidtwitterUrl">"Invalid Twiiter URL"</string>
+    <string name="global.validation.invalidgooglePlusUrl">"Invalid Goolge Plus URL"</string>
+    <string name="global.validation.invalidfacebookUrl">"Invalid Facebook URL"</string>
+    <string name="user.facebook.hint">"Link of your profile"</string>
+    <string name="user.twitter.hint">"https://twitter.com/user"</string>
+    <string name="user.google.hint">"Link of your profile"</string>
+    <string name="global.phone.hint">"Phone number starts with +/ 00"</string>
+    <string name="profile.currentPassword">"Current Password"</string>
+    <string name="user.addToArea.success">"Area was successfully added"</string>
+    <string name="collectionPoint.created.success">"Recycling point was successfully created"</string>
+    <string name="collectionPoint.markedAsSpam.success">"Recycling point was successfully marked as spam."</string>
+    <string name="collectionPoint.removed.success">"Recycling point was successfully removed"</string>
+    <string name="profile.passwordChanged.success">"Password was successfully changed."</string>
+    <string name="profile.emailChanged.success">"E-mail was successfully changed."</string>
+    <string name="profile.signedOut.success">"Sign out successful."</string>
+    <string name="event.removed.success">"Event was successfully removed"</string>
+    <string name="event.confirmed.success">"Event was successfully confirmed"</string>
+    <string name="event.unjoined.success">"Cancelation of your attendance was recorded. "</string>
+    <string name="spam.resolved.success">"Spam was resolved."</string>
+    <string name="spam.removed.success">"Spam was deleted."</string>
+    <string name="user.approved.success">"User was approved successfully."</string>
+    <string name="user.notApproved.success">"User was not approved."</string>
+    <string name="organization.removed.success">"Organization was successfully removed."</string>
+    <string name="organization.invitationSent.success">"Invitation was successfully sent."</string>
+    <string name="geo.rootSet.success">"Root of Area was successfully set."</string>
+    <string name="geo.rootUnset.success">"Root of Area was successfully unset."</string>
+    <string name="user.widget.height">"Widget height"</string>
+    <string name="user.widget.width">"Widget width"</string>
+    <string name="user.widget.language">"Widget language"</string>
+    <string name="user.widget.trash.id">"Trash ID"</string>
+    <string name="user.widget.copy">"Copy widget code"</string>
+    <string name="user.widget.map">"Select center of map"</string>
+    <string name="user.widget.map.lat">"Latitude"</string>
+    <string name="user.widget.map.lng">"Longitude"</string>
+    <string name="user.widget.map.zoom">"Zoom level"</string>
+    <string name="user.widget.filterLastUpdate">"Date of Last Update"</string>
+    <string name="user.widget.event.id">"Event ID"</string>
+    <string name="global.trashoutURL">"Admin Web URL"</string>
+    <string name="geo.createAlias">"Create Alias"</string>
+    <string name="user.confirmed">"Confirmed"</string>
+    <string name="user.confirmed.true">"Confirmed"</string>
+    <string name="user.confirmed.false">"Not confirmed"</string>
+    <string name="event.validation.eventShouldEndAfterStartDate">"Event start date has to be before end date"</string>
+    <string name="global.currentImage">"Current Image"</string>
+    <string name="global.videos">"Videos"</string>
+    <string name="geo.removeManager">"Remove Manager"</string>
+    <string name="global.pageNotFound">"Page Not Found"</string>
+    <string name="profile.widget.validation.typeNeeded">"Type is required"</string>
+    <string name="profile.widget.validation.heightFormat">"Insert values like 1000 px / em / %"</string>
+    <string name="profile.widget.validation.widthFormat">"Insert values like 1000 px / em / %"</string>
+    <string name="user.widget.height.hint">"Insert values like 1000 px / em / %"</string>
+    <string name="user.widget.width.hint">"Insert values like 1000 px / em / %"</string>
+    <string name="export.description">"You can modify which items to export in filter"</string>
+    <string name="global.oneOfRequired">"At least one is required to be filled."</string>
+
+    <!-- Fuzzy -->
+    <string name="notifications.user.approve.header">"Approve user"</string>
+    <string name="geo.description.admin">"In this section you can see and add managers for areas and subareas you administrate. Managers comparing to ordinary users are able to add articles, which will be shown both in mobile and web application worldwide. Moreover, you can see users that receive email notifications about activities in your areas."</string>
+    <string name="geo.description.superAdmin">"In this section you can see administrators, managers and users. You can add or remove administrators for areas and subareas. You can also manage aliases."</string>
+    <string name="user.geo.description">"Feel free to choose areas that you care about. Set email notifications and their frequency, so you can stay informed about reported and cleaned dumps in these areas. You can monitor as many areas as you wish and change settings of notifications any time!"</string>
+    <string name="geo.confirm.removeAdmin">"Do you want to delete administrator from area?"</string>
+    <string name="geo.confirm.removeManager">"Do you want to delete manager from area?"</string>
+    <string name="geo.addAlias.description">"You can create Alias here. Be carefull. Process is irreversible. For example you can create alias \"Czechia\" for root Czech republic. After that you will see in area lists only root Czech republic. "</string>
+    <string name="global.all">"All"</string>
+    <string name="event.validation.endDateRequired">"End Date of Event is required"</string>
+    <string name="event.validation.endTimeRequired">"End time is required"</string>
+    <string name="news.videoUrl">"Video URL"</string>
+    <string name="global.addNext">"Add Next"</string>
+    <string name="global.validation.sizeExceeded">"Size of some Image exceeded the limit. Upload smaller image (max 2 MB)."</string>
+    <string name="global.image.mainImage">"Main image"</string>
+    <string name="global.image.setAsMain">"Set image as main"</string>
+    <string name="news.validation.nameRequired">"Name required"</string>
+    <string name="spam.delete.permissionDenied">"You don't have permission to delete this SPAM"</string>
+    <string name="global.photos">"Photos"</string>
+    <string name="global.list">"List"</string>
+    <string name="global.dumps">"Dumps"</string>
+    <string name="global.lastUpdate">"Last update"</string>
+    <string name="global.subscribe">"Set regular email notifications to monitor areas you care about"</string>
+    <string name="global.validation.invalidUrl">"Invalid URL"</string>
+    <string name="spam.user.permissionDenied">"You don't have permission to approve user."</string>
+    <string name="trash.filter.area.hint">"In this section you choose area you wish to see. You can filter from continents up to smaller areas such as city districts. Either select some option from drop down menu or leave it on \"select\" and click submit."</string>
+    <string name="user.emailNotFound">"User not found in TrashOut"</string>
+    <string name="global.trashoutShareDescription">"TrashOut is an environmental project which aims to map all illegal dumps around the world and to help citizens to recycle more."</string>
+    <string name="collectionPoint.mapNavigation.message">"Do you really wish to open another app containing maps to navigate you?"</string>
+    <string name="collectionPoint.phoneCall.message">"Do you really want to call the collection point?"</string>
+    <string name="collectionPoint.email.message">"Do you really want to open email composer?"</string>
+    <string name="global.validation.imageRatio">"You cannot use wide images. Please use another image. Image ratio has to be smaller than 1:2."</string>
+    <string name="global.validation.maxiumNumberReached">"Maximum number of uploaded images reached (you can upload maximum 20 files)."</string>
+    <string name="global.error.api.title">"API Error"</string>
+    <string name="global.error.api.description">"Some error in API occurred.. Please refresh the page."</string>
+    <string name="trash.types.glass">"Glass"</string>
+    <string name="global.occupation">"Occupation"</string>
+    <string name="event.create.loginMessage">"You must be logged in to create an event"</string>
+    <string name="trash.create.thankYou.title">"Thank you!"</string>
+    <string name="trash.create.thankYou.sentence1">"Thank you for your report!"</string>
+    <string name="trash.create.thankYou.sentence2">"You are awesome!"</string>
+    <string name="trash.create.thankYou.sentence3">"Do not forget to update dumps around you or join cleaning event."</string>
+    <string name="trash.create.homeReportButton">"Report illegal dump"</string>
+    <string name="trash.create.thankYou.shareTitle">"Share with others"</string>
+    <string name="global.unauthorized">"Unauthorized"</string>
+    <string name="global.unauthorized.header">"Unauthorized"</string>
+    <string name="global.unauthorized.text">"You don't have permissions to view this page."</string>
+    <string name="organization.removeUser">"Remove user"</string>
+    <string name="profile.widget.languageNeeded">"Language is needed"</string>
+    <string name="news.validation.languageRequired">"Language is required"</string>
+    <string name="global.register">"Register"</string>
+    <string name="tutorial.signup.withoutSignIn">"Start using without sign in"</string>
+    <string name="user.activity.title.thisDump">"this dump"</string>
+    <string name="trashHunter.lookingForDumps">"Looking for dumps around"</string>
+    <string name="trash.detail.dump.mobileHeader">"Dump"</string>
+    <string name="trash.detail.missingPhoto">"There is no photo to show"</string>
+    <string name="collectionPoint.detail.mobile.recycable">"Recyclable"</string>
+    <string name="collectionPoint.markedAsSpam.success.thanksMobile">"Thanks for information, we will check it out."</string>
+    <string name="collectionPoint.filter.selectAll">"Select All"</string>
+    <string name="profile.activity.mobileHeader">"Activity"</string>
+    <string name="info.aboutApp">"TrashOut is an environmental project which aims to map and monitor all illegal dumps around the world.
+
+Our goal is to involve citizens, governments, municipalities and organizations so we can together contribute to cleaner world for everyone."</string>
+    <string name="info.appVerison_X">"Version from %@"</string>
+    <string name="tutorial.register">"Register/Login"</string>
+    <string name="global.distanceAttribute.away">"away"</string>
+    <string name="event.create.successMobile">"Thank you, event was successfully created. You can edit your event and see attendees at www.admin.trashout.ngo."</string>
+    <string name="home.recentActivity.you">"you"</string>
+    <string name="global.continue">"Continue"</string>
+    <string name="event.feedbackGuessGuestCount.required">"Guess Guest count is required"</string>
+    <string name="event.feedbackGuessTrashCount.required">"Guess Trash count is required"</string>
+    <string name="home.recentActivity.as">"as"</string>
+    <string name="global.cameraAccess">"We need to import photos of dump"</string>
+    <string name="event.feedback.integerRequired">"Integer required"</string>
+    <string name="organization.addManager.validation.managerRequired">"Manager is required"</string>
+    <string name="organization.create.mailDescription">"This is a template for email invitations to join you organisation. Those can be send out by members of your organisations to other users or outside pople. You can tell here why they should join TrashOut and specifically your organisation, what do you do as organisation, what is your vision, etc."</string>
+    <string name="profile.widget.idNeeded">"ID is required"</string>
+    <string name="mail.report.subject">"Illegal dump report!"</string>
+    <string name="mail.report.body">"Illegal dump report! Details about illegal dump can be found on website:"</string>
+    <string name="event.validation.eventShouldEndAfterStartTime">"Event start time has to be before end time"</string>
+    <string name="global.errors.uploadError">"Uploading images to firebase failed"</string>
+    <string name="geo.areaRemove.success">"Area was removed successfully"</string>
+    <string name="global.login.errorNoUser">"There is no user record corresponding to this identifier. The user may have been deleted."</string>
+    <string name="global.register.identityError">"An account already exists. Please sign in with your Facebook account."</string>
+    <string name="trash.removeActivity.confirmation">"Are you sure to remove activity?"</string>
+    <string name="global.other">"Other"</string>
+    <string name="profile.delete.confirm">"Are you sure to delete your profile?"</string>
+    <string name="news.success.photo.deleted">"Image from article was deleted"</string>
+    <string name="global.resendVerificationEmail">"Resend verification e-mail"</string>
+    <string name="global.emailResent">"Verification email was sent again"</string>
+    <string name="event.addToCalendar">"Add to calendar"</string>
+    <string name="global.add">"Add"</string>
+    <string name="profile.myEvents.timeDecision.ongoing">"Ongoing"</string>
+    <string name="mail.eventConfirm.subject">"TrashOut - attendance confirmation"</string>
+    <string name="mail.eventFeedback.subject">"TrashOut - how was the event yesterday?"</string>
+    <string name="mail.newsletter.subject">"TrashOut - information about dumps in area you monitor"</string>
+    <string name="user.validation.failedToReadFacebookProfile">"Failed to read data from facebook profile"</string>
+    <string name="user.validation.facebookNotGrantedPermissionForEmail">"Not granted permissions for email"</string>
+    <string name="user.validation.firebaseUidNotReceived">"Firebase uid not received"</string>
+    <string name="user.validation.noFirebaseUser">"No firebase user"</string>
+    <string name="mail.newsletter.emptyBlock">"There was no new activity in this category in selected period of time. You can see list of all dumps"</string>
+    <string name="mail.newsletter.trashLink">"Link"</string>
+
+    <!-- Choose day -->
+    <string name="collectionPoint.validation.chooseDay">"Please select day"</string>
+    <string name="collectionPoint.validation.dayIsUsed">"Day is used"</string>
+    <string name="statistics.countryPicker.header">"Select country"</string>
+
+    <!--MISSING STRINGS-->
+    <string name="create_event_meeting_date_title" translatable="false">Meeting Date</string>
+    <string name="report_and_clean_ration_in_area" translatable="false">Report and clean ration in area.</string>
+    <string name="statistics.description">Report and clean ration in area.</string>
+    <string name="dashboard_trash_hunter_found_dumps_dont_known" translatable="false">Found dumps: ???</string>
+    <string name="share_to" translatable="false">Share to…</string>
+    <string name="thank_you_page_title" translatable="false">Thank you for your report!\nYou are awesome!</string>
+    <string name="thank_you_page_content" translatable="false">Do not forget to update dumps around you or join cleaning event.</string>
+    <string name="btn_share_with_others" translatable="false">Share with others</string>
+
+    <string name="notification_new_trash_formatter" translatable="false">You hunt %d new or updated trashes.</string>
+    <string name="recyclable_gray" translatable="false"><![CDATA[<font color=\"#8b8b8b\">Recyclable: </font>]]></string>
+    <string name="reported_activity_placeholder" translatable="false">%1$s %2$s %3$s %4$s %5$s</string>
+    <string name="news_detail_placeholder" translatable="false"><![CDATA[<font color=\"#262626\">%1$s: </font>]]> %2$s</string>
+    <string name="about_version_date_formatted" translatable="false">Version from %s</string>
+    <string name="photo_fullscreen_title_formatted" formatted="false">%d of %d</string>
+    <string name="distance_away_formatter" translatable="false">~ %1$s %2$s</string>
+    <string name="specific_distance_away_formatter" translatable="false">%1$s %2$s</string>
+    <string name="skip_btn" translatable="false">SKIP</string>
+
+    <string-array name="trash_view_type">
+        <item>@string/global.list</item>
+        <item>@string/global.map</item>
+    </string-array>
+
+    <string-array name="collection_point_filter_size_array">
+        <item>@string/collectionPoint.size.all</item>
+        <item>@string/collectionPoint.size.recyclingBin</item>
+        <item>@string/collectionPoint.size.recyclingCenter</item>
+    </string-array>
+
+    <string-array name="statistics_array">
+        <item translatable="false">Wordwide</item>
+        <item translatable="false">Czech republic</item>
+    </string-array>
+
+    <!--DO NOT TRANSLATE-->
+    <string name="position_formatter" translatable="false">%8.5f</string>
+    <string name="accuracy_formatter" translatable="false"><![CDATA[< %d m]]></string>
+    <string name="staticMapUrlFormat" formatted="false" translatable="false">"https://maps.googleapis.com/maps/api/staticmap?center=%.6f,%.6f&amp;zoomLevel=18&amp;size=1000x350&amp;markers=icon:http://dl.dropboxusercontent.com/u/78757/work/lithio/trashout/marker.png|%.6f,%.6f&amp;key=%s"</string>
+    <string name="distance_more_than_10km" translatable="false">> 10 km</string>
+    <string name="distance_more_than_10mi" translatable="false">> 10 mi</string>
+    <string name="distance_km_formatter" translatable="false">%d km</string>
+    <string name="distance_m_formatter" translatable="false">%d m</string>
+    <string name="distance_mile_formatter" translatable="false">%d mi</string>
+    <string name="distance_yard_formatter" translatable="false">%d yd</string>
+    <string name="distance_accuracy_formatter" translatable="false">~ %s</string>
+    <string name="about_version_formatted" translatable="false">%s (Android)</string>
+</resources>

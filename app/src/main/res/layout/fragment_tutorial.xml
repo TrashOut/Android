@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/btn_skip"
+        android:text="@string/skip_btn"
+        android:layout_gravity="top|right|end"
+        android:textColor="@color/white"
+        android:clickable="true"
+        android:layout_marginTop="@dimen/full_layout_padding"
+        android:layout_marginRight="@dimen/full_layout_padding"
+        android:layout_marginEnd="@dimen/full_layout_padding"
+        android:textSize="@dimen/text_size_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true" />
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/viewpager_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="16dp"
+        app:fillColor="@color/page_indicator_dark"
+        app:pageColor="@color/page_indicator_light"
+        app:radius="@dimen/tutorial_page_indicator_size"
+        app:strokeWidth="0dp" />
+
+</android.support.design.widget.CoordinatorLayout>

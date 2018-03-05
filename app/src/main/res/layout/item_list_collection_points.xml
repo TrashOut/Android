@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/collection_point_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Bratislava region"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:id="@+id/collection_point_types"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Liquid, Automotive, Dangerous"
+        android:textColor="@color/text_color_grey"
+        android:textSize="@dimen/text_size_small" />
+
+    <TextView
+        android:id="@+id/collection_point_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="300 m"
+        android:textColor="@color/text_color_grey"
+        android:textSize="@dimen/text_size_small" />
+
+</LinearLayout>

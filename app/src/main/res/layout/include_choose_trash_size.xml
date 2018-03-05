@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/trash_report_size_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/trash_report_size_bag_btn"
+            android:layout_width="@dimen/trash_selectable_circle_button_size"
+            android:layout_height="@dimen/trash_selectable_circle_button_size"
+            android:background="@drawable/trash_circle_button"
+            android:src="@drawable/btn_trash_size_bag" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:lines="2"
+            android:text="@string/trash.size.bag" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/trash_report_size_wheelbarrow_btn"
+            android:layout_width="@dimen/trash_selectable_circle_button_size"
+            android:layout_height="@dimen/trash_selectable_circle_button_size"
+            android:background="@drawable/trash_circle_button"
+            android:src="@drawable/btn_trash_size_wheelbarrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:lines="2"
+            android:text="@string/trash.size.wheelbarrow" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/trash_report_size_car_btn"
+            android:layout_width="@dimen/trash_selectable_circle_button_size"
+            android:layout_height="@dimen/trash_selectable_circle_button_size"
+            android:background="@drawable/trash_circle_button"
+            android:src="@drawable/btn_trash_size_car" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:lines="2"
+            android:text="@string/trash.size.carNeeded" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

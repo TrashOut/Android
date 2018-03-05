@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light">
+
+    <ImageView
+        android:id="@+id/img_thank_you_background"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thank_you_page_background_height"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/thank_you_page_background" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/full_layout_padding">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/trash.create.thankYou.sentence1"
+                android:src="@drawable/thank_you_page_icon" />
+
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/full_layout_padding"
+                android:gravity="center_horizontal"
+                android:text="@string/trash.create.thankYou.sentence1"
+                android:textSize="@dimen/text_size_large" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/trash.create.thankYou.sentence2"
+                android:textSize="@dimen/text_size_large" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/share_with_others_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/full_layout_padding"
+                android:backgroundTint="@color/button_color_green_dark"
+                android:padding="@dimen/full_layout_padding"
+                android:text="@string/trash.create.thankYou.shareTitle"
+                android:textAllCaps="true"
+                android:textColor="@color/text_color_white"
+                app:backgroundTint="@color/button_color_green_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/full_layout_padding"
+                android:text="@string/trash.create.thankYou.sentence3"
+                android:textSize="@dimen/text_size_normal" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

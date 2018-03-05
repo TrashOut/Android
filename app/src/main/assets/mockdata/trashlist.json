@@ -1,0 +1,9810 @@
+[
+  {
+    "id": 4999184298016768,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.77880756375359,
+      "long": 14.25141041168408,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5312269097369600,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.44736833684146,
+      "long": 14.36748694628477,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4737368355504128,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.65925080076633,
+      "long": 14.68815189041869,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3401002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.39347852,
+      "long": 15.20008289,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4753185646313472,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.87278444,
+      "long": 14.31379006,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5212076746211328,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.8932003416121,
+      "long": 14.58141926676035,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6694350582972416,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.87330782231863,
+      "long": 14.31817000733159,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5236180362723328,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.27850305072949,
+      "long": 14.46607199255216,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3565057,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.59538171907204,
+      "long": 14.20282718858499,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5902814710595584,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.65981619982647,
+      "long": 14.6887989247061,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6478958803550208,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.87280283,
+      "long": 14.31248824,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5851919985672192,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.86370477,
+      "long": 14.51637978,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5864392117714944,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.90924431771004,
+      "long": 14.47957293505489,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6372808997208064,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.8546918249222,
+      "long": 14.35971759261038,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 576009,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.84676359221339,
+      "long": 14.45741043426096,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1152014,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.91320054513696,
+      "long": 14.77045671266862,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 976017,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.3579552004191,
+      "long": 14.27847257741886,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5840601773768704,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.77210290800115,
+      "long": 14.17597826010354,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6123682237775872,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.41139698028564,
+      "long": 14.31743860244751,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5828456847769600,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.41186629,
+      "long": 14.65838059,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5836529809227776,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.29428199,
+      "long": 14.19346308,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6734040199593984,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.37481164932251,
+      "long": 14.26827371120453,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6402249534210048,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.91785592,
+      "long": 14.08448776,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6677912426119168,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.22970079,
+      "long": 15.2725508,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2815003,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.79589587547797,
+      "long": 14.98107620516324,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 607009,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.7674023300675,
+      "long": 14.09379592616017,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6441134964342784,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.44397886283696,
+      "long": 14.60820137523115,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 526052,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.67293248574772,
+      "long": 14.0668604732842,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6125739527110656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.37021138,
+      "long": 14.12125931,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5725619828555776,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.67301859,
+      "long": 14.06739969,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5076294601539584,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.35882029286026,
+      "long": 14.12446408058947,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1658007,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.88340080720361,
+      "long": 14.91298866459626,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3707015,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.28972747,
+      "long": 15.29223842,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5864623366471680,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.88621519964853,
+      "long": 14.55197386363388,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4927514140999680,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.41255805,
+      "long": 14.66126923,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5279311263170560,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.8863799063081,
+      "long": 14.55190706644608,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5955163281948672,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.89767897,
+      "long": 14.89113686,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4981955170926592,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.89617587537495,
+      "long": 14.2843178473546,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6376593681285120,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.9181821,
+      "long": 14.09096248,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5810629721980928,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.38256877,
+      "long": 14.21775632,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 598010,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.76703140027426,
+      "long": 14.09007386712861,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6094248231305216,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.88304072,
+      "long": 14.7821122,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5201963457183744,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.88435009964731,
+      "long": 14.91476286204058,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4149045,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.86990174602443,
+      "long": 14.11444074791002,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6123736193302528,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.8340004,
+      "long": 14.70347959,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1171004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.53429329936264,
+      "long": 15.36678486278739,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2990002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.86930935,
+      "long": 14.22070332,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4589417469575168,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.66046430548287,
+      "long": 14.6871808275999,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5887399737425920,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.77337766214583,
+      "long": 14.18093992648054,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 538010,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.6730855451729,
+      "long": 14.06747922228566,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 687002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.92058563232422,
+      "long": 14.65640926361084,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4585864743092224,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.81657809577882,
+      "long": 14.39688278362155,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5839093678211072,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.33961318805814,
+      "long": 14.43799710832536,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 535002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.67857192748409,
+      "long": 14.07305117330132,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6376272984801280,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.87269003414537,
+      "long": 14.15980190971322,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3017022,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.55992690803571,
+      "long": 14.15081581399344,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5312457933324288,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.8667246755677,
+      "long": 14.47875536979593,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5302277652873216,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.82775609463474,
+      "long": 14.15325480655921,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5800512515473408,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.41931414,
+      "long": 14.72834117,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2935011,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.41202048898621,
+      "long": 14.63973279341781,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5049448598077440,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12513707,
+      "long": 14.5167608,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5137309812916224,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11561183729219,
+      "long": 15.13164477424243,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2749015,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09729993534283,
+      "long": 14.49182627723971,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5907661757349888,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98803899,
+      "long": 14.412796,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5744107418812416,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09839746169746,
+      "long": 14.56309961155057,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5273358262337536,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.16076326370239,
+      "long": 14.20820295810699,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5465535105990656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05603848498183,
+      "long": 14.30374505682585,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6417633515667456,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07629574,
+      "long": 14.44890271,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6147767625842688,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.00087728723884,
+      "long": 14.39950430765748,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4934620952920064,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.16666228,
+      "long": 14.55614468,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 158001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09759521484375,
+      "long": 14.21396636962891,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5543300673044480,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02501255,
+      "long": 14.44310384,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 622003,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.14314115047455,
+      "long": 14.17229890823364,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6127621729419264,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0676558679436,
+      "long": 14.24538080581859,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1306008,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03206039783548,
+      "long": 14.38074518927781,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 524047,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12445274679045,
+      "long": 14.94905687432246,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2363005,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21831173454432,
+      "long": 14.49408494868734,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6243752871985152,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09424456399874,
+      "long": 14.4559459481523,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6438631241678848,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.16603883,
+      "long": 14.44316624,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5847816656125952,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03998936423013,
+      "long": 14.50166764999237,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2694004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.37022223701305,
+      "long": 14.51549967452968,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5836308215758848,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11419093701988,
+      "long": 14.49767508544028,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5595422999445504,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.20937687717378,
+      "long": 14.45980430580676,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 526068,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.17832946777344,
+      "long": 14.49979591369629,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3437001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.29290029,
+      "long": 14.47832267,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5859139825696768,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03952494383475,
+      "long": 14.33571903688865,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6061522878988288,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.17394552962332,
+      "long": 14.62876920935732,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1138008,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08584771,
+      "long": 14.43886419,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4967177715187712,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0818055,
+      "long": 14.4307749,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5038431478480896,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.53736741,
+      "long": 15.36560961,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 935001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02974782539809,
+      "long": 14.6402360188463,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6233439581765632,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0578727722168,
+      "long": 14.44940280914307,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4509682110562304,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21066073328257,
+      "long": 14.45783330127597,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4926310946177024,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09989856,
+      "long": 14.56512509,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5825072287711232,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12469145008374,
+      "long": 14.28817260080416,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5826966594781184,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.25116234091134,
+      "long": 14.75758650341514,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5371906966421504,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05138192,
+      "long": 14.45411253,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6465787489419264,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07020708229465,
+      "long": 14.32332588531575,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5612652298502144,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09177643512166,
+      "long": 14.34230372237678,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4869739583111168,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.58318294109573,
+      "long": 15.35761779134213,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 521018,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.61777686900767,
+      "long": 14.54116125419315,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 753018,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.9427002607,
+      "long": 14.51787455053722,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5792752885301248,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05221661184919,
+      "long": 14.44756580518041,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 760014,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.22669821,
+      "long": 14.87356954,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6043838426644480,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.16218164295231,
+      "long": 14.26498073863033,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5598975855951872,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.22363516502082,
+      "long": 14.45948470383883,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3007013,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.00343556981534,
+      "long": 14.39970304258168,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3706001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09702903223233,
+      "long": 14.32186801919185,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5883351638474752,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09409695,
+      "long": 14.59077418,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5325102090551296,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09147702624176,
+      "long": 14.34352006088724,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6251949875789824,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03152676,
+      "long": 14.37914559,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5902848986447872,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.99692107089795,
+      "long": 14.43162250333878,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6643217042767872,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0304497248118,
+      "long": 14.28057436735247,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1200010,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04345953464508,
+      "long": 14.83712732791901,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6180443569258496,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.187905,
+      "long": 14.09685833333333,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5881900098912256,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05886614322662,
+      "long": 14.33979950845242,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5802458697695232,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13193173804333,
+      "long": 14.36668613926914,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2984016,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98219021135008,
+      "long": 14.3809600174561,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1978010,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11301123505731,
+      "long": 14.34518471913644,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1175014,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03274658233862,
+      "long": 14.37941774727253,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 973004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.15338718891144,
+      "long": 14.15071249008179,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3182009,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.94366002739402,
+      "long": 14.52105204576116,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6421828230709248,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.29626833333334,
+      "long": 14.552,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5343713484079104,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06425946,
+      "long": 14.42822035,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 661002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.15712646810633,
+      "long": 14.4843025511164,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2399006,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.99169555,
+      "long": 14.75934488333333,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1190002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.26179504394531,
+      "long": 14.99570274353027,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5006258578915328,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.2247223816812,
+      "long": 14.46658853441477,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4990976577765376,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02400207803586,
+      "long": 14.41928911955507,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6401971619627008,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04736309,
+      "long": 14.49812886,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 828001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.24479539536262,
+      "long": 14.74785601053389,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 677007,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05716345,
+      "long": 14.07523186666666,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5263455611256832,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06581073,
+      "long": 14.48008992,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5815315933954048,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13355475961454,
+      "long": 14.44801495859994,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6419780386947072,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0480610318948,
+      "long": 14.56604660490022,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 560011,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07398985998127,
+      "long": 14.41013481189291,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4903320640552960,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.22489370778203,
+      "long": 14.46784799918532,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3955005,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.46199216,
+      "long": 14.58411791,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4808998062653440,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05149208,
+      "long": 14.4145389,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 618001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.15572607517242,
+      "long": 14.17589843273163,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6405968149610496,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04919409751892,
+      "long": 14.75402176380157,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2930012,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13843621687639,
+      "long": 14.69473144696968,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5316880675897344,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06288696,
+      "long": 14.4788039,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6473603306487808,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13190512550076,
+      "long": 14.36662687921372,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1132012,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08561016,
+      "long": 14.43884687,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 882001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0296034438341,
+      "long": 14.6401462544375,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4171078,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07773839280795,
+      "long": 14.14417702510927,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5042261934997504,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.47161356085024,
+      "long": 14.41391992384048,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5773510500679680,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.20279907,
+      "long": 14.44330681,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3175011,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02991676800887,
+      "long": 14.37936603092996,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4965483203788800,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06833766101368,
+      "long": 14.32482274459839,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1576002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12689769268036,
+      "long": 14.08973515033722,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5829405683220480,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05274128,
+      "long": 14.52355304,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5336040004911104,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11409999999999,
+      "long": 14.538565,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6594926678638592,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04353492991071,
+      "long": 14.46119461209929,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5821000893595648,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0325326,
+      "long": 14.38122818,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5122922159013888,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01713919,
+      "long": 14.43411762,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4559026339708928,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.00784535,
+      "long": 14.41596702,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4914540764463104,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0900439313148,
+      "long": 14.36506197789159,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6464811021893632,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10045811072932,
+      "long": 14.42109441386016,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6443993785171968,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0139717,
+      "long": 14.42132411,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5526301356064768,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.213208315537,
+      "long": 14.47212217423846,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5861733541347328,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.15061770930998,
+      "long": 14.42841085125057,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6287429031952384,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06497871,
+      "long": 14.43487474,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1242001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98131061,
+      "long": 14.67344496,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6233259176361984,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.42899782769382,
+      "long": 14.41798439249396,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5344767336513536,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02525536,
+      "long": 14.42037136,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2399015,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.062286672229,
+      "long": 14.47877523490645,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6363377517461504,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.96136273262087,
+      "long": 14.20121588745546,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1650012,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07324588489725,
+      "long": 14.4103748817131,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6413176128143360,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.24056811821669,
+      "long": 14.76531654597704,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6353256288616448,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08855831,
+      "long": 14.32714124,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6449272769740800,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21310931,
+      "long": 14.47223607,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5010615265394688,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05117028,
+      "long": 14.40905711,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5627967791169536,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.18918839283288,
+      "long": 14.79557638987899,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5311495667712000,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.17832473390752,
+      "long": 14.49936412276188,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2183012,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.4547690378573,
+      "long": 14.3895097354517,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5852024155406336,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06063862242741,
+      "long": 14.38864907251148,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5005113907216384,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13278644070973,
+      "long": 14.40090961755663,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6174973383147520,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.28192149475217,
+      "long": 14.28467600606382,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6743802215661568,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13259495613178,
+      "long": 14.45037424565707,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5891293133668352,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09144866610335,
+      "long": 14.33112063553044,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5286986730438656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01670987,
+      "long": 14.43356163,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6512190160896000,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04524666666666,
+      "long": 14.39668166666667,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5005847734255616,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11301269293773,
+      "long": 14.52094039881092,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1177016,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03187419385652,
+      "long": 14.38093948179332,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 551001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07480703333334,
+      "long": 14.15155681666667,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6089043561414656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06192314021993,
+      "long": 14.52375460256627,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4523063219585024,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05754427523357,
+      "long": 14.45100925864135,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5796069740904448,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04599799406719,
+      "long": 14.46004419588899,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5909087787155456,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.35959833333333,
+      "long": 14.48194666666667,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5827367402471424,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0457798122637,
+      "long": 14.50145110026543,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4965780475084800,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.20280650577343,
+      "long": 14.44315506026144,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3035020,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06645914171828,
+      "long": 14.27957964131076,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5268106096148480,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.35642731003463,
+      "long": 14.8213925678283,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3565024,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.28208107598915,
+      "long": 14.0747885968721,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6428742792511488,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01679273,
+      "long": 14.4344657,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6444026391691264,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11297598020184,
+      "long": 14.49723059312859,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5416915832930304,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.9726190854187,
+      "long": 14.64510533912911,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5837218958540800,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05150429,
+      "long": 14.4540047,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2948016,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03269696147184,
+      "long": 14.38022660092859,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6071790858141696,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04738887,
+      "long": 14.49804238,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5873248063455232,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13473294074698,
+      "long": 14.44808009164869,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 588016,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.45328007,
+      "long": 14.32774569,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5852994432139264,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.5026016,
+      "long": 14.80303937,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1960019,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.44980665,
+      "long": 14.35093413,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 973005,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.15290975570679,
+      "long": 14.14915144443512,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3318014,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05277777,
+      "long": 14.71858928,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4980090706329600,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05227717105299,
+      "long": 14.40677577629685,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4996110884012032,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07315415953678,
+      "long": 14.32198935772159,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5628758203564032,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.032781,
+      "long": 14.37950433,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5238374797410304,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0630328,
+      "long": 14.61994747,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5048458574561280,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02402273942718,
+      "long": 14.41929113121184,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6465038353170432,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06586670875549,
+      "long": 14.395512342453,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5388227598876672,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.20279192836043,
+      "long": 14.51336609200995,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5838664693186560,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01597196334043,
+      "long": 14.40764238127918,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5862911050252288,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09135251403794,
+      "long": 14.46864796803749,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5810564626382848,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06059922748251,
+      "long": 14.38788631932287,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4576937406103552,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21237122826278,
+      "long": 14.47078459896147,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5010855670317056,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0702582,
+      "long": 14.4839025,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4541190833700864,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02118651294151,
+      "long": 14.42947329954657,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6663389333946368,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.26364643126726,
+      "long": 14.39464012160897,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 625001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.14510989189148,
+      "long": 14.17469143867493,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5457340979478528,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02892112,
+      "long": 14.45371746,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5828397464813568,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.3654174041003,
+      "long": 14.8104701936245,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6191639257153536,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.15637751673363,
+      "long": 14.41316655838342,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4948354370895872,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.042796,
+      "long": 14.74648317,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5301341886873600,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02716243267059,
+      "long": 14.7540271282196,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6176515460956160,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11545137,
+      "long": 14.48228521,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3304001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13324073986163,
+      "long": 14.1314705740792,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6652063337414656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21017181687057,
+      "long": 14.46752211079001,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6713061507334144,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06311829261846,
+      "long": 14.52572603239012,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6423975089405952,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05050691314977,
+      "long": 14.67838296668108,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6450103707500544,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.93950222623528,
+      "long": 14.59013108165431,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5949884867805184,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09211704352053,
+      "long": 14.4195564704965,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5549249722843136,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09116065211935,
+      "long": 14.33905514252435,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5237121505820672,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05226044920278,
+      "long": 14.44747410715972,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5594703722446848,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05164173859707,
+      "long": 14.72313407998339,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5282076718792704,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07326269061311,
+      "long": 14.53600326554341,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5569208532336640,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21285494789481,
+      "long": 14.47169068269432,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6361510527893504,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.47729462,
+      "long": 15.05734601,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5285849478463488,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12110965326428,
+      "long": 14.11347907036543,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5836953786253312,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.45756327006835,
+      "long": 14.57362533404448,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6265404338995200,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08761755,
+      "long": 14.67473616,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2570001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06743445256623,
+      "long": 14.42584305334977,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6382789276467200,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03221922,
+      "long": 14.38090523,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3021002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06832809657796,
+      "long": 14.33554862627232,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4529459298304000,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05433459305209,
+      "long": 14.44509716705833,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5845489329111040,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.4681745916605,
+      "long": 14.17189515195787,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6115299078176768,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04867325,
+      "long": 14.5076066,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5832431236022272,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06124804061495,
+      "long": 14.32056180553042,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4516848393519104,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05278725181711,
+      "long": 14.71875616350651,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6392208416571392,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0491665,
+      "long": 14.4075055,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6381331780993024,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.18766013750625,
+      "long": 14.61738099212249,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5816024880381952,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01326012425125,
+      "long": 14.466922134161,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5794423971512320,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01357851084322,
+      "long": 14.44577040150762,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 606010,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.99494910240173,
+      "long": 14.36579346656799,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 698004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0638157,
+      "long": 14.4097143,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5840841872506880,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10103189386427,
+      "long": 14.50524444691837,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5871990065856512,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.9955853,
+      "long": 14.48252293,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4640871521714176,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.96538445358161,
+      "long": 14.16652243585714,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 930001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02595732398071,
+      "long": 14.41571202618746,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 675005,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03672672,
+      "long": 14.45129581,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5308321720434688,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12339862,
+      "long": 14.17976848,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5062323421052928,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06544732027693,
+      "long": 14.69335589559254,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5219684634853376,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.00242246,
+      "long": 14.40477689,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 608020,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.15889108181,
+      "long": 14.17650997638702,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5325050777436160,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10039935358809,
+      "long": 14.45438917727624,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6451062345039872,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07352785211994,
+      "long": 14.53450835311276,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6671527319699456,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04028379917145,
+      "long": 14.84488427639008,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5846220538904576,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01174023374915,
+      "long": 14.42151811905205,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4637311564251136,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.94441175837996,
+      "long": 14.52360609547656,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2153005,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0326585304458,
+      "long": 14.38012534753827,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5266254898135040,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.61664897,
+      "long": 14.76577581,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6397179606335488,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06654321220709,
+      "long": 14.40284516663701,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6337541703729152,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05791127681732,
+      "long": 14.85331177711487,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2658006,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06401598453522,
+      "long": 14.7372955083847,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5836968491483136,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05115012,
+      "long": 14.45394644,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1177012,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03115703822116,
+      "long": 14.37946929597704,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2849002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03210955769758,
+      "long": 14.37974003144948,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3007008,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98602669225073,
+      "long": 14.38370978461055,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6157847561764864,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05240583331329,
+      "long": 14.44742884488259,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4582955464785920,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.15536164,
+      "long": 14.68565732,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5875420436103168,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.33369600772858,
+      "long": 14.3547534942627,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2804005,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.35088616801499,
+      "long": 14.46679209228642,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6443371295932416,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05444523417395,
+      "long": 14.44492961281393,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5802706379735040,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01703793,
+      "long": 14.43349484,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5896736987938816,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.51121016,
+      "long": 15.29957666,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3305011,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03374088560234,
+      "long": 14.37107339502719,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1397004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02758236606608,
+      "long": 14.37771110796777,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5209093287444480,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0029532332439,
+      "long": 14.34734565207208,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4849830060883968,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08026862056002,
+      "long": 14.40289353021831,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3289007,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10149186,
+      "long": 14.45239926,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4625236137869312,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.22091873,
+      "long": 14.60042204,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5234892812058624,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.29145166666667,
+      "long": 14.309985,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5670104155029504,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0454665,
+      "long": 14.4089592,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4928370718539776,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10696741291331,
+      "long": 14.22111058609022,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6464766520328192,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.22845111326335,
+      "long": 14.39702041448503,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3020013,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.00201492104679,
+      "long": 14.39984721131623,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 567012,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.00506639480591,
+      "long": 14.43308472633362,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4559951745777664,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.40911883333333,
+      "long": 14.93852668333333,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3276021,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06938857496722,
+      "long": 14.54009438866241,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1223001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03222707198005,
+      "long": 14.3802308756992,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6350047159517184,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05492937290115,
+      "long": 14.44516438992177,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6455880891498496,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.53854168,
+      "long": 14.90483062,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2258006,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.23032256666667,
+      "long": 14.3923101,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 906001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09462166582243,
+      "long": 14.35941601173427,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5597177254510592,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06802751010202,
+      "long": 14.68859777947099,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3008007,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.96540712662969,
+      "long": 14.37568260358123,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1131011,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08586941,
+      "long": 14.43887371,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6361148374908928,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04531,
+      "long": 14.40775,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5844396847136768,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06961601790978,
+      "long": 14.4038592092827,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5106740999749632,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.43659178,
+      "long": 14.89615442,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1945015,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08794245402847,
+      "long": 14.44424933331597,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5240457579724800,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98763228870749,
+      "long": 14.11576738235206,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4929308099346432,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01661405898631,
+      "long": 15.19673980772495,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5802086251888640,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0501086873401,
+      "long": 14.4918571728796,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 535047,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13066482543945,
+      "long": 14.59890079498291,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5823043091824640,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01679701,
+      "long": 14.43431997,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6279137605976064,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06702957845403,
+      "long": 14.31202288796832,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5910266814398464,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03683854364793,
+      "long": 14.35270914809252,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6438434377826304,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.23949133702576,
+      "long": 14.51999424958091,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6393067670077440,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01722459,
+      "long": 14.44281705,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5789437430595584,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.99447284271009,
+      "long": 14.39800805413574,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 609019,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07855355739594,
+      "long": 14.73786413669586,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4916993828323328,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12580776,
+      "long": 14.17638264,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5910051571105792,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.99740085103549,
+      "long": 14.98510580511297,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 517042,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13051605224609,
+      "long": 14.59898567199707,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3265002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.29284038,
+      "long": 14.47837148,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 814006,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04861318,
+      "long": 14.44169093,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 724001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11650229,
+      "long": 14.46673872,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6185935234400256,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21018682047725,
+      "long": 14.46756536141038,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5903739110031360,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09349488,
+      "long": 14.57397272,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6433326474723328,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06189603363169,
+      "long": 14.37486042269913,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4938964079214592,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05148030356509,
+      "long": 14.44687136450265,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1959014,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.450178,
+      "long": 14.35282883,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4984200130199552,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.92371067875057,
+      "long": 14.59664667026568,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6273385571024896,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07016173405499,
+      "long": 14.32272024384992,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5265105222631424,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09714914485812,
+      "long": 14.50621414929628,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5317662670323712,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12177021664846,
+      "long": 14.42984734635434,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1247003,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12581566,
+      "long": 14.17640766,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5329509666521088,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09657364343302,
+      "long": 14.33725534939611,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 511086,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.3906364440918,
+      "long": 14.50763130187988,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4927059583303680,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03182507,
+      "long": 14.37889601,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6394025095462912,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02712137,
+      "long": 14.37768365,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4811017183821824,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0657743,
+      "long": 14.47998302,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 571001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.99800145626068,
+      "long": 14.37629163265228,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5966852672978944,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10556805417882,
+      "long": 14.62599171326926,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6436969399713792,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09168783824547,
+      "long": 14.31222654886616,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5842583481745408,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.99269297822686,
+      "long": 14.21868751840132,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5784264117321728,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.53422149402384,
+      "long": 14.11734829121496,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6114751323045888,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.51247739233077,
+      "long": 15.44085494242609,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 613003,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0557889675035,
+      "long": 14.48352259887263,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5293604679450624,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0320761,
+      "long": 14.38090966,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6339636360118272,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21534863807461,
+      "long": 14.47245662122809,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5242987172855808,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07608042,
+      "long": 14.51938912,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5903970669166592,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05233990959823,
+      "long": 14.35604615136981,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6225813431123968,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06574486,
+      "long": 14.43387213,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5900389765349376,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.18935961898857,
+      "long": 14.66519909342428,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1303009,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09749602318669,
+      "long": 14.33650262728974,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5790729737601024,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04222955136774,
+      "long": 14.50919738734098,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5863684102422528,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03127918,
+      "long": 14.3783518,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6392663485972480,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.95319762737486,
+      "long": 14.55409225077792,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4977553127243776,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.99528741,
+      "long": 14.40961414,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5027198788435968,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09789715,
+      "long": 14.35113978,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6368136102150144,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.23401011712849,
+      "long": 14.46877998299897,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4526839930290176,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09949194,
+      "long": 14.21409927,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5892644605526016,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.49637118824803,
+      "long": 15.12139974163391,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6425569382105088,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.24116339,
+      "long": 14.42099352,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5773517706493952,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03133516,
+      "long": 14.37840033,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3355007,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04604250197303,
+      "long": 14.46005500854408,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5014646956228608,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.95291193015873,
+      "long": 14.55361029133201,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 881002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03289489085031,
+      "long": 14.63558031110421,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6352935491469312,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21374833107266,
+      "long": 14.44736552057555,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5799787580358656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.96520520658229,
+      "long": 14.37576717698423,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6348468880670720,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12270111,
+      "long": 14.59177414,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5002668695093248,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.9748487119097,
+      "long": 14.15536092595584,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3055010,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06763568,
+      "long": 14.45035917,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5903730343936000,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.99402679968625,
+      "long": 14.42219168879092,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5823342598684672,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06297776,
+      "long": 14.619922,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5900496476831744,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0515223,
+      "long": 14.45438389,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1131001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.18666769999999,
+      "long": 14.4715302,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 527036,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13175201416016,
+      "long": 14.59745121002197,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5341490838503424,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04978179931641,
+      "long": 14.44963932037354,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5969540684972032,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03982245922089,
+      "long": 14.84256684780121,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4963562707484672,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02693851475276,
+      "long": 14.38708488492292,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5866067977043968,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.24987324611307,
+      "long": 14.75342061371985,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1330021,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0388997793,
+      "long": 14.8305022717,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5786501333909504,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04731244407594,
+      "long": 14.49767533689737,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2536004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.44424681,
+      "long": 14.34195436,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6500418079162368,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03682190557014,
+      "long": 14.40174126998931,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6702942665048064,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0293459,
+      "long": 14.37902329,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5497415272497152,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08854125840082,
+      "long": 14.33748931683615,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5890023836614656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09121257868041,
+      "long": 14.3401199502387,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2155004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03392373682003,
+      "long": 14.53973631375892,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3706009,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.18200266275333,
+      "long": 15.04515288267055,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5098652414509056,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.14957157894969,
+      "long": 14.46941474452615,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 519054,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12849807739258,
+      "long": 14.60391521453857,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5846327233609728,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08753558,
+      "long": 14.67479992,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6565188568350720,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0301047321409,
+      "long": 14.33161005377769,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6407758555381760,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98766771,
+      "long": 14.11567367,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5826514079711232,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.2126218,
+      "long": 14.58192646,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4998707216908288,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.49453451,
+      "long": 14.26889252,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6156783508783104,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01558362,
+      "long": 14.42614198,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6414738699321344,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.4592911992692,
+      "long": 14.10445343704345,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 929012,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.18583089583571,
+      "long": 14.47254136206067,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5888822285959168,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08998391688809,
+      "long": 14.36560671777871,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5197056490602496,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0662141,
+      "long": 14.48032778,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5061802870177792,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13639434,
+      "long": 14.46909355,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6176001885208576,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.48605306544386,
+      "long": 14.20142543503474,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3044010,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07105946540833,
+      "long": 14.73429679870605,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5081001072001024,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.59839545,
+      "long": 14.29077702,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5849248734117888,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.38815851323307,
+      "long": 14.08661096356809,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1549002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06233704746707,
+      "long": 14.4786966126547,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5838845736124416,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10016747,
+      "long": 14.56594103,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6601759870943232,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11040041527902,
+      "long": 14.10227763466484,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3092005,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02652737782339,
+      "long": 14.38417238184659,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5853239186554880,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.29048861,
+      "long": 15.25395679,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4962006993993728,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.22368067875504,
+      "long": 14.4594962708652,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1511001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.99743569,
+      "long": 14.37137837,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1370009,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.97265480510645,
+      "long": 14.64505144668142,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6710888891416576,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06432335,
+      "long": 14.37052683,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6421479025541120,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07017577,
+      "long": 14.48392036,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6340405096349696,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98225915245712,
+      "long": 14.38103009015322,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3117007,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11294209726965,
+      "long": 14.40706197302632,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6721208485675008,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98219867707228,
+      "long": 14.38107174822537,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5617653284601856,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.92595183197409,
+      "long": 14.54430336132646,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6100820084916224,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05141976,
+      "long": 14.45413042,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4139074,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.46919521414718,
+      "long": 14.56046492794022,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6348420847501312,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.17870482,
+      "long": 15.02212038,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5277374300028928,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02949700225145,
+      "long": 14.5175105240196,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6413828199809024,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0347821,
+      "long": 14.37586,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5587306111041536,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04594514380874,
+      "long": 14.34700087774013,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5221996199673856,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.14765373486601,
+      "long": 14.43516845596542,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2224002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06704553,
+      "long": 14.41086597,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3524003,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04353082277816,
+      "long": 14.46175234393632,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5785630797725696,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.34751812,
+      "long": 14.4518375,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5249475215884288,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02976001,
+      "long": 14.37946426,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5246628273324032,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06025054485029,
+      "long": 14.30397086908316,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6077255226753024,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.24272142914146,
+      "long": 14.67561744154866,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6061078475702272,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03123461273501,
+      "long": 14.38736965881138,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2773006,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05747639,
+      "long": 14.84685292,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5215184616423424,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08572293450133,
+      "long": 14.3874154240027,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6617630987255808,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.22425919771194,
+      "long": 14.46422751992941,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4630169461456896,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.57527600633945,
+      "long": 15.36992409265065,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2335006,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.087905,
+      "long": 14.44361166666667,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5810755886645248,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.23318901,
+      "long": 14.49117031,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6168221530980352,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21172634196404,
+      "long": 14.46982330190768,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5782855108001792,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05053324066158,
+      "long": 14.51915064020767,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5811289947373568,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12016903,
+      "long": 14.37534966,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5614310789218304,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21202371455729,
+      "long": 14.47024296037853,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5006550531833856,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07721245288849,
+      "long": 14.72866952419281,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4961706518249472,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.073997112969,
+      "long": 14.53388809227807,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6354332014346240,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.36266666666667,
+      "long": 14.47756833333333,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5487634491113472,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10628806,
+      "long": 14.48079524,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5793676320047104,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.15474438667152,
+      "long": 14.3452477455135,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5717272593170432,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0625792,
+      "long": 14.40824013,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1100001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02175057311544,
+      "long": 14.55116671511396,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 521044,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01613616943359,
+      "long": 15.1935977935791,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6170509158907904,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01431293,
+      "long": 14.43911318,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2980027,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03569948491644,
+      "long": 14.54836372287436,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6381513847341056,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98630166053772,
+      "long": 14.56294119358063,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5859982427815936,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04439327,
+      "long": 14.54032604,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6744600559484928,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.00210041,
+      "long": 14.4049955,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6442756113170432,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06006706045014,
+      "long": 14.43323710934672,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4554100330987520,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04666586406529,
+      "long": 14.49631629511714,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5887335245807616,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03888291738326,
+      "long": 15.41899791332641,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5226150104137728,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.23356759,
+      "long": 14.46964052,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5396791621058560,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13365799100151,
+      "long": 14.45439537988459,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5046903179837440,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.20411666301197,
+      "long": 14.45538513852749,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5499854243495936,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09826762601733,
+      "long": 14.50597425922751,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6218943102451712,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10076417592364,
+      "long": 14.45972300135946,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 587021,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.15825271606445,
+      "long": 14.17372584342957,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5939184493658112,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.28853505,
+      "long": 14.09927826,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2694006,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06595383868559,
+      "long": 14.47807341815389,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1918004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06123564894232,
+      "long": 14.49571641431875,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 635001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.58647635,
+      "long": 14.45526775,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5338429952884736,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.45751617919781,
+      "long": 14.57460623119803,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6396165977276416,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09800514,
+      "long": 14.35053931,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5570028195807232,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03284893338788,
+      "long": 14.3350435719647,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5600972801835008,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0584882,
+      "long": 14.4711213,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4792414543806464,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05609883922388,
+      "long": 14.30366771485549,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5280186731855872,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.5489803292328,
+      "long": 14.49013053440907,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3994003,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.46199216,
+      "long": 14.58411791,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6611586596732928,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05135714,
+      "long": 14.45385314,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5865739017781248,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.22433358,
+      "long": 14.46423065,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4914205589241856,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06662275003578,
+      "long": 14.32113413430376,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5846984573321216,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06356700911726,
+      "long": 14.52539415758878,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4092002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10408682,
+      "long": 14.46567124,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5340158610112512,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02652935,
+      "long": 14.3826327,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6356261058641920,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05802129,
+      "long": 14.36660872,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6366399605768192,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.20395135506988,
+      "long": 14.44980184547603,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5611787625955328,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03027379512787,
+      "long": 14.74465548992157,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5343686380486656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.23318088,
+      "long": 14.49112276,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5843124060422144,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0245248992462,
+      "long": 15.33497700469134,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 933002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02952230067519,
+      "long": 14.64018562436826,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 524081,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04716634750366,
+      "long": 14.74953711032867,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6170177934721024,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02821796520566,
+      "long": 14.39194081211322,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6576292862361600,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13408630625357,
+      "long": 14.45288747550403,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5056131609133056,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11298768,
+      "long": 14.49734613,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1602001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.45937826666667,
+      "long": 14.5679534,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5835418050232320,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98767331712878,
+      "long": 14.11565735937479,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5855072567164928,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.34816744737327,
+      "long": 14.47237112559378,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5036498005000192,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.44182712682564,
+      "long": 14.90842312575775,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1398003,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02762494613419,
+      "long": 14.37759543770401,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5320209032282112,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04565785638988,
+      "long": 14.40720660611987,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4964811842519040,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.96099554,
+      "long": 14.09085064,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6512834821226496,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05204595630062,
+      "long": 14.44723497146223,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5275285444362240,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05157292,
+      "long": 14.45441395,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6473687981096960,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.3680301271379,
+      "long": 14.81197181157768,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4604462781956096,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07869937,
+      "long": 14.50586121,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6636264304410624,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.35639897920191,
+      "long": 14.8214512411505,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2408002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04698006,
+      "long": 14.44288248,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5385615763832832,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09876810950236,
+      "long": 14.39531654120832,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6449447168901120,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03211472,
+      "long": 14.38097335,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5227403378950144,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04465869162232,
+      "long": 14.39989071339369,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 688007,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03038272302778,
+      "long": 14.28042297914702,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 622001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.40298843383789,
+      "long": 14.09246826171875,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1727001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.25040246725843,
+      "long": 14.35626546827479,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 876003,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02948957268369,
+      "long": 14.64016428025291,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5283466753081344,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05672273,
+      "long": 14.70323282,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6464382749900800,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06012254864914,
+      "long": 14.43325303496274,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5016041319038976,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10272479,
+      "long": 14.35890481,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2599001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0274510635529,
+      "long": 14.3774487543985,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3506011,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09416453333333,
+      "long": 14.51240771666667,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1126014,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08579662,
+      "long": 14.43890861,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5237080527470592,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.26131265796721,
+      "long": 15.37481560371816,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1015003,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.16530692577362,
+      "long": 14.07747745513916,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5286899530858496,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10535738,
+      "long": 14.56617588,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5884487632158720,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.46428505331278,
+      "long": 14.33256533928216,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3351005,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05447103,
+      "long": 14.30484733,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5876795001798656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0139275752008,
+      "long": 14.44582530297339,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2883006,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03944041212093,
+      "long": 14.47343554349101,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1392009,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02759724394421,
+      "long": 14.37766542659549,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5285589096071168,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04665999673307,
+      "long": 14.49594916775823,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 816004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.1421058177948,
+      "long": 14.18783962726593,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6471237446402048,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.41235606186092,
+      "long": 14.20476537197828,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6315488598556672,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02578717195431,
+      "long": 14.41822076217683,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6410280489713664,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.47948165331036,
+      "long": 14.4216419197619,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 754004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21845757961273,
+      "long": 14.77625727653503,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5863182472052736,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12083845,
+      "long": 14.38788761,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5343991356719104,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05160157,
+      "long": 14.45456959,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5858197248147456,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.1899695882542,
+      "long": 14.61684799022791,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4968738310848512,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07588931,
+      "long": 14.52044902,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5792317583654912,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06749206,
+      "long": 14.49001172,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5000449572732928,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12796169146895,
+      "long": 14.10414967685938,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4574265399574528,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.20805295556784,
+      "long": 14.46292505599558,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5009248375275520,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04740584171554,
+      "long": 14.50257553706148,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5876040689778688,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02422813796441,
+      "long": 15.33423302696583,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5365509302255616,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05806821,
+      "long": 14.70171855,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6087273229582336,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.53211848,
+      "long": 15.37392852,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2969004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.96182097126726,
+      "long": 14.387791519998,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6333708655132672,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.27817277237773,
+      "long": 14.43027871660888,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5339490465873920,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05088664427348,
+      "long": 14.51540347187963,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3676003,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.28420292311375,
+      "long": 14.36339322478917,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6426796962611200,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10175983,
+      "long": 14.56932262,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4859618056470528,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11075929161867,
+      "long": 14.09994275231498,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6653572309581824,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.53707791,
+      "long": 14.10274787,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5823163006976000,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98770625800825,
+      "long": 14.11558938214007,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6386498358214656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11387552640607,
+      "long": 14.49952350598476,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6572674696347648,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.13180723282822,
+      "long": 14.40979328271875,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6225304016125952,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05240654572845,
+      "long": 14.3553526327014,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5859050000482304,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05202936013234,
+      "long": 14.44729649463151,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5572767151816704,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.14511274843613,
+      "long": 14.43319788982663,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5736386548203520,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03663840074994,
+      "long": 14.50496733070175,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5225229848674304,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11488833333333,
+      "long": 14.53872,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5863029640003584,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05285195,
+      "long": 14.71862494,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5344301668106240,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09084524856426,
+      "long": 14.34290817612648,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6446366083514368,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.33909881487489,
+      "long": 14.4730762951076,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 840002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10508584844374,
+      "long": 14.45211706740727,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5842174914592768,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08010796610735,
+      "long": 14.43325971539966,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 602002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.25768661499023,
+      "long": 14.1156644821167,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5298052352966656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.2541655767709,
+      "long": 14.74175375886261,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5283572868972544,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.1782371849289,
+      "long": 14.49926345610479,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6073283413803008,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.01060306094587,
+      "long": 14.42875010892749,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5901111949000704,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04533154889941,
+      "long": 14.40131094306707,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5640738431827968,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.20846778091192,
+      "long": 14.3062619193199,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5875436357681152,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11692166666667,
+      "long": 14.5397,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5207445789999104,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.24118635,
+      "long": 14.42102988,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4901410235744256,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.02665725235052,
+      "long": 14.38393660048516,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5315702277799936,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0514718797524,
+      "long": 14.44727805444453,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5530231037231104,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.21410267800093,
+      "long": 14.78333847597241,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5009203731103744,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10140452,
+      "long": 14.35207225,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6430179450683392,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06391295,
+      "long": 14.47375557,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5908749382320128,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.35406642,
+      "long": 14.3219136,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6458112814874624,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.98757221,
+      "long": 14.11588341,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4964374045261824,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05157932,
+      "long": 14.45408227,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6252260707270656,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.49930225,
+      "long": 15.20097376,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 516011,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.09611304,
+      "long": 14.4546367,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6439663967404032,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.0464619,
+      "long": 14.50000376,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5680796127985664,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.43711567,
+      "long": 14.8960849,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3558007,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.1076384,
+      "long": 14.47927828333333,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 965004,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.15112340450287,
+      "long": 14.1365772485733,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5056798167924736,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.28215146019018,
+      "long": 14.0748365541893,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2233001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10648608207557,
+      "long": 14.50109481811481,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5893000349614080,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.26537869,
+      "long": 14.42424878,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2381002,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08797666666666,
+      "long": 14.44402,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3258008,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.26028767698468,
+      "long": 14.3760448694363,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5514986956783616,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11470529255467,
+      "long": 14.4872554578022,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 1536001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.07450664,
+      "long": 14.45452653,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6022751680724992,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.06795519029018,
+      "long": 14.32467207720636,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6432779743002624,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.03451084,
+      "long": 14.37346387,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6180614738804736,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.38652643100394,
+      "long": 14.30326220580777,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 511058,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.1786003112793,
+      "long": 14.49091243743896,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6064619017732096,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.47439522114627,
+      "long": 14.46146886797106,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5603035036254208,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.12128166666666,
+      "long": 14.43437166666667,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5571212046499840,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.11094667948782,
+      "long": 14.10046138800681,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 6338911395643392,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 49.94443099484774,
+      "long": 14.52355982737106,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 4074001,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.10393085894184,
+      "long": 14.46555487812913,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 3206012,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.05980818537069,
+      "long": 14.30681814440927,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5617664785383424,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.20792684988138,
+      "long": 14.57130063326524,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 2370006,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.08823333333333,
+      "long": 14.44352333333333,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "UNKNOWN",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  },
+  {
+    "id": 5238303141920768,
+    "activityId": 0,
+    "images": [],
+    "gps": {
+      "lat": 50.04016264,
+      "long": 14.50512014,
+      "accuracy": 0
+    },
+    "types": [],
+    "anonymous": false,
+    "status": "CLEANED",
+    "cleanedByMe": false,
+    "updateHistory": [],
+    "events": []
+  }
+]

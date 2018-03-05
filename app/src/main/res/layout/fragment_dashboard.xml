@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_color_gray">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_color_gray"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/create_report_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/report_background" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/full_layout_padding"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/target_icon"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginBottom="@dimen/margin_8"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/target" />
+
+                        <android.support.v7.widget.AppCompatButton
+                            android:id="@+id/create_report_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            android:text="@string/trash.create.homeReportButton"
+                            android:textColor="@color/button_color_green_dark"
+                            app:backgroundTint="@color/white" />
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background_color_gray"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/dashboard_nearest_trash_title_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/dashboard_nearest_trash_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="5dp"
+                            android:text="@string/home.nearestDumps"
+                            android:textSize="@dimen/text_size_large" />
+
+                        <TextView
+                            android:id="@+id/dashboard_nearest_trash_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:padding="5dp"
+                            android:text="@string/trash.status.more"
+                            android:textColor="@color/text_color_green" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/dashboard_nearest_trash_title_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/home.goAndFindDumps"
+                        android:textColor="@color/text_color_grey" />
+
+                    <LinearLayout
+                        android:id="@+id/dashboard_nearest_trash_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <FrameLayout
+                            android:id="@+id/dashboard_nearest_trash_first"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1">
+
+                            <me.trashout.ui.SquareImageView
+                                android:id="@+id/dashboard_nearest_trash_first_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_image_placeholder_square" />
+
+                            <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:background="@color/semi_transparent"
+                                android:gravity="center_vertical"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:id="@+id/dashboard_nearest_trash_first_distance"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/text_color_white"
+                                    tools:text="\? m away" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_info" />
+
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/dashboard_nearest_trash_second"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1">
+
+                            <me.trashout.ui.SquareImageView
+                                android:id="@+id/dashboard_nearest_trash_second_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_image_placeholder_square" />
+
+                            <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:background="@color/semi_transparent"
+                                android:gravity="center_vertical"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:id="@+id/dashboard_nearest_trash_Second_distance"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textColor="@color/text_color_white"
+                                    tools:text="\? m away" />
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_info" />
+
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dashboard_news_title_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/dashboard_news_section_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="5dp"
+                            android:text="@string/home.didYouKnow"
+                            android:textSize="@dimen/text_size_large" />
+
+                        <TextView
+                            android:id="@+id/dashboard_news_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:padding="5dp"
+                            android:text="@string/trash.status.more"
+                            android:textColor="@color/text_color_green" />
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/dashboard_news_card_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/dashboard_news_perex"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/dashboard_news_date"
+                                android:layout_alignStart="@+id/dashboard_news_date"
+                                android:layout_below="@+id/dashboard_news_date"
+                                android:layout_marginTop="8dp"
+                                android:maxLines="3"
+                                android:padding="@dimen/button_padding"
+                                tools:text="Lorem ipsum............"
+                                android:textIsSelectable="true" />
+
+                            <android.support.v7.widget.AppCompatButton
+                                android:id="@+id/dashboard_news_read_more_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/dashboard_news_perex"
+                                android:layout_marginBottom="@dimen/base_layout_padding"
+                                android:text="@string/global.readMore"
+                                android:textAllCaps="true"
+                                style="?android:attr/borderlessButtonStyle"
+                                android:textColor="@color/button_color_green_dark" />
+
+                            <FrameLayout
+                                android:id="@+id/dashboard_news_image_container"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/dashboard_news_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="170dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_image_placeholder_rectangle"
+                                    tools:src="@drawable/test_trash_image" />
+
+                                <TextView
+                                    android:id="@+id/dashboard_news_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:padding="13dp"
+                                    android:textColor="@color/text_color_white"
+                                    android:textSize="@dimen/text_size_medium"
+                                    tools:text="Lorem ipsum..." />
+
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/dashboard_news_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/dashboard_news_read_more_btn"
+                                android:layout_alignStart="@+id/dashboard_news_read_more_btn"
+                                android:layout_below="@+id/dashboard_news_image_container"
+                                android:layout_marginLeft="@dimen/base_layout_padding"
+                                android:layout_marginStart="@dimen/base_layout_padding"
+                                android:layout_marginTop="10dp"
+                                android:padding="3dp"
+                                android:textColor="@color/text_color_grey"
+                                android:textSize="@dimen/text_size_small"
+                                tools:text="14.6.2016" />
+                        </RelativeLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/dashboard_nearest_collection_point_title_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/dashboard_nearest_collection_point_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="5dp"
+                            android:text="@string/home.nearestRecyclingPoints"
+                            android:textSize="@dimen/text_size_large" />
+
+                        <TextView
+                            android:id="@+id/dashboard_nearest_collection_point_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:padding="5dp"
+                            android:text="@string/trash.status.more"
+                            android:textColor="@color/text_color_green"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_hideable_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="12dp"
+                            android:weightSum="2">
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/dashboard_nearest_collection_point_dustbin_card_view"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="4dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/dashboard_collection_point_dustbin_background"
+                                    android:orientation="vertical">
+
+                                    <me.trashout.ui.SquareFrameLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/dashboard_nearest_collection_point_dustbin_image"
+                                            android:layout_width="150dp"
+                                            android:layout_height="150dp"
+                                            android:layout_gravity="center"
+                                            android:padding="40dp"
+                                            android:src="@drawable/ic_dashboard_dustbin" />
+
+                                    </me.trashout.ui.SquareFrameLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:background="@color/white"
+                                        android:gravity="center_vertical"
+                                        android:padding="10dp">
+
+                                        <TextView
+                                            android:id="@+id/dashboard_nearest_collection_point_dustbin_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentLeft="true"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_toLeftOf="@+id/imageView3"
+                                            android:ellipsize="end"
+                                            android:gravity="center_vertical"
+                                            android:lines="1"
+                                            android:text="@string/collectionPoint.size.recyclingBin" />
+
+                                        <TextView
+                                            android:id="@+id/dashboard_nearest_collection_point_dustbin_distance"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/dashboard_nearest_collection_point_dustbin_name"
+                                            android:textColor="@color/text_color_grey"
+                                            tools:text="\? m away" />
+
+                                        <ImageView
+                                            android:id="@+id/imageView3"
+                                            android:layout_width="25dp"
+                                            android:layout_height="25dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:src="@drawable/ic_dashboard_navigate" />
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/dashboard_nearest_collection_point_scrapyard_card_view"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="4dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@color/dashboard_collection_point_scrapyard_background"
+                                    android:orientation="vertical">
+
+                                    <me.trashout.ui.SquareFrameLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <ImageView
+                                            android:id="@+id/dashboard_nearest_collection_point_scrapyard_image"
+                                            android:layout_width="150dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:padding="20dp"
+                                            android:src="@drawable/ic_dashboard_scrapyard" />
+
+                                    </me.trashout.ui.SquareFrameLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="bottom"
+                                        android:background="@color/white"
+                                        android:gravity="center_vertical"
+                                        android:padding="10dp">
+
+                                        <TextView
+                                            android:id="@+id/dashboard_nearest_collection_point_scrapyard_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentLeft="true"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_toLeftOf="@+id/imageView2"
+                                            android:layout_toStartOf="@+id/imageView2"
+                                            android:ellipsize="end"
+                                            android:lines="1"
+                                            android:text="@string/collectionPoint.size.recyclingCenter" />
+
+                                        <TextView
+                                            android:id="@+id/dashboard_nearest_collection_point_scrapyard_distance"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/dashboard_nearest_collection_point_scrapyard_name"
+                                            android:textColor="@color/text_color_grey"
+                                            tools:text="\? m away" />
+
+                                        <ImageView
+                                            android:id="@+id/imageView2"
+                                            android:layout_width="25dp"
+                                            android:layout_height="25dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:src="@drawable/ic_dashboard_navigate" />
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+                            </android.support.v7.widget.CardView>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/dashboard_recent_activity_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="8dp"
+                            android:padding="5dp"
+                            android:text="@string/home.recentActivity.header"
+                            android:textSize="@dimen/text_size_large" />
+
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/dashboard_recent_activity_card_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="16dp"
+                            app:cardCornerRadius="4dp">
+
+                            <LinearLayout
+                                android:id="@+id/dashboard_recent_activity_container"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" />
+
+                        </android.support.v7.widget.CardView>
+
+
+                        <TextView
+                            android:id="@+id/dashboard_trash_hunter_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:padding="5dp"
+                            android:text="@string/trashHunter"
+                            android:textSize="@dimen/text_size_large" />
+
+                        <TextView
+                            android:id="@+id/dashboard_trash_hunter_title_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/trashHunter.turnedOnInfo"
+                            android:textColor="@color/text_color_grey" />
+
+                        <RelativeLayout
+                            android:id="@+id/dashboard_trash_hunter_on_layout"
+                            android:layout_width="match_parent"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_height="wrap_content">
+
+                            <FrameLayout
+                                android:id="@+id/dashboard_trash_hunter_progress_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp">
+
+                                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                                    android:id="@+id/dashboard_trash_hunter_progress_bar"
+                                    android:layout_width="140dp"
+                                    android:layout_height="140dp"
+                                    android:layout_gravity="center"
+                                    app:cpb_background_progressbar_color="@color/colorPrimary"
+                                    app:cpb_background_progressbar_width="1dp"
+                                    app:cpb_progressbar_color="@color/colorPrimary"
+                                    app:cpb_progressbar_width="14dp" />
+
+                                <TextView
+                                    android:id="@+id/dashboard_trash_hunter_timer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="0:00"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/text_size_large"
+                                    android:textStyle="bold" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/dashboard_trash_hunter_progress_layout"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/dashboard_trash_hunter_found_dumps"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:padding="5dp"
+                                    android:textSize="@dimen/text_size_small"
+                                    tools:text="@string/trash.foundDumps_X" />
+
+                                <TextView
+                                    android:id="@+id/dashboard_trash_hunter_more"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAllCaps="true"
+                                    android:padding="5dp"
+                                    android:text="@string/trash.status.more"
+                                    android:textColor="@color/text_color_green" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+
+                        <android.support.v7.widget.AppCompatButton
+                            android:id="@+id/dashboard_trash_hunter_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:backgroundTint="@color/button_color_green_dark"
+                            android:text="@string/trashHunter.stopHunting"
+                            android:textColor="@color/text_color_white"
+                            app:backgroundTint="@color/button_color_green_dark"
+                            android:layout_marginBottom="16dp"/>
+
+                        <TextView
+                            android:id="@+id/dashboard_events_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginStart="10dp"
+                            android:padding="5dp"
+                            android:text="@string/event.header"
+                            android:textSize="@dimen/text_size_large" />
+
+                        <TextView
+                            android:id="@+id/dashboard_events_title_description"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/home.events.text"
+                            android:textColor="@color/text_color_grey" />
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/trash_detail_event_card_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="16dp"
+                            app:cardCornerRadius="4dp">
+
+                            <LinearLayout
+                                android:id="@+id/dashboard_events_container"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"/>
+
+                        </android.support.v7.widget.CardView>
+
+                        <LinearLayout
+                            android:id="@+id/dashboard_statistic_title_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginBottom="8dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/dashboard_statistic_title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="5dp"
+                                android:text="@string/statistics.header"
+                                android:textSize="@dimen/text_size_large" />
+
+                            <TextView
+                                android:id="@+id/dashboard_statistics_more"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAllCaps="true"
+                                android:padding="5dp"
+                                android:text="@string/trash.status.more"
+                                android:textColor="@color/text_color_green" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/dashboard_statistic_area"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:padding="5dp"
+                                android:text="@string/global.worldwide"
+                                android:textSize="@dimen/text_size_large" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginStart="15dp"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="10dp">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/ic_trash_activity_reported" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/sides_margin"
+                                    android:layout_marginStart="@dimen/sides_margin"
+                                    android:layout_weight="1"
+                                    android:text="@string/profile.reported" />
+
+                                <TextView
+                                    android:id="@+id/dashboard_statistics_reported"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="\?"
+                                    android:textColor="@color/text_color_grey" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginStart="15dp"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="5dp">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/ic_trash_activity_cleaned" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/sides_margin"
+                                    android:layout_marginStart="@dimen/sides_margin"
+                                    android:layout_weight="1"
+                                    android:text="@string/global.cleaned" />
+
+                                <TextView
+                                    android:id="@+id/dashboard_statistics_cleaned"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="\?"
+                                    android:textColor="@color/text_color_grey" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_dump_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right|end"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_plus" />
+
+</android.support.design.widget.CoordinatorLayout>
