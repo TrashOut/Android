@@ -149,6 +149,10 @@ public class DateTimeUtils {
         return TimeUnit.MILLISECONDS.toMinutes(diffInMillisec);
     }
 
+    public static long computeMillisFromDateAndMinutes(Date start, int minutes) {
+        return start.getTime() + TimeUnit.MINUTES.toMillis(minutes);
+    }
+
     public static String getRoundedTimeAgo(Context context, Date date) {
         long time = new Date().getTime() - date.getTime();
 

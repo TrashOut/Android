@@ -18,7 +18,6 @@
         <!--<item name="mdtp_accent_color">@color/colorPrimary</item>-->
         <item name="android:spinnerItemStyle">@style/SpinnerItemWhite</item>
 
-
     </style>
 
     <style name="ToolbarThemeOverlay" parent="@style/ThemeOverlay.AppCompat.ActionBar">

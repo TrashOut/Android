@@ -84,6 +84,9 @@ public class BaseFragment extends Fragment implements IBaseFragment {
 
     @Override
     public void onDestroy() {
+        if (progressDialogFragment != null) {
+            progressDialogFragment.dismiss();
+        }
         super.onDestroy();
     }
 

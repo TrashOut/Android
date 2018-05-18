@@ -26,6 +26,9 @@
 
 package me.trashout.activity;
 
+import android.content.Intent;
+import android.util.Log;
+
 import me.trashout.activity.base.BaseActivity;
 import me.trashout.fragment.StartFragment;
 
@@ -41,4 +44,20 @@ public class StartActivity extends BaseActivity {
     protected String getFragmentName() {
         return StartFragment.class.getName();
     }
+
+    public void startMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        Log.d("test", "hmm: " + getIntent().getExtras());
+        if (getIntent().getExtras() != null && !wasLaunchedFromRecents()) {
+            Log.d("FLAGS StartActivity", "hmm: " + getIntent().getFlags());
+            intent.putExtras(getIntent().getExtras());
+        }
+
+        startActivity(intent);
+    }
+
+    protected boolean wasLaunchedFromRecents() {
+        return (getIntent().getFlags() & Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) == Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY;
+    }
+
 }

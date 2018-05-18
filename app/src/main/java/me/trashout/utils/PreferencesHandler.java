@@ -52,6 +52,7 @@ public class PreferencesHandler {
     private static final String USER_LOCATION_FORMAT = "USER_LOCATION_FORMAT";
     private static final String TRASH_HUNTER_STATE = "TRASH_HUNTER_STATE";
     private static final String TUTORIAL_WAS_SHOWN = "TUTORIAL_WAS_SHOWN";
+    private static final String DEVICE_LOCALE = "DEVICE_LOCALE";
 
     /**
      * Setting first run
@@ -297,4 +298,26 @@ public class PreferencesHandler {
         return pref.getBoolean(TUTORIAL_WAS_SHOWN, false);
     }
 
+    /**
+     * Save current device locale
+     *
+     * @param context
+     * @param locale  ("en_US", "cs_CZ", "de_DE", "es_ES", "sk_SK")
+     */
+    public static void setDeviceLocale(Context context, String locale) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(DEVICE_LOCALE, locale).apply();
+    }
+
+    /**
+     * Get last saved device locale
+     *
+     * @param context
+     * @return locale string representation ("en_US", "cs_CZ", "de_DE", "es_ES", "sk_SK")
+     */
+    public static String getDeviceLocale(Context context) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        return pref.getString(DEVICE_LOCALE, "");
+    }
 }

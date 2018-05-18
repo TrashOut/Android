@@ -54,7 +54,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.firebase.ui.auth.ui.TaskFailureLogger;
+import com.firebase.ui.auth.util.data.TaskFailureLogger;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -99,6 +99,7 @@ import me.trashout.service.GetUserByFirebaseTokenService;
 import me.trashout.service.UpdateUserService;
 import me.trashout.service.base.BaseService;
 import me.trashout.utils.PreferencesHandler;
+import me.trashout.utils.Utils;
 import me.trashout.utils.ViewUtils;
 
 import static me.trashout.activity.MainActivity.NAVIGATION_PROFILE_ITEM;
@@ -164,6 +165,11 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
     private CallbackManager callbackManager;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        callbackManager = CallbackManager.Factory.create();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -195,8 +201,6 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     public void onFacebookLoginClick(View view) {
 
 //        Toast.makeText(LoginFragment.this.getContext(), R.string.comming_soon, Toast.LENGTH_SHORT).show();
-
-        callbackManager = CallbackManager.Factory.create();
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
                     @Override
@@ -332,7 +336,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
         }
 
         if (valid) {
-
+            Utils.resetFcmToken();
             if (auth.getCurrentUser() != null && user != null) {
                 linkWithAnonymousUser(auth.getCurrentUser(), signUpEmail.getText().toString(), signUpPassword.getText().toString(), signUpFirstName.getText().toString(), signUpLastName.getText().toString());
             } else {
@@ -406,7 +410,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
         @Override
         public boolean isViewFromObject(View arg0, Object arg1) {
-            return arg0 == ((View) arg1);
+            return arg0 == arg1;
         }
 
         @Override
@@ -544,6 +548,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                                         List<String> providers = task.getResult().getProviders();
                                         if (providers != null && !providers.isEmpty() && providers.get(0).equalsIgnoreCase(EmailAuthProvider.PROVIDER_ID)) {
                                             // user exist
+                                            Utils.resetFcmToken();
                                             login(email, password);
                                         } else {
                                             // no email provider
@@ -611,7 +616,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                     public void onFailure(@NonNull Exception e) {
                         dismissProgressDialog();
                         // Show error message
-                        loginPasswordLayout.setError(getString(com.firebase.ui.auth.R.string.login_error));
+                        loginPasswordLayout.setError(getString(com.firebase.ui.auth.R.string.fui_error_invalid_password));
                     }
                 });
     }
@@ -652,17 +657,17 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
                 if (e instanceof FirebaseAuthWeakPasswordException) {
                     // Password too weak
-                    signUpPasswordLayout.setError(getString(com.firebase.ui.auth.R.string.error_weak_password));
+                    signUpPasswordLayout.setError(getResources().getQuantityString(com.firebase.ui.auth.R.plurals.fui_error_weak_password, 1));
                 } else if (e instanceof FirebaseAuthInvalidCredentialsException) {
                     // Email address is malformed
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.invalid_email_address));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_invalid_email_address));
                 } else if (e instanceof FirebaseAuthUserCollisionException) {
                     // Collision with existing user email
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.error_user_collision));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_email_account_creation_error));
                 } else {
                     // General error message, this branch should not be invoked but
                     // covers future API changes
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.email_account_creation_error));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_email_account_creation_error));
                 }
             }
         });
@@ -697,17 +702,17 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
                 if (e instanceof FirebaseAuthWeakPasswordException) {
                     // Password too weak
-                    signUpPasswordLayout.setError(getString(com.firebase.ui.auth.R.string.error_weak_password));
+                    signUpPasswordLayout.setError(getResources().getQuantityString(com.firebase.ui.auth.R.plurals.fui_error_weak_password, 1));
                 } else if (e instanceof FirebaseAuthInvalidCredentialsException) {
                     // Email address is malformed
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.invalid_email_address));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_invalid_email_address));
                 } else if (e instanceof FirebaseAuthUserCollisionException) {
                     // Collision with existing user email
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.error_user_collision));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_email_account_creation_error));
                 } else {
                     // General error message, this branch should not be invoked but
                     // covers future API changes
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.email_account_creation_error));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_email_account_creation_error));
                 }
 
                 Toast.makeText(LoginFragment.this.getContext(), R.string.user_login_anonymous_linkError, Toast.LENGTH_SHORT).show();
@@ -719,6 +724,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     private void handleFacebookAccessToken(final FacebookProfile facebookProfile) {
         Log.d(TAG, "handleFacebookAccessToken:" + facebookProfile);
         showProgressDialog();
+        Utils.resetFcmToken();
 
         AuthCredential credential = FacebookAuthProvider.getCredential(facebookProfile.getAccessToken().getToken());
         auth.signInWithCredential(credential)
@@ -752,11 +758,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                             // covers future API changes
                         }
 
-                        if (e instanceof FirebaseAuthUserCollisionException) {
-                            handleFacebookAccessToken(facebookProfile);
-                        } else {
-                            Toast.makeText(LoginFragment.this.getContext(), exceptionMessage, Toast.LENGTH_SHORT).show();
-                        }
+                        Toast.makeText(LoginFragment.this.getContext(), exceptionMessage, Toast.LENGTH_SHORT).show();
                     }
                 });
     }

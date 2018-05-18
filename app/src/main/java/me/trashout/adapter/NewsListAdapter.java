@@ -36,8 +36,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -48,6 +47,7 @@ import butterknife.ButterKnife;
 import me.trashout.R;
 import me.trashout.model.News;
 import me.trashout.utils.DateTimeUtils;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.ViewUtils;
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsViewHolder> {
@@ -134,11 +134,10 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
             newsDate.setText(DateTimeUtils.DATE_FORMAT.format(news.getCreated()));
             if (news.getImages() != null && !news.getImages().isEmpty() && ViewUtils.checkImageStorage(news.getImages().get(0))) {
                 StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(news.getImages().get(0).getSmallestImage());
-                Glide.with(mainLayout.getContext())
-                        .using(new FirebaseImageLoader())
+                GlideApp.with(mainLayout.getContext())
                         .load(mImageRef)
                         .centerCrop()
-                        .crossFade()
+                        .transition(DrawableTransitionOptions.withCrossFade())
                         .into(newsImage);
             } else {
                 newsImage.setImageResource(R.drawable.ic_image_placeholder_rectangle);
@@ -155,6 +154,6 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.NewsVi
     }
 
     public interface OnNewsItemClickListener {
-        public void onNewsClick(News news);
+        void onNewsClick(News news);
     }
 }

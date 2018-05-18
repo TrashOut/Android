@@ -35,8 +35,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -47,6 +45,7 @@ import me.trashout.R;
 import me.trashout.model.Constants;
 import me.trashout.model.Trash;
 import me.trashout.utils.DateTimeUtils;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.PositionUtils;
 
 /**
@@ -112,7 +111,12 @@ public class TrashListAdapter extends RecyclerView.Adapter<TrashListAdapter.Tras
 
         if (trash.getImages() != null && !trash.getImages().isEmpty() && !TextUtils.isEmpty(trash.getImages().get(0).getSmallestImage()) && trash.getImages().get(0).getSmallestImage().contains("trashoutngo")) {
             StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(trash.getImages().get(0).getSmallestImage());
-            Glide.with(context).using(new FirebaseImageLoader()).load(mImageRef).centerCrop().thumbnail(0.2f).placeholder(R.drawable.ic_image_placeholder_square).into(trashViewHolder.image);
+            GlideApp.with(context)
+                    .load(mImageRef)
+                    .centerCrop()
+                    .thumbnail(0.2f)
+                    .placeholder(R.drawable.ic_image_placeholder_square)
+                    .into(trashViewHolder.image);
         } else {
             trashViewHolder.image.setImageResource(R.drawable.ic_image_placeholder_square);
         }
@@ -150,11 +154,11 @@ public class TrashListAdapter extends RecyclerView.Adapter<TrashListAdapter.Tras
 
         public TrashViewHolder(View v) {
             super(v);
-            statusIcon = (ImageView) v.findViewById(R.id.trash_state_icon);
-            place = (TextView) v.findViewById(R.id.trash_place);
-            types = (TextView) v.findViewById(R.id.trash_types);
-            information = (TextView) v.findViewById(R.id.trash_date);
-            image = (ImageView) v.findViewById(R.id.trash_image);
+            statusIcon = v.findViewById(R.id.trash_state_icon);
+            place = v.findViewById(R.id.trash_place);
+            types = v.findViewById(R.id.trash_types);
+            information = v.findViewById(R.id.trash_date);
+            image = v.findViewById(R.id.trash_image);
 
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -166,6 +170,6 @@ public class TrashListAdapter extends RecyclerView.Adapter<TrashListAdapter.Tras
     }
 
     public interface OnDumpItemClickListener {
-        public void onDumpClick(Trash Trash);
+        void onDumpClick(Trash Trash);
     }
 }

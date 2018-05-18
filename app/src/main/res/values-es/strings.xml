@@ -950,7 +950,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="export.selectAttributes">"Seleccionar atributos para exportar"</string>
     <string name="export.itemsPerFile">"Artículos por archivo"</string>
     <string name="export.itemsPerFile.currentValue">"Valor"</string>
-    <string name="export.preparingExport">"La exportación se está preparando ..."</string>
+    <string name="export.preparingExport">"La exportación se está preparando …"</string>
     <string name="global.latitude">"Latitud"</string>
     <string name="global.longitude">"Longitud"</string>
     <string name="collectionPoint.created">"Hora de creación"</string>
@@ -1221,4 +1221,8 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="collectionPoint.validation.chooseDay">"Por favor seleccione un día"</string>
     <string name="collectionPoint.validation.dayIsUsed">"día fue seleccionado"</string>
     <string name="statistics.countryPicker.header">"seleccione un país"</string>
+
+    <string name="notification.recentActivity.header"></string>
+    <string name="notification.recentActivity.text">"El volcado ilegal que informaste se actualizó"</string>
+    <string name="mail.eventCreate.subject"></string>
 </resources>

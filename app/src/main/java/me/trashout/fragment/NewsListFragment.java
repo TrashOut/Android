@@ -40,8 +40,6 @@ import android.widget.TextView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -259,6 +257,8 @@ public class NewsListFragment extends BaseFragment implements INewsFragment, New
                             newsList.add(newNews);
                         }
                     }
+                } else {
+                    GetNewsListService.startForRequest(getActivity(), GET_NEWS_LIST_REQUEST_ID, -1);
                 }
 
                 mAdapter.notifyDataSetChanged();

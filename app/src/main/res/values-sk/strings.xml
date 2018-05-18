@@ -949,7 +949,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="export.selectAttributes">"Vyberte atribúty na Export"</string>
     <string name="export.itemsPerFile">"Položky jeden súbor"</string>
     <string name="export.itemsPerFile.currentValue">"Hodnota"</string>
-    <string name="export.preparingExport">"Export sa pripravuje..."</string>
+    <string name="export.preparingExport">"Export sa pripravuje…"</string>
     <string name="global.latitude">"Zemepisná šírka"</string>
     <string name="global.longitude">"Zemepisná dĺžka"</string>
     <string name="collectionPoint.created">"Čas vytvorenia"</string>
@@ -1217,4 +1217,8 @@ Našou snahou je zapojiť občanov, vlády, obce a organizácie, aby sme mohli s
     <string name="collectionPoint.validation.chooseDay">"Prosím vyberte deň."</string>
     <string name="collectionPoint.validation.dayIsUsed">"Deň bol vybraný."</string>
     <string name="statistics.countryPicker.header">"Vyberte krajinu"</string>
+
+    <string name="notification.recentActivity.header">"Su informe de un vertedero ilegal fue actualizado"</string>
+    <string name="notification.recentActivity.text">"Echa un vistazo a su nuevo estado en la aplicación TrashOut y mantente siempre informado"</string>
+    <string name="mail.eventCreate.subject">"TrashOut - informácie o vašom podujatí"</string>
 </resources>

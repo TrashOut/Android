@@ -34,7 +34,6 @@ import com.google.android.gms.maps.model.LatLng;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import me.trashout.api.base.ApiBaseRequest;
@@ -87,6 +86,7 @@ public class GetHomeScreenDataService extends BaseService {
         CollectionPoint collectionPointDustbin = null;
         CollectionPoint collectionPointScrapyard = null;
         List<Event> eventList = new ArrayList<>();
+        List<Event> eventListWithDetails = new ArrayList<>();
         List<UserActivity> userActivityList = new ArrayList<>();
         News news = null;
 
@@ -185,6 +185,12 @@ public class GetHomeScreenDataService extends BaseService {
             }
         }
 
+        for (Event event : eventList) {
+            if (DateTimeUtils.computeMillisFromDateAndMinutes(event.getStart(), event.getDuration()) >= Calendar.getInstance().getTimeInMillis()) {
+                eventListWithDetails.add(event);
+            }
+        }
+
         if (apiGetHomeScreenDataRequest.getUserId() > 0) {
             Call<List<UserActivity>> callUserActivityList = mApiServer.getUsersActivity(apiGetHomeScreenDataRequest.getUserId());
             try {
@@ -198,7 +204,7 @@ public class GetHomeScreenDataService extends BaseService {
             }
         }
 
-        Call<List<News>> callNewsList = mApiServer.getNewsList(Utils.getLocaleString(),0, 1, "-created"); // page and limit
+        Call<List<News>> callNewsList = mApiServer.getNewsList(Utils.getLocaleString(), 0, 1, "-created"); // page and limit
         try {
             Response<List<News>> userActivityListResponse = callNewsList.execute();
             if (userActivityListResponse.isSuccessful()) {
@@ -212,8 +218,25 @@ public class GetHomeScreenDataService extends BaseService {
             lastException = e;
         }
 
+        if (news == null && !"en_US".equals(Utils.getLocaleString())) {
+            callNewsList = mApiServer.getNewsList("en_US", 0, 1, "-created");
+
+            try {
+                Response<List<News>> userActivityListResponse = callNewsList.execute();
+                if (userActivityListResponse.isSuccessful()) {
+                    List<News> newsList = userActivityListResponse.body();
+                    if (newsList != null && !newsList.isEmpty()) {
+                        news = newsList.get(0);
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                lastException = e;
+            }
+        }
+
         if (lastException == null || (trashList != null || collectionPointDustbin != null || collectionPointScrapyard != null)) {
-            ApiGetHomeScreenDataResult apiGetHomeScreenDataResult = new ApiGetHomeScreenDataResult(trashList, collectionPointDustbin, collectionPointScrapyard, countTrashCleaned, countTrashStillHere, userActivityList, news, eventList);
+            ApiGetHomeScreenDataResult apiGetHomeScreenDataResult = new ApiGetHomeScreenDataResult(trashList, collectionPointDustbin, collectionPointScrapyard, countTrashCleaned, countTrashStillHere, userActivityList, news, eventListWithDetails);
             apiBaseRequest.setStatus(ApiBaseRequest.Status.DONE);
             notifyResultListener(apiBaseRequest.getId(), apiBaseRequest, apiGetHomeScreenDataResult, null, null);
         } else {

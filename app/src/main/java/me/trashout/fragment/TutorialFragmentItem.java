@@ -22,7 +22,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.firebase.ui.auth.ui.TaskFailureLogger;
+import com.firebase.ui.auth.util.data.TaskFailureLogger;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -220,7 +220,7 @@ public class TutorialFragmentItem extends BaseFragment {
                     // covers future API changes
                 }
 
-                if(e instanceof FirebaseAuthUserCollisionException){
+                if (e instanceof FirebaseAuthUserCollisionException) {
                     handleFacebookAccessToken(facebookProfile);
                 } else {
                     Toast.makeText(TutorialFragmentItem.this.getContext(), exceptionMessage, Toast.LENGTH_SHORT).show();
@@ -269,11 +269,7 @@ public class TutorialFragmentItem extends BaseFragment {
                             // covers future API changes
                         }
 
-                        if(e instanceof FirebaseAuthUserCollisionException){
-                            handleFacebookAccessToken(facebookProfile);
-                        } else {
-                            Toast.makeText(TutorialFragmentItem.this.getContext(), exceptionMessage, Toast.LENGTH_SHORT).show();
-                        }
+                        Toast.makeText(TutorialFragmentItem.this.getContext(), exceptionMessage, Toast.LENGTH_SHORT).show();
                     }
                 });
     }

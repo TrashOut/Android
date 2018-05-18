@@ -939,7 +939,7 @@
     <string name="export.selectAttributes">"Выбрать атрибуты для экспорта"</string>
     <string name="export.itemsPerFile">"Элементов в файле"</string>
     <string name="export.itemsPerFile.currentValue">"Значение"</string>
-    <string name="export.preparingExport">"Подготовка к экспорту..."</string>
+    <string name="export.preparingExport">"Подготовка к экспорту…"</string>
     <string name="global.latitude">"Широта"</string>
     <string name="global.longitude">"Долгота"</string>
     <string name="collectionPoint.created">"Время создания"</string>
@@ -1207,4 +1207,8 @@
     <string name="collectionPoint.validation.chooseDay">"Выберите день"</string>
     <string name="collectionPoint.validation.dayIsUsed">"день был выбран"</string>
     <string name="statistics.countryPicker.header">"Выберите страну"</string>
+
+    <string name="notification.recentActivity.header">"Обновлен отчет о незаконном дампе"</string>
+    <string name="notification.recentActivity.text">"Проверьте свой новый статус в приложении TrashOut и всегда будьте информированы"</string>
+    <string name="mail.eventCreate.subject"></string>
 </resources>

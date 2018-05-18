@@ -38,13 +38,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.BaseTarget;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.target.SizeReadyCallback;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -60,6 +54,8 @@ import me.trashout.model.Image;
 import me.trashout.ui.HackyViewPager;
 import me.trashout.ui.SquarePhotoView;
 import me.trashout.utils.DateTimeUtils;
+import me.trashout.utils.GlideApp;
+import me.trashout.utils.ViewUtils;
 
 public class PhotoFullscreenFragment extends BaseFragment {
 
@@ -67,6 +63,7 @@ public class PhotoFullscreenFragment extends BaseFragment {
     private static final String BUNDLE_REPORTER_NAME = "BUNDLE_REPORTER_NAME";
     private static final String BUNDLE_REPORT_DATE = "BUNDLE_REPORT_DATE";
     private static final String BUNDLE_EXACT_DATE = "BUNDLE_EXACT_DATE";
+    private static final String BUNDLE_CURRENT_PHOTO_POSITION = "BUNDLE_CURRENT_PHOTO_POSITION";
 
     @BindView(R.id.pager)
     HackyViewPager pager;
@@ -86,16 +83,17 @@ public class PhotoFullscreenFragment extends BaseFragment {
     private Date mReportDate;
     private Boolean mIsExactDate;
 
-    public static PhotoFullscreenFragment newInstance(ArrayList<Image> photosUrl, String reporterName, Date reportDate) {
-        return newInstance(photosUrl, reporterName, reportDate, false);
+    public static PhotoFullscreenFragment newInstance(ArrayList<Image> photosUrl, String reporterName, Date reportDate, int selectedPhotoPosition) {
+        return newInstance(photosUrl, reporterName, reportDate, selectedPhotoPosition, false);
     }
 
-    public static PhotoFullscreenFragment newInstance(ArrayList<Image> photosUrl, String reporterName, Date reportDate, boolean exactDate) {
+    public static PhotoFullscreenFragment newInstance(ArrayList<Image> photosUrl, String reporterName, Date reportDate, int selectedPhotoPosition, boolean exactDate) {
         Bundle b = new Bundle();
         b.putParcelableArrayList(BUNDLE_PHOTOS_URL, photosUrl);
         b.putString(BUNDLE_REPORTER_NAME, reporterName);
         b.putSerializable(BUNDLE_REPORT_DATE, reportDate);
         b.putBoolean(BUNDLE_EXACT_DATE, exactDate);
+        b.putInt(BUNDLE_CURRENT_PHOTO_POSITION, selectedPhotoPosition);
         PhotoFullscreenFragment ret = new PhotoFullscreenFragment();
         ret.setArguments(b);
         return ret;
@@ -112,6 +110,7 @@ public class PhotoFullscreenFragment extends BaseFragment {
         ButterKnife.bind(this, view);
 
         pager.setAdapter(new PhotoPagerAdapter(getContext(), getPhotos()));
+        pager.setCurrentItem(getCurrentPhotoPosition());
         pager.setPageMargin(getResources().getDimensionPixelOffset(R.dimen.photo_fullscreen_page_margin));
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -130,7 +129,7 @@ public class PhotoFullscreenFragment extends BaseFragment {
             }
         });
 
-        photoFullscreenToolbarTitle.setText(String.format(getString(R.string.photo_fullscreen_title_formatted), 1, getPhotos().size()));
+        photoFullscreenToolbarTitle.setText(String.format(getString(R.string.photo_fullscreen_title_formatted), getCurrentPhotoPosition() + 1, getPhotos().size()));
 
         photoFullscreenReporterName.setText(getReporterName());
         if (isExactDate()) {
@@ -140,6 +139,15 @@ public class PhotoFullscreenFragment extends BaseFragment {
         }
 
         return view;
+    }
+
+    /**
+     * Get position of selected photo by user
+     *
+     * @return
+     */
+    private int getCurrentPhotoPosition() {
+        return getArguments().getInt(BUNDLE_CURRENT_PHOTO_POSITION, 0);
     }
 
     /**
@@ -208,19 +216,15 @@ public class PhotoFullscreenFragment extends BaseFragment {
             final SquarePhotoView photoView = new SquarePhotoView(container.getContext());
             photoView.setAdjustViewBounds(true);
 
-            StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(photos.get(position).getFullStorageLocation());
-            Glide.with(context)
-                    .using(new FirebaseImageLoader())
-                    .load(mImageRef)
-                    .centerCrop()
-                    .crossFade()
-                    .placeholder(R.drawable.ic_image_placeholder_rectangle)
-                    .into(new SimpleTarget<GlideDrawable>() {
-                        @Override
-                        public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
-                            photoView.setImageDrawable(resource);
-                        }
-                    });
+            if (photos != null && !photos.isEmpty() && ViewUtils.checkImageStorage(photos.get(position))) {
+                StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(photos.get(position).getFullStorageLocation());
+                GlideApp.with(context)
+                        .load(mImageRef)
+                        .centerCrop()
+                        .transition(DrawableTransitionOptions.withCrossFade())
+                        .placeholder(R.drawable.ic_image_placeholder_rectangle)
+                        .into(photoView);
+            }
 
             container.addView(photoView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 

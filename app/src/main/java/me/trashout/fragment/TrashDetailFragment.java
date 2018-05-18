@@ -56,8 +56,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.flexbox.FlexboxLayout;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -90,7 +89,6 @@ import me.trashout.model.Trash;
 import me.trashout.model.UpdateHistory;
 import me.trashout.model.User;
 import me.trashout.service.CreateTrashNewSpamService;
-import me.trashout.service.GetEventDetailService;
 import me.trashout.service.GetTrashDetailService;
 import me.trashout.service.JoinUserToEventService;
 import me.trashout.service.base.BaseService;
@@ -98,6 +96,7 @@ import me.trashout.ui.SelectableImageButton;
 import me.trashout.ui.SquareImageView;
 import me.trashout.utils.DateTimeUtils;
 import me.trashout.utils.GeocoderTask;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.Utils;
@@ -377,7 +376,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         try {
             URI mapUri = new URI(mapUrl.replace("|", "%7c"));
             Log.d(TAG, "setupTrashData: mapUrl = " + String.valueOf(mapUri.toURL()));
-            Glide.with(this).load(String.valueOf(mapUri.toURL())).centerCrop().into(trashDetailMap);
+            GlideApp.with(this).load(String.valueOf(mapUri.toURL())).centerCrop().into(trashDetailMap);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
@@ -387,11 +386,10 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
 
         if (trash.getImages() != null && !trash.getImages().isEmpty() && ViewUtils.checkImageStorage(trash.getImages().get(0))) {
             StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(trash.getImages().get(0).getFullStorageLocation());
-            Glide.with(this)
-                    .using(new FirebaseImageLoader())
+            GlideApp.with(this)
                     .load(mImageRef)
                     .centerCrop()
-                    .crossFade()
+                    .transition(DrawableTransitionOptions.withCrossFade())
                     .placeholder(R.drawable.ic_image_placeholder_rectangle)
                     .into(trashDetailImage);
         }
@@ -522,7 +520,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
      * @param updateHistory
      * @return simple history view
      */
-    private View getTrashUpdateHistoryView(UpdateHistory updateHistory, boolean isFirst) {
+    private View getTrashUpdateHistoryView(final UpdateHistory updateHistory, boolean isFirst) {
         View trashUpdateHistoryView = inflater.inflate(R.layout.layout_trash_update_history, null);
 
         ImageView trashUpdateIcon = trashUpdateHistoryView.findViewById(R.id.trash_update_icon);
@@ -559,6 +557,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         trashUpdate.setText(DateTimeUtils.getRoundedTimeAgo(getContext(), updateHistory.getUpdateTime()));
 
         if (updateHistory.isContainImages()) {
+            int imagePosition = 0;
             for (Image image : updateHistory.getChanged().getImages()) {
                 SquareImageView squareImageView = new SquareImageView(getContext());
                 squareImageView.setAdjustViewBounds(true);
@@ -568,18 +567,27 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 String fullStorageLocation = image.getFullStorageLocation() != null ? image.getFullStorageLocation() : image.getThumbStorageLocation();
                 if (fullStorageLocation != null && !fullStorageLocation.isEmpty()) {
                     StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(fullStorageLocation);
-                    Glide.with(this)
-                            .using(new FirebaseImageLoader())
+                    GlideApp.with(this)
                             .load(mImageRef)
                             .centerCrop()
                             .override(imageSize, imageSize)
                             .placeholder(R.drawable.ic_image_placeholder_square)
                             .into(squareImageView);
+
+                    final int position = imagePosition;
+                    squareImageView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(updateHistory.getChanged().getImages()), updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime(), position);
+                            getBaseActivity().replaceFragment(photoFullscreenFragment);
+                        }
+                    });
                 } else {
                     squareImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_image_placeholder_square));
                 }
 
                 trashUpdateImageContainer.addView(squareImageView, layoutParams);
+                imagePosition++;
             }
         }
 
@@ -804,7 +812,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 break;
             case R.id.trash_detail_image:
                 if (mTrash != null && mTrash.getImages() != null && !mTrash.getImages().isEmpty()) {
-                    PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(mTrash.getImages()), mTrash.getLastChangeName(getContext()), mTrash.getLastChangeDate());
+                    PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(mTrash.getImages()), mTrash.getLastChangeName(getContext()), mTrash.getLastChangeDate(), 0);
                     getBaseActivity().replaceFragment(photoFullscreenFragment);
                 }
                 break;

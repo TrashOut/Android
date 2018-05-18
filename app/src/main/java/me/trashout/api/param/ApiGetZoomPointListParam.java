@@ -58,7 +58,7 @@ public class ApiGetZoomPointListParam extends ApiBaseParam {
         apiGetTrashListParam.setTrashFilter(trashFilter);
         apiGetTrashListParam.setGeocells(geocells);
         apiGetTrashListParam.setZoomLevel(zoomzoomLevel);
-        apiGetTrashListParam.setLimit(150);
+        apiGetTrashListParam.setLimit(600);
         return apiGetTrashListParam;
     }
 

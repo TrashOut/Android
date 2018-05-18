@@ -38,7 +38,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.firebase.ui.auth.ui.ResultCodes;
+import com.firebase.ui.auth.ErrorCodes;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -54,8 +54,8 @@ import butterknife.ButterKnife;
 import me.trashout.R;
 import me.trashout.activity.MainActivity;
 import me.trashout.activity.StartActivity;
-import me.trashout.activity.base.BaseActivity;
 import me.trashout.activity.TutorialActivity;
+import me.trashout.activity.base.BaseActivity;
 import me.trashout.api.base.ApiResult;
 import me.trashout.api.base.ApiUpdate;
 import me.trashout.api.result.ApiGetUserResult;
@@ -76,7 +76,7 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
     public static final int GET_USER_BY_FIREBASE_REQUEST_ID = 701;
     public static final int CREATE_USER_REQUEST_ID = 702;
 
-    private static boolean startDashborad;
+    private boolean startDashborad;
 
     private FirebaseAuth auth;
 
@@ -130,7 +130,7 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
     @Override
     public void onResume() {
         super.onResume();
-        ((StartActivity) getActivity()).setTitle(getString(R.string.app_name));
+        getActivity().setTitle(getString(R.string.app_name));
     }
 
     public void onActivityResultFragment(int requestCode, int resultCode, Intent data) {
@@ -148,7 +148,7 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
         }
 
         // No network
-        if (resultCode == ResultCodes.RESULT_NO_NETWORK) {
+        if (resultCode == ErrorCodes.NO_NETWORK) {
             Toast.makeText(getContext(), R.string.global_validation_noNetwork, Toast.LENGTH_SHORT).show();
             return;
         }
@@ -163,6 +163,7 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
 
                     if (task.isSuccessful()) {
                         Log.d(TAG, "auth.getCurrentUser().getToken: = " + task.getResult().getToken());
+
                         showProgressDialog();
                         PreferencesHandler.setFirebaseToken(getContext(), task.getResult().getToken());
                         GetUserByFirebaseTokenService.startForRequest(getContext(), GET_USER_BY_FIREBASE_REQUEST_ID);
@@ -200,7 +201,7 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
                     Log.d(TAG, "onNewResult: User = " + apiGetUserResult.getUser());
                     PreferencesHandler.setUserData(getContext(), apiGetUserResult.getUser());
 
-                    startActivity(new Intent(getContext(), MainActivity.class));
+                    ((StartActivity) getActivity()).startMainActivity();
                     finish();
                 } else {
                     if (apiResult.getResponse() != null && apiResult.getResponse().code() == 401) {
@@ -238,7 +239,7 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
                     Log.d(TAG, "onNewResult: User = " + apiGetUserResult.getUser());
                     PreferencesHandler.setUserData(getContext(), apiGetUserResult.getUser());
 
-                    startActivity(new Intent(getContext(), MainActivity.class));
+                    ((StartActivity) getActivity()).startMainActivity();
                     finish();
                 } else {
                     Toast.makeText(getContext(), R.string.user_login_create_error, Toast.LENGTH_SHORT).show();
@@ -256,7 +257,7 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
 
     private void startLoginFragment() {
         if (startDashborad) {
-            startActivity(BaseActivity.generateIntent(getContext(), DashboardFragment.class.getName(), null, MainActivity.class));
+            ((StartActivity) getActivity()).startMainActivity();
         } else {
             startActivity(BaseActivity.generateIntent(getContext(), LoginFragment.class.getName(), null, MainActivity.class));
         }

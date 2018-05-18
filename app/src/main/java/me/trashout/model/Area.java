@@ -212,7 +212,7 @@ public class Area implements Parcelable {
     public String getFormatedLocation() {
 
         if (!TextUtils.isEmpty(this.street)) {
-            return this.street + (!TextUtils.isEmpty(this.subLocality) ? " " + this.subLocality : "");
+            return this.street + (!TextUtils.isEmpty(this.subLocality) ? ", " + this.subLocality : (!TextUtils.isEmpty(this.locality) ? ", " + this.locality : ""));
         } else if (!TextUtils.isEmpty(this.subLocality)) {
             return this.subLocality;
         } else if (!TextUtils.isEmpty(this.locality)) {

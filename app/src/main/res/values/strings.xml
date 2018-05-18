@@ -1003,7 +1003,7 @@ daily, weekly or monthly to stay informed about activities in the location you c
     <string name="export.selectAttributes">"Select Attributes to Export"</string>
     <string name="export.itemsPerFile">"Items per file"</string>
     <string name="export.itemsPerFile.currentValue">"Value"</string>
-    <string name="export.preparingExport">"Export is being prepared..."</string>
+    <string name="export.preparingExport">"Export is being prepared…"</string>
     <string name="global.latitude">"Latitude"</string>
     <string name="global.longitude">"Longitude"</string>
     <string name="collectionPoint.created">"Created Time"</string>
@@ -1413,4 +1413,14 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="distance_yard_formatter" translatable="false">%d yd</string>
     <string name="distance_accuracy_formatter" translatable="false">~ %s</string>
     <string name="about_version_formatted" translatable="false">%s (Android)</string>
+    <string name="event.calendar.title.prefix">TrashOut:</string>
+
+    <string name="push.notification.channel.trash">Trash</string>
+    <string name="push.notification.channel.event">Event</string>
+    <string name="push.notification.channel.news">News</string>
+    <string name="push.notification.channel.default">Trashout</string>
+
+    <string name="notification.recentActivity.header">"Your report of an illegal dump was updated"</string>
+    <string name="notification.recentActivity.text">"Check out its new status in TrashOut app and stay always informed"</string>
+    <string name="mail.eventCreate.subject">"TrashOut - important information about the event you created"</string>
 </resources>

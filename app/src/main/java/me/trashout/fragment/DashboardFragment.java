@@ -64,8 +64,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -103,6 +102,7 @@ import me.trashout.service.base.BaseService;
 import me.trashout.ui.SquareImageView;
 import me.trashout.utils.DateTimeUtils;
 import me.trashout.utils.GeocoderTask;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.Utils;
@@ -259,7 +259,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-        if (getActivity() != null && getActivity() instanceof MainActivity && ((MainActivity) getActivity()).auth.getCurrentUser() == null) {
+        if (getActivity() != null && ((MainActivity) getActivity()).getAuth().getCurrentUser() == null) {
             ((MainActivity) getActivity()).signInAnonymously();
         }
     }
@@ -277,7 +277,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         Log.d(TAG, "onCreateView: lastPosition = " + lastPosition);
 
         if (dashboardTrashList != null || dashboardCollectionPointDustbin != null || dashboardCollectionPointScrapyard != null) {
-            if(isAdded()){
+            if (isAdded()) {
                 setupDashboard(dashboardTrashList, dashboardCollectionPointDustbin, dashboardCollectionPointScrapyard, dashboardStatisticsCleanedCount, dashboardStatisticsReportedCount, dashboardUserActivityList, dashboardNews, dashboardEventList);
             }
         } else {
@@ -399,11 +399,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
             if (trashFirst.getImages() != null && !trashFirst.getImages().isEmpty() && ViewUtils.checkImageStorage(trashFirst.getImages().get(0))) {
                 StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(trashFirst.getImages().get(0).getSmallestImage());
-                Glide.with(this)
-                        .using(new FirebaseImageLoader())
+                GlideApp.with(this)
                         .load(mImageRef)
                         .centerCrop()
-                        .crossFade()
+                        .transition(DrawableTransitionOptions.withCrossFade())
                         .thumbnail(0.2f)
                         .placeholder(R.drawable.ic_image_placeholder_square)
                         .into(homeNearestTrashFirstImage);
@@ -417,11 +416,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
                 if (trashTwo.getImages() != null && !trashTwo.getImages().isEmpty() && ViewUtils.checkImageStorage(trashTwo.getImages().get(0))) {
                     StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(trashTwo.getImages().get(0).getSmallestImage());
-                    Glide.with(this)
-                            .using(new FirebaseImageLoader())
+                    GlideApp.with(this)
                             .load(mImageRef)
                             .centerCrop()
-                            .crossFade()
+                            .transition(DrawableTransitionOptions.withCrossFade())
                             .placeholder(R.drawable.ic_image_placeholder_square)
                             .into(homeNearestTrashSecondImage);
                 }
@@ -440,11 +438,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             //homeNearestCollectionPointDustbinName.setText(dashboardCollectionPointDustbin.getName());
             if (dashboardCollectionPointDustbin.getImages() != null && !dashboardCollectionPointDustbin.getImages().isEmpty()) {
                 StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(dashboardCollectionPointDustbin.getImages().get(0).getSmallestImage());
-                Glide.with(this)
-                        .using(new FirebaseImageLoader())
+                GlideApp.with(this)
                         .load(mImageRef)
                         .centerCrop()
-                        .crossFade()
+                        .transition(DrawableTransitionOptions.withCrossFade())
                         .placeholder(R.drawable.ic_image_placeholder_square)
                         .into(homeNearestCollectionPointDustbinImage);
             }
@@ -458,11 +455,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             //homeNearestCollectionPointScrapyardName.setText(dashboardCollectionPointScrapyard.getName());
             if (dashboardCollectionPointScrapyard.getImages() != null && !dashboardCollectionPointScrapyard.getImages().isEmpty() && ViewUtils.checkImageStorage(dashboardCollectionPointScrapyard.getImages().get(0))) {
                 StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(dashboardCollectionPointScrapyard.getImages().get(0).getSmallestImage());
-                Glide.with(this)
-                        .using(new FirebaseImageLoader())
+                GlideApp.with(this)
                         .load(mImageRef)
                         .centerCrop()
-                        .crossFade()
+                        .transition(DrawableTransitionOptions.withCrossFade())
                         .placeholder(R.drawable.ic_image_placeholder_square)
                         .into(homeNearestCollectionPointScrapyardImage);
             }
@@ -478,7 +474,8 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         dashboardStatisticsReported.setText(dashboardStatisticsReportedCount > -1 ? String.valueOf(dashboardStatisticsReportedCount) : "?");
 
         dashboardRecentActivityContainer.removeAllViews();
-        if (dashboardUserActivityList != null && !dashboardUserActivityList.isEmpty()) {
+        // if user is anonymous, dont show recent activity
+        if (dashboardUserActivityList != null && !dashboardUserActivityList.isEmpty() && user.getEmail() != null && !user.getEmail().isEmpty()) {
             List<UserActivity> finalDashboardUserActivityList = dashboardUserActivityList.size() < 3 ? dashboardUserActivityList : dashboardUserActivityList.subList(0, 3);
             for (UserActivity userActivity : finalDashboardUserActivityList) {
                 if (dashboardRecentActivityContainer.getChildCount() > 0)
@@ -504,13 +501,11 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 //            if (dashboardNews.getNewsConvertedImages() != null && !dashboardNews.getNewsConvertedImages().isEmpty() && ViewUtils.checkImageStorage(dashboardNews.getNewsConvertedImages().get(0))) {
             if (dashboardNews.getImages() != null && !dashboardNews.getImages().isEmpty() && ViewUtils.checkImageStorage(dashboardNews.getImages().get(0))) {
                 StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(dashboardNews.getImages().get(0).getSmallestImage());
-                Glide.with(this)
-                        .using(new FirebaseImageLoader())
+                GlideApp.with(this)
                         .load(mImageRef)
                         .centerCrop()
-                        .crossFade()
-                        .thumbnail(0.2f)
-                        .placeholder(R.drawable.ic_image_placeholder_rectangle)
+                        .transition(DrawableTransitionOptions.withCrossFade())
+                        .thumbnail(GlideApp.with(this).load(R.drawable.ic_image_placeholder_rectangle).centerCrop())
                         .into(dashboardNewsImage);
             }
         } else {
@@ -569,11 +564,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         if (userActivity.getActivity().getImages() != null && !userActivity.getActivity().getImages().isEmpty() && ViewUtils.checkImageStorage(userActivity.getActivity().getImages().get(0))) {
             Image image = userActivity.getActivity().getImages().get(0);
             StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(image.getSmallestImage());
-            Glide.with(this)
-                    .using(new FirebaseImageLoader())
+            GlideApp.with(this)
                     .load(mImageRef)
                     .centerCrop()
-                    .crossFade()
+                    .transition(DrawableTransitionOptions.withCrossFade())
                     .placeholder(R.drawable.ic_image_placeholder_square)
                     .into(userActivityImage);
         }
@@ -585,7 +579,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             userActivityType.setImageResource(userActivity.getActivity().getStatus().getIconUpdatehistoryResId());
         }
 
-        String userName = user == null || userActivity.getUserInfo().getUserId() != user.getId() ? (userActivity.getUserInfo().getFirstName() == null || userActivity.getActivity().isAnonymous()) ? getString(R.string.trash_anonymous) : userActivity.getUserInfo().getFirstName() : getString(R.string.home_recentActivity_you).substring(0,1).toUpperCase() + getString(R.string.home_recentActivity_you).substring(1);
+        String userName = user == null || userActivity.getUserInfo().getUserId() != user.getId() ? (userActivity.getUserInfo().getFirstName() == null || userActivity.getActivity().isAnonymous()) ? getString(R.string.trash_anonymous) : userActivity.getUserInfo().getFirstName() : getString(R.string.home_recentActivity_you).substring(0, 1).toUpperCase() + getString(R.string.home_recentActivity_you).substring(1);
 
         if (Constants.ActivityAction.CREATE.getName().equals(userActivity.getAction())) {
             userActivityName.setText(getString(R.string.reported_activity_placeholder,
@@ -843,7 +837,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                 dashboardNews = apiGetHomeScreenDataResult.getDashboardNews();
                 dashboardEventList = apiGetHomeScreenDataResult.getDashboardEventList();
 
-                if(isAdded()){
+                if (isAdded()) {
                     setupDashboard(dashboardTrashList, dashboardCollectionPointDustbin, dashboardCollectionPointScrapyard, dashboardStatisticsCleanedCount, dashboardStatisticsReportedCount, dashboardUserActivityList, dashboardNews, dashboardEventList);
                 }
             } else {

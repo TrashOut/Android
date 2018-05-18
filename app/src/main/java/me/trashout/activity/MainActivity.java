@@ -27,11 +27,9 @@
 package me.trashout.activity;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -48,7 +46,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.firebase.ui.auth.ui.ResultCodes;
+import com.firebase.ui.auth.ErrorCodes;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -71,6 +69,7 @@ import me.trashout.fragment.DashboardFragment;
 import me.trashout.fragment.EventCreateFragment;
 import me.trashout.fragment.EventDetailFragment;
 import me.trashout.fragment.LoginFragment;
+import me.trashout.fragment.NewsDetailFragment;
 import me.trashout.fragment.NewsListFragment;
 import me.trashout.fragment.PhotoFullscreenFragment;
 import me.trashout.fragment.ProfileEditFragment;
@@ -84,9 +83,16 @@ import me.trashout.fragment.base.INewsFragment;
 import me.trashout.fragment.base.IProfileFragment;
 import me.trashout.fragment.base.ITrashFragment;
 import me.trashout.model.Organization;
+import me.trashout.notification.PushNotification;
+import me.trashout.notification.TrashoutFirebaseInstanceIdService;
 import me.trashout.utils.BottomNavigationViewHelper;
 import me.trashout.utils.PreferencesHandler;
+import me.trashout.utils.Utils;
 import pub.devrel.easypermissions.EasyPermissions;
+
+import static me.trashout.notification.PushNotification.TRASH_DETAIL_NOTIFICATION;
+import static me.trashout.notification.PushNotification.TRASH_EVENT_NOTIFICATION;
+import static me.trashout.notification.PushNotification.TRASH_NEWS_NOTIFICATION;
 
 public class MainActivity extends BaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener, TrashListFragment.OnRefreshTrashListListener, CollectionPointListFragment.OnRefreshCollectionPointListListener, ProfileEditFragment.OnSaveOrganizationsListener, TrashReportOrEditFragment.OnTrashChangedListener, EventDetailFragment.OnEventJoinedListener, EventCreateFragment.OnSelectTrashIdsOnMapListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
@@ -97,7 +103,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     public static final int NAVIGATION_HOME_ITEM = 0;
     private static final int NAVIGATION_DUMPS_ITEM = 1;
     private static final int NAVIGATION_NEWS_ITEM = 2;
-    private static final int NAVIGATION_JUNKUARDS_ITEM = 3;
+    private static final int NAVIGATION_JUNKYARDS_ITEM = 3;
     public static final int NAVIGATION_PROFILE_ITEM = 4;
 
     private static final int RC_LOCATION = 122;
@@ -111,7 +117,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     Spinner toolbarSpinner;
 
     private GoogleApiClient mGoogleApiClient;
-    public FirebaseAuth auth;
+    private FirebaseAuth auth;
 
     private MenuItem navigationProfileItem;
     private LatLng lastPosition;
@@ -149,7 +155,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
 
-        auth = FirebaseAuth.getInstance();
+        getAuth();
         navigationProfileItem = navigation.getMenu().findItem(R.id.action_main_profile);
         setUserNavigationState();
 
@@ -160,7 +166,39 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
         toolbarSpinner.setSelection(0, false);
         toolbarSpinner.setOnItemSelectedListener(this);
+
+        if (getIntent() != null) {
+            handleIntent(getIntent());
+        }
+
         onBackStackChanged();
+    }
+
+    /**
+     * Handle notification intent routing
+     *
+     * @param intent
+     */
+    private void handleIntent(Intent intent) {
+        if (intent != null && intent.hasExtra("type")) {
+            switch (PushNotification.getNotificationType(intent.getStringExtra("type"))) {
+                case TRASH_NEWS_NOTIFICATION:
+                    if (intent.hasExtra(TRASH_NEWS_NOTIFICATION.getId())) {
+                        replaceFragment(NewsDetailFragment.newInstance(Long.valueOf(intent.getStringExtra(TRASH_NEWS_NOTIFICATION.getId()))));
+                    }
+                    break;
+                case TRASH_EVENT_NOTIFICATION:
+                    if (intent.hasExtra(TRASH_EVENT_NOTIFICATION.getId())) {
+                        replaceFragment(EventDetailFragment.newInstance(Long.valueOf(intent.getStringExtra(TRASH_EVENT_NOTIFICATION.getId()))));
+                    }
+                    break;
+                case TRASH_DETAIL_NOTIFICATION:
+                    if (intent.hasExtra(TRASH_DETAIL_NOTIFICATION.getId())) {
+                        replaceFragment(TrashDetailFragment.newInstance(Long.valueOf(intent.getStringExtra(TRASH_DETAIL_NOTIFICATION.getId()))));
+                    }
+                    break;
+            }
+        }
     }
 
     /**
@@ -201,6 +239,13 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         }
         return false;
     }
+
+    public FirebaseAuth getAuth() {
+        if (auth == null)
+            auth = FirebaseAuth.getInstance();
+        return auth;
+    }
+
 
     public void signInAnonymously() {
         auth.signInAnonymously()
@@ -250,7 +295,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                 if (getCurrentFragment() instanceof CollectionPointListFragment) break;
                 CollectionPointListFragment collectionPointListFragment = new CollectionPointListFragment();
                 replaceFragment(collectionPointListFragment);
-                setNavigationBottomViewCheckedItem(NAVIGATION_JUNKUARDS_ITEM);
+                setNavigationBottomViewCheckedItem(NAVIGATION_JUNKYARDS_ITEM);
                 break;
             case R.id.action_main_profile:
                 if (getCurrentFragment() instanceof ProfileFragment || getCurrentFragment() instanceof LoginFragment)
@@ -300,6 +345,10 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     protected void onResume() {
         super.onResume();
         isLocationEnabledCheck();
+
+        if (auth.getCurrentUser() != null) {
+            handleLocaleChange();
+        }
     }
 
     protected void onStop() {
@@ -331,7 +380,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                 setNavigationBottomViewCheckedItem(NAVIGATION_DUMPS_ITEM);
             } else if (actualFragment != null && (actualFragment instanceof ICollectionPointFragment)) {
                 toolbarSpinner.setVisibility(View.GONE);
-                setNavigationBottomViewCheckedItem(NAVIGATION_JUNKUARDS_ITEM);
+                setNavigationBottomViewCheckedItem(NAVIGATION_JUNKYARDS_ITEM);
             } else if (actualFragment != null && (actualFragment instanceof IProfileFragment)) {
                 toolbarSpinner.setVisibility(View.GONE);
                 setNavigationBottomViewCheckedItem(NAVIGATION_PROFILE_ITEM);
@@ -365,7 +414,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                 case NAVIGATION_NEWS_ITEM:
                     navigation.getMenu().findItem(R.id.action_main_news).setChecked(true);
                     break;
-                case NAVIGATION_JUNKUARDS_ITEM:
+                case NAVIGATION_JUNKYARDS_ITEM:
                     navigation.getMenu().findItem(R.id.action_main_recycling_point).setChecked(true);
                     break;
                 case NAVIGATION_PROFILE_ITEM:
@@ -403,7 +452,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                 return;
             }
             // No network
-            if (resultCode == ResultCodes.RESULT_NO_NETWORK) {
+            if (resultCode == ErrorCodes.NO_NETWORK) {
                 Toast.makeText(this, "No network", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -419,6 +468,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                     if (task.isSuccessful()) {
                         Log.d(TAG, "auth.getCurrentUser().getToken: = " + task.getResult().getToken());
                         PreferencesHandler.setFirebaseToken(MainActivity.this, task.getResult().getToken());
+
                         startActivity(new Intent(MainActivity.this, StartActivity.class));
                         finish();
                     }
@@ -508,7 +558,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
             } else {
                 Toast.makeText(this, R.string.global_allowGpsInPhone, Toast.LENGTH_LONG).show();
             }
-        } else {
+        } else if (requestCode == RC_LOCATION) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
                     ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 Location mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
@@ -594,5 +644,14 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
+    }
+
+    private void handleLocaleChange() {
+        String locale = Utils.getLocaleString();
+        if (!locale.equals(PreferencesHandler.getDeviceLocale(this))) {
+            TrashoutFirebaseInstanceIdService.deleteFcmToken(this);
+            Utils.resetFcmToken();
+            PreferencesHandler.setDeviceLocale(this, locale);
+        }
     }
 }

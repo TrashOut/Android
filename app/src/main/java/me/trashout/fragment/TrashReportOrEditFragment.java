@@ -28,26 +28,20 @@ package me.trashout.fragment;
 
 
 import android.Manifest;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.location.Geocoder;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
 import android.os.Parcelable;
 import android.os.StrictMode;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
@@ -67,7 +61,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
@@ -87,7 +81,6 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import me.trashout.BuildConfig;
 import me.trashout.Configuration;
 import me.trashout.R;
 import me.trashout.activity.MainActivity;
@@ -106,6 +99,7 @@ import me.trashout.service.UpdateTrashService;
 import me.trashout.service.base.BaseService;
 import me.trashout.ui.SelectableImageButton;
 import me.trashout.utils.GeocoderTask;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.Utils;
@@ -127,6 +121,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
     private static final int CREATE_TRASH_REQUEST_ID = 450;
     private static final int UPDATE_TRASH_REQUEST_ID = 451;
+    private static final int LOCATION_REQUEST_CODE = 6;
 
     @BindView(R.id.trash_report_take_image_fab)
     FloatingActionButton trashReportTakeImageFab;
@@ -308,15 +303,6 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         user = PreferencesHandler.getUserData(getContext());
 
         getLocation();
-        // TODO add global location handling and caching
-        if (mLastLocation == null) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    getLocation();
-                }
-            }, 1000);
-        }
 
         trashReportToolbar.inflateMenu(R.menu.menu_trash_edit);
         trashReportToolbar.getMenu().findItem(R.id.action_send);
@@ -535,7 +521,11 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             try {
                 URI mapUri = new URI(mapUrl.replace("|", "%7c"));
                 Log.d(TAG, "setupDumpData: mapUrl = " + String.valueOf(mapUri.toURL()));
-                Glide.with(this).load(String.valueOf(mapUri.toURL())).centerCrop().dontTransform().into(trashReportMap);
+                GlideApp.with(this)
+                        .load(String.valueOf(mapUri.toURL()))
+                        .centerCrop()
+                        .dontTransform()
+                        .into(trashReportMap);
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             } catch (MalformedURLException e) {
@@ -664,7 +654,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                             Manifest.permission.ACCESS_FINE_LOCATION,
                             Manifest.permission.ACCESS_COARSE_LOCATION
                     },
-                    6);
+                    LOCATION_REQUEST_CODE);
         } else {
             GoogleApiClient mGoogleApiClient = ((MainActivity) getActivity()).getGoogleApiClient();
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
@@ -832,8 +822,10 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        if (requestCode == 6) {
-            getLocation();
+        if (requestCode == LOCATION_REQUEST_CODE) {
+            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                getLocation();
+            }
         } else if (requestCode == CropImage.CAMERA_CAPTURE_PERMISSIONS_REQUEST_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 createCameraIntentChooser();
@@ -939,10 +931,10 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             photoView.setAdjustViewBounds(true);
             photoView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-            Glide.with(context)
+            GlideApp.with(context)
                     .load(photos.get(position))
                     .centerCrop()
-                    .crossFade()
+                    .transition(DrawableTransitionOptions.withCrossFade())
                     .into(photoView);
 
             container.addView(photoView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);

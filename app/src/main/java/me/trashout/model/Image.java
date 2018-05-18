@@ -59,6 +59,9 @@ public class Image implements Parcelable {
     private String thumbRetinaDownloadUrl;
     @SerializedName("id")
     private int id;
+    @SerializedName("isMain")
+    @Expose
+    private boolean isMain;
 
     /**
      * @return The created
@@ -209,6 +212,7 @@ public class Image implements Parcelable {
         this.thumbStorageLocation = in.readString();
         this.thumbRetinaStorageLocation = in.readString();
         this.thumbRetinaDownloadUrl = in.readString();
+        this.isMain = in.readByte() != 0;
         this.id = in.readInt();
     }
 
@@ -234,7 +238,16 @@ public class Image implements Parcelable {
                 ", thumbStorageLocation='" + thumbStorageLocation + '\'' +
                 ", thumbRetinaStorageLocation='" + thumbRetinaStorageLocation + '\'' +
                 ", thumbRetinaDownloadUrl='" + thumbRetinaDownloadUrl + '\'' +
+                ", isMain='" + isMain + '\'' +
                 ", id=" + id +
                 '}';
+    }
+
+    public boolean isMain() {
+        return isMain;
+    }
+
+    public void setMain(boolean main) {
+        isMain = main;
     }
 }

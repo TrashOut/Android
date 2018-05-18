@@ -387,7 +387,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="global.pullToRefresh">"Zatáhni pro obnovení"</string>
     <string name="trash.accuracyOfLocationSmaller">"Přesnost umístění: &lt; "</string>
     <string name="global.sendEmail.error">"Email nelze odeslat."</string>
-    <string name="trash.illegalDumpIn_X">"Nelegální skládka v %"</string>
+    <string name="trash.illegalDumpIn_X">"Nelegální skládka v %s"</string>
     <string name="trash.reportedDetailsonWeb_X">"Hlášení nelegální skládky! Detaily k ilegální skládce dostupné na stránkách: %s"</string>
     <string name="trash.messageWasReceived">"Děkujeme, zprávu jsme obdrželi"</string>
     <string name="global.noDate">"Žádné datum"</string>
@@ -979,7 +979,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="export.selectAttributes">"Zvolte atributy, které chcete exportovat"</string>
     <string name="export.itemsPerFile">"Položek na 1 soubor"</string>
     <string name="export.itemsPerFile.currentValue">"Hodnota"</string>
-    <string name="export.preparingExport">"Export se připravuje..."</string>
+    <string name="export.preparingExport">"Export se připravuje…"</string>
     <string name="global.latitude">"Zeměpisná šířka"</string>
     <string name="global.longitude">"Zeměpisná délka"</string>
     <string name="collectionPoint.created">"Čas vytvoření"</string>
@@ -1247,4 +1247,7 @@ Naší snahou je zapojit obyčejné lidi, místní samosprávy a další organiz
     <string name="collectionPoint.validation.chooseDay">"Vyberte den"</string>
     <string name="collectionPoint.validation.dayIsUsed">"Den je už použit"</string>
     <string name="statistics.countryPicker.header">"Vyberte krajinu"</string>
+    <string name="notification.recentActivity.header">"Vaše hlášení skládky bylo aktualizováno"</string>
+    <string name="notification.recentActivity.text">"Skontrolujte nový stav v aplikaci TrashOut a mějte vždy přehled"</string>
+    <string name="mail.eventCreate.subject">"TrashOut - informace o vašem podujetí"</string>
 </resources>

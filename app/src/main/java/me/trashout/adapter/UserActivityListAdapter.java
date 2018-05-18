@@ -36,9 +36,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 import java.util.Locale;
@@ -48,6 +48,7 @@ import me.trashout.model.Constants;
 import me.trashout.model.UserActivity;
 import me.trashout.utils.DateTimeUtils;
 import me.trashout.utils.GeocoderTask;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.PositionUtils;
 
 public class UserActivityListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -100,8 +101,11 @@ public class UserActivityListAdapter extends RecyclerView.Adapter<RecyclerView.V
         userActivityViewHolder.userActivityDate.setText(DateTimeUtils.DATE_FORMAT.format(userActivity.getCreated()));
         userActivityViewHolder.userActivityPosition.setText(userActivity.getPosition() != null ? PositionUtils.getFormattedLocation(context, userActivity.getPosition().latitude, userActivity.getPosition().longitude) : "?");
 
-        if (userActivity.getActivity().getImages() != null && userActivity.getActivity().getImages().size() > 0) {
-            Glide.with(context).load(userActivity.getActivity().getImages().get(0).getThumbDownloadUrl()).thumbnail(0.2f).diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.ic_image_placeholder_square).into(userActivityViewHolder.userActivityImage);
+        if (userActivity.getActivity().getImages() != null && !userActivity.getActivity().getImages().isEmpty() && !TextUtils.isEmpty(userActivity.getActivity().getImages().get(0).getSmallestImage()) && userActivity.getActivity().getImages().get(0).getSmallestImage().contains("trashoutngo")) {
+            StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(userActivity.getActivity().getImages().get(0).getSmallestImage());
+            GlideApp.with(context).load(mImageRef).centerCrop().thumbnail(0.2f).placeholder(R.drawable.ic_image_placeholder_square).into(userActivityViewHolder.userActivityImage);
+        } else {
+            userActivityViewHolder.userActivityImage.setImageResource(R.drawable.ic_image_placeholder_square);
         }
 
         if (Constants.ActivityAction.CREATE.getName().equals(userActivity.getAction())) {
@@ -179,12 +183,12 @@ public class UserActivityListAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         public UserActivityViewHolder(View v) {
             super(v);
-            userActivityImage = (ImageView) v.findViewById(R.id.user_activity_image);
-            userActivityType = (ImageView) v.findViewById(R.id.user_activity_type);
-            userActivityName = (TextView) v.findViewById(R.id.user_activity_name);
-            userActivityDate = (TextView) v.findViewById(R.id.user_activity_date);
-            userActivityDistance = (TextView) v.findViewById(R.id.user_activity_distance);
-            userActivityPosition = (TextView) v.findViewById(R.id.user_activity_position);
+            userActivityImage = v.findViewById(R.id.user_activity_image);
+            userActivityType = v.findViewById(R.id.user_activity_type);
+            userActivityName = v.findViewById(R.id.user_activity_name);
+            userActivityDate = v.findViewById(R.id.user_activity_date);
+            userActivityDistance = v.findViewById(R.id.user_activity_distance);
+            userActivityPosition = v.findViewById(R.id.user_activity_position);
         }
     }
 }
