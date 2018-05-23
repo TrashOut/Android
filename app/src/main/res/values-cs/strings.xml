@@ -1234,7 +1234,7 @@ Naší snahou je zapojit obyčejné lidi, místní samosprávy a další organiz
     <string name="global.add">"Přidat"</string>
     <string name="profile.myEvents.timeDecision.ongoing">"Probíhající"</string>
     <string name="mail.eventConfirm.subject">"TrashOut - potvrzení účasti"</string>
-    <string name="mail.eventFeedback.subject">"TrashOut - jaká byla včera událost?"</string>
+    <string name="mail.eventFeedback.subject">"TrashOut - jaká byla v čera událost?"</string>
     <string name="mail.newsletter.subject">"TrashOut - nová aktivita v oblasti, kterou sledujete"</string>
     <string name="user.validation.failedToReadFacebookProfile">"Chzba při čtení dat z Facebook profilu"</string>
     <string name="user.validation.facebookNotGrantedPermissionForEmail">"Nemáte právo číst email"</string>
@@ -1250,4 +1250,5 @@ Naší snahou je zapojit obyčejné lidi, místní samosprávy a další organiz
     <string name="notification.recentActivity.header">"Vaše hlášení skládky bylo aktualizováno"</string>
     <string name="notification.recentActivity.text">"Skontrolujte nový stav v aplikaci TrashOut a mějte vždy přehled"</string>
     <string name="mail.eventCreate.subject">"TrashOut - informace o vašem podujetí"</string>
+    <string name="sign.up.accept.terms.policy">"S registrací nebo používáním mobilní aplikace souhlasíte se zněním <a href="http://trashout.ngo/policy">Ochrany osobních údajů</a> a <a href="https://www.trashout.ngo/terms">Podmínkami používání</a>"</string>
 </resources>

@@ -1423,4 +1423,5 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="notification.recentActivity.header">"Your report of an illegal dump was updated"</string>
     <string name="notification.recentActivity.text">"Check out its new status in TrashOut app and stay always informed"</string>
     <string name="mail.eventCreate.subject">"TrashOut - important information about the event you created"</string>
+    <string name="sign.up.accept.terms.policy">When you register or use this app, you agree with our <a href="http://trashout.ngo/policy">Privacy Policy</a> and <a href="https://www.trashout.ngo/terms">Terms and Conditions</a></string>
 </resources>

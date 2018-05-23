@@ -1211,4 +1211,6 @@
     <string name="notification.recentActivity.header">"Обновлен отчет о незаконном дампе"</string>
     <string name="notification.recentActivity.text">"Проверьте свой новый статус в приложении TrashOut и всегда будьте информированы"</string>
     <string name="mail.eventCreate.subject"></string>
+
+    <string name="sign.up.accept.terms.policy">Регистрируясь, вы соглашаетесь с <a href="http://trashout.ngo/policy">Условиями предоставления услуг</a> и <a href="https://www.trashout.ngo/terms">Политикой конфиденциальности</a></string>
 </resources>

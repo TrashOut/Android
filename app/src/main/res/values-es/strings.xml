@@ -1222,7 +1222,8 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="collectionPoint.validation.dayIsUsed">"día fue seleccionado"</string>
     <string name="statistics.countryPicker.header">"seleccione un país"</string>
 
-    <string name="notification.recentActivity.header"></string>
-    <string name="notification.recentActivity.text">"El volcado ilegal que informaste se actualizó"</string>
+    <string name="notification.recentActivity.header">"Su informe de un vertedero ilegal fue actualizado"</string>
+    <string name="notification.recentActivity.text">"Echa un vistazo a su nuevo estado en la aplicación TrashOut y mantente siempre informado"</string>
     <string name="mail.eventCreate.subject"></string>
+    <string name="sign.up.accept.terms.policy">"Al registrarte, aceptas <a href="http://trashout.ngo/policy">las Condiciones de Servicio</a> y <a href="https://www.trashout.ngo/terms">la Política de Privacidad</a>"</string>
 </resources>

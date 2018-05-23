@@ -36,7 +36,9 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -138,6 +140,8 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     TextInputEditText signUpPassword;
     @BindView(R.id.sign_up_reenter_password)
     TextInputEditText signUpReenterPassword;
+    @BindView(R.id.sign_up_accept_user_data_collection)
+    AppCompatCheckBox signUpAccpetUserDataCollectionCheckBox;
     @BindView(R.id.sign_up_btn)
     AppCompatButton signUpBtn;
     @BindView(R.id.sign_up_facebook_btn)
@@ -185,6 +189,8 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
         tabs.setupWithViewPager(pager);
 
+        signUpAccpetUserDataCollectionCheckBox.setMovementMethod(LinkMovementMethod.getInstance());
+
         return view;
     }
 
@@ -199,6 +205,11 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
     @OnClick({R.id.login_facebook_btn, R.id.sign_up_facebook_btn})
     public void onFacebookLoginClick(View view) {
+        resetLayoutError();
+        if (!signUpAccpetUserDataCollectionCheckBox.isChecked()) {
+            signUpAccpetUserDataCollectionCheckBox.setError("");
+            return;
+        }
 
 //        Toast.makeText(LoginFragment.this.getContext(), R.string.comming_soon, Toast.LENGTH_SHORT).show();
         LoginManager.getInstance().registerCallback(callbackManager,
@@ -290,49 +301,70 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     public void onSignUpClick() {
         boolean valid = true;
         resetLayoutError();
+        View errorView = null;
 
         if (TextUtils.isEmpty(signUpEmail.getText().toString())) {
             signUpEmailLayout.setError(getString(R.string.profile_validation_emailRequired));
             valid = false;
+            errorView = signUpEmail;
         } else if (!ViewUtils.isValidEmail(signUpEmail.getText().toString())) {
             signUpEmailLayout.setError(getString(R.string.profile_validation_invalidEmail));
             valid = false;
+            errorView = signUpEmail;
         }
 
         if (TextUtils.isEmpty(signUpFirstName.getText().toString())) {
             signUpFirstNameLayout.setError(getString(R.string.user_validation_firstNameRequired));
             valid = false;
+            errorView = signUpFirstName;
         }
 
         if (TextUtils.isEmpty(signUpLastName.getText().toString())) {
             signUpLastNameLayout.setError(getString(R.string.user_validation_lastNameRequired));
             valid = false;
+            errorView = signUpLastName;
         }
 
         if (TextUtils.isEmpty(signUpPassword.getText().toString())) {
             signUpPasswordLayout.setError(getString(R.string.profile_validation_passwordRequired));
             valid = false;
+            errorView = signUpPassword;
         }
 
         if (TextUtils.isEmpty(signUpReenterPassword.getText().toString())) {
             signUpReenterPasswordLayout.setError(getString(R.string.user_validation_confirmPasswordRequired));
             valid = false;
+            errorView = signUpReenterPassword;
         }
 
         if (!TextUtils.isEmpty(signUpPassword.getText().toString()) && !TextUtils.isEmpty(signUpReenterPassword.getText().toString()) && !signUpPassword.getText().toString().equals(signUpReenterPassword.getText().toString())) {
             signUpReenterPasswordLayout.setError(getString(R.string.user_validation_passwordsNotMatch));
             valid = false;
+            errorView = signUpReenterPassword;
         }
 
         if (signUpPassword.getText().length() > Constants.MAX_PASSWORD_LENGTH) {
             signUpPasswordLayout.setError(getString(R.string.global_validation_passwordTooLong));
             valid = false;
+            errorView = signUpPassword;
         } else if (signUpPassword.getText().length() < Constants.MIN_PASSWORD_LENGTH) {
             signUpPasswordLayout.setError(getString(R.string.user_validation_passwordTooShort));
             valid = false;
+            errorView = signUpPassword;
         } else if (!ViewUtils.isValidPassword(signUpPassword.getText().toString())) {
             signUpPasswordLayout.setError(getString(R.string.user_validation_passwordShouldContain));
             valid = false;
+            errorView = signUpPassword;
+        }
+
+        if (!signUpAccpetUserDataCollectionCheckBox.isChecked()) {
+            signUpAccpetUserDataCollectionCheckBox.setError("");
+            valid = false;
+            errorView = signUpAccpetUserDataCollectionCheckBox;
+        }
+
+        if (!valid) {
+            errorView.requestFocus();
         }
 
         if (valid) {
@@ -355,6 +387,8 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
         loginEmailLayout.setError(null);
         loginPasswordLayout.setError(null);
+
+        signUpAccpetUserDataCollectionCheckBox.setError(null);
     }
 
     @OnClick(R.id.login_btn)

@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.text.Html;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,6 +98,9 @@ public class TutorialFragmentItem extends BaseFragment {
     @BindView(R.id.btn_without_sign_in)
     TextView btnWithoutSignIn;
 
+    @BindView(R.id.tutorial_sign_up_accept_user_data_collection)
+    AppCompatCheckBox acceptTermsAndPolicyCheckBox;
+
     private CallbackManager callbackManager;
     private FirebaseAuth auth;
     private User user;
@@ -133,6 +138,7 @@ public class TutorialFragmentItem extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+        acceptTermsAndPolicyCheckBox.setMovementMethod(LinkMovementMethod.getInstance());
 
         initPage();
     }
@@ -310,6 +316,8 @@ public class TutorialFragmentItem extends BaseFragment {
 
     @OnClick(R.id.sign_up_facebook_btn)
     public void clickOnSignUpFacebook() {
+        if (!handleTermsAndPolicyAgreement()) return;
+
         tutorialCompleted();
         callbackManager = CallbackManager.Factory.create();
         LoginManager.getInstance().registerCallback(callbackManager,
@@ -353,6 +361,14 @@ public class TutorialFragmentItem extends BaseFragment {
         LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email"));
     }
 
+    private boolean handleTermsAndPolicyAgreement() {
+        if (!acceptTermsAndPolicyCheckBox.isChecked()) {
+            acceptTermsAndPolicyCheckBox.setError("");
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -361,6 +377,8 @@ public class TutorialFragmentItem extends BaseFragment {
 
     @OnClick(R.id.sign_up_btn)
     public void clickOnSignUp() {
+        if (!handleTermsAndPolicyAgreement()) return;
+
         tutorialCompleted();
         //startActivity(BaseActivity.generateIntent(getContext(), LoginFragment.class.getName(), null, MainActivity.class));
         startActivity(new Intent(getContext(), StartActivity.class));
@@ -369,6 +387,8 @@ public class TutorialFragmentItem extends BaseFragment {
 
     @OnClick(R.id.btn_without_sign_in)
     public void clickOnWithoutSignIn() {
+        if (!handleTermsAndPolicyAgreement()) return;
+
         tutorialCompleted();
         Bundle bundle = new Bundle();
         bundle.putBoolean(EXTRA_ARGUMENTS, true);
