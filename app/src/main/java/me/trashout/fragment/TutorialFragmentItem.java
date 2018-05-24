@@ -41,6 +41,7 @@ import com.google.firebase.auth.GetTokenResult;
 import com.google.gson.Gson;
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.Arrays;
 
@@ -100,6 +101,8 @@ public class TutorialFragmentItem extends BaseFragment {
 
     @BindView(R.id.tutorial_sign_up_accept_user_data_collection)
     AppCompatCheckBox acceptTermsAndPolicyCheckBox;
+    @BindView(R.id.tutorial_sign_up_accept_user_data_collection_text)
+    TextView acceptTermsAndPolicyTextView;
 
     private CallbackManager callbackManager;
     private FirebaseAuth auth;
@@ -138,7 +141,7 @@ public class TutorialFragmentItem extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
-        acceptTermsAndPolicyCheckBox.setMovementMethod(LinkMovementMethod.getInstance());
+        acceptTermsAndPolicyTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
         initPage();
     }

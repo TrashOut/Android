@@ -142,6 +142,8 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     TextInputEditText signUpReenterPassword;
     @BindView(R.id.sign_up_accept_user_data_collection)
     AppCompatCheckBox signUpAccpetUserDataCollectionCheckBox;
+    @BindView(R.id.sign_up_accept_user_data_collection_text)
+    TextView signUpAccpetUserDataCollectionTextView;
     @BindView(R.id.sign_up_btn)
     AppCompatButton signUpBtn;
     @BindView(R.id.sign_up_facebook_btn)
@@ -189,7 +191,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
         tabs.setupWithViewPager(pager);
 
-        signUpAccpetUserDataCollectionCheckBox.setMovementMethod(LinkMovementMethod.getInstance());
+        signUpAccpetUserDataCollectionTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
         return view;
     }
