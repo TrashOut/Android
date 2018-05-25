@@ -105,7 +105,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/sign_up_accept_user_data_collection"
                 android:layout_toStartOf="@+id/sign_up_accept_user_data_collection"
-                android:text="@string/sign.up.accept.terms.policy"
+                android:text=""
                 android:textSize="@dimen/text_size_small" />
 
             <android.support.v7.widget.AppCompatCheckBox

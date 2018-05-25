@@ -1239,5 +1239,8 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="notification.recentActivity.header">"Ihr Bericht eines illegalen Speicherauszugs wurde aktualisiert"</string>
     <string name="notification.recentActivity.text">"Überprüfen Sie seinen neuen Status in der TrashOut App und bleiben Sie immer informiert"</string>
     <string name="mail.eventCreate.subject"></string>
-    <string name="sign.up.accept.terms.policy">"Indem du dich registrierst, stimmst du den <a href="http://trashout.ngo/policy">Allgemeinen Geschäftsbedingungen</a> und <a href="https://www.trashout.ngo/terms">Datenschutzrichtlinien</a>"</string>
+    <string name="global.signUp.acceptRegister.startSentense">Indem du dich registrierst, stimmst du den</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">Allgemeinen Geschäftsbedingungen</string>
+    <string name="global.signUp.acceptRegister.and">und</string>
+    <string name="global.signUp.acceptRegister.terms">Datenschutzrichtlinien</string>
 </resources>

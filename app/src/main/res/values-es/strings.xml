@@ -1225,5 +1225,9 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="notification.recentActivity.header">"Su informe de un vertedero ilegal fue actualizado"</string>
     <string name="notification.recentActivity.text">"Echa un vistazo a su nuevo estado en la aplicación TrashOut y mantente siempre informado"</string>
     <string name="mail.eventCreate.subject"></string>
-    <string name="sign.up.accept.terms.policy">"Al registrarte, aceptas <a href="http://trashout.ngo/policy">las Condiciones de Servicio</a> y <a href="https://www.trashout.ngo/terms">la Política de Privacidad</a>"</string>
+
+    <string name="global.signUp.acceptRegister.startSentense">Al registrarte, aceptas las</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">Condiciones de Servicio</string>
+    <string name="global.signUp.acceptRegister.and">y la</string>
+    <string name="global.signUp.acceptRegister.terms">Política de Privacidad</string>
 </resources>

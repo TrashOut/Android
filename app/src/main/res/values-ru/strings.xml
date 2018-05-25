@@ -1212,5 +1212,8 @@
     <string name="notification.recentActivity.text">"Проверьте свой новый статус в приложении TrashOut и всегда будьте информированы"</string>
     <string name="mail.eventCreate.subject"></string>
 
-    <string name="sign.up.accept.terms.policy">Регистрируясь, вы соглашаетесь с <a href="http://trashout.ngo/policy">Условиями предоставления услуг</a> и <a href="https://www.trashout.ngo/terms">Политикой конфиденциальности</a></string>
+    <string name="global.signUp.acceptRegister.startSentense">Регистрируясь, вы соглашаетесь с</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">Условиями предоставления услуг</string>
+    <string name="global.signUp.acceptRegister.and">и</string>
+    <string name="global.signUp.acceptRegister.terms">Политикой конфиденциальности</string>
 </resources>

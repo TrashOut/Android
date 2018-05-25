@@ -1221,5 +1221,9 @@ Našou snahou je zapojiť občanov, vlády, obce a organizácie, aby sme mohli s
     <string name="notification.recentActivity.header">"Vaše hlásenie skládky bolo aktualizované"</string>
     <string name="notification.recentActivity.text">"Pozrite si jej nový stav v aplikácii TrashOut a buďte vždy v obraze"</string>
     <string name="mail.eventCreate.subject">"TrashOut - informácie o vašom podujatí"</string>
-    <string name="sign.up.accept.terms.policy">S registráciou alebo používaním mobilnej aplikácie súhlasíte so znením <a href="http://trashout.ngo/policy/">Ochrany osobných údajov</a> a <a href="https://www.trashout.ngo/terms/">Podmienkami používania</a></string>
+
+    <string name="global.signUp.acceptRegister.startSentense">S registráciou alebo používaním mobilnej aplikácie súhlasíte so znením</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">Ochrany osobných údajov</string>
+    <string name="global.signUp.acceptRegister.and">a</string>
+    <string name="global.signUp.acceptRegister.terms">Podmienkami používania</string>
 </resources>

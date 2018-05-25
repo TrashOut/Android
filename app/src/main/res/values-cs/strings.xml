@@ -1250,5 +1250,8 @@ Naší snahou je zapojit obyčejné lidi, místní samosprávy a další organiz
     <string name="notification.recentActivity.header">"Vaše hlášení skládky bylo aktualizováno"</string>
     <string name="notification.recentActivity.text">"Skontrolujte nový stav v aplikaci TrashOut a mějte vždy přehled"</string>
     <string name="mail.eventCreate.subject">"TrashOut - informace o vašem podujetí"</string>
-    <string name="sign.up.accept.terms.policy">"S registrací nebo používáním mobilní aplikace souhlasíte se zněním <a href="http://trashout.ngo/policy">Ochrany osobních údajů</a> a <a href="https://www.trashout.ngo/terms">Podmínkami používání</a>"</string>
+    <string name="global.signUp.acceptRegister.startSentense">S registrací nebo používáním mobilní aplikace souhlasíte se zněním</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">Ochrany osobních údajů</string>
+    <string name="global.signUp.acceptRegister.and">a</string>
+    <string name="global.signUp.acceptRegister.terms">Podmínkami používání</string>
 </resources>

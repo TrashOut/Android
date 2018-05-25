@@ -119,7 +119,7 @@
                     android:layout_marginLeft="@dimen/sides_margin"
                     android:layout_toStartOf="@+id/tutorial_sign_up_accept_user_data_collection"
                     android:layout_toLeftOf="@+id/tutorial_sign_up_accept_user_data_collection"
-                    android:text="@string/sign.up.accept.terms.policy"
+                    android:text=""
                     android:textColorLink="@color/text_color_blue"
                     android:textSize="@dimen/text_size_small" />
 

@@ -141,6 +141,12 @@ public class TutorialFragmentItem extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+
+        acceptTermsAndPolicyTextView.setText(Html.fromHtml(getString(R.string.global_signUp_acceptRegister_startSentense)
+                + " <a href=\"http://trashout.ngo/policy\">" + getString(R.string.global_signUp_acceptRegister_privatePolicy) +"</a> "
+                + getString(R.string.global_signUp_acceptRegister_and)
+                + " <a href=\"http://trashout.ngo/terms\">" + getString(R.string.global_signUp_acceptRegister_terms) +"</a>"
+        ));
         acceptTermsAndPolicyTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
         initPage();
