@@ -1158,6 +1158,7 @@ Täglich, wöchentlich oder monatlich benachrichtigt werden und über Aktivität
     <string name="global.validation.imageRatio">"Du kannst keine großen Bilder verwenden. Bitte verwende ein anderes Bild. Das Bildverhältnis muss kleiner als 1: 2 sein."</string>
     <string name="global.validation.maxiumNumberReached">"Maximale Anzahl der hochgeladenen Bilder erreicht (maximal 20 Dateien hochladen)."</string>
     <string name="global.error.api.title">"API-Fehler"</string>
+    <string name="global.error.api.text">Diese Information kann momentan nicht angezeigt werden, bitte versuchen Sie es später noch einmal</string>
     <string name="global.error.api.description">"Ein Fehler in der API. Seite aktualisieren bitte."</string>
     <string name="trash.types.glass">"Glas"</string>
     <string name="global.occupation">"Beruf"</string>

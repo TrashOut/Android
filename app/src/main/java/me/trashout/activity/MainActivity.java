@@ -257,7 +257,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                             getGetUserTokenAndUserdata();
                         } else {
                             Log.w(TAG, "signInAnonymously", task.getException());
-                            Toast.makeText(MainActivity.this, R.string.user_login_validation_autentification_filed, Toast.LENGTH_SHORT).show();
+                            showToast(R.string.user_login_validation_autentification_filed);
                         }
                     }
                 });
@@ -453,7 +453,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
             }
             // No network
             if (resultCode == ErrorCodes.NO_NETWORK) {
-                Toast.makeText(this, "No network", Toast.LENGTH_SHORT).show();
+                showToast("No network");
                 return;
             }
         }
@@ -556,7 +556,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                 replaceFragment(trashMapFragment);
                 setNavigationBottomViewCheckedItem(NAVIGATION_DUMPS_ITEM);
             } else {
-                Toast.makeText(this, R.string.global_allowGpsInPhone, Toast.LENGTH_LONG).show();
+                showToast(R.string.global_allowGpsInPhone);
             }
         } else if (requestCode == RC_LOCATION) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
@@ -573,7 +573,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                 isLocationEnabledCheck();
             } else {
                 Log.d(TAG, "onPermissionsGranted: no permitions");
-                Toast.makeText(this, R.string.global_allowGpsInPhone, Toast.LENGTH_LONG).show();
+                showToast(R.string.global_allowGpsInPhone);
                 refreshDashboardData();
             }
         }
@@ -635,9 +635,9 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     @Override
     public void onConnectionSuspended(int i) {
         if (i == CAUSE_SERVICE_DISCONNECTED) {
-            Toast.makeText(this, "Disconnected. Please re-connect.", Toast.LENGTH_SHORT).show();
+            showToast("Disconnected. Please re-connect.");
         } else if (i == CAUSE_NETWORK_LOST) {
-            Toast.makeText(this, "Network lost. Please re-connect.", Toast.LENGTH_SHORT).show();
+            showToast("Network lost. Please re-connect.");
         }
     }
 

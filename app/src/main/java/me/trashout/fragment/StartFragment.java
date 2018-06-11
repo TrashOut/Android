@@ -113,7 +113,7 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
                                         getGetUserTokenAndUserdata();
                                     } else {
                                         Log.w(TAG, "signInAnonymously", task.getException());
-                                        Toast.makeText(getContext(), R.string.user_login_validation_autentification_filed, Toast.LENGTH_SHORT).show();
+                                        getBaseActivity().showToast(R.string.user_login_validation_autentification_filed);
                                         startDashborad = false;
                                         startLoginFragment();
                                     }
@@ -143,13 +143,13 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
 
         // Sign in canceled
         if (resultCode == RESULT_CANCELED) {
-            Toast.makeText(getContext(), R.string.user_login_canceled, Toast.LENGTH_SHORT).show();
+            getBaseActivity().showToast(R.string.user_login_canceled);
             return;
         }
 
         // No network
         if (resultCode == ErrorCodes.NO_NETWORK) {
-            Toast.makeText(getContext(), R.string.global_validation_noNetwork, Toast.LENGTH_SHORT).show();
+            getBaseActivity().showToast(R.string.global_validation_noNetwork);
             return;
         }
 
@@ -219,14 +219,14 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
 
                             CreateUserService.startForRequest(getActivity(), CREATE_USER_REQUEST_ID, newUser);
                         } else {
-                            Toast.makeText(getContext(), R.string.user_login_validation_notFirebaseUser, Toast.LENGTH_SHORT).show();
+                            getBaseActivity().showToast(R.string.user_login_validation_notFirebaseUser);
                             startDashborad = false;
                             startLoginFragment();
                         }
 
                     } else {
                         dismissProgressDialog();
-                        Toast.makeText(getContext(), R.string.user_login_validation_unknownError, Toast.LENGTH_SHORT).show();
+                        getBaseActivity().showToast(R.string.user_login_validation_unknownError);
                         startDashborad = false;
                         startLoginFragment();
                     }
@@ -242,7 +242,7 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
                     ((StartActivity) getActivity()).startMainActivity();
                     finish();
                 } else {
-                    Toast.makeText(getContext(), R.string.user_login_create_error, Toast.LENGTH_SHORT).show();
+                    getBaseActivity().showToast(R.string.user_login_create_error);
                     startDashborad = false;
                     startLoginFragment();
                 }

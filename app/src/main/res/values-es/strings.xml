@@ -1145,6 +1145,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="global.validation.imageRatio">"No puede usar imágenes anchas Por favor use otra imagen. La relación de imagen debe ser inferior a 1:2"</string>
     <string name="global.validation.maxiumNumberReached">"Se ha alcanzado el número máximo de imágenes cargadas (puede cargar un máximo de 20 archivos)."</string>
     <string name="global.error.api.title">"Error de API"</string>
+    <string name="global.error.api.text">Esta información no se puede mostrar ahora, por favor intente de nuevo más tarde, gracias</string>
     <string name="global.error.api.description">"Se ha producido algún error en API. Por favor, actualice la página."</string>
     <string name="trash.types.glass">"Vidrio"</string>
     <string name="global.occupation">"Ocupación"</string>

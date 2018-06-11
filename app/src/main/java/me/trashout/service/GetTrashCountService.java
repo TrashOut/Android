@@ -85,7 +85,7 @@ public class GetTrashCountService extends BaseService {
         } catch (IOException e) {
             e.printStackTrace();
             exception = e;
-            result = new ApiSimpleErrorResult();
+            result = new ApiSimpleErrorResult(getBaseContext());
         }
 
 

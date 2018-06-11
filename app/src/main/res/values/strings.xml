@@ -1291,6 +1291,7 @@ daily, weekly or monthly to stay informed about activities in the location you c
     <string name="global.validation.imageRatio">"You cannot use wide images. Please use another image. Image ratio has to be smaller than 1:2."</string>
     <string name="global.validation.maxiumNumberReached">"Maximum number of uploaded images reached (you can upload maximum 20 files)."</string>
     <string name="global.error.api.title">"API Error"</string>
+    <string name="global.error.api.text">This information can not be displayed right now, please try again later, thank you</string>
     <string name="global.error.api.description">"Some error in API occurred.. Please refresh the page."</string>
     <string name="trash.types.glass">"Glass"</string>
     <string name="global.occupation">"Occupation"</string>

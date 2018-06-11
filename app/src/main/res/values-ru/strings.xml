@@ -1134,6 +1134,7 @@
     <string name="global.validation.imageRatio">"Нельзя использовать широкие изображения. Выберите другое изображение. Соотношение сторон изображения должно быть меньше 1:2."</string>
     <string name="global.validation.maxiumNumberReached">"Достигнуто максимальное количество загруженных изображений (вы можете загрузить не более 20 файлов)."</string>
     <string name="global.error.api.title">"Ошибка API"</string>
+    <string name="global.error.api.text">Эта информация не может быть отображена прямо сейчас, повторите попытку позже, спасибо</string>
     <string name="global.error.api.description">"Возникла некоторая ошибка в API. Обновите страницу."</string>
     <string name="trash.types.glass">"Стекло"</string>
     <string name="global.occupation">"Деятельность"</string>
