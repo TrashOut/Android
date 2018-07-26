@@ -197,7 +197,7 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
         if (isAdded()) {
             collectionPointDetailName.setText(collectionPoint.getSize().equals(Constants.CollectionPointSize.DUSTBIN) ? getString(Constants.CollectionPointSize.DUSTBIN.getStringResId()) : collectionPoint.getName());
 
-            collectionPointDetailType.setText(Html.fromHtml(getString(R.string.recyclable_gray) + TextUtils.join(", ", Constants.CollectionPointType.getCollectionPointTypeNameList(getContext(), collectionPoint.getTypes()))));
+            collectionPointDetailType.setText(Html.fromHtml(getString(R.string.recyclable_gray, getString(R.string.collectionPoint_detail_mobile_recycable)) + TextUtils.join(", ", Constants.CollectionPointType.getCollectionPointTypeNameList(getContext(), collectionPoint.getTypes()))));
             collectionPointDetailDistance.setText(String.format(getString(R.string.distance_away_formatter), lastPosition != null ? PositionUtils.getFormattedComputeDistance(getContext(), lastPosition, collectionPoint.getPosition()) : "?", getString(R.string.global_distanceAttribute_away)));
             collectionPointDetailPosition.setText(collectionPoint.getPosition() != null ? PositionUtils.getFormattedLocation(getContext(), collectionPoint.getPosition().latitude, collectionPoint.getPosition().longitude) : "?");
 
@@ -338,10 +338,12 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
                 ApiGetCollectionPointDetailResult apiGetCollectionPointDetailResult = (ApiGetCollectionPointDetailResult) apiResult.getResult();
                 mCollectionPoint = apiGetCollectionPointDetailResult.getCollectionPoint();
                 setupCollectionPointData(mCollectionPoint);
+            } else {
+                getBaseActivity().showToast(R.string.global_error_api_text);
             }
         } else if (apiResult.getRequestId() == CREATE_COLLECTION_POINT_NEW_SPAM_REQUEST_ID) {
             dismissProgressDialog();
-            Toast.makeText(getContext(), apiResult.isValidResponse() || apiResult.getResponse().code() == 500 || apiResult.getResponse().code() == 400 ? R.string.collectionPoint_markedAsSpam_success_thanksMobile : R.string.trash_create_markAsSpamFailed, Toast.LENGTH_SHORT).show();
+            getBaseActivity().showToast(apiResult.isValidResponse() || apiResult.getResponse().code() == 500 || apiResult.getResponse().code() == 400 ? R.string.collectionPoint_markedAsSpam_success_thanksMobile : R.string.trash_create_markAsSpamFailed);
         }
     }
 

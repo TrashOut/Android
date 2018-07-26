@@ -49,9 +49,13 @@ import me.trashout.model.Trash;
 import me.trashout.model.UserActivity;
 import me.trashout.service.base.BaseService;
 import me.trashout.utils.DateTimeUtils;
+import me.trashout.utils.PositionUtils;
 import me.trashout.utils.Utils;
 import retrofit2.Call;
 import retrofit2.Response;
+
+import static me.trashout.model.Constants.EN_LOCALE;
+import static me.trashout.model.Constants.MAX_EVENT_DISTANCE;
 
 /**
  * TrashOutNGO
@@ -163,8 +167,16 @@ public class GetHomeScreenDataService extends BaseService {
         try {
             Response<List<Event>> eventListResponse = callEventList.execute();
             if (eventListResponse.isSuccessful()) {
-
-                eventList = eventListResponse.body();
+                List<Event> temp = eventListResponse.body();
+                if (temp != null) {
+                    for (Event event : temp) {
+                        if (event != null && event.getGps() != null && PositionUtils.computeDistance(
+                                new LatLng(event.getGps().getLat(), event.getGps().getLng()),
+                                apiGetHomeScreenDataRequest.getUserPosition()) < MAX_EVENT_DISTANCE) {
+                            eventList.add(event);
+                        }
+                    }
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -218,15 +230,22 @@ public class GetHomeScreenDataService extends BaseService {
             lastException = e;
         }
 
-        if (news == null && !"en_US".equals(Utils.getLocaleString())) {
-            callNewsList = mApiServer.getNewsList("en_US", 0, 1, "-created");
+        if (!EN_LOCALE.equals(Utils.getLocaleString())) {
+            callNewsList = mApiServer.getNewsList(EN_LOCALE, 0, 1, "-created");
 
             try {
                 Response<List<News>> userActivityListResponse = callNewsList.execute();
                 if (userActivityListResponse.isSuccessful()) {
                     List<News> newsList = userActivityListResponse.body();
                     if (newsList != null && !newsList.isEmpty()) {
-                        news = newsList.get(0);
+                        News enNews = newsList.get(0);
+                        if (newsList.get(0) != null) {
+                            if (news == null) {
+                                news = newsList.get(0);
+                            } else {
+                                news = news.getCreated().after(newsList.get(0).getCreated()) ? news : newsList.get(0);
+                            }
+                        }
                     }
                 }
             } catch (IOException e) {

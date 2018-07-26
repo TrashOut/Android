@@ -268,7 +268,7 @@ public class EventCreateFragment extends BaseFragment implements ITrashFragment,
                     EventTrashSelectorFragment eventTrashSelectorFragment = EventTrashSelectorFragment.newInstance(meetingPoint, selectedTrashOnMap);
                     getBaseActivity().replaceFragment(eventTrashSelectorFragment);
                 } else {
-                    Toast.makeText(getContext(), R.string.trash_validation_mustSelectMeetingPoint, Toast.LENGTH_SHORT).show();
+                    getBaseActivity().showToast(R.string.trash_validation_mustSelectMeetingPoint);
                 }
                 break;
             case R.id.create_event_meeting_date_date_from:
@@ -319,7 +319,7 @@ public class EventCreateFragment extends BaseFragment implements ITrashFragment,
                 }
                 if (selectedTrashOnMap == null || selectedTrashOnMap.isEmpty()) {
                     validate = false;
-                    Toast.makeText(getContext(), R.string.event_validation_selectTrash, Toast.LENGTH_SHORT).show();
+                    getBaseActivity().showToast(R.string.event_validation_selectTrash);
                 }
 
                 if (validate) {
@@ -365,10 +365,10 @@ public class EventCreateFragment extends BaseFragment implements ITrashFragment,
                 if (getTargetFragment() != null && getTargetFragment() instanceof OnCreateEventListener) {
                     ((OnCreateEventListener) getTargetFragment()).onEventCreated();
                 }
-                Toast.makeText(getContext(), R.string.event_created, Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast(R.string.event_created);
                 finish();
             } else {
-                Toast.makeText(getContext(), R.string.event_create_failed, Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast(R.string.event_create_failed);
             }
         }
     }

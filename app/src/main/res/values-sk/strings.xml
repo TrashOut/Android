@@ -1167,7 +1167,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="trashHunter.lookingForDumps">"Hľadať skládky v okolí."</string>
     <string name="trash.detail.dump.mobileHeader">"Skládka"</string>
     <string name="trash.detail.missingPhoto">"Neexistuje žiadna fotografia na zobrazenie"</string>
-    <string name="collectionPoint.detail.mobile.recycable">"recyklovateľný"</string>
+    <string name="collectionPoint.detail.mobile.recycable">"Recyklovateľný"</string>
     <string name="collectionPoint.markedAsSpam.success.thanksMobile">"Ďakujeme za Vaše informácie, skontrolujeme ich."</string>
     <string name="collectionPoint.filter.selectAll">"Vybrať všetko"</string>
     <string name="profile.activity.mobileHeader">"Aktivita"</string>

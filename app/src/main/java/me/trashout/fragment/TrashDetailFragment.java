@@ -633,7 +633,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
             @Override
             public void onClick(View view) {
                 if (user == null) {
-                    Toast.makeText(getActivity(), R.string.event_signToJoin, Toast.LENGTH_SHORT).show();
+                    getBaseActivity().showToast(R.string.event_signToJoin);
                 } else {
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                             .title(R.string.global_validation_warning)
@@ -674,7 +674,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
 
     private void sendNotificationEmail() {
         Log.d(TAG, "Send email");
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+           Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
         emailIntent.setData(Uri.parse("mailto:"));
         emailIntent.setType("text/plain");
@@ -718,7 +718,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
             return;
 
         if (apiResult.getRequestId() == GET_TRASH_DETAIL_REQUEST_ID) {
-            if (apiResult.isValidResponse()) {
+            if (apiResult.isValidResponse() && apiResult.getResult() != null) {
                 ApiGetTrashDetailResult apiGetTrashDetailResult = (ApiGetTrashDetailResult) apiResult.getResult();
                 mTrash = apiGetTrashDetailResult.getTrash();
                 setupTrashData(mTrash);
@@ -726,14 +726,14 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 trashDetailViewContainer.setVisibility(View.VISIBLE);
             } else {
                 dismissProgressDialog();
-                Toast.makeText(getContext(), R.string.trash_detail_loadingFailed, Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast(R.string.trash_detail_loadingFailed);
             }
         } else if (apiResult.getRequestId() == TRASH_CREATE_SPAM_REQUEST_ID) {
             dismissProgressDialog();
-            Toast.makeText(getContext(), apiResult.isValidResponse() ? R.string.trash_messageWasReceived : R.string.trash_markedAsSpam_alreadyMarked, Toast.LENGTH_SHORT).show();
+            getBaseActivity().showToast(apiResult.isValidResponse() ? R.string.trash_messageWasReceived : R.string.trash_markedAsSpam_alreadyMarked);
         } else if (apiResult.getRequestId() == TRASH_JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
-            Toast.makeText(getContext(), apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed, Toast.LENGTH_SHORT).show();
+            getBaseActivity().showToast(apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed);
 
             if (apiResult.isValidResponse()) {
                 hideEventJoinButton(mJoinedEvent);

@@ -37,6 +37,7 @@ public class Constants {
 
     public static final int MAX_PASSWORD_LENGTH = 50;
     public static final int MIN_PASSWORD_LENGTH = 8;
+    public static final int MAX_EVENT_DISTANCE = 50000;
     public static String FEEDBACK_EMAIL_ADDRESS = "feedback@trashout.ngo";
 //    public static String PRIVACY_POLICY_HYPERLINK = "http://www.trashout.ngo/policy";
     public static String PRIVACY_POLICY_HYPERLINK = "http://www.trashout.ngo/terms";
@@ -44,6 +45,7 @@ public class Constants {
     public static final String CALENDAR_TYPE = "vnd.android.cursor.item/event";
     public static final String YOUTUBE_URL_PREFIX = "https://img.youtube.com/vi/";
     public static final String YOUTUBE_URL_SUFIX = "/default.jpg";
+    public static final String EN_LOCALE = "en_US";
 
     public enum TrashSize {
         BAG(0, "bag", R.string.trash_size_bag, R.drawable.ic_trash_size_bag),
@@ -246,7 +248,7 @@ public class Constants {
 
 
     public enum LastUpdate {
-        NO_LIMIT, TODAY, LAST_WEEK, LAST_MONTH, LAST_YEAR;
+        NO_LIMIT, TODAY, LAST_WEEK, LAST_MONTH, LAST_YEAR
     }
 
     public enum CollectionPointSize {

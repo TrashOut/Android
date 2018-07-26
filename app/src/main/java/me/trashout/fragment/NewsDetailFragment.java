@@ -324,6 +324,8 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
                 ApiGetNewsDetailResult apiGetNewsDetailResult = (ApiGetNewsDetailResult) apiResult.getResult();
                 mNews = apiGetNewsDetailResult.getNews();
                 setupNewsData(mNews);
+            } else {
+                getBaseActivity().showToast(R.string.global_error_api_text);
             }
         }
     }

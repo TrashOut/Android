@@ -1377,7 +1377,7 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="btn_share_with_others" translatable="false">Share with others</string>
 
     <string name="notification_new_trash_formatter" translatable="false">You hunt %d new or updated trashes.</string>
-    <string name="recyclable_gray" translatable="false"><![CDATA[<font color=\"#8b8b8b\">Recyclable: </font>]]></string>
+    <string name="recyclable_gray" translatable="false"><![CDATA[<font color=\"#8b8b8b\">%1$s: </font>]]></string>
     <string name="reported_activity_placeholder" translatable="false">%1$s %2$s %3$s %4$s %5$s</string>
     <string name="news_detail_placeholder" translatable="false"><![CDATA[<font color=\"#262626\">%1$s: </font>]]> %2$s</string>
     <string name="about_version_date_formatted" translatable="false">Version from %s</string>

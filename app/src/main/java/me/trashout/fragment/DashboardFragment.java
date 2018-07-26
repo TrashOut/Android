@@ -60,7 +60,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -250,7 +249,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     private User user;
     private boolean showFab = false;
 
-    private Event mJoinedEvent;
+    private Event joinedEvent;
     private int amountOfFoundTrash;
 
     int scrollYPosition = 0;
@@ -269,9 +268,13 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         ButterKnife.bind(this, view);
         this.inflater = inflater;
+        joinedEvent = null;
 
         user = PreferencesHandler.getUserData(getContext());
-        mJoinedEvent = null;
+        
+        if (user == null) {
+            return view;
+        }
 
         setLastPosition();
         Log.d(TAG, "onCreateView: lastPosition = " + lastPosition);
@@ -662,7 +665,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             @Override
             public void onClick(View view) {
                 if (user == null) {
-                    Toast.makeText(getActivity(), R.string.event_signToJoin, Toast.LENGTH_SHORT).show();
+                    getBaseActivity().showToast(R.string.event_signToJoin);
                 } else {
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                             .title(R.string.global_validation_warning)
@@ -674,7 +677,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                                 @Override
                                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
 
-                                    mJoinedEvent = event;
+                                    joinedEvent = event;
                                     showProgressDialog();
                                     JoinUserToEventService.startForRequest(getContext(), JOIN_TO_EVENT_REQUEST_ID, event.getId(), Collections.singletonList(user.getId()));
                                 }
@@ -841,17 +844,19 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                     setupDashboard(dashboardTrashList, dashboardCollectionPointDustbin, dashboardCollectionPointScrapyard, dashboardStatisticsCleanedCount, dashboardStatisticsReportedCount, dashboardUserActivityList, dashboardNews, dashboardEventList);
                 }
             } else {
-                Toast.makeText(getContext(), R.string.global_error_noData, Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast(R.string.global_error_api_text);
             }
         } else if (apiResult.getRequestId() == JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
-            Toast.makeText(getContext(), apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed, Toast.LENGTH_SHORT).show();
+            getBaseActivity().showToast(apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed);
 
             if (apiResult.isValidResponse()) {
-                hideEventJoinButton(mJoinedEvent);
-                openAddEventToCalendarDialog(mJoinedEvent);
+                hideEventJoinButton(joinedEvent);
+                openAddEventToCalendarDialog(joinedEvent);
 
-                mJoinedEvent = null;
+                joinedEvent = null;
+            } else {
+                getBaseActivity().showToast(R.string.global_error_api_text);
             }
         }
     }
@@ -941,7 +946,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
             @Override
             public void onFinish() {
-                Toast.makeText(getContext(), R.string.trashHunter_finished, Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast(R.string.trashHunter_finished);
                 dashboardTrashHunterTimer.setText("");
                 setHunterMode(false, 0, 0);
             }

@@ -293,6 +293,8 @@ public class CollectionPointListFragment extends BaseFragment implements ICollec
                     collectionPointList.clear();
                 collectionPointList.addAll(apiGetCollectionPointListResult.getCollectionPoints());
                 mAdapter.notifyDataSetChanged();
+            } else {
+                getBaseActivity().showToast(R.string.global_error_api_text);
             }
 
             recyclerview.setLoading(false);

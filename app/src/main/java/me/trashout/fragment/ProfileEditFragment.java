@@ -382,11 +382,11 @@ public class ProfileEditFragment extends BaseFragment implements IProfileFragmen
             dismissProgressDialog();
 
             if (apiResult.isValidResponse()) {
-                Toast.makeText(ProfileEditFragment.this.getContext(), "Update success", Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast("Update success");
                 PreferencesHandler.setUserData(getContext(), mUser);
                 finish();
             } else {
-                Toast.makeText(getContext(), "Update user Error", Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast(R.string.global_error_api_text);
             }
 
         }
@@ -422,14 +422,14 @@ public class ProfileEditFragment extends BaseFragment implements IProfileFragmen
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 CropImage.startPickImageActivity(getActivity());
             } else {
-                Toast.makeText(getContext(), "Cancelling, required permissions are not granted", Toast.LENGTH_LONG).show();
+                getBaseActivity().showToast("Cancelling, required permissions are not granted");
             }
         } else if (requestCode == CropImage.PICK_IMAGE_PERMISSIONS_REQUEST_CODE) {
             if (mCropImageUri != null && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // required permissions granted, start crop image activity
                 startCropImageActivity(mCropImageUri);
             } else {
-                Toast.makeText(getContext(), "Cancelling, required permissions are not granted", Toast.LENGTH_LONG).show();
+                getBaseActivity().showToast("Cancelling, required permissions are not granted");
             }
         }
     }

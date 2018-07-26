@@ -301,6 +301,8 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         ButterKnife.bind(this, view);
 
         user = PreferencesHandler.getUserData(getContext());
+        if (user == null)
+            ((MainActivity) getActivity()).signInAnonymously();
 
         getLocation();
 
@@ -648,7 +650,9 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     }
 
     private void getLocation() {
-        if (ContextCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (this.getActivity() != null &&
+                ContextCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Log.d(TAG, "validateNewData: permission check");
             requestPermissions(new String[]{
                             Manifest.permission.ACCESS_FINE_LOCATION,
@@ -777,30 +781,30 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         boolean isValidate = true;
 
         if (photos.size() < getMinPhotoCountToUpdate()) {
-            Toast.makeText(getContext(), String.format(getString(R.string.trash_edit_minPhotosText), getMinPhotoCountToUpdate()), Toast.LENGTH_LONG).show();
+            getBaseActivity().showToast(String.format(getString(R.string.trash_edit_minPhotosText), getMinPhotoCountToUpdate()));
             return false;
         }
 
         if (getSelectedTrashSize() == null) {
-            Toast.makeText(getContext(), R.string.trash_validation_sizeRequired, Toast.LENGTH_SHORT).show();
+            getBaseActivity().showToast(R.string.trash_validation_sizeRequired);
             isValidate = false;
         } else if (getSelectedTrashType().isEmpty()) {
             isValidate = false;
-            Toast.makeText(getContext(), R.string.trash_validation_typeRequired, Toast.LENGTH_LONG).show();
+            getBaseActivity().showToast(R.string.trash_validation_typeRequired);
         } else if (getTrash() != null) {
             if (mLastLocation != null) {
                 if (isValidate = checkUpdatedTrashDistance(getTrash().getPosition(), mLastLocation)) {
                     isValidate = true;
                 } else {
-                    Toast.makeText(getContext(), R.string.trash_edit_greaterDistanceText, Toast.LENGTH_LONG).show();
+                    getBaseActivity().showToast(R.string.trash_edit_greaterDistanceText);
                     isValidate = false;
                 }
             } else {
-                Toast.makeText(getContext(), "No Location. Please allow location provider", Toast.LENGTH_LONG).show();
+                getBaseActivity().showToast("No Location. Please allow location provider");
                 isValidate = false;
             }
         } else if (mLastLocation == null) {
-            Toast.makeText(getContext(), "No Location. Please allow location provider", Toast.LENGTH_LONG).show();
+            getBaseActivity().showToast("No Location. Please allow location provider");
             isValidate = false;
             getLocation();
         }
@@ -830,14 +834,14 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 createCameraIntentChooser();
             } else {
-                Toast.makeText(getContext(), "Cancelling, required permissions are not granted", Toast.LENGTH_LONG).show();
+                getBaseActivity().showToast("Cancelling, required permissions are not granted");
             }
         } else if (requestCode == CropImage.PICK_IMAGE_PERMISSIONS_REQUEST_CODE) {
             if (mCropImageUri != null && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // required permissions granted, start crop image activity
                 startCropImageActivity(mCropImageUri);
             } else {
-                Toast.makeText(getContext(), "Cancelling, required permissions are not granted", Toast.LENGTH_LONG).show();
+                getBaseActivity().showToast("Cancelling, required permissions are not granted");
             }
         }
     }
@@ -873,24 +877,24 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             dismissProgressDialog();
 
             if (apiResult.isValidResponse()) {
-                Toast.makeText(getContext(), R.string.trash_create_success, Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast(R.string.trash_create_success);
                 mCallback.onRefreshTrashList();
                 redirectToSharePage(apiResult);
             } else {
-                Toast.makeText(getContext(), R.string.trash_validation_createFailed, Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast(R.string.trash_validation_createFailed);
             }
         } else if (apiResult.getRequestId() == UPDATE_TRASH_REQUEST_ID) {
             dismissProgressDialog();
 
             if (apiResult.isValidResponse()) {
-                Toast.makeText(getContext(), R.string.trash_update_success, Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast(R.string.trash_update_success);
                 mCallback.onRefreshTrashList();
                 if (onTrashChangedListener != null) {
                     onTrashChangedListener.onTrashChanged();
                 }
                 redirectToSharePage(apiResult);
             } else {
-                Toast.makeText(getContext(), R.string.trash_validation_updateFailed, Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast(R.string.trash_validation_updateFailed);
             }
         }
     }

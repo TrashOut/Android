@@ -131,7 +131,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
 
         if (mUser == null) {
             // TODO - No user - get from API?, login?
-            Toast.makeText(getContext(), "No user data.. Please login again", Toast.LENGTH_SHORT).show();
+            getBaseActivity().showToast("No user data.. Please login again");
             // start login activity
             getActivity().finish();
         } else {
@@ -144,7 +144,6 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
             public boolean onMenuItemClick(MenuItem item) {
 
                 if (item.getItemId() == R.id.action_logout) {
-                    // TODO - logout on API and Firebase, Start login activity
                     TrashoutFirebaseInstanceIdService.deleteFcmToken(getContext());
                     PreferencesHandler.setUserData(getContext(), null);
                     FirebaseAuth.getInstance().signOut();
@@ -261,7 +260,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
         badgeInfoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ProfileFragment.this.getContext(), badge.getName(), Toast.LENGTH_SHORT).show();
+                getBaseActivity().showToast(badge.getName());
             }
         });
 
@@ -296,6 +295,8 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
                 ApiGetUserResult apiGetUserResult = (ApiGetUserResult) apiResult.getResult();
                 mUser = apiGetUserResult.getUser();
                 setupUserData(mUser);
+            } else {
+                getBaseActivity().showToast(R.string.global_error_api_text);
             }
         }
     }

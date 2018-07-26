@@ -83,7 +83,7 @@ public class CollectionPoinListAdapter extends RecyclerView.Adapter<RecyclerView
         if (holder instanceof CollectionPointHeaderViewHolder) {
             CollectionPointHeaderViewHolder collectionPointHeaderViewHolder = (CollectionPointHeaderViewHolder) holder;
             collectionPointHeaderViewHolder.name.setText(collectionPoint.getSize().equals(Constants.CollectionPointSize.DUSTBIN) ? context.getString(Constants.CollectionPointSize.DUSTBIN.getStringResId()) : collectionPoint.getName());
-            collectionPointHeaderViewHolder.types.setText(Html.fromHtml(context.getString(R.string.recyclable_gray) + TextUtils.join(", ", Constants.CollectionPointType.getCollectionPointTypeNameList(context, collectionPoint.getTypes()))));
+            collectionPointHeaderViewHolder.types.setText(Html.fromHtml(context.getString(R.string.recyclable_gray, context.getString(R.string.collectionPoint_detail_mobile_recycable)) + TextUtils.join(", ", Constants.CollectionPointType.getCollectionPointTypeNameList(context, collectionPoint.getTypes()))));
             collectionPointHeaderViewHolder.distance.setText(String.format(context.getString(R.string.distance_away_formatter), (lastPosition != null && collectionPoint.getPosition() != null) ? PositionUtils.getRoundedFormattedDistance(context, (int) PositionUtils.computeDistance(lastPosition, collectionPoint.getPosition())) : "?", context.getString(R.string.global_distanceAttribute_away)));
             collectionPointHeaderViewHolder.position.setText(collectionPoint.getPosition() != null ? PositionUtils.getFormattedLocation(context, collectionPoint.getPosition().latitude, collectionPoint.getPosition().longitude) : "?");
             if (getItemCount() > 1)
@@ -152,9 +152,9 @@ public class CollectionPoinListAdapter extends RecyclerView.Adapter<RecyclerView
 
         public CollectionPointViewHolder(View v) {
             super(v);
-            name = (TextView) v.findViewById(R.id.collection_point_name);
-            types = (TextView) v.findViewById(R.id.collection_point_types);
-            distance = (TextView) v.findViewById(R.id.collection_point_distance);
+            name = v.findViewById(R.id.collection_point_name);
+            types = v.findViewById(R.id.collection_point_types);
+            distance = v.findViewById(R.id.collection_point_distance);
 
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -177,11 +177,11 @@ public class CollectionPoinListAdapter extends RecyclerView.Adapter<RecyclerView
         public CollectionPointHeaderViewHolder(View v) {
             super(v);
 
-            name = (TextView) v.findViewById(R.id.collection_point_list_header_name);
-            distance = (TextView) v.findViewById(R.id.collection_point_list_header_distance);
-            position = (TextView) v.findViewById(R.id.collection_point_list_header_position);
-            types = (TextView) v.findViewById(R.id.collection_point_list_header_type);
-            readMore = (Button) v.findViewById(R.id.collection_point_list_header_more_btn);
+            name = v.findViewById(R.id.collection_point_list_header_name);
+            distance = v.findViewById(R.id.collection_point_list_header_distance);
+            position = v.findViewById(R.id.collection_point_list_header_position);
+            types = v.findViewById(R.id.collection_point_list_header_type);
+            readMore = v.findViewById(R.id.collection_point_list_header_more_btn);
             readMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -193,6 +193,6 @@ public class CollectionPoinListAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
     public interface OnCollectionPointItemClickListener {
-        public void onCollectionPointClick(CollectionPoint collectionPoint);
+        void onCollectionPointClick (CollectionPoint collectionPoint);
     }
 }

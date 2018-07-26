@@ -3,6 +3,7 @@ package me.trashout.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.view.LayoutInflater;
@@ -17,7 +18,6 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,13 +29,9 @@ import me.trashout.api.base.ApiUpdate;
 import me.trashout.api.result.ApiGetOrganizationsListResult;
 import me.trashout.fragment.base.BaseFragment;
 import me.trashout.fragment.base.IProfileFragment;
-import me.trashout.model.CollectionPointFilter;
-import me.trashout.model.Constants;
 import me.trashout.model.Organization;
-import me.trashout.model.User;
 import me.trashout.service.GetOrganizationsListService;
 import me.trashout.service.base.BaseService;
-import me.trashout.utils.PreferencesHandler;
 
 /**
  * Created by filip.tomasovych on 24. 1. 2018.
@@ -49,7 +45,6 @@ public class SelectOrganizationsFragment extends BaseFragment implements IProfil
     @BindView(R.id.organizations_container)
     LinearLayout organizationsContainer;
 
-    private User mUser;
     private List<Organization> mSelectedOrganizations;
 
     private LayoutInflater inflater;
@@ -85,22 +80,25 @@ public class SelectOrganizationsFragment extends BaseFragment implements IProfil
         setHasOptionsMenu(true);
 
         Bundle bundle = getArguments();
-        if (bundle != null)
-        {
+        if (bundle != null) {
             String gsonString = (String) bundle.getSerializable(KEY_SELECTED_ORGANIZATIONS);
             Gson gson = new Gson();
-            mSelectedOrganizations = gson.fromJson(gsonString, new TypeToken<List<Organization>>(){}.getType());
+            mSelectedOrganizations = gson.fromJson(gsonString, new TypeToken<List<Organization>>() {
+            }.getType());
+        }
+
+        if (mSelectedOrganizations == null) {
+            mSelectedOrganizations = new ArrayList<>();
         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_select_organizations, container, false);
         ButterKnife.bind(this, view);
 
         this.inflater = inflater;
 
-        mUser = PreferencesHandler.getUserData(getContext());
         setupOrganizations(null);
 
         GetOrganizationsListService.startForRequest(getActivity(), GET_ORGANIZATIONS_LIST_REQUEST);
@@ -134,17 +132,15 @@ public class SelectOrganizationsFragment extends BaseFragment implements IProfil
         List<Organization> organizationList = new ArrayList<>();
 
         for (int i = 0; i < organizationsContainer.getChildCount(); i++) {
-            View collectionPointFiltrTypeView = organizationsContainer.getChildAt(i);
-            AppCompatCheckBox collectionPointTypeCheckBox = (AppCompatCheckBox) collectionPointFiltrTypeView.findViewById(R.id.collection_point_filter_type_checkbox);
+            View collectionPointFilterTypeView = organizationsContainer.getChildAt(i);
+            AppCompatCheckBox collectionPointTypeCheckBox;
+            collectionPointTypeCheckBox = collectionPointFilterTypeView.findViewById(R.id.collection_point_filter_type_checkbox);
             if (collectionPointTypeCheckBox.isChecked()) {
                 Organization org = (Organization) collectionPointTypeCheckBox.getTag();
                 organizationList.add(org);
             }
         }
 
-//        mUser.setOrganizations(organizationList);
-
-//        PreferencesHandler.setUserData(getContext(), mUser);
         mCallback.onSaveOrganizationsListener(organizationList);
     }
 
@@ -162,12 +158,11 @@ public class SelectOrganizationsFragment extends BaseFragment implements IProfil
         }
     }
 
-    // TODO prerobit view a prepisat premenne
     private View getOrganizationView(Organization organization, boolean checked) {
         View collectionPointTypeView = inflater.inflate(R.layout.layout_collection_point_filter_type, null);
 
-        TextView collectionPointTypeName = (TextView) collectionPointTypeView.findViewById(R.id.collection_point_filter_type_name);
-        final AppCompatCheckBox collectionPointTypeCheckBox = (AppCompatCheckBox) collectionPointTypeView.findViewById(R.id.collection_point_filter_type_checkbox);
+        TextView collectionPointTypeName = collectionPointTypeView.findViewById(R.id.collection_point_filter_type_name);
+        final AppCompatCheckBox collectionPointTypeCheckBox = collectionPointTypeView.findViewById(R.id.collection_point_filter_type_checkbox);
 
         collectionPointTypeName.setText(organization.getName());
         collectionPointTypeCheckBox.setChecked(checked);

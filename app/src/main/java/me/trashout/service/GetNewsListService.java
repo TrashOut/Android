@@ -44,6 +44,8 @@ import me.trashout.utils.Utils;
 import retrofit2.Call;
 import retrofit2.Response;
 
+import static me.trashout.model.Constants.EN_LOCALE;
+
 /**
  * TrashOutNGO
  *
@@ -87,8 +89,8 @@ public class GetNewsListService extends BaseService {
             lastException = e;
         }
 
-        if (!"en_US".equals(Utils.getLocaleString())) {
-            call = mApiServer.getNewsList("en_US", apiGetCollectionPointListRequest.getPage(), Configuration.NEWS_LIST_LIMIT_SIZE, "-created");
+        if (!EN_LOCALE.equals(Utils.getLocaleString())) {
+            call = mApiServer.getNewsList(EN_LOCALE, apiGetCollectionPointListRequest.getPage(), Configuration.NEWS_LIST_LIMIT_SIZE, "-created");
 
             try {
                 Response<List<News>> response = call.execute();

@@ -49,7 +49,7 @@ public class UpdateHistory implements Parcelable {
     private UserInfo userInfo;
     @SerializedName("anonymous")
     @Expose
-    private Boolean anonymous;
+    private boolean anonymous;
     @SerializedName("updateTime")
     @Expose
     private Date updateTime;
@@ -111,14 +111,14 @@ public class UpdateHistory implements Parcelable {
     /**
      * @return The anonymous
      */
-    public Boolean isAnonymous() {
+    public boolean isAnonymous() {
         return anonymous;
     }
 
     /**
      * @param anonymous The anonymous
      */
-    public void setAnonymous(Boolean anonymous) {
+    public void setAnonymous(boolean anonymous) {
         this.anonymous = anonymous;
     }
 

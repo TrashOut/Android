@@ -237,31 +237,36 @@ public class NewsListFragment extends BaseFragment implements INewsFragment, New
                 ApiGetNewsListResult apiGetNewsListResult = (ApiGetNewsListResult) apiResult.getResult();
                 ApiGetNewsListRequest apiGetNewsListRequest = (ApiGetNewsListRequest) apiResult.getRequest();
 
-                if (newsList == null) {
-                    newsList = new ArrayList<>();
-                }
-                if (apiGetNewsListRequest.getPage() < 1) {
-                    newsList.clear();
-                }
+                if (apiGetNewsListRequest != null && apiGetNewsListResult != null) {
 
-                if(apiGetNewsListResult.getNewsList() != null && !apiGetNewsListResult.getNewsList().isEmpty()){
-                    for(News newNews: apiGetNewsListResult.getNewsList()){
-                        boolean match = false;
-                        for(News oldNews : newsList){
-                            if(newNews.getId() == oldNews.getId()){
-                                match = true;
-                                break;
+                    if (newsList == null) {
+                        newsList = new ArrayList<>();
+                    }
+                    if (apiGetNewsListRequest.getPage() < 1) {
+                        newsList.clear();
+                    }
+
+                    if (apiGetNewsListResult.getNewsList() != null && !apiGetNewsListResult.getNewsList().isEmpty()) {
+                        for (News newNews : apiGetNewsListResult.getNewsList()) {
+                            boolean match = false;
+                            for (News oldNews : newsList) {
+                                if (newNews.getId() == oldNews.getId()) {
+                                    match = true;
+                                    break;
+                                }
+                            }
+                            if (!match) {
+                                newsList.add(newNews);
                             }
                         }
-                        if(!match){
-                            newsList.add(newNews);
-                        }
+                    } else {
+                        GetNewsListService.startForRequest(getActivity(), GET_NEWS_LIST_REQUEST_ID, -1);
                     }
-                } else {
-                    GetNewsListService.startForRequest(getActivity(), GET_NEWS_LIST_REQUEST_ID, -1);
-                }
 
-                mAdapter.notifyDataSetChanged();
+                    mAdapter.notifyDataSetChanged();
+                }
+            } else {
+                getBaseActivity().showToast(R.string.global_error_api_text);
             }
 
             recyclerview.setLoading(false);
