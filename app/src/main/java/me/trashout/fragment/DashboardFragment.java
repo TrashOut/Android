@@ -221,6 +221,8 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     TextView dashboardEventsTitleDescription;
     @BindView(R.id.dashboard_events_container)
     LinearLayout dashboardEventsContainer;
+    @BindView(R.id.trash_detail_event_card_view)
+    CardView dashboardEventsCardView;
     @BindView(R.id.scrollView)
     NestedScrollView scrollView;
     @BindView(R.id.layout_hideable_container)
@@ -373,6 +375,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         dashboardNewsImageContainer.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
         dashboardRecentActivityContainer.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
         dashboardEventsContainer.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
+        dashboardEventsCardView.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
         dashboardNewsCardView.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
         homeNearestCollectionPointDustbinCardView.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
         homeNearestCollectionPointScrapyardCardView.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
@@ -478,7 +481,8 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         dashboardStatisticsReported.setText(dashboardStatisticsReportedCount > -1 ? String.valueOf(dashboardStatisticsReportedCount) : "?");
 
         dashboardRecentActivityContainer.removeAllViews();
-        if (dashboardUserActivityList != null && !dashboardUserActivityList.isEmpty()) {
+        // if user is anonymous, dont show recent activity
+        if (dashboardUserActivityList != null && !dashboardUserActivityList.isEmpty() && user.getEmail() != null && !user.getEmail().isEmpty()) {
             List<UserActivity> finalDashboardUserActivityList = dashboardUserActivityList.size() < 3 ? dashboardUserActivityList : dashboardUserActivityList.subList(0, 3);
             for (UserActivity userActivity : finalDashboardUserActivityList) {
                 if (dashboardRecentActivityContainer.getChildCount() > 0)
@@ -509,8 +513,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                         .load(mImageRef)
                         .centerCrop()
                         .crossFade()
-                        .thumbnail(0.2f)
-                        .placeholder(R.drawable.ic_image_placeholder_rectangle)
+                        .thumbnail(Glide.with(this).load(R.drawable.ic_image_placeholder_rectangle).centerCrop())
                         .into(dashboardNewsImage);
             }
         } else {
@@ -523,6 +526,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             dashboardEventsTitle.setVisibility(View.VISIBLE);
             dashboardEventsTitleDescription.setVisibility(View.VISIBLE);
             dashboardEventsContainer.setVisibility(View.VISIBLE);
+            dashboardEventsCardView.setVisibility(View.VISIBLE);
 
             for (Event event : dashboardEventList) {
                 if (dashboardEventsContainer.getChildCount() > 0)
@@ -534,6 +538,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             dashboardEventsTitle.setVisibility(View.GONE);
             dashboardEventsTitleDescription.setVisibility(View.GONE);
             dashboardEventsContainer.setVisibility(View.GONE);
+            dashboardEventsCardView.setVisibility(View.GONE);
         }
     }
 

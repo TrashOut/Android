@@ -70,7 +70,7 @@ public class ApiGetTrashListParam extends ApiBaseParam {
     public static ApiGetTrashListParam createEventMapTrashListParam(TrashFilter trashFilter, LatLng userPosition) {
         ApiGetTrashListParam apiGetTrashListParam = new ApiGetTrashListParam(trashFilter, userPosition);
         apiGetTrashListParam.setAttributesNeeded(MAP_ATTRIBUTES_NEEDED);
-        apiGetTrashListParam.setLimit(150);
+        apiGetTrashListParam.setLimit(200);
         return apiGetTrashListParam;
     }
 
@@ -79,7 +79,7 @@ public class ApiGetTrashListParam extends ApiBaseParam {
         apiGetTrashListParam.setTrashFilter(trashFilter);
         apiGetTrashListParam.setAttributesNeeded(MAP_ATTRIBUTES_NEEDED);
         apiGetTrashListParam.setGeocells(geocells);
-        apiGetTrashListParam.setLimit(150);
+        apiGetTrashListParam.setLimit(1000);
         return apiGetTrashListParam;
     }
 

@@ -196,16 +196,21 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
                 newsDetailArea.setVisibility(View.VISIBLE);
             }
 
-            if (news.getImages() != null && !news.getImages().isEmpty() && ViewUtils.checkImageStorage(news.getImages().get(0))) {
-                StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(news.getImages().get(0).getFullStorageLocation());
-                Glide.with(this)
-                        .using(new FirebaseImageLoader())
-                        .load(mImageRef)
-                        .centerCrop()
-                        .crossFade()
-                        .thumbnail(0.2f)
-                        .placeholder(R.drawable.ic_image_placeholder_rectangle)
-                        .into(newsDetailImage);
+            if (news.getImages() != null && !news.getImages().isEmpty()) {
+                for (Image image : news.getImages()) {
+                    if (ViewUtils.checkImageStorage(image) && image.isMain()) {
+                        StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(news.getImages().get(0).getFullStorageLocation());
+                        Glide.with(this)
+                                .using(new FirebaseImageLoader())
+                                .load(mImageRef)
+                                .centerCrop()
+                                .crossFade()
+                                .thumbnail(Glide.with(this).load(R.drawable.ic_image_placeholder_rectangle).centerCrop())
+                                .into(newsDetailImage);
+
+                        break;
+                    }
+                }
             }
 
 
@@ -292,7 +297,7 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
         @Override
         public void onClick(View v) {
             if (mNews != null) {
-                PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(mNews.getImages()), mNews.getTitle(), mNews.getCreated(), true);
+                PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(mNews.getImages()), mNews.getTitle(), mNews.getCreated(), 0, true);
                 getBaseActivity().replaceFragment(photoFullscreenFragment);
             }
         }

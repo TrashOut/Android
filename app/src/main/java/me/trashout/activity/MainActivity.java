@@ -27,11 +27,9 @@
 package me.trashout.activity;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -186,7 +184,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     }
 
     public LatLng getLastPosition() {
-        return lastPosition;
+        updatePosition();
+        return PreferencesHandler.getUserLastLocation(this);
     }
 
     @Override
@@ -500,32 +499,20 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if (requestCode == OPEN_MAP_FRAGMENT_REQUEST_CODE) {
-            if ((ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED)) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            updatePosition();
+            if (requestCode == OPEN_MAP_FRAGMENT_REQUEST_CODE) {
                 TrashMapFragment trashMapFragment = new TrashMapFragment();
                 replaceFragment(trashMapFragment);
                 setNavigationBottomViewCheckedItem(NAVIGATION_DUMPS_ITEM);
             } else {
-                Toast.makeText(this, R.string.global_allowGpsInPhone, Toast.LENGTH_LONG).show();
-            }
-        } else {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
-                    ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                Location mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-                // Note that this can be NULL if last location isn't already known.
-                if (mCurrentLocation != null) {
-                    // Print current location if not null
-                    Log.d("DEBUG", "current location: " + mCurrentLocation.toString());
-                    lastPosition = new LatLng(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
-                    refreshDashboardData();
-                }
-
-                isLocationEnabledCheck();
-            } else {
-                Log.d(TAG, "onPermissionsGranted: no permitions");
-                Toast.makeText(this, R.string.global_allowGpsInPhone, Toast.LENGTH_LONG).show();
                 refreshDashboardData();
             }
+        } else {
+            Log.d(TAG, "onPermissionsGranted: no permitions");
+            Toast.makeText(this, R.string.global_allowGpsInPhone, Toast.LENGTH_LONG).show();
+            refreshDashboardData();
         }
     }
 
@@ -566,19 +553,31 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
         String[] perms = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
         if (EasyPermissions.hasPermissions(this, perms)) {
-            // Get last known recent location.
+            updatePosition();
+            refreshDashboardData();
+        } else {
+            // Do not have permissions, request them now
+            ActivityCompat.requestPermissions(this, perms, RC_LOCATION);
+        }
+    }
+
+    private void updatePosition() {
+        String[] perms = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
+        if (EasyPermissions.hasPermissions(this, perms)) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
             Location mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             // Note that this can be NULL if last location isn't already known.
             if (mCurrentLocation != null) {
                 // Print current location if not null
                 Log.d("DEBUG", "current location: " + mCurrentLocation.toString());
-                lastPosition = new LatLng(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
 
-                refreshDashboardData();
+                lastPosition = new LatLng(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude());
+                PreferencesHandler.setUserLastLocation(this, lastPosition);
             }
-        } else {
-            // Do not have permissions, request them now
-            ActivityCompat.requestPermissions(this, perms, RC_LOCATION);
+
+            isLocationEnabledCheck();
         }
     }
 

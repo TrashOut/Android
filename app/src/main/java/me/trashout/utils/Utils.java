@@ -42,7 +42,6 @@ import android.net.Uri;
 import android.provider.CalendarContract;
 import android.util.Log;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -56,6 +55,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import me.trashout.R;
 import me.trashout.model.Constants;
 import me.trashout.model.Event;
 
@@ -151,7 +151,7 @@ public class Utils {
         Intent intent = new Intent(Intent.ACTION_INSERT);
         intent.setType(Constants.CALENDAR_TYPE);
 
-        intent.putExtra(CalendarContract.Events.TITLE, event.getName());
+        intent.putExtra(CalendarContract.Events.TITLE, context.getString(R.string.event_calendar_title_prefix) + event.getName());
         intent.putExtra(CalendarContract.Events.EVENT_LOCATION, event.getGps().getArea().getFormatedLocation());
         intent.putExtra(CalendarContract.Events.DESCRIPTION, event.getDescription());
 

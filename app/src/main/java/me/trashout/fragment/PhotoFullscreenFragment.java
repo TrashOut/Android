@@ -67,6 +67,7 @@ public class PhotoFullscreenFragment extends BaseFragment {
     private static final String BUNDLE_REPORTER_NAME = "BUNDLE_REPORTER_NAME";
     private static final String BUNDLE_REPORT_DATE = "BUNDLE_REPORT_DATE";
     private static final String BUNDLE_EXACT_DATE = "BUNDLE_EXACT_DATE";
+    private static final String BUNDLE_CURRENT_PHOTO_POSITION = "BUNDLE_CURRENT_PHOTO_POSITION";
 
     @BindView(R.id.pager)
     HackyViewPager pager;
@@ -86,16 +87,17 @@ public class PhotoFullscreenFragment extends BaseFragment {
     private Date mReportDate;
     private Boolean mIsExactDate;
 
-    public static PhotoFullscreenFragment newInstance(ArrayList<Image> photosUrl, String reporterName, Date reportDate) {
-        return newInstance(photosUrl, reporterName, reportDate, false);
+    public static PhotoFullscreenFragment newInstance(ArrayList<Image> photosUrl, String reporterName, Date reportDate, int selectedPhotoPosition) {
+        return newInstance(photosUrl, reporterName, reportDate, selectedPhotoPosition, false);
     }
 
-    public static PhotoFullscreenFragment newInstance(ArrayList<Image> photosUrl, String reporterName, Date reportDate, boolean exactDate) {
+    public static PhotoFullscreenFragment newInstance(ArrayList<Image> photosUrl, String reporterName, Date reportDate,  int selectedPhotoPosition, boolean exactDate) {
         Bundle b = new Bundle();
         b.putParcelableArrayList(BUNDLE_PHOTOS_URL, photosUrl);
         b.putString(BUNDLE_REPORTER_NAME, reporterName);
         b.putSerializable(BUNDLE_REPORT_DATE, reportDate);
         b.putBoolean(BUNDLE_EXACT_DATE, exactDate);
+        b.putInt(BUNDLE_CURRENT_PHOTO_POSITION, selectedPhotoPosition);
         PhotoFullscreenFragment ret = new PhotoFullscreenFragment();
         ret.setArguments(b);
         return ret;
@@ -112,6 +114,7 @@ public class PhotoFullscreenFragment extends BaseFragment {
         ButterKnife.bind(this, view);
 
         pager.setAdapter(new PhotoPagerAdapter(getContext(), getPhotos()));
+        pager.setCurrentItem(getCurrentPhotoPosition());
         pager.setPageMargin(getResources().getDimensionPixelOffset(R.dimen.photo_fullscreen_page_margin));
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -130,7 +133,7 @@ public class PhotoFullscreenFragment extends BaseFragment {
             }
         });
 
-        photoFullscreenToolbarTitle.setText(String.format(getString(R.string.photo_fullscreen_title_formatted), 1, getPhotos().size()));
+        photoFullscreenToolbarTitle.setText(String.format(getString(R.string.photo_fullscreen_title_formatted), getCurrentPhotoPosition() + 1, getPhotos().size()));
 
         photoFullscreenReporterName.setText(getReporterName());
         if (isExactDate()) {
@@ -140,6 +143,14 @@ public class PhotoFullscreenFragment extends BaseFragment {
         }
 
         return view;
+    }
+
+    /**
+     * Get position of selected photo by user
+     * @return
+     */
+    private int getCurrentPhotoPosition() {
+        return getArguments().getInt(BUNDLE_CURRENT_PHOTO_POSITION, 0);
     }
 
     /**

@@ -34,7 +34,6 @@ import com.google.android.gms.maps.model.LatLng;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import me.trashout.api.base.ApiBaseRequest;
@@ -210,6 +209,23 @@ public class GetHomeScreenDataService extends BaseService {
         } catch (IOException e) {
             e.printStackTrace();
             lastException = e;
+        }
+
+        if (news == null && !"en_US".equals(Utils.getLocaleString())) {
+            callNewsList = mApiServer.getNewsList("en_US", 0, 1, "-created");
+
+            try {
+                Response<List<News>> userActivityListResponse = callNewsList.execute();
+                if (userActivityListResponse.isSuccessful()) {
+                    List<News> newsList = userActivityListResponse.body();
+                    if (newsList != null && !newsList.isEmpty()) {
+                        news = newsList.get(0);
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                lastException = e;
+            }
         }
 
         if (lastException == null || (trashList != null || collectionPointDustbin != null || collectionPointScrapyard != null)) {

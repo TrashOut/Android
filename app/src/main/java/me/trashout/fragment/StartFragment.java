@@ -162,7 +162,7 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
                 public void onComplete(@NonNull Task<GetTokenResult> task) {
 
                     if (task.isSuccessful()) {
-                        Log.d(TAG, "auth.getCurrentUser().getToken: = " + task.getResult().getToken());
+//                        Log.d(TAG, "auth.getCurrentUser().getToken: = " + task.getResult().getToken());
                         showProgressDialog();
                         PreferencesHandler.setFirebaseToken(getContext(), task.getResult().getToken());
                         GetUserByFirebaseTokenService.startForRequest(getContext(), GET_USER_BY_FIREBASE_REQUEST_ID);

@@ -90,7 +90,6 @@ import me.trashout.model.Trash;
 import me.trashout.model.UpdateHistory;
 import me.trashout.model.User;
 import me.trashout.service.CreateTrashNewSpamService;
-import me.trashout.service.GetEventDetailService;
 import me.trashout.service.GetTrashDetailService;
 import me.trashout.service.JoinUserToEventService;
 import me.trashout.service.base.BaseService;
@@ -522,7 +521,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
      * @param updateHistory
      * @return simple history view
      */
-    private View getTrashUpdateHistoryView(UpdateHistory updateHistory, boolean isFirst) {
+    private View getTrashUpdateHistoryView(final UpdateHistory updateHistory, boolean isFirst) {
         View trashUpdateHistoryView = inflater.inflate(R.layout.layout_trash_update_history, null);
 
         ImageView trashUpdateIcon = trashUpdateHistoryView.findViewById(R.id.trash_update_icon);
@@ -559,6 +558,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         trashUpdate.setText(DateTimeUtils.getRoundedTimeAgo(getContext(), updateHistory.getUpdateTime()));
 
         if (updateHistory.isContainImages()) {
+            int imagePosition = 0;
             for (Image image : updateHistory.getChanged().getImages()) {
                 SquareImageView squareImageView = new SquareImageView(getContext());
                 squareImageView.setAdjustViewBounds(true);
@@ -575,11 +575,21 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                             .override(imageSize, imageSize)
                             .placeholder(R.drawable.ic_image_placeholder_square)
                             .into(squareImageView);
+
+                    final int position = imagePosition;
+                    squareImageView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(updateHistory.getChanged().getImages()), updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime(), position);
+                            getBaseActivity().replaceFragment(photoFullscreenFragment);
+                        }
+                    });
                 } else {
                     squareImageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_image_placeholder_square));
                 }
 
                 trashUpdateImageContainer.addView(squareImageView, layoutParams);
+                imagePosition++;
             }
         }
 
@@ -804,7 +814,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 break;
             case R.id.trash_detail_image:
                 if (mTrash != null && mTrash.getImages() != null && !mTrash.getImages().isEmpty()) {
-                    PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(mTrash.getImages()), mTrash.getLastChangeName(getContext()), mTrash.getLastChangeDate());
+                    PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(mTrash.getImages()), mTrash.getLastChangeName(getContext()), mTrash.getLastChangeDate(), 0);
                     getBaseActivity().replaceFragment(photoFullscreenFragment);
                 }
                 break;

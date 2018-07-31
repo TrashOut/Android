@@ -259,6 +259,8 @@ public class NewsListFragment extends BaseFragment implements INewsFragment, New
                             newsList.add(newNews);
                         }
                     }
+                } else {
+                    GetNewsListService.startForRequest(getActivity(), GET_NEWS_LIST_REQUEST_ID, -1);
                 }
 
                 mAdapter.notifyDataSetChanged();

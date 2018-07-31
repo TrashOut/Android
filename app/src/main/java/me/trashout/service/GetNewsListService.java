@@ -1,5 +1,5 @@
 /*
- * TrashOut is an environmental project that teaches people how to recycle 
+ * TrashOut is an environmental project that teaches people how to recycle
  * and showcases the worst way of handling waste - illegal dumping. All you need is a smart phone.
  *  
  *  
@@ -29,20 +29,19 @@ package me.trashout.service;
 import android.content.Context;
 import android.util.Log;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import me.trashout.Configuration;
 import me.trashout.api.base.ApiBaseDataResult;
 import me.trashout.api.base.ApiBaseRequest;
-import me.trashout.api.base.ApiSimpleErrorResult;
 import me.trashout.api.request.ApiGetNewsListRequest;
 import me.trashout.api.result.ApiGetNewsListResult;
 import me.trashout.model.News;
 import me.trashout.service.base.BaseService;
 import me.trashout.utils.Utils;
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
@@ -68,37 +67,51 @@ public class GetNewsListService extends BaseService {
     @Override
     protected void requestProcess(final ApiBaseRequest apiBaseRequest) {
         apiBaseRequest.setStatus(ApiBaseRequest.Status.PENDING);
+        Exception lastException = null;
 
         ApiGetNewsListRequest apiGetCollectionPointListRequest = (ApiGetNewsListRequest) apiBaseRequest;
 
+        // Chaining calls because we always need news in english language
+        // TBH api should be handling this
 
+        List<News> newsList = new ArrayList<>();
         Call<List<News>> call = mApiServer.getNewsList(Utils.getLocaleString(), apiGetCollectionPointListRequest.getPage(), Configuration.NEWS_LIST_LIMIT_SIZE, "-created");
-        call.enqueue(new Callback<List<News>>() {
-            @Override
-            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
 
-                ApiBaseDataResult result = null;
-                if (response.isSuccessful() && response.body() != null) {
-                    Log.d(TAG, "onResponse: isSuccessful");
+        try {
+            Response<List<News>> response = call.execute();
+            if (response.isSuccessful()) {
+                newsList = response.body();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            lastException = e;
+        }
 
-                    result = new ApiGetNewsListResult(response.body());
-                } else {
-                    Log.d(TAG, "onResponse: fail");
-                    result = new ApiSimpleErrorResult(getBaseContext());
+        if (!"en_US".equals(Utils.getLocaleString())) {
+            call = mApiServer.getNewsList("en_US", apiGetCollectionPointListRequest.getPage(), Configuration.NEWS_LIST_LIMIT_SIZE, "-created");
+
+            try {
+                Response<List<News>> response = call.execute();
+                if (response.isSuccessful()) {
+                    if (newsList != null && response.body() != null) {
+                        newsList.addAll(response.body());
+                    }
                 }
-
-
-                apiBaseRequest.setStatus(ApiBaseRequest.Status.DONE);
-                notifyResultListener(apiBaseRequest.getId(), apiBaseRequest, result, response, null);
+            } catch (IOException e) {
+                e.printStackTrace();
+                lastException = e;
             }
+        }
 
-            @Override
-            public void onFailure(Call<List<News>> call, Throwable retrofitError) {
-                Log.d(TAG, "RequestProcess - FAIL \n" + retrofitError.toString());
-                apiBaseRequest.setStatus(ApiBaseRequest.Status.ERROR);
-                notifyResultListener(apiBaseRequest.getId(), null, null, retrofitError);
-            }
-        });
+        if (lastException == null && newsList != null && !newsList.isEmpty()) {
+            ApiBaseDataResult result = new ApiGetNewsListResult(newsList);
 
+            apiBaseRequest.setStatus(ApiBaseRequest.Status.DONE);
+            notifyResultListener(apiBaseRequest.getId(), apiBaseRequest, result, Response.success(newsList), null);
+        } else {
+            Log.d(TAG, "RequestProcess - FAIL \n" + (lastException != null ? lastException.toString() : null));
+            apiBaseRequest.setStatus(ApiBaseRequest.Status.ERROR);
+            notifyResultListener(apiBaseRequest.getId(), null, null, lastException);
+        }
     }
 }

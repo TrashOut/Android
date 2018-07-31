@@ -38,7 +38,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 import java.util.Locale;
@@ -100,8 +103,11 @@ public class UserActivityListAdapter extends RecyclerView.Adapter<RecyclerView.V
         userActivityViewHolder.userActivityDate.setText(DateTimeUtils.DATE_FORMAT.format(userActivity.getCreated()));
         userActivityViewHolder.userActivityPosition.setText(userActivity.getPosition() != null ? PositionUtils.getFormattedLocation(context, userActivity.getPosition().latitude, userActivity.getPosition().longitude) : "?");
 
-        if (userActivity.getActivity().getImages() != null && userActivity.getActivity().getImages().size() > 0) {
-            Glide.with(context).load(userActivity.getActivity().getImages().get(0).getThumbDownloadUrl()).thumbnail(0.2f).diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.ic_image_placeholder_square).into(userActivityViewHolder.userActivityImage);
+        if (userActivity.getActivity().getImages() != null && !userActivity.getActivity().getImages().isEmpty() && !TextUtils.isEmpty(userActivity.getActivity().getImages().get(0).getSmallestImage()) && userActivity.getActivity().getImages().get(0).getSmallestImage().contains("trashoutngo")) {
+            StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(userActivity.getActivity().getImages().get(0).getSmallestImage());
+            Glide.with(context).using(new FirebaseImageLoader()).load(mImageRef).centerCrop().thumbnail(0.2f).placeholder(R.drawable.ic_image_placeholder_square).into(userActivityViewHolder.userActivityImage);
+        } else {
+            userActivityViewHolder.userActivityImage.setImageResource(R.drawable.ic_image_placeholder_square);
         }
 
         if (Constants.ActivityAction.CREATE.getName().equals(userActivity.getAction())) {

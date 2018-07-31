@@ -27,7 +27,6 @@
 package me.trashout.fragment;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -168,7 +167,8 @@ public class TrashListFragment extends BaseFragment implements BaseService.Updat
             public void onRefresh() {
                 Log.d(TAG, "onCreateView - swiperefresh");
                 setLastPosition();
-                refreshData();            }
+                refreshData();
+            }
         });
         swiperefresh.setColorSchemeResources(R.color.colorPrimary);
 

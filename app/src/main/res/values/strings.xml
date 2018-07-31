@@ -1413,4 +1413,5 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="distance_yard_formatter" translatable="false">%d yd</string>
     <string name="distance_accuracy_formatter" translatable="false">~ %s</string>
     <string name="about_version_formatted" translatable="false">%s (Android)</string>
+    <string name="event.calendar.title.prefix">TrashOut:</string>
 </resources>
