@@ -8,11 +8,10 @@ import java.util.List;
 
 import me.trashout.api.base.ApiBaseDataResult;
 import me.trashout.api.base.ApiBaseRequest;
-import me.trashout.api.base.ApiSimpleErrorResult;
-import me.trashout.api.base.ApiSimpleResult;
 import me.trashout.api.request.ApiUserDeviceRequest;
 import me.trashout.model.UserDevice;
 import me.trashout.service.base.BaseService;
+import me.trashout.utils.PreferencesHandler;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -44,21 +43,17 @@ public class CreateDeviceService extends BaseService {
                 ApiBaseDataResult result;
                 if (response.isSuccessful() && response.body() != null) {
                     Log.d(TAG, "onResponse: isSuccessful");
-                    result = new ApiSimpleResult();
+                    PreferencesHandler.setFcmRegistered(getApplicationContext(), true);
                 } else {
                     Log.d(TAG, "onResponse: fail");
-                    result = new ApiSimpleErrorResult(getBaseContext());
+                    PreferencesHandler.setFcmRegistered(getApplicationContext(), false);
                 }
-
-                apiBaseRequest.setStatus(ApiBaseRequest.Status.DONE);
-                notifyResultListener(apiBaseRequest.getId(), apiBaseRequest, result, response, null);
             }
 
             @Override
             public void onFailure(Call<UserDevice> call, Throwable retrofitError) {
                 Log.d(TAG, "RequestProcess - FAIL \n" + retrofitError.toString());
-                apiBaseRequest.setStatus(ApiBaseRequest.Status.ERROR);
-                notifyResultListener(apiBaseRequest.getId(), null, null, retrofitError);
+                PreferencesHandler.setFcmRegistered(getApplicationContext(), false);
             }
         });
     }

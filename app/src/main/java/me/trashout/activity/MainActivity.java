@@ -93,6 +93,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 import static me.trashout.notification.PushNotification.TRASH_DETAIL_NOTIFICATION;
 import static me.trashout.notification.PushNotification.TRASH_EVENT_NOTIFICATION;
 import static me.trashout.notification.PushNotification.TRASH_NEWS_NOTIFICATION;
+import static me.trashout.utils.PreferencesHandler.isFcmRegistered;
 
 public class MainActivity extends BaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener, TrashListFragment.OnRefreshTrashListListener, CollectionPointListFragment.OnRefreshCollectionPointListListener, ProfileEditFragment.OnSaveOrganizationsListener, TrashReportOrEditFragment.OnTrashChangedListener, EventDetailFragment.OnEventJoinedListener, EventCreateFragment.OnSelectTrashIdsOnMapListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
@@ -169,6 +170,10 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
         if (getIntent() != null) {
             handleIntent(getIntent());
+        }
+
+        if (!isFcmRegistered(getApplicationContext())) {
+            TrashoutFirebaseInstanceIdService.registerFcmToken(getApplicationContext());
         }
 
         onBackStackChanged();

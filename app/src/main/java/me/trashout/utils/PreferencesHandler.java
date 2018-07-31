@@ -54,6 +54,7 @@ public class PreferencesHandler {
     private static final String TRASH_HUNTER_STATE = "TRASH_HUNTER_STATE";
     private static final String TUTORIAL_WAS_SHOWN = "TUTORIAL_WAS_SHOWN";
     private static final String DEVICE_LOCALE = "DEVICE_LOCALE";
+    private static final String FCM_TOKEN_REGISTERED = "FCM_TOKEN_REGISTERED";
 
     /**
      * Setting first run
@@ -385,5 +386,36 @@ public class PreferencesHandler {
 
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         return pref.getString(DEVICE_LOCALE, "");
+    }
+
+    /**
+     * Save Tutorial was shown State
+     *
+     * @param context
+     * @param isRegistered
+     */
+    public static void setFcmRegistered(Context context, boolean isRegistered) {
+        if (context == null) {
+            return;
+        }
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean(FCM_TOKEN_REGISTERED, isRegistered).apply();
+    }
+
+    /**
+     * Get Tutorial was shown State
+     *
+     * @param context
+     * @return
+     */
+    public static boolean isFcmRegistered(Context context) {
+        if (context == null) {
+            return false;
+        }
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        return pref.getBoolean(FCM_TOKEN_REGISTERED, false);
     }
 }
