@@ -299,7 +299,7 @@
                             android:layout_below="@+id/trash_detail_map"
                             android:layout_marginTop="25dp"
                             android:padding="3dp"
-                            android:text="Praha, Praga Region, Czech Republic"
+                            tools:text="Praha, Praga Region, Czech Republic"
                             android:textSize="@dimen/text_size_normal" />
 
                         <android.support.v7.widget.AppCompatButton
