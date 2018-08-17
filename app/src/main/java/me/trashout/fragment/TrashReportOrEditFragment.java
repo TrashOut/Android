@@ -781,30 +781,30 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         boolean isValidate = true;
 
         if (photos.size() < getMinPhotoCountToUpdate()) {
-            getBaseActivity().showToast(String.format(getString(R.string.trash_edit_minPhotosText), getMinPhotoCountToUpdate()));
+            showToast(String.format(getString(R.string.trash_edit_minPhotosText), getMinPhotoCountToUpdate()));
             return false;
         }
 
         if (getSelectedTrashSize() == null) {
-            getBaseActivity().showToast(R.string.trash_validation_sizeRequired);
+            showToast(R.string.trash_validation_sizeRequired);
             isValidate = false;
         } else if (getSelectedTrashType().isEmpty()) {
             isValidate = false;
-            getBaseActivity().showToast(R.string.trash_validation_typeRequired);
+            showToast(R.string.trash_validation_typeRequired);
         } else if (getTrash() != null) {
             if (mLastLocation != null) {
                 if (isValidate = checkUpdatedTrashDistance(getTrash().getPosition(), mLastLocation)) {
                     isValidate = true;
                 } else {
-                    getBaseActivity().showToast(R.string.trash_edit_greaterDistanceText);
+                    showToast(R.string.trash_edit_greaterDistanceText);
                     isValidate = false;
                 }
             } else {
-                getBaseActivity().showToast("No Location. Please allow location provider");
+                showToast("No Location. Please allow location provider");
                 isValidate = false;
             }
         } else if (mLastLocation == null) {
-            getBaseActivity().showToast("No Location. Please allow location provider");
+            showToast("No Location. Please allow location provider");
             isValidate = false;
             getLocation();
         }
@@ -834,14 +834,14 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 createCameraIntentChooser();
             } else {
-                getBaseActivity().showToast("Cancelling, required permissions are not granted");
+                showToast("Cancelling, required permissions are not granted");
             }
         } else if (requestCode == CropImage.PICK_IMAGE_PERMISSIONS_REQUEST_CODE) {
             if (mCropImageUri != null && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // required permissions granted, start crop image activity
                 startCropImageActivity(mCropImageUri);
             } else {
-                getBaseActivity().showToast("Cancelling, required permissions are not granted");
+                showToast("Cancelling, required permissions are not granted");
             }
         }
     }
@@ -877,24 +877,24 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             dismissProgressDialog();
 
             if (apiResult.isValidResponse()) {
-                getBaseActivity().showToast(R.string.trash_create_success);
+                showToast(R.string.trash_create_success);
                 mCallback.onRefreshTrashList();
                 redirectToSharePage(apiResult);
             } else {
-                getBaseActivity().showToast(R.string.trash_validation_createFailed);
+                showToast(R.string.trash_validation_createFailed);
             }
         } else if (apiResult.getRequestId() == UPDATE_TRASH_REQUEST_ID) {
             dismissProgressDialog();
 
             if (apiResult.isValidResponse()) {
-                getBaseActivity().showToast(R.string.trash_update_success);
+                showToast(R.string.trash_update_success);
                 mCallback.onRefreshTrashList();
                 if (onTrashChangedListener != null) {
                     onTrashChangedListener.onTrashChanged();
                 }
                 redirectToSharePage(apiResult);
             } else {
-                getBaseActivity().showToast(R.string.trash_validation_updateFailed);
+                showToast(R.string.trash_validation_updateFailed);
             }
         }
     }

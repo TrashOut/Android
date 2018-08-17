@@ -295,9 +295,9 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                getBaseActivity().showToast(R.string.user_validation_resetPassword_success);
+                                                showToast(R.string.user_validation_resetPassword_success);
                                             } else {
-                                                getBaseActivity().showToast(R.string.user_validation_resetPassword_failed);
+                                                showToast(R.string.user_validation_resetPassword_failed);
                                             }
                                         }
                                     });
@@ -534,12 +534,12 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
                         CreateUserService.startForRequest(getActivity(), CREATE_USER_REQUEST_ID, newUser);
                     } else {
-                        getBaseActivity().showToast(R.string.user_login_validation_notFirebaseUser);
+                        showToast(R.string.user_login_validation_notFirebaseUser);
                     }
 
                 } else {
                     dismissProgressDialog();
-                    getBaseActivity().showToast(R.string.user_login_validation_unknownError);
+                    showToast(R.string.user_login_validation_unknownError);
                 }
             }
         } else if (apiResult.getRequestId() == CREATE_USER_REQUEST_ID) {
@@ -552,7 +552,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
                 goToMainActivity();
             } else {
-                getBaseActivity().showToast(R.string.user_login_create_error);
+                showToast(R.string.user_login_create_error);
             }
         } else if (apiResult.getRequestId() == UPDATE_USER_REQUEST_ID) {
 
@@ -561,7 +561,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                 GetUserByFirebaseTokenService.startForRequest(getContext(), GET_USER_BY_FIREBASE_AFTER_LINKING_ACCOUNT_REQUEST_ID, false, null, null, null, null);
             } else {
                 dismissProgressDialog();
-                getBaseActivity().showToast(R.string.user_login_linkError);
+                showToast(R.string.user_login_linkError);
             }
 
         }
@@ -599,12 +599,12 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                                         } else {
                                             // no email provider
                                             dismissProgressDialog();
-                                            getBaseActivity().showToast(R.string.user_register_notExists);
+                                            showToast(R.string.user_register_notExists);
                                         }
 
                                     } else {
                                         dismissProgressDialog();
-                                        getBaseActivity().showToast(R.string.user_login_validation_unknownError);
+                                        showToast(R.string.user_login_validation_unknownError);
                                     }
                                 }
                             });
@@ -632,13 +632,13 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                         }
                     } else {
                         dismissProgressDialog();
-                        getBaseActivity().showToast(R.string.user_login_getToken);
+                        showToast(R.string.user_login_getToken);
                     }
                 }
             });
         } else {
             dismissProgressDialog();
-            getBaseActivity().showToast(R.string.user_login_validation_unknownError);
+            showToast(R.string.user_login_validation_unknownError);
         }
     }
 
@@ -761,7 +761,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                     signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_email_account_creation_error));
                 }
 
-                getBaseActivity().showToast(R.string.user_login_anonymous_linkError);
+                showToast(R.string.user_login_anonymous_linkError);
             }
         });
     }
@@ -804,7 +804,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                             // covers future API changes
                         }
 
-                        getBaseActivity().showToast(exceptionMessage);
+                        showToast(exceptionMessage);
                     }
                 });
     }
@@ -858,7 +858,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                 if (e instanceof FirebaseAuthUserCollisionException) {
                     handleFacebookAccessToken(facebookProfile);
                 } else {
-                    getBaseActivity().showToast(exceptionMessage);
+                    showToast(exceptionMessage);
                 }
             }
         });

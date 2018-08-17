@@ -372,11 +372,11 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
                 mEvent = apiGetTrashDetailResult.getEvent();
                 setupEventData(mEvent);
             } else {
-                getBaseActivity().showToast(R.string.global_error_api_text);
+                showToast(R.string.global_error_api_text);
             }
         } else if (apiResult.getRequestId() == JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
-            getBaseActivity().showToast(apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed);
+            showToast(apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed);
 
             if (apiResult.isValidResponse()) {
                 eventDetailJoinBtn.setVisibility(View.GONE);
@@ -399,7 +399,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
             case R.id.event_detail_join_btn:
                 if (mEvent != null) {
                     if (user == null) {
-                        getBaseActivity().showToast(R.string.event_signToJoin);
+                        showToast(R.string.event_signToJoin);
                     } else {
                         MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                                 .title(R.string.global_validation_warning)

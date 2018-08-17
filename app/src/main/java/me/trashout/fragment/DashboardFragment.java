@@ -665,7 +665,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             @Override
             public void onClick(View view) {
                 if (user == null) {
-                    getBaseActivity().showToast(R.string.event_signToJoin);
+                    showToast(R.string.event_signToJoin);
                 } else {
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                             .title(R.string.global_validation_warning)
@@ -844,11 +844,11 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                     setupDashboard(dashboardTrashList, dashboardCollectionPointDustbin, dashboardCollectionPointScrapyard, dashboardStatisticsCleanedCount, dashboardStatisticsReportedCount, dashboardUserActivityList, dashboardNews, dashboardEventList);
                 }
             } else {
-                getBaseActivity().showToast(R.string.global_error_api_text);
+                showToast(R.string.global_error_api_text);
             }
         } else if (apiResult.getRequestId() == JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
-            getBaseActivity().showToast(apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed);
+            showToast(apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed);
 
             if (apiResult.isValidResponse()) {
                 hideEventJoinButton(joinedEvent);
@@ -856,7 +856,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
                 joinedEvent = null;
             } else {
-                getBaseActivity().showToast(R.string.global_error_api_text);
+                showToast(R.string.global_error_api_text);
             }
         }
     }
@@ -946,7 +946,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
             @Override
             public void onFinish() {
-                getBaseActivity().showToast(R.string.trashHunter_finished);
+                showToast(R.string.trashHunter_finished);
                 dashboardTrashHunterTimer.setText("");
                 setHunterMode(false, 0, 0);
             }

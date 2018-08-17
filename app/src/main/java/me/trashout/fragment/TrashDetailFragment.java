@@ -633,7 +633,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
             @Override
             public void onClick(View view) {
                 if (user == null) {
-                    getBaseActivity().showToast(R.string.event_signToJoin);
+                    showToast(R.string.event_signToJoin);
                 } else {
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                             .title(R.string.global_validation_warning)
@@ -726,14 +726,14 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 trashDetailViewContainer.setVisibility(View.VISIBLE);
             } else {
                 dismissProgressDialog();
-                getBaseActivity().showToast(R.string.trash_detail_loadingFailed);
+                showToast(R.string.trash_detail_loadingFailed);
             }
         } else if (apiResult.getRequestId() == TRASH_CREATE_SPAM_REQUEST_ID) {
             dismissProgressDialog();
-            getBaseActivity().showToast(apiResult.isValidResponse() ? R.string.trash_messageWasReceived : R.string.trash_markedAsSpam_alreadyMarked);
+            showToast(apiResult.isValidResponse() ? R.string.trash_messageWasReceived : R.string.trash_markedAsSpam_alreadyMarked);
         } else if (apiResult.getRequestId() == TRASH_JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
-            getBaseActivity().showToast(apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed);
+            showToast(apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed);
 
             if (apiResult.isValidResponse()) {
                 hideEventJoinButton(mJoinedEvent);

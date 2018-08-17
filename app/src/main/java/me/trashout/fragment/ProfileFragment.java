@@ -131,7 +131,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
 
         if (mUser == null) {
             // TODO - No user - get from API?, login?
-            getBaseActivity().showToast("No user data.. Please login again");
+            showToast("No user data.. Please login again");
             // start login activity
             getActivity().finish();
         } else {
@@ -260,7 +260,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
         badgeInfoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getBaseActivity().showToast(badge.getName());
+                showToast(badge.getName());
             }
         });
 
@@ -296,7 +296,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
                 mUser = apiGetUserResult.getUser();
                 setupUserData(mUser);
             } else {
-                getBaseActivity().showToast(R.string.global_error_api_text);
+                showToast(R.string.global_error_api_text);
             }
         }
     }

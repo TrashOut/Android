@@ -238,7 +238,7 @@ public class TutorialFragmentItem extends BaseFragment {
                 if (e instanceof FirebaseAuthUserCollisionException) {
                     handleFacebookAccessToken(facebookProfile);
                 } else {
-                    getBaseActivity().showToast(exceptionMessage);
+                    showToast(exceptionMessage);
                 }
             }
         });
@@ -284,7 +284,7 @@ public class TutorialFragmentItem extends BaseFragment {
                             // covers future API changes
                         }
 
-                        getBaseActivity().showToast(exceptionMessage);
+                        showToast(exceptionMessage);
                     }
                 });
     }
@@ -309,13 +309,13 @@ public class TutorialFragmentItem extends BaseFragment {
                         }
                     } else {
                         dismissProgressDialog();
-                        getBaseActivity().showToast(R.string.user_login_getToken);
+                        showToast(R.string.user_login_getToken);
                     }
                 }
             });
         } else {
             dismissProgressDialog();
-            getBaseActivity().showToast(R.string.user_login_validation_unknownError);
+            showToast(R.string.user_login_validation_unknownError);
         }
     }
 

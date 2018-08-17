@@ -339,11 +339,11 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
                 mCollectionPoint = apiGetCollectionPointDetailResult.getCollectionPoint();
                 setupCollectionPointData(mCollectionPoint);
             } else {
-                getBaseActivity().showToast(R.string.global_error_api_text);
+                showToast(R.string.global_error_api_text);
             }
         } else if (apiResult.getRequestId() == CREATE_COLLECTION_POINT_NEW_SPAM_REQUEST_ID) {
             dismissProgressDialog();
-            getBaseActivity().showToast(apiResult.isValidResponse() || apiResult.getResponse().code() == 500 || apiResult.getResponse().code() == 400 ? R.string.collectionPoint_markedAsSpam_success_thanksMobile : R.string.trash_create_markAsSpamFailed);
+            showToast(apiResult.isValidResponse() || apiResult.getResponse().code() == 500 || apiResult.getResponse().code() == 400 ? R.string.collectionPoint_markedAsSpam_success_thanksMobile : R.string.trash_create_markAsSpamFailed);
         }
     }
 
