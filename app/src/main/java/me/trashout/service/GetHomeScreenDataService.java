@@ -156,7 +156,7 @@ public class GetHomeScreenDataService extends BaseService {
             e.printStackTrace();
         }
 
-        String attributesNeeded = "id,name,start,description";
+        String attributesNeeded = "id,name,start,description,gpsShort";
         Calendar today = Calendar.getInstance();
         today.set(Calendar.HOUR_OF_DAY, 0);
         today.set(Calendar.MINUTE, 0);
