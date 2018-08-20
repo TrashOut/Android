@@ -50,7 +50,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.trashout.R;
 import me.trashout.fragment.base.BaseFragment;
-import me.trashout.model.Image;
+import me.trashout.model.presentation.FullScreenImage;
 import me.trashout.ui.HackyViewPager;
 import me.trashout.ui.SquarePhotoView;
 import me.trashout.utils.DateTimeUtils;
@@ -60,6 +60,7 @@ import me.trashout.utils.ViewUtils;
 public class PhotoFullscreenFragment extends BaseFragment {
 
     private static final String BUNDLE_PHOTOS_URL = "BUNDLE_PHOTOS_URL";
+    private static final String BUNDLE_FULLSCREEN_IMAGES = "BUNDLE_FULLSCREEN_IMAGES";
     private static final String BUNDLE_REPORTER_NAME = "BUNDLE_REPORTER_NAME";
     private static final String BUNDLE_REPORT_DATE = "BUNDLE_REPORT_DATE";
     private static final String BUNDLE_EXACT_DATE = "BUNDLE_EXACT_DATE";
@@ -78,25 +79,26 @@ public class PhotoFullscreenFragment extends BaseFragment {
     @BindView(R.id.photo_fullscreen_toolbar)
     Toolbar photoFullscreenToolbar;
 
-    private ArrayList<Image> mPhotos;
+    private ArrayList<FullScreenImage> mImages;
     private String mReporterName;
     private Date mReportDate;
     private Boolean mIsExactDate;
 
-    public static PhotoFullscreenFragment newInstance(ArrayList<Image> photosUrl, String reporterName, Date reportDate, int selectedPhotoPosition) {
-        return newInstance(photosUrl, reporterName, reportDate, selectedPhotoPosition, false);
-    }
 
-    public static PhotoFullscreenFragment newInstance(ArrayList<Image> photosUrl, String reporterName, Date reportDate, int selectedPhotoPosition, boolean exactDate) {
+    public static PhotoFullscreenFragment newInstance(ArrayList<FullScreenImage> images, int selectedPhotoPosition, boolean exactDate) {
         Bundle b = new Bundle();
-        b.putParcelableArrayList(BUNDLE_PHOTOS_URL, photosUrl);
-        b.putString(BUNDLE_REPORTER_NAME, reporterName);
-        b.putSerializable(BUNDLE_REPORT_DATE, reportDate);
-        b.putBoolean(BUNDLE_EXACT_DATE, exactDate);
+
+        b.putParcelableArrayList(BUNDLE_FULLSCREEN_IMAGES, images);
         b.putInt(BUNDLE_CURRENT_PHOTO_POSITION, selectedPhotoPosition);
+        b.putBoolean(BUNDLE_EXACT_DATE, exactDate);
+
         PhotoFullscreenFragment ret = new PhotoFullscreenFragment();
         ret.setArguments(b);
         return ret;
+    }
+
+    public static PhotoFullscreenFragment newInstance(ArrayList<FullScreenImage> images, int selectedPhotoPosition) {
+        return newInstance(images, selectedPhotoPosition, false);
     }
 
     @Override
@@ -120,7 +122,8 @@ public class PhotoFullscreenFragment extends BaseFragment {
 
             @Override
             public void onPageSelected(int position) {
-                photoFullscreenToolbarTitle.setText(String.format(getString(R.string.photo_fullscreen_title_formatted), position + 1, getPhotos().size()));
+                photoFullscreenToolbarTitle.setText(String.format(getString(R.string.photo_fullscreen_title_formatted), position + 1, mImages.size()));
+                renderReporterNameAndDate(mImages.get(position));
             }
 
             @Override
@@ -129,16 +132,20 @@ public class PhotoFullscreenFragment extends BaseFragment {
             }
         });
 
+        renderReporterNameAndDate(mImages.get(getCurrentPhotoPosition()));
         photoFullscreenToolbarTitle.setText(String.format(getString(R.string.photo_fullscreen_title_formatted), getCurrentPhotoPosition() + 1, getPhotos().size()));
 
-        photoFullscreenReporterName.setText(getReporterName());
-        if (isExactDate()) {
-            photoFullscreenReportDate.setText(DateTimeUtils.DATE_FORMAT.format(getReportDate()));
-        } else {
-            photoFullscreenReportDate.setText(getString(R.string.notifications_reported) + " " + DateTimeUtils.getRoundedTimeAgo(getContext(), getReportDate()));
-        }
-
         return view;
+    }
+
+    private void renderReporterNameAndDate (FullScreenImage image)
+    {
+        photoFullscreenReporterName.setText(image.getUserName());
+        if (isExactDate()) {
+            photoFullscreenReportDate.setText(DateTimeUtils.DATE_FORMAT.format(image.getImageCreated()));
+        } else {
+            photoFullscreenReportDate.setText(getString(R.string.notifications_reported) + " " + DateTimeUtils.getRoundedTimeAgo(getContext(), image.getImageCreated()));
+        }
     }
 
     /**
@@ -151,14 +158,14 @@ public class PhotoFullscreenFragment extends BaseFragment {
     }
 
     /**
-     * Get photos url
+     * Get images url
      *
      * @return
      */
-    private ArrayList<Image> getPhotos() {
-        if (mPhotos == null)
-            mPhotos = getArguments().getParcelableArrayList(BUNDLE_PHOTOS_URL);
-        return mPhotos;
+    private ArrayList<FullScreenImage> getPhotos() {
+        if (mImages == null)
+            mImages = getArguments().getParcelableArrayList(BUNDLE_FULLSCREEN_IMAGES);
+        return mImages;
     }
 
     /**
@@ -197,18 +204,18 @@ public class PhotoFullscreenFragment extends BaseFragment {
 
     static class PhotoPagerAdapter extends PagerAdapter {
 
-        private final ArrayList<Image> photos;
+        private final ArrayList<FullScreenImage> images;
         private final Context context;
 
-        PhotoPagerAdapter(Context context, ArrayList<Image> photos) {
+        PhotoPagerAdapter(Context context, ArrayList<FullScreenImage> images) {
             this.context = context;
-            this.photos = photos;
+            this.images = images;
         }
 
 
         @Override
         public int getCount() {
-            return photos.size();
+            return images.size();
         }
 
         @Override
@@ -216,8 +223,8 @@ public class PhotoFullscreenFragment extends BaseFragment {
             final SquarePhotoView photoView = new SquarePhotoView(container.getContext());
             photoView.setAdjustViewBounds(true);
 
-            if (photos != null && !photos.isEmpty() && ViewUtils.checkImageStorage(photos.get(position))) {
-                StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(photos.get(position).getFullStorageLocation());
+            if (images != null && !images.isEmpty() && ViewUtils.checkImageStorage(images.get(position).getImage())) {
+                StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(images.get(position).getImage().getFullStorageLocation());
                 GlideApp.with(context)
                         .load(mImageRef)
                         .centerCrop()

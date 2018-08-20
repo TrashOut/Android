@@ -1381,7 +1381,7 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="reported_activity_placeholder" translatable="false">%1$s %2$s %3$s %4$s %5$s</string>
     <string name="news_detail_placeholder" translatable="false"><![CDATA[<font color=\"#262626\">%1$s: </font>]]> %2$s</string>
     <string name="about_version_date_formatted" translatable="false">Version from %s</string>
-    <string name="photo_fullscreen_title_formatted" formatted="false">%d of %d</string>
+    <string name="photo_fullscreen_title_formatted" formatted="false">%d / %d</string>
     <string name="distance_away_formatter" translatable="false">~ %1$s %2$s</string>
     <string name="specific_distance_away_formatter" translatable="false">%1$s %2$s</string>
     <string name="skip_btn" translatable="false">SKIP</string>

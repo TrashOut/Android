@@ -43,6 +43,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.facebook.stetho.common.ArrayListAccumulator;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -61,6 +62,7 @@ import me.trashout.model.Constants;
 import me.trashout.model.Image;
 import me.trashout.model.NewsDetail;
 import me.trashout.model.NewsVideo;
+import me.trashout.model.presentation.FullScreenImage;
 import me.trashout.service.GetNewsDetailService;
 import me.trashout.service.base.BaseService;
 import me.trashout.ui.SquareImageView;
@@ -116,6 +118,7 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
 
     private Long mNewsId;
     private NewsDetail mNews;
+    private ArrayList<FullScreenImage> mFullscreenImages = new ArrayListAccumulator<>();
 
     public static NewsDetailFragment newInstance(Long newsId) {
         Bundle b = new Bundle();
@@ -263,6 +266,7 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
     }
 
     private void setNewsImages(NewsDetail news) {
+        mFullscreenImages.clear();
         if (news.isContainImages()) {
             newsDetailAttachedImageContainer.removeAllViews();
             for (Image image : news.getImages()) {
@@ -283,6 +287,8 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
                     squareImageView.setOnClickListener(onAttachedImageClickListener);
                     newsDetailAttachedImageContainer.addView(squareImageView, layoutParams);
                 }
+
+                mFullscreenImages.add(new FullScreenImage(image, mNews.getTitle(), mNews.getCreated()));
             }
             newsDetailAttachedImageContainer.setVisibility(newsDetailAttachedImageContainer.getChildCount() > 0 ? View.VISIBLE : View.GONE);
         } else {
@@ -295,7 +301,9 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
         @Override
         public void onClick(View v) {
             if (mNews != null) {
-                PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(mNews.getImages()), mNews.getTitle(), mNews.getCreated(), 0, true);
+                PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(mFullscreenImages,
+                        0,
+                        true);
                 getBaseActivity().replaceFragment(photoFullscreenFragment);
             }
         }
