@@ -347,6 +347,7 @@
     <string name="collectionPoint.openingHours">"Часы работы"</string>
     <string name="global.noLongerExistQuestion">"Не существует?"</string>
     <string name="global.forgotPassword">"Забыли пароль?"</string>
+    <string name="global.internet.offline">"Телефон не подключен к Интернету, проверьте настройки"</string>
     <string name="user.validation.firstNameRequired">"Требуется имя"</string>
     <string name="user.validation.lastNameRequired">"Требуется фамилия"</string>
     <string name="profile.yourActivities">"Ваши действия"</string>

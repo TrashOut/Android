@@ -368,6 +368,7 @@ The server is not responding right now or you do not have internet connection."<
     <string name="collectionPoint.openingHours">"Opening Hours"</string>
     <string name="global.noLongerExistQuestion">"Does not exist?"</string>
     <string name="global.forgotPassword">"Forgot Password?"</string>
+    <string name="global.internet.offline">"The device is not connected to the Internet, please check the settings"</string>
     <string name="user.validation.firstNameRequired">"First name is required"</string>
     <string name="user.validation.lastNameRequired">"Last name is required"</string>
     <string name="profile.yourActivities">"Your Activities"</string>

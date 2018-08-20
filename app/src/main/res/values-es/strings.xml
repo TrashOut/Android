@@ -353,6 +353,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="collectionPoint.openingHours">"Horarios de apertura"</string>
     <string name="global.noLongerExistQuestion">"¿No existe?"</string>
     <string name="global.forgotPassword">"¿Olvidó la contraseña?"</string>
+    <string name="global.internet.offline">"El teléfono no está conectado a Internet, verifique la configuración"</string>
     <string name="user.validation.firstNameRequired">"El nombre es obligatorio"</string>
     <string name="user.validation.lastNameRequired">"El apellido es obligatorio"</string>
     <string name="profile.yourActivities">"Sus actividades"</string>

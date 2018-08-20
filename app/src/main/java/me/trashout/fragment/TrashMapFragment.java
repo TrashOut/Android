@@ -283,12 +283,19 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                 goToMyLocation(false);
                 break;
             case R.id.add_dump_fab:
-                TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
-                getBaseActivity().replaceFragment(trashReportOrEditFragment);
+                addDump();
                 break;
         }
     }
 
+    public void addDump() {
+        if (isNetworkAvailable()) {
+            TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
+            getBaseActivity().replaceFragment(trashReportOrEditFragment);
+        } else {
+            showToast(R.string.global_internet_offline);
+        }
+    }
 
     /**
      * Go to my actual position

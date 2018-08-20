@@ -334,7 +334,15 @@ public class TrashListFragment extends BaseFragment implements BaseService.Updat
 
     @OnClick(R.id.add_dump_fab)
     public void onClick() {
-        TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
-        getBaseActivity().replaceFragment(trashReportOrEditFragment);
+        addDump();
+    }
+
+    public void addDump() {
+        if (isNetworkAvailable()) {
+            TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
+            getBaseActivity().replaceFragment(trashReportOrEditFragment);
+        } else {
+            showToast(R.string.global_internet_offline);
+        }
     }
 }

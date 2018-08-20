@@ -352,6 +352,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="collectionPoint.openingHours">"Otváracie hodiny"</string>
     <string name="global.noLongerExistQuestion">"Neexistuje?"</string>
     <string name="global.forgotPassword">"Zabudli ste heslo?"</string>
+    <string name="global.internet.offline">"Zariadenie nie je pripojené do internetu, prosím skontrolujte nastavenia"</string>
     <string name="user.validation.firstNameRequired">"Meno je povinné"</string>
     <string name="user.validation.lastNameRequired">"Priezvisko je povinné"</string>
     <string name="profile.yourActivities">"Vaše aktivity"</string>

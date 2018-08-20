@@ -345,6 +345,7 @@ Der Server antwortet gerade nicht, bitte versuche es später noch einmal."</stri
     <string name="collectionPoint.openingHours">"Öffnungszeiten"</string>
     <string name="global.noLongerExistQuestion">"Gibt es nicht?"</string>
     <string name="global.forgotPassword">"Passwort vergessen?"</string>
+    <string name="global.internet.offline">"Das Mobiltelefon ist nicht mit dem Internet verbunden. Bitte überprüfen Sie die Einstellungen"</string>
     <string name="user.validation.firstNameRequired">"Vorname ist erforderlich"</string>
     <string name="user.validation.lastNameRequired">"Nachname ist erforderlich"</string>
     <string name="profile.yourActivities">"Deine Aktivitäten"</string>

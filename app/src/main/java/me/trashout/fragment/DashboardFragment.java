@@ -337,8 +337,12 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     }
 
     public void addDump() {
-        TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
-        getBaseActivity().replaceFragment(trashReportOrEditFragment);
+        if (isNetworkAvailable()) {
+            TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
+            getBaseActivity().replaceFragment(trashReportOrEditFragment);
+        } else {
+            showToast(R.string.global_internet_offline);
+        }
     }
 
     @OnClick({R.id.add_dump_fab, R.id.create_report_layout, R.id.create_report_btn})
