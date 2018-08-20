@@ -31,6 +31,8 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import me.trashout.Configuration;
@@ -97,6 +99,8 @@ public class GetNewsListService extends BaseService {
                 if (response.isSuccessful()) {
                     if (newsList != null && response.body() != null) {
                         newsList.addAll(response.body());
+
+                        sortNewsByDateCreated(newsList);
                     }
                 }
             } catch (IOException e) {
@@ -115,5 +119,17 @@ public class GetNewsListService extends BaseService {
             apiBaseRequest.setStatus(ApiBaseRequest.Status.ERROR);
             notifyResultListener(apiBaseRequest.getId(), null, null, lastException);
         }
+    }
+
+    private void sortNewsByDateCreated (List<News> newsList)
+    {
+        Collections.sort(newsList, new Comparator<News>()
+        {
+            @Override
+            public int compare (News o1, News o2)
+            {
+                return o2.getCreated().compareTo(o1.getCreated());
+            }
+        });
     }
 }

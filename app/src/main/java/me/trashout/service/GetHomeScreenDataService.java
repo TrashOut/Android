@@ -238,7 +238,7 @@ public class GetHomeScreenDataService extends BaseService {
                 if (userActivityListResponse.isSuccessful()) {
                     List<News> newsList = userActivityListResponse.body();
                     if (newsList != null && !newsList.isEmpty()) {
-                        News enNews = newsList.get(0);
+
                         if (newsList.get(0) != null) {
                             if (news == null) {
                                 news = newsList.get(0);
