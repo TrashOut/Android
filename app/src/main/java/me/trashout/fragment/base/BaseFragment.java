@@ -118,6 +118,7 @@ public class BaseFragment extends Fragment implements IBaseFragment {
             progressDialogFragment = new MaterialDialog.Builder(getContext())
                     .content(message)
                     .widgetColorRes(R.color.colorPrimary)
+                    .cancelable(false)
                     .progress(true, 0).build();
         progressDialogFragment.show();
     }
