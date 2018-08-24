@@ -44,7 +44,7 @@ public class TrashOutApp extends MultiDexApplication {
 
     public void onCreate() {
         super.onCreate();
-        Fabric.with(this, new Crashlytics());
+
         Stetho.initializeWithDefaults(this);
 
         registerActivityLifecycleCallbacks(new ApplicationLifecycleHandler());

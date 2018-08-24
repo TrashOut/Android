@@ -129,11 +129,6 @@
             </intent-filter>
         </service>
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="9a8c917517b94900db0b55ff38386dc04b118a2d"
-            tools:replace="android:value" />
-
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
