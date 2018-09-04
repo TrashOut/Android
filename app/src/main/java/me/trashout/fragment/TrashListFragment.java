@@ -266,6 +266,11 @@ public class TrashListFragment extends BaseFragment implements BaseService.Updat
      * Load trash data from server
      */
     public void loadData(int page) {
+        if (!isNetworkAvailable()) {
+            showToast(R.string.global_internet_offline);
+            return;
+        }
+
         if (page == 0) {
             if (mLayoutManager != null && mLayoutManager.getItemCount() < 1)
                 recyclerview.setLoading(true);

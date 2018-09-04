@@ -353,7 +353,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="collectionPoint.openingHours">"Horarios de apertura"</string>
     <string name="global.noLongerExistQuestion">"¿No existe?"</string>
     <string name="global.forgotPassword">"¿Olvidó la contraseña?"</string>
-    <string name="global.internet.offline">"El teléfono no está conectado a Internet, verifique la configuración"</string>
+    <string name="global.internet.offline">Por favor, conéctese a Internet para ver esta sección.</string>
     <string name="user.validation.firstNameRequired">"El nombre es obligatorio"</string>
     <string name="user.validation.lastNameRequired">"El apellido es obligatorio"</string>
     <string name="profile.yourActivities">"Sus actividades"</string>
@@ -1146,7 +1146,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="global.validation.imageRatio">"No puede usar imágenes anchas Por favor use otra imagen. La relación de imagen debe ser inferior a 1:2"</string>
     <string name="global.validation.maxiumNumberReached">"Se ha alcanzado el número máximo de imágenes cargadas (puede cargar un máximo de 20 archivos)."</string>
     <string name="global.error.api.title">"Error de API"</string>
-    <string name="global.error.api.text">Esta información no se puede mostrar ahora, por favor intente de nuevo más tarde, gracias</string>
+    <string name="global.error.api.text">Estamos experimentando un problema temporal con nuestro servidor. Estamos haciendo nuestro mejor esfuerzo para solucionarlo pronto. Por favor regresa más tarde.</string>
     <string name="global.error.api.description">"Se ha producido algún error en API. Por favor, actualice la página."</string>
     <string name="trash.types.glass">"Vidrio"</string>
     <string name="global.occupation">"Ocupación"</string>
@@ -1232,4 +1232,6 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="global.signUp.acceptRegister.privatePolicy">Condiciones de Servicio</string>
     <string name="global.signUp.acceptRegister.and">y la</string>
     <string name="global.signUp.acceptRegister.terms">Política de Privacidad</string>
+
+    <string name="global.internet.error.offline">Su dispositivo no está conectado a internet. Tome una fotografía e infórmela más tarde a través de www.admin.trashout.ngo.</string>
 </resources>

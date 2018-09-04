@@ -422,9 +422,13 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
         }
 
         if (valid) {
+            if (!isNetworkAvailable()) {
+                showToast(R.string.global_internet_offline);
+                return;
+            }
+
             checkAccountExists(loginEmail.getText().toString(), loginPassword.getText().toString());
         }
-
     }
 
     @Override

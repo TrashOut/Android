@@ -341,7 +341,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
             getBaseActivity().replaceFragment(trashReportOrEditFragment);
         } else {
-            showToast(R.string.global_internet_offline);
+            showToast(R.string.global_internet_error_offline);
         }
     }
 
@@ -499,6 +499,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
         if (dashboardNews != null) {
             dashboardNewsSectionTitle.setVisibility(View.VISIBLE);
+            dashboardNewsMore.setVisibility(View.VISIBLE);
             dashboardNewsCardView.setVisibility(View.VISIBLE);
 
             dashboardNewsTitle.setText(dashboardNews.getTitle().replaceAll("<[^>]*>", ""));
@@ -518,6 +519,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         } else {
             dashboardNewsSectionTitle.setVisibility(View.GONE);
             dashboardNewsCardView.setVisibility(View.GONE);
+            dashboardNewsMore.setVisibility(View.GONE);
         }
 
         dashboardEventsContainer.removeAllViews();

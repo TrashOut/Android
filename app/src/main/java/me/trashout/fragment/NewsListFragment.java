@@ -183,6 +183,11 @@ public class NewsListFragment extends BaseFragment implements INewsFragment, New
      * Load dumps data from server
      */
     public void loadData(int page) {
+        if (!isNetworkAvailable()) {
+            showToast(R.string.global_internet_offline);
+            return;
+        }
+
         if (page == 1) {
             if (newsList.size() < 1) {
                 recyclerview.setLoading(true);

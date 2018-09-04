@@ -253,11 +253,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         });
 
         if (mTrash == null || needRefresh) {
-            needRefresh = false;
-            if (EasyPermissions.hasPermissions(getContext(), perms))
-                showProgressDialog();
-            trashDetailViewContainer.setVisibility(View.GONE);
-            GetTrashDetailService.startForRequest(getActivity(), GET_TRASH_DETAIL_REQUEST_ID, getTrashId());
+            loadData();
         } else {
             setupTrashData(mTrash);
         }
@@ -272,6 +268,20 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         }
 
         return view;
+    }
+
+    private void loadData ()
+    {
+        if (!isNetworkAvailable()) {
+            showToast(R.string.global_internet_offline);
+            return;
+        }
+
+        needRefresh = false;
+        if (EasyPermissions.hasPermissions(getContext(), perms))
+            showProgressDialog();
+        trashDetailViewContainer.setVisibility(View.GONE);
+        GetTrashDetailService.startForRequest(getActivity(), GET_TRASH_DETAIL_REQUEST_ID, getTrashId());
     }
 
     /**
@@ -739,7 +749,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 trashDetailViewContainer.setVisibility(View.VISIBLE);
             } else {
                 dismissProgressDialog();
-                showToast(R.string.trash_detail_loadingFailed);
+                showToast(R.string.global_error_api_text);
             }
         } else if (apiResult.getRequestId() == TRASH_CREATE_SPAM_REQUEST_ID) {
             dismissProgressDialog();

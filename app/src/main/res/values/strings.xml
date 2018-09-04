@@ -172,8 +172,8 @@ Please come back when you are online"</string>
     <string name="trash.create.noGps">"No gps"</string>
     <string name="trash.create.noInternetHeader">"You are offline!"</string>
     <string name="trash.create.noInternetText">"This illegal dump will be submitted later, because your phone is offline.
-
 When you get online please turn on TrashOut app and your report will be submitted automatically."</string>
+
     <string name="trash.create.sendWasInterruptedHeader">"Sending has been interrupted."</string>
     <string name="trash.create.sendWasInterruptedText">"Don't worry. We saved your progress and we will try to send your report right after you start TrashOut again."</string>
     <string name="trash.status.cleaned">"Cleaned"</string>
@@ -368,7 +368,7 @@ The server is not responding right now or you do not have internet connection."<
     <string name="collectionPoint.openingHours">"Opening Hours"</string>
     <string name="global.noLongerExistQuestion">"Does not exist?"</string>
     <string name="global.forgotPassword">"Forgot Password?"</string>
-    <string name="global.internet.offline">"The device is not connected to the Internet, please check the settings"</string>
+    <string name="global.internet.offline">Please connect to the internet in order to see this section.</string>
     <string name="user.validation.firstNameRequired">"First name is required"</string>
     <string name="user.validation.lastNameRequired">"Last name is required"</string>
     <string name="profile.yourActivities">"Your Activities"</string>
@@ -1292,7 +1292,7 @@ daily, weekly or monthly to stay informed about activities in the location you c
     <string name="global.validation.imageRatio">"You cannot use wide images. Please use another image. Image ratio has to be smaller than 1:2."</string>
     <string name="global.validation.maxiumNumberReached">"Maximum number of uploaded images reached (you can upload maximum 20 files)."</string>
     <string name="global.error.api.title">"API Error"</string>
-    <string name="global.error.api.text">This information can not be displayed right now, please try again later, thank you</string>
+    <string name="global.error.api.text">We are experiencing temporary issue with our server. We are doing our best to fix it soon. Please come back later.</string>
     <string name="global.error.api.description">"Some error in API occurred.. Please refresh the page."</string>
     <string name="trash.types.glass">"Glass"</string>
     <string name="global.occupation">"Occupation"</string>
@@ -1430,4 +1430,6 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="global.signUp.acceptRegister.privatePolicy">Privacy Policy</string>
     <string name="global.signUp.acceptRegister.and">and</string>
     <string name="global.signUp.acceptRegister.terms">Terms and Conditions</string>
+
+    <string name="global.internet.error.offline">Your device is not connected to the internet. Take a picture and report it later via www.admin.trashout.ngo.</string>
 </resources>

@@ -345,7 +345,7 @@ Der Server antwortet gerade nicht, bitte versuche es später noch einmal."</stri
     <string name="collectionPoint.openingHours">"Öffnungszeiten"</string>
     <string name="global.noLongerExistQuestion">"Gibt es nicht?"</string>
     <string name="global.forgotPassword">"Passwort vergessen?"</string>
-    <string name="global.internet.offline">"Das Mobiltelefon ist nicht mit dem Internet verbunden. Bitte überprüfen Sie die Einstellungen"</string>
+    <string name="global.internet.offline">Bitte verbinden Sie sich mit dem Internet, um diesen Abschnitt zu sehen.</string>
     <string name="user.validation.firstNameRequired">"Vorname ist erforderlich"</string>
     <string name="user.validation.lastNameRequired">"Nachname ist erforderlich"</string>
     <string name="profile.yourActivities">"Deine Aktivitäten"</string>
@@ -1159,7 +1159,7 @@ Täglich, wöchentlich oder monatlich benachrichtigt werden und über Aktivität
     <string name="global.validation.imageRatio">"Du kannst keine großen Bilder verwenden. Bitte verwende ein anderes Bild. Das Bildverhältnis muss kleiner als 1: 2 sein."</string>
     <string name="global.validation.maxiumNumberReached">"Maximale Anzahl der hochgeladenen Bilder erreicht (maximal 20 Dateien hochladen)."</string>
     <string name="global.error.api.title">"API-Fehler"</string>
-    <string name="global.error.api.text">Diese Information kann momentan nicht angezeigt werden, bitte versuchen Sie es später noch einmal</string>
+    <string name="global.error.api.text">Wir haben ein vorübergehendes Problem mit unserem Server. Wir tun unser Bestes, um es bald zu beheben, bitte versuche es später noch einmal.</string>
     <string name="global.error.api.description">"Ein Fehler in der API. Seite aktualisieren bitte."</string>
     <string name="trash.types.glass">"Glas"</string>
     <string name="global.occupation">"Beruf"</string>
@@ -1245,4 +1245,6 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="global.signUp.acceptRegister.privatePolicy">Allgemeinen Geschäftsbedingungen</string>
     <string name="global.signUp.acceptRegister.and">und</string>
     <string name="global.signUp.acceptRegister.terms">Datenschutzrichtlinien</string>
+
+    <string name="global.internet.error.offline">Ihr Mobilgerät ist nicht mit dem Internet verbunden. Machen Sie ein Foto und melden Sie es später über www.admin.trashout.ngo.</string>
 </resources>

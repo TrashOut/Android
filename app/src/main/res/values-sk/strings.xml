@@ -352,7 +352,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="collectionPoint.openingHours">"Otváracie hodiny"</string>
     <string name="global.noLongerExistQuestion">"Neexistuje?"</string>
     <string name="global.forgotPassword">"Zabudli ste heslo?"</string>
-    <string name="global.internet.offline">"Zariadenie nie je pripojené do internetu, prosím skontrolujte nastavenia"</string>
+    <string name="global.internet.offline">Pre zobrazenie tejto sekcie sa prosím pripojte k internetu.</string>
     <string name="user.validation.firstNameRequired">"Meno je povinné"</string>
     <string name="user.validation.lastNameRequired">"Priezvisko je povinné"</string>
     <string name="profile.yourActivities">"Vaše aktivity"</string>
@@ -1145,7 +1145,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="global.validation.imageRatio">"Nemôžete použiť veľmi široký obrázok. Použite iný, prosím. Pomer strán obrázku musí byť menší ako 1:2."</string>
     <string name="global.validation.maxiumNumberReached">"Maximálny počet 20 vložených obrázkov bol prekročený."</string>
     <string name="global.error.api.title">"Chyba na strane API"</string>
-    <string name="global.error.api.text">Aktuálne požadovanú informáciu nie je možné zobraziť, prosím skúste aktivitu zopakovať neskôr, ďakujeme</string>
+    <string name="global.error.api.text">Aktuálne máme dočasné problémy s naším serverom. Robíme všetko pre to, aby sme to čoskoro vyriešili. Prosím, vráťte sa neskôr.</string>
     <string name="global.error.api.description">"Niektoré chyby v API. Prosím, refreshnite stránku."</string>
     <string name="trash.types.glass">"Sklo"</string>
     <string name="global.occupation">"Povolanie"</string>
@@ -1228,4 +1228,7 @@ Našou snahou je zapojiť občanov, vlády, obce a organizácie, aby sme mohli s
     <string name="global.signUp.acceptRegister.privatePolicy">Ochrany osobných údajov</string>
     <string name="global.signUp.acceptRegister.and">a</string>
     <string name="global.signUp.acceptRegister.terms">Podmienkami používania</string>
+
+    <string name="global.internet.error.offline">Vaše mobilné zariadenie nie je pripojené k internetu. Urobte fotografiu a nahláste skládku
+neskôr prostredníctvom stránky www.admin.trashout.ngo.</string>
 </resources>
