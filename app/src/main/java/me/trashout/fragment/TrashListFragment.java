@@ -347,7 +347,7 @@ public class TrashListFragment extends BaseFragment implements BaseService.Updat
             TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
             getBaseActivity().replaceFragment(trashReportOrEditFragment);
         } else {
-            showToast(R.string.global_internet_offline);
+            showToast(R.string.global_internet_error_offline);
         }
     }
 }
