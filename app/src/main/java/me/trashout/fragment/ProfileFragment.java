@@ -170,11 +170,20 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
         });
 
         // update user data and give stat
+        loadData();
+
+        return view;
+    }
+
+    private void loadData() {
+        if (!isNetworkAvailable()) {
+            showToast(R.string.global_internet_offline);
+            return;
+        }
+
         if (mUser != null) {
             GetUserByIdService.startForRequest(getContext(), GET_USER_REQUEST_ID, mUser.getId());
         }
-
-        return view;
     }
 
     private void setupUserData(User user) {

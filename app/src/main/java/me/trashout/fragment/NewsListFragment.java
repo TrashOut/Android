@@ -185,6 +185,16 @@ public class NewsListFragment extends BaseFragment implements INewsFragment, New
     public void loadData(int page) {
         if (!isNetworkAvailable()) {
             showToast(R.string.global_internet_offline);
+
+            if (!isNetworkAvailable()) {
+                showToast(R.string.global_internet_offline);
+
+                if (swiperefresh.isRefreshing()) {
+                    swiperefresh.setRefreshing(false);
+                }
+                return;
+            }
+
             return;
         }
 

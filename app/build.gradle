@@ -13,12 +13,11 @@ def getDateAsMillis() {
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "me.trashout"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 61
+        versionCode 62
         versionName "4.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true

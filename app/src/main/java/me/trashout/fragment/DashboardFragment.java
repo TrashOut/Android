@@ -1,26 +1,26 @@
 /*
- * TrashOut is an environmental project that teaches people how to recycle 
+ * TrashOut is an environmental project that teaches people how to recycle
  * and showcases the worst way of handling waste - illegal dumping. All you need is a smart phone.
- *  
- *  
+ *
+ *
  * There are 10 types of programmers - those who are helping TrashOut and those who are not.
- * Clean up our code, so we can clean up our planet. 
+ * Clean up our code, so we can clean up our planet.
  * Get in touch with us: help@trashout.ngo
- *  
+ *
  * Copyright 2017 TrashOut, n.f.
- *  
+ *
  * This file is part of the TrashOut project.
- *  
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
- *  
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *  
+ *
  * See the GNU General Public License for more details: <https://www.gnu.org/licenses/>.
  */
 
@@ -271,7 +271,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         joinedEvent = null;
 
         user = PreferencesHandler.getUserData(getContext());
-        
+
         if (user == null) {
             return view;
         }
@@ -284,7 +284,6 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                 setupDashboard(dashboardTrashList, dashboardCollectionPointDustbin, dashboardCollectionPointScrapyard, dashboardStatisticsCleanedCount, dashboardStatisticsReportedCount, dashboardUserActivityList, dashboardNews, dashboardEventList);
             }
         } else {
-            showProgressDialog();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -369,6 +368,24 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
      * refresh dashboard data
      */
     public void getDashboardData() {
+        if (!isNetworkAvailable()) {
+            showToast(R.string.global_internet_offline);
+
+            if (swiperefresh.isRefreshing()) {
+                swiperefresh.setRefreshing(false);
+            }
+
+            setupDashboard(null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null);
+            return;
+        }
+
         showProgressDialog();
         setLastPosition();
         GetHomeScreenDataService.startForRequest(getContext(), GET_HOME_SCREEN_DATA_REQUEST_ID, lastPosition, user != null ? user.getId() : -1);
