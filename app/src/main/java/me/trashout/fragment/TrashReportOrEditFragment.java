@@ -246,9 +246,14 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
     private TrashListFragment.OnRefreshTrashListListener mCallback;
     private OnTrashChangedListener onTrashChangedListener;
+    private OnDashboardChangedListener onDashboardChangedListener;
 
     public interface OnTrashChangedListener {
         void onTrashChanged();
+    }
+
+    public interface OnDashboardChangedListener {
+        void onDashboardChanged();
     }
 
     @Override
@@ -267,6 +272,13 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString()
                     + " must implement OnTrashChangedListener");
+        }
+
+        try {
+            onDashboardChangedListener = (OnDashboardChangedListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement OnDashboardChangedListener");
         }
     }
 
@@ -879,6 +891,9 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             if (apiResult.isValidResponse()) {
                 showToast(R.string.trash_create_success);
                 mCallback.onRefreshTrashList();
+                if (onDashboardChangedListener != null) {
+                    onDashboardChangedListener.onDashboardChanged();
+                }
                 redirectToSharePage(apiResult);
             } else {
                 showToast(R.string.trash_validation_createFailed);

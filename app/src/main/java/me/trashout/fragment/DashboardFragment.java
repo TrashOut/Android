@@ -253,6 +253,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     private int amountOfFoundTrash;
 
     int scrollYPosition = 0;
+    private boolean needRefresh = true;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -279,11 +280,12 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         setLastPosition();
         Log.d(TAG, "onCreateView: lastPosition = " + lastPosition);
 
-        if (dashboardTrashList != null || dashboardCollectionPointDustbin != null || dashboardCollectionPointScrapyard != null) {
+        if ((dashboardTrashList != null || dashboardCollectionPointDustbin != null || dashboardCollectionPointScrapyard != null) && !needRefresh) {
             if (isAdded()) {
                 setupDashboard(dashboardTrashList, dashboardCollectionPointDustbin, dashboardCollectionPointScrapyard, dashboardStatisticsCleanedCount, dashboardStatisticsReportedCount, dashboardUserActivityList, dashboardNews, dashboardEventList);
             }
         } else {
+            needRefresh = false;
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -771,6 +773,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
         if (scrollView != null)
             scrollYPosition = scrollView.getScrollY();
+    }
+
+    public void dashboardNeedsRefresh() {
+        this.needRefresh = true;
     }
 
     @OnClick({R.id.dashboard_nearest_trash_first, R.id.dashboard_nearest_trash_second, R.id.dashboard_nearest_trash_more, R.id.dashboard_nearest_collection_point_dustbin_card_view, R.id.dashboard_nearest_collection_point_scrapyard_card_view, R.id.dashboard_statistics_more, R.id.dashboard_news_read_more_btn, R.id.dashboard_news_more, R.id.dashboard_trash_hunter_more})
