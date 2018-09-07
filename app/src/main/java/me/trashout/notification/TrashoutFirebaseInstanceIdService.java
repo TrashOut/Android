@@ -25,7 +25,7 @@ public class TrashoutFirebaseInstanceIdService extends FirebaseInstanceIdService
         super.onTokenRefresh();
         User currentUser = PreferencesHandler.getUserData(this);
         if (currentUser != null) {
-            Log.d(TAG, "User logged in: " + currentUser);
+//            Log.d(TAG, "User logged in: " + currentUser);
             registerFcmToken(this);
         } else {
             Utils.resetFcmToken();
