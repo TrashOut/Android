@@ -26,23 +26,41 @@
 
 package me.trashout;
 
+import android.os.Build;
 import android.support.multidex.MultiDexApplication;
+import android.util.Log;
 
 import com.crashlytics.android.Crashlytics;
-import com.facebook.FacebookSdk;
 import com.facebook.stetho.Stetho;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.security.ProviderInstaller;
 
 import io.fabric.sdk.android.Fabric;
+import me.trashout.notification.TrashoutFirebaseMessagingService;
 import me.trashout.utils.ApplicationLifecycleHandler;
 
 public class TrashOutApp extends MultiDexApplication {
 
     public void onCreate() {
         super.onCreate();
-        Fabric.with(this, new Crashlytics());
-        FacebookSdk.sdkInitialize(getApplicationContext());
+
         Stetho.initializeWithDefaults(this);
 
         registerActivityLifecycleCallbacks(new ApplicationLifecycleHandler());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            TrashoutFirebaseMessagingService.initNotificationChannels(getApplicationContext());
+        }
+
+        try {
+            ProviderInstaller.installIfNeeded(this);
+        } catch (GooglePlayServicesRepairableException e) {
+            // Thrown when Google Play Services is not installed, up-to-date, or enabled
+            // Show dialog to allow users to install, update, or otherwise enable Google Play services.
+            Log.e("SecurityException", "Google Play Services repairable.", e);
+        } catch (GooglePlayServicesNotAvailableException e) {
+            Log.e("SecurityException", "Google Play Services not available.", e);
+        }
     }
 }

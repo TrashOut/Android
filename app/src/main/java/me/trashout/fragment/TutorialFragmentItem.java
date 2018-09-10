@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.text.Html;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +24,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.firebase.ui.auth.ui.TaskFailureLogger;
+import com.firebase.ui.auth.util.data.TaskFailureLogger;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -39,6 +41,7 @@ import com.google.firebase.auth.GetTokenResult;
 import com.google.gson.Gson;
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.Arrays;
 
@@ -96,6 +99,11 @@ public class TutorialFragmentItem extends BaseFragment {
     @BindView(R.id.btn_without_sign_in)
     TextView btnWithoutSignIn;
 
+    @BindView(R.id.tutorial_sign_up_accept_user_data_collection)
+    AppCompatCheckBox acceptTermsAndPolicyCheckBox;
+    @BindView(R.id.tutorial_sign_up_accept_user_data_collection_text)
+    TextView acceptTermsAndPolicyTextView;
+
     private CallbackManager callbackManager;
     private FirebaseAuth auth;
     private User user;
@@ -133,6 +141,13 @@ public class TutorialFragmentItem extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+
+        acceptTermsAndPolicyTextView.setText(Html.fromHtml(getString(R.string.global_signUp_acceptRegister_startSentense)
+                + " <a href=\"http://trashout.ngo/policy\">" + getString(R.string.global_signUp_acceptRegister_privatePolicy) +"</a> "
+                + getString(R.string.global_signUp_acceptRegister_and)
+                + " <a href=\"http://trashout.ngo/terms\">" + getString(R.string.global_signUp_acceptRegister_terms) +"</a>"
+        ));
+        acceptTermsAndPolicyTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
         initPage();
     }
@@ -220,10 +235,10 @@ public class TutorialFragmentItem extends BaseFragment {
                     // covers future API changes
                 }
 
-                if(e instanceof FirebaseAuthUserCollisionException){
+                if (e instanceof FirebaseAuthUserCollisionException) {
                     handleFacebookAccessToken(facebookProfile);
                 } else {
-                    Toast.makeText(TutorialFragmentItem.this.getContext(), exceptionMessage, Toast.LENGTH_SHORT).show();
+                    showToast(exceptionMessage);
                 }
             }
         });
@@ -269,11 +284,7 @@ public class TutorialFragmentItem extends BaseFragment {
                             // covers future API changes
                         }
 
-                        if(e instanceof FirebaseAuthUserCollisionException){
-                            handleFacebookAccessToken(facebookProfile);
-                        } else {
-                            Toast.makeText(TutorialFragmentItem.this.getContext(), exceptionMessage, Toast.LENGTH_SHORT).show();
-                        }
+                        showToast(exceptionMessage);
                     }
                 });
     }
@@ -298,13 +309,13 @@ public class TutorialFragmentItem extends BaseFragment {
                         }
                     } else {
                         dismissProgressDialog();
-                        Toast.makeText(TutorialFragmentItem.this.getContext(), R.string.user_login_getToken, Toast.LENGTH_SHORT).show();
+                        showToast(R.string.user_login_getToken);
                     }
                 }
             });
         } else {
             dismissProgressDialog();
-            Toast.makeText(TutorialFragmentItem.this.getContext(), R.string.user_login_validation_unknownError, Toast.LENGTH_SHORT).show();
+            showToast(R.string.user_login_validation_unknownError);
         }
     }
 
@@ -314,6 +325,8 @@ public class TutorialFragmentItem extends BaseFragment {
 
     @OnClick(R.id.sign_up_facebook_btn)
     public void clickOnSignUpFacebook() {
+        if (!handleTermsAndPolicyAgreement()) return;
+
         tutorialCompleted();
         callbackManager = CallbackManager.Factory.create();
         LoginManager.getInstance().registerCallback(callbackManager,
@@ -357,6 +370,14 @@ public class TutorialFragmentItem extends BaseFragment {
         LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email"));
     }
 
+    private boolean handleTermsAndPolicyAgreement() {
+        if (!acceptTermsAndPolicyCheckBox.isChecked()) {
+            acceptTermsAndPolicyCheckBox.setError("");
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -365,6 +386,8 @@ public class TutorialFragmentItem extends BaseFragment {
 
     @OnClick(R.id.sign_up_btn)
     public void clickOnSignUp() {
+        if (!handleTermsAndPolicyAgreement()) return;
+
         tutorialCompleted();
         //startActivity(BaseActivity.generateIntent(getContext(), LoginFragment.class.getName(), null, MainActivity.class));
         startActivity(new Intent(getContext(), StartActivity.class));
@@ -373,6 +396,8 @@ public class TutorialFragmentItem extends BaseFragment {
 
     @OnClick(R.id.btn_without_sign_in)
     public void clickOnWithoutSignIn() {
+        if (!handleTermsAndPolicyAgreement()) return;
+
         tutorialCompleted();
         Bundle bundle = new Bundle();
         bundle.putBoolean(EXTRA_ARGUMENTS, true);

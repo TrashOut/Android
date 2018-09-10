@@ -31,6 +31,8 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import me.trashout.Configuration;
@@ -43,6 +45,8 @@ import me.trashout.service.base.BaseService;
 import me.trashout.utils.Utils;
 import retrofit2.Call;
 import retrofit2.Response;
+
+import static me.trashout.model.Constants.EN_LOCALE;
 
 /**
  * TrashOutNGO
@@ -87,14 +91,16 @@ public class GetNewsListService extends BaseService {
             lastException = e;
         }
 
-        if (!"en_US".equals(Utils.getLocaleString())) {
-            call = mApiServer.getNewsList("en_US", apiGetCollectionPointListRequest.getPage(), Configuration.NEWS_LIST_LIMIT_SIZE, "-created");
+        if (!EN_LOCALE.equals(Utils.getLocaleString())) {
+            call = mApiServer.getNewsList(EN_LOCALE, apiGetCollectionPointListRequest.getPage(), Configuration.NEWS_LIST_LIMIT_SIZE, "-created");
 
             try {
                 Response<List<News>> response = call.execute();
                 if (response.isSuccessful()) {
                     if (newsList != null && response.body() != null) {
                         newsList.addAll(response.body());
+
+                        sortNewsByDateCreated(newsList);
                     }
                 }
             } catch (IOException e) {
@@ -113,5 +119,17 @@ public class GetNewsListService extends BaseService {
             apiBaseRequest.setStatus(ApiBaseRequest.Status.ERROR);
             notifyResultListener(apiBaseRequest.getId(), null, null, lastException);
         }
+    }
+
+    private void sortNewsByDateCreated (List<News> newsList)
+    {
+        Collections.sort(newsList, new Comparator<News>()
+        {
+            @Override
+            public int compare (News o1, News o2)
+            {
+                return o2.getCreated().compareTo(o1.getCreated());
+            }
+        });
     }
 }

@@ -40,8 +40,6 @@ import android.widget.TextView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -185,6 +183,21 @@ public class NewsListFragment extends BaseFragment implements INewsFragment, New
      * Load dumps data from server
      */
     public void loadData(int page) {
+        if (!isNetworkAvailable()) {
+            showToast(R.string.global_internet_offline);
+
+            if (!isNetworkAvailable()) {
+                showToast(R.string.global_internet_offline);
+
+                if (swiperefresh.isRefreshing()) {
+                    swiperefresh.setRefreshing(false);
+                }
+                return;
+            }
+
+            return;
+        }
+
         if (page == 1) {
             if (newsList.size() < 1) {
                 recyclerview.setLoading(true);
@@ -239,31 +252,36 @@ public class NewsListFragment extends BaseFragment implements INewsFragment, New
                 ApiGetNewsListResult apiGetNewsListResult = (ApiGetNewsListResult) apiResult.getResult();
                 ApiGetNewsListRequest apiGetNewsListRequest = (ApiGetNewsListRequest) apiResult.getRequest();
 
-                if (newsList == null) {
-                    newsList = new ArrayList<>();
-                }
-                if (apiGetNewsListRequest.getPage() < 1) {
-                    newsList.clear();
-                }
+                if (apiGetNewsListRequest != null && apiGetNewsListResult != null) {
 
-                if(apiGetNewsListResult.getNewsList() != null && !apiGetNewsListResult.getNewsList().isEmpty()){
-                    for(News newNews: apiGetNewsListResult.getNewsList()){
-                        boolean match = false;
-                        for(News oldNews : newsList){
-                            if(newNews.getId() == oldNews.getId()){
-                                match = true;
-                                break;
+                    if (newsList == null) {
+                        newsList = new ArrayList<>();
+                    }
+                    if (apiGetNewsListRequest.getPage() < 1) {
+                        newsList.clear();
+                    }
+
+                    if (apiGetNewsListResult.getNewsList() != null && !apiGetNewsListResult.getNewsList().isEmpty()) {
+                        for (News newNews : apiGetNewsListResult.getNewsList()) {
+                            boolean match = false;
+                            for (News oldNews : newsList) {
+                                if (newNews.getId() == oldNews.getId()) {
+                                    match = true;
+                                    break;
+                                }
+                            }
+                            if (!match) {
+                                newsList.add(newNews);
                             }
                         }
-                        if(!match){
-                            newsList.add(newNews);
-                        }
+                    } else {
+                        GetNewsListService.startForRequest(getActivity(), GET_NEWS_LIST_REQUEST_ID, -1);
                     }
-                } else {
-                    GetNewsListService.startForRequest(getActivity(), GET_NEWS_LIST_REQUEST_ID, -1);
-                }
 
-                mAdapter.notifyDataSetChanged();
+                    mAdapter.notifyDataSetChanged();
+                }
+            } else {
+                showToast(R.string.global_error_api_text);
             }
 
             recyclerview.setLoading(false);

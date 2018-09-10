@@ -42,8 +42,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.facebook.stetho.common.ArrayListAccumulator;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -62,10 +62,12 @@ import me.trashout.model.Constants;
 import me.trashout.model.Image;
 import me.trashout.model.NewsDetail;
 import me.trashout.model.NewsVideo;
+import me.trashout.model.presentation.FullScreenImage;
 import me.trashout.service.GetNewsDetailService;
 import me.trashout.service.base.BaseService;
 import me.trashout.ui.SquareImageView;
 import me.trashout.utils.DateTimeUtils;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.Utils;
 import me.trashout.utils.ViewUtils;
 import ru.noties.markwon.Markwon;
@@ -116,6 +118,7 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
 
     private Long mNewsId;
     private NewsDetail mNews;
+    private ArrayList<FullScreenImage> mFullscreenImages = new ArrayListAccumulator<>();
 
     public static NewsDetailFragment newInstance(Long newsId) {
         Bundle b = new Bundle();
@@ -200,12 +203,11 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
                 for (Image image : news.getImages()) {
                     if (ViewUtils.checkImageStorage(image) && image.isMain()) {
                         StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(news.getImages().get(0).getFullStorageLocation());
-                        Glide.with(this)
-                                .using(new FirebaseImageLoader())
+                        GlideApp.with(this)
                                 .load(mImageRef)
                                 .centerCrop()
-                                .crossFade()
-                                .thumbnail(Glide.with(this).load(R.drawable.ic_image_placeholder_rectangle).centerCrop())
+                                .transition(DrawableTransitionOptions.withCrossFade())
+                                .thumbnail(GlideApp.with(this).load(R.drawable.ic_image_placeholder_rectangle).centerCrop())
                                 .into(newsDetailImage);
 
                         break;
@@ -241,7 +243,7 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
                 int imageSize = getResources().getDimensionPixelSize(R.dimen.news_image_size);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(imageSize, imageSize);
                 layoutParams.setMargins(0, 0, 20, 0);
-                Glide.with(this)
+                GlideApp.with(this)
                         .load(Constants.YOUTUBE_URL_PREFIX + Utils.getYoutubeVideoId(newsVideo.getUrl()) + Constants.YOUTUBE_URL_SUFIX)
                         .centerCrop()
                         .thumbnail(0.2f)
@@ -264,6 +266,7 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
     }
 
     private void setNewsImages(NewsDetail news) {
+        mFullscreenImages.clear();
         if (news.isContainImages()) {
             newsDetailAttachedImageContainer.removeAllViews();
             for (Image image : news.getImages()) {
@@ -274,8 +277,7 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
                     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(imageSize, imageSize);
                     layoutParams.setMargins(0, 0, 20, 0);
                     StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(image.getFullStorageLocation());
-                    Glide.with(this)
-                            .using(new FirebaseImageLoader())
+                    GlideApp.with(this)
                             .load(mImageRef)
                             .centerCrop()
                             .thumbnail(0.2f)
@@ -285,6 +287,8 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
                     squareImageView.setOnClickListener(onAttachedImageClickListener);
                     newsDetailAttachedImageContainer.addView(squareImageView, layoutParams);
                 }
+
+                mFullscreenImages.add(new FullScreenImage(image, mNews.getTitle(), mNews.getCreated()));
             }
             newsDetailAttachedImageContainer.setVisibility(newsDetailAttachedImageContainer.getChildCount() > 0 ? View.VISIBLE : View.GONE);
         } else {
@@ -297,7 +301,9 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
         @Override
         public void onClick(View v) {
             if (mNews != null) {
-                PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(mNews.getImages()), mNews.getTitle(), mNews.getCreated(), 0, true);
+                PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(mFullscreenImages,
+                        0,
+                        true);
                 getBaseActivity().replaceFragment(photoFullscreenFragment);
             }
         }
@@ -326,6 +332,8 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
                 ApiGetNewsDetailResult apiGetNewsDetailResult = (ApiGetNewsDetailResult) apiResult.getResult();
                 mNews = apiGetNewsDetailResult.getNews();
                 setupNewsData(mNews);
+            } else {
+                showToast(R.string.global_error_api_text);
             }
         }
     }

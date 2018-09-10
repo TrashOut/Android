@@ -1,26 +1,26 @@
 /*
- * TrashOut is an environmental project that teaches people how to recycle 
+ * TrashOut is an environmental project that teaches people how to recycle
  * and showcases the worst way of handling waste - illegal dumping. All you need is a smart phone.
- *  
- *  
+ *
+ *
  * There are 10 types of programmers - those who are helping TrashOut and those who are not.
- * Clean up our code, so we can clean up our planet. 
+ * Clean up our code, so we can clean up our planet.
  * Get in touch with us: help@trashout.ngo
- *  
+ *
  * Copyright 2017 TrashOut, n.f.
- *  
+ *
  * This file is part of the TrashOut project.
- *  
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
- *  
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *  
+ *
  * See the GNU General Public License for more details: <https://www.gnu.org/licenses/>.
  */
 
@@ -30,6 +30,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -49,6 +50,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.beoui.geocell.GeocellManager;
+import com.beoui.geocell.GeocellUtils;
+import com.beoui.geocell.model.BoundingBox;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdate;
@@ -88,11 +92,6 @@ import me.trashout.service.GetZoomPointListService;
 import me.trashout.service.base.BaseService;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
-
-import com.beoui.geocell.GeocellManager;
-import com.beoui.geocell.GeocellUtils;
-import com.beoui.geocell.model.BoundingBox;
-
 import me.trashout.utils.map.OnCameraIdleMultiListener;
 
 public class TrashMapFragment extends BaseFragment implements BaseService.UpdateServiceListener, ITrashFragment {
@@ -140,6 +139,10 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
 
         trashFilter = PreferencesHandler.getTrashFilterData(getContext());
 
+        if (!isNetworkAvailable()) {
+            showToast(R.string.global_internet_offline);
+        }
+
         onCameraIdleMultiListener.addOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
             @Override
             public void onCameraIdle() {
@@ -165,10 +168,14 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                         mClusterManager.clearItems();
                     }
 
-                    if (mMap.getCameraPosition().zoom > 9) {
-                        GetTrashListService.startForMapTrashRequest(getActivity(), GET_TRASH_LIST_REQUEST_ID, trashFilter, geocells);
+                    if (isNetworkAvailable()) {
+                        if (mMap.getCameraPosition().zoom > 9) {
+                            GetTrashListService.startForMapTrashRequest(getActivity(), GET_TRASH_LIST_REQUEST_ID, trashFilter, geocells);
+                        } else {
+                            GetZoomPointListService.startForRequest(getActivity(), GET_ZOOMPOIN_LIST_REQUEST_ID, trashFilter, geocells, (int) mMap.getCameraPosition().zoom);
+                        }
                     } else {
-                        GetZoomPointListService.startForRequest(getActivity(), GET_ZOOMPOIN_LIST_REQUEST_ID, trashFilter, geocells, (int) mMap.getCameraPosition().zoom);
+                        showToast(R.string.global_internet_offline);
                     }
                 }
             }
@@ -284,19 +291,28 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                 goToMyLocation(false);
                 break;
             case R.id.add_dump_fab:
-                TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
-                getBaseActivity().replaceFragment(trashReportOrEditFragment);
+                addDump();
                 break;
         }
     }
 
+    public void addDump() {
+        if (isNetworkAvailable()) {
+            TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
+            getBaseActivity().replaceFragment(trashReportOrEditFragment);
+        } else {
+            showToast(R.string.global_internet_error_offline);
+        }
+    }
 
     /**
      * Go to my actual position
      */
     private void goToMyLocation(boolean afterStart) {
 
-        if (ContextCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (getActivity() != null &&
+                ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Log.d(TAG, "setUpMapIfNeeded: permission check");
             requestPermissions(new String[]{
                             Manifest.permission.ACCESS_FINE_LOCATION,
@@ -308,8 +324,12 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
             Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             if (mLastLocation != null) {
                 LatLng latLng = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-                CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, afterStart ? 6 : 14);
-                mMap.animateCamera(cameraUpdate);
+//                TRASH-1113
+//                CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, afterStart ? 6 : 14);
+                CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 14);
+                if (mMap != null) {
+                    mMap.animateCamera(cameraUpdate);
+                }
             }
         }
     }
@@ -339,6 +359,8 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                 List<TrashMapItem> trashMapItems = new ArrayList<>();
                 trashMapItems.addAll(apiGetZoomPointListResult.getZoomPoints());
                 setTrashList(trashMapItems);
+            } else {
+                showToast(R.string.global_error_api_text);
             }
 
         } else if (apiResult.getRequestId() == GET_TRASH_LIST_REQUEST_ID) {
@@ -348,6 +370,8 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                 List<TrashMapItem> trashMapItems = new ArrayList<>();
                 trashMapItems.addAll(apiGetTrashListResult.getTrashList());
                 setTrashList(trashMapItems);
+            } else {
+                showToast(R.string.global_error_api_text);
             }
         }
     }
@@ -388,6 +412,13 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
         mClusterManager.cluster();
     }
 
+    @Override
+    public void onDestroy() {
+        if (mClusterManager != null) {
+            mClusterManager.clearItems();
+        }
+        super.onDestroy();
+    }
 
     /**
      * Custom cluster renderer
@@ -403,6 +434,10 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
         private final AppCompatImageView mClusterPoint2;
         private final AppCompatImageView mClusterPoint3;
 
+        private int colorGreen;
+        private int colorRed;
+        private int colorYellow;
+
 
         public TrashRenderer() {
             super(getActivity(), mMap, mClusterManager);
@@ -411,10 +446,20 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
             mClusterIconGenerator.setContentView(mClusterView);
             mClusterIconGenerator.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.background_map_cluster));
 
-            mClusterText = (TextView) mClusterView.findViewById(R.id.cluster_text);
+            mClusterText = mClusterView.findViewById(R.id.cluster_text);
             mClusterPoint1 = mClusterView.findViewById(R.id.cluster_point_1);
             mClusterPoint2 = mClusterView.findViewById(R.id.cluster_point_2);
             mClusterPoint3 = mClusterView.findViewById(R.id.cluster_point_3);
+
+            if (getContext() != null) {
+                colorGreen = ContextCompat.getColor(getContext(), R.color.cluster_color_green);
+                colorRed = ContextCompat.getColor(getContext(), R.color.cluster_color_red);
+                colorYellow = ContextCompat.getColor(getContext(), R.color.cluster_color_yellow);
+            } else {
+                colorGreen = Color.GREEN;
+                colorRed = Color.RED;
+                colorYellow = Color.YELLOW;
+            }
         }
 
         @Override
@@ -511,19 +556,19 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
             }
         }
 
-/**
- Stav skládek v clusteru
- Tři zelené tečky (všechny skládky v clusteru mají status=cleaned)
- Tři červené tečky (všechny skládky v clusteru mají status=stillHere, more nebo less a zároveň updatedNeeded=false)
- Tři žluté tečky (všechny skládky v clusteru mají updatedNeeded=true)
- Dvě zelené a jedna červená tečka (v clusteru existuje alespoň jedna skládka v clusteru, která má status=stillHere nebo more nebo less a zároveň updateNeeded=false, ale je více nebo stejně skládek, které mají status=cleaned, neexistuje žádná skládka, která má updateNeeded=true)
- Jedna zelená a dvě červené tečky (v clusteru existuje alespoň jedna skládka v clusteru, která má status=cleaned, ale je více skládek, které mají status=stillHere, more nebo less, neexistuje žádná skládka, která má updateNeeded=true)
- Jedna zelená, jedna červená a jedna žlutá tečka (v clusteru existuje alespoň jedna skládka se status=cleaned, existuje alespoň jedna skládka se status=stillHere, more nebo less a zároveň updatedNeeded=false , a existuje alespoň jedna skládka s updatedNeeded=true)
- Dvě zelené a jedna žlutá tečka (v clusteru existuje alespoň jedna skládka s updatedNeeded=true, ale je více nebo stejně skládek, které mají status=cleaned)
- Jedna zelená a dvě žluté tečky (v clusteru existuje alespoň jedna skládka, která má status=cleaned, ale je více skládek, které mají updatedNeeded=true)
- Dvě červené a jedna žlutá tečka (v clusteru existuje alespoň jedna skládka s updatedNeeded=true, ale je více nebo stejně skládek, které mají status=stillHere, more nebo less a zároveň updatedNeeded=false)
- Jedna červená a dvě žluté tečky (v clusteru existuje alespoň jedna skládka, která má status=stillHere, more nebo less a zároveň updatedNeeded=false, ale je více skládek, které mají updatedNeeded=true)
- */
+        /**
+         * Stav skládek v clusteru
+         * Tři zelené tečky (všechny skládky v clusteru mají status=cleaned)
+         * Tři červené tečky (všechny skládky v clusteru mají status=stillHere, more nebo less a zároveň updatedNeeded=false)
+         * Tři žluté tečky (všechny skládky v clusteru mají updatedNeeded=true)
+         * Dvě zelené a jedna červená tečka (v clusteru existuje alespoň jedna skládka v clusteru, která má status=stillHere nebo more nebo less a zároveň updateNeeded=false, ale je více nebo stejně skládek, které mají status=cleaned, neexistuje žádná skládka, která má updateNeeded=true)
+         * Jedna zelená a dvě červené tečky (v clusteru existuje alespoň jedna skládka v clusteru, která má status=cleaned, ale je více skládek, které mají status=stillHere, more nebo less, neexistuje žádná skládka, která má updateNeeded=true)
+         * Jedna zelená, jedna červená a jedna žlutá tečka (v clusteru existuje alespoň jedna skládka se status=cleaned, existuje alespoň jedna skládka se status=stillHere, more nebo less a zároveň updatedNeeded=false , a existuje alespoň jedna skládka s updatedNeeded=true)
+         * Dvě zelené a jedna žlutá tečka (v clusteru existuje alespoň jedna skládka s updatedNeeded=true, ale je více nebo stejně skládek, které mají status=cleaned)
+         * Jedna zelená a dvě žluté tečky (v clusteru existuje alespoň jedna skládka, která má status=cleaned, ale je více skládek, které mají updatedNeeded=true)
+         * Dvě červené a jedna žlutá tečka (v clusteru existuje alespoň jedna skládka s updatedNeeded=true, ale je více nebo stejně skládek, které mají status=stillHere, more nebo less a zároveň updatedNeeded=false)
+         * Jedna červená a dvě žluté tečky (v clusteru existuje alespoň jedna skládka, která má status=stillHere, more nebo less a zároveň updatedNeeded=false, ale je více skládek, které mají updatedNeeded=true)
+         */
 
         private Bitmap getClusterIcon(int total, int cleaned, int remains, int updateNeeded) {
 
@@ -559,22 +604,23 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
 
             int i = 0;
             for (; i < computeGreenDot; i++) {
-                imageResourceArray[i] = R.color.cluster_color_green;
+                imageResourceArray[i] = colorGreen;
             }
 
             for (; i < (computeGreenDot + computeRedDot); i++) {
-                imageResourceArray[i] = R.color.cluster_color_red;
+                imageResourceArray[i] = colorRed;
             }
 
             for (; i < (computeGreenDot + computeRedDot + computeYellowDot); i++) {
-                imageResourceArray[i] = R.color.cluster_color_yellow;
+                imageResourceArray[i] = colorYellow;
             }
 
 //            Log.d(TAG, "getClusterIcon: ============================================ \n total = " + total + ", cleaned = " + cleaned + ", remains = " + remains + ", updateNeeded = " + updateNeeded + "\n computeGreenDot = " + computeGreenDot + ", computeRedDot = " + computeRedDot + ", computeYellowDot = " + computeYellowDot + "\n =========================================");
 
-            ImageViewCompat.setImageTintList(mClusterPoint1, ColorStateList.valueOf(ContextCompat.getColor(getContext(), imageResourceArray[0])));
-            ImageViewCompat.setImageTintList(mClusterPoint2, ColorStateList.valueOf(ContextCompat.getColor(getContext(), imageResourceArray[1])));
-            ImageViewCompat.setImageTintList(mClusterPoint3, ColorStateList.valueOf(ContextCompat.getColor(getContext(), imageResourceArray[2])));
+
+            ImageViewCompat.setImageTintList(mClusterPoint1, ColorStateList.valueOf(imageResourceArray[0]));
+            ImageViewCompat.setImageTintList(mClusterPoint2, ColorStateList.valueOf(imageResourceArray[1]));
+            ImageViewCompat.setImageTintList(mClusterPoint3, ColorStateList.valueOf(imageResourceArray[2]));
 
             mClusterText.setText(this.getClusterText(total));
 

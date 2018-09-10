@@ -36,20 +36,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -64,9 +61,12 @@ import me.trashout.fragment.base.IProfileFragment;
 import me.trashout.model.Badge;
 import me.trashout.model.Organization;
 import me.trashout.model.User;
+import me.trashout.notification.TrashoutFirebaseInstanceIdService;
 import me.trashout.service.GetUserByIdService;
 import me.trashout.service.base.BaseService;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.PreferencesHandler;
+import me.trashout.utils.Utils;
 
 public class ProfileFragment extends BaseFragment implements IProfileFragment, BaseService.UpdateServiceListener {
 
@@ -131,7 +131,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
 
         if (mUser == null) {
             // TODO - No user - get from API?, login?
-            Toast.makeText(getContext(), "No user data.. Please login again", Toast.LENGTH_SHORT).show();
+            showToast("No user data.. Please login again");
             // start login activity
             getActivity().finish();
         } else {
@@ -144,10 +144,10 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
             public boolean onMenuItemClick(MenuItem item) {
 
                 if (item.getItemId() == R.id.action_logout) {
-
-                    // TODO - logout on API and Firebase, Start login activity
+                    TrashoutFirebaseInstanceIdService.deleteFcmToken(getContext());
                     PreferencesHandler.setUserData(getContext(), null);
                     FirebaseAuth.getInstance().signOut();
+                    Utils.resetFcmToken();
 
                     // Facebook sign out
                     if (FacebookSdk.isInitialized()) {
@@ -162,6 +162,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
                     ((MainActivity) getBaseActivity()).setUserNavigationState();
                     //startActivity(new Intent(getActivity(), LoginActivity.class));
                     //getActivity().completed();
+
                     return true;
                 }
                 return false;
@@ -169,22 +170,29 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
         });
 
         // update user data and give stat
-        if (mUser != null) {
-            GetUserByIdService.startForRequest(getContext(), GET_USER_REQUEST_ID, mUser.getId());
-        }
+        loadData();
 
         return view;
     }
 
-    private void setupUserData(User user) {
+    private void loadData() {
+        if (!isNetworkAvailable()) {
+            showToast(R.string.global_internet_offline);
+            return;
+        }
 
+        if (mUser != null) {
+            GetUserByIdService.startForRequest(getContext(), GET_USER_REQUEST_ID, mUser.getId());
+        }
+    }
+
+    private void setupUserData(User user) {
         if (user.getImage() != null) {
             StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(user.getImage().getFullStorageLocation());
-            Glide.with(this)
-                    .using(new FirebaseImageLoader())
+            GlideApp.with(this)
                     .load(mImageRef)
                     .centerCrop()
-                    .crossFade()
+                    .transition(DrawableTransitionOptions.withCrossFade())
                     .placeholder(R.drawable.ic_image_placeholder_rectangle)
                     .into(profileImage);
         }
@@ -234,7 +242,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
         int b = 1;
         int c = 0;
         int index = -1;
-        while (c <= (points / 10)) {
+        while (c < (points / 10)) {
             c = a + b;
             a = b;
             b = c;
@@ -252,7 +260,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
     private View getBadgeView(final Badge badge) {
         View trashTypeView = inflater.inflate(R.layout.layout_badge, null);
 
-        TextView badgeName = (TextView) trashTypeView.findViewById(R.id.badge_name);
+        TextView badgeName = trashTypeView.findViewById(R.id.badge_name);
         View badgeInfoBtn = trashTypeView.findViewById(R.id.badge_info_btn);
         View badgeBackground = trashTypeView.findViewById(R.id.badge_bg);
 
@@ -261,7 +269,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
         badgeInfoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ProfileFragment.this.getContext(), badge.getName(), Toast.LENGTH_SHORT).show();
+                showToast(badge.getName());
             }
         });
 
@@ -296,6 +304,8 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
                 ApiGetUserResult apiGetUserResult = (ApiGetUserResult) apiResult.getResult();
                 mUser = apiGetUserResult.getUser();
                 setupUserData(mUser);
+            } else {
+                showToast(R.string.global_error_api_text);
             }
         }
     }

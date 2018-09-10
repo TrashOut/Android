@@ -32,7 +32,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Geocoder;
-import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -54,10 +53,6 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -88,6 +83,7 @@ import me.trashout.service.JoinUserToEventService;
 import me.trashout.service.base.BaseService;
 import me.trashout.utils.DateTimeUtils;
 import me.trashout.utils.GeocoderTask;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.Utils;
@@ -275,7 +271,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
         try {
             URI mapUri = new URI(mapUrl.replace("|", "%7c"));
             Log.d(TAG, "setupDumpData: mapUrl = " + String.valueOf(mapUri.toURL()));
-            Glide.with(this).load(String.valueOf(mapUri.toURL())).centerCrop().dontTransform().into(eventDetailMap);
+            GlideApp.with(this).load(String.valueOf(mapUri.toURL())).centerCrop().dontTransform().into(eventDetailMap);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
@@ -309,11 +305,11 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
     private View getTrashView(TrashPoint trashPoint) {
         View eventTrashView = inflater.inflate(R.layout.layout_event_trash, null);
 
-        TextView eventTrashDate = (TextView) eventTrashView.findViewById(R.id.event_trash_date);
-        TextView eventTrashTypes = (TextView) eventTrashView.findViewById(R.id.event_trash_types);
-        TextView eventTrashLocation = (TextView) eventTrashView.findViewById(R.id.event_trash_location);
-        ImageView eventTrashImage = (ImageView) eventTrashView.findViewById(R.id.event_trash_image);
-        ImageView eventTrashStatusIcon = (ImageView) eventTrashView.findViewById(R.id.event_trash_status_icon);
+        TextView eventTrashDate = eventTrashView.findViewById(R.id.event_trash_date);
+        TextView eventTrashTypes = eventTrashView.findViewById(R.id.event_trash_types);
+        TextView eventTrashLocation = eventTrashView.findViewById(R.id.event_trash_location);
+        ImageView eventTrashImage = eventTrashView.findViewById(R.id.event_trash_image);
+        ImageView eventTrashStatusIcon = eventTrashView.findViewById(R.id.event_trash_status_icon);
 
         eventTrashLocation.setText(String.format(getContext().getString(R.string.distance_away_formatter), lastPosition != null ? PositionUtils.getFormattedComputeDistance(getContext(), lastPosition, trashPoint.getPosition()) : "?", getString(R.string.global_distanceAttribute_away)));
 
@@ -326,7 +322,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
 
         if (trashPoint.getImages() != null && !trashPoint.getImages().isEmpty() && !TextUtils.isEmpty(trashPoint.getImages().get(0).getSmallestImage())) {
             StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(trashPoint.getImages().get(0).getSmallestImage());
-            Glide.with(getContext()).using(new FirebaseImageLoader()).load(mImageRef).centerCrop().placeholder(R.drawable.ic_image_placeholder_square).into(eventTrashImage);
+            GlideApp.with(getContext()).load(mImageRef).centerCrop().placeholder(R.drawable.ic_image_placeholder_square).into(eventTrashImage);
         } else {
             eventTrashImage.setImageResource(R.drawable.ic_image_placeholder_square);
         }
@@ -375,10 +371,12 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
                 ApiGetEventDetailResult apiGetTrashDetailResult = (ApiGetEventDetailResult) apiResult.getResult();
                 mEvent = apiGetTrashDetailResult.getEvent();
                 setupEventData(mEvent);
+            } else {
+                showToast(R.string.global_error_api_text);
             }
         } else if (apiResult.getRequestId() == JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
-            Toast.makeText(getContext(), apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed, Toast.LENGTH_SHORT).show();
+            showToast(apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed);
 
             if (apiResult.isValidResponse()) {
                 eventDetailJoinBtn.setVisibility(View.GONE);
@@ -401,7 +399,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
             case R.id.event_detail_join_btn:
                 if (mEvent != null) {
                     if (user == null) {
-                        Toast.makeText(getActivity(), R.string.event_signToJoin, Toast.LENGTH_SHORT).show();
+                        showToast(R.string.event_signToJoin);
                     } else {
                         MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                                 .title(R.string.global_validation_warning)

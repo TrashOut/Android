@@ -56,8 +56,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.flexbox.FlexboxLayout;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -89,6 +88,7 @@ import me.trashout.model.Image;
 import me.trashout.model.Trash;
 import me.trashout.model.UpdateHistory;
 import me.trashout.model.User;
+import me.trashout.model.presentation.FullScreenImage;
 import me.trashout.service.CreateTrashNewSpamService;
 import me.trashout.service.GetTrashDetailService;
 import me.trashout.service.JoinUserToEventService;
@@ -97,6 +97,7 @@ import me.trashout.ui.SelectableImageButton;
 import me.trashout.ui.SquareImageView;
 import me.trashout.utils.DateTimeUtils;
 import me.trashout.utils.GeocoderTask;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.Utils;
@@ -198,6 +199,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
     private Long mTrashId;
     private Trash mTrash;
     private Event mJoinedEvent;
+    private ArrayList<FullScreenImage> mImages;
 
     private LayoutInflater inflater;
 
@@ -251,11 +253,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         });
 
         if (mTrash == null || needRefresh) {
-            needRefresh = false;
-            if (EasyPermissions.hasPermissions(getContext(), perms))
-                showProgressDialog();
-            trashDetailViewContainer.setVisibility(View.GONE);
-            GetTrashDetailService.startForRequest(getActivity(), GET_TRASH_DETAIL_REQUEST_ID, getTrashId());
+            loadData();
         } else {
             setupTrashData(mTrash);
         }
@@ -270,6 +268,20 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         }
 
         return view;
+    }
+
+    private void loadData ()
+    {
+        if (!isNetworkAvailable()) {
+            showToast(R.string.global_internet_offline);
+            return;
+        }
+
+        needRefresh = false;
+        if (EasyPermissions.hasPermissions(getContext(), perms))
+            showProgressDialog();
+        trashDetailViewContainer.setVisibility(View.GONE);
+        GetTrashDetailService.startForRequest(getActivity(), GET_TRASH_DETAIL_REQUEST_ID, getTrashId());
     }
 
     /**
@@ -289,6 +301,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
      * @param trash
      */
     private void setupTrashData(Trash trash) {
+        mImages = getFullScreenImagesFromTrash(trash);
 
         trashDetailStateName.setText(trash.getStatus().getStringResId());
         if (trash.isUpdateNeeded()) {
@@ -303,7 +316,6 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         }
 
         trashDetailStateTime.setText(DateTimeUtils.getRoundedTimeAgo(getContext(), trash.getLastChangeDate()));
-        trashDetailPhotoCount.setText(String.valueOf(trash.getImages() != null ? trash.getImages().size() : 0));
 
         trashDetailSizeIcon.setImageResource(trash.getSize().getIconResId());
         trashDetailSizeText.setText(trash.getSize().getStringResId());
@@ -323,7 +335,10 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
 
         if (trash.getUpdateHistory() != null && !trash.getUpdateHistory().isEmpty()) {
             ArrayList<UpdateHistory> preparedUpdateHistory = prepareUpdateHistory(trash.getUpdateHistory());
+
             for (UpdateHistory updateHistory : preparedUpdateHistory) {
+
+
                 if (trashDetailHistoryContainer.getChildCount() > 0)
                     trashDetailHistoryContainer.addView(ViewUtils.getDividerView(getContext()));
 
@@ -331,6 +346,8 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 updateHistoryOrder++;
             }
         }
+
+        trashDetailPhotoCount.setText(String.valueOf(mImages != null ? mImages.size() : 0));
 
         String accessibilityText;
         if (trash.getAccessibility() != null && !TextUtils.isEmpty(accessibilityText = trash.getAccessibility().getAccessibilityString(getContext()))) {
@@ -376,25 +393,22 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         try {
             URI mapUri = new URI(mapUrl.replace("|", "%7c"));
             Log.d(TAG, "setupTrashData: mapUrl = " + String.valueOf(mapUri.toURL()));
-            Glide.with(this).load(String.valueOf(mapUri.toURL())).centerCrop().into(trashDetailMap);
+            GlideApp.with(this).load(String.valueOf(mapUri.toURL())).centerCrop().into(trashDetailMap);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
 
-
         if (trash.getImages() != null && !trash.getImages().isEmpty() && ViewUtils.checkImageStorage(trash.getImages().get(0))) {
             StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(trash.getImages().get(0).getFullStorageLocation());
-            Glide.with(this)
-                    .using(new FirebaseImageLoader())
+            GlideApp.with(this)
                     .load(mImageRef)
                     .centerCrop()
-                    .crossFade()
+                    .transition(DrawableTransitionOptions.withCrossFade())
                     .placeholder(R.drawable.ic_image_placeholder_rectangle)
                     .into(trashDetailImage);
         }
-
 
         trashDetailEventContainer.removeAllViews();
         if (trash.getEvents() != null && !trash.getEvents().isEmpty()) {
@@ -411,7 +425,6 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
             trashDetailEventCardView.setVisibility(View.GONE);
             trashDetailNoEvent.setVisibility(View.VISIBLE);
         }
-
     }
 
     /**
@@ -559,6 +572,14 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
 
         if (updateHistory.isContainImages()) {
             int imagePosition = 0;
+
+            final ArrayList<FullScreenImage> fullScreenImages = new ArrayList<>();
+            // create container of fullscreen photos for each update history row
+            for (Image image: updateHistory.getChanged().getImages())
+            {
+                fullScreenImages.add(new FullScreenImage(image, updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
+            }
+
             for (Image image : updateHistory.getChanged().getImages()) {
                 SquareImageView squareImageView = new SquareImageView(getContext());
                 squareImageView.setAdjustViewBounds(true);
@@ -568,8 +589,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 String fullStorageLocation = image.getFullStorageLocation() != null ? image.getFullStorageLocation() : image.getThumbStorageLocation();
                 if (fullStorageLocation != null && !fullStorageLocation.isEmpty()) {
                     StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(fullStorageLocation);
-                    Glide.with(this)
-                            .using(new FirebaseImageLoader())
+                    GlideApp.with(this)
                             .load(mImageRef)
                             .centerCrop()
                             .override(imageSize, imageSize)
@@ -580,7 +600,8 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                     squareImageView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(updateHistory.getChanged().getImages()), updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime(), position);
+                            PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(fullScreenImages,
+                                    position);
                             getBaseActivity().replaceFragment(photoFullscreenFragment);
                         }
                     });
@@ -635,7 +656,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
             @Override
             public void onClick(View view) {
                 if (user == null) {
-                    Toast.makeText(getActivity(), R.string.event_signToJoin, Toast.LENGTH_SHORT).show();
+                    showToast(R.string.event_signToJoin);
                 } else {
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                             .title(R.string.global_validation_warning)
@@ -676,7 +697,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
 
     private void sendNotificationEmail() {
         Log.d(TAG, "Send email");
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+           Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
         emailIntent.setData(Uri.parse("mailto:"));
         emailIntent.setType("text/plain");
@@ -720,7 +741,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
             return;
 
         if (apiResult.getRequestId() == GET_TRASH_DETAIL_REQUEST_ID) {
-            if (apiResult.isValidResponse()) {
+            if (apiResult.isValidResponse() && apiResult.getResult() != null) {
                 ApiGetTrashDetailResult apiGetTrashDetailResult = (ApiGetTrashDetailResult) apiResult.getResult();
                 mTrash = apiGetTrashDetailResult.getTrash();
                 setupTrashData(mTrash);
@@ -728,14 +749,14 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 trashDetailViewContainer.setVisibility(View.VISIBLE);
             } else {
                 dismissProgressDialog();
-                Toast.makeText(getContext(), R.string.trash_detail_loadingFailed, Toast.LENGTH_SHORT).show();
+                showToast(R.string.global_error_api_text);
             }
         } else if (apiResult.getRequestId() == TRASH_CREATE_SPAM_REQUEST_ID) {
             dismissProgressDialog();
-            Toast.makeText(getContext(), apiResult.isValidResponse() ? R.string.trash_messageWasReceived : R.string.trash_markedAsSpam_alreadyMarked, Toast.LENGTH_SHORT).show();
+            showToast(apiResult.isValidResponse() ? R.string.trash_messageWasReceived : R.string.trash_markedAsSpam_alreadyMarked);
         } else if (apiResult.getRequestId() == TRASH_JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
-            Toast.makeText(getContext(), apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed, Toast.LENGTH_SHORT).show();
+            showToast(apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed);
 
             if (apiResult.isValidResponse()) {
                 hideEventJoinButton(mJoinedEvent);
@@ -814,7 +835,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 break;
             case R.id.trash_detail_image:
                 if (mTrash != null && mTrash.getImages() != null && !mTrash.getImages().isEmpty()) {
-                    PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(new ArrayList<Image>(mTrash.getImages()), mTrash.getLastChangeName(getContext()), mTrash.getLastChangeDate(), 0);
+                    PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(mImages, 0);
                     getBaseActivity().replaceFragment(photoFullscreenFragment);
                 }
                 break;
@@ -854,5 +875,26 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 .build();
 
         dialog.show();
+    }
+
+    public ArrayList<FullScreenImage> getFullScreenImagesFromTrash(Trash trash) {
+        ArrayList<FullScreenImage> fullScreenImages = new ArrayList<>();
+        UpdateHistory latestUpdateHistory = UpdateHistory.createLastUpdateHistoryFromTrash(trash);
+        for (Image image: trash.getImages())
+        {
+            fullScreenImages.add(new FullScreenImage(image, latestUpdateHistory.getUserInfo().getFullName(getContext()), latestUpdateHistory.getUpdateTime()));
+        }
+
+        if (trash.getUpdateHistory() != null && !trash.getUpdateHistory().isEmpty()) {
+            ArrayList<UpdateHistory> preparedUpdateHistory = prepareUpdateHistory(trash.getUpdateHistory());
+            for (UpdateHistory updateHistory : preparedUpdateHistory) {
+                for (Image image: updateHistory.getChanged().getImages())
+                {
+                    fullScreenImages.add(new FullScreenImage(image, updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
+                }
+            }
+        }
+
+        return fullScreenImages;
     }
 }

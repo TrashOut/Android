@@ -1,26 +1,26 @@
 /*
- * TrashOut is an environmental project that teaches people how to recycle 
+ * TrashOut is an environmental project that teaches people how to recycle
  * and showcases the worst way of handling waste - illegal dumping. All you need is a smart phone.
- *  
- *  
+ *
+ *
  * There are 10 types of programmers - those who are helping TrashOut and those who are not.
- * Clean up our code, so we can clean up our planet. 
+ * Clean up our code, so we can clean up our planet.
  * Get in touch with us: help@trashout.ngo
- *  
+ *
  * Copyright 2017 TrashOut, n.f.
- *  
+ *
  * This file is part of the TrashOut project.
- *  
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
- *  
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *  
+ *
  * See the GNU General Public License for more details: <https://www.gnu.org/licenses/>.
  */
 
@@ -36,7 +36,10 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatCheckBox;
+import android.text.Html;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +57,7 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.firebase.ui.auth.ui.TaskFailureLogger;
+import com.firebase.ui.auth.util.data.TaskFailureLogger;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -99,6 +102,7 @@ import me.trashout.service.GetUserByFirebaseTokenService;
 import me.trashout.service.UpdateUserService;
 import me.trashout.service.base.BaseService;
 import me.trashout.utils.PreferencesHandler;
+import me.trashout.utils.Utils;
 import me.trashout.utils.ViewUtils;
 
 import static me.trashout.activity.MainActivity.NAVIGATION_PROFILE_ITEM;
@@ -137,6 +141,10 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     TextInputEditText signUpPassword;
     @BindView(R.id.sign_up_reenter_password)
     TextInputEditText signUpReenterPassword;
+    @BindView(R.id.sign_up_accept_user_data_collection)
+    AppCompatCheckBox signUpAccpetUserDataCollectionCheckBox;
+    @BindView(R.id.sign_up_accept_user_data_collection_text)
+    TextView signUpAccpetUserDataCollectionTextView;
     @BindView(R.id.sign_up_btn)
     AppCompatButton signUpBtn;
     @BindView(R.id.sign_up_facebook_btn)
@@ -164,6 +172,11 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
     private CallbackManager callbackManager;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        callbackManager = CallbackManager.Factory.create();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -179,6 +192,15 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
         tabs.setupWithViewPager(pager);
 
+
+        signUpAccpetUserDataCollectionTextView.setText(Html.fromHtml(getString(R.string.global_signUp_acceptRegister_startSentense)
+                + " <a href=\"http://trashout.ngo/policy\">" + getString(R.string.global_signUp_acceptRegister_privatePolicy) +"</a> "
+                + getString(R.string.global_signUp_acceptRegister_and)
+                + " <a href=\"http://trashout.ngo/terms\">" + getString(R.string.global_signUp_acceptRegister_terms) +"</a>"
+        ));
+        signUpAccpetUserDataCollectionTextView.setMovementMethod(LinkMovementMethod.getInstance());
+
+
         return view;
     }
 
@@ -193,10 +215,15 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
     @OnClick({R.id.login_facebook_btn, R.id.sign_up_facebook_btn})
     public void onFacebookLoginClick(View view) {
+        if (view.getId() == R.id.sign_up_facebook_btn) {
+            resetLayoutError();
+            if (!signUpAccpetUserDataCollectionCheckBox.isChecked()) {
+                signUpAccpetUserDataCollectionCheckBox.setError("");
+                return;
+            }
+        }
 
 //        Toast.makeText(LoginFragment.this.getContext(), R.string.comming_soon, Toast.LENGTH_SHORT).show();
-
-        callbackManager = CallbackManager.Factory.create();
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
                     @Override
@@ -268,9 +295,9 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                Toast.makeText(getContext(), R.string.user_validation_resetPassword_success, Toast.LENGTH_LONG).show();
+                                                showToast(R.string.user_validation_resetPassword_success);
                                             } else {
-                                                Toast.makeText(getContext(), R.string.user_validation_resetPassword_failed, Toast.LENGTH_SHORT).show();
+                                                showToast(R.string.user_validation_resetPassword_failed);
                                             }
                                         }
                                     });
@@ -286,53 +313,74 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     public void onSignUpClick() {
         boolean valid = true;
         resetLayoutError();
+        View errorView = null;
 
         if (TextUtils.isEmpty(signUpEmail.getText().toString())) {
             signUpEmailLayout.setError(getString(R.string.profile_validation_emailRequired));
             valid = false;
+            errorView = signUpEmail;
         } else if (!ViewUtils.isValidEmail(signUpEmail.getText().toString())) {
             signUpEmailLayout.setError(getString(R.string.profile_validation_invalidEmail));
             valid = false;
+            errorView = signUpEmail;
         }
 
         if (TextUtils.isEmpty(signUpFirstName.getText().toString())) {
             signUpFirstNameLayout.setError(getString(R.string.user_validation_firstNameRequired));
             valid = false;
+            errorView = signUpFirstName;
         }
 
         if (TextUtils.isEmpty(signUpLastName.getText().toString())) {
             signUpLastNameLayout.setError(getString(R.string.user_validation_lastNameRequired));
             valid = false;
+            errorView = signUpLastName;
         }
 
         if (TextUtils.isEmpty(signUpPassword.getText().toString())) {
             signUpPasswordLayout.setError(getString(R.string.profile_validation_passwordRequired));
             valid = false;
+            errorView = signUpPassword;
         }
 
         if (TextUtils.isEmpty(signUpReenterPassword.getText().toString())) {
             signUpReenterPasswordLayout.setError(getString(R.string.user_validation_confirmPasswordRequired));
             valid = false;
+            errorView = signUpReenterPassword;
         }
 
         if (!TextUtils.isEmpty(signUpPassword.getText().toString()) && !TextUtils.isEmpty(signUpReenterPassword.getText().toString()) && !signUpPassword.getText().toString().equals(signUpReenterPassword.getText().toString())) {
             signUpReenterPasswordLayout.setError(getString(R.string.user_validation_passwordsNotMatch));
             valid = false;
+            errorView = signUpReenterPassword;
         }
 
         if (signUpPassword.getText().length() > Constants.MAX_PASSWORD_LENGTH) {
             signUpPasswordLayout.setError(getString(R.string.global_validation_passwordTooLong));
             valid = false;
+            errorView = signUpPassword;
         } else if (signUpPassword.getText().length() < Constants.MIN_PASSWORD_LENGTH) {
             signUpPasswordLayout.setError(getString(R.string.user_validation_passwordTooShort));
             valid = false;
+            errorView = signUpPassword;
         } else if (!ViewUtils.isValidPassword(signUpPassword.getText().toString())) {
             signUpPasswordLayout.setError(getString(R.string.user_validation_passwordShouldContain));
             valid = false;
+            errorView = signUpPassword;
+        }
+
+        if (!signUpAccpetUserDataCollectionCheckBox.isChecked()) {
+            signUpAccpetUserDataCollectionCheckBox.setError("");
+            valid = false;
+            errorView = signUpAccpetUserDataCollectionCheckBox;
+        }
+
+        if (!valid) {
+            errorView.requestFocus();
         }
 
         if (valid) {
-
+            Utils.resetFcmToken();
             if (auth.getCurrentUser() != null && user != null) {
                 linkWithAnonymousUser(auth.getCurrentUser(), signUpEmail.getText().toString(), signUpPassword.getText().toString(), signUpFirstName.getText().toString(), signUpLastName.getText().toString());
             } else {
@@ -351,6 +399,8 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
         loginEmailLayout.setError(null);
         loginPasswordLayout.setError(null);
+
+        signUpAccpetUserDataCollectionCheckBox.setError(null);
     }
 
     @OnClick(R.id.login_btn)
@@ -372,9 +422,13 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
         }
 
         if (valid) {
+            if (!isNetworkAvailable()) {
+                showToast(R.string.global_internet_offline);
+                return;
+            }
+
             checkAccountExists(loginEmail.getText().toString(), loginPassword.getText().toString());
         }
-
     }
 
     @Override
@@ -406,7 +460,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
         @Override
         public boolean isViewFromObject(View arg0, Object arg1) {
-            return arg0 == ((View) arg1);
+            return arg0 == arg1;
         }
 
         @Override
@@ -484,12 +538,12 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
                         CreateUserService.startForRequest(getActivity(), CREATE_USER_REQUEST_ID, newUser);
                     } else {
-                        Toast.makeText(getContext(), R.string.user_login_validation_notFirebaseUser, Toast.LENGTH_SHORT).show();
+                        showToast(R.string.user_login_validation_notFirebaseUser);
                     }
 
                 } else {
                     dismissProgressDialog();
-                    Toast.makeText(getContext(), R.string.user_login_validation_unknownError, Toast.LENGTH_SHORT).show();
+                    showToast(R.string.user_login_validation_unknownError);
                 }
             }
         } else if (apiResult.getRequestId() == CREATE_USER_REQUEST_ID) {
@@ -502,7 +556,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
                 goToMainActivity();
             } else {
-                Toast.makeText(getContext(), R.string.user_login_create_error, Toast.LENGTH_SHORT).show();
+                showToast(R.string.user_login_create_error);
             }
         } else if (apiResult.getRequestId() == UPDATE_USER_REQUEST_ID) {
 
@@ -511,7 +565,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                 GetUserByFirebaseTokenService.startForRequest(getContext(), GET_USER_BY_FIREBASE_AFTER_LINKING_ACCOUNT_REQUEST_ID, false, null, null, null, null);
             } else {
                 dismissProgressDialog();
-                Toast.makeText(getContext(), R.string.user_login_linkError, Toast.LENGTH_SHORT).show();
+                showToast(R.string.user_login_linkError);
             }
 
         }
@@ -544,16 +598,17 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                                         List<String> providers = task.getResult().getProviders();
                                         if (providers != null && !providers.isEmpty() && providers.get(0).equalsIgnoreCase(EmailAuthProvider.PROVIDER_ID)) {
                                             // user exist
+                                            Utils.resetFcmToken();
                                             login(email, password);
                                         } else {
                                             // no email provider
                                             dismissProgressDialog();
-                                            Toast.makeText(LoginFragment.this.getContext(), R.string.user_register_notExists, Toast.LENGTH_SHORT).show();
+                                            showToast(R.string.user_register_notExists);
                                         }
 
                                     } else {
                                         dismissProgressDialog();
-                                        Toast.makeText(LoginFragment.this.getContext(), R.string.user_login_validation_unknownError, Toast.LENGTH_SHORT).show();
+                                        showToast(R.string.user_login_validation_unknownError);
                                     }
                                 }
                             });
@@ -581,13 +636,13 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                         }
                     } else {
                         dismissProgressDialog();
-                        Toast.makeText(LoginFragment.this.getContext(), R.string.user_login_getToken, Toast.LENGTH_SHORT).show();
+                        showToast(R.string.user_login_getToken);
                     }
                 }
             });
         } else {
             dismissProgressDialog();
-            Toast.makeText(LoginFragment.this.getContext(), R.string.user_login_validation_unknownError, Toast.LENGTH_SHORT).show();
+            showToast(R.string.user_login_validation_unknownError);
         }
     }
 
@@ -611,7 +666,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                     public void onFailure(@NonNull Exception e) {
                         dismissProgressDialog();
                         // Show error message
-                        loginPasswordLayout.setError(getString(com.firebase.ui.auth.R.string.login_error));
+                        loginPasswordLayout.setError(getString(com.firebase.ui.auth.R.string.fui_error_invalid_password));
                     }
                 });
     }
@@ -652,17 +707,17 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
                 if (e instanceof FirebaseAuthWeakPasswordException) {
                     // Password too weak
-                    signUpPasswordLayout.setError(getString(com.firebase.ui.auth.R.string.error_weak_password));
+                    signUpPasswordLayout.setError(getResources().getQuantityString(com.firebase.ui.auth.R.plurals.fui_error_weak_password, 1));
                 } else if (e instanceof FirebaseAuthInvalidCredentialsException) {
                     // Email address is malformed
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.invalid_email_address));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_invalid_email_address));
                 } else if (e instanceof FirebaseAuthUserCollisionException) {
                     // Collision with existing user email
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.error_user_collision));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_email_account_creation_error));
                 } else {
                     // General error message, this branch should not be invoked but
                     // covers future API changes
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.email_account_creation_error));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_email_account_creation_error));
                 }
             }
         });
@@ -697,20 +752,20 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
                 if (e instanceof FirebaseAuthWeakPasswordException) {
                     // Password too weak
-                    signUpPasswordLayout.setError(getString(com.firebase.ui.auth.R.string.error_weak_password));
+                    signUpPasswordLayout.setError(getResources().getQuantityString(com.firebase.ui.auth.R.plurals.fui_error_weak_password, 1));
                 } else if (e instanceof FirebaseAuthInvalidCredentialsException) {
                     // Email address is malformed
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.invalid_email_address));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_invalid_email_address));
                 } else if (e instanceof FirebaseAuthUserCollisionException) {
                     // Collision with existing user email
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.error_user_collision));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_email_account_creation_error));
                 } else {
                     // General error message, this branch should not be invoked but
                     // covers future API changes
-                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.email_account_creation_error));
+                    signUpEmailLayout.setError(getString(com.firebase.ui.auth.R.string.fui_email_account_creation_error));
                 }
 
-                Toast.makeText(LoginFragment.this.getContext(), R.string.user_login_anonymous_linkError, Toast.LENGTH_SHORT).show();
+                showToast(R.string.user_login_anonymous_linkError);
             }
         });
     }
@@ -719,6 +774,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     private void handleFacebookAccessToken(final FacebookProfile facebookProfile) {
         Log.d(TAG, "handleFacebookAccessToken:" + facebookProfile);
         showProgressDialog();
+        Utils.resetFcmToken();
 
         AuthCredential credential = FacebookAuthProvider.getCredential(facebookProfile.getAccessToken().getToken());
         auth.signInWithCredential(credential)
@@ -752,11 +808,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                             // covers future API changes
                         }
 
-                        if (e instanceof FirebaseAuthUserCollisionException) {
-                            handleFacebookAccessToken(facebookProfile);
-                        } else {
-                            Toast.makeText(LoginFragment.this.getContext(), exceptionMessage, Toast.LENGTH_SHORT).show();
-                        }
+                        showToast(exceptionMessage);
                     }
                 });
     }
@@ -810,7 +862,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                 if (e instanceof FirebaseAuthUserCollisionException) {
                     handleFacebookAccessToken(facebookProfile);
                 } else {
-                    Toast.makeText(LoginFragment.this.getContext(), exceptionMessage, Toast.LENGTH_SHORT).show();
+                    showToast(exceptionMessage);
                 }
             }
         });

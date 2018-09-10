@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/background_light">
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:background="@android:color/background_light">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -362,7 +363,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="25dp"
                         android:padding="3dp"
-                        android:text="Praha, Praga Region, Czech Republic"
+                        tools:text="Praha, Praga Region, Czech Republic"
                         android:textSize="@dimen/text_size_normal" />
                 </RelativeLayout>
 
@@ -379,6 +380,7 @@
                 android:textSize="@dimen/text_size_large" />
 
             <android.support.design.widget.TextInputLayout
+                android:hint="@string/trash.create.additionalInfo.hint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -389,8 +391,7 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginStart="10dp"
-                    android:hint="@string/trash.create.additionalInfo.hint" />
+                    android:layout_marginStart="10dp" />
 
             </android.support.design.widget.TextInputLayout>
 

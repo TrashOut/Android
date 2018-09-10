@@ -347,6 +347,7 @@
     <string name="collectionPoint.openingHours">"Часы работы"</string>
     <string name="global.noLongerExistQuestion">"Не существует?"</string>
     <string name="global.forgotPassword">"Забыли пароль?"</string>
+    <string name="global.internet.offline">Пожалуйста, подключитесь к Интернету, чтобы увидеть этот раздел.</string>
     <string name="user.validation.firstNameRequired">"Требуется имя"</string>
     <string name="user.validation.lastNameRequired">"Требуется фамилия"</string>
     <string name="profile.yourActivities">"Ваши действия"</string>
@@ -939,7 +940,7 @@
     <string name="export.selectAttributes">"Выбрать атрибуты для экспорта"</string>
     <string name="export.itemsPerFile">"Элементов в файле"</string>
     <string name="export.itemsPerFile.currentValue">"Значение"</string>
-    <string name="export.preparingExport">"Подготовка к экспорту..."</string>
+    <string name="export.preparingExport">"Подготовка к экспорту…"</string>
     <string name="global.latitude">"Широта"</string>
     <string name="global.longitude">"Долгота"</string>
     <string name="collectionPoint.created">"Время создания"</string>
@@ -1134,6 +1135,7 @@
     <string name="global.validation.imageRatio">"Нельзя использовать широкие изображения. Выберите другое изображение. Соотношение сторон изображения должно быть меньше 1:2."</string>
     <string name="global.validation.maxiumNumberReached">"Достигнуто максимальное количество загруженных изображений (вы можете загрузить не более 20 файлов)."</string>
     <string name="global.error.api.title">"Ошибка API"</string>
+    <string name="global.error.api.text">Мы периодически сталкиваемся с нашим сервером. Мы делаем все возможное, чтобы исправить это в ближайшее время. Пожалуйста, вернитесь позже.</string>
     <string name="global.error.api.description">"Возникла некоторая ошибка в API. Обновите страницу."</string>
     <string name="trash.types.glass">"Стекло"</string>
     <string name="global.occupation">"Деятельность"</string>
@@ -1207,4 +1209,15 @@
     <string name="collectionPoint.validation.chooseDay">"Выберите день"</string>
     <string name="collectionPoint.validation.dayIsUsed">"день был выбран"</string>
     <string name="statistics.countryPicker.header">"Выберите страну"</string>
+
+    <string name="notification.recentActivity.header">"Обновлен отчет о незаконном дампе"</string>
+    <string name="notification.recentActivity.text">"Проверьте свой новый статус в приложении TrashOut и всегда будьте информированы"</string>
+    <string name="mail.eventCreate.subject"></string>
+
+    <string name="global.signUp.acceptRegister.startSentense">Регистрируясь, вы соглашаетесь с</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">Условиями предоставления услуг</string>
+    <string name="global.signUp.acceptRegister.and">и</string>
+    <string name="global.signUp.acceptRegister.terms">Политикой конфиденциальности</string>
+
+    <string name="global.internet.error.offline">Ваше мобильное устройство не подключено к Интернету. Сделайте снимок и сообщите об этом позже через www.admin.trashout.ngo.</string>
 </resources>

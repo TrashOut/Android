@@ -30,10 +30,13 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 
@@ -84,6 +87,9 @@ public class BaseFragment extends Fragment implements IBaseFragment {
 
     @Override
     public void onDestroy() {
+        if (progressDialogFragment != null) {
+            progressDialogFragment.dismiss();
+        }
         super.onDestroy();
     }
 
@@ -112,6 +118,7 @@ public class BaseFragment extends Fragment implements IBaseFragment {
             progressDialogFragment = new MaterialDialog.Builder(getContext())
                     .content(message)
                     .widgetColorRes(R.color.colorPrimary)
+                    .cancelable(false)
                     .progress(true, 0).build();
         progressDialogFragment.show();
     }
@@ -221,6 +228,33 @@ public class BaseFragment extends Fragment implements IBaseFragment {
         }else{
             showMainToolbar();
         }
+    }
+
+    public void showToast(@StringRes int message) {
+        if (getBaseActivity() != null) {
+            getBaseActivity().showToast(message);
+        }
+    }
+
+    public void showToast(String message) {
+        if (getBaseActivity() != null) {
+            getBaseActivity().showToast(message);
+        }
+    }
+
+    public boolean isNetworkAvailable() {
+        if (getActivity() != null) {
+            ConnectivityManager manager =
+                    (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+            boolean isAvailable = false;
+            if (networkInfo != null && networkInfo.isConnected()) {
+                // Network is present and connected
+                isAvailable = true;
+            }
+            return isAvailable;
+        }
+        return false;
     }
 
     @Override

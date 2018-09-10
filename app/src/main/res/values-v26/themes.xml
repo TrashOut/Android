@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.TrashOut" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/text_color</item>
+
+        <item name="android:windowNoTitle">true</item>
+        <!--<item name="windowActionBar">false</item>-->
+
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="windowActionBarOverlay">true</item>
+
+        <item name="android:windowBackground">@color/white</item>
+
+        <!--<item name="mdtp_accent_color">@color/colorPrimary</item>-->
+        <item name="android:spinnerItemStyle">@style/SpinnerItemWhite</item>
+
+        <item name="editTextStyle">@style/App_EditTextStyle</item>
+    </style>
+
+    <style name="ToolbarThemeOverlay" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="FloatingAccentButtonOverlay" parent="Theme.TrashOut">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="SpinnerItemWhite" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SpinnerItemBlack" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="FirebaseLoginTheme" parent="FirebaseUI">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textColorPrimary">@color/text_color_white</item>
+        <item name="colorButtonNormal">@color/button_color_green</item>
+    </style>
+
+    <!--https://stackoverflow.com/questions/45840856/android-8-0-oreo-crash-on-focusing-textinputedittext-->
+    <style name="App_EditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:importantForAutofill">noExcludeDescendants</item>
+    </style>
+</resources>

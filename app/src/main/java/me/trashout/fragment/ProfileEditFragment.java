@@ -32,6 +32,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
@@ -54,10 +55,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.bumptech.glide.request.transition.Transition;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.theartofdev.edmodo.cropper.CropImage;
@@ -81,6 +80,7 @@ import me.trashout.model.Organization;
 import me.trashout.model.User;
 import me.trashout.service.UpdateUserService;
 import me.trashout.service.base.BaseService;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.ViewUtils;
 
@@ -196,14 +196,13 @@ public class ProfileEditFragment extends BaseFragment implements IProfileFragmen
         if (user.getImage() != null) {
             if (user.getImage() != null) {
                 StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(user.getImage().getFullStorageLocation());
-                Glide.with(this)
-                        .using(new FirebaseImageLoader())
-                        .load(mImageRef)
+                GlideApp.with(this)
                         .asBitmap()
+                        .load(mImageRef)
                         .placeholder(R.drawable.ic_image_placeholder_rectangle)
                         .into(new BitmapImageViewTarget(profileEditImage) {
                             @Override
-                            public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                            public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
                                 RoundedBitmapDrawable circularBitmapDrawable =
                                         RoundedBitmapDrawableFactory.create(getActivity().getResources(), resource);
                                 circularBitmapDrawable.setCircular(true);
@@ -334,13 +333,13 @@ public class ProfileEditFragment extends BaseFragment implements IProfileFragmen
             if (resultCode == RESULT_OK) {
                 photoResultImage = result.getUri();
 
-                Glide.with(this)
-                        .load(photoResultImage)
+                GlideApp.with(this)
                         .asBitmap()
+                        .load(photoResultImage)
                         .placeholder(R.drawable.ic_image_placeholder_rectangle)
                         .into(new BitmapImageViewTarget(profileEditImage) {
                             @Override
-                            public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                            public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
                                 RoundedBitmapDrawable circularBitmapDrawable =
                                         RoundedBitmapDrawableFactory.create(getActivity().getResources(), resource);
                                 circularBitmapDrawable.setCircular(true);
@@ -383,11 +382,11 @@ public class ProfileEditFragment extends BaseFragment implements IProfileFragmen
             dismissProgressDialog();
 
             if (apiResult.isValidResponse()) {
-                Toast.makeText(ProfileEditFragment.this.getContext(), "Update success", Toast.LENGTH_SHORT).show();
+                showToast("Update success");
                 PreferencesHandler.setUserData(getContext(), mUser);
                 finish();
             } else {
-                Toast.makeText(getContext(), "Update user Error", Toast.LENGTH_SHORT).show();
+                showToast(R.string.global_error_api_text);
             }
 
         }
@@ -423,14 +422,14 @@ public class ProfileEditFragment extends BaseFragment implements IProfileFragmen
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 CropImage.startPickImageActivity(getActivity());
             } else {
-                Toast.makeText(getContext(), "Cancelling, required permissions are not granted", Toast.LENGTH_LONG).show();
+                showToast("Cancelling, required permissions are not granted");
             }
         } else if (requestCode == CropImage.PICK_IMAGE_PERMISSIONS_REQUEST_CODE) {
             if (mCropImageUri != null && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // required permissions granted, start crop image activity
                 startCropImageActivity(mCropImageUri);
             } else {
-                Toast.makeText(getContext(), "Cancelling, required permissions are not granted", Toast.LENGTH_LONG).show();
+                showToast("Cancelling, required permissions are not granted");
             }
         }
     }

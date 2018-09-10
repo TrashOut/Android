@@ -345,6 +345,7 @@ Der Server antwortet gerade nicht, bitte versuche es später noch einmal."</stri
     <string name="collectionPoint.openingHours">"Öffnungszeiten"</string>
     <string name="global.noLongerExistQuestion">"Gibt es nicht?"</string>
     <string name="global.forgotPassword">"Passwort vergessen?"</string>
+    <string name="global.internet.offline">Bitte verbinden Sie sich mit dem Internet, um diesen Abschnitt zu sehen.</string>
     <string name="user.validation.firstNameRequired">"Vorname ist erforderlich"</string>
     <string name="user.validation.lastNameRequired">"Nachname ist erforderlich"</string>
     <string name="profile.yourActivities">"Deine Aktivitäten"</string>
@@ -959,7 +960,7 @@ Täglich, wöchentlich oder monatlich benachrichtigt werden und über Aktivität
     <string name="export.selectAttributes">"Wähle die zu exportierenden Attribute aus"</string>
     <string name="export.itemsPerFile">"Elemente pro Datei"</string>
     <string name="export.itemsPerFile.currentValue">"Wert"</string>
-    <string name="export.preparingExport">"Der Export wird vorbereitet ..."</string>
+    <string name="export.preparingExport">"Der Export wird vorbereitet …"</string>
     <string name="global.latitude">"Breitengrad"</string>
     <string name="global.longitude">"Längengrad"</string>
     <string name="collectionPoint.created">"Erstellte Zeit"</string>
@@ -1158,6 +1159,7 @@ Täglich, wöchentlich oder monatlich benachrichtigt werden und über Aktivität
     <string name="global.validation.imageRatio">"Du kannst keine großen Bilder verwenden. Bitte verwende ein anderes Bild. Das Bildverhältnis muss kleiner als 1: 2 sein."</string>
     <string name="global.validation.maxiumNumberReached">"Maximale Anzahl der hochgeladenen Bilder erreicht (maximal 20 Dateien hochladen)."</string>
     <string name="global.error.api.title">"API-Fehler"</string>
+    <string name="global.error.api.text">Wir haben ein vorübergehendes Problem mit unserem Server. Wir tun unser Bestes, um es bald zu beheben, bitte versuche es später noch einmal.</string>
     <string name="global.error.api.description">"Ein Fehler in der API. Seite aktualisieren bitte."</string>
     <string name="trash.types.glass">"Glas"</string>
     <string name="global.occupation">"Beruf"</string>
@@ -1235,4 +1237,14 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="collectionPoint.validation.chooseDay">"Bitte wähle einen Tag aus"</string>
     <string name="collectionPoint.validation.dayIsUsed">"Der Tag wurde ausgewählt"</string>
     <string name="statistics.countryPicker.header">"Wählen Sie das Land aus"</string>
+
+    <string name="notification.recentActivity.header">"Ihr Bericht eines illegalen Speicherauszugs wurde aktualisiert"</string>
+    <string name="notification.recentActivity.text">"Überprüfen Sie seinen neuen Status in der TrashOut App und bleiben Sie immer informiert"</string>
+    <string name="mail.eventCreate.subject"></string>
+    <string name="global.signUp.acceptRegister.startSentense">Indem du dich registrierst, stimmst du den</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">Allgemeinen Geschäftsbedingungen</string>
+    <string name="global.signUp.acceptRegister.and">und</string>
+    <string name="global.signUp.acceptRegister.terms">Datenschutzrichtlinien</string>
+
+    <string name="global.internet.error.offline">Ihr Mobilgerät ist nicht mit dem Internet verbunden. Machen Sie ein Foto und melden Sie es später über www.admin.trashout.ngo.</string>
 </resources>

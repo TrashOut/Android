@@ -1,26 +1,26 @@
 /*
- * TrashOut is an environmental project that teaches people how to recycle 
+ * TrashOut is an environmental project that teaches people how to recycle
  * and showcases the worst way of handling waste - illegal dumping. All you need is a smart phone.
- *  
- *  
+ *
+ *
  * There are 10 types of programmers - those who are helping TrashOut and those who are not.
- * Clean up our code, so we can clean up our planet. 
+ * Clean up our code, so we can clean up our planet.
  * Get in touch with us: help@trashout.ngo
- *  
+ *
  * Copyright 2017 TrashOut, n.f.
- *  
+ *
  * This file is part of the TrashOut project.
- *  
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
- *  
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *  
+ *
  * See the GNU General Public License for more details: <https://www.gnu.org/licenses/>.
  */
 
@@ -60,12 +60,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -103,6 +101,7 @@ import me.trashout.service.base.BaseService;
 import me.trashout.ui.SquareImageView;
 import me.trashout.utils.DateTimeUtils;
 import me.trashout.utils.GeocoderTask;
+import me.trashout.utils.GlideApp;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.Utils;
@@ -221,8 +220,6 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     TextView dashboardEventsTitleDescription;
     @BindView(R.id.dashboard_events_container)
     LinearLayout dashboardEventsContainer;
-    @BindView(R.id.trash_detail_event_card_view)
-    CardView dashboardEventsCardView;
     @BindView(R.id.scrollView)
     NestedScrollView scrollView;
     @BindView(R.id.layout_hideable_container)
@@ -252,16 +249,17 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     private User user;
     private boolean showFab = false;
 
-    private Event mJoinedEvent;
+    private Event joinedEvent;
     private int amountOfFoundTrash;
 
     int scrollYPosition = 0;
+    private boolean needRefresh = true;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-        if (getActivity() != null && getActivity() instanceof MainActivity && ((MainActivity) getActivity()).auth.getCurrentUser() == null) {
+        if (getActivity() != null && ((MainActivity) getActivity()).getAuth().getCurrentUser() == null) {
             ((MainActivity) getActivity()).signInAnonymously();
         }
     }
@@ -271,19 +269,23 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         ButterKnife.bind(this, view);
         this.inflater = inflater;
+        joinedEvent = null;
 
         user = PreferencesHandler.getUserData(getContext());
-        mJoinedEvent = null;
+
+        if (user == null) {
+            return view;
+        }
 
         setLastPosition();
         Log.d(TAG, "onCreateView: lastPosition = " + lastPosition);
 
-        if (dashboardTrashList != null || dashboardCollectionPointDustbin != null || dashboardCollectionPointScrapyard != null) {
-            if(isAdded()){
+        if ((dashboardTrashList != null || dashboardCollectionPointDustbin != null || dashboardCollectionPointScrapyard != null) && !needRefresh) {
+            if (isAdded()) {
                 setupDashboard(dashboardTrashList, dashboardCollectionPointDustbin, dashboardCollectionPointScrapyard, dashboardStatisticsCleanedCount, dashboardStatisticsReportedCount, dashboardUserActivityList, dashboardNews, dashboardEventList);
             }
         } else {
-            showProgressDialog();
+            needRefresh = false;
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -336,8 +338,12 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     }
 
     public void addDump() {
-        TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
-        getBaseActivity().replaceFragment(trashReportOrEditFragment);
+        if (isNetworkAvailable()) {
+            TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
+            getBaseActivity().replaceFragment(trashReportOrEditFragment);
+        } else {
+            showToast(R.string.global_internet_error_offline);
+        }
     }
 
     @OnClick({R.id.add_dump_fab, R.id.create_report_layout, R.id.create_report_btn})
@@ -364,6 +370,24 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
      * refresh dashboard data
      */
     public void getDashboardData() {
+        if (!isNetworkAvailable()) {
+            showToast(R.string.global_internet_offline);
+
+            if (swiperefresh.isRefreshing()) {
+                swiperefresh.setRefreshing(false);
+            }
+
+            setupDashboard(null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null);
+            return;
+        }
+
         showProgressDialog();
         setLastPosition();
         GetHomeScreenDataService.startForRequest(getContext(), GET_HOME_SCREEN_DATA_REQUEST_ID, lastPosition, user != null ? user.getId() : -1);
@@ -375,7 +399,6 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         dashboardNewsImageContainer.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
         dashboardRecentActivityContainer.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
         dashboardEventsContainer.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
-        dashboardEventsCardView.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
         dashboardNewsCardView.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
         homeNearestCollectionPointDustbinCardView.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
         homeNearestCollectionPointScrapyardCardView.setVisibility(areDataLayoutsVisible ? View.VISIBLE : View.GONE);
@@ -402,11 +425,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
             if (trashFirst.getImages() != null && !trashFirst.getImages().isEmpty() && ViewUtils.checkImageStorage(trashFirst.getImages().get(0))) {
                 StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(trashFirst.getImages().get(0).getSmallestImage());
-                Glide.with(this)
-                        .using(new FirebaseImageLoader())
+                GlideApp.with(this)
                         .load(mImageRef)
                         .centerCrop()
-                        .crossFade()
+                        .transition(DrawableTransitionOptions.withCrossFade())
                         .thumbnail(0.2f)
                         .placeholder(R.drawable.ic_image_placeholder_square)
                         .into(homeNearestTrashFirstImage);
@@ -420,11 +442,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
                 if (trashTwo.getImages() != null && !trashTwo.getImages().isEmpty() && ViewUtils.checkImageStorage(trashTwo.getImages().get(0))) {
                     StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(trashTwo.getImages().get(0).getSmallestImage());
-                    Glide.with(this)
-                            .using(new FirebaseImageLoader())
+                    GlideApp.with(this)
                             .load(mImageRef)
                             .centerCrop()
-                            .crossFade()
+                            .transition(DrawableTransitionOptions.withCrossFade())
                             .placeholder(R.drawable.ic_image_placeholder_square)
                             .into(homeNearestTrashSecondImage);
                 }
@@ -443,11 +464,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             //homeNearestCollectionPointDustbinName.setText(dashboardCollectionPointDustbin.getName());
             if (dashboardCollectionPointDustbin.getImages() != null && !dashboardCollectionPointDustbin.getImages().isEmpty()) {
                 StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(dashboardCollectionPointDustbin.getImages().get(0).getSmallestImage());
-                Glide.with(this)
-                        .using(new FirebaseImageLoader())
+                GlideApp.with(this)
                         .load(mImageRef)
                         .centerCrop()
-                        .crossFade()
+                        .transition(DrawableTransitionOptions.withCrossFade())
                         .placeholder(R.drawable.ic_image_placeholder_square)
                         .into(homeNearestCollectionPointDustbinImage);
             }
@@ -461,11 +481,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             //homeNearestCollectionPointScrapyardName.setText(dashboardCollectionPointScrapyard.getName());
             if (dashboardCollectionPointScrapyard.getImages() != null && !dashboardCollectionPointScrapyard.getImages().isEmpty() && ViewUtils.checkImageStorage(dashboardCollectionPointScrapyard.getImages().get(0))) {
                 StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(dashboardCollectionPointScrapyard.getImages().get(0).getSmallestImage());
-                Glide.with(this)
-                        .using(new FirebaseImageLoader())
+                GlideApp.with(this)
                         .load(mImageRef)
                         .centerCrop()
-                        .crossFade()
+                        .transition(DrawableTransitionOptions.withCrossFade())
                         .placeholder(R.drawable.ic_image_placeholder_square)
                         .into(homeNearestCollectionPointScrapyardImage);
             }
@@ -499,6 +518,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
         if (dashboardNews != null) {
             dashboardNewsSectionTitle.setVisibility(View.VISIBLE);
+            dashboardNewsMore.setVisibility(View.VISIBLE);
             dashboardNewsCardView.setVisibility(View.VISIBLE);
 
             dashboardNewsTitle.setText(dashboardNews.getTitle().replaceAll("<[^>]*>", ""));
@@ -508,17 +528,17 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 //            if (dashboardNews.getNewsConvertedImages() != null && !dashboardNews.getNewsConvertedImages().isEmpty() && ViewUtils.checkImageStorage(dashboardNews.getNewsConvertedImages().get(0))) {
             if (dashboardNews.getImages() != null && !dashboardNews.getImages().isEmpty() && ViewUtils.checkImageStorage(dashboardNews.getImages().get(0))) {
                 StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(dashboardNews.getImages().get(0).getSmallestImage());
-                Glide.with(this)
-                        .using(new FirebaseImageLoader())
+                GlideApp.with(this)
                         .load(mImageRef)
                         .centerCrop()
-                        .crossFade()
-                        .thumbnail(Glide.with(this).load(R.drawable.ic_image_placeholder_rectangle).centerCrop())
+                        .transition(DrawableTransitionOptions.withCrossFade())
+                        .thumbnail(GlideApp.with(this).load(R.drawable.ic_image_placeholder_rectangle).centerCrop())
                         .into(dashboardNewsImage);
             }
         } else {
             dashboardNewsSectionTitle.setVisibility(View.GONE);
             dashboardNewsCardView.setVisibility(View.GONE);
+            dashboardNewsMore.setVisibility(View.GONE);
         }
 
         dashboardEventsContainer.removeAllViews();
@@ -526,7 +546,6 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             dashboardEventsTitle.setVisibility(View.VISIBLE);
             dashboardEventsTitleDescription.setVisibility(View.VISIBLE);
             dashboardEventsContainer.setVisibility(View.VISIBLE);
-            dashboardEventsCardView.setVisibility(View.VISIBLE);
 
             for (Event event : dashboardEventList) {
                 if (dashboardEventsContainer.getChildCount() > 0)
@@ -538,7 +557,6 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             dashboardEventsTitle.setVisibility(View.GONE);
             dashboardEventsTitleDescription.setVisibility(View.GONE);
             dashboardEventsContainer.setVisibility(View.GONE);
-            dashboardEventsCardView.setVisibility(View.GONE);
         }
     }
 
@@ -574,11 +592,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         if (userActivity.getActivity().getImages() != null && !userActivity.getActivity().getImages().isEmpty() && ViewUtils.checkImageStorage(userActivity.getActivity().getImages().get(0))) {
             Image image = userActivity.getActivity().getImages().get(0);
             StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(image.getSmallestImage());
-            Glide.with(this)
-                    .using(new FirebaseImageLoader())
+            GlideApp.with(this)
                     .load(mImageRef)
                     .centerCrop()
-                    .crossFade()
+                    .transition(DrawableTransitionOptions.withCrossFade())
                     .placeholder(R.drawable.ic_image_placeholder_square)
                     .into(userActivityImage);
         }
@@ -590,7 +607,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             userActivityType.setImageResource(userActivity.getActivity().getStatus().getIconUpdatehistoryResId());
         }
 
-        String userName = user == null || userActivity.getUserInfo().getUserId() != user.getId() ? (userActivity.getUserInfo().getFirstName() == null || userActivity.getActivity().isAnonymous()) ? getString(R.string.trash_anonymous) : userActivity.getUserInfo().getFirstName() : getString(R.string.home_recentActivity_you).substring(0,1).toUpperCase() + getString(R.string.home_recentActivity_you).substring(1);
+        String userName = user == null || userActivity.getUserInfo().getUserId() != user.getId() ? (userActivity.getUserInfo().getFirstName() == null || userActivity.getActivity().isAnonymous()) ? getString(R.string.trash_anonymous) : userActivity.getUserInfo().getFirstName() : getString(R.string.home_recentActivity_you).substring(0, 1).toUpperCase() + getString(R.string.home_recentActivity_you).substring(1);
 
         if (Constants.ActivityAction.CREATE.getName().equals(userActivity.getAction())) {
             userActivityName.setText(getString(R.string.reported_activity_placeholder,
@@ -673,7 +690,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             @Override
             public void onClick(View view) {
                 if (user == null) {
-                    Toast.makeText(getActivity(), R.string.event_signToJoin, Toast.LENGTH_SHORT).show();
+                    showToast(R.string.event_signToJoin);
                 } else {
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                             .title(R.string.global_validation_warning)
@@ -685,7 +702,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                                 @Override
                                 public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
 
-                                    mJoinedEvent = event;
+                                    joinedEvent = event;
                                     showProgressDialog();
                                     JoinUserToEventService.startForRequest(getContext(), JOIN_TO_EVENT_REQUEST_ID, event.getId(), Collections.singletonList(user.getId()));
                                 }
@@ -756,6 +773,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
         if (scrollView != null)
             scrollYPosition = scrollView.getScrollY();
+    }
+
+    public void dashboardNeedsRefresh() {
+        this.needRefresh = true;
     }
 
     @OnClick({R.id.dashboard_nearest_trash_first, R.id.dashboard_nearest_trash_second, R.id.dashboard_nearest_trash_more, R.id.dashboard_nearest_collection_point_dustbin_card_view, R.id.dashboard_nearest_collection_point_scrapyard_card_view, R.id.dashboard_statistics_more, R.id.dashboard_news_read_more_btn, R.id.dashboard_news_more, R.id.dashboard_trash_hunter_more})
@@ -848,21 +869,23 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                 dashboardNews = apiGetHomeScreenDataResult.getDashboardNews();
                 dashboardEventList = apiGetHomeScreenDataResult.getDashboardEventList();
 
-                if(isAdded()){
+                if (isAdded()) {
                     setupDashboard(dashboardTrashList, dashboardCollectionPointDustbin, dashboardCollectionPointScrapyard, dashboardStatisticsCleanedCount, dashboardStatisticsReportedCount, dashboardUserActivityList, dashboardNews, dashboardEventList);
                 }
             } else {
-                Toast.makeText(getContext(), R.string.global_error_noData, Toast.LENGTH_SHORT).show();
+                showToast(R.string.global_error_api_text);
             }
         } else if (apiResult.getRequestId() == JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
-            Toast.makeText(getContext(), apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed, Toast.LENGTH_SHORT).show();
+            showToast(apiResult.isValidResponse() ? R.string.event_joinEventSuccessful : R.string.event_joinEventFailed);
 
             if (apiResult.isValidResponse()) {
-                hideEventJoinButton(mJoinedEvent);
-                openAddEventToCalendarDialog(mJoinedEvent);
+                hideEventJoinButton(joinedEvent);
+                openAddEventToCalendarDialog(joinedEvent);
 
-                mJoinedEvent = null;
+                joinedEvent = null;
+            } else {
+                showToast(R.string.global_error_api_text);
             }
         }
     }
@@ -952,7 +975,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
             @Override
             public void onFinish() {
-                Toast.makeText(getContext(), R.string.trashHunter_finished, Toast.LENGTH_SHORT).show();
+                showToast(R.string.trashHunter_finished);
                 dashboardTrashHunterTimer.setText("");
                 setHunterMode(false, 0, 0);
             }

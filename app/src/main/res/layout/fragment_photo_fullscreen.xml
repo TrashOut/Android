@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black"
-    android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:background="@color/black"
+                android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/photo_fullscreen_toolbar"
@@ -32,7 +33,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginStart="10dp"
                 android:padding="5dp"
-                android:text="1 of 5"
+                tools:text="1 of 5"
                 android:textColor="@color/text_color_white"
                 android:textSize="@dimen/text_size_medium" />
 
@@ -66,7 +67,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginStart="20dp"
-        android:text="John Doe"
+        tools:text="John Doe"
         android:textColor="@color/white" />
 
 
@@ -79,7 +80,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginStart="20dp"
-        android:text="reported"
+        tools:text="reported"
         android:textColor="@color/white" />
 
 </RelativeLayout>

@@ -29,6 +29,7 @@ package me.trashout.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -52,6 +53,8 @@ public class PreferencesHandler {
     private static final String USER_LOCATION_FORMAT = "USER_LOCATION_FORMAT";
     private static final String TRASH_HUNTER_STATE = "TRASH_HUNTER_STATE";
     private static final String TUTORIAL_WAS_SHOWN = "TUTORIAL_WAS_SHOWN";
+    private static final String DEVICE_LOCALE = "DEVICE_LOCALE";
+    private static final String FCM_TOKEN_REGISTERED = "FCM_TOKEN_REGISTERED";
 
     /**
      * Setting first run
@@ -84,6 +87,9 @@ public class PreferencesHandler {
      * @param firebaseToken
      */
     public static void setFirebaseToken(Context context, String firebaseToken) {
+        if (context == null) {
+            return;
+        }
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = pref.edit();
         editor.putString(FIREBASE_TOKEN, firebaseToken).apply();
@@ -95,7 +101,11 @@ public class PreferencesHandler {
      * @param context
      * @return
      */
+    @Nullable
     public static String getFirebaseToken(Context context) {
+        if (context == null) {
+            return null;
+        }
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         return pref.getString(FIREBASE_TOKEN, "");
     }
@@ -107,6 +117,9 @@ public class PreferencesHandler {
      * @param trashFilter
      */
     public static void setTrashFilterData(Context context, TrashFilter trashFilter) {
+        if (context == null) {
+            return;
+        }
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = pref.edit();
         editor.putString(TRASH_FILTER_DATA, GSON.toJson(trashFilter, TrashFilter.class)).apply();
@@ -119,7 +132,12 @@ public class PreferencesHandler {
      * @param context
      * @return
      */
+    @Nullable
     public static TrashFilter getTrashFilterData(Context context) {
+        if (context == null) {
+            return null;
+        }
+
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         String trashFilterJson = pref.getString(TRASH_FILTER_DATA, "");
         if (TextUtils.isEmpty(trashFilterJson))
@@ -136,6 +154,9 @@ public class PreferencesHandler {
      * @param collectionPointFilter
      */
     public static void setCollectionPointFilterData(Context context, CollectionPointFilter collectionPointFilter) {
+        if (context == null) {
+            return;
+        }
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = pref.edit();
         editor.putString(COLLECTION_POINT_FILTER_DATA, GSON.toJson(collectionPointFilter, CollectionPointFilter.class)).apply();
@@ -148,7 +169,11 @@ public class PreferencesHandler {
      * @param context
      * @return
      */
+    @Nullable
     public static CollectionPointFilter getCollectionPointFilterData(Context context) {
+        if (context == null) {
+            return null;
+        }
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         String collectionPointFilterJson = pref.getString(COLLECTION_POINT_FILTER_DATA, "");
         if (TextUtils.isEmpty(collectionPointFilterJson))
@@ -180,7 +205,12 @@ public class PreferencesHandler {
      * @param context
      * @return
      */
+    @Nullable
     public static User getUserData(Context context) {
+        if (context == null) {
+            return null;
+        }
+
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         String userJson = pref.getString(USER_DATA, "");
         if (TextUtils.isEmpty(userJson))
@@ -197,6 +227,9 @@ public class PreferencesHandler {
      * @param locationFormat
      */
     public static void setUserPreferredLocationFormat(Context context, int locationFormat) {
+        if (context == null) {
+            return;
+        }
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = pref.edit();
         editor.putInt(USER_LOCATION_FORMAT, locationFormat).apply();
@@ -209,6 +242,9 @@ public class PreferencesHandler {
      * @return
      */
     public static int getUserPreferredLocationFormat(Context context) {
+        if (context == null) {
+            return 0;
+        }
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         return pref.getInt(USER_LOCATION_FORMAT, 0);
     }
@@ -220,8 +256,9 @@ public class PreferencesHandler {
      * @param lastLocation
      */
     public static void setUserLastLocation(Context context, LatLng lastLocation) {
-        if (lastLocation == null)
+        if (context == null || lastLocation == null) {
             return;
+        }
 
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = pref.edit();
@@ -235,7 +272,12 @@ public class PreferencesHandler {
      * @param context
      * @return
      */
+    @Nullable
     public static LatLng getUserLastLocation(Context context) {
+        if (context == null) {
+            return null;
+        }
+
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         String lastLocationJson = pref.getString(LAST_LOCATION, "");
         if (TextUtils.isEmpty(lastLocationJson))
@@ -252,6 +294,10 @@ public class PreferencesHandler {
      * @param trashHunterState
      */
     public static void setTrashHunterState(Context context, TrashHunterState trashHunterState) {
+        if (context == null) {
+            return;
+        }
+
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = pref.edit();
         editor.putString(TRASH_HUNTER_STATE, GSON.toJson(trashHunterState, TrashHunterState.class)).apply();
@@ -264,7 +310,12 @@ public class PreferencesHandler {
      * @param context
      * @return
      */
+    @Nullable
     public static TrashHunterState getTrashHunterState(Context context) {
+        if (context == null) {
+            return null;
+        }
+
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         String trashHunterStateJson = pref.getString(TRASH_HUNTER_STATE, "");
         if (TextUtils.isEmpty(trashHunterStateJson))
@@ -281,6 +332,10 @@ public class PreferencesHandler {
      * @param wasShown
      */
     public static void setTutorialWasShown(Context context, boolean wasShown) {
+        if (context == null) {
+            return;
+        }
+
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = pref.edit();
         editor.putBoolean(TUTORIAL_WAS_SHOWN, wasShown).apply();
@@ -293,8 +348,74 @@ public class PreferencesHandler {
      * @return
      */
     public static boolean isTutorialWasShown(Context context) {
+        if (context == null) {
+            return false;
+        }
+
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         return pref.getBoolean(TUTORIAL_WAS_SHOWN, false);
     }
 
+    /**
+     * Save current device locale
+     *
+     * @param context
+     * @param locale  ("en_US", "cs_CZ", "de_DE", "es_ES", "sk_SK")
+     */
+    public static void setDeviceLocale(Context context, String locale) {
+        if (context == null) {
+            return;
+        }
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(DEVICE_LOCALE, locale).apply();
+    }
+
+    /**
+     * Get last saved device locale
+     *
+     * @param context
+     * @return locale string representation ("en_US", "cs_CZ", "de_DE", "es_ES", "sk_SK")
+     */
+    @Nullable
+    public static String getDeviceLocale(Context context) {
+        if (context == null) {
+            return null;
+        }
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        return pref.getString(DEVICE_LOCALE, "");
+    }
+
+    /**
+     * Save Tutorial was shown State
+     *
+     * @param context
+     * @param isRegistered
+     */
+    public static void setFcmRegistered(Context context, boolean isRegistered) {
+        if (context == null) {
+            return;
+        }
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean(FCM_TOKEN_REGISTERED, isRegistered).apply();
+    }
+
+    /**
+     * Get Tutorial was shown State
+     *
+     * @param context
+     * @return
+     */
+    public static boolean isFcmRegistered(Context context) {
+        if (context == null) {
+            return false;
+        }
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        return pref.getBoolean(FCM_TOKEN_REGISTERED, false);
+    }
 }

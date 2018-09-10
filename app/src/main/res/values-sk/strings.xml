@@ -352,6 +352,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="collectionPoint.openingHours">"Otváracie hodiny"</string>
     <string name="global.noLongerExistQuestion">"Neexistuje?"</string>
     <string name="global.forgotPassword">"Zabudli ste heslo?"</string>
+    <string name="global.internet.offline">Pre zobrazenie tejto sekcie sa prosím pripojte k internetu.</string>
     <string name="user.validation.firstNameRequired">"Meno je povinné"</string>
     <string name="user.validation.lastNameRequired">"Priezvisko je povinné"</string>
     <string name="profile.yourActivities">"Vaše aktivity"</string>
@@ -949,7 +950,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="export.selectAttributes">"Vyberte atribúty na Export"</string>
     <string name="export.itemsPerFile">"Položky jeden súbor"</string>
     <string name="export.itemsPerFile.currentValue">"Hodnota"</string>
-    <string name="export.preparingExport">"Export sa pripravuje..."</string>
+    <string name="export.preparingExport">"Export sa pripravuje…"</string>
     <string name="global.latitude">"Zemepisná šírka"</string>
     <string name="global.longitude">"Zemepisná dĺžka"</string>
     <string name="collectionPoint.created">"Čas vytvorenia"</string>
@@ -1144,6 +1145,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="global.validation.imageRatio">"Nemôžete použiť veľmi široký obrázok. Použite iný, prosím. Pomer strán obrázku musí byť menší ako 1:2."</string>
     <string name="global.validation.maxiumNumberReached">"Maximálny počet 20 vložených obrázkov bol prekročený."</string>
     <string name="global.error.api.title">"Chyba na strane API"</string>
+    <string name="global.error.api.text">Aktuálne máme dočasné problémy s naším serverom. Robíme všetko pre to, aby sme to čoskoro vyriešili. Prosím, vráťte sa neskôr.</string>
     <string name="global.error.api.description">"Niektoré chyby v API. Prosím, refreshnite stránku."</string>
     <string name="trash.types.glass">"Sklo"</string>
     <string name="global.occupation">"Povolanie"</string>
@@ -1166,7 +1168,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="trashHunter.lookingForDumps">"Hľadať skládky v okolí."</string>
     <string name="trash.detail.dump.mobileHeader">"Skládka"</string>
     <string name="trash.detail.missingPhoto">"Neexistuje žiadna fotografia na zobrazenie"</string>
-    <string name="collectionPoint.detail.mobile.recycable">"recyklovateľný"</string>
+    <string name="collectionPoint.detail.mobile.recycable">"Recyklovateľný"</string>
     <string name="collectionPoint.markedAsSpam.success.thanksMobile">"Ďakujeme za Vaše informácie, skontrolujeme ich."</string>
     <string name="collectionPoint.filter.selectAll">"Vybrať všetko"</string>
     <string name="profile.activity.mobileHeader">"Aktivita"</string>
@@ -1217,4 +1219,16 @@ Našou snahou je zapojiť občanov, vlády, obce a organizácie, aby sme mohli s
     <string name="collectionPoint.validation.chooseDay">"Prosím vyberte deň."</string>
     <string name="collectionPoint.validation.dayIsUsed">"Deň bol vybraný."</string>
     <string name="statistics.countryPicker.header">"Vyberte krajinu"</string>
+
+    <string name="notification.recentActivity.header">"Vaše hlásenie skládky bolo aktualizované"</string>
+    <string name="notification.recentActivity.text">"Pozrite si jej nový stav v aplikácii TrashOut a buďte vždy v obraze"</string>
+    <string name="mail.eventCreate.subject">"TrashOut - informácie o vašom podujatí"</string>
+
+    <string name="global.signUp.acceptRegister.startSentense">S registráciou alebo používaním mobilnej aplikácie súhlasíte so znením</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">Ochrany osobných údajov</string>
+    <string name="global.signUp.acceptRegister.and">a</string>
+    <string name="global.signUp.acceptRegister.terms">Podmienkami používania</string>
+
+    <string name="global.internet.error.offline">Vaše mobilné zariadenie nie je pripojené k internetu. Urobte fotografiu a nahláste skládku
+neskôr prostredníctvom stránky www.admin.trashout.ngo.</string>
 </resources>

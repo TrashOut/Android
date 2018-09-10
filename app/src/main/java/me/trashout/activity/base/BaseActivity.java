@@ -1,26 +1,26 @@
 /*
- * TrashOut is an environmental project that teaches people how to recycle 
+ * TrashOut is an environmental project that teaches people how to recycle
  * and showcases the worst way of handling waste - illegal dumping. All you need is a smart phone.
- *  
- *  
+ *
+ *
  * There are 10 types of programmers - those who are helping TrashOut and those who are not.
- * Clean up our code, so we can clean up our planet. 
+ * Clean up our code, so we can clean up our planet.
  * Get in touch with us: help@trashout.ngo
- *  
+ *
  * Copyright 2017 TrashOut, n.f.
- *  
+ *
  * This file is part of the TrashOut project.
- *  
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
- *  
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *  
+ *
  * See the GNU General Public License for more details: <https://www.gnu.org/licenses/>.
  */
 
@@ -28,7 +28,10 @@ package me.trashout.activity.base;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -39,6 +42,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import me.trashout.R;
 import me.trashout.fragment.CollectionPointListFragment;
@@ -57,6 +61,7 @@ public class BaseActivity extends AppCompatActivity implements FragmentManager.O
     public static final int CONTENT_VIEW_ID = R.id.content_view;
     protected Toolbar toolbar;
 
+    private Toast toast;
 
     /**
      * gets intent for starting new activity with fragment defined by fragment name and passes extras to the starting intent
@@ -144,11 +149,11 @@ public class BaseActivity extends AppCompatActivity implements FragmentManager.O
 
         setContentView(getMainLayoutId());
 
-        toolbar = (Toolbar) findViewById(R.id.material_toolbar);
+        toolbar = findViewById(R.id.material_toolbar);
 //        toolbar.setNavigationIcon(R.drawable.ic_home_up_indicator);
         setSupportActionBar(toolbar);
 
-        mContentView = (FrameLayout) findViewById(R.id.content_view);
+        mContentView = findViewById(R.id.content_view);
 
         String fragmentName = getFragmentName();
         if (fragmentName == null) {
@@ -383,5 +388,37 @@ public class BaseActivity extends AppCompatActivity implements FragmentManager.O
 
     public Toolbar getToolbar() {
         return toolbar;
+    }
+
+    public void showToast(@StringRes int message) {
+        if (getApplicationContext() != null) {
+            if (toast != null) {
+                toast.cancel();
+            }
+            toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
+
+    public void showToast(String message) {
+        if (getApplicationContext() != null) {
+            if (toast != null) {
+                toast.cancel();
+            }
+            toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager manager =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+        boolean isAvailable = false;
+        if (networkInfo != null && networkInfo.isConnected()) {
+            // Network is present and connected
+            isAvailable = true;
+        }
+        return isAvailable;
     }
 }

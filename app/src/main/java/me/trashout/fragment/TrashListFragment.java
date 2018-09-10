@@ -1,26 +1,26 @@
 /*
- * TrashOut is an environmental project that teaches people how to recycle 
+ * TrashOut is an environmental project that teaches people how to recycle
  * and showcases the worst way of handling waste - illegal dumping. All you need is a smart phone.
- *  
- *  
+ *
+ *
  * There are 10 types of programmers - those who are helping TrashOut and those who are not.
- * Clean up our code, so we can clean up our planet. 
+ * Clean up our code, so we can clean up our planet.
  * Get in touch with us: help@trashout.ngo
- *  
+ *
  * Copyright 2017 TrashOut, n.f.
- *  
+ *
  * This file is part of the TrashOut project.
- *  
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
- *  
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *  
+ *
  * See the GNU General Public License for more details: <https://www.gnu.org/licenses/>.
  */
 
@@ -155,7 +155,7 @@ public class TrashListFragment extends BaseFragment implements BaseService.Updat
                         }
                     }
                     if (!loading && (totalItemCount - visibleItemCount) <= (pastVisiblesItems + Configuration.LIST_LIMIT_SIZE) && !(totalItemCount > 0 && totalItemCount < Configuration.LIST_LIMIT_SIZE)) {
-                        loadData(trashList.size() / Configuration.LIST_LIMIT_SIZE);
+                        loadData((trashList.size() / Configuration.LIST_LIMIT_SIZE) + 1);
                         loading = true;
                     }
                 }
@@ -232,7 +232,7 @@ public class TrashListFragment extends BaseFragment implements BaseService.Updat
         if (lastPosition != null) {
             if (mAdapter != null)
                 mAdapter.setLastPosition(lastPosition);
-            loadData(0);
+            loadData(1);
         }
     }
 
@@ -266,7 +266,22 @@ public class TrashListFragment extends BaseFragment implements BaseService.Updat
      * Load trash data from server
      */
     public void loadData(int page) {
-        if (page == 0) {
+        if (!isNetworkAvailable()) {
+            showToast(R.string.global_internet_offline);
+
+            if (!isNetworkAvailable()) {
+                showToast(R.string.global_internet_offline);
+
+                if (swiperefresh.isRefreshing()) {
+                    swiperefresh.setRefreshing(false);
+                }
+                return;
+            }
+
+            return;
+        }
+
+        if (page == 1) {
             if (mLayoutManager != null && mLayoutManager.getItemCount() < 1)
                 recyclerview.setLoading(true);
             previousTotal = 0;
@@ -334,7 +349,15 @@ public class TrashListFragment extends BaseFragment implements BaseService.Updat
 
     @OnClick(R.id.add_dump_fab)
     public void onClick() {
-        TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
-        getBaseActivity().replaceFragment(trashReportOrEditFragment);
+        addDump();
+    }
+
+    public void addDump() {
+        if (isNetworkAvailable()) {
+            TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
+            getBaseActivity().replaceFragment(trashReportOrEditFragment);
+        } else {
+            showToast(R.string.global_internet_error_offline);
+        }
     }
 }

@@ -353,6 +353,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="collectionPoint.openingHours">"Horarios de apertura"</string>
     <string name="global.noLongerExistQuestion">"¿No existe?"</string>
     <string name="global.forgotPassword">"¿Olvidó la contraseña?"</string>
+    <string name="global.internet.offline">Por favor, conéctese a Internet para ver esta sección.</string>
     <string name="user.validation.firstNameRequired">"El nombre es obligatorio"</string>
     <string name="user.validation.lastNameRequired">"El apellido es obligatorio"</string>
     <string name="profile.yourActivities">"Sus actividades"</string>
@@ -950,7 +951,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="export.selectAttributes">"Seleccionar atributos para exportar"</string>
     <string name="export.itemsPerFile">"Artículos por archivo"</string>
     <string name="export.itemsPerFile.currentValue">"Valor"</string>
-    <string name="export.preparingExport">"La exportación se está preparando ..."</string>
+    <string name="export.preparingExport">"La exportación se está preparando …"</string>
     <string name="global.latitude">"Latitud"</string>
     <string name="global.longitude">"Longitud"</string>
     <string name="collectionPoint.created">"Hora de creación"</string>
@@ -1145,6 +1146,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="global.validation.imageRatio">"No puede usar imágenes anchas Por favor use otra imagen. La relación de imagen debe ser inferior a 1:2"</string>
     <string name="global.validation.maxiumNumberReached">"Se ha alcanzado el número máximo de imágenes cargadas (puede cargar un máximo de 20 archivos)."</string>
     <string name="global.error.api.title">"Error de API"</string>
+    <string name="global.error.api.text">Estamos experimentando un problema temporal con nuestro servidor. Estamos haciendo nuestro mejor esfuerzo para solucionarlo pronto. Por favor regresa más tarde.</string>
     <string name="global.error.api.description">"Se ha producido algún error en API. Por favor, actualice la página."</string>
     <string name="trash.types.glass">"Vidrio"</string>
     <string name="global.occupation">"Ocupación"</string>
@@ -1221,4 +1223,15 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="collectionPoint.validation.chooseDay">"Por favor seleccione un día"</string>
     <string name="collectionPoint.validation.dayIsUsed">"día fue seleccionado"</string>
     <string name="statistics.countryPicker.header">"seleccione un país"</string>
+
+    <string name="notification.recentActivity.header">"Su informe de un vertedero ilegal fue actualizado"</string>
+    <string name="notification.recentActivity.text">"Echa un vistazo a su nuevo estado en la aplicación TrashOut y mantente siempre informado"</string>
+    <string name="mail.eventCreate.subject"></string>
+
+    <string name="global.signUp.acceptRegister.startSentense">Al registrarte, aceptas las</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">Condiciones de Servicio</string>
+    <string name="global.signUp.acceptRegister.and">y la</string>
+    <string name="global.signUp.acceptRegister.terms">Política de Privacidad</string>
+
+    <string name="global.internet.error.offline">Su dispositivo no está conectado a internet. Tome una fotografía e infórmela más tarde a través de www.admin.trashout.ngo.</string>
 </resources>

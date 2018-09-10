@@ -17,6 +17,18 @@
         android:theme="@style/Theme.TrashOut"
         tools:replace="android:theme">
 
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_trash_type_organic" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimary" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="DEFAULT_NOTIFICATION_CHANNEL" />
+
         <activity
             android:name=".activity.StartActivity"
             android:screenOrientation="portrait">
@@ -28,6 +40,7 @@
 
         <activity
             android:name=".activity.MainActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
 
@@ -52,6 +65,8 @@
         <service android:name=".service.UpdateEventService" />
         <service android:name=".service.UpdateTrashService" />
         <service android:name=".service.CreateUserService" />
+        <service android:name=".service.CreateDeviceService" />
+        <service android:name=".service.DeleteDeviceService" />
         <service android:name=".service.GetCollectionPointListService" />
         <service android:name=".service.GetCollectionPointDetailService" />
         <service android:name=".service.UpdateUserService" />
@@ -77,7 +92,8 @@
         <!--FACEBOOK-->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
+            android:value="@string/facebook_app_id"
+            tools:replace="android:value" />
 
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -101,10 +117,17 @@
         android:name="com.facebook.FacebookContentProvider"
         android:exported="false"/>-->
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="9a8c917517b94900db0b55ff38386dc04b118a2d"
-            tools:replace="android:value" />
+        <service android:name=".notification.TrashoutFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".notification.TrashoutFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
 
         <provider
             android:name="android.support.v4.content.FileProvider"

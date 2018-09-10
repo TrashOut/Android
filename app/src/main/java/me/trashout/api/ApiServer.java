@@ -44,10 +44,12 @@ import me.trashout.model.Organization;
 import me.trashout.model.Trash;
 import me.trashout.model.User;
 import me.trashout.model.UserActivity;
+import me.trashout.model.UserDevice;
 import me.trashout.model.ZoomPoint;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -116,6 +118,12 @@ public interface ApiServer {
 
     @GET("/v1/user/{id}/activity")
     Call<List<UserActivity>> getUsersActivity(@Path("id") Long id);
+
+    @POST("/v1/user/devices")
+    Call<UserDevice> createUserDevice(@Body UserDevice userDevice);
+
+    @DELETE("/v1/user/devices/{tokenFCM}")
+    Call<ResponseBody> deleteUserDevice(@Path("tokenFCM") String tokenFcm);
 
 
     // COLLECTION POINT

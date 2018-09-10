@@ -171,6 +171,8 @@ public class UserActivityListFragment extends BaseFragment implements IProfileFr
                 userActivityList.addAll(apiGetNewsListResult.getUserActivities());
                 mAdapter.notifyDataSetChanged();
 
+            } else {
+                showToast(R.string.global_error_api_text);
             }
             recyclerview.setLoading(false);
         }

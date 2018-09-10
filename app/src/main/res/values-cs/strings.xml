@@ -360,6 +360,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="collectionPoint.openingHours">"Otevírací doba"</string>
     <string name="global.noLongerExistQuestion">"Již neexistuje?"</string>
     <string name="global.forgotPassword">"Zapomněli jste heslo? "</string>
+    <string name="global.internet.offline">Pro zobrazení této části se prosím připojte k internetu.</string>
     <string name="user.validation.firstNameRequired">"Křestní jméno je vyžadováno"</string>
     <string name="user.validation.lastNameRequired">"Příjmení je vyžadováno"</string>
     <string name="profile.yourActivities">"Vaše činnosti"</string>
@@ -387,7 +388,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="global.pullToRefresh">"Zatáhni pro obnovení"</string>
     <string name="trash.accuracyOfLocationSmaller">"Přesnost umístění: &lt; "</string>
     <string name="global.sendEmail.error">"Email nelze odeslat."</string>
-    <string name="trash.illegalDumpIn_X">"Nelegální skládka v %"</string>
+    <string name="trash.illegalDumpIn_X">"Nelegální skládka v %s"</string>
     <string name="trash.reportedDetailsonWeb_X">"Hlášení nelegální skládky! Detaily k ilegální skládce dostupné na stránkách: %s"</string>
     <string name="trash.messageWasReceived">"Děkujeme, zprávu jsme obdrželi"</string>
     <string name="global.noDate">"Žádné datum"</string>
@@ -979,7 +980,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="export.selectAttributes">"Zvolte atributy, které chcete exportovat"</string>
     <string name="export.itemsPerFile">"Položek na 1 soubor"</string>
     <string name="export.itemsPerFile.currentValue">"Hodnota"</string>
-    <string name="export.preparingExport">"Export se připravuje..."</string>
+    <string name="export.preparingExport">"Export se připravuje…"</string>
     <string name="global.latitude">"Zeměpisná šířka"</string>
     <string name="global.longitude">"Zeměpisná délka"</string>
     <string name="collectionPoint.created">"Čas vytvoření"</string>
@@ -1174,6 +1175,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="global.validation.imageRatio">"Nelze vkládat širokoúhlé obrázky. Prosím použijte jiný obrázek. Poměr stran musí být menší než 1:2."</string>
     <string name="global.validation.maxiumNumberReached">"Maximálni počet fotek byl překročen (můžete uplodovat maximálně 20 souborů)."</string>
     <string name="global.error.api.title">"API Chyba"</string>
+    <string name="global.error.api.text">Aktuálne máme dočasný problém s naším serverem. Děláme vše pro to, abychom to brzy opravili. Vraťte se prosím později.</string>
     <string name="global.error.api.description">"Nastal problém na API. Prosím aktualizujte stránku."</string>
     <string name="trash.types.glass">"Sklo"</string>
     <string name="global.occupation">"Obsazení"</string>
@@ -1234,7 +1236,7 @@ Naší snahou je zapojit obyčejné lidi, místní samosprávy a další organiz
     <string name="global.add">"Přidat"</string>
     <string name="profile.myEvents.timeDecision.ongoing">"Probíhající"</string>
     <string name="mail.eventConfirm.subject">"TrashOut - potvrzení účasti"</string>
-    <string name="mail.eventFeedback.subject">"TrashOut - jaká byla včera událost?"</string>
+    <string name="mail.eventFeedback.subject">"TrashOut - jaká byla v čera událost?"</string>
     <string name="mail.newsletter.subject">"TrashOut - nová aktivita v oblasti, kterou sledujete"</string>
     <string name="user.validation.failedToReadFacebookProfile">"Chzba při čtení dat z Facebook profilu"</string>
     <string name="user.validation.facebookNotGrantedPermissionForEmail">"Nemáte právo číst email"</string>
@@ -1247,4 +1249,15 @@ Naší snahou je zapojit obyčejné lidi, místní samosprávy a další organiz
     <string name="collectionPoint.validation.chooseDay">"Vyberte den"</string>
     <string name="collectionPoint.validation.dayIsUsed">"Den je už použit"</string>
     <string name="statistics.countryPicker.header">"Vyberte krajinu"</string>
+    <string name="notification.recentActivity.header">"Vaše hlášení skládky bylo aktualizováno"</string>
+    <string name="notification.recentActivity.text">"Skontrolujte nový stav v aplikaci TrashOut a mějte vždy přehled"</string>
+    <string name="mail.eventCreate.subject">"TrashOut - informace o vašem podujetí"</string>
+    <string name="global.signUp.acceptRegister.startSentense">S registrací nebo používáním mobilní aplikace souhlasíte se zněním</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">Ochrany osobních údajů</string>
+    <string name="global.signUp.acceptRegister.and">a</string>
+    <string name="global.signUp.acceptRegister.terms">Podmínkami používání</string>
+
+    <string name="global.internet.error.offline">Vaše mobilní zařízení není připojeno k internetu. Udělejte fotografii a nahlaste skládku
+později prostřednictvím stránky www.admin.trashout.ngo.</string>
+
 </resources>

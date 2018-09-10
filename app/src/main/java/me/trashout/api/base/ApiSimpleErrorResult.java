@@ -34,7 +34,7 @@ import me.trashout.R;
 public class ApiSimpleErrorResult extends ApiBaseDataResult {
 
     public ApiSimpleErrorResult(Context context) {
-        error = context.getString(R.string.global_validation_unknownError);
+        error = context.getString(R.string.global_error_api_text);
         errorNumber = 999999;
     }
 

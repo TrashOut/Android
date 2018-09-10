@@ -49,9 +49,13 @@ import me.trashout.model.Trash;
 import me.trashout.model.UserActivity;
 import me.trashout.service.base.BaseService;
 import me.trashout.utils.DateTimeUtils;
+import me.trashout.utils.PositionUtils;
 import me.trashout.utils.Utils;
 import retrofit2.Call;
 import retrofit2.Response;
+
+import static me.trashout.model.Constants.EN_LOCALE;
+import static me.trashout.model.Constants.MAX_EVENT_DISTANCE;
 
 /**
  * TrashOutNGO
@@ -86,6 +90,7 @@ public class GetHomeScreenDataService extends BaseService {
         CollectionPoint collectionPointDustbin = null;
         CollectionPoint collectionPointScrapyard = null;
         List<Event> eventList = new ArrayList<>();
+        List<Event> eventListWithDetails = new ArrayList<>();
         List<UserActivity> userActivityList = new ArrayList<>();
         News news = null;
 
@@ -151,7 +156,7 @@ public class GetHomeScreenDataService extends BaseService {
             e.printStackTrace();
         }
 
-        String attributesNeeded = "id,name,start,description";
+        String attributesNeeded = "id,name,start,description,gpsShort";
         Calendar today = Calendar.getInstance();
         today.set(Calendar.HOUR_OF_DAY, 0);
         today.set(Calendar.MINUTE, 0);
@@ -162,8 +167,16 @@ public class GetHomeScreenDataService extends BaseService {
         try {
             Response<List<Event>> eventListResponse = callEventList.execute();
             if (eventListResponse.isSuccessful()) {
-
-                eventList = eventListResponse.body();
+                List<Event> temp = eventListResponse.body();
+                if (temp != null) {
+                    for (Event event : temp) {
+                        if (event != null && event.getGps() != null && PositionUtils.computeDistance(
+                                new LatLng(event.getGps().getLat(), event.getGps().getLng()),
+                                apiGetHomeScreenDataRequest.getUserPosition()) < MAX_EVENT_DISTANCE) {
+                            eventList.add(event);
+                        }
+                    }
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -184,6 +197,12 @@ public class GetHomeScreenDataService extends BaseService {
             }
         }
 
+        for (Event event : eventList) {
+            if (DateTimeUtils.computeMillisFromDateAndMinutes(event.getStart(), event.getDuration()) >= Calendar.getInstance().getTimeInMillis()) {
+                eventListWithDetails.add(event);
+            }
+        }
+
         if (apiGetHomeScreenDataRequest.getUserId() > 0) {
             Call<List<UserActivity>> callUserActivityList = mApiServer.getUsersActivity(apiGetHomeScreenDataRequest.getUserId());
             try {
@@ -197,7 +216,7 @@ public class GetHomeScreenDataService extends BaseService {
             }
         }
 
-        Call<List<News>> callNewsList = mApiServer.getNewsList(Utils.getLocaleString(),0, 1, "-created"); // page and limit
+        Call<List<News>> callNewsList = mApiServer.getNewsList(Utils.getLocaleString(), 0, 1, "-created"); // page and limit
         try {
             Response<List<News>> userActivityListResponse = callNewsList.execute();
             if (userActivityListResponse.isSuccessful()) {
@@ -211,15 +230,22 @@ public class GetHomeScreenDataService extends BaseService {
             lastException = e;
         }
 
-        if (news == null && !"en_US".equals(Utils.getLocaleString())) {
-            callNewsList = mApiServer.getNewsList("en_US", 0, 1, "-created");
+        if (!EN_LOCALE.equals(Utils.getLocaleString())) {
+            callNewsList = mApiServer.getNewsList(EN_LOCALE, 0, 1, "-created");
 
             try {
                 Response<List<News>> userActivityListResponse = callNewsList.execute();
                 if (userActivityListResponse.isSuccessful()) {
                     List<News> newsList = userActivityListResponse.body();
                     if (newsList != null && !newsList.isEmpty()) {
-                        news = newsList.get(0);
+
+                        if (newsList.get(0) != null) {
+                            if (news == null) {
+                                news = newsList.get(0);
+                            } else {
+                                news = news.getCreated().after(newsList.get(0).getCreated()) ? news : newsList.get(0);
+                            }
+                        }
                     }
                 }
             } catch (IOException e) {
@@ -229,7 +255,7 @@ public class GetHomeScreenDataService extends BaseService {
         }
 
         if (lastException == null || (trashList != null || collectionPointDustbin != null || collectionPointScrapyard != null)) {
-            ApiGetHomeScreenDataResult apiGetHomeScreenDataResult = new ApiGetHomeScreenDataResult(trashList, collectionPointDustbin, collectionPointScrapyard, countTrashCleaned, countTrashStillHere, userActivityList, news, eventList);
+            ApiGetHomeScreenDataResult apiGetHomeScreenDataResult = new ApiGetHomeScreenDataResult(trashList, collectionPointDustbin, collectionPointScrapyard, countTrashCleaned, countTrashStillHere, userActivityList, news, eventListWithDetails);
             apiBaseRequest.setStatus(ApiBaseRequest.Status.DONE);
             notifyResultListener(apiBaseRequest.getId(), apiBaseRequest, apiGetHomeScreenDataResult, null, null);
         } else {
