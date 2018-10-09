@@ -254,7 +254,8 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="home.nearestDumps">"Najbližšie skládky"</string>
     <string name="home.goAndFindDumps">"Choď, nájdi a aktualizuj skládky."</string>
     <string name="home.didYouKnow">"Novinky a aktualizácie"</string>
-    <string name="home.nearestRecyclingPoints">"Najbližšie zberné miesta"</string>
+    <string name="home.nearestRecyclingPoints">Najbližšie zberné miesta</string>
+    <string name="home.nearestRecyclingPoint">Najbližšie zberné miesto</string>
     <string name="collectionPoint.size.recyclingBin">"Kôš"</string>
     <string name="collectionPoint.size.recyclingCenter">"Dvor"</string>
     <string name="collectionPoint.size.all">"Všetko"</string>

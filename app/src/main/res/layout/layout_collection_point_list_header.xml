@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:padding="@dimen/button_padding"
-                android:text="@string/home.nearestRecyclingPoints"
+                android:text="@string/home.nearestRecyclingPoint"
                 android:textColor="@color/text_color_grey"
                 android:textIsSelectable="true" />
 

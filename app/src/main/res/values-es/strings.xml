@@ -255,7 +255,8 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="home.nearestDumps">"Los vertederos más cercanos"</string>
     <string name="home.goAndFindDumps">"Vaya, localice y actualice estos vertederos"</string>
     <string name="home.didYouKnow">"Noticias y actualizaciones"</string>
-    <string name="home.nearestRecyclingPoints">"Punto de reciclaje más cercano"</string>
+    <string name="home.nearestRecyclingPoints">Puntos de reciclaje más cercanos</string>
+    <string name="home.nearestRecyclingPoint">Punto de reciclaje más cercano</string>
     <string name="collectionPoint.size.recyclingBin">"Papelera"</string>
     <string name="collectionPoint.size.recyclingCenter">"Centro"</string>
     <string name="collectionPoint.size.all">"Todas"</string>
