@@ -300,6 +300,7 @@
                             android:layout_marginTop="25dp"
                             android:padding="3dp"
                             tools:text="Praha, Praga Region, Czech Republic"
+                            android:textIsSelectable="true"
                             android:textSize="@dimen/text_size_normal" />
 
                         <android.support.v7.widget.AppCompatButton
