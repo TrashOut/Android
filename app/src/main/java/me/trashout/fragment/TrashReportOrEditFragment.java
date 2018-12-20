@@ -59,12 +59,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.gson.Gson;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
@@ -118,6 +122,8 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     private static final String BUNDLE_LESS = "BUNDLE_LESS";
 
     private static final int UPDATE_TRASH_MIN_DISTANCE = 100;
+
+    private static final int PLACE_PICKER_REQUEST_CODE = 666;
 
     private static final int CREATE_TRASH_REQUEST_ID = 450;
     private static final int UPDATE_TRASH_REQUEST_ID = 451;
@@ -239,8 +245,10 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
     private ArrayList<Uri> photos = new ArrayList<>();
 
+    private Geocoder mGeocoder;
     private Uri mCropImageUri;
     private Location mLastLocation;
+    private LatLng mTrashPosition;
 
     private User user;
 
@@ -328,7 +336,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                         showProgressDialog();
                         String note = !TextUtils.isEmpty(trashReportAdditionalInformationEdit.getText()) ? trashReportAdditionalInformationEdit.getText().toString() : "";
                         if (getTrash() == null) {
-                            Trash newTrash = Trash.createNewTrash(Gps.createGPSFromLocation(mLastLocation), note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+                            Trash newTrash = Trash.createNewTrash(Gps.createGPSFromLatLng(mTrashPosition), note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
                             CreateTrashService.startForRequest(getContext(), CREATE_TRASH_REQUEST_ID, newTrash, photos);
                         } else if (isTrashStillHere()) {
                             Trash updateTrash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.STILL_HERE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
@@ -360,24 +368,6 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         return view;
     }
 
-//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-//        inflater.inflate(R.menu.menu_trash_edit, menu);
-//        super.onCreateOptionsMenu(menu, inflater);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        switch (item.getItemId()) {
-//
-//            case R.id.action_send:
-//                return true;
-//            default:
-//                break;
-//        }
-//
-//        return false;
-//    }
-
     /**
      * Get trash
      *
@@ -390,8 +380,6 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     }
 
     private int getMinPhotoCountToUpdate() {
-//        return getTrash() == null ? 2 : 1;
-        getTrash();
         return 1;
     }
 
@@ -429,9 +417,6 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
      * @param stillHere
      */
     private void setupData(Trash trash, boolean cleaned, boolean stillHere, boolean more, boolean less) {
-
-
-//        trashReportTakeImagesText.setText(getTrash() != null ? R.string.take_at_least_1_photos : R.string.take_at_least_2_photos);
         getTrash();
         trashReportTakeImagesText.setText(R.string.trash_create_takeLeastOnePhoto);
 
@@ -509,17 +494,6 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             trashReportStatusCardView.setVisibility(GONE);
 
             setPosition(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-
-            Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
-            new GeocoderTask(geocoder, mLastLocation.getLatitude(), mLastLocation.getLongitude(), new GeocoderTask.Callback() {
-                @Override
-                public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
-                    Log.d(TAG, "geocoderResult  = " + geocoderResult);
-                    if (geocoderResult.getAddress() != null) {
-                        trashReportPlace.setText(geocoderResult.getFormattedAddress());
-                    }
-                }
-            }).execute();
         } else {
             trashReportStatus.setVisibility(GONE);
             trashReportStatusCardView.setVisibility(GONE);
@@ -528,13 +502,13 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     }
 
     private void setPosition(double lat, double lng) {
+        mTrashPosition = new LatLng(lat, lng);
         trashReportPosition.setText(PositionUtils.getFormattedLocation(getContext(), lat, lng));
 
         if (trashReportMap.getVisibility() == View.VISIBLE) {
             String mapUrl = PositionUtils.getStaticMapUrl(getActivity(), lat, lng);
             try {
                 URI mapUri = new URI(mapUrl.replace("|", "%7c"));
-                Log.d(TAG, "setupDumpData: mapUrl = " + String.valueOf(mapUri.toURL()));
                 GlideApp.with(this)
                         .load(String.valueOf(mapUri.toURL()))
                         .centerCrop()
@@ -546,6 +520,19 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                 e.printStackTrace();
             }
         }
+
+        if (mGeocoder == null) {
+            mGeocoder = new Geocoder(getActivity(), Locale.getDefault());
+        }
+
+        new GeocoderTask(mGeocoder, mTrashPosition.latitude, mTrashPosition.longitude, new GeocoderTask.Callback() {
+            @Override
+            public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
+                if (geocoderResult.getAddress() != null && trashReportPlace != null) {
+                    trashReportPlace.setText(geocoderResult.getFormattedAddress());
+                }
+            }
+        }).execute();
     }
 
     /**
@@ -688,11 +675,25 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
     @OnClick(R.id.trash_report_take_image_fab)
     public void onAddPhotoClick() {
+        PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
+        if (mTrashPosition != null) {
+            LatLngBounds.Builder latLngBounds = new LatLngBounds.Builder().include(mTrashPosition);
+            builder.setLatLngBounds(latLngBounds.build());
+        }
+
+        try {
+            getActivity().startActivityForResult(builder.build(getActivity()), PLACE_PICKER_REQUEST_CODE);
+        } catch (GooglePlayServicesRepairableException e) {
+            e.printStackTrace();
+        } catch (GooglePlayServicesNotAvailableException e) {
+            e.printStackTrace();
+        }
 
         if (CropImage.isExplicitCameraPermissionRequired(getActivity())) {
             requestPermissions(new String[]{Manifest.permission.CAMERA}, CropImage.CAMERA_CAPTURE_PERMISSIONS_REQUEST_CODE);
         } else {
-            //CropImage.startPickImageActivity(getActivity());
+            CropImage.startPickImageActivity(getActivity());
             createCameraIntentChooser();
         }
     }
@@ -743,6 +744,11 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                 onPhotosReturned(Collections.singletonList(resultUri));
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
+            }
+        } else if (requestCode == 666) {
+            if (resultCode == RESULT_OK) {
+                Place selectedAddress = PlacePicker.getPlace(getActivity(), data);
+                setPosition(selectedAddress.getLatLng().latitude, selectedAddress.getLatLng().longitude);
             }
         }
     }
@@ -805,9 +811,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             showToast(R.string.trash_validation_typeRequired);
         } else if (getTrash() != null) {
             if (mLastLocation != null) {
-                if (isValidate = checkUpdatedTrashDistance(getTrash().getPosition(), mLastLocation)) {
-                    isValidate = true;
-                } else {
+                if (!checkUpdatedTrashDistance(getTrash().getPosition(), mLastLocation)) {
                     showToast(R.string.trash_edit_greaterDistanceText);
                     isValidate = false;
                 }
@@ -818,7 +822,6 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         } else if (mLastLocation == null) {
             showToast("No Location. Please allow location provider");
             isValidate = false;
-            getLocation();
         }
 
         return isValidate;
