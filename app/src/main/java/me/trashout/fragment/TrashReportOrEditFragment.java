@@ -751,6 +751,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         CropImage.activity(imageUri)
                 .setGuidelines(CropImageView.Guidelines.ON_TOUCH)
                 .setRequestedSize(Configuration.TAKE_PHOTO_SIZE, Configuration.TAKE_PHOTO_SIZE)
+                .setInitialCropWindowPaddingRatio(0f)
                 .setFixAspectRatio(true)
                 .setBackgroundColor(R.color.colorPrimary)
                 .setActivityTitle(getString(R.string.global_cropImage))

@@ -249,7 +249,8 @@
     <string name="home.nearestDumps">"Ближайшие свалки"</string>
     <string name="home.goAndFindDumps">"Вперед, найдите и обновите эти свалки"</string>
     <string name="home.didYouKnow">"Новости и обновления"</string>
-    <string name="home.nearestRecyclingPoints">"Ближайший пункт переработки"</string>
+    <string name="home.nearestRecyclingPoints">Ближайшие пункты по переработке</string>
+    <string name="home.nearestRecyclingPoint">Ближайшая точка перерабатывания</string>
     <string name="collectionPoint.size.recyclingBin">"Корзина"</string>
     <string name="collectionPoint.size.recyclingCenter">"Центр"</string>
     <string name="collectionPoint.size.all">"Все"</string>

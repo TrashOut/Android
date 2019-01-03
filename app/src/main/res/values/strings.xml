@@ -264,7 +264,8 @@ The server is not responding right now or you do not have internet connection."<
     <string name="home.nearestDumps">"Nearest Dumps"</string>
     <string name="home.goAndFindDumps">"Go, find and update these dumps"</string>
     <string name="home.didYouKnow">"News and Updates"</string>
-    <string name="home.nearestRecyclingPoints">"Nearest Recycling Point"</string>
+    <string name="home.nearestRecyclingPoints">Nearest Recycling Points</string>
+    <string name="home.nearestRecyclingPoint">Nearest Recycling Point</string>
     <string name="collectionPoint.size.recyclingBin">"Bin"</string>
     <string name="collectionPoint.size.recyclingCenter">"Center"</string>
     <string name="collectionPoint.size.all">"All"</string>

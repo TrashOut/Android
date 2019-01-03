@@ -247,7 +247,8 @@ Der Server antwortet gerade nicht, bitte versuche es später noch einmal."</stri
     <string name="home.nearestDumps">"Nächste Deponien"</string>
     <string name="home.goAndFindDumps">"Suche und aktualisiere diese Deponien"</string>
     <string name="home.didYouKnow">"Neuigkeiten und Updates"</string>
-    <string name="home.nearestRecyclingPoints">"Nächste Recyclingstelle"</string>
+    <string name="home.nearestRecyclingPoints">Nächste Recyclingpunkte</string>
+    <string name="home.nearestRecyclingPoint">Nächster Recyclingpunkt</string>
     <string name="collectionPoint.size.recyclingBin">"Lagerort"</string>
     <string name="collectionPoint.size.recyclingCenter">"Mitte"</string>
     <string name="collectionPoint.size.all">"Alle"</string>

@@ -228,8 +228,6 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                     prepareMapObject();
                 }
             });
-        } else {
-            prepareMapObject();
         }
     }
 

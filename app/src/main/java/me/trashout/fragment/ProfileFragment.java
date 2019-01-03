@@ -31,6 +31,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -187,7 +188,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
     }
 
     private void setupUserData(User user) {
-        if (user.getImage() != null) {
+        if (user.getImage() != null && !TextUtils.isEmpty(user.getImage().getFullStorageLocation())) {
             StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(user.getImage().getFullStorageLocation());
             GlideApp.with(this)
                     .load(mImageRef)

@@ -40,6 +40,7 @@
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     tools:text="Tusarova 51, Holesovice, Praha"
+                    android:textIsSelectable="true"
                     android:textSize="@dimen/text_size_small" />
 
                 <TextView
