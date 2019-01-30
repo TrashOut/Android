@@ -38,6 +38,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.StrictMode;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
@@ -240,7 +241,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     private ArrayList<Uri> photos = new ArrayList<>();
 
     private Uri mCropImageUri;
-    private Location mLastLocation;
+    private LatLng mLastLocation;
 
     private User user;
 
@@ -328,7 +329,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                         showProgressDialog();
                         String note = !TextUtils.isEmpty(trashReportAdditionalInformationEdit.getText()) ? trashReportAdditionalInformationEdit.getText().toString() : "";
                         if (getTrash() == null) {
-                            Trash newTrash = Trash.createNewTrash(Gps.createGPSFromLocation(mLastLocation), note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+                            Trash newTrash = Trash.createNewTrash(Gps.createGPSFromLatLng(mLastLocation), note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
                             CreateTrashService.startForRequest(getContext(), CREATE_TRASH_REQUEST_ID, newTrash, photos);
                         } else if (isTrashStillHere()) {
                             Trash updateTrash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.STILL_HERE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
@@ -360,7 +361,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         return view;
     }
 
-//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    //    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 //        inflater.inflate(R.menu.menu_trash_edit, menu);
 //        super.onCreateOptionsMenu(menu, inflater);
 //    }
@@ -508,10 +509,10 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             trashReportStatus.setVisibility(GONE);
             trashReportStatusCardView.setVisibility(GONE);
 
-            setPosition(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+            setPosition(mLastLocation.latitude, mLastLocation.longitude);
 
             Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
-            new GeocoderTask(geocoder, mLastLocation.getLatitude(), mLastLocation.getLongitude(), new GeocoderTask.Callback() {
+            new GeocoderTask(geocoder, mLastLocation.latitude, mLastLocation.longitude, new GeocoderTask.Callback() {
                 @Override
                 public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
                     Log.d(TAG, "geocoderResult  = " + geocoderResult);
@@ -672,16 +673,10 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                     },
                     LOCATION_REQUEST_CODE);
         } else {
-            GoogleApiClient mGoogleApiClient = ((MainActivity) getActivity()).getGoogleApiClient();
-            mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+            mLastLocation = ((MainActivity) getActivity()).getLastPosition();
             if (mLastLocation != null) {
-                if (mLastLocation.hasAccuracy() && mLastLocation.getAccuracy() > UPDATE_TRASH_MIN_DISTANCE) {
-                    trashReportLocationBetterAccuracyDistance.setVisibility(View.VISIBLE);
-                    trashReportLocationBetterAccuracyDistance.setText(String.format(getString(R.string.distance_accuracy_formatter), mLastLocation != null ? PositionUtils.getFormattedDistanceInMeter(getContext(), (int) mLastLocation.getAccuracy()) : "?"));
-                    setPosition(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-                } else {
-                    trashReportLocationBetterAccuracyDistance.setVisibility(GONE);
-                }
+                trashReportLocationBetterAccuracyDistance.setVisibility(GONE);
+                setPosition(mLastLocation.latitude, mLastLocation.longitude);
             }
         }
     }
@@ -814,6 +809,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                 }
             } else {
                 showToast("No Location. Please allow location provider");
+                getLocation();
                 isValidate = false;
             }
         } else if (mLastLocation == null) {
@@ -832,8 +828,8 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
      * @param mLastLocation
      * @return
      */
-    private boolean checkUpdatedTrashDistance(LatLng trashDistance, Location mLastLocation) {
-        return PositionUtils.computeDistance(trashDistance, new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude())) < UPDATE_TRASH_MIN_DISTANCE;
+    private boolean checkUpdatedTrashDistance(LatLng trashDistance, LatLng mLastLocation) {
+        return PositionUtils.computeDistance(trashDistance, new LatLng(mLastLocation.latitude, mLastLocation.longitude)) < UPDATE_TRASH_MIN_DISTANCE;
     }
 
 

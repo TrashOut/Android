@@ -198,6 +198,7 @@ public class Image implements Parcelable {
         dest.writeString(this.thumbStorageLocation);
         dest.writeString(this.thumbRetinaStorageLocation);
         dest.writeString(this.thumbRetinaDownloadUrl);
+        dest.writeByte((byte) (isMain ? 1 : 0));
         dest.writeInt(this.id);
     }
 
