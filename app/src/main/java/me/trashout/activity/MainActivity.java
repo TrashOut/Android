@@ -498,8 +498,13 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         TrashListFragment trashListFragment = (TrashListFragment)
                 getSupportFragmentManager().findFragmentByTag(TrashListFragment.class.getName());
 
+        TrashMapFragment trashMapFragment = (TrashMapFragment)
+                getSupportFragmentManager().findFragmentByTag(TrashMapFragment.class.getName());
+
         if (trashListFragment != null) {
             trashListFragment.onRefreshTrashList();
+        } else if (trashMapFragment != null) {
+            trashMapFragment.onRefreshTrashMap();
         }
     }
 
