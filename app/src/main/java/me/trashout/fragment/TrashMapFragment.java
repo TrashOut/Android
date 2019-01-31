@@ -146,42 +146,46 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
         onCameraIdleMultiListener.addOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
             @Override
             public void onCameraIdle() {
-                LatLngBounds curScreen = mMap.getProjection().getVisibleRegion().latLngBounds;
-                boolean bigSwipe = (lastPosition != null && GeocellUtils.distance(lastPosition, curScreen.getCenter()) > 100000);
-
-                Log.d(TAG, "onCameraIdle: OnCreate - mMap zoom = " + mMap.getCameraPosition().zoom + ", curScreen = " + curScreen + ", lastposition = " + lastPosition + ", bigSwipe = " + bigSwipe + ", distance = " + (lastPosition != null ? GeocellUtils.distance(lastPosition, curScreen.getCenter()) : ""));
-
-                Log.d(TAG, "onCameraIdle: curScreen = " + curScreen);
-                BoundingBox boundingBox = new BoundingBox(curScreen.northeast.latitude, curScreen.northeast.longitude, curScreen.southwest.latitude, curScreen.southwest.longitude);
-
-                List<String> geocells = GeocellManager.getMapCells(boundingBox, PositionUtils.getResolutionForMapZoomLevel((int) mMap.getCameraPosition().zoom));
-                // Use this for best geocell?
-//                List<String> geocells = GeocellManager.bestBboxSearchCells(boundingBox, null);
-
-                Log.d(TAG, "onCameraIdle: GeoCell = " + geocells);
-
-                if (lastZoom != mMap.getCameraPosition().zoom || bigSwipe) {
-                    lastZoom = mMap.getCameraPosition().zoom;
-                    lastPosition = curScreen.getCenter();
-
-                    if (mClusterManager != null) {
-                        mClusterManager.clearItems();
-                    }
-
-                    if (isNetworkAvailable()) {
-                        if (mMap.getCameraPosition().zoom > 9) {
-                            GetTrashListService.startForMapTrashRequest(getActivity(), GET_TRASH_LIST_REQUEST_ID, trashFilter, geocells);
-                        } else {
-                            GetZoomPointListService.startForRequest(getActivity(), GET_ZOOMPOIN_LIST_REQUEST_ID, trashFilter, geocells, (int) mMap.getCameraPosition().zoom);
-                        }
-                    } else {
-                        showToast(R.string.global_internet_offline);
-                    }
-                }
+                refreshMapData(false);
             }
         });
 
         return view;
+    }
+
+    private void refreshMapData(boolean forceRefresh) {
+        LatLngBounds curScreen = mMap.getProjection().getVisibleRegion().latLngBounds;
+        boolean bigSwipe = (lastPosition != null && GeocellUtils.distance(lastPosition, curScreen.getCenter()) > 100000);
+
+        Log.d(TAG, "onCameraIdle: OnCreate - mMap zoom = " + mMap.getCameraPosition().zoom + ", curScreen = " + curScreen + ", lastposition = " + lastPosition + ", bigSwipe = " + bigSwipe + ", distance = " + (lastPosition != null ? GeocellUtils.distance(lastPosition, curScreen.getCenter()) : ""));
+
+        Log.d(TAG, "onCameraIdle: curScreen = " + curScreen);
+        BoundingBox boundingBox = new BoundingBox(curScreen.northeast.latitude, curScreen.northeast.longitude, curScreen.southwest.latitude, curScreen.southwest.longitude);
+
+        List<String> geocells = GeocellManager.getMapCells(boundingBox, PositionUtils.getResolutionForMapZoomLevel((int) mMap.getCameraPosition().zoom));
+        // Use this for best geocell?
+//                List<String> geocells = GeocellManager.bestBboxSearchCells(boundingBox, null);
+
+        Log.d(TAG, "onCameraIdle: GeoCell = " + geocells);
+
+        if (lastZoom != mMap.getCameraPosition().zoom || bigSwipe || forceRefresh) {
+            lastZoom = mMap.getCameraPosition().zoom;
+            lastPosition = curScreen.getCenter();
+
+            if (mClusterManager != null) {
+                mClusterManager.clearItems();
+            }
+
+            if (isNetworkAvailable()) {
+                if (mMap.getCameraPosition().zoom > 9) {
+                    GetTrashListService.startForMapTrashRequest(getActivity(), GET_TRASH_LIST_REQUEST_ID, trashFilter, geocells);
+                } else {
+                    GetZoomPointListService.startForRequest(getActivity(), GET_ZOOMPOIN_LIST_REQUEST_ID, trashFilter, geocells, (int) mMap.getCameraPosition().zoom);
+                }
+            } else {
+                showToast(R.string.global_internet_offline);
+            }
+        }
     }
 
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -332,6 +336,10 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
         }
     }
 
+    public void onRefreshTrashMap() {
+        trashFilter = PreferencesHandler.getTrashFilterData(getContext());
+        refreshMapData(true);
+    }
 
     // SERVICE
     @Override
