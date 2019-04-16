@@ -274,7 +274,7 @@
                             android:drawablePadding="10dp"
                             android:drawableStart="@drawable/ic_gps"
                             android:padding="@dimen/button_padding"
-                            android:text="49.55454, 18.54545454"
+                            tools:text="49.55454, 18.54545454"
                             android:textColor="@color/text_color_grey"
                             android:textIsSelectable="true" />
 
