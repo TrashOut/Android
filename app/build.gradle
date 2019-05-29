@@ -17,7 +17,7 @@ android {
         applicationId "me.trashout"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 69
+        versionCode 70
         versionName "4.5.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true

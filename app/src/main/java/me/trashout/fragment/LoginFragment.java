@@ -46,7 +46,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -115,6 +114,8 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     private static final int CREATE_USER_REQUEST_ID = 903;
     private static final int UPDATE_USER_REQUEST_ID = 904;
 
+    public static final String EXTRA_SELECTED_TAB = "EXTRA_SELECTED_TAB";
+
     @BindView(R.id.tabs)
     TabLayout tabs;
     @BindView(R.id.pager)
@@ -172,10 +173,14 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
     private CallbackManager callbackManager;
 
+    private int preSelectedTab = -1;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         callbackManager = CallbackManager.Factory.create();
+
+        if (getArguments() != null) preSelectedTab = getArguments().getInt(EXTRA_SELECTED_TAB, -1);
     }
 
     @Override
@@ -192,11 +197,16 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
         tabs.setupWithViewPager(pager);
 
+        if (preSelectedTab == R.id.page_sign_up) {
+            pager.setCurrentItem(1);
+            preSelectedTab = -1;
+        }
+
 
         signUpAccpetUserDataCollectionTextView.setText(Html.fromHtml(getString(R.string.global_signUp_acceptRegister_startSentense)
-                + " <a href=\"http://trashout.ngo/policy\">" + getString(R.string.global_signUp_acceptRegister_privatePolicy) +"</a> "
+                + " <a href=\"http://trashout.ngo/policy\">" + getString(R.string.global_signUp_acceptRegister_privatePolicy) + "</a> "
                 + getString(R.string.global_signUp_acceptRegister_and)
-                + " <a href=\"http://trashout.ngo/terms\">" + getString(R.string.global_signUp_acceptRegister_terms) +"</a>"
+                + " <a href=\"http://trashout.ngo/terms\">" + getString(R.string.global_signUp_acceptRegister_terms) + "</a>"
         ));
         signUpAccpetUserDataCollectionTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
