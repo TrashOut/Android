@@ -71,6 +71,7 @@ import com.google.maps.android.ui.IconGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -337,6 +338,7 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
     }
 
     public void onRefreshTrashMap() {
+        preSetupMapIfNeeded();
         trashFilter = PreferencesHandler.getTrashFilterData(getContext());
         refreshMapData(true);
     }
@@ -392,6 +394,8 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
      *
      * @param trashMapItems
      */
+//    TODO: JAKUB BREHUV - check other way
+//    min 16 but kitkat - 19
     private void setTrashList(final List<TrashMapItem> trashMapItems) {
         if (mClusterManager == null) {
             mClusterManager = new ClusterManager<>(getActivity(), mMap);

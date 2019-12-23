@@ -42,8 +42,11 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.CalendarContract;
 import android.provider.Settings;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.io.ByteArrayOutputStream;
@@ -63,6 +66,7 @@ import java.util.regex.Pattern;
 import me.trashout.R;
 import me.trashout.model.Constants;
 import me.trashout.model.Event;
+
 
 public class Utils {
 
@@ -222,7 +226,7 @@ public class Utils {
 
     public static String getLocaleString() {
         String localeString = Locale.getDefault().toString();
-        String[] availableLocals = new String[]{"en_US", "cs_CZ", "de_DE", "es_ES", "sk_SK"};
+        String[] availableLocals = new String[]{"en_US", "cs_CZ", "de_DE", "es_ES", "sk_SK", "fr_AU", "ru_AU"};
 
         for (String locale : availableLocals) {
             if (locale.equals(localeString))
@@ -230,6 +234,30 @@ public class Utils {
         }
 
         return availableLocals[0];
+    }
+
+
+    /**
+     * Check if last location is in Slovakia.
+     *
+     * @param context
+     * @return
+     */
+    @Nullable
+    public static boolean checkIfLocationInSlovakia(Context context) {
+        if (context == null) {
+            return false;
+        }
+
+        //'SK': ('Slovakia', (16.8799829444, 47.7584288601, 22.5581376482, 49.5715740017)),
+        LatLngBounds slovakia = new LatLngBounds(new LatLng(16.8799829444, 47.7584288601),
+                new LatLng(22.5581376482, 49.5715740017));
+
+        if(slovakia.contains(PreferencesHandler.getUserLastLocation(context))){
+            return true;
+        }else{
+            return true;
+        }
     }
 
     public static String getDeviceID(Context context) {

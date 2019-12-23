@@ -46,6 +46,29 @@ public class Constants {
     public static final String YOUTUBE_URL_SUFIX = "/default.jpg";
     public static final String EN_LOCALE = "en_US";
 
+    public static String FAQ_HYPERLINK = "https://www.trashout.ngo/FAQ";
+    public static String FAQ_HYPERLINK_SK = "https://www.trashout.ngo/sk/FAQ";
+    public static String FAQ_HYPERLINK_FR = "https://www.trashout.ngo/fr/FAQ";
+    public static String FAQ_HYPERLINK_ES = "https://www.trashout.ngo/es-ar/FAQ";
+    public static String FAQ_HYPERLINK_RU = "https://www.trashout.ngo/ru/FAQ";
+    public static String FAQ_HYPERLINK_DE = "https://www.trashout.ngo/de/FAQ";
+    public static String FAQ_HYPERLINK_CS = "https://www.trashout.ngo/cs/FAQ";
+
+    public static String SUPPORT_HYPERLINK = "https://www.trashout.ngo/projectsupport";
+    public static String SUPPORT_HYPERLINK_SK = "https://www.trashout.ngo/sk/projectsupport";
+    public static String SUPPORT_HYPERLINK_FR = "https://www.trashout.ngo/fr/projectsupport";
+    public static String SUPPORT_HYPERLINK_ES = "https://www.trashout.ngo/es-ar/projectsupport";
+    public static String SUPPORT_HYPERLINK_RU = "https://www.trashout.ngo/ru/projectsupport";
+    public static String SUPPORT_HYPERLINK_DE = "https://www.trashout.ngo/de/projectsupport";
+    public static String SUPPORT_HYPERLINK_CS = "https://www.trashout.ngo/cs/projectsupport";
+
+    public static String ORDER_TRASH_PICKUP_HYPERLINK = "https://www.trashout.ngo/";
+
+    public static String ADD_RECYCLING_POINT = "https://admin.trashout.ngo/collection-points/list/";
+    public static String EDIT_RECYCLING_POINT = "https://admin.trashout.ngo/collection-points/update/";
+    public static String EDIT_EVENT = "https://admin.trashout.ngo/events/detail/";
+
+
     public enum TrashSize {
         BAG(0, "bag", R.string.trash_size_bag, R.drawable.ic_trash_size_bag),
         WHEELBARROW(1, "wheelbarrow", R.string.trash_size_wheelbarrow, R.drawable.ic_trash_size_wheelbarrow),

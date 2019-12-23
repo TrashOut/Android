@@ -27,6 +27,7 @@
 package me.trashout.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.TextUtils;
@@ -37,6 +38,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.util.List;
 
@@ -44,6 +46,7 @@ import me.trashout.R;
 import me.trashout.model.CollectionPoint;
 import me.trashout.model.Constants;
 import me.trashout.utils.PositionUtils;
+import me.trashout.utils.Utils;
 
 public class CollectionPoinListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static final String TAG = CollectionPoinListAdapter.class.getSimpleName();
@@ -172,7 +175,10 @@ public class CollectionPoinListAdapter extends RecyclerView.Adapter<RecyclerView
         private final TextView position;
         private final TextView types;
         private final Button readMore;
+        private final Button orderPickup;
         private final View otherJunkyardsHeader;
+        private FirebaseAnalytics mFirebaseAnalytics;
+
 
         public CollectionPointHeaderViewHolder(View v) {
             super(v);
@@ -188,6 +194,37 @@ public class CollectionPoinListAdapter extends RecyclerView.Adapter<RecyclerView
                     onCollectionPointItemClickListener.onCollectionPointClick(collectionPointList.get(0));
                 }
             });
+
+            mFirebaseAnalytics = FirebaseAnalytics.getInstance(context);
+
+            orderPickup = v.findViewById(R.id.collection_point_list_order_trash_pickup);
+            orderPickup.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Bundle params1 = new Bundle();
+                    params1.putString("order_trash_pickup_clicked", "clicked");
+                    mFirebaseAnalytics.logEvent("order_trash_pickup_button", params1);
+
+                    switch (Utils.getLocaleString()) {
+                        case "sk_SK":
+                            break;
+                        case "cs_CZ":
+                            break;
+                        case "de_DE":
+                            break;
+                        case "cs_ES":
+                            break;
+                        case "fr_AU":
+                            break;
+                        case "ru_AU":
+                            break;
+                        default:
+                            Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK);
+                            break;
+                    }
+                }
+            });
+
             otherJunkyardsHeader = v.findViewById(R.id.collection_point_list_header_other_junkyards);
         }
     }

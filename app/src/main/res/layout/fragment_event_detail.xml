@@ -33,7 +33,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="Event Name"
                     android:textSize="@dimen/text_size_large" />
 
                 <TextView
@@ -42,7 +41,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:padding="@dimen/button_padding"
-                    android:text="21.10.2016 08:00, 6hours"
                     android:textColor="@color/text_color_grey"
                     android:textIsSelectable="true" />
 
@@ -51,8 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:padding="3dp"
-                    android:text="We will meet right behind the city park..." />
+                    android:padding="3dp" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/event_detail_join_btn"
@@ -96,7 +93,6 @@
                 android:layout_marginStart="16dp"
                 android:layout_toEndOf="@+id/event_detail_phone_icon"
                 android:layout_toRightOf="@+id/event_detail_phone_icon"
-                android:text="+420 123 456 789"
                 android:textSize="@dimen/text_size_small" />
 
 
@@ -140,7 +136,6 @@
                 android:layout_marginStart="16dp"
                 android:layout_toEndOf="@+id/event_detail_email_icon"
                 android:layout_toRightOf="@+id/event_detail_email_icon"
-                tools:text="cleaning.group@domain.com"
                 android:textSize="@dimen/text_size_small" />
 
 
@@ -170,13 +165,27 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/event_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/event_detail_direction_btn"
+                    android:layout_alignStart="@+id/event_detail_direction_btn"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="8dp"
+                    android:padding="3dp"
+                    android:textIsSelectable="true"
+                    tools:text="Meeting point"
+                    android:textSize="@dimen/text_size_normal" />
+
 
                 <ImageView
                     android:id="@+id/event_detail_map"
                     android:layout_width="match_parent"
+                    android:layout_below="@+id/event_detail_title"
                     android:layout_height="200dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/test_map" />
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:id="@+id/event_detail_position"
@@ -205,7 +214,7 @@
                     android:layout_marginTop="25dp"
                     android:padding="3dp"
                     android:textIsSelectable="true"
-                    tools:text="Praha, Praga Region, Czech Republic"
+                    tools:text=""
                     android:textSize="@dimen/text_size_normal" />
 
                 <android.support.v7.widget.AppCompatButton
@@ -336,6 +345,19 @@
                 android:orientation="vertical" />
 
         </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/event_detail_edit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/sides_margin"
+            android:layout_marginRight="@dimen/sides_margin"
+            android:layout_marginTop="@dimen/sides_margin"
+            android:backgroundTint="@color/button_color_green"
+            android:text="@string/global.edit"
+            android:textColor="@color/text_color_white"
+            app:backgroundTint="@color/button_color_green" />
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

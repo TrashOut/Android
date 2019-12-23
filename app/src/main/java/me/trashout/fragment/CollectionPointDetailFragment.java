@@ -30,7 +30,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Geocoder;
-import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -53,8 +52,6 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.text.ParseException;
@@ -86,6 +83,7 @@ import me.trashout.service.base.BaseService;
 import me.trashout.utils.GeocoderTask;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
+import me.trashout.utils.Utils;
 
 /**
  * @author Miroslav Cupalka
@@ -111,22 +109,28 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
     TextView collectionPointDetailType;
     @BindView(R.id.collection_point_detail_card_view)
     CardView collectionPointDetailCardView;
+
     @BindView(R.id.collection_point_detail_phone_icon)
     ImageView collectionPointDetailPhoneIcon;
     @BindView(R.id.collection_point_detail_phone)
     TextView collectionPointDetailPhone;
-    @BindView(R.id.collection_point_detail_phone_info)
-    TextView collectionPointDetailPhoneInfo;
     @BindView(R.id.collection_point_detail_phone_layout)
     RelativeLayout collectionPointDetailPhoneLayout;
+
     @BindView(R.id.collection_point_detail_email_icon)
     ImageView collectionPointDetailEmailIcon;
     @BindView(R.id.collection_point_detail_email)
     TextView collectionPointDetailEmail;
-    @BindView(R.id.collection_point_detail_email_info)
-    TextView collectionPointDetailEmailInfo;
     @BindView(R.id.collection_point_detail_email_layout)
     RelativeLayout collectionPointDetailEmailLayout;
+
+    @BindView(R.id.collection_point_detail_web_icon)
+    ImageView collectionPointDetailWebIcon;
+    @BindView(R.id.collection_point_detail_web)
+    TextView collectionPointDetailWeb;
+    @BindView(R.id.collection_point_detail_web_layout)
+    RelativeLayout collectionPointDetailWebLayout;
+
     @BindView(R.id.collection_point_detail_opening_hours)
     TextView collectionPointDetailOpeningHours;
     @BindView(R.id.collection_point_detail_opening_hours_container)
@@ -137,6 +141,10 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
     AppCompatButton collectionPointDetailNoExistBtn;
     @BindView(R.id.collection_point_detail_direction_btn)
     AppCompatButton collectionPointDetailDirectionBtn;
+    @BindView(R.id.collection_point_detail_edit_btn)
+    AppCompatButton collectionPointDetailEditBtn;
+
+
 
     private Long mCollectionPointId;
 
@@ -267,16 +275,42 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
             collectionPointDetailNote.setText(collectionPoint.getNote());
 
             if (collectionPoint.getPhone() == null || collectionPoint.getPhone().isEmpty()) {
-                collectionPointDetailPhoneLayout.setVisibility(View.GONE);
+                collectionPointDetailPhoneLayout.setVisibility(View.VISIBLE);
+                collectionPointDetailPhone.setText(this.getResources().getText(R.string.collectionPoint_phone_is_missing));
+                collectionPointDetailPhone.setTextColor(this.getResources().getColor(R.color.text_color_grey));
+                collectionPointDetailPhoneIcon.setImageResource(R.drawable.ic_phone_vec_gray);
             } else {
                 collectionPointDetailPhoneLayout.setVisibility(View.VISIBLE);
                 collectionPointDetailPhone.setText(collectionPoint.getPhone());
             }
+
             if (collectionPoint.getEmail() == null || collectionPoint.getEmail().isEmpty()) {
-                collectionPointDetailEmailLayout.setVisibility(View.GONE);
+                collectionPointDetailEmailLayout.setVisibility(View.VISIBLE);
+                collectionPointDetailEmail.setText(this.getResources().getText(R.string.collectionPoint_email_is_missing));
+                collectionPointDetailEmail.setTextColor(this.getResources().getColor(R.color.text_color_grey));
+                collectionPointDetailEmailIcon.setImageResource(R.drawable.ic_email_vec_gray);
             } else {
                 collectionPointDetailEmailLayout.setVisibility(View.VISIBLE);
                 collectionPointDetailEmail.setText(collectionPoint.getEmail());
+            }
+            if (collectionPoint.getUrl() == null || collectionPoint.getUrl().isEmpty()) {
+                collectionPointDetailWebLayout.setVisibility(View.VISIBLE);
+                collectionPointDetailWeb.setText(this.getResources().getText(R.string.collectionPoint_web_is_missing));
+                collectionPointDetailWeb.setTextColor(this.getResources().getColor(R.color.text_color_grey));
+                collectionPointDetailWebIcon.setImageResource(R.drawable.ic_web_vec_gray);
+            } else {
+                collectionPointDetailWebLayout.setVisibility(View.VISIBLE);
+                collectionPointDetailWeb.setText(collectionPoint.getUrl());
+            }
+
+            if(collectionPoint.getSize().equals(Constants.CollectionPointSize.DUSTBIN)){
+                collectionPointDetailPhoneLayout.setVisibility(View.GONE);
+                collectionPointDetailEmailLayout.setVisibility(View.GONE);
+                collectionPointDetailWebLayout.setVisibility(View.GONE);
+            }else{
+                collectionPointDetailPhoneLayout.setVisibility(View.VISIBLE);
+                collectionPointDetailEmailLayout.setVisibility(View.VISIBLE);
+                collectionPointDetailWebLayout.setVisibility(View.VISIBLE);
             }
 
             if (collectionPoint.getGps() != null && collectionPoint.getGps().getArea() != null && !TextUtils.isEmpty(collectionPoint.getGps().getArea().getFormatedLocation())) {
@@ -352,7 +386,7 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
 
     }
 
-    @OnClick({R.id.collection_point_detail_phone_layout, R.id.collection_point_detail_email_layout})
+    @OnClick({R.id.collection_point_detail_phone_layout, R.id.collection_point_detail_email_layout, R.id.collection_point_detail_web_layout})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.collection_point_detail_phone_layout:
@@ -368,6 +402,11 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
                             .addEmailTo(mCollectionPoint.getEmail())
                             .setChooserTitle(R.string.global_sendEmail)
                             .startChooser();
+                }
+                break;
+            case R.id.collection_point_detail_web_layout:
+                if (mCollectionPoint != null && !TextUtils.isEmpty(mCollectionPoint.getUrl())) {
+                    Utils.browseUrl(getActivity(), mCollectionPoint.getUrl());
                 }
                 break;
         }
@@ -387,6 +426,27 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
                         public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                             showProgressDialog();
                             CreateCollectionPointNewSpamService.startForRequest(getContext(), CREATE_COLLECTION_POINT_NEW_SPAM_REQUEST_ID, mCollectionPoint.getActivityId());
+                        }
+                    })
+                    .build();
+
+            dialog.show();
+        }
+    }
+
+    @OnClick(R.id.collection_point_detail_edit_btn)
+    public void onEditClick() {
+        if (mCollectionPoint != null) {
+            MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
+                    .title(R.string.recycling_point_edit_title)
+                    .content(R.string.recycling_point_edit_redirect)
+                    .positiveText(R.string.recycling_point_edit_go_to_web)
+                    .negativeText(R.string.recycling_point_edit_do_later)
+                    .autoDismiss(true)
+                    .onPositive(new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                            Utils.browseUrl(getActivity(), Constants.EDIT_RECYCLING_POINT + mCollectionPoint.getId());
                         }
                     })
                     .build();

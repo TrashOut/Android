@@ -14,6 +14,7 @@
 
     <dimen name="primary_text_top_padding">24dp</dimen>
     <dimen name="full_layout_padding">16dp</dimen>
+    <dimen name="margin_4">4dp</dimen>
     <dimen name="margin_8">8dp</dimen>
     <dimen name="margin_24">24dp</dimen>
     <dimen name="margin_48">48dp</dimen>

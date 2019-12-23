@@ -65,6 +65,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
@@ -230,7 +231,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     FrameLayout createReportLayout;
     @BindView(R.id.swiperefresh)
     SwipeRefreshLayout swiperefresh;
-
+    @BindView(R.id.dashboard_support_btn)
+    AppCompatButton dashboardSupportBtn;
+    @BindView(R.id.dashboard_order_trash_pickup)
+    AppCompatButton orderTrashPickupButton;
 
     private List<Trash> dashboardTrashList;
     private CollectionPoint dashboardCollectionPointDustbin;
@@ -255,6 +259,8 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     int scrollYPosition = 0;
     private boolean needRefresh = true;
 
+    private FirebaseAnalytics mFirebaseAnalytics;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -270,6 +276,8 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         ButterKnife.bind(this, view);
         this.inflater = inflater;
         joinedEvent = null;
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
 
         user = PreferencesHandler.getUserData(getContext());
 
@@ -693,7 +701,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                     showToast(R.string.event_signToJoin);
                 } else {
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
-                            .title(R.string.global_validation_warning)
+                            .title(R.string.event_joinEventConfirmationMessage)
                             .content(R.string.event_joinEventConfirmationMessage)
                             .positiveText(android.R.string.ok)
                             .negativeText(android.R.string.cancel)
@@ -779,7 +787,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         this.needRefresh = true;
     }
 
-    @OnClick({R.id.dashboard_nearest_trash_first, R.id.dashboard_nearest_trash_second, R.id.dashboard_nearest_trash_more, R.id.dashboard_nearest_collection_point_dustbin_card_view, R.id.dashboard_nearest_collection_point_scrapyard_card_view, R.id.dashboard_statistics_more, R.id.dashboard_news_read_more_btn, R.id.dashboard_news_more, R.id.dashboard_trash_hunter_more})
+    @OnClick({R.id.dashboard_nearest_trash_first, R.id.dashboard_nearest_trash_second, R.id.dashboard_nearest_trash_more, R.id.dashboard_nearest_collection_point_dustbin_card_view, R.id.dashboard_nearest_collection_point_scrapyard_card_view, R.id.dashboard_statistics_more, R.id.dashboard_news_read_more_btn, R.id.dashboard_news_more, R.id.dashboard_trash_hunter_more, R.id.dashboard_support_btn})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.dashboard_nearest_trash_first:
@@ -831,6 +839,63 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                 TrashHunterState trashHunterState = PreferencesHandler.getTrashHunterState(getContext());
                 TrashListFragment hunterTrashListFragment = TrashListFragment.newInstance(true, trashHunterState != null ? trashHunterState.getAreaSize() : -1);
                 getBaseActivity().replaceFragment(hunterTrashListFragment);
+                break;
+
+
+            case R.id.dashboard_order_trash_pickup:
+                Bundle params1 = new Bundle();
+                params1.putString("order_trash_pickup_clicked", "clicked");
+                mFirebaseAnalytics.logEvent("order_trash_pickup_button", params1);
+
+                switch (Utils.getLocaleString()) {
+                    case "sk_SK":
+                        break;
+                    case "cs_CZ":
+                        break;
+                    case "de_DE":
+                        break;
+                    case "cs_ES":
+                        break;
+                    case "fr_AU":
+                        break;
+                    case "ru_AU":
+                        break;
+                    default:
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK);
+                        break;
+                }
+
+                break;
+
+
+            case R.id.dashboard_support_btn:
+                Bundle params2 = new Bundle();
+                params2.putString("support_us_button_clicked", "clicked");
+                mFirebaseAnalytics.logEvent("support_us_button", params2);
+
+                switch (Utils.getLocaleString()) {
+                    case "sk_SK":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_SK);
+                        break;
+                    case "cs_CZ":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_CS);
+                        break;
+                    case "de_DE":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_DE);
+                        break;
+                    case "cs_ES":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_ES);
+                        break;
+                    case "fr_AU":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_FR);
+                        break;
+                    case "ru_AU":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_RU);
+                        break;
+                    default:
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK);
+                        break;
+                }
                 break;
         }
     }

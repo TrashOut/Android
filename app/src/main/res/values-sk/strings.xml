@@ -1232,4 +1232,17 @@ Našou snahou je zapojiť občanov, vlády, obce a organizácie, aby sme mohli s
 
     <string name="global.internet.error.offline">Vaše mobilné zariadenie nie je pripojené k internetu. Urobte fotografiu a nahláste skládku
 neskôr prostredníctvom stránky www.admin.trashout.ngo.</string>
+
+    <!-- Add new recycling point -->
+    <string name="recycling_point_add_new_title">"Pridať zberné miesto"</string>
+    <string name="recycling_point_add_new_redirect">"Zberné miesto je zatiaľ možné pridať len z našej webovej aplikácie do ktorej sa prihlásite cez webový prehliadač"</string>
+    <string name="recycling_point_add_new_go_to_web">"Prejsť do aplikácie"</string>
+    <string name="recycling_point_add_new_do_later">"Urobím neskôr"</string>
+
+    <!-- Edit new recycling point -->
+    <string name="recycling_point_edit_title">"Upraviť informácie"</string>
+    <string name="recycling_point_edit_redirect">"Zberné miesto je zatiaľ možné upraviť len z našej webovej aplikácie do ktorej sa prihlásite cez webový prehliadač</string>
+    <string name="recycling_point_edit_go_to_web">"Prejsť do aplikácie"</string>
+    <string name="recycling_point_edit_do_later">"Urobím neskôr"</string>
+
 </resources>

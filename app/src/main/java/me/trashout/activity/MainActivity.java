@@ -28,7 +28,9 @@ package me.trashout.activity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -36,6 +38,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,6 +60,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GetTokenResult;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -171,6 +176,26 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         setUserNavigationState();
 
         prepareGoogleApiLocationClient();
+
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    "me.trashout",
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.e("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+                Toast.makeText(this, Base64.encodeToString(md.digest(), Base64.DEFAULT), Toast.LENGTH_LONG).show();
+            }
+        }
+        catch (PackageManager.NameNotFoundException e) {
+            Toast.makeText(this, "NameNotFoundException", Toast.LENGTH_LONG).show();
+
+        }
+        catch (NoSuchAlgorithmException e) {
+
+            Toast.makeText(this, "NoSuchAlgorithmException", Toast.LENGTH_LONG).show();
+        }
 
         navigation.setOnNavigationItemSelectedListener(this);
         BottomNavigationViewHelper.disableShiftMode(navigation);
@@ -333,6 +358,12 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         }
         BottomNavigationViewHelper.disableShiftMode(navigation);
     }
+
+
+    public void triggerBottomMenuButton(){
+        onNavigationItemSelected(navigation.getMenu().findItem(R.id.action_main_home));
+    }
+
 
     /**
      * Setting toolbar title

@@ -577,7 +577,11 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
             // create container of fullscreen photos for each update history row
             for (Image image: updateHistory.getChanged().getImages())
             {
-                fullScreenImages.add(new FullScreenImage(image, updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
+                if(updateHistory.isAnonymous()){
+                    fullScreenImages.add(new FullScreenImage(image, getResources().getString(R.string.trash_anonymous), updateHistory.getUpdateTime()));
+                }else{
+                    fullScreenImages.add(new FullScreenImage(image, updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
+                }
             }
 
             for (Image image : updateHistory.getChanged().getImages()) {

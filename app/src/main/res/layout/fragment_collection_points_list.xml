@@ -40,4 +40,13 @@
 
         </FrameLayout>
     </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_collection_point_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right|end"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_plus" />
+
 </android.support.design.widget.CoordinatorLayout>

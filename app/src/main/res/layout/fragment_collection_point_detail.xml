@@ -31,7 +31,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    tools:text="Junkyard Name"
                     android:textSize="@dimen/text_size_large" />
 
                 <TextView
@@ -39,7 +38,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    tools:text="Tusarova 51, Holesovice, Praha"
                     android:textIsSelectable="true"
                     android:textSize="@dimen/text_size_small" />
 
@@ -48,7 +46,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/button_padding"
-                    tools:text="100 m away"
                     android:textColor="@color/text_color_grey"
                     android:textIsSelectable="true" />
 
@@ -60,7 +57,6 @@
                     android:drawablePadding="10dp"
                     android:drawableStart="@drawable/ic_gps"
                     android:padding="@dimen/button_padding"
-                    tools:text="49.55454, 18.54545454"
                     android:textColor="@color/text_color_grey"
                     android:textIsSelectable="true" />
 
@@ -69,8 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:padding="3dp"
-                    tools:text="Recyclable: Paper, Glass, ..." />
+                    android:padding="3dp" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/collection_point_detail_direction_btn"
@@ -94,6 +89,7 @@
             android:paddingBottom="10dp"
             android:paddingEnd="20dp"
             android:paddingLeft="20dp"
+            android:visibility="gone"
             android:paddingRight="20dp"
             android:paddingStart="20dp"
             android:paddingTop="10dp">
@@ -104,7 +100,8 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/ic_phone_vec" />
+                android:src="@drawable/ic_phone_vec"
+                android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/collection_point_detail_phone"
@@ -114,21 +111,20 @@
                 android:layout_marginStart="16dp"
                 android:layout_toEndOf="@+id/collection_point_detail_phone_icon"
                 android:layout_toRightOf="@+id/collection_point_detail_phone_icon"
-                android:text="+420 123 456 789"
-                android:textSize="@dimen/text_size_small" />
+                android:textSize="@dimen/text_size_small"
+                android:layout_centerVertical="true"/>
 
 
-            <TextView
-                android:id="@+id/collection_point_detail_phone_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/collection_point_detail_phone"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_toEndOf="@+id/collection_point_detail_phone_icon"
-                android:layout_toRightOf="@+id/collection_point_detail_phone_icon"
-                android:text="@string/global.phone"
-                android:textColor="@color/text_color_grey" />
+<!--            <TextView-->
+<!--                android:id="@+id/collection_point_detail_phone_info"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/collection_point_detail_phone"-->
+<!--                android:layout_marginLeft="16dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_toEndOf="@+id/collection_point_detail_phone_icon"-->
+<!--                android:layout_toRightOf="@+id/collection_point_detail_phone_icon"-->
+<!--                android:textColor="@color/text_color_grey" />-->
         </RelativeLayout>
 
         <RelativeLayout
@@ -137,6 +133,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="10dp"
             android:paddingEnd="20dp"
+            android:visibility="gone"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:paddingStart="20dp"
@@ -148,7 +145,8 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/ic_email_vec" />
+                android:src="@drawable/ic_email_vec"
+                android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/collection_point_detail_email"
@@ -158,22 +156,69 @@
                 android:layout_marginStart="16dp"
                 android:layout_toEndOf="@+id/collection_point_detail_email_icon"
                 android:layout_toRightOf="@+id/collection_point_detail_email_icon"
-                tools:text="cleaning.group@domain.com"
-                android:textSize="@dimen/text_size_small" />
+                android:textSize="@dimen/text_size_small"
+                android:layout_centerVertical="true"/>
 
+
+<!--            <TextView-->
+<!--                android:id="@+id/collection_point_detail_email_info"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/collection_point_detail_email"-->
+<!--                android:layout_marginLeft="16dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_toEndOf="@+id/collection_point_detail_email_icon"-->
+<!--                android:layout_toRightOf="@+id/collection_point_detail_email_icon"-->
+<!--                android:textColor="@color/text_color_grey" />-->
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/collection_point_detail_web_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingEnd="20dp"
+            android:paddingLeft="20dp"
+            android:visibility="gone"
+            android:paddingRight="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp">
+
+
+            <ImageView
+                android:id="@+id/collection_point_detail_web_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_web_vec" />
 
             <TextView
-                android:id="@+id/collection_point_detail_email_info"
+                android:id="@+id/collection_point_detail_web"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/collection_point_detail_email"
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
-                android:layout_toEndOf="@+id/collection_point_detail_email_icon"
-                android:layout_toRightOf="@+id/collection_point_detail_email_icon"
-                android:text="@string/global.email"
-                android:textColor="@color/text_color_grey" />
+                android:layout_toEndOf="@+id/collection_point_detail_web_icon"
+                android:layout_toRightOf="@+id/collection_point_detail_web_icon"
+                android:textSize="@dimen/text_size_small"
+                android:layout_centerVertical="true"/>
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/collection_point_detail_web_info"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/collection_point_detail_web"-->
+<!--                android:layout_marginLeft="16dp"-->
+<!--                android:layout_marginStart="16dp"-->
+<!--                android:layout_toEndOf="@+id/collection_point_detail_web_icon"-->
+<!--                android:layout_toRightOf="@+id/collection_point_detail_web_icon"-->
+<!--                android:textColor="@color/text_color_grey" />-->
         </RelativeLayout>
+
+
 
 
         <TextView
@@ -202,8 +247,19 @@
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="15dp"
-            tools:text="Lorem ipsum"
             android:textSize="@dimen/text_size_small" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/collection_point_detail_edit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/sides_margin"
+            android:layout_marginRight="@dimen/sides_margin"
+            android:layout_marginTop="@dimen/sides_margin"
+            android:backgroundTint="@color/button_color_green"
+            android:text="@string/global.edit"
+            android:textColor="@color/text_color_white"
+            app:backgroundTint="@color/button_color_green" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/collection_point_detail_no_exist_btn"

@@ -61,6 +61,27 @@
             app:backgroundTint="@color/button_color_green_dark" />
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/about_faq_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sides_margin"
+            android:backgroundTint="@color/button_color_green_dark"
+            android:text="@string/info.frequentlyAskedQuestions"
+            android:textColor="@color/text_color_white"
+            app:backgroundTint="@color/button_color_green_dark" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/about_support_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sides_margin"
+            android:layout_marginBottom="@dimen/margin_24"
+            android:backgroundTint="@color/button_color_green_dark"
+            android:text="@string/info.supportUs"
+            android:textColor="@color/text_color_white"
+            app:backgroundTint="@color/button_color_green_dark" />
+
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/about_privacy_policy_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

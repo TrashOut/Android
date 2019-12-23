@@ -90,6 +90,8 @@ Thank You for joining TrashOut environmental community and keeping it running."<
     <string name="info.privatePolicy">"Privacy Policy"</string>
     <string name="info.termsAndConditions">"Terms and Conditions"</string>
     <string name="info.feedbackAndSupport">"Feedback &amp; Support"</string>
+    <string name="info.frequentlyAskedQuestions">"Frequently Asked Questions"</string>
+    <string name="info.supportUs">"Support us"</string>
     <string name="info.donate">"Donate"</string>
     <string name="info.whyDonate">"Why donate to TrashOut?"</string>
     <string name="info.donateText">"Thanks to your donations we can run our servers, update and improve TrashOut application, add new functionalities and most importantly continue out mission to clean the world. "</string>
@@ -534,7 +536,8 @@ The server is not responding right now or you do not have internet connection."<
     <string name="trash.confirmation.deleteImage">"Do you really want to delete image?"</string>
     <string name="trash.confirmation.deleteTrash">"Do you really want to delete trash?"</string>
     <string name="global.confirmation.header">"Confirmation"</string>
-    <string name="event.confirmation.joinEvent">"Do you really want to join event?"</string>
+    <string name="event.confirmation.joinEventTitle">""</string>
+    <string name="event.confirmation.joinEvent">"Do you realxly want to join event?"</string>
     <string name="trash.confirmation.markSpam">"Do you really want to mark this dump as spam?"</string>
     <string name="global.confirmation.reject">"really want to reject"</string>
     <string name="event.confirmation.unjoinEvent">"Really want to leave event?"</string>
@@ -1388,6 +1391,34 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="specific_distance_away_formatter" translatable="false">%1$s %2$s</string>
     <string name="skip_btn" translatable="false">SKIP</string>
 
+    <!-- Add new recycling point -->
+    <string name="recycling_point_add_new_title">"Pridať zberné miesto"</string>
+    <string name="recycling_point_add_new_redirect">"Zberné miesto je zatiaľ možné pridať len z našej webovej aplikácie do ktorej sa prihlásite cez webový prehliadač"</string>
+    <string name="recycling_point_add_new_go_to_web">"Prejsť do aplikácie"</string>
+    <string name="recycling_point_add_new_do_later">"Urobím neskôr"</string>
+
+    <!-- Edit new recycling point -->
+    <string name="recycling_point_edit_title">"Upraviť informácie"</string>
+    <string name="recycling_point_edit_redirect">"Zberné miesto je zatiaľ možné upraviť len z našej webovej aplikácie do ktorej sa prihlásite cez webový prehliadač</string>
+    <string name="recycling_point_edit_go_to_web">"Prejsť do aplikácie"</string>
+    <string name="recycling_point_edit_do_later">"Urobím neskôr"</string>
+
+    <!-- Edit new recycling point -->
+    <string name="event_edit_title">"Upraviť informácie"</string>
+    <string name="event_edit_redirect">"Zberné miesto je zatiaľ možné upraviť len z našej webovej aplikácie do ktorej sa prihlásite cez webový prehliadač</string>
+    <string name="event_edit_go_to_web">"Prejsť do aplikácie"</string>
+    <string name="event_edit_do_later">"Urobím neskôr"</string>
+
+
+    <!--  Missing items in recycling points  -->
+    <string name="collectionPoint.email_is_missing">"Email is missing"</string>
+    <string name="collectionPoint.phone_is_missing">"Phone is missing"</string>
+    <string name="collectionPoint.web_is_missing">"Webpage is missing"</string>
+
+    <string name="home.orderTrashPickup">"Order trash pickup"</string>
+
+
+
     <string-array name="trash_view_type">
         <item>@string/global.list</item>
         <item>@string/global.map</item>
@@ -1431,6 +1462,7 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="global.signUp.acceptRegister.privatePolicy">Privacy Policy</string>
     <string name="global.signUp.acceptRegister.and">and</string>
     <string name="global.signUp.acceptRegister.terms">Terms and Conditions</string>
+
 
     <string name="global.internet.error.offline">Your device is not connected to the internet. Take a picture and report it later via www.admin.trashout.ngo.</string>
 </resources>
