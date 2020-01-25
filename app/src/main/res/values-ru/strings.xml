@@ -1221,4 +1221,23 @@
     <string name="global.signUp.acceptRegister.terms">Политикой конфиденциальности</string>
 
     <string name="global.internet.error.offline">Ваше мобильное устройство не подключено к Интернету. Сделайте снимок и сообщите об этом позже через www.admin.trashout.ngo.</string>
+    <string name="info.frequentlyAskedQuestions">Часто задаваемые вопросы</string>
+    <string name="info.supportUs">Поддерживать нас</string>
+    <string name="home.orderTrashPickup">Заказать вывоз мусора</string>
+    <string name="recycling_point_add_new_title">Добавить пункт сбора</string>
+    <string name="recycling_point_add_new_redirect">Точка сбора может быть добавлена только из нашего веб-приложения, в которое вы можете войти через веб-браузер</string>
+    <string name="recycling_point_add_new_go_to_web">Добавить сейчас</string>
+    <string name="recycling_point_add_new_do_later">Отмена</string>
+    <string name="recycling_point_edit_redirect">точка сбора может быть отредактирована только из веб-приложения, доступ к которому осуществляется через веб-браузер</string>
+    <string name="recycling_point_edit_title">Обновить точку сбора</string>
+    <string name="recycling_point_edit_go_to_web">Изменить сейчас</string>
+    <string name="recycling_point_edit_do_later">Отмена</string>
+    <string name="event.confirmation.joinEventTitle">Присоединяйтесь к событию</string>
+    <string name="collectionPoint.web_is_missing">Добавить веб-адрес</string>
+    <string name="event_edit_title">Изменить это событие</string>
+    <string name="event_edit_redirect">События можно редактировать только из веб-приложения, которое доступно через веб-браузер</string>
+    <string name="event_edit_do_later">Отмена</string>
+    <string name="event_edit_go_to_web">Изменить сейчас</string>
+    <string name="collectionPoint.phone_is_missing">Добавьте номер телефона</string>
+    <string name="collectionPoint.email_is_missing">Добавить адрес электронной почты</string>
 </resources>

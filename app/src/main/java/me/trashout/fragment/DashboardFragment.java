@@ -42,6 +42,7 @@ import android.os.RemoteException;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.AppCompatButton;
@@ -399,6 +400,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         showProgressDialog();
         setLastPosition();
         GetHomeScreenDataService.startForRequest(getContext(), GET_HOME_SCREEN_DATA_REQUEST_ID, lastPosition, user != null ? user.getId() : -1);
+
         handleLayoutsVisibility(user != null);
     }
 
@@ -556,8 +558,9 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             dashboardEventsContainer.setVisibility(View.VISIBLE);
 
             for (Event event : dashboardEventList) {
-                if (dashboardEventsContainer.getChildCount() > 0)
+                if (dashboardEventsContainer.getChildCount() > 0){
                     dashboardEventsContainer.addView(ViewUtils.getDividerView(getContext()));
+                }
 
                 dashboardEventsContainer.addView(getDashboardEventView(event));
             }
@@ -655,7 +658,6 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             }
         }).execute();
 
-
         return userActivityView;
     }
 
@@ -682,6 +684,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
         if (user == null || event.getUserId() == user.getId()) {
             trashEventJoinBtn.setVisibility(View.GONE);
+
         } else {
             int visibility = View.VISIBLE;
             for (User usr : event.getUsers()) {
@@ -701,7 +704,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                     showToast(R.string.event_signToJoin);
                 } else {
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
-                            .title(R.string.event_joinEventConfirmationMessage)
+                            .title(R.string.event_confirmation_joinEventTitle)
                             .content(R.string.event_joinEventConfirmationMessage)
                             .positiveText(android.R.string.ok)
                             .negativeText(android.R.string.cancel)
@@ -725,6 +728,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         trashEventDetailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                joinedEvent = event;
                 EventDetailFragment eventDetailFragment = EventDetailFragment.newInstance(event.getId());
                 getBaseActivity().replaceFragment(eventDetailFragment);
             }
@@ -735,12 +739,14 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         return trashEventView;
     }
 
+
+
     /**
      * Hide event view join button
      *
      * @param event
      */
-    private void hideEventJoinButton(Event event) {
+    public void hideEventJoinButton(Event event) {
         View eventView = dashboardEventsContainer.findViewWithTag(EVENT_ID_TAG + event.getId());
 
         if (eventView == null)
@@ -769,6 +775,53 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         ((MainActivity) getActivity()).setToolbarTitle(getString(R.string.app_name));
         checkTrashHunterState();
         dashboardTrashHunterFoundDumps.setText(String.format(getString(R.string.trash_foundDumps_X), amountOfFoundTrash));
+
+        if(dashboardEventList != null){
+            if(!dashboardEventList.isEmpty()) {
+                getDashboardData();
+                checkEvents(dashboardEventList);
+            }
+        }
+
+    }
+
+
+
+    private void checkEvents(List<Event> eventList){
+        if(eventList != null && !eventList.isEmpty()){
+            for(Event ev : eventList){
+                if(ev != null){
+                    if (user == null || ev.getUserId() == user.getId()) {
+
+                        View eventView = dashboardEventsContainer.findViewWithTag(EVENT_ID_TAG + ev.getId());
+                        if (eventView == null){
+                            return;
+                        }
+
+                        AppCompatButton trashEventJoinBtn = eventView.findViewById(R.id.trash_event_join_btn);
+                        trashEventJoinBtn.setVisibility(View.GONE);
+
+
+                    } else {
+                        int visibility = View.VISIBLE;
+                        for (User usr : ev.getUsers()) {
+                            if (usr.getId() == user.getId()) {
+                                visibility = View.GONE;
+                                break;
+                            }
+                        }
+                        View eventView = dashboardEventsContainer.findViewWithTag(EVENT_ID_TAG + ev.getId());
+
+                        if (eventView == null) {
+                            return;
+                        }
+
+                        AppCompatButton trashEventJoinBtn = eventView.findViewById(R.id.trash_event_join_btn);
+                        trashEventJoinBtn.setVisibility(visibility);
+                    }
+                }
+            }
+        }
     }
 
     @Override
@@ -787,7 +840,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         this.needRefresh = true;
     }
 
-    @OnClick({R.id.dashboard_nearest_trash_first, R.id.dashboard_nearest_trash_second, R.id.dashboard_nearest_trash_more, R.id.dashboard_nearest_collection_point_dustbin_card_view, R.id.dashboard_nearest_collection_point_scrapyard_card_view, R.id.dashboard_statistics_more, R.id.dashboard_news_read_more_btn, R.id.dashboard_news_more, R.id.dashboard_trash_hunter_more, R.id.dashboard_support_btn})
+    @OnClick({R.id.dashboard_nearest_trash_first, R.id.dashboard_nearest_trash_second, R.id.dashboard_nearest_trash_more, R.id.dashboard_nearest_collection_point_dustbin_card_view, R.id.dashboard_nearest_collection_point_scrapyard_card_view, R.id.dashboard_statistics_more, R.id.dashboard_news_read_more_btn, R.id.dashboard_news_more, R.id.dashboard_trash_hunter_more, R.id.dashboard_support_btn, R.id.dashboard_order_trash_pickup})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.dashboard_nearest_trash_first:
@@ -845,33 +898,38 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             case R.id.dashboard_order_trash_pickup:
                 Bundle params1 = new Bundle();
                 params1.putString("order_trash_pickup_clicked", "clicked");
-                mFirebaseAnalytics.logEvent("order_trash_pickup_button", params1);
+                mFirebaseAnalytics.logEvent("order_trash_pickup_button_dashboard", params1);
 
                 switch (Utils.getLocaleString()) {
                     case "sk_SK":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_SK);
                         break;
                     case "cs_CZ":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_CS);
                         break;
                     case "de_DE":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_DE);
                         break;
                     case "cs_ES":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_ES);
                         break;
                     case "fr_AU":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_FR);
                         break;
                     case "ru_AU":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_RU);
                         break;
                     default:
                         Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK);
                         break;
                 }
-
                 break;
 
 
             case R.id.dashboard_support_btn:
                 Bundle params2 = new Bundle();
                 params2.putString("support_us_button_clicked", "clicked");
-                mFirebaseAnalytics.logEvent("support_us_button", params2);
+                mFirebaseAnalytics.logEvent("support_us_button_dashboard", params2);
 
                 switch (Utils.getLocaleString()) {
                     case "sk_SK":

@@ -177,25 +177,25 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
         prepareGoogleApiLocationClient();
 
-        try {
-            PackageInfo info = getPackageManager().getPackageInfo(
-                    "me.trashout",
-                    PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.e("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-                Toast.makeText(this, Base64.encodeToString(md.digest(), Base64.DEFAULT), Toast.LENGTH_LONG).show();
-            }
-        }
-        catch (PackageManager.NameNotFoundException e) {
-            Toast.makeText(this, "NameNotFoundException", Toast.LENGTH_LONG).show();
-
-        }
-        catch (NoSuchAlgorithmException e) {
-
-            Toast.makeText(this, "NoSuchAlgorithmException", Toast.LENGTH_LONG).show();
-        }
+//        try {
+//            PackageInfo info = getPackageManager().getPackageInfo(
+//                    "me.trashout",
+//                    PackageManager.GET_SIGNATURES);
+//            for (Signature signature : info.signatures) {
+//                MessageDigest md = MessageDigest.getInstance("SHA");
+//                md.update(signature.toByteArray());
+//                Log.e("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+//                Toast.makeText(this, Base64.encodeToString(md.digest(), Base64.DEFAULT), Toast.LENGTH_LONG).show();
+//            }
+//        }
+//        catch (PackageManager.NameNotFoundException e) {
+//            Toast.makeText(this, "NameNotFoundException", Toast.LENGTH_LONG).show();
+//
+//        }
+//        catch (NoSuchAlgorithmException e) {
+//
+//            Toast.makeText(this, "NoSuchAlgorithmException", Toast.LENGTH_LONG).show();
+//        }
 
         navigation.setOnNavigationItemSelectedListener(this);
         BottomNavigationViewHelper.disableShiftMode(navigation);

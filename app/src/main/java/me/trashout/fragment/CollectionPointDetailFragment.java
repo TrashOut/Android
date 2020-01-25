@@ -53,6 +53,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -66,6 +67,7 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.internal.ListenerClass;
 import me.trashout.R;
 import me.trashout.activity.MainActivity;
 import me.trashout.api.base.ApiResult;
@@ -151,6 +153,11 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
     private CollectionPoint mCollectionPoint;
     private LatLng lastPosition;
     private User user;
+    private FirebaseAnalytics mFirebaseAnalytics;
+
+    private boolean havePhone = false;
+    private boolean haveMail = false;
+    private boolean haveWeb = false;
 
     public static CollectionPointDetailFragment newInstance(Long collectionPointId) {
         Bundle b = new Bundle();
@@ -166,6 +173,7 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
         ButterKnife.bind(this, view);
 
         user = PreferencesHandler.getUserData(getContext());
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
 
         if (ContextCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Log.d(TAG, "permission check");
@@ -274,34 +282,55 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
             }
             collectionPointDetailNote.setText(collectionPoint.getNote());
 
+
             if (collectionPoint.getPhone() == null || collectionPoint.getPhone().isEmpty()) {
+                collectionPointDetailPhone.setMaxLines(2);
+                collectionPointDetailPhone.setEllipsize(null);
                 collectionPointDetailPhoneLayout.setVisibility(View.VISIBLE);
                 collectionPointDetailPhone.setText(this.getResources().getText(R.string.collectionPoint_phone_is_missing));
                 collectionPointDetailPhone.setTextColor(this.getResources().getColor(R.color.text_color_grey));
                 collectionPointDetailPhoneIcon.setImageResource(R.drawable.ic_phone_vec_gray);
+                havePhone = false;
             } else {
+                collectionPointDetailPhone.setMaxLines(1);
+                collectionPointDetailPhone.setEllipsize(TextUtils.TruncateAt.END);
                 collectionPointDetailPhoneLayout.setVisibility(View.VISIBLE);
                 collectionPointDetailPhone.setText(collectionPoint.getPhone());
+                havePhone = true;
             }
 
             if (collectionPoint.getEmail() == null || collectionPoint.getEmail().isEmpty()) {
+                collectionPointDetailEmail.setMaxLines(2);
+                collectionPointDetailEmail.setEllipsize(null);
                 collectionPointDetailEmailLayout.setVisibility(View.VISIBLE);
                 collectionPointDetailEmail.setText(this.getResources().getText(R.string.collectionPoint_email_is_missing));
                 collectionPointDetailEmail.setTextColor(this.getResources().getColor(R.color.text_color_grey));
                 collectionPointDetailEmailIcon.setImageResource(R.drawable.ic_email_vec_gray);
+                haveMail = false;
             } else {
+                collectionPointDetailEmail.setMaxLines(1);
+                collectionPointDetailEmail.setEllipsize(TextUtils.TruncateAt.END);
                 collectionPointDetailEmailLayout.setVisibility(View.VISIBLE);
                 collectionPointDetailEmail.setText(collectionPoint.getEmail());
+                haveMail = true;
             }
+
             if (collectionPoint.getUrl() == null || collectionPoint.getUrl().isEmpty()) {
+                collectionPointDetailWeb.setMaxLines(2);
+                collectionPointDetailWeb.setEllipsize(null);
                 collectionPointDetailWebLayout.setVisibility(View.VISIBLE);
                 collectionPointDetailWeb.setText(this.getResources().getText(R.string.collectionPoint_web_is_missing));
                 collectionPointDetailWeb.setTextColor(this.getResources().getColor(R.color.text_color_grey));
                 collectionPointDetailWebIcon.setImageResource(R.drawable.ic_web_vec_gray);
+                haveWeb = false;
             } else {
+                collectionPointDetailWeb.setMaxLines(1);
+                collectionPointDetailWeb.setEllipsize(TextUtils.TruncateAt.END);
                 collectionPointDetailWebLayout.setVisibility(View.VISIBLE);
                 collectionPointDetailWeb.setText(collectionPoint.getUrl());
+                haveWeb = true;
             }
+
 
             if(collectionPoint.getSize().equals(Constants.CollectionPointSize.DUSTBIN)){
                 collectionPointDetailPhoneLayout.setVisibility(View.GONE);
@@ -390,23 +419,45 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.collection_point_detail_phone_layout:
-                if (mCollectionPoint != null && !TextUtils.isEmpty(mCollectionPoint.getPhone())) {
-                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", mCollectionPoint.getPhone(), null));
-                    startActivity(intent);
+                if(havePhone){
+                    if (mCollectionPoint != null && !TextUtils.isEmpty(mCollectionPoint.getPhone())) {
+                        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", mCollectionPoint.getPhone(), null));
+                        startActivity(intent);
+                    }
+                }else{
+                    if (mCollectionPoint != null) {
+                        this.showEditDialog();
+                    }
                 }
                 break;
+
+
             case R.id.collection_point_detail_email_layout:
-                if (mCollectionPoint != null && !TextUtils.isEmpty(mCollectionPoint.getEmail())) {
-                    ShareCompat.IntentBuilder.from(getActivity())
-                            .setType("message/rfc822")
-                            .addEmailTo(mCollectionPoint.getEmail())
-                            .setChooserTitle(R.string.global_sendEmail)
-                            .startChooser();
+                if(haveMail){
+                    if (mCollectionPoint != null && !TextUtils.isEmpty(mCollectionPoint.getEmail())) {
+                        ShareCompat.IntentBuilder.from(getActivity())
+                                .setType("message/rfc822")
+                                .addEmailTo(mCollectionPoint.getEmail())
+                                .setChooserTitle(R.string.global_sendEmail)
+                                .startChooser();
+                    }
+                }else{
+                    if (mCollectionPoint != null) {
+                        this.showEditDialog();
+                    }
                 }
                 break;
+
+
             case R.id.collection_point_detail_web_layout:
-                if (mCollectionPoint != null && !TextUtils.isEmpty(mCollectionPoint.getUrl())) {
-                    Utils.browseUrl(getActivity(), mCollectionPoint.getUrl());
+                if(haveWeb) {
+                    if (mCollectionPoint != null && !TextUtils.isEmpty(mCollectionPoint.getUrl())) {
+                        Utils.browseUrl(getActivity(), mCollectionPoint.getUrl());
+                    }
+                }else{
+                    if (mCollectionPoint != null) {
+                        this.showEditDialog();
+                    }
                 }
                 break;
         }
@@ -437,6 +488,16 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
     @OnClick(R.id.collection_point_detail_edit_btn)
     public void onEditClick() {
         if (mCollectionPoint != null) {
+            this.showEditDialog();
+        }
+    }
+
+
+    private void showEditDialog(){
+            Bundle params = new Bundle();
+            params.putString("edit_collection_point_button_clicked", "clicked");
+            mFirebaseAnalytics.logEvent("edit_collection_point_button", params);
+
             MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                     .title(R.string.recycling_point_edit_title)
                     .content(R.string.recycling_point_edit_redirect)
@@ -452,7 +513,6 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
                     .build();
 
             dialog.show();
-        }
     }
 
     @OnClick(R.id.collection_point_detail_direction_btn)

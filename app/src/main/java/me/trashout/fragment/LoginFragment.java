@@ -268,7 +268,6 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                     @Override
                     public void onCancel() {
                         Log.d(TAG, "FB login onCancel");
-                        Toast.makeText(getContext(),  "FB login onCancel", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override

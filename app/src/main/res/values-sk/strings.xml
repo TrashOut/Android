@@ -1235,14 +1235,25 @@ neskôr prostredníctvom stránky www.admin.trashout.ngo.</string>
 
     <!-- Add new recycling point -->
     <string name="recycling_point_add_new_title">"Pridať zberné miesto"</string>
-    <string name="recycling_point_add_new_redirect">"Zberné miesto je zatiaľ možné pridať len z našej webovej aplikácie do ktorej sa prihlásite cez webový prehliadač"</string>
-    <string name="recycling_point_add_new_go_to_web">"Prejsť do aplikácie"</string>
-    <string name="recycling_point_add_new_do_later">"Urobím neskôr"</string>
+    <string name="recycling_point_add_new_redirect">Zberné miesto je zatiaľ možné pridať len z webovej aplikácie do ktorej sa prihlásite cez webový prehliadač</string>
+    <string name="recycling_point_add_new_go_to_web">Pridať teraz</string>
+    <string name="recycling_point_add_new_do_later">Zrušiť</string>
 
     <!-- Edit new recycling point -->
-    <string name="recycling_point_edit_title">"Upraviť informácie"</string>
-    <string name="recycling_point_edit_redirect">"Zberné miesto je zatiaľ možné upraviť len z našej webovej aplikácie do ktorej sa prihlásite cez webový prehliadač</string>
-    <string name="recycling_point_edit_go_to_web">"Prejsť do aplikácie"</string>
-    <string name="recycling_point_edit_do_later">"Urobím neskôr"</string>
+    <string name="recycling_point_edit_title">Upraviť zberné miesto</string>
+    <string name="recycling_point_edit_redirect">Zberné miesto je zatiaľ možné upravovať len z webovej aplikácie, do ktorej sa prihlásite cez webový prehliada</string>
+    <string name="recycling_point_edit_go_to_web">Upraviť teraz</string>
+    <string name="recycling_point_edit_do_later">Zrušiť</string>
+    <string name="info.frequentlyAskedQuestions">Často kladené otázky</string>
+    <string name="info.supportUs">Podporiť projekt</string>
+    <string name="home.orderTrashPickup">Objednať odvoz odpadu</string>
+    <string name="event.confirmation.joinEventTitle">Pridať sa k udalosti</string>
+    <string name="collectionPoint.web_is_missing">Pridať webovú adresu</string>
+    <string name="event_edit_title">Upraviť podujatie</string>
+    <string name="event_edit_redirect">Čistiace podujatia je zatiaľ možné upravovať len z našej webovej aplikácie, do ktorej sa prihlásite cez webový prehliadač</string>
+    <string name="event_edit_do_later">Zrušiť</string>
+    <string name="event_edit_go_to_web">Upraviť teraz</string>
+    <string name="collectionPoint.phone_is_missing">Pridať telefónne číslo</string>
+    <string name="collectionPoint.email_is_missing">Pridať emailovú adresu</string>
 
 </resources>

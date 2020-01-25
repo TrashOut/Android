@@ -1260,4 +1260,23 @@ Il nostro obiettivo è coinvolgere cittadini, governi, comuni e organizzazioni i
 
     <!-- On the screen "Recycling" in singular -->
     <string name="home.nearestRecyclingPoint">"Eco-centro più vicino"</string>
+    <string name="info.frequentlyAskedQuestions">Domande frequenti</string>
+    <string name="info.supportUs">Supportaci</string>
+    <string name="home.orderTrashPickup">Ordina il ritiro dei rifiuti</string>
+    <string name="recycling_point_add_new_title">Aggiungi punto di raccolta</string>
+    <string name="recycling_point_add_new_redirect">Il punto di raccolta può essere aggiunto solo dall\'applicazione Web a cui è possibile accedere tramite un browser Web</string>
+    <string name="recycling_point_add_new_go_to_web">Aggiungi ora</string>
+    <string name="recycling_point_add_new_do_later">Annulla</string>
+    <string name="recycling_point_edit_redirect">Il punto di raccolta può essere modificato solo dall\'applicazione Web a cui si accede tramite un browser Web</string>
+    <string name="recycling_point_edit_title">Aggiorna punto di raccolta</string>
+    <string name="recycling_point_edit_go_to_web">Modifica ora</string>
+    <string name="recycling_point_edit_do_later">Annulla</string>
+    <string name="event.confirmation.joinEventTitle">Unisciti all\'evento</string>
+    <string name="collectionPoint.web_is_missing">Aggiungi indirizzo web</string>
+    <string name="event_edit_title">Modifica questo evento</string>
+    <string name="event_edit_redirect">Gli eventi possono essere modificati solo dall\'applicazione Web accessibile tramite un browser Web</string>
+    <string name="event_edit_do_later">Annulla</string>
+    <string name="event_edit_go_to_web">Modifica ora</string>
+    <string name="collectionPoint.phone_is_missing">Aggiungi il numero di telefono</string>
+    <string name="collectionPoint.email_is_missing">Aggiungi indirizzo email</string>
 </resources>

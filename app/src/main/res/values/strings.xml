@@ -536,8 +536,8 @@ The server is not responding right now or you do not have internet connection."<
     <string name="trash.confirmation.deleteImage">"Do you really want to delete image?"</string>
     <string name="trash.confirmation.deleteTrash">"Do you really want to delete trash?"</string>
     <string name="global.confirmation.header">"Confirmation"</string>
-    <string name="event.confirmation.joinEventTitle">""</string>
-    <string name="event.confirmation.joinEvent">"Do you realxly want to join event?"</string>
+    <string name="event.confirmation.joinEventTitle">Join this event</string>
+    <string name="event.confirmation.joinEvent">"Do you realy want to join event?"</string>
     <string name="trash.confirmation.markSpam">"Do you really want to mark this dump as spam?"</string>
     <string name="global.confirmation.reject">"really want to reject"</string>
     <string name="event.confirmation.unjoinEvent">"Really want to leave event?"</string>
@@ -712,7 +712,7 @@ The server is not responding right now or you do not have internet connection."<
     <string name="widget.statistics.chartSize">"By size"</string>
     <string name="widget.statistics.chartType">"By type"</string>
     <string name="widget.statistics.breakdownOfDumps">"Breakdown of illegal dumps in"</string>
-    <string name="widget.statistics.lastUpdatedDumps">"Last updated dumps in"</string>
+    <string name="widget.statistics.lastUpdatedDumps">Add email address</string>
     <string name="profile.validation.emptyOrganization">"You don't have selected any organization"</string>
     <string name="news.noArticles">"There are no articles yet, please come back later."</string>
     <string name="event.dontWantOrganize">"I don't want to organize or help with organization of any cleaning event"</string>
@@ -1392,28 +1392,28 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="skip_btn" translatable="false">SKIP</string>
 
     <!-- Add new recycling point -->
-    <string name="recycling_point_add_new_title">"Pridať zberné miesto"</string>
-    <string name="recycling_point_add_new_redirect">"Zberné miesto je zatiaľ možné pridať len z našej webovej aplikácie do ktorej sa prihlásite cez webový prehliadač"</string>
-    <string name="recycling_point_add_new_go_to_web">"Prejsť do aplikácie"</string>
-    <string name="recycling_point_add_new_do_later">"Urobím neskôr"</string>
+    <string name="recycling_point_add_new_title">Add a collection point</string>
+    <string name="recycling_point_add_new_redirect">The collection point can only be added from the web application to which you can log in via a web browser</string>
+    <string name="recycling_point_add_new_go_to_web">Add now</string>
+    <string name="recycling_point_add_new_do_later">Cancel</string>
 
     <!-- Edit new recycling point -->
-    <string name="recycling_point_edit_title">"Upraviť informácie"</string>
-    <string name="recycling_point_edit_redirect">"Zberné miesto je zatiaľ možné upraviť len z našej webovej aplikácie do ktorej sa prihlásite cez webový prehliadač</string>
-    <string name="recycling_point_edit_go_to_web">"Prejsť do aplikácie"</string>
-    <string name="recycling_point_edit_do_later">"Urobím neskôr"</string>
+    <string name="recycling_point_edit_title">Update collection point</string>
+    <string name="recycling_point_edit_redirect">At the moment, the collection point can only be edited from the web application that is accessible through a web browser</string>
+    <string name="recycling_point_edit_go_to_web">Edit now</string>
+    <string name="recycling_point_edit_do_later">Cancel</string>
 
     <!-- Edit new recycling point -->
-    <string name="event_edit_title">"Upraviť informácie"</string>
-    <string name="event_edit_redirect">"Zberné miesto je zatiaľ možné upraviť len z našej webovej aplikácie do ktorej sa prihlásite cez webový prehliadač</string>
-    <string name="event_edit_go_to_web">"Prejsť do aplikácie"</string>
-    <string name="event_edit_do_later">"Urobím neskôr"</string>
+    <string name="event_edit_title">Edit this event</string>
+    <string name="event_edit_redirect">Events can only be edited from the TrashOut web application that is accessible through a web browser</string>
+    <string name="event_edit_go_to_web">Edit now</string>
+    <string name="event_edit_do_later">Cancel</string>
 
 
     <!--  Missing items in recycling points  -->
-    <string name="collectionPoint.email_is_missing">"Email is missing"</string>
-    <string name="collectionPoint.phone_is_missing">"Phone is missing"</string>
-    <string name="collectionPoint.web_is_missing">"Webpage is missing"</string>
+    <string name="collectionPoint.email_is_missing">Add email address</string>
+    <string name="collectionPoint.phone_is_missing">Add phone number</string>
+    <string name="collectionPoint.web_is_missing">Add web address</string>
 
     <string name="home.orderTrashPickup">"Order trash pickup"</string>
 

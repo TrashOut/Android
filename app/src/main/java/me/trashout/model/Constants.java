@@ -62,9 +62,15 @@ public class Constants {
     public static String SUPPORT_HYPERLINK_DE = "https://www.trashout.ngo/de/projectsupport";
     public static String SUPPORT_HYPERLINK_CS = "https://www.trashout.ngo/cs/projectsupport";
 
-    public static String ORDER_TRASH_PICKUP_HYPERLINK = "https://www.trashout.ngo/";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK = "https://www.trashout.ngo/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_SK = "https://www.trashout.ngo/sk/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_RU = "https://www.trashout.ngo/ru/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_DE = "https://www.trashout.ngo/de/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_ES = "https://www.trashout.ngo/es-ar/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_CS = "https://www.trashout.ngo/cs/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_FR = "https://www.trashout.ngo/fr/waste-management";
 
-    public static String ADD_RECYCLING_POINT = "https://admin.trashout.ngo/collection-points/list/";
+    public static String ADD_RECYCLING_POINT = "https://admin.trashout.ngo/collection-points/create/ ";
     public static String EDIT_RECYCLING_POINT = "https://admin.trashout.ngo/collection-points/update/";
     public static String EDIT_EVENT = "https://admin.trashout.ngo/events/detail/";
 

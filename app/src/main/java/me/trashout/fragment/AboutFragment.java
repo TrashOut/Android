@@ -136,7 +136,7 @@ public class AboutFragment extends BaseFragment {
             case R.id.about_support_btn:
                 Bundle params2 = new Bundle();
                 params2.putString("support_us_button_clicked", "clicked");
-                mFirebaseAnalytics.logEvent("support_us_button", params2);
+                mFirebaseAnalytics.logEvent("support_us_button_about", params2);
 
                 switch (Utils.getLocaleString()) {
                     case "sk_SK":

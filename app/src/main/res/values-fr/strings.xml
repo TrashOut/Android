@@ -1235,4 +1235,23 @@ Notre but est d'impliquer les citoyens, gouvernements, autorités locales et org
 
     <!-- On the screen "Recycling" in singular -->
     <string name="home.nearestRecyclingPoint">"Point de collecte le plus proche"</string>
+    <string name="info.frequentlyAskedQuestions">Questions fréquemment posées</string>
+    <string name="info.supportUs">Nous soutenir</string>
+    <string name="home.orderTrashPickup">Commander le ramassage des déchets</string>
+    <string name="recycling_point_add_new_title">Ajouter un point de collecte</string>
+    <string name="recycling_point_add_new_redirect">Le point de collecte ne peut être ajouté qu\'à partir de l\'application Web à laquelle vous pouvez vous connecter via un navigateur Web</string>
+    <string name="recycling_point_add_new_go_to_web">Ajouter maintenant</string>
+    <string name="recycling_point_add_new_do_later">Annuler</string>
+    <string name="recycling_point_edit_redirect">Le point de collecte ne peut être modifié qu\'à partir de l\'application Web à laquelle vous pouvez accéder via un navigateur Web</string>
+    <string name="recycling_point_edit_title">Mettre à jour le point de collecte</string>
+    <string name="recycling_point_edit_go_to_web">Modifier maintenant</string>
+    <string name="recycling_point_edit_do_later">Annuler</string>
+    <string name="event.confirmation.joinEventTitle">Rejoignez l\'événement</string>
+    <string name="collectionPoint.web_is_missing">Ajouter une adresse Web</string>
+    <string name="event_edit_title">Modifier cet événement</string>
+    <string name="event_edit_redirect">Les événements ne peuvent être modifiés qu\'à partir de l\'application Web accessible via un navigateur Web</string>
+    <string name="event_edit_do_later">Annuler</string>
+    <string name="event_edit_go_to_web">Modifier maintenant</string>
+    <string name="collectionPoint.phone_is_missing">Ajouter un numéro de téléphone</string>
+    <string name="collectionPoint.email_is_missing">Ajouter une adresse e-mail</string>
 </resources>

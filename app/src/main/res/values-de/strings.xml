@@ -1248,4 +1248,23 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="global.signUp.acceptRegister.terms">Datenschutzrichtlinien</string>
 
     <string name="global.internet.error.offline">Ihr Mobilgerät ist nicht mit dem Internet verbunden. Machen Sie ein Foto und melden Sie es später über www.admin.trashout.ngo.</string>
+    <string name="info.frequentlyAskedQuestions">Häufig gestellte Fragen</string>
+    <string name="info.supportUs">Unterstütze uns</string>
+    <string name="home.orderTrashPickup">Müllabholung bestellen</string>
+    <string name="recycling_point_add_new_title">Sammelstelle hinzufügen</string>
+    <string name="recycling_point_add_new_redirect">Die Sammelstelle kann nur über Webanwendung hinzugefügt werden, in die Sie sich über einen Webbrowser einloggen können</string>
+    <string name="recycling_point_add_new_go_to_web">Jetzt hinzufügen</string>
+    <string name="recycling_point_add_new_do_later">Stornieren</string>
+    <string name="recycling_point_edit_redirect">Der Sammelpunkt kann nur in der Webanwendung bearbeitet werden, auf die Sie über einen Webbrowser zugreifen können</string>
+    <string name="recycling_point_edit_title">Aktualisieren Sie die Sammelstelle</string>
+    <string name="recycling_point_edit_go_to_web">Bearbeiten Sie jetzt</string>
+    <string name="recycling_point_edit_do_later">Stornieren</string>
+    <string name="event.confirmation.joinEventTitle">Mach mit bei der Veranstaltung</string>
+    <string name="collectionPoint.web_is_missing">Webadresse hinzufügen</string>
+    <string name="event_edit_title">Bearbeiten Sie dieses Ereignis</string>
+    <string name="event_edit_redirect">Ereignisse können nur in der Webanwendung bearbeitet werden, auf die über einen Webbrowser zugegriffen werden kann</string>
+    <string name="event_edit_do_later">Stornieren</string>
+    <string name="event_edit_go_to_web">Bearbeiten Sie jetzt</string>
+    <string name="collectionPoint.phone_is_missing">Telefonnummer hinzufügen</string>
+    <string name="collectionPoint.email_is_missing">E-Mail-Adresse hinzufügen</string>
 </resources>

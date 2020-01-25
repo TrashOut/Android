@@ -36,6 +36,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatButton;
@@ -95,6 +96,8 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
     private static final int JOIN_TO_EVENT_REQUEST_ID = 751;
 
     private static final String BUNDLE_EVENT_ID = "BUNDLE_EVENT_ID";
+    private static final String BUNDLE_FRAGMENT_ID = "BUNDLE_FRAGMENT_ID";
+    private static final String BUNDLE_EVENT_OBJ = "BUNDLE_EVENT_OBJJ";
 
     @BindView(R.id.event_detail_name)
     TextView eventDetailName;
@@ -158,6 +161,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
     private LayoutInflater inflater;
 
     private Event mEvent;
+    private Event mEventBundle;
     private Long mEventId;
 
     private LatLng lastPosition;
@@ -190,6 +194,16 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
         return ret;
     }
 
+    public static EventDetailFragment newInstance(long eventId, Event event, long fragmentId) {
+        Bundle b = new Bundle();
+        b.putLong(BUNDLE_FRAGMENT_ID, fragmentId);
+        b.putLong(BUNDLE_EVENT_ID, eventId);
+        b.putParcelable(BUNDLE_EVENT_OBJ, event);
+        EventDetailFragment ret = new EventDetailFragment();
+        ret.setArguments(b);
+        return ret;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_event_detail, container, false);
@@ -197,6 +211,8 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
         this.inflater = inflater;
 
         user = PreferencesHandler.getUserData(getContext());
+
+
 
         if (ContextCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Log.d(TAG, "setUpMapIfNeeded: permission check");
@@ -225,14 +241,37 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
         return mEventId;
     }
 
+    /**
+     * Get event
+     *
+     * @return
+     */
+    private Event getEvent() {
+        if (mEventBundle == null)
+            mEventBundle = getArguments().getParcelable(BUNDLE_EVENT_OBJ);
+        return mEventBundle;
+    }
+
     private void setupEventData(Event event) {
-//        if( user.getUserRole().getDescription().equals("superAdmin")){
-//            editEventButton.setVisibility(View.VISIBLE);
-//        }
+
+
+
+        if (user != null) {
+            if (user.getUserRole() != null) {
+                if (user.getUserRole().getDescription() != null) {
+                    if (user.getUserRole().getDescription().equals("superAdmin")) {
+                        editEventButton.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        }
+
+        if (user != null && mEvent.getUserId() == user.getId()) {
+            editEventButton.setVisibility(View.VISIBLE);
+        }
 
         if (user == null || mEvent.getUserId() == user.getId()) {
             eventDetailJoinBtn.setVisibility(View.GONE);
-            editEventButton.setVisibility(View.VISIBLE);
         } else {
             int visibility = View.VISIBLE;
             for (User usr : event.getUsers()) {
@@ -253,16 +292,16 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
         else
             eventDetailTime.setText("?");
 
-        if (event.getDescription() != null){
+        if (event.getDescription() != null) {
             eventDetailDescription.setText(event.getDescription());
-        }else{
+        } else {
             eventDetailDescription.setVisibility(View.GONE);
         }
 
         eventDetailPhone.setText(event.getContact().getPhone());
         eventDetailEmail.setText(event.getContact().getEmail());
 
-        if ( event.getHave() == null &&  event.getBring() == null) {
+        if (event.getHave() == null && event.getBring() == null) {
             eventDetailEquipmentCardView.setVisibility(View.GONE);
         } else {
             if (event.getHave() == null) {
@@ -490,9 +529,9 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
                 break;
 
 
-
             case R.id.event_detail_edit_btn:
                 if (mEvent != null) {
+//                    if(user != null && mEvent.getUserId() == user.getId()){
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                             .title(R.string.event_edit_title)
                             .content(R.string.event_edit_redirect)
@@ -508,6 +547,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
                             .build();
 
                     dialog.show();
+//                    }
                 }
         }
     }

@@ -50,6 +50,7 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.util.ArrayList;
@@ -108,6 +109,7 @@ public class CollectionPointListFragment extends BaseFragment implements ICollec
     private boolean loading = true;
     int pastVisiblesItems, visibleItemCount, totalItemCount;
     private int previousTotal = 0;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     public interface OnRefreshCollectionPointListListener {
         void onRefreshCollectionPointList();
@@ -116,6 +118,9 @@ public class CollectionPointListFragment extends BaseFragment implements ICollec
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
+
         setHasOptionsMenu(true);
     }
 
@@ -337,6 +342,11 @@ public class CollectionPointListFragment extends BaseFragment implements ICollec
 
     public void addCollectionPoint() {
         if (isNetworkAvailable()) {
+
+            Bundle params = new Bundle();
+            params.putString("add_collection_point_button_clicked", "clicked");
+            mFirebaseAnalytics.logEvent("add_collection_point_button", params);
+
             MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                     .title(R.string.recycling_point_add_new_title)
                     .content(R.string.recycling_point_add_new_redirect)

@@ -1235,4 +1235,23 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="global.signUp.acceptRegister.terms">Política de Privacidad</string>
 
     <string name="global.internet.error.offline">Su dispositivo no está conectado a internet. Tome una fotografía e infórmela más tarde a través de www.admin.trashout.ngo.</string>
+    <string name="info.frequentlyAskedQuestions">Preguntas frecuentes</string>
+    <string name="info.supportUs">Apoyanos</string>
+    <string name="home.orderTrashPickup">Orden de recogida de residuos</string>
+    <string name="recycling_point_add_new_title">Añadir punto de reciclaje</string>
+    <string name="recycling_point_add_new_redirect">El punto de recopilación solo se puede agregar desde la aplicación web a la que puede iniciar sesión a través de un navegador web</string>
+    <string name="recycling_point_add_new_go_to_web">Añadir ahora</string>
+    <string name="recycling_point_add_new_do_later">Cancelar</string>
+    <string name="recycling_point_edit_redirect">El punto de recopilación solo se puede editar desde la aplicación web a la que accede a través de un navegador web</string>
+    <string name="recycling_point_edit_title">Actualizar punto de recogida</string>
+    <string name="recycling_point_edit_go_to_web">Editar ahora</string>
+    <string name="recycling_point_edit_do_later">Cancelar</string>
+    <string name="event.confirmation.joinEventTitle">Únete al evento</string>
+    <string name="collectionPoint.web_is_missing">Agregar dirección web</string>
+    <string name="event_edit_title">Editar este evento</string>
+    <string name="event_edit_redirect">Los eventos solo se pueden editar desde la aplicación web a la que se puede acceder a través de un navegador web</string>
+    <string name="event_edit_do_later">Cancelar</string>
+    <string name="event_edit_go_to_web">Editar ahora</string>
+    <string name="collectionPoint.phone_is_missing">Agregar el número de teléfono</string>
+    <string name="collectionPoint.email_is_missing">Agregar dirección de correo electrónico</string>
 </resources>
