@@ -108,23 +108,23 @@ public class AboutFragment extends BaseFragment {
                 params.putString("faq_button_clicked", "clicked");
                 mFirebaseAnalytics.logEvent("faq_button", params);
 
-                switch (Utils.getLocaleString()) {
-                    case "sk_SK":
+                switch (Utils.getCurrentLanguage(getResources())) {
+                    case "sk":
                         Utils.browseUrl(getActivity(), Constants.FAQ_HYPERLINK_SK);
                         break;
-                    case "cs_CZ":
+                    case "cs":
                         Utils.browseUrl(getActivity(), Constants.FAQ_HYPERLINK_CS);
                         break;
-                    case "de_DE":
+                    case "de":
                         Utils.browseUrl(getActivity(), Constants.FAQ_HYPERLINK_DE);
                         break;
-                    case "cs_ES":
+                    case "es":
                         Utils.browseUrl(getActivity(), Constants.FAQ_HYPERLINK_ES);
                         break;
-                    case "fr_AU":
+                    case "fr":
                         Utils.browseUrl(getActivity(), Constants.FAQ_HYPERLINK_FR);
                         break;
-                    case "ru_AU":
+                    case "ru":
                         Utils.browseUrl(getActivity(), Constants.FAQ_HYPERLINK_RU);
                         break;
                     default:
@@ -138,23 +138,23 @@ public class AboutFragment extends BaseFragment {
                 params2.putString("support_us_button_clicked", "clicked");
                 mFirebaseAnalytics.logEvent("support_us_button_about", params2);
 
-                switch (Utils.getLocaleString()) {
-                    case "sk_SK":
+                switch (Utils.getCurrentLanguage(getResources())) {
+                    case "sk":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_SK);
                         break;
-                    case "cs_CZ":
+                    case "cs":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_CS);
                         break;
-                    case "de_DE":
+                    case "de":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_DE);
                         break;
-                    case "cs_ES":
+                    case "es":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_ES);
                         break;
-                    case "fr_AU":
+                    case "fr":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_FR);
                         break;
-                    case "ru_AU":
+                    case "ru":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_RU);
                         break;
                     default:

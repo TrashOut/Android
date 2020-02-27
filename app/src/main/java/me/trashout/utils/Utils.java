@@ -34,6 +34,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -45,6 +46,7 @@ import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.firebase.ui.auth.data.model.Resource;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -234,6 +236,19 @@ public class Utils {
         }
 
         return availableLocals[0];
+    }
+
+
+    public static String getCurrentLanguage(Resources resources) {
+        String localeString = resources.getConfiguration().locale.getLanguage();
+        String[] availableLanguages = new String[]{"en", "cs", "de", "es", "sk", "fr", "ru", "it"};
+
+        for (String locale : availableLanguages) {
+            if (locale.equals(localeString))
+                return localeString;
+        }
+
+        return availableLanguages[0];
     }
 
 

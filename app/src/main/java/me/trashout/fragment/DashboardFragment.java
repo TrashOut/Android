@@ -31,6 +31,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.res.Resources;
 import android.graphics.Rect;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -42,7 +43,6 @@ import android.os.RemoteException;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.AppCompatButton;
@@ -900,23 +900,23 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                 params1.putString("order_trash_pickup_clicked", "clicked");
                 mFirebaseAnalytics.logEvent("order_trash_pickup_button_dashboard", params1);
 
-                switch (Utils.getLocaleString()) {
-                    case "sk_SK":
+                switch (Utils.getCurrentLanguage(getResources())) {
+                    case "sk":
                         Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_SK);
                         break;
-                    case "cs_CZ":
+                    case "cs":
                         Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_CS);
                         break;
-                    case "de_DE":
+                    case "de":
                         Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_DE);
                         break;
-                    case "cs_ES":
+                    case "es":
                         Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_ES);
                         break;
-                    case "fr_AU":
+                    case "fr":
                         Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_FR);
                         break;
-                    case "ru_AU":
+                    case "ru":
                         Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_RU);
                         break;
                     default:
@@ -931,23 +931,23 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                 params2.putString("support_us_button_clicked", "clicked");
                 mFirebaseAnalytics.logEvent("support_us_button_dashboard", params2);
 
-                switch (Utils.getLocaleString()) {
-                    case "sk_SK":
+                switch (Utils.getCurrentLanguage(getResources())) {
+                    case "sk":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_SK);
                         break;
-                    case "cs_CZ":
+                    case "cs":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_CS);
                         break;
-                    case "de_DE":
+                    case "de":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_DE);
                         break;
-                    case "cs_ES":
+                    case "es":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_ES);
                         break;
-                    case "fr_AU":
+                    case "fr":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_FR);
                         break;
-                    case "ru_AU":
+                    case "ru":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_RU);
                         break;
                     default:

@@ -205,23 +205,23 @@ public class CollectionPoinListAdapter extends RecyclerView.Adapter<RecyclerView
                     params1.putString("order_trash_pickup_clicked", "clicked");
                     mFirebaseAnalytics.logEvent("order_trash_pickup_button_collect_point", params1);
 
-                    switch (Utils.getLocaleString()) {
-                        case "sk_SK":
+                    switch (Utils.getCurrentLanguage(context.getResources())) {
+                        case "sk":
                             Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK_SK);
                             break;
-                        case "cs_CZ":
+                        case "cs":
                             Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK_CS);
                             break;
-                        case "de_DE":
+                        case "de":
                             Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK_DE);
                             break;
-                        case "cs_ES":
+                        case "es":
                             Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK_ES);
                             break;
-                        case "fr_AU":
+                        case "fr":
                             Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK_FR);
                             break;
-                        case "ru_AU":
+                        case "ru":
                             Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK_RU);
                             break;
                         default:
