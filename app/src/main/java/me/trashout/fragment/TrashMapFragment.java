@@ -464,11 +464,11 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
             if (getContext() != null) {
                 colorGreen = ContextCompat.getColor(getContext(), R.color.cluster_color_green);
                 colorRed = ContextCompat.getColor(getContext(), R.color.cluster_color_red);
-                colorYellow = ContextCompat.getColor(getContext(), R.color.cluster_color_yellow);
+                colorYellow = ContextCompat.getColor(getContext(), R.color.cluster_color_red);
             } else {
                 colorGreen = Color.GREEN;
                 colorRed = Color.RED;
-                colorYellow = Color.YELLOW;
+                colorYellow = Color.RED;
             }
         }
 
@@ -476,7 +476,7 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
         protected void onBeforeClusterItemRendered(TrashMapItem trashMapItem, MarkerOptions markerOptions) {
             // Draw a single dump.
 
-            int dumpMarkerIconRes = R.drawable.ic_trash_status_unknown;
+            int dumpMarkerIconRes = R.drawable.ic_trash_status_unknown_red;
 
             if (trashMapItem instanceof Trash) {
 
@@ -487,17 +487,17 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                         case STILL_HERE:
                         case LESS:
                         case MORE:
-                            dumpMarkerIconRes = trash.isUpdateNeeded() ? R.drawable.ic_trash_status_unknown : R.drawable.ic_trash_status_remain;
+                            dumpMarkerIconRes = trash.isUpdateNeeded() ? R.drawable.ic_trash_status_unknown_red : R.drawable.ic_trash_status_remain;
                             break;
                         case CLEANED:
                             dumpMarkerIconRes = R.drawable.ic_trash_status_clean;
                             break;
                         default:
-                            dumpMarkerIconRes = R.drawable.ic_trash_status_unknown;
+                            dumpMarkerIconRes = R.drawable.ic_trash_status_unknown_red;
                             break;
                     }
                 } else {
-                    dumpMarkerIconRes = R.drawable.ic_trash_status_unknown;
+                    dumpMarkerIconRes = R.drawable.ic_trash_status_unknown_red;
                 }
 
                 markerOptions.icon(BitmapDescriptorFactory.fromResource(dumpMarkerIconRes));

@@ -305,7 +305,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
 
         trashDetailStateName.setText(trash.getStatus().getStringResId());
         if (trash.isUpdateNeeded()) {
-            trashDetailStateIcon.setImageResource(R.drawable.ic_trash_status_unknown);
+            trashDetailStateIcon.setImageResource(R.drawable.ic_trash_status_unknown_red);
             trashDetailStateName.setText(R.string.trash_updateNeeded);
         } else if (Constants.TrashStatus.CLEANED.equals(trash.getStatus())) {
             trashDetailStateIcon.setImageResource(R.drawable.ic_trash_activity_cleaned);

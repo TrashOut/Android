@@ -223,7 +223,7 @@ public class Constants {
         LESS(1, "less", R.string.trash_status_less, R.drawable.ic_trash_status_remain, R.string.trash_updated, R.drawable.ic_trash_activity_updated),
         MORE(2, "more", R.string.trash_status_more, R.drawable.ic_trash_status_remain, R.string.trash_updated, R.drawable.ic_trash_activity_updated),
         CLEANED(3, "cleaned", R.string.trash_status_cleaned, R.drawable.ic_trash_status_clean, R.string.trash_updated, R.drawable.ic_trash_activity_cleaned),
-        UNKNOWN(4, "unknown", R.string.global_unknow, R.drawable.ic_trash_status_unknown, R.string.notifications_reported, R.drawable.ic_trash_activity_reported);
+        UNKNOWN(4, "unknown", R.string.global_unknow, R.drawable.ic_trash_status_unknown_red, R.string.notifications_reported, R.drawable.ic_trash_activity_reported);
 
         private int id;
         private String name;
