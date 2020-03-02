@@ -333,7 +333,7 @@ public class NewsDetailFragment extends BaseFragment implements INewsFragment, B
                 mNews = apiGetNewsDetailResult.getNews();
                 setupNewsData(mNews);
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         }
     }

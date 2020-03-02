@@ -33,12 +33,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Geocoder;
-import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.StrictMode;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
@@ -60,11 +58,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.gson.Gson;
 import com.theartofdev.edmodo.cropper.CropImage;
@@ -914,8 +909,8 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     private void redirectToSharePage(ApiResult apiResult) {
         try {
             TrashResponse trashResponse = gson.fromJson(((ResponseBody) apiResult.getResponse().body()).string(), TrashResponse.class);
-            ThankYouFragment thankYouFragment = ThankYouFragment.newInstance(trashResponse);
-            getBaseActivity().replaceFragment(thankYouFragment, false);
+            ThankYouFragmentTrash thankYouFragmentTrash = ThankYouFragmentTrash.newInstance(trashResponse);
+            getBaseActivity().replaceFragment(thankYouFragmentTrash, false);
         } catch (Exception e) {
             e.printStackTrace();
         }

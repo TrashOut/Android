@@ -458,7 +458,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
                 mEvent = apiGetTrashDetailResult.getEvent();
                 setupEventData(mEvent);
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         } else if (apiResult.getRequestId() == JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
@@ -488,7 +488,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
                         showToast(R.string.event_signToJoin);
                     } else {
                         MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
-                                .title(R.string.event_confirmation_joinEventTitle)
+                                .title(R.string.event_event_joinEventTitle)
                                 .content(R.string.event_joinEventConfirmationMessage)
                                 .positiveText(android.R.string.ok)
                                 .negativeText(android.R.string.cancel)

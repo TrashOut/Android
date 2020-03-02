@@ -5,7 +5,7 @@
     <string name="tab.home">"Home"</string>
     <string name="tab.dumps">"Discariche"</string>
     <string name="tab.news">"Notizie"</string>
-    <string name="tab.recycling">"Riciclaggio"</string>
+    <string name="tab.recycling">"Riciclo"</string>
     <string name="global.menu.events">"Eventi"</string>
     <string name="global.menu.geoAreas">"Aree Geografiche"</string>
     <string name="global.menu.notifications">"Notifiche"</string>
@@ -251,22 +251,22 @@ Quando il tuo dispositivo tornerà onine accedi a TrashOut e il tuo report sarà
     <string name="home.nearestDumps">"Discariche più vicine"</string>
     <string name="home.goAndFindDumps">"Vai, trova ed aggiorna le informazioni su queste discariche."</string>
     <string name="home.didYouKnow">"News ed aggiornamenti"</string>
-    <string name="home.nearestRecyclingPoints">"Centri di riciclo più vicini"</string>
+    <string name="home.nearestRecyclingPoints">"Punti di raccolta più vicini"</string>
     <string name="collectionPoint.size.recyclingBin">"Cestino"</string>
-    <string name="collectionPoint.size.recyclingCenter">"Centro"</string>
+    <string name="collectionPoint.size.recyclingCenter">"Punto di raccolta"</string>
     <string name="collectionPoint.size.all">"Tutto"</string>
-    <string name="collectionPoint.header">"Centri di riciclo"</string>
-    <string name="collectionPoint.list.header">"Lista dei centri di riciclo"</string>
-    <string name="collectionPoint.create.header">"Crea un centro di riciclo"</string>
-    <string name="collectionPoint.edit.header">"Modifica il centro di riciclo"</string>
+    <string name="collectionPoint.header">"Punti di raccolta"</string>
+    <string name="collectionPoint.list.header">"Elenco dei punti di raccolta"</string>
+    <string name="collectionPoint.create.header">"Crea un punto di raccolta"</string>
+    <string name="collectionPoint.edit.header">"Modifica il punto di raccolta"</string>
     <string name="collectionPoint.edit.firstStep">"Informazioni generali"</string>
     <string name="collectionPoint.edit.secondStep">"Orario di apertura e descrizione"</string>
     <string name="collectionPoint.edit.thirdStep">"Scegli immagini"</string>
     <string name="collectionPoint.id">"ID"</string>
     <string name="collectionPoint.name">"Nome"</string>
-    <string name="collectionPoint.location">"Indirizzo del punto di riciclo"</string>
-    <string name="collectionPoint.size">"Dimensione del punto di riciclo"</string>
-    <string name="collectionPoint.type">"Tipo del punto di riciclo"</string>
+    <string name="collectionPoint.location">"Indirizzo del punto di raccolta"</string>
+    <string name="collectionPoint.size">"Dimensione del punto di raccolta"</string>
+    <string name="collectionPoint.type">"Tipo del punto di raccolta"</string>
     <string name="home.recentActivity.header">"Azioni recenti nelle discariche che segui"</string>
     <string name="home.recentActivity.noActivity">"Nessun azione recente"</string>
     <string name="events.header">"Eventi"</string>
@@ -341,10 +341,10 @@ Quando il tuo dispositivo tornerà onine accedi a TrashOut e il tuo report sarà
     <string name="collectionPoint.allowedTypes">"Tipo di rifiuti che puoi conferire"</string>
     <string name="collectionPoint.other">"Più punti di raccolta vicino a te"</string>
     <string name="global.filter.noResult">"Nessun risultato, prova a cambiare i filtri di ricerca"</string>
-    <string name="collectionPoint.filter.header">"Filtra il punto di riciclo"</string>
+    <string name="collectionPoint.filter.header">"Filtra il punto di raccolta"</string>
     <string name="trash.filter.header">"Filtra i Rifiuti"</string>
     <string name="global.filter">"Filtri"</string>
-    <string name="collectionPoint.filter.size">"Dimensione del punto di riciclo"</string>
+    <string name="collectionPoint.filter.size">"Dimensione del punto di raccolta"</string>
     <string name="collectionPoint.filter.types">"Tipo di rifiuti da conferire"</string>
     <string name="collectionPoint.openingHours">"Orario di apertura"</string>
     <string name="global.noLongerExistQuestion">"Non esiste?"</string>
@@ -501,7 +501,7 @@ Quando il tuo dispositivo tornerà onine accedi a TrashOut e il tuo report sarà
     <string name="trash.confirmation.deleteImage">"Vuoi davvero cancellare l'immagine?"</string>
     <string name="trash.confirmation.deleteTrash">"Vuoi davvero cancellare i rifiuti?"</string>
     <string name="global.confirmation.header">"Conferma"</string>
-    <string name="event.confirmation.joinEvent">"Vuoi davvero partecipare all'evento?"</string>
+    <string name="event.confirmation.joinEvent">"Conferma la tua presenza. Le informazioni sui partecipanti sono disponibili per gli organizzatori al fine di aiutarli con i preparativi"</string>
     <string name="trash.confirmation.markSpam">"Vuoi davvero segnare questa discarica come spam?"</string>
     <string name="global.confirmation.reject">"Vuoi davvero rifiutare?"</string>
     <string name="event.confirmation.unjoinEvent">"Vuoi davvero abbandonare l'azione?"</string>
@@ -607,7 +607,7 @@ Quando il tuo dispositivo tornerà onine accedi a TrashOut e il tuo report sarà
     <string name="event.detail.pleaseBring">"Cosa ci serve"</string>
     <string name="global.cropImage">"Ritaglia immagine"</string>
     <string name="collectionPoint.disposeTypes">"Tipo di rifiuti da gestire"</string>
-    <string name="global.readMore">"Leggi di più"</string>
+    <string name="global.readMore">"Continua a leggere.."</string>
     <string name="user.validation.nonEmptyOrganization">"Non hai scelto un'organizzazione. Scegli una società o organizzazione nella modifica del profilo.
 "</string>
     <string name="global.gpsFormat">"Formato delle coordinate GPS"</string>
@@ -756,7 +756,7 @@ Quando il tuo dispositivo tornerà onine accedi a TrashOut e il tuo report sarà
     <string name="user.reviewed">"Utente confermato."</string>
     <string name="user.created">"Account creato"</string>
     <string name="trash.create.successs">"Grazie per tenere il nostro database aggiornato e prenderti cura della nostra Terra!"</string>
-    <string name="collectionPoint.create.images">"Perfavore seleziona un'immagine o logo per il punto di riciclo. Non é necessario, ma aiuta gli altri a trovare il posto più facilmente."</string>
+    <string name="collectionPoint.create.images">"Perfavore seleziona un'immagine o logo per il punto di raccolta. Non é necessario, ma aiuta gli altri a trovare il posto più facilmente."</string>
     <string name="global.phone.placeholder">"+420123456789"</string>
     <string name="global.email.placeholder">"mario.rossi@example.com"</string>
     <string name="organization.detail.header">"Dettagli dell'organizzazione"</string>
@@ -768,7 +768,7 @@ Quando il tuo dispositivo tornerà onine accedi a TrashOut e il tuo report sarà
     <string name="geo.noAliasExists">"Non esistono Alias per l'area selezionata."</string>
     <string name="collectionPoint.contact.header">"Contatti"</string>
     <string name="global.url.placeholder">"https://www.trashout.ngo"</string>
-    <string name="collectionPoint.update.success">"L' ecocentro è stato aggiornato con successo."</string>
+    <string name="collectionPoint.update.success">"Il punto di  raccolta è stato aggiornato con successo."</string>
     <string name="user.editArea">"Modifica area di interesse"</string>
     <string name="user.geo.notificationFrequency.perHour">"Per Ora"</string>
     <string name="user.geo.notificationFrequency.never">"Mai"</string>
@@ -893,7 +893,7 @@ Quando il tuo dispositivo tornerà onine accedi a TrashOut e il tuo report sarà
     <string name="event.validation.startDateRequired">"Data inizio e fine evento richiesti"</string>
     <string name="event.validation.startTimeRequired">"Orario inizio è un campo obbligatorio"</string>
     <string name="global.noResult">"Nessun risultato"</string>
-    <string name="event.create.collectionPoints">"Centri di reciclaggio nella zona"</string>
+    <string name="event.create.collectionPoints">"Punti di raccolta nell'area"</string>
     <string name="event.filter.upcomingOrOld">"Mostra eventi prossimi o passati"</string>
     <string name="event.filter.showUpcoming">"Mostra solo prossimi"</string>
     <string name="event.filter.showOld">"Mostra solo passati"</string>
@@ -1060,9 +1060,9 @@ Quando il tuo dispositivo tornerà onine accedi a TrashOut e il tuo report sarà
     <string name="global.phone.hint">"Il numero di telefono inizia con + / 00"</string>
     <string name="profile.currentPassword">"Password attuale"</string>
     <string name="user.addToArea.success">"Area aggiunta con successo"</string>
-    <string name="collectionPoint.created.success">"Il punto di riciclo è stato creato con successo"</string>
-    <string name="collectionPoint.markedAsSpam.success">"Il punto di riciclo è stato segnalato come spam correttamente"</string>
-    <string name="collectionPoint.removed.success">"Il punto di riciclo è stato rimosso con successo"</string>
+    <string name="collectionPoint.created.success">"Il punto di raccolta è stato creato con successo"</string>
+    <string name="collectionPoint.markedAsSpam.success">"Il punto di raccolta è stato segnalato come spam correttamente"</string>
+    <string name="collectionPoint.removed.success">"Il punto di raccolta è stato rimosso con successo"</string>
     <string name="profile.passwordChanged.success">"La password è stata cambiata con successo"</string>
     <string name="profile.emailChanged.success">"L'e-mail è stata cambiata con successo"</string>
     <string name="profile.signedOut.success">"Logout eseguito con successo"</string>
@@ -1212,6 +1212,8 @@ Il nostro obiettivo è coinvolgere cittadini, governi, comuni e organizzazioni i
     <string name="news.success.photo.deleted">"L'immagine dall'articolo è stata cancellata"</string>
     <string name="global.resendVerificationEmail">"Invia nuovamente email di verifica"</string>
     <string name="global.emailResent">"L'email di verifica è stata inviata nuovamente"</string>
+
+    <!-- Fuzzy -->
     <string name="event.addToCalendar">"Aggiungi al calendario"</string>
     <string name="global.add">"Aggiungi"</string>
     <string name="profile.myEvents.timeDecision.ongoing">"In corso"</string>
@@ -1260,23 +1262,38 @@ Il nostro obiettivo è coinvolgere cittadini, governi, comuni e organizzazioni i
 
     <!-- On the screen "Recycling" in singular -->
     <string name="home.nearestRecyclingPoint">"Eco-centro più vicino"</string>
-    <string name="info.frequentlyAskedQuestions">Domande frequenti</string>
-    <string name="info.supportUs">Supportaci</string>
-    <string name="home.orderTrashPickup">Ordina il ritiro dei rifiuti</string>
-    <string name="recycling_point_add_new_title">Aggiungi punto di raccolta</string>
-    <string name="recycling_point_add_new_redirect">Il punto di raccolta può essere aggiunto solo dall\'applicazione Web a cui è possibile accedere tramite un browser Web</string>
-    <string name="recycling_point_add_new_go_to_web">Aggiungi ora</string>
-    <string name="recycling_point_add_new_do_later">Annulla</string>
-    <string name="recycling_point_edit_redirect">Il punto di raccolta può essere modificato solo dall\'applicazione Web a cui si accede tramite un browser Web</string>
-    <string name="recycling_point_edit_title">Aggiorna punto di raccolta</string>
-    <string name="recycling_point_edit_go_to_web">Modifica ora</string>
-    <string name="recycling_point_edit_do_later">Annulla</string>
-    <string name="event.confirmation.joinEventTitle">Unisciti all\'evento</string>
-    <string name="collectionPoint.web_is_missing">Aggiungi indirizzo web</string>
-    <string name="event_edit_title">Modifica questo evento</string>
-    <string name="event_edit_redirect">Gli eventi possono essere modificati solo dall\'applicazione Web accessibile tramite un browser Web</string>
-    <string name="event_edit_do_later">Annulla</string>
-    <string name="event_edit_go_to_web">Modifica ora</string>
-    <string name="collectionPoint.phone_is_missing">Aggiungi il numero di telefono</string>
-    <string name="collectionPoint.email_is_missing">Aggiungi indirizzo email</string>
+    <string name="home.recycling_point_add_new_do_later">"Annulla"</string>
+    <string name="home.recycling_point_add_new_go_to_web">"Aggiungi ora"</string>
+    <string name="home.recycling_point_add_new_redirect">"Il punto di raccolta può essere aggiunto solo dall'applicazione Web a cui è possibile accedere tramite un browser Web"</string>
+
+    <!-- Fuzzy -->
+    <string name="info.frequentlyAskedQuestions">"Domande frequenti"</string>
+    <string name="info.supportUs">"Supportaci"</string>
+    <string name="home.recycling_point_edit_redirect">"Il punto di raccolta può essere modificato solo dall'applicazione Web a cui si accede tramite un browser Web"</string>
+    <string name="collectionPoint.email_is_missing">"Aggiungi indirizzo email"</string>
+    <string name="collectionPoint.phone_is_missing">"Aggiungi il numero di telefono"</string>
+    <string name="collectionPoint.web_is_missing">"Aggiungi indirizzo web"</string>
+    <string name="event.meeting_point">"Punto d'incontro"</string>
+    <string name="home.recycling_point_add_new_tittle">"Aggiungi punto di raccolta"</string>
+    <string name="home.recycling_point_edit_title">"Aggiorna punto di raccolta"</string>
+    <string name="home.recycling_point_edit_go_to_web">"Modifica ora"</string>
+    <string name="home.recycling_point_edit_do_later">"Annulla"</string>
+    <string name="event.event_edit_title">"Modifica questo evento"</string>
+    <string name="event.event_edit_redirect">"Gli eventi possono essere modificati solo dall'applicazione Web accessibile tramite un browser Web"</string>
+
+    <!-- Fuzzy -->
+    <string name="event.event_edit_do_later">"Annulla"</string>
+    <string name="event.event_edit_go_to_web">"Modifica ora"</string>
+    <string name="event.event_joinEventTitle">"Unisciti all'evento"</string>
+    <string name="home.orderTrashPickup">"Ordina il ritiro dei rifiuti"</string>
+    <string name="event.create_event_meeting_date_title"></string>
+    <string name="notification_new_trash_formatter"></string>
+    <string name="about_version_date_formatted"></string>
+    <string name="skip_btn"></string>
+    <string name="event.create.thankYou.sentence1"></string>
+    <string name="event.create.thankYou.sentence2"></string>
+    <string name="event.create.thankYou.sentence3"></string>
+    <string name="event.create.thankYou.shareTitle"></string>
+    <string name="event.create.thankYou.detail"></string>
+    <string name="trash.create.thankYou.detail"></string>
 </resources>

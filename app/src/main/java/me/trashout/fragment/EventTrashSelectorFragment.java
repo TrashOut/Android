@@ -374,7 +374,7 @@ public class EventTrashSelectorFragment extends BaseFragment implements BaseServ
                 mTrashList = new ArrayList<>(apiGetTrashListResult.getTrashList());
                 prepareMapObject(mTrashList);
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         }
     }

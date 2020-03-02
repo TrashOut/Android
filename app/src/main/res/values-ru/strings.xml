@@ -174,8 +174,7 @@
     <string name="trash.create.success">"Сообщение о свалке отправлено. Спасибо."</string>
     <string name="trash.photosOfTrash">"Фотографии этой свалки"</string>
     <string name="trash.comments">"Комментарии"</string>
-    <string name="global.fetchError">"Ой, что-то пошло не так.
-В данный момент сервер не отвечает. Повторите попытку позже."</string>
+    <string name="global.fetchError">"Мы периодически сталкиваемся с нашим сервером. Мы делаем все возможное, чтобы исправить это в ближайшее время. Пожалуйста, вернитесь позже."</string>
     <string name="trash.discardChanges">"Отменить все изменения?"</string>
     <string name="trash.spam.comfirmation">"Вы действительно хотите отметить эту свалку как спам?"</string>
     <string name="global.detail">"Подробности"</string>
@@ -192,7 +191,7 @@
     <string name="home.noDumpsNear">"Поблизости нет незаконных свалок"</string>
     <string name="global.enableGps">"Разрешить определение местоположения"</string>
     <string name="trash.loadingDumps">"Загрузка свалок в вашем регионе..."</string>
-    <string name="global.loadingError">"Сбой загрузки"</string>
+    <string name="global.loadingError">"Пожалуйста, подключитесь к Интернету, чтобы увидеть этот раздел."</string>
     <string name="trash.edit.betterLocation">"Поиск более точного местоположения"</string>
     <string name="trash.create.error">"Отправка была прервана."</string>
     <string name="global.dbError">"Ой, НЕ удалось сохранить данные."</string>
@@ -249,8 +248,7 @@
     <string name="home.nearestDumps">"Ближайшие свалки"</string>
     <string name="home.goAndFindDumps">"Вперед, найдите и обновите эти свалки"</string>
     <string name="home.didYouKnow">"Новости и обновления"</string>
-    <string name="home.nearestRecyclingPoints">Ближайшие пункты по переработке</string>
-    <string name="home.nearestRecyclingPoint">Ближайшая точка перерабатывания</string>
+    <string name="home.nearestRecyclingPoints">"Ближайшие пункты по переработке"</string>
     <string name="collectionPoint.size.recyclingBin">"Корзина"</string>
     <string name="collectionPoint.size.recyclingCenter">"Центр"</string>
     <string name="collectionPoint.size.all">"Все"</string>
@@ -290,7 +288,7 @@
     <string name="trash.accessibility.byCar">"Доступна на машине"</string>
     <string name="trash.accessibility.inCave">"Расположена в пещере"</string>
     <string name="trash.accessibility.underWater">"Расположена под водой"</string>
-    <string name="trash.accessibility.notForGeneralCleanup">"Не для общей уюорки"</string>
+    <string name="trash.accessibility.notForGeneralCleanup">"Не для общей уборки"</string>
     <string name="trash.valiadation.accessibilityRequired">"Необходимо определить доступность"</string>
     <string name="global.status">"Состояние"</string>
     <string name="trash.status">"Состояние свалки"</string>
@@ -348,7 +346,6 @@
     <string name="collectionPoint.openingHours">"Часы работы"</string>
     <string name="global.noLongerExistQuestion">"Не существует?"</string>
     <string name="global.forgotPassword">"Забыли пароль?"</string>
-    <string name="global.internet.offline">Пожалуйста, подключитесь к Интернету, чтобы увидеть этот раздел.</string>
     <string name="user.validation.firstNameRequired">"Требуется имя"</string>
     <string name="user.validation.lastNameRequired">"Требуется фамилия"</string>
     <string name="profile.yourActivities">"Ваши действия"</string>
@@ -503,7 +500,7 @@
     <string name="trash.confirmation.deleteImage">"Действительно хотите удалить изображение?"</string>
     <string name="trash.confirmation.deleteTrash">"Действительно хотите удалить свалку?"</string>
     <string name="global.confirmation.header">"Подтверждение"</string>
-    <string name="event.confirmation.joinEvent">"Действительно хотите присоединиться к мероприятию?"</string>
+    <string name="event.confirmation.joinEvent">"Пожалуйста, подтвердите свое участие. Информация об участниках доступна для организаторов, чтобы помочь им в подготовке"</string>
     <string name="trash.confirmation.markSpam">"Действительно хотите отметить эту свалку как спам?"</string>
     <string name="global.confirmation.reject">"хочу отклонить"</string>
     <string name="event.confirmation.unjoinEvent">"На самом деле хотите покинуть мероприятие?"</string>
@@ -941,7 +938,7 @@
     <string name="export.selectAttributes">"Выбрать атрибуты для экспорта"</string>
     <string name="export.itemsPerFile">"Элементов в файле"</string>
     <string name="export.itemsPerFile.currentValue">"Значение"</string>
-    <string name="export.preparingExport">"Подготовка к экспорту…"</string>
+    <string name="export.preparingExport">"Подготовка к экспорту..."</string>
     <string name="global.latitude">"Широта"</string>
     <string name="global.longitude">"Долгота"</string>
     <string name="collectionPoint.created">"Время создания"</string>
@@ -1136,7 +1133,6 @@
     <string name="global.validation.imageRatio">"Нельзя использовать широкие изображения. Выберите другое изображение. Соотношение сторон изображения должно быть меньше 1:2."</string>
     <string name="global.validation.maxiumNumberReached">"Достигнуто максимальное количество загруженных изображений (вы можете загрузить не более 20 файлов)."</string>
     <string name="global.error.api.title">"Ошибка API"</string>
-    <string name="global.error.api.text">Мы периодически сталкиваемся с нашим сервером. Мы делаем все возможное, чтобы исправить это в ближайшее время. Пожалуйста, вернитесь позже.</string>
     <string name="global.error.api.description">"Возникла некоторая ошибка в API. Обновите страницу."</string>
     <string name="trash.types.glass">"Стекло"</string>
     <string name="global.occupation">"Деятельность"</string>
@@ -1193,6 +1189,8 @@
     <string name="news.success.photo.deleted">"Изображение из статьи было удалено"</string>
     <string name="global.resendVerificationEmail">"Отправить письмо с подтверждением"</string>
     <string name="global.emailResent">"Письмо с подтверждением было отправлено снова"</string>
+
+    <!-- Fuzzy -->
     <string name="event.addToCalendar">"добавить в календарь"</string>
     <string name="global.add">"Добавить"</string>
     <string name="profile.myEvents.timeDecision.ongoing">"постоянный"</string>
@@ -1210,34 +1208,65 @@
     <string name="collectionPoint.validation.chooseDay">"Выберите день"</string>
     <string name="collectionPoint.validation.dayIsUsed">"день был выбран"</string>
     <string name="statistics.countryPicker.header">"Выберите страну"</string>
-
     <string name="notification.recentActivity.header">"Обновлен отчет о незаконном дампе"</string>
     <string name="notification.recentActivity.text">"Проверьте свой новый статус в приложении TrashOut и всегда будьте информированы"</string>
-    <string name="mail.eventCreate.subject"></string>
+    <string name="mail.eventCreate.subject">"TrashOut - важная информация о событии, которое вы создали"</string>
 
-    <string name="global.signUp.acceptRegister.startSentense">Регистрируясь, вы соглашаетесь с</string>
-    <string name="global.signUp.acceptRegister.privatePolicy">Условиями предоставления услуг</string>
-    <string name="global.signUp.acceptRegister.and">и</string>
-    <string name="global.signUp.acceptRegister.terms">Политикой конфиденциальности</string>
+    <!-- note -->
+    <!-- Fuzzy -->
+    <string name="global.signUp.acceptRegister.startSentense">"Я согласен с обработкой моих личных данных. Я прочитал и принял"</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">"политика конфиденциальности"</string>
 
-    <string name="global.internet.error.offline">Ваше мобильное устройство не подключено к Интернету. Сделайте снимок и сообщите об этом позже через www.admin.trashout.ngo.</string>
-    <string name="info.frequentlyAskedQuestions">Часто задаваемые вопросы</string>
-    <string name="info.supportUs">Поддерживать нас</string>
-    <string name="home.orderTrashPickup">Заказать вывоз мусора</string>
-    <string name="recycling_point_add_new_title">Добавить пункт сбора</string>
-    <string name="recycling_point_add_new_redirect">Точка сбора может быть добавлена только из нашего веб-приложения, в которое вы можете войти через веб-браузер</string>
-    <string name="recycling_point_add_new_go_to_web">Добавить сейчас</string>
-    <string name="recycling_point_add_new_do_later">Отмена</string>
-    <string name="recycling_point_edit_redirect">точка сбора может быть отредактирована только из веб-приложения, доступ к которому осуществляется через веб-браузер</string>
-    <string name="recycling_point_edit_title">Обновить точку сбора</string>
-    <string name="recycling_point_edit_go_to_web">Изменить сейчас</string>
-    <string name="recycling_point_edit_do_later">Отмена</string>
-    <string name="event.confirmation.joinEventTitle">Присоединяйтесь к событию</string>
-    <string name="collectionPoint.web_is_missing">Добавить веб-адрес</string>
-    <string name="event_edit_title">Изменить это событие</string>
-    <string name="event_edit_redirect">События можно редактировать только из веб-приложения, которое доступно через веб-браузер</string>
-    <string name="event_edit_do_later">Отмена</string>
-    <string name="event_edit_go_to_web">Изменить сейчас</string>
-    <string name="collectionPoint.phone_is_missing">Добавьте номер телефона</string>
-    <string name="collectionPoint.email_is_missing">Добавить адрес электронной почты</string>
+    <!-- Fuzzy -->
+    <string name="global.signUp.acceptRegister.and">"и"</string>
+    <string name="global.signUp.acceptRegister.terms">"Условия использования"</string>
+
+    <!-- error with communication with API server -->
+    <!-- Fuzzy -->
+    <string name="global.error.api.text">"Мы периодически сталкиваемся с нашим сервером. Мы делаем все возможное, чтобы исправить это в ближайшее время. Пожалуйста, вернитесь позже."</string>
+    <string name="global.internet.offline">"Пожалуйста, подключитесь к Интернету, чтобы увидеть этот раздел."</string>
+    <string name="global.cookiesPolicy">"Этот веб-сайт использует файлы cookie, чтобы дать вам лучший опыт. Согласитесь, нажав кнопку «Я принимаю». Мы используем файлы cookie для предоставления возможностей социальных сетей, анализа нашего трафика и поведения посетителей на нашем веб-сайте и в маркетинговых целях. Иногда мы предоставляем эту анонимную информацию сторонним инструментам. Читайте наши"</string>
+    <string name="global.acceptCookiesPolicy">"Я принимаю"</string>
+    <string name="global.cookiesPolicy.link">"Политика конфиденциальности"</string>
+
+    <!-- Error show only if there is issue with creating dumps -->
+    <string name="global.internet.error.offline">"Ваше мобильное устройство не подключено к Интернету. Сделайте снимок и сообщите об этом позже через www.admin.trashout.ngo."</string>
+    <string name="global.images.requirements">"Используйте изображения с соотношением сторон 1: 2 или менее (не широкоэкранное изображение) и до 2 МБ."</string>
+
+    <!-- On the screen "Recycling" in singular -->
+    <string name="home.nearestRecyclingPoint">"Ближайшая точка перерабатывания"</string>
+    <string name="home.recycling_point_add_new_do_later">"Отмена"</string>
+    <string name="home.recycling_point_add_new_go_to_web">"Добавить сейчас"</string>
+    <string name="home.recycling_point_add_new_redirect">"Точка сбора может быть добавлена только из нашего веб-приложения, в которое вы можете войти через веб-браузер"</string>
+
+    <!-- Fuzzy -->
+    <string name="info.frequentlyAskedQuestions">"Часто задаваемые вопросы"</string>
+    <string name="info.supportUs">"Поддерживать нас"</string>
+    <string name="home.recycling_point_edit_redirect">"точка сбора может быть отредактирована только из веб-приложения, доступ к которому осуществляется через веб-браузер"</string>
+    <string name="collectionPoint.email_is_missing">"Добавить адрес электронной почты"</string>
+    <string name="collectionPoint.phone_is_missing">"Добавьте номер телефона"</string>
+    <string name="collectionPoint.web_is_missing">"Добавить веб-адрес"</string>
+    <string name="event.meeting_point">"Место встречи"</string>
+    <string name="home.recycling_point_add_new_tittle">"Добавить пункт сбора"</string>
+    <string name="home.recycling_point_edit_title">"Обновить точку сбора"</string>
+    <string name="home.recycling_point_edit_go_to_web">"Изменить сейчас"</string>
+    <string name="home.recycling_point_edit_do_later">"Отмена"</string>
+    <string name="event.event_edit_title">"Изменить это событие"</string>
+    <string name="event.event_edit_redirect">"События можно редактировать только из веб-приложения, которое доступно через веб-браузер"</string>
+
+    <!-- Fuzzy -->
+    <string name="event.event_edit_do_later">"Отмена"</string>
+    <string name="event.event_edit_go_to_web">"Изменить сейчас"</string>
+    <string name="event.event_joinEventTitle">"Присоединяйтесь к событию"</string>
+    <string name="home.orderTrashPickup">"Заказать вывоз мусора"</string>
+    <string name="event.create_event_meeting_date_title"></string>
+    <string name="notification_new_trash_formatter"></string>
+    <string name="about_version_date_formatted"></string>
+    <string name="skip_btn"></string>
+    <string name="event.create.thankYou.sentence1"></string>
+    <string name="event.create.thankYou.sentence2"></string>
+    <string name="event.create.thankYou.sentence3"></string>
+    <string name="event.create.thankYou.shareTitle"></string>
+    <string name="event.create.thankYou.detail"></string>
+    <string name="trash.create.thankYou.detail"></string>
 </resources>

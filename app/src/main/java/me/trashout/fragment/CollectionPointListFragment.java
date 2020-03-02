@@ -323,7 +323,7 @@ public class CollectionPointListFragment extends BaseFragment implements ICollec
                 collectionPointList.addAll(apiGetCollectionPointListResult.getCollectionPoints());
                 mAdapter.notifyDataSetChanged();
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
 
             recyclerview.setLoading(false);

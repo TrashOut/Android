@@ -402,7 +402,7 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
                 mCollectionPoint = apiGetCollectionPointDetailResult.getCollectionPoint();
                 setupCollectionPointData(mCollectionPoint);
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         } else if (apiResult.getRequestId() == CREATE_COLLECTION_POINT_NEW_SPAM_REQUEST_ID) {
             dismissProgressDialog();

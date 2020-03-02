@@ -182,7 +182,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="trash.create.success">"Nelegální skládka byla úspěšně nahlášená. Děkujeme."</string>
     <string name="trash.photosOfTrash">"Fotky skládky"</string>
     <string name="trash.comments">"Komentáře"</string>
-    <string name="global.fetchError">"Huups, server aktuálně neodpovídá, prosím zkuste to za chvíli."</string>
+    <string name="global.fetchError">"Aktuálne máme dočasný problém s naším serverem. Děláme vše pro to, abychom to brzy opravili. Vraťte se prosím později."</string>
     <string name="trash.discardChanges">"Zrušit všechny změny?"</string>
     <string name="trash.spam.comfirmation">"Opravdu chcete nahlásit tuto skládku jako spam?"</string>
     <string name="global.detail">"Detail"</string>
@@ -199,7 +199,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="home.noDumpsNear">"V blízkosti nejsou žádné nelegální skládky"</string>
     <string name="global.enableGps">"Povolit lokalizační služby"</string>
     <string name="trash.loadingDumps">"Načítaní skládek v okolí..."</string>
-    <string name="global.loadingError">"Nezdařilo se načítat :("</string>
+    <string name="global.loadingError">"Pro zobrazení této části se prosím připojte k internetu."</string>
     <string name="trash.edit.betterLocation">"Pokouším se získat lepší zaměření"</string>
     <string name="trash.create.error">"Odesílání bylo přerušeno."</string>
     <string name="global.dbError">"Huups, údaje se nepodařilo uložit."</string>
@@ -256,8 +256,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="home.nearestDumps">"Nejbližší skládky"</string>
     <string name="home.goAndFindDumps">"Najdi a uprav tyto skládky."</string>
     <string name="home.didYouKnow">"Novinky"</string>
-    <string name="home.nearestRecyclingPoints">Nejbližší sběrná místa</string>
-    <string name="home.nearestRecyclingPoint">Nejbližší sběrné místo</string>
+    <string name="home.nearestRecyclingPoints">"Nejbližší sběrná místa"</string>
     <string name="collectionPoint.size.recyclingBin">"Sběrná nádoba"</string>
     <string name="collectionPoint.size.recyclingCenter">"Sběrný dvůr"</string>
     <string name="collectionPoint.size.all">"Vše"</string>
@@ -286,7 +285,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="trash.create.takeAnotherPhoto">"Vytvořte další fotografii"</string>
     <string name="trash.create.takeAtLeast2Photos">"Vytvořte alespoň 2 fotografie"</string>
     <string name="trash.create.ofIllegalDump">"nelegální skládky"</string>
-    <string name="trash.size.bag">"Vejde se do batohu"</string>
+    <string name="trash.size.bag">"Vejde se do pytle"</string>
     <string name="trash.size.wheelbarrow">"Vejde se na kolečko"</string>
     <string name="trash.size.carNeeded">"Nutné auto"</string>
     <string name="trash.validation.sizeRequired">"Velikost je povinná"</string>
@@ -333,7 +332,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="event.searchForLocation">"Hledat lokaci"</string>
     <string name="event.noAddressFound">"Adresa nenalezena"</string>
     <string name="event.nearbyDumps">"Skládky v okolí"</string>
-    <string name="event.create.youSelectedDumps_X">"Vybraných %d skládok"</string>
+    <string name="event.create.youSelectedDumps_X">"Vybrali ste %d skládok"</string>
     <string name="event.create.setDate">"Nastavte datum (nastavit)"</string>
     <string name="event.listOfDumpsToBeCleaned">"Seznam skládek k vyčištění"</string>
     <string name="global.direction">"Navigovat"</string>
@@ -361,7 +360,6 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="collectionPoint.openingHours">"Otevírací doba"</string>
     <string name="global.noLongerExistQuestion">"Již neexistuje?"</string>
     <string name="global.forgotPassword">"Zapomněli jste heslo? "</string>
-    <string name="global.internet.offline">Pro zobrazení této části se prosím připojte k internetu.</string>
     <string name="user.validation.firstNameRequired">"Křestní jméno je vyžadováno"</string>
     <string name="user.validation.lastNameRequired">"Příjmení je vyžadováno"</string>
     <string name="profile.yourActivities">"Vaše činnosti"</string>
@@ -389,7 +387,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="global.pullToRefresh">"Zatáhni pro obnovení"</string>
     <string name="trash.accuracyOfLocationSmaller">"Přesnost umístění: &lt; "</string>
     <string name="global.sendEmail.error">"Email nelze odeslat."</string>
-    <string name="trash.illegalDumpIn_X">"Nelegální skládka v %s"</string>
+    <string name="trash.illegalDumpIn_X">"Nelegální skládka v %"</string>
     <string name="trash.reportedDetailsonWeb_X">"Hlášení nelegální skládky! Detaily k ilegální skládce dostupné na stránkách: %s"</string>
     <string name="trash.messageWasReceived">"Děkujeme, zprávu jsme obdrželi"</string>
     <string name="global.noDate">"Žádné datum"</string>
@@ -520,7 +518,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="trash.confirmation.deleteImage">"Opravdu chcete smazat obrázek?"</string>
     <string name="trash.confirmation.deleteTrash">"Opravdu chcete smazat skládku?"</string>
     <string name="global.confirmation.header">"Potvrzení"</string>
-    <string name="event.confirmation.joinEvent">"Opravdu se chcete zůčastnit události?"</string>
+    <string name="event.confirmation.joinEvent">"Potvrďte vaši účast. Pořadatelé mají k dispozici informace o účastnících, aby jim pomohli s přípravami"</string>
     <string name="trash.confirmation.markSpam">"Opravdu chcete označit tuto skládku jako SPAM?"</string>
     <string name="global.confirmation.reject">"opravdu chcete odmítnout"</string>
     <string name="event.confirmation.unjoinEvent">"Opravdu chcete opustit událost?"</string>
@@ -981,7 +979,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="export.selectAttributes">"Zvolte atributy, které chcete exportovat"</string>
     <string name="export.itemsPerFile">"Položek na 1 soubor"</string>
     <string name="export.itemsPerFile.currentValue">"Hodnota"</string>
-    <string name="export.preparingExport">"Export se připravuje…"</string>
+    <string name="export.preparingExport">"Export se připravuje..."</string>
     <string name="global.latitude">"Zeměpisná šířka"</string>
     <string name="global.longitude">"Zeměpisná délka"</string>
     <string name="collectionPoint.created">"Čas vytvoření"</string>
@@ -1169,14 +1167,13 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="spam.user.permissionDenied">"Nemáte oprávnění ke schválení uživatele."</string>
     <string name="trash.filter.area.hint">"V této sekci si vyberete oblast, kterou chcete vidět. Můžete filtrovat z kontinentů do menších oblastí, jako jsou městské části. Buď vyberte některou možnost z rozbalovací nabídky nebo ji ponechte na \"select\" a klikněte na Submit."</string>
     <string name="user.emailNotFound">"Uživatel nebyl nalezen v TrashOut"</string>
-    <string name="global.trashoutShareDescription">"TrashOut is environmental project, which aim is to localize illegal dumps all around the world."</string>
+    <string name="global.trashoutShareDescription">"TrashOut je projekt zaměřený na ochranu životního prostředí, jehož cílem je mapovat nelegální skládky na celém světě a pomoci občanům více recyklovat."</string>
     <string name="collectionPoint.mapNavigation.message">"Chcete skutečně otevřít navigaci skrz mapu?"</string>
     <string name="collectionPoint.phoneCall.message">"Chcete skutečně zavolat sběrný dvůr?"</string>
     <string name="collectionPoint.email.message">"Opravdu chcete otevřít e-mailový klient?"</string>
     <string name="global.validation.imageRatio">"Nelze vkládat širokoúhlé obrázky. Prosím použijte jiný obrázek. Poměr stran musí být menší než 1:2."</string>
     <string name="global.validation.maxiumNumberReached">"Maximálni počet fotek byl překročen (můžete uplodovat maximálně 20 souborů)."</string>
     <string name="global.error.api.title">"API Chyba"</string>
-    <string name="global.error.api.text">Aktuálne máme dočasný problém s naším serverem. Děláme vše pro to, abychom to brzy opravili. Vraťte se prosím později.</string>
     <string name="global.error.api.description">"Nastal problém na API. Prosím aktualizujte stránku."</string>
     <string name="trash.types.glass">"Sklo"</string>
     <string name="global.occupation">"Obsazení"</string>
@@ -1233,11 +1230,13 @@ Naší snahou je zapojit obyčejné lidi, místní samosprávy a další organiz
     <string name="news.success.photo.deleted">"Smazání obrázku ze článku probšhlo úspěšně"</string>
     <string name="global.resendVerificationEmail">"Znovu poslat verifikační email"</string>
     <string name="global.emailResent">"Verifikační email byl znovu odeslán"</string>
+
+    <!-- Fuzzy -->
     <string name="event.addToCalendar">"Přidat do kalendáře"</string>
     <string name="global.add">"Přidat"</string>
     <string name="profile.myEvents.timeDecision.ongoing">"Probíhající"</string>
     <string name="mail.eventConfirm.subject">"TrashOut - potvrzení účasti"</string>
-    <string name="mail.eventFeedback.subject">"TrashOut - jaká byla v čera událost?"</string>
+    <string name="mail.eventFeedback.subject">"TrashOut - jaká byla včera událost?"</string>
     <string name="mail.newsletter.subject">"TrashOut - nová aktivita v oblasti, kterou sledujete"</string>
     <string name="user.validation.failedToReadFacebookProfile">"Chzba při čtení dat z Facebook profilu"</string>
     <string name="user.validation.facebookNotGrantedPermissionForEmail">"Nemáte právo číst email"</string>
@@ -1253,31 +1252,63 @@ Naší snahou je zapojit obyčejné lidi, místní samosprávy a další organiz
     <string name="notification.recentActivity.header">"Vaše hlášení skládky bylo aktualizováno"</string>
     <string name="notification.recentActivity.text">"Skontrolujte nový stav v aplikaci TrashOut a mějte vždy přehled"</string>
     <string name="mail.eventCreate.subject">"TrashOut - informace o vašem podujetí"</string>
-    <string name="global.signUp.acceptRegister.startSentense">S registrací nebo používáním mobilní aplikace souhlasíte se zněním</string>
-    <string name="global.signUp.acceptRegister.privatePolicy">Ochrany osobních údajů</string>
-    <string name="global.signUp.acceptRegister.and">a</string>
-    <string name="global.signUp.acceptRegister.terms">Podmínkami používání</string>
 
-    <string name="global.internet.error.offline">Vaše mobilní zařízení není připojeno k internetu. Udělejte fotografii a nahlaste skládku
-později prostřednictvím stránky www.admin.trashout.ngo.</string>
-    <string name="info.frequentlyAskedQuestions">Často kladené otázky</string>
-    <string name="info.supportUs">Podpořit projekt</string>
-    <string name="home.orderTrashPickup">Objednat odvoz odpadu</string>
-    <string name="recycling_point_add_new_title">Přidat sběrné místo</string>
-    <string name="recycling_point_add_new_redirect">Sběrné místo lze přidat pouze z webové aplikace, do které se můžete přihlásit pomocí webového prohlížeče</string>
-    <string name="recycling_point_add_new_go_to_web">Přidat nyní</string>
-    <string name="recycling_point_add_new_do_later">Zrušit</string>
-    <string name="recycling_point_edit_redirect">V současné době lze sběrné místo upravovat pouze z webové aplikace, ke které přistupíte prostřednictvím webového prohlížeče</string>
-    <string name="recycling_point_edit_title">Upravit sběrné místo</string>
-    <string name="recycling_point_edit_go_to_web">Upravit nyní</string>
-    <string name="recycling_point_edit_do_later">Zrušit</string>
-    <string name="event.confirmation.joinEventTitle">Přidat se k události</string>
-    <string name="collectionPoint.web_is_missing">Přidat webovou adresu</string>
-    <string name="event_edit_title">Upravit událost</string>
-    <string name="event_edit_redirect">V současné době lze události upravovat pouze z naší webové aplikace, ke které přistupíte prostřednictvím webového prohlížeče</string>
-    <string name="event_edit_do_later">Zrušit</string>
-    <string name="event_edit_go_to_web">Upravit nyní</string>
-    <string name="collectionPoint.phone_is_missing">Přidat telefoní číslo</string>
-    <string name="collectionPoint.email_is_missing">Přidat e-mailovou adresu</string>
+    <!-- note -->
+    <!-- Fuzzy -->
+    <string name="global.signUp.acceptRegister.startSentense">"Souhlasím se zpracováním osobních údajů. Četl/a jsem a přijímám"</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">"Zásady ochrany osobních údajů"</string>
 
+    <!-- Fuzzy -->
+    <string name="global.signUp.acceptRegister.and">"a"</string>
+    <string name="global.signUp.acceptRegister.terms">"Podmínkami používání"</string>
+
+    <!-- error with communication with API server -->
+    <!-- Fuzzy -->
+    <string name="global.error.api.text">"Aktuálne máme dočasný problém s naším serverem. Děláme vše pro to, abychom to brzy opravili. Vraťte se prosím později."</string>
+    <string name="global.internet.offline">"Pro zobrazení této části se prosím připojte k internetu."</string>
+    <string name="global.cookiesPolicy">"Tento web používá soubory cookie, ať vám poskytneme nejlepší zážitek. Souhlasíte kliknutím na tlačítko \"Akceptovat\". Cookies používáme k tomu, abychom mohli poskytovat funkce sociálních médií, analyzovat návštěvnost a chování návštěvníků na našich webových stránkách a pro marketingové účely. Někdy sdílíme anonymní informace s nástrojmi třetích stran. Přečtěte si naše"</string>
+    <string name="global.acceptCookiesPolicy">"Akceptovat"</string>
+    <string name="global.cookiesPolicy.link">"Zásady ochrany osobních údajů"</string>
+
+    <!-- Error show only if there is issue with creating dumps -->
+    <string name="global.internet.error.offline">"Vaše mobilní zařízení není připojeno k internetu. Udělejte fotografii a nahlaste skládku
+později prostřednictvím stránky www.admin.trashout.ngo."</string>
+    <string name="global.images.requirements">"Použijte obrázky s poměrem stran 1: 2 nebo méně (ne širokoúhlý obrázky) a s velikostí do 2 MB."</string>
+
+    <!-- On the screen "Recycling" in singular -->
+    <string name="home.nearestRecyclingPoint">"Nejbližší sběrné místo"</string>
+    <string name="home.recycling_point_add_new_do_later">"Zrušit"</string>
+    <string name="home.recycling_point_add_new_go_to_web">"Přidat nyní"</string>
+    <string name="home.recycling_point_add_new_redirect">"Sběrné místo lze přidat pouze z webové aplikace, do které se můžete přihlásit pomocí webového prohlížeče"</string>
+
+    <!-- Fuzzy -->
+    <string name="info.frequentlyAskedQuestions">"Často kladené otázky"</string>
+    <string name="info.supportUs">"Podpořit projekt"</string>
+    <string name="home.recycling_point_edit_redirect">"V současné době lze sběrné místo upravovat pouze z webové aplikace, ke které přistupíte prostřednictvím webového prohlížeče"</string>
+    <string name="collectionPoint.email_is_missing">"Přidat e-mailovou adresu"</string>
+    <string name="collectionPoint.phone_is_missing">"Přidat telefoní číslo"</string>
+    <string name="collectionPoint.web_is_missing">"Přidat webovou adresu"</string>
+    <string name="event.meeting_point">"Místo setkání"</string>
+    <string name="home.recycling_point_add_new_tittle">"Přidat sběrné místo"</string>
+    <string name="home.recycling_point_edit_title">"Upravit sběrné místo"</string>
+    <string name="home.recycling_point_edit_go_to_web">"Upravit nyní"</string>
+    <string name="home.recycling_point_edit_do_later">"Zrušit"</string>
+    <string name="event.event_edit_title">"Upravit událost"</string>
+    <string name="event.event_edit_redirect">"V současné době lze události upravovat pouze z naší webové aplikace, ke které přistupíte prostřednictvím webového prohlížeče"</string>
+
+    <!-- Fuzzy -->
+    <string name="event.event_edit_do_later">"Zrušit"</string>
+    <string name="event.event_edit_go_to_web">"Upravit nyní"</string>
+    <string name="event.event_joinEventTitle">"Přidat se k události"</string>
+    <string name="home.orderTrashPickup">"Objednat odvoz odpadu"</string>
+    <string name="event.create_event_meeting_date_title"></string>
+    <string name="notification_new_trash_formatter"></string>
+    <string name="about_version_date_formatted"></string>
+    <string name="skip_btn"></string>
+    <string name="event.create.thankYou.sentence1"></string>
+    <string name="event.create.thankYou.sentence2"></string>
+    <string name="event.create.thankYou.sentence3"></string>
+    <string name="event.create.thankYou.shareTitle"></string>
+    <string name="event.create.thankYou.detail"></string>
+    <string name="trash.create.thankYou.detail"></string>
 </resources>

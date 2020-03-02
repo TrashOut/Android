@@ -30,6 +30,7 @@ public class Configuration {
 
     public static final String API_BASE_URL = "https://api.trashout.ngo";
     public static final String ADMIN_TRASH_DETAIL_URL = "https://admin.trashout.ngo/trash-management/detail/";
+    public static final String ADMIN_EVENT_DETAIL_URL = "https://admin.trashout.ngo/events/detail/";
 
     public static final String FIREBASE_IMAGE_FOLDER_REFERENCE = "temp-images";
 

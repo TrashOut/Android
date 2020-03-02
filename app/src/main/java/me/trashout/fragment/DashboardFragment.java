@@ -704,7 +704,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                     showToast(R.string.event_signToJoin);
                 } else {
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
-                            .title(R.string.event_confirmation_joinEventTitle)
+                            .title(R.string.event_event_joinEventTitle)
                             .content(R.string.event_joinEventConfirmationMessage)
                             .positiveText(android.R.string.ok)
                             .negativeText(android.R.string.cancel)
@@ -996,7 +996,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                     setupDashboard(dashboardTrashList, dashboardCollectionPointDustbin, dashboardCollectionPointScrapyard, dashboardStatisticsCleanedCount, dashboardStatisticsReportedCount, dashboardUserActivityList, dashboardNews, dashboardEventList);
                 }
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         } else if (apiResult.getRequestId() == JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
@@ -1008,7 +1008,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
                 joinedEvent = null;
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         }
     }

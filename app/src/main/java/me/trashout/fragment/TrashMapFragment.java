@@ -368,7 +368,7 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                 trashMapItems.addAll(apiGetZoomPointListResult.getZoomPoints());
                 setTrashList(trashMapItems);
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
 
         } else if (apiResult.getRequestId() == GET_TRASH_LIST_REQUEST_ID) {
@@ -379,7 +379,7 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                 trashMapItems.addAll(apiGetTrashListResult.getTrashList());
                 setTrashList(trashMapItems);
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         }
     }

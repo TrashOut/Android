@@ -383,7 +383,7 @@ public class ProfileEditFragment extends BaseFragment implements IProfileFragmen
                 PreferencesHandler.setUserData(getContext(), mUser);
                 finish();
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
 
         }

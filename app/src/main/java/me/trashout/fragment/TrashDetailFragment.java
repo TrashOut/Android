@@ -753,7 +753,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 trashDetailViewContainer.setVisibility(View.VISIBLE);
             } else {
                 dismissProgressDialog();
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         } else if (apiResult.getRequestId() == TRASH_CREATE_SPAM_REQUEST_ID) {
             dismissProgressDialog();

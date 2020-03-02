@@ -180,8 +180,7 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="trash.create.success">"La basura se ha denunciado correctamente. Gracias."</string>
     <string name="trash.photosOfTrash">"Fotos de esta basura"</string>
     <string name="trash.comments">"Comentarios"</string>
-    <string name="global.fetchError">"Algo salió mal :(
-El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
+    <string name="global.fetchError">"Estamos experimentando un problema temporal con nuestro servidor. Estamos haciendo nuestro mejor esfuerzo para solucionarlo pronto. Por favor regresa más tarde."</string>
     <string name="trash.discardChanges">"¿Descartar todos cambios?"</string>
     <string name="trash.spam.comfirmation">"¿Realmente desea denunciar esta basura como spam?"</string>
     <string name="global.detail">"Detalle"</string>
@@ -198,7 +197,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="home.noDumpsNear">"No hay vertederos ilegales cercanos"</string>
     <string name="global.enableGps">"Permitir los servicios de ubicación"</string>
     <string name="trash.loadingDumps">"Cargando vertederos en su área..."</string>
-    <string name="global.loadingError">"Error al cargar :("</string>
+    <string name="global.loadingError">"Por favor, conéctese a Internet para ver esta sección."</string>
     <string name="trash.edit.betterLocation">"Intentando obtener una mejor ubicación"</string>
     <string name="trash.create.error">"Se ha interrumpido el envío."</string>
     <string name="global.dbError">"No hemos podido guardar los datos."</string>
@@ -255,8 +254,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="home.nearestDumps">"Los vertederos más cercanos"</string>
     <string name="home.goAndFindDumps">"Vaya, localice y actualice estos vertederos"</string>
     <string name="home.didYouKnow">"Noticias y actualizaciones"</string>
-    <string name="home.nearestRecyclingPoints">Puntos de reciclaje más cercanos</string>
-    <string name="home.nearestRecyclingPoint">Punto de reciclaje más cercano</string>
+    <string name="home.nearestRecyclingPoints">"Puntos de reciclaje más cercanos"</string>
     <string name="collectionPoint.size.recyclingBin">"Papelera"</string>
     <string name="collectionPoint.size.recyclingCenter">"Centro"</string>
     <string name="collectionPoint.size.all">"Todas"</string>
@@ -354,7 +352,6 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="collectionPoint.openingHours">"Horarios de apertura"</string>
     <string name="global.noLongerExistQuestion">"¿No existe?"</string>
     <string name="global.forgotPassword">"¿Olvidó la contraseña?"</string>
-    <string name="global.internet.offline">Por favor, conéctese a Internet para ver esta sección.</string>
     <string name="user.validation.firstNameRequired">"El nombre es obligatorio"</string>
     <string name="user.validation.lastNameRequired">"El apellido es obligatorio"</string>
     <string name="profile.yourActivities">"Sus actividades"</string>
@@ -511,7 +508,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="trash.confirmation.deleteImage">"¿Seguro de que quiere borrar la imagen?"</string>
     <string name="trash.confirmation.deleteTrash">"¿Seguro de que quiere eliminar la basura?"</string>
     <string name="global.confirmation.header">"Confirmación"</string>
-    <string name="event.confirmation.joinEvent">"¿Seguro de que quiere unirse al evento?"</string>
+    <string name="event.confirmation.joinEvent">"Por favor confirma tu asistencia. La información sobre los asistentes está disponible para los organizadores con el fin de ayudarlos con los preparativos."</string>
     <string name="trash.confirmation.markSpam">"¿Seguro de que quiere marcar este vertedero como spam?"</string>
     <string name="global.confirmation.reject">"seguro de que quiero rechazar"</string>
     <string name="event.confirmation.unjoinEvent">"¿Seguro de que quiere dejar el evento?"</string>
@@ -952,7 +949,7 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="export.selectAttributes">"Seleccionar atributos para exportar"</string>
     <string name="export.itemsPerFile">"Artículos por archivo"</string>
     <string name="export.itemsPerFile.currentValue">"Valor"</string>
-    <string name="export.preparingExport">"La exportación se está preparando …"</string>
+    <string name="export.preparingExport">"La exportación se está preparando ..."</string>
     <string name="global.latitude">"Latitud"</string>
     <string name="global.longitude">"Longitud"</string>
     <string name="collectionPoint.created">"Hora de creación"</string>
@@ -1147,7 +1144,6 @@ El servidor no responde ahora mismo; vuelva a intentarlo más tarde."</string>
     <string name="global.validation.imageRatio">"No puede usar imágenes anchas Por favor use otra imagen. La relación de imagen debe ser inferior a 1:2"</string>
     <string name="global.validation.maxiumNumberReached">"Se ha alcanzado el número máximo de imágenes cargadas (puede cargar un máximo de 20 archivos)."</string>
     <string name="global.error.api.title">"Error de API"</string>
-    <string name="global.error.api.text">Estamos experimentando un problema temporal con nuestro servidor. Estamos haciendo nuestro mejor esfuerzo para solucionarlo pronto. Por favor regresa más tarde.</string>
     <string name="global.error.api.description">"Se ha producido algún error en API. Por favor, actualice la página."</string>
     <string name="trash.types.glass">"Vidrio"</string>
     <string name="global.occupation">"Ocupación"</string>
@@ -1206,7 +1202,9 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="news.success.photo.deleted">"La imagen del artículo fue eliminada."</string>
     <string name="global.resendVerificationEmail">"Reenviar correo electrónico de verificación"</string>
     <string name="global.emailResent">"Se envió un correo de verificación"</string>
-    <string name="event.addToCalendar">"añadir al calendario"</string>
+
+    <!-- Fuzzy -->
+    <string name="event.addToCalendar">"Añadir al calendario"</string>
     <string name="global.add">"añadir"</string>
     <string name="profile.myEvents.timeDecision.ongoing">"en marcha"</string>
     <string name="mail.eventConfirm.subject">"confirmación de asistencia"</string>
@@ -1224,34 +1222,65 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="collectionPoint.validation.chooseDay">"Por favor seleccione un día"</string>
     <string name="collectionPoint.validation.dayIsUsed">"día fue seleccionado"</string>
     <string name="statistics.countryPicker.header">"seleccione un país"</string>
-
     <string name="notification.recentActivity.header">"Su informe de un vertedero ilegal fue actualizado"</string>
     <string name="notification.recentActivity.text">"Echa un vistazo a su nuevo estado en la aplicación TrashOut y mantente siempre informado"</string>
-    <string name="mail.eventCreate.subject"></string>
+    <string name="mail.eventCreate.subject">"TrashOut: información importante sobre el evento que ha creado"</string>
 
-    <string name="global.signUp.acceptRegister.startSentense">Al registrarte, aceptas las</string>
-    <string name="global.signUp.acceptRegister.privatePolicy">Condiciones de Servicio</string>
-    <string name="global.signUp.acceptRegister.and">y la</string>
-    <string name="global.signUp.acceptRegister.terms">Política de Privacidad</string>
+    <!-- note -->
+    <!-- Fuzzy -->
+    <string name="global.signUp.acceptRegister.startSentense">"Estoy de acuerdo con el procesamiento de mis datos personales. He leído y acepto"</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">"La política de privacidad"</string>
 
-    <string name="global.internet.error.offline">Su dispositivo no está conectado a internet. Tome una fotografía e infórmela más tarde a través de www.admin.trashout.ngo.</string>
-    <string name="info.frequentlyAskedQuestions">Preguntas frecuentes</string>
-    <string name="info.supportUs">Apoyanos</string>
-    <string name="home.orderTrashPickup">Orden de recogida de residuos</string>
-    <string name="recycling_point_add_new_title">Añadir punto de reciclaje</string>
-    <string name="recycling_point_add_new_redirect">El punto de recopilación solo se puede agregar desde la aplicación web a la que puede iniciar sesión a través de un navegador web</string>
-    <string name="recycling_point_add_new_go_to_web">Añadir ahora</string>
-    <string name="recycling_point_add_new_do_later">Cancelar</string>
-    <string name="recycling_point_edit_redirect">El punto de recopilación solo se puede editar desde la aplicación web a la que accede a través de un navegador web</string>
-    <string name="recycling_point_edit_title">Actualizar punto de recogida</string>
-    <string name="recycling_point_edit_go_to_web">Editar ahora</string>
-    <string name="recycling_point_edit_do_later">Cancelar</string>
-    <string name="event.confirmation.joinEventTitle">Únete al evento</string>
-    <string name="collectionPoint.web_is_missing">Agregar dirección web</string>
-    <string name="event_edit_title">Editar este evento</string>
-    <string name="event_edit_redirect">Los eventos solo se pueden editar desde la aplicación web a la que se puede acceder a través de un navegador web</string>
-    <string name="event_edit_do_later">Cancelar</string>
-    <string name="event_edit_go_to_web">Editar ahora</string>
-    <string name="collectionPoint.phone_is_missing">Agregar el número de teléfono</string>
-    <string name="collectionPoint.email_is_missing">Agregar dirección de correo electrónico</string>
+    <!-- Fuzzy -->
+    <string name="global.signUp.acceptRegister.and">"y la"</string>
+    <string name="global.signUp.acceptRegister.terms">"Términos de servicio"</string>
+
+    <!-- error with communication with API server -->
+    <!-- Fuzzy -->
+    <string name="global.error.api.text">"Estamos experimentando un problema temporal con nuestro servidor. Estamos haciendo nuestro mejor esfuerzo para solucionarlo pronto. Por favor regresa más tarde."</string>
+    <string name="global.internet.offline">"Por favor, conéctese a Internet para ver esta sección."</string>
+    <string name="global.cookiesPolicy">"Este sitio web utiliza cookies para brindarle la mejor experiencia. De acuerdo haciendo clic en el botón 'Aceptar'. Utilizamos cookies para proporcionar funciones de redes sociales, analizar nuestro tráfico y el comportamiento de los visitantes en nuestro sitio web y para fines de marketing. Algunas veces compartimos esta información anonimizada con herramientas de terceros. Lee nuestro"</string>
+    <string name="global.acceptCookiesPolicy">"Aceptar"</string>
+    <string name="global.cookiesPolicy.link">"Política de privacidad"</string>
+
+    <!-- Error show only if there is issue with creating dumps -->
+    <string name="global.internet.error.offline">"Su dispositivo no está conectado a internet. Tome una fotografía e infórmela más tarde a través de www.admin.trashout.ngo."</string>
+    <string name="global.images.requirements">"Utilice imágenes con una relación de aspecto de 1: 2 o menor (no una imagen de pantalla panorámica) y con un tamaño de hasta 2 MB."</string>
+
+    <!-- On the screen "Recycling" in singular -->
+    <string name="home.nearestRecyclingPoint">"Punto de reciclaje más cercano"</string>
+    <string name="home.recycling_point_add_new_do_later">"cancelar"</string>
+    <string name="home.recycling_point_add_new_go_to_web">"Añadir ahora"</string>
+    <string name="home.recycling_point_add_new_redirect">"El punto de recopilación solo se puede agregar desde la aplicación web a la que puede iniciar sesión a través de un navegador web"</string>
+
+    <!-- Fuzzy -->
+    <string name="info.frequentlyAskedQuestions">"Preguntas frecuentes"</string>
+    <string name="info.supportUs">"Apoyanos"</string>
+    <string name="home.recycling_point_edit_redirect">"El punto de recopilación solo se puede editar desde la aplicación web a la que accede a través de un navegador web"</string>
+    <string name="collectionPoint.email_is_missing">"Agregar dirección de correo electrónico"</string>
+    <string name="collectionPoint.phone_is_missing">"Agregar el número de teléfono"</string>
+    <string name="collectionPoint.web_is_missing">"Agregar dirección web"</string>
+    <string name="event.meeting_point">"Punto de encuentro"</string>
+    <string name="home.recycling_point_add_new_tittle">"Añadir punto de reciclaje"</string>
+    <string name="home.recycling_point_edit_title">"Actualizar punto de recogida"</string>
+    <string name="home.recycling_point_edit_go_to_web">"Editar ahora"</string>
+    <string name="home.recycling_point_edit_do_later">"Cancelar"</string>
+    <string name="event.event_edit_title">"Editar este evento"</string>
+    <string name="event.event_edit_redirect">"Los eventos solo se pueden editar desde la aplicación web a la que se puede acceder a través de un navegador web"</string>
+
+    <!-- Fuzzy -->
+    <string name="event.event_edit_do_later">"Cancelar"</string>
+    <string name="event.event_edit_go_to_web">"Editar ahora"</string>
+    <string name="event.event_joinEventTitle">"Únete al evento"</string>
+    <string name="home.orderTrashPickup">"Orden de recogida de residuos"</string>
+    <string name="event.create_event_meeting_date_title"></string>
+    <string name="notification_new_trash_formatter"></string>
+    <string name="about_version_date_formatted"></string>
+    <string name="skip_btn"></string>
+    <string name="event.create.thankYou.sentence1"></string>
+    <string name="event.create.thankYou.sentence2"></string>
+    <string name="event.create.thankYou.sentence3"></string>
+    <string name="event.create.thankYou.shareTitle"></string>
+    <string name="event.create.thankYou.detail"></string>
+    <string name="trash.create.thankYou.detail"></string>
 </resources>

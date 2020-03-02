@@ -281,7 +281,7 @@ public class NewsListFragment extends BaseFragment implements INewsFragment, New
                     mAdapter.notifyDataSetChanged();
                 }
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
 
             recyclerview.setLoading(false);
