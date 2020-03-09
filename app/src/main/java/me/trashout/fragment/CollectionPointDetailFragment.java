@@ -500,7 +500,7 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
 
             MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                     .title(R.string.recycling_point_edit_title)
-                    .content(R.string.recycling_point_edit_redirect)
+                    .content(R.string.home_recycling_point_edit_redirect)
                     .positiveText(R.string.recycling_point_edit_go_to_web)
                     .negativeText(R.string.recycling_point_edit_do_later)
                     .autoDismiss(true)

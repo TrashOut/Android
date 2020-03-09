@@ -1370,35 +1370,30 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="mail.eventCreate.subject">"TrashOut - important information about the event you created"</string>
 
     <!--MISSING STRINGS-->
-    <string name="create_event_meeting_date_title" translatable="false">Meeting Date</string>
-    <string name="report_and_clean_ration_in_area" translatable="false">Report and clean ration in area.</string>
-    <string name="statistics.description">Report and clean ration in area.</string>
-    <string name="dashboard_trash_hunter_found_dumps_dont_known" translatable="false">Found dumps: ???</string>
     <string name="share_to" translatable="false">Share to…</string>
-    <string name="thank_you_page_title" translatable="false">Thank you for your report!\nYou are awesome!</string>
-    <string name="thank_you_page_content" translatable="false">Do not forget to update dumps around you or join cleaning event.</string>
-    <string name="btn_share_with_others" translatable="false">Share with others</string>
 
     <string name="recyclable_gray" translatable="false"><![CDATA[<font color=\"#8b8b8b\">%1$s: </font>]]></string>
     <string name="reported_activity_placeholder" translatable="false">%1$s %2$s %3$s %4$s %5$s</string>
     <string name="news_detail_placeholder" translatable="false"><![CDATA[<font color=\"#262626\">%1$s: </font>]]> %2$s</string>
-    <string name="about_version_date_formatted" translatable="false">Version from %s</string>
-    <string name="photo_fullscreen_title_formatted" formatted="false">%d / %d</string>
+    <string name="about_version_date_formatted">Version from %s</string>
+    <string name="photo_fullscreen_title_formatted" formatted="false" translatable="false">%d / %d</string>
     <string name="distance_away_formatter" translatable="false">~ %1$s %2$s</string>
     <string name="specific_distance_away_formatter" translatable="false">%1$s %2$s</string>
-    <string name="skip_btn" translatable="false">SKIP</string>
+    <string name="skip_btn">SKIP</string>
 
     <!-- Add new recycling point -->
-    <string name="recycling_point_add_new_title">Add a collection point</string>
-    <string name="recycling_point_add_new_redirect">The collection point can only be added from the web application to which you can log in via a web browser</string>
-    <string name="recycling_point_add_new_go_to_web">Add now</string>
-    <string name="recycling_point_add_new_do_later">Cancel</string>
+    <string name="home.recycling_point_add_new_redirect">The collection point can only be added from the web application to which you can log in via a web browser</string>
+    <string name="home.recycling_point_add_new_go_to_web">Add now</string>
+    <string name="home.recycling_point_add_new_do_later">Cancel</string>
+
 
     <!-- Edit new recycling point -->
     <string name="recycling_point_edit_title">Update collection point</string>
+    <string name="home.recycling_point_edit_redirect">At the moment, the collection point can only be edited from the web application that is accessible through a web browser</string>
     <string name="recycling_point_edit_redirect">At the moment, the collection point can only be edited from the web application that is accessible through a web browser</string>
     <string name="recycling_point_edit_go_to_web">Edit now</string>
     <string name="recycling_point_edit_do_later">Cancel</string>
+    <string name="recycling_point_add_new_tittle">"Add a collection point"</string>
 
     <!-- Edit new recycling point -->
     <string name="event_edit_title">Edit this event</string>
@@ -1406,18 +1401,10 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="event_edit_go_to_web">Edit now</string>
     <string name="event_edit_do_later">Cancel</string>
 
-    <!-- Fuzzy -->
-    <string name="home.recycling_point_add_new_do_later">"Cancel"</string>
-
     <!--  Missing items in recycling points  -->
     <string name="collectionPoint.email_is_missing">Add email address</string>
 
     <string name="home.orderTrashPickup">"Order trash pickup"</string>
-
-    <!-- Fuzzy -->
-    <string name="home.recycling_point_edit_redirect">"At the moment, the collection point can only be edited from the web application that is accessible through a web browser"</string>
-
-    <!-- Fuzzy -->
 
     <string-array name="trash_view_type">
         <item>@string/global.list</item>
@@ -1447,12 +1434,12 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="distance_yard_formatter" translatable="false">%d yd</string>
     <string name="distance_accuracy_formatter" translatable="false">~ %s</string>
     <string name="about_version_formatted" translatable="false">%s (Android)</string>
-    <string name="event.calendar.title.prefix">TrashOut:</string>
+    <string name="event.calendar.title.prefix" translatable="false">TrashOut:</string>
 
-    <string name="push.notification.channel.trash">Trash</string>
-    <string name="push.notification.channel.event">Event</string>
-    <string name="push.notification.channel.news">News</string>
-    <string name="push.notification.channel.default">Trashout</string>
+    <string name="push.notification.channel.trash" translatable="false">Trash</string>
+    <string name="push.notification.channel.event" translatable="false">Event</string>
+    <string name="push.notification.channel.news" translatable="false">News</string>
+    <string name="push.notification.channel.default" translatable="false">Trashout</string>
 
 
     <string name="global.signUp.acceptRegister.startSentense">When you register or use this app, you agree with our</string>
@@ -1469,10 +1456,6 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="home.nearestRecyclingPoint">"Nearest collection Point"</string>
 
     <!-- Fuzzy -->
-    <string name="home.recycling_point_add_new_go_to_web">"Add now"</string>
-    <string name="home.recycling_point_add_new_redirect">"The collection point can only be added from the web application to which you can log in via a web browser"</string>
-
-    <!-- Fuzzy -->
     <string name="info.frequentlyAskedQuestions">"Frequently Asked Questions"</string>
     <string name="info.supportUs">"Support us"</string>
 
@@ -1484,10 +1467,7 @@ Our goal is to involve citizens, governments, municipalities and organizations s
 
     <!-- Fuzzy -->
     <string name="event.meeting_point">"Meeting point"</string>
-    <string name="home.recycling_point_add_new_tittle">"Add a collection point"</string>
-    <string name="home.recycling_point_edit_title">"Update collection point"</string>
-    <string name="home.recycling_point_edit_go_to_web">"Edit now"</string>
-    <string name="home.recycling_point_edit_do_latera">"Cancel"</string>
+
     <string name="event.event_edit_title">"Edit this event"</string>
     <string name="event.event_edit_redirect">"Events can only be edited from the TrashOut web application that is accessible through a web browser"</string>
 
@@ -1495,15 +1475,20 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="event.event_edit_do_later">"Cancel"</string>
     <string name="event.event_edit_go_to_web">"Edit now"</string>
     <string name="event.event_joinEventTitle">"Join this event"</string>
-    <string name="global_internet_offline">"Please connect to the internet in order to see this section."</string>
 
     <!-- Fuzzy -->
     <string name="notification_new_trash_formatter">"You hunt %d new or updated trashes."</string>
-    <string name="event.create.thankYou.sentence1"></string>
-    <string name="event.create.thankYou.sentence2"></string>
-    <string name="event.create.thankYou.sentence3"></string>
-    <string name="event.create.thankYou.shareTitle"></string>
-    <string name="event.create.thankYou.detail"></string>
-    <string name="trash.create.thankYou.detail"></string>
+    <string name="event.create.thankYou.sentence1">Thank you for creating this event</string>
+    <string name="event.create.thankYou.sentence2">You are awesome!</string>
+    <string name="event.create.thankYou.sentence3">Do not forget to update all dumps you cleaned during the event</string>
+    <string name="event.create.thankYou.shareTitle">Share with others</string>
+    <string name="event.create.thankYou.detail">See event</string>
+    <string name="trash.create.thankYou.detail">See report</string>
+    <string name="create_event_meeting_date_title">Meeting Date</string>
+    <string name="global.acceptCookiesPolicy">Accept Cookies</string>
+    <string name="global.cookiesPolicy">"This website uses cookies to give you the best experience. Agree by clicking the 'Accept' button. We use cookies to be able to provide social media features, analyze our traffic and behavior of the visitors on our website and for marketing purposes. Sometimes we share this anonymized information with the 3rd parties' tools. Read our "</string>
+    <string name="global.cookiesPolicy.link">Privacy Policy</string>
+    <string name="global.error.api.text">We are experiencing temporary issue with our server. We are doing our best to fix it soon. Please come back later.</string>
+    <string name="global.internet.offline">Please connect to the internet in order to see this section.</string>
 
 </resources>

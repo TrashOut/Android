@@ -244,7 +244,7 @@
                 android:layout_marginStart="@dimen/sides_margin"
                 android:layout_marginTop="15dp"
                 android:padding="5dp"
-                android:text="Contact"
+                android:text="@string/event.contact"
                 android:textSize="@dimen/text_size_large" />
 
             <android.support.design.widget.TextInputLayout

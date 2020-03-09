@@ -612,7 +612,7 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="global.validation.warning">"Advertencia"</string>
     <string name="global.validation.noEmailClientInstalled">"Ningún cliente de correo electrónico instalado"</string>
     <string name="trash.edit.greaterDistanceText">"La distancia es superior a 100 m desde la basura. Debe estar cerca del vertedero."</string>
-    <string name="trash.edit.minPhotosText">"Para crear o actualizar la basura, debe tomar al menos% d fotos"</string>
+    <string name="trash.edit.minPhotosText">"Para crear o actualizar la basura, debe tomar al menos %d fotos"</string>
     <string name="trash.validation.mustSelectMeetingPoint">"Primero debe elegir el puesto de reunión"</string>
     <string name="event.detail.bring">"Traer"</string>
     <string name="event.detail.pleaseBring">"Traiga"</string>
@@ -683,7 +683,7 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="widget.statistics.chartSize">"Por tamaño"</string>
     <string name="widget.statistics.chartType">"Por tipo"</string>
     <string name="widget.statistics.breakdownOfDumps">"Desglose de vertederos ilegales en"</string>
-    <string name="widget.statistics.lastUpdatedDumps">"Última actualización de vertederos en"</string>
+    <string name="widget.statistics.lastUpdatedDumps">Jste úžasný/á!</string>
     <string name="profile.validation.emptyOrganization">"No ha seleccionado ninguna organización"</string>
     <string name="news.noArticles">"Todavía no hay artículos, vuelve más tarde."</string>
     <string name="event.dontWantOrganize">"No quiero organizar ni ayudar con la organización de ningún evento de limpieza"</string>
@@ -1257,14 +1257,15 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="info.frequentlyAskedQuestions">"Preguntas frecuentes"</string>
     <string name="info.supportUs">"Apoyanos"</string>
     <string name="home.recycling_point_edit_redirect">"El punto de recopilación solo se puede editar desde la aplicación web a la que accede a través de un navegador web"</string>
+    <string name="recycling_point_edit_redirect">"El punto de recopilación solo se puede editar desde la aplicación web a la que accede a través de un navegador web"</string>
     <string name="collectionPoint.email_is_missing">"Agregar dirección de correo electrónico"</string>
     <string name="collectionPoint.phone_is_missing">"Agregar el número de teléfono"</string>
     <string name="collectionPoint.web_is_missing">"Agregar dirección web"</string>
     <string name="event.meeting_point">"Punto de encuentro"</string>
-    <string name="home.recycling_point_add_new_tittle">"Añadir punto de reciclaje"</string>
-    <string name="home.recycling_point_edit_title">"Actualizar punto de recogida"</string>
-    <string name="home.recycling_point_edit_go_to_web">"Editar ahora"</string>
-    <string name="home.recycling_point_edit_do_later">"Cancelar"</string>
+    <string name="recycling_point_add_new_tittle">"Añadir punto de reciclaje"</string>
+    <string name="recycling_point_edit_title">"Actualizar punto de recogida"</string>
+    <string name="recycling_point_edit_go_to_web">"Editar ahora"</string>
+    <string name="recycling_point_edit_do_later">"Cancelar"</string>
     <string name="event.event_edit_title">"Editar este evento"</string>
     <string name="event.event_edit_redirect">"Los eventos solo se pueden editar desde la aplicación web a la que se puede acceder a través de un navegador web"</string>
 
@@ -1273,14 +1274,19 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="event.event_edit_go_to_web">"Editar ahora"</string>
     <string name="event.event_joinEventTitle">"Únete al evento"</string>
     <string name="home.orderTrashPickup">"Orden de recogida de residuos"</string>
-    <string name="event.create_event_meeting_date_title"></string>
-    <string name="notification_new_trash_formatter"></string>
-    <string name="about_version_date_formatted"></string>
-    <string name="skip_btn"></string>
-    <string name="event.create.thankYou.sentence1"></string>
-    <string name="event.create.thankYou.sentence2"></string>
-    <string name="event.create.thankYou.sentence3"></string>
-    <string name="event.create.thankYou.shareTitle"></string>
-    <string name="event.create.thankYou.detail"></string>
-    <string name="trash.create.thankYou.detail"></string>
+    <string name="create_event_meeting_date_title">Fecha de la reunión</string>
+    <string name="notification_new_trash_formatter">Cazas %d papeleras nuevas o actualizadas.</string>
+    <string name="about_version_date_formatted">Versión de %s</string>
+    <string name="skip_btn">OMITIR</string>
+    <string name="event.create.thankYou.sentence1">Gracias por crear este evento.</string>
+    <string name="event.create.thankYou.sentence2">¡Usted es maravilloso!</string>
+    <string name="event.create.thankYou.sentence3">No olvides actualizar todos los volcados que limpiaste durante el evento</string>
+    <string name="event.create.thankYou.shareTitle">Comparte con otros</string>
+    <string name="event.create.thankYou.detail">Ver evento</string>
+    <string name="trash.create.thankYou.detail">Ver informe</string>
+    <string name="event_edit_do_later">Cancelar</string>
+    <string name="event_edit_go_to_web">Editar ahora</string>
+    <string name="event_edit_redirect">Los eventos solo se pueden editar desde la aplicación web a la que se puede acceder a través de un navegador web</string>
+    <string name="event_edit_title">Editar este evento</string>
+    <string name="global_internet_offline">Por favor, conéctese a Internet para ver esta sección.</string>
 </resources>
