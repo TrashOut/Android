@@ -106,7 +106,7 @@ public class AboutFragment extends BaseFragment {
             case R.id.about_faq_btn:
                 Bundle params = new Bundle();
                 params.putString("faq_button_clicked", "clicked");
-                mFirebaseAnalytics.logEvent("faq_button", params);
+                mFirebaseAnalytics.logEvent("faq_button_about", params);
 
                 switch (Utils.getCurrentLanguage(getResources())) {
                     case "sk":
