@@ -1063,7 +1063,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="user.facebook.hint">"Link vášho profilu"</string>
     <string name="user.twitter.hint">"https://twitter.com/user"</string>
     <string name="user.google.hint">"Link vášho profilu"</string>
-    <string name="global.phone.hint">"Číslo s predvoľnou začínajúce +/ 00"</string>
+    <string name="global.phone.hint">"Číslo s predvoľbou začínajúce +/ 00"</string>
     <string name="profile.currentPassword">"Aktuálne heslo"</string>
     <string name="user.addToArea.success">"Oblasť bola úspešne pridaná"</string>
     <string name="collectionPoint.created.success">"Zberné miesto bolo úspešne vytvorené"</string>
@@ -1261,17 +1261,16 @@ neskôr prostredníctvom stránky www.admin.trashout.ngo."</string>
 
     <!-- Fuzzy -->
     <string name="home.recycling_point_edit_redirect">"Zberné miesto je zatiaľ možné upravovať len z webovej aplikácie, do ktorej sa prihlásite cez webový prehliada"</string>
-    <string name="recycling_point_edit_redirect">"Zberné miesto je zatiaľ možné upravovať len z webovej aplikácie, do ktorej sa prihlásite cez webový prehliada"</string>
     <string name="collectionPoint.email_is_missing">"Pridať emailovú adresu"</string>
     <string name="collectionPoint.phone_is_missing">"Pridať telefónne číslo"</string>
     <string name="collectionPoint.web_is_missing">"Pridať webovú adresu"</string>
     <string name="event.meeting_point">"Miesto stretnutia"</string>
 
     <!-- Fuzzy -->
-    <string name="recycling_point_add_new_tittle">"Pridať zberné miesto"</string>
-    <string name="recycling_point_edit_title">"Upraviť zberné miesto"</string>
-    <string name="recycling_point_edit_go_to_web">"Upraviť teraz"</string>
-    <string name="recycling_point_edit_do_later">"Zrušiť"</string>
+    <string name="home.recycling_point_add_new_tittle">"Pridať zberné miesto"</string>
+    <string name="home.recycling_point_edit_title">"Upraviť zberné miesto"</string>
+    <string name="home.recycling_point_edit_go_to_web">"Upraviť teraz"</string>
+    <string name="home.recycling_point_edit_do_later">"Zrušiť"</string>
     <string name="event.event_edit_title">"Upraviť podujatie"</string>
     <string name="event.event_edit_redirect">"Čistiace podujatia je zatiaľ možné upravovať len z našej webovej aplikácie, do ktorej sa prihlásite cez webový prehliadač"</string>
 
@@ -1280,19 +1279,18 @@ neskôr prostredníctvom stránky www.admin.trashout.ngo."</string>
     <string name="event.event_edit_go_to_web">"Upraviť teraz"</string>
     <string name="event.event_joinEventTitle">"Pridať sa k udalosti"</string>
     <string name="home.orderTrashPickup">"Objednať odvoz odpadu"</string>
-    <string name="create_event_meeting_date_title">"Dátum stretnutia"</string>
+    <string name="event.create_event_meeting_date_title">"Dátum stretnutia"</string>
     <string name="notification_new_trash_formatter">"Našli ste %d nových alebo aktualizovaných skládok"</string>
     <string name="about_version_date_formatted">"Verzia z %s"</string>
     <string name="skip_btn">"Preskočiť"</string>
-    <string name="event.create.thankYou.sentence1">Ďakujeme za vytvorenie podujatia</string>
-    <string name="event.create.thankYou.sentence2">Ste skvelý/á</string>
-    <string name="event.create.thankYou.sentence3">Nezabudnite aktualizovať skládky po ukončení podujatia</string>
-    <string name="event.create.thankYou.shareTitle">Zdieľať s priateľmi</string>
-    <string name="event.create.thankYou.detail">Prezrieť podujatie</string>
-    <string name="trash.create.thankYou.detail">Prezrieť hlásenie</string>
-    <string name="event_edit_do_later">Zrušiť</string>
-    <string name="event_edit_go_to_web">Upraviť teraz</string>
-    <string name="event_edit_redirect">Čistiace podujatia je zatiaľ možné upravovať len z našej webovej aplikácie, do ktorej sa prihlásite cez webový prehliadač</string>
-    <string name="event_edit_title">Upraviť podujatie</string>
-    <string name="global_internet_offline">Pre zobrazenie tejto sekcie sa prosím pripojte k internetu.</string>
+    <string name="event.create.thankYou.sentence1">"Ďakujeme za vytvorenie podujatia"</string>
+    <string name="event.create.thankYou.sentence2">"Ste skvelý/á"</string>
+    <string name="event.create.thankYou.sentence3">"Nezabudnite aktualizovať skládky po ukončení podujatia"</string>
+    <string name="event.create.thankYou.shareTitle">"Zdieľať s priateľmi"</string>
+    <string name="event.create.thankYou.detail">"Prezrieť podujatie"</string>
+    <string name="trash.create.thankYou.detail">"Prezrieť hlásenie"</string>
+    <string name="organization.statistics.title">"Štatistiky o aktivitách členov organizácie"</string>
+    <string name="organization.dumpsReported">"Hlásenia"</string>
+    <string name="organization.dumpsUpdated">"Aktualizácie"</string>
+    <string name="organization.dumpsCleaned">"Vyčistené skládky"</string>
 </resources>

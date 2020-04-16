@@ -224,6 +224,15 @@ public class CollectionPoinListAdapter extends RecyclerView.Adapter<RecyclerView
                         case "ru":
                             Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK_RU);
                             break;
+                        case "pt":
+                            Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK_PT);
+                            break;
+                        case "it":
+                            Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK_IT);
+                            break;
+                        case "hu":
+                            Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK_HU);
+                            break;
                         default:
                             Utils.browseUrl(context, Constants.ORDER_TRASH_PICKUP_HYPERLINK);
                             break;

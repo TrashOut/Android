@@ -499,10 +499,10 @@ public class CollectionPointDetailFragment extends BaseFragment implements IColl
             mFirebaseAnalytics.logEvent("edit_collection_point_button", params);
 
             MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
-                    .title(R.string.recycling_point_edit_title)
+                    .title(R.string.home_recycling_point_edit_title)
                     .content(R.string.home_recycling_point_edit_redirect)
-                    .positiveText(R.string.recycling_point_edit_go_to_web)
-                    .negativeText(R.string.recycling_point_edit_do_later)
+                    .positiveText(R.string.home_recycling_point_edit_go_to_web)
+                    .negativeText(R.string.home_recycling_point_edit_do_later)
                     .autoDismiss(true)
                     .onPositive(new MaterialDialog.SingleButtonCallback() {
                         @Override

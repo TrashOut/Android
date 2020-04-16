@@ -533,10 +533,10 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
                 if (mEvent != null) {
 //                    if(user != null && mEvent.getUserId() == user.getId()){
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
-                            .title(R.string.event_edit_title)
-                            .content(R.string.event_edit_redirect)
-                            .positiveText(R.string.event_edit_go_to_web)
-                            .negativeText(R.string.event_edit_do_later)
+                            .title(R.string.event_event_edit_title)
+                            .content(R.string.event_event_edit_redirect)
+                            .positiveText(R.string.event_event_edit_go_to_web)
+                            .negativeText(R.string.event_event_edit_do_later)
                             .autoDismiss(true)
                             .onPositive(new MaterialDialog.SingleButtonCallback() {
                                 @Override

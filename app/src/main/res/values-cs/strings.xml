@@ -339,7 +339,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="global.minutes">"minut/minuty"</string>
     <string name="global.noAddress">"Žádná adresa"</string>
     <string name="global.noDateToSave">"Žádné datum k uložení"</string>
-    <string name="event.header_X">"?"</string>
+    <string name="event.header_X">"Čistící událost: %s"</string>
     <string name="event.validation.cannotBeAddedToCalendar">"Čistící událost nelze přidat do kalendáře"</string>
     <string name="event.addedToCalender.success">"Čistící událost byla přidána do kalendáře"</string>
     <string name="global.enableAccessToCalendar">"Umožněte přístup do kalendáře v nastavení"</string>
@@ -508,8 +508,8 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="trash.filter.anyActivityDateFrom">"Jakákoli aktivita na skládce od"</string>
     <string name="trash.filter.anyActivityDateTo">"jakákoli aktivita na skládce do"</string>
     <string name="global.day">"Den"</string>
-    <string name="event.filter.startTimeFrom">"Datum zahájení události od"</string>
-    <string name="event.filter.startTimeTo">Datum a čas ukončení události</string>
+    <string name="event.filter.startTimeFrom">"Datum a čas zahájení události "</string>
+    <string name="event.filter.startTimeTo">"Datum a čas ukončení události"</string>
     <string name="global.pickOne">"Vybrat jedno"</string>
     <string name="profile.edit.profileImage">"Profilový obrázek"</string>
     <string name="global.table">"Seznam"</string>
@@ -636,7 +636,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="user.login.validation.unknownError">"Chyba přihlášení - neznámý server"</string>
     <string name="user.login.validation.notFirebaseUser">"Chyba přihlášení - ......"</string>
     <string name="user.login.validation.autentification_filed">"Ověření se nezdařilo."</string>
-    <string name="user.validation.confirmPasswordRequired">"???"</string>
+    <string name="user.validation.confirmPasswordRequired">"Potvrďte heslo"</string>
     <string name="user.login.create.error">"Chyba přihlášení - chybné vytvoření uživatele"</string>
     <string name="user.login.linkError">"Chyba propojení uživatele"</string>
     <string name="user.register.notExists">"Neexistující uživatel. Prosím, registrujte se. "</string>
@@ -1029,7 +1029,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="mail.eventConfirm.thanks">"Děkujeme, že jste udělali naši čisticí prostředek pro všechny."</string>
     <string name="mail.eventConfirm.organizer">"Pořadatel akce je"</string>
     <string name="mail.eventConfirm.footer">"Tento e-mail jste obdrželi, protože jste se do této události připojili v aplikaci TrashOut a souhlasili s podmínkami aplikace TrashOut."</string>
-    <string name="mail.eventCreate.greeting">"Milý"</string>
+    <string name="mail.eventCreate.greeting">"Milý/á"</string>
     <string name="mail.eventCreate.eventInfo1">"Všimli jsme si, že jste vytvořili událost nazvanou"</string>
 
     <!--  you are awesome! -->
@@ -1046,7 +1046,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="mail.eventCreate.footer">"Tento e-mail jste obdrželi, protože jste vytvořili událost v aplikaci TrashOut a souhlasili s podmínkami aplikace TrashOut."</string>
     <string name="mail.eventFeedback.greeting">"Milý"</string>
     <string name="mail.eventFeedback.eventFeedback1">"děkujeme Vám za účast na čisticí akci"</string>
-    <string name="mail.eventFeedback.eventFeedback2">"která se konala včera. Jsi úžasný! Díky vašemu úsilí je toto místo nyní čistší."</string>
+    <string name="mail.eventFeedback.eventFeedback2">"která se konala včera. Jste úžasný/á! Díky vašemu úsilí je toto místo nyní čistší."</string>
 
     <!--  bags of trash collected or share your photos. Inspire others to make the World cleaner. -->
     <string name="mail.eventFeedback.eventFeedback3">"Dejte ostatním vědět, jak jste byli úspěšní. Vyplňte počet účastníků."</string>
@@ -1285,36 +1285,33 @@ později prostřednictvím stránky www.admin.trashout.ngo."</string>
     <string name="info.frequentlyAskedQuestions">"Často kladené otázky"</string>
     <string name="info.supportUs">"Podpořit projekt"</string>
     <string name="home.recycling_point_edit_redirect">"V současné době lze sběrné místo upravovat pouze z webové aplikace, ke které přistupíte prostřednictvím webového prohlížeče"</string>
-    <string name="recycling_point_edit_redirect">"V současné době lze sběrné místo upravovat pouze z webové aplikace, ke které přistupíte prostřednictvím webového prohlížeče"</string>
     <string name="collectionPoint.email_is_missing">"Přidat e-mailovou adresu"</string>
     <string name="collectionPoint.phone_is_missing">"Přidat telefoní číslo"</string>
     <string name="collectionPoint.web_is_missing">"Přidat webovou adresu"</string>
     <string name="event.meeting_point">"Místo setkání"</string>
-    <string name="recycling_point_add_new_tittle">"Přidat sběrné místo"</string>
-    <string name="recycling_point_edit_title">"Upravit sběrné místo"</string>
-    <string name="recycling_point_edit_go_to_web">"Upravit nyní"</string>
-    <string name="recycling_point_edit_do_later">"Zrušit"</string>
+    <string name="home.recycling_point_add_new_tittle">"Přidat sběrné místo"</string>
+    <string name="home.recycling_point_edit_title">"Upravit sběrné místo"</string>
+    <string name="home.recycling_point_edit_go_to_web">"Upravit nyní"</string>
+    <string name="home.recycling_point_edit_do_later">"Zrušit"</string>
     <string name="event.event_edit_title">"Upravit událost"</string>
     <string name="event.event_edit_redirect">"V současné době lze události upravovat pouze z naší webové aplikace, ke které přistupíte prostřednictvím webového prohlížeče"</string>
-
     <!-- Fuzzy -->
     <string name="event.event_edit_do_later">"Zrušit"</string>
     <string name="event.event_edit_go_to_web">"Upravit nyní"</string>
     <string name="event.event_joinEventTitle">"Přidat se k události"</string>
     <string name="home.orderTrashPickup">"Objednat odvoz odpadu"</string>
-    <string name="create_event_meeting_date_title">Datum schůzky</string>
-    <string name="notification_new_trash_formatter">Našli jste %d hlásení</string>
-    <string name="about_version_date_formatted">Verze z %s</string>
-    <string name="skip_btn">PŘESKOČIT</string>
-    <string name="event.create.thankYou.sentence1">Děkujeme za vytvoření této události</string>
-    <string name="event.create.thankYou.sentence2">Jste úžasný/á!</string>
-    <string name="event.create.thankYou.sentence3">Nezapomeňte aktualizovat všechny skládky, které jste během události vyčistili</string>
-    <string name="event.create.thankYou.shareTitle">Sdílejte s ostatními</string>
-    <string name="event.create.thankYou.detail">Zobrazit událost</string>
-    <string name="trash.create.thankYou.detail">Zobrazit hlášení</string>
-    <string name="event_edit_do_later">Zrušit</string>
-    <string name="event_edit_go_to_web">Upravit nyní</string>
-    <string name="event_edit_redirect">Events can only be edited from the TrashOut web application that is accessible through a web browser</string>
-    <string name="event_edit_title">Upravit událost</string>
-    <string name="global_internet_offline">Pro zobrazení této části se prosím připojte k internetu.</string>
+    <string name="event.create_event_meeting_date_title">"Datum schůzky"</string>
+    <string name="notification_new_trash_formatter">"Našli jste %d hlásení"</string>
+    <string name="about_version_date_formatted">"Verze z %s"</string>
+    <string name="skip_btn">"PŘESKOČIT"</string>
+    <string name="event.create.thankYou.sentence1">"Děkujeme za vytvoření této události"</string>
+    <string name="event.create.thankYou.sentence2">"Jste úžasný/á!"</string>
+    <string name="event.create.thankYou.sentence3">"Nezapomeňte aktualizovat všechny skládky, které jste během události vyčistili"</string>
+    <string name="event.create.thankYou.shareTitle">"Sdílejte s ostatními"</string>
+    <string name="event.create.thankYou.detail">"Zobrazit událost"</string>
+    <string name="trash.create.thankYou.detail">"Zobrazit hlášení"</string>
+    <string name="organization.statistics.title">"Statistiky o aktivitách členů organizace"</string>
+    <string name="organization.dumpsReported">"Počet hlášení"</string>
+    <string name="organization.dumpsUpdated">"Počet aktualizací"</string>
+    <string name="organization.dumpsCleaned">"Vyčištěné skládky"</string>
 </resources>

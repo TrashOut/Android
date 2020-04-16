@@ -17,10 +17,14 @@ android {
         applicationId "me.trashout"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 78
+        versionCode 85
         versionName "4.6.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
 
     buildTypes {
@@ -99,6 +103,8 @@ dependencies {
     implementation 'ru.noties:markwon:1.0.1'
     implementation 'ru.noties:markwon-image-loader:1.0.1'
     implementation 'ru.noties:markwon-view:1.0.1'
+
+    implementation 'com.android.support:multidex:1.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

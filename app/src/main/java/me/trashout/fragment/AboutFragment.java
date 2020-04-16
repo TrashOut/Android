@@ -127,6 +127,15 @@ public class AboutFragment extends BaseFragment {
                     case "ru":
                         Utils.browseUrl(getActivity(), Constants.FAQ_HYPERLINK_RU);
                         break;
+                    case "pt":
+                        Utils.browseUrl(getActivity(), Constants.FAQ_HYPERLINK_PT);
+                        break;
+                    case "it":
+                        Utils.browseUrl(getActivity(), Constants.FAQ_HYPERLINK_IT);
+                        break;
+                    case "hu":
+                        Utils.browseUrl(getActivity(), Constants.FAQ_HYPERLINK_HU);
+                        break;
                     default:
                         Utils.browseUrl(getActivity(), Constants.FAQ_HYPERLINK);
                         break;
@@ -156,6 +165,15 @@ public class AboutFragment extends BaseFragment {
                         break;
                     case "ru":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_RU);
+                        break;
+                    case "pt":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_PT);
+                        break;
+                    case "it":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_IT);
+                        break;
+                    case "hu":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_HU);
                         break;
                     default:
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK);

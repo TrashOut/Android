@@ -158,7 +158,7 @@
                 android:layout_marginStart="@dimen/sides_margin"
                 android:layout_marginTop="15dp"
                 android:padding="5dp"
-                android:text="@string/create_event_meeting_date_title"
+                android:text="@string/event.create_event_meeting_date_title"
                 android:textSize="@dimen/text_size_large" />
 
             <EditText

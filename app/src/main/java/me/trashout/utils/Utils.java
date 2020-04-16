@@ -45,6 +45,7 @@ import android.provider.CalendarContract;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.firebase.ui.auth.data.model.Resource;
 import com.google.android.gms.maps.model.LatLng;
@@ -228,7 +229,7 @@ public class Utils {
 
     public static String getLocaleString() {
         String localeString = Locale.getDefault().toString();
-        String[] availableLocals = new String[]{"en_US", "cs_CZ", "de_DE", "es_ES", "sk_SK", "fr_AU", "ru_AU"};
+        String[] availableLocals = new String[]{"en_US", "cs_CZ", "de_DE", "es_ES", "sk_SK", "fr_AU", "ru_AU", "hu_AU", "pt_AU", "it_AU"};
 
         for (String locale : availableLocals) {
             if (locale.equals(localeString))
@@ -241,7 +242,7 @@ public class Utils {
 
     public static String getCurrentLanguage(Resources resources) {
         String localeString = resources.getConfiguration().locale.getLanguage();
-        String[] availableLanguages = new String[]{"en", "cs", "de", "es", "sk", "fr", "ru", "it"};
+        String[] availableLanguages = new String[]{"en", "cs", "de", "es", "sk", "fr", "ru", "it", "hu", "pt"};
 
         for (String locale : availableLanguages) {
             if (locale.equals(localeString))

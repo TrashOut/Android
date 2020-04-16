@@ -6,8 +6,7 @@
     <string name="tab.dumps">"Müllkippe"</string>
     <string name="tab.news">"Nachrichten"</string>
     <string name="tab.recycling">"Recycling"</string>
-    <string name="global.menu.events">"Veranstaltungen
-"</string>
+    <string name="global.menu.events">"Veranstaltungen"</string>
     <string name="global.menu.geoAreas">"Geographische Gebiete"</string>
     <string name="global.menu.notifications">"Benachrichtigungen"</string>
     <string name="global.menu.organizations">"Organisationen"</string>
@@ -353,7 +352,7 @@ Bitte komm zurück, wenn du wieder online bist."</string>
     <string name="trash.anonymous">"Anonym"</string>
     <string name="global.phoneNotSet">"Telefon nicht eingestellt"</string>
     <string name="profile.earnedPoints_X">"Du hast bisher %d Punkte verdient! Suche nach weiteren Deponien, es bringt dir neue Abzeichen!"</string>
-    <string name="profile.points_X">"% Punkte"</string>
+    <string name="profile.points_X">"%d Punkte"</string>
     <string name="global.numberOfTimes_X">"%dx"</string>
 
     <!-- Bei Spielen oder Apps wird geduzt -->
@@ -1212,15 +1211,12 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="global.other">"Andere"</string>
     <string name="profile.delete.confirm">"Bist du sicher, du möchtest dein Profil löschen?"</string>
     <string name="news.success.photo.deleted">"Das Bild aus dem Artikel wurde gelöscht"</string>
-    <string name="global.resendVerificationEmail">"Senden sie e-mail verifizierung
-"</string>
+    <string name="global.resendVerificationEmail">"Senden sie e-mail verifizierung"</string>
     <string name="global.emailResent">"Bestätigungs e-mail wurde gesendet."</string>
 
     <!-- Fuzzy -->
-    <string name="event.addToCalendar">"Zum kalender hinzufügen
-"</string>
-    <string name="global.add">"ergänzen
-"</string>
+    <string name="event.addToCalendar">"Zum kalender hinzufügen"</string>
+    <string name="global.add">"ergänzen"</string>
     <string name="profile.myEvents.timeDecision.ongoing">"Laufend"</string>
     <string name="mail.eventConfirm.subject">"Anwesenheitsbestätigung"</string>
     <string name="mail.eventFeedback.subject">"Wie war die Veranstaltung gestern?"</string>
@@ -1270,16 +1266,15 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <!-- Fuzzy -->
     <string name="info.frequentlyAskedQuestions">"Häufig gestellte Fragen"</string>
     <string name="info.supportUs">"unterstütze uns"</string>
-    <string name="recycling_point_edit_redirect">"Der Sammelpunkt kann nur in der Webanwendung bearbeitet werden, auf die Sie über einen Webbrowser zugreifen können"</string>
     <string name="home.recycling_point_edit_redirect">"Der Sammelpunkt kann nur in der Webanwendung bearbeitet werden, auf die Sie über einen Webbrowser zugreifen können"</string>
     <string name="collectionPoint.email_is_missing">"E-Mail-Adresse hinzufügen"</string>
     <string name="collectionPoint.phone_is_missing">"Telefonnummer hinzufügen"</string>
     <string name="collectionPoint.web_is_missing">"Webadresse hinzufügen"</string>
     <string name="event.meeting_point">"Treffpunkt"</string>
-    <string name="recycling_point_add_new_tittle">"Sammelstelle hinzufügen"</string>
-    <string name="recycling_point_edit_title">"Aktualisieren Sie die Sammelstelle"</string>
-    <string name="recycling_point_edit_go_to_web">"Bearbeiten Sie jetzt"</string>
-    <string name="recycling_point_edit_do_later">"Stornieren"</string>
+    <string name="home.recycling_point_add_new_tittle">"Sammelstelle hinzufügen"</string>
+    <string name="home.recycling_point_edit_title">"Aktualisieren Sie die Sammelstelle"</string>
+    <string name="home.recycling_point_edit_go_to_web">"Bearbeiten Sie jetzt"</string>
+    <string name="home.recycling_point_edit_do_later">"Stornieren"</string>
     <string name="event.event_edit_title">"Bearbeiten Sie dieses Ereignis"</string>
     <string name="event.event_edit_redirect">"Ereignisse können nur in der Webanwendung bearbeitet werden, auf die über einen Webbrowser zugegriffen werden kann"</string>
 
@@ -1288,19 +1283,18 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="event.event_edit_go_to_web">"Bearbeiten Sie jetzt"</string>
     <string name="event.event_joinEventTitle">"Mach mit bei der Veranstaltung"</string>
     <string name="home.orderTrashPickup">"Müllabholung bestellen"</string>
-    <string name="create_event_meeting_date_title">Datum des Treffens</string>
-    <string name="notification_new_trash_formatter">Sie suchen nach neuen oder aktualisierten Abfällen.</string>
-    <string name="about_version_date_formatted">Version von %s</string>
-    <string name="skip_btn">ÜBERSPRINGEN</string>
-    <string name="event.create.thankYou.sentence1">Vielen Dank, dass Sie diese Veranstaltung erstellt haben</string>
-    <string name="event.create.thankYou.sentence2">Du bist toll!</string>
-    <string name="event.create.thankYou.sentence3">Vergessen Sie nicht, alle Dumps zu aktualisieren, die Sie während des Ereignisses bereinigt haben</string>
-    <string name="event.create.thankYou.shareTitle">Mit anderen teilen</string>
-    <string name="event.create.thankYou.detail">Siehe Veranstaltung</string>
-    <string name="trash.create.thankYou.detail">Siehe Bericht</string>
-    <string name="event_edit_do_later">Stornieren</string>
-    <string name="event_edit_go_to_web">Bearbeiten Sie jetzt</string>
-    <string name="event_edit_redirect">Ereignisse können nur in der Webanwendung bearbeitet werden, auf die über einen Webbrowser zugegriffen werden kann</string>
-    <string name="event_edit_title">Bearbeiten Sie dieses Ereignis</string>
-    <string name="global_internet_offline">Bitte verbinden Sie sich mit dem Internet, um diesen Abschnitt zu sehen.</string>
+    <string name="event.create_event_meeting_date_title">"Datum des Treffens"</string>
+    <string name="notification_new_trash_formatter">"Sie suchen nach neuen oder aktualisierten Abfällen."</string>
+    <string name="about_version_date_formatted">"Version von %s"</string>
+    <string name="skip_btn">"ÜBERSPRINGEN"</string>
+    <string name="event.create.thankYou.sentence1">"Vielen Dank, dass Sie diese Veranstaltung erstellt haben"</string>
+    <string name="event.create.thankYou.sentence2">"Du bist toll!"</string>
+    <string name="event.create.thankYou.sentence3">"Vergessen Sie nicht, alle Dumps zu aktualisieren, die Sie während des Ereignisses bereinigt haben"</string>
+    <string name="event.create.thankYou.shareTitle">"Mit anderen teilen"</string>
+    <string name="event.create.thankYou.detail">"Siehe Veranstaltung"</string>
+    <string name="trash.create.thankYou.detail">"Siehe Bericht"</string>
+    <string name="organization.statistics.title">"Statistiken über die Aktivitäten der Mitglieder"</string>
+    <string name="organization.dumpsReported">"Berichte"</string>
+    <string name="organization.dumpsUpdated">"Aktualisierung"</string>
+    <string name="organization.dumpsCleaned">"Dumps gereinigt"</string>
 </resources>

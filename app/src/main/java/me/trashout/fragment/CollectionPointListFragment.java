@@ -348,7 +348,7 @@ public class CollectionPointListFragment extends BaseFragment implements ICollec
             mFirebaseAnalytics.logEvent("add_collection_point_button", params);
 
             MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
-                    .title(R.string.recycling_point_add_new_tittle)
+                    .title(R.string.home_recycling_point_add_new_tittle)
                     .content(R.string.home_recycling_point_add_new_redirect)
                     .positiveText(R.string.home_recycling_point_add_new_go_to_web)
                     .negativeText(R.string.home_recycling_point_add_new_do_later)

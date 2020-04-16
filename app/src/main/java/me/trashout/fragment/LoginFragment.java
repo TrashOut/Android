@@ -219,7 +219,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     public void onResume() {
         super.onResume();
         if (getActivity() != null && getActivity() instanceof MainActivity) {
-            ((MainActivity) getActivity()).setToolbarTitle(getString(R.string.global_login));
+            ((MainActivity) getActivity()).setToolbarTitle(getString(R.string.app_name));
             ((MainActivity) getActivity()).setNavigationBottomViewCheckedItem(NAVIGATION_PROFILE_ITEM);
         }
     }

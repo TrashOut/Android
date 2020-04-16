@@ -30,6 +30,7 @@ import android.content.Context;
 import android.location.Geocoder;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,7 +100,9 @@ public class UserActivityListAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         userActivityViewHolder.userActivityName.setText(userActivity.getUserInfo().getFullName(context));
         userActivityViewHolder.userActivityDate.setText(DateTimeUtils.DATE_FORMAT.format(userActivity.getCreated()));
-        userActivityViewHolder.userActivityPosition.setText(userActivity.getPosition() != null ? PositionUtils.getFormattedLocation(context, userActivity.getPosition().latitude, userActivity.getPosition().longitude) : "?");
+
+//        userActivityViewHolder.userActivityPosition.setText(userActivity.getPosition() != null ? PositionUtils.getFormattedLocation(context, userActivity.getPosition().latitude, userActivity.getPosition().longitude) : "?");
+        userActivityViewHolder.userActivityPosition.setText(userActivity.getGps().getArea().getFormatedLocation());
 
         if (userActivity.getActivity().getImages() != null && !userActivity.getActivity().getImages().isEmpty() && !TextUtils.isEmpty(userActivity.getActivity().getImages().get(0).getSmallestImage()) && userActivity.getActivity().getImages().get(0).getSmallestImage().contains("trashoutngo")) {
             StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(userActivity.getActivity().getImages().get(0).getSmallestImage());
@@ -141,18 +144,18 @@ public class UserActivityListAdapter extends RecyclerView.Adapter<RecyclerView.V
             userActivityViewHolder.userActivityDistance.setVisibility(View.GONE);
         }
 
-        final Geocoder geocoder = new Geocoder(context, Locale.getDefault());
-        new GeocoderTask(geocoder, userActivity.getGps().getLat(), userActivity.getGps().getLng(), new GeocoderTask.Callback() {
-            @Override
-            public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
-                if (!TextUtils.isEmpty(geocoderResult.getFormattedShortAddress())) {
-                    userActivityViewHolder.userActivityPosition.setText(geocoderResult.getFormattedShortAddress());
-                    userActivityViewHolder.userActivityPosition.setVisibility(View.VISIBLE);
-                } else {
-                    userActivityViewHolder.userActivityPosition.setVisibility(View.GONE);
-                }
-            }
-        }).execute();
+//        final Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+//        new GeocoderTask(geocoder, userActivity.getGps().getLat(), userActivity.getGps().getLng(), new GeocoderTask.Callback() {
+//            @Override
+//            public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
+//                if (!TextUtils.isEmpty(geocoderResult.getFormattedShortAddress())) {
+//                    userActivityViewHolder.userActivityPosition.setText(geocoderResult.getFormattedShortAddress());
+//                    userActivityViewHolder.userActivityPosition.setVisibility(View.VISIBLE);
+//                } else {
+//                    userActivityViewHolder.userActivityPosition.setVisibility(View.GONE);
+//                }
+//            }
+//        }).execute();
     }
 
     @Override

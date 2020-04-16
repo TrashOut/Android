@@ -53,6 +53,10 @@ public class Constants {
     public static String FAQ_HYPERLINK_RU = "https://www.trashout.ngo/ru/FAQ";
     public static String FAQ_HYPERLINK_DE = "https://www.trashout.ngo/de/FAQ";
     public static String FAQ_HYPERLINK_CS = "https://www.trashout.ngo/cs/FAQ";
+    public static String FAQ_HYPERLINK_PT = "https://www.trashout.ngo/pt/FAQ";
+    public static String FAQ_HYPERLINK_IT = "https://www.trashout.ngo/it/FAQ";
+    public static String FAQ_HYPERLINK_HU = "https://www.trashout.ngo/hu/FAQ";
+
 
     public static String SUPPORT_HYPERLINK = "https://www.trashout.ngo/projectsupport";
     public static String SUPPORT_HYPERLINK_SK = "https://www.trashout.ngo/sk/projectsupport";
@@ -61,6 +65,9 @@ public class Constants {
     public static String SUPPORT_HYPERLINK_RU = "https://www.trashout.ngo/ru/projectsupport";
     public static String SUPPORT_HYPERLINK_DE = "https://www.trashout.ngo/de/projectsupport";
     public static String SUPPORT_HYPERLINK_CS = "https://www.trashout.ngo/cs/projectsupport";
+    public static String SUPPORT_HYPERLINK_PT = "https://www.trashout.ngo/pt/projectsupport";
+    public static String SUPPORT_HYPERLINK_IT = "https://www.trashout.ngo/it/projectsupport";
+    public static String SUPPORT_HYPERLINK_HU = "https://www.trashout.ngo/hu/projectsupport";
 
     public static String ORDER_TRASH_PICKUP_HYPERLINK = "https://www.trashout.ngo/waste-management";
     public static String ORDER_TRASH_PICKUP_HYPERLINK_SK = "https://www.trashout.ngo/sk/waste-management";
@@ -69,6 +76,9 @@ public class Constants {
     public static String ORDER_TRASH_PICKUP_HYPERLINK_ES = "https://www.trashout.ngo/es-ar/waste-management";
     public static String ORDER_TRASH_PICKUP_HYPERLINK_CS = "https://www.trashout.ngo/cs/waste-management";
     public static String ORDER_TRASH_PICKUP_HYPERLINK_FR = "https://www.trashout.ngo/fr/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_PT = "https://www.trashout.ngo/pt/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_IT = "https://www.trashout.ngo/it/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_HU = "https://www.trashout.ngo/hu/waste-management";
 
     public static String ADD_RECYCLING_POINT = "https://admin.trashout.ngo/collection-points/create/ ";
     public static String EDIT_RECYCLING_POINT = "https://admin.trashout.ngo/collection-points/update/";

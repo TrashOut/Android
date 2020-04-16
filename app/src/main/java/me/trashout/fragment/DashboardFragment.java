@@ -919,6 +919,15 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                     case "ru":
                         Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_RU);
                         break;
+                    case "pt":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_PT);
+                        break;
+                    case "it":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_IT);
+                        break;
+                    case "hu":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_HU);
+                        break;
                     default:
                         Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK);
                         break;
@@ -949,6 +958,15 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                         break;
                     case "ru":
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_RU);
+                        break;
+                    case "pt":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_PT);
+                        break;
+                    case "it":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_IT);
+                        break;
+                    case "hu":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_HU);
                         break;
                     default:
                         Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK);
