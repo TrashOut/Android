@@ -645,18 +645,26 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             userActivityDistance.setVisibility(View.GONE);
         }
 
-        final Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
-        new GeocoderTask(geocoder, userActivity.getGps().getLat(), userActivity.getGps().getLng(), new GeocoderTask.Callback() {
-            @Override
-            public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
-                if (!TextUtils.isEmpty(geocoderResult.getFormattedShortAddress())) {
-                    userActivityPosition.setText(geocoderResult.getFormattedShortAddress());
-                    userActivityPosition.setVisibility(View.VISIBLE);
-                } else {
-                    userActivityPosition.setVisibility(View.GONE);
-                }
-            }
-        }).execute();
+        String locationText = userActivity.getGps().getArea().getFormatedLocation();
+        if(!TextUtils.isEmpty(locationText)){
+            userActivityPosition.setText(userActivity.getGps().getArea().getFormatedLocation());
+            userActivityPosition.setVisibility(View.VISIBLE);
+        }else{
+            userActivityPosition.setVisibility(View.GONE);
+        }
+
+//        final Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
+//        new GeocoderTask(geocoder, userActivity.getGps().getLat(), userActivity.getGps().getLng(), new GeocoderTask.Callback() {
+//            @Override
+//            public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
+//                if (!TextUtils.isEmpty(geocoderResult.getFormattedShortAddress())) {
+//                    userActivityPosition.setText(geocoderResult.getFormattedShortAddress());
+//                    userActivityPosition.setVisibility(View.VISIBLE);
+//                } else {
+//                    userActivityPosition.setVisibility(View.GONE);
+//                }
+//            }
+//        }).execute();
 
         return userActivityView;
     }

@@ -101,8 +101,13 @@ public class UserActivityListAdapter extends RecyclerView.Adapter<RecyclerView.V
         userActivityViewHolder.userActivityName.setText(userActivity.getUserInfo().getFullName(context));
         userActivityViewHolder.userActivityDate.setText(DateTimeUtils.DATE_FORMAT.format(userActivity.getCreated()));
 
-//        userActivityViewHolder.userActivityPosition.setText(userActivity.getPosition() != null ? PositionUtils.getFormattedLocation(context, userActivity.getPosition().latitude, userActivity.getPosition().longitude) : "?");
-        userActivityViewHolder.userActivityPosition.setText(userActivity.getGps().getArea().getFormatedLocation());
+        String locationText = userActivity.getGps().getArea().getFormatedLocation();
+        if(!TextUtils.isEmpty(locationText)){
+            userActivityViewHolder.userActivityPosition.setText(userActivity.getGps().getArea().getFormatedLocation());
+            userActivityViewHolder.userActivityPosition.setVisibility(View.VISIBLE);
+        }else{
+            userActivityViewHolder.userActivityPosition.setVisibility(View.GONE);
+        }
 
         if (userActivity.getActivity().getImages() != null && !userActivity.getActivity().getImages().isEmpty() && !TextUtils.isEmpty(userActivity.getActivity().getImages().get(0).getSmallestImage()) && userActivity.getActivity().getImages().get(0).getSmallestImage().contains("trashoutngo")) {
             StorageReference mImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(userActivity.getActivity().getImages().get(0).getSmallestImage());

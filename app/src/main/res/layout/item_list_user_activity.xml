@@ -96,7 +96,7 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textColor="@color/text_color_grey"
-                tools:text="Milady Horadafasfasfdasfasdfasdfkove, Prague" />
+                tools:text="Milady Horadove, Prague" />
 
         </LinearLayout>
 
