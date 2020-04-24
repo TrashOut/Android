@@ -41,32 +41,30 @@ import butterknife.OnClick;
 import me.trashout.Configuration;
 import me.trashout.R;
 import me.trashout.fragment.base.BaseFragment;
-import me.trashout.model.TrashResponse;
+import me.trashout.model.EventResponse;
 
-public class ThankYouFragment extends BaseFragment {
+public class ThankYouFragmentEvent extends BaseFragment {
 
-    public static final String BUNDLE_TRASH_RESPONSE = "BUNDLE_TRASH_RESPONSE";
+    public static final String BUNDLE_EVENT_RESPONSE = "BUNDLE_EVENT_RESPONSE";
 
     @BindView(R.id.txt_title)
     TextView thankYouTitle;
 
-    private TrashResponse trashResponse;
+    private Long eventId;
 
-    public static ThankYouFragment newInstance(TrashResponse trashResponse) {
+    public static ThankYouFragmentEvent newInstance(EventResponse eventResponse) {
         Bundle b = new Bundle();
-        b.putParcelable(BUNDLE_TRASH_RESPONSE, trashResponse);
-        ThankYouFragment ret = new ThankYouFragment();
+        b.putLong(BUNDLE_EVENT_RESPONSE, eventResponse.getId());
+        ThankYouFragmentEvent ret = new ThankYouFragmentEvent();
         ret.setArguments(b);
         return ret;
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_thank_you, container, false);
+        View view = inflater.inflate(R.layout.fragment_thank_you_event, container, false);
         ButterKnife.bind(this, view);
-
-        this.trashResponse = getArguments().getParcelable(BUNDLE_TRASH_RESPONSE);
-
+        this.eventId = getArguments().getLong(BUNDLE_EVENT_RESPONSE);
         Typeface typeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/capriola.ttf");
         thankYouTitle.setTypeface(typeface);
 
@@ -77,7 +75,15 @@ public class ThankYouFragment extends BaseFragment {
     public void clickOnShare() {
         ShareCompat.IntentBuilder.from(getActivity())
                 .setType("text/plain")
-                .setText(Configuration.ADMIN_TRASH_DETAIL_URL + trashResponse.getId())
+                .setText(Configuration.ADMIN_EVENT_DETAIL_URL + eventId)
                 .startChooser();
     }
+
+
+    @OnClick({R.id.go_to_event_detail_btn})
+    public void onClick() {
+        EventDetailFragment eventDetailFragment = EventDetailFragment.newInstance(eventId);
+        getBaseActivity().replaceFragment(eventDetailFragment, false);
+    }
+
 }

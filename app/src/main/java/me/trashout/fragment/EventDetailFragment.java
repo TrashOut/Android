@@ -1,26 +1,26 @@
 /*
- * TrashOut is an environmental project that teaches people how to recycle 
+ * TrashOut is an environmental project that teaches people how to recycle
  * and showcases the worst way of handling waste - illegal dumping. All you need is a smart phone.
- *  
- *  
+ *
+ *
  * There are 10 types of programmers - those who are helping TrashOut and those who are not.
- * Clean up our code, so we can clean up our planet. 
+ * Clean up our code, so we can clean up our planet.
  * Get in touch with us: help@trashout.ngo
- *  
+ *
  * Copyright 2017 TrashOut, n.f.
- *  
+ *
  * This file is part of the TrashOut project.
- *  
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 3 of the License, or
  * (at your option) any later version.
- *  
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *  
+ *
  * See the GNU General Public License for more details: <https://www.gnu.org/licenses/>.
  */
 
@@ -36,6 +36,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatButton;
@@ -95,6 +96,8 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
     private static final int JOIN_TO_EVENT_REQUEST_ID = 751;
 
     private static final String BUNDLE_EVENT_ID = "BUNDLE_EVENT_ID";
+    private static final String BUNDLE_FRAGMENT_ID = "BUNDLE_FRAGMENT_ID";
+    private static final String BUNDLE_EVENT_OBJ = "BUNDLE_EVENT_OBJJ";
 
     @BindView(R.id.event_detail_name)
     TextView eventDetailName;
@@ -148,14 +151,22 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
     LinearLayout eventDetailTrashListContainer;
     @BindView(R.id.event_detail_trash_list_card_view)
     CardView eventDetailTrashlispCardView;
+    @BindView(R.id.divider)
+    View dividerView;
+    @BindView(R.id.event_detail_title)
+    TextView mapTitle;
+    @BindView(R.id.event_detail_edit_btn)
+    AppCompatButton editEventButton;
 
     private LayoutInflater inflater;
 
     private Event mEvent;
+    private Event mEventBundle;
     private Long mEventId;
 
     private LatLng lastPosition;
     private User user;
+    private Long userId;
 
     private OnEventJoinedListener onEventJoinedListener;
 
@@ -183,6 +194,16 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
         return ret;
     }
 
+    public static EventDetailFragment newInstance(long eventId, Event event, long fragmentId) {
+        Bundle b = new Bundle();
+        b.putLong(BUNDLE_FRAGMENT_ID, fragmentId);
+        b.putLong(BUNDLE_EVENT_ID, eventId);
+        b.putParcelable(BUNDLE_EVENT_OBJ, event);
+        EventDetailFragment ret = new EventDetailFragment();
+        ret.setArguments(b);
+        return ret;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_event_detail, container, false);
@@ -190,6 +211,8 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
         this.inflater = inflater;
 
         user = PreferencesHandler.getUserData(getContext());
+
+
 
         if (ContextCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Log.d(TAG, "setUpMapIfNeeded: permission check");
@@ -218,7 +241,35 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
         return mEventId;
     }
 
+    /**
+     * Get event
+     *
+     * @return
+     */
+    private Event getEvent() {
+        if (mEventBundle == null)
+            mEventBundle = getArguments().getParcelable(BUNDLE_EVENT_OBJ);
+        return mEventBundle;
+    }
+
     private void setupEventData(Event event) {
+
+
+
+        if (user != null) {
+            if (user.getUserRole() != null) {
+                if (user.getUserRole().getDescription() != null) {
+                    if (user.getUserRole().getDescription().equals("superAdmin")) {
+                        editEventButton.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        }
+
+        if (user != null && mEvent.getUserId() == user.getId()) {
+            editEventButton.setVisibility(View.VISIBLE);
+        }
+
         if (user == null || mEvent.getUserId() == user.getId()) {
             eventDetailJoinBtn.setVisibility(View.GONE);
         } else {
@@ -233,20 +284,42 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
             eventDetailJoinBtn.setVisibility(visibility);
         }
 
+        mapTitle.setText(getResources().getString(R.string.event_meetingPoint));
+
         eventDetailName.setText(event.getName());
         if (event.getStart() != null)
             eventDetailTime.setText(String.format("%s, %s", DateTimeUtils.DATE_TIME_FORMAT.format(event.getStart()), DateTimeUtils.getDurationTimeString(getContext(), event.getDuration() * 60 * 1000)));
         else
             eventDetailTime.setText("?");
-        eventDetailDescription.setText(event.getDescription());
 
+        if (event.getDescription() != null) {
+            eventDetailDescription.setText(event.getDescription());
+        } else {
+            eventDetailDescription.setVisibility(View.GONE);
+        }
 
         eventDetailPhone.setText(event.getContact().getPhone());
         eventDetailEmail.setText(event.getContact().getEmail());
 
+        if (event.getHave() == null && event.getBring() == null) {
+            eventDetailEquipmentCardView.setVisibility(View.GONE);
+        } else {
+            if (event.getHave() == null) {
+                eventDetailWeHave.setVisibility(View.GONE);
+                eventDetailWeHaveTitle.setVisibility(View.GONE);
+                dividerView.setVisibility(View.GONE);
+            } else {
+                eventDetailWeHave.setText(event.getHave());
+            }
 
-        eventDetailWeHave.setText(event.getHave());
-        eventDetailBring.setText(event.getBring());
+            if (event.getBring() == null) {
+                eventDetailBring.setVisibility(View.GONE);
+                eventDetailBringTitle.setVisibility(View.GONE);
+                dividerView.setVisibility(View.GONE);
+            } else {
+                eventDetailBring.setText(event.getBring());
+            }
+        }
 
 
         if (event.getGps() != null && event.getGps().getArea() != null && !TextUtils.isEmpty(event.getGps().getArea().getFormatedLocation())) {
@@ -302,7 +375,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
      * @param trashPoint
      * @return
      */
-    private View getTrashView(TrashPoint trashPoint) {
+    private View getTrashView(final TrashPoint trashPoint) {
         View eventTrashView = inflater.inflate(R.layout.layout_event_trash, null);
 
         TextView eventTrashDate = eventTrashView.findViewById(R.id.event_trash_date);
@@ -310,6 +383,19 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
         TextView eventTrashLocation = eventTrashView.findViewById(R.id.event_trash_location);
         ImageView eventTrashImage = eventTrashView.findViewById(R.id.event_trash_image);
         ImageView eventTrashStatusIcon = eventTrashView.findViewById(R.id.event_trash_status_icon);
+
+        RelativeLayout wholeLayout = eventTrashView.findViewById(R.id.event_trash_relativeLayout);
+
+        final TrashPoint tp = trashPoint;
+
+        wholeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "onDumpClick: " + tp.getId());
+                TrashDetailFragment trashDetailFragment = TrashDetailFragment.newInstance(tp.getId());
+                getBaseActivity().replaceFragment(trashDetailFragment);
+            }
+        });
 
         eventTrashLocation.setText(String.format(getContext().getString(R.string.distance_away_formatter), lastPosition != null ? PositionUtils.getFormattedComputeDistance(getContext(), lastPosition, trashPoint.getPosition()) : "?", getString(R.string.global_distanceAttribute_away)));
 
@@ -372,7 +458,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
                 mEvent = apiGetTrashDetailResult.getEvent();
                 setupEventData(mEvent);
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         } else if (apiResult.getRequestId() == JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
@@ -393,7 +479,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
 
     }
 
-    @OnClick({R.id.event_detail_join_btn, R.id.event_detail_phone_layout, R.id.event_detail_email_layout, R.id.event_detail_direction_btn})
+    @OnClick({R.id.event_detail_join_btn, R.id.event_detail_phone_layout, R.id.event_detail_email_layout, R.id.event_detail_direction_btn, R.id.event_detail_edit_btn})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.event_detail_join_btn:
@@ -402,7 +488,7 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
                         showToast(R.string.event_signToJoin);
                     } else {
                         MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
-                                .title(R.string.global_validation_warning)
+                                .title(R.string.event_event_joinEventTitle)
                                 .content(R.string.event_joinEventConfirmationMessage)
                                 .positiveText(android.R.string.ok)
                                 .negativeText(android.R.string.cancel)
@@ -441,6 +527,28 @@ public class EventDetailFragment extends BaseFragment implements ITrashFragment,
                     }
                 }
                 break;
+
+
+            case R.id.event_detail_edit_btn:
+                if (mEvent != null) {
+//                    if(user != null && mEvent.getUserId() == user.getId()){
+                    MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
+                            .title(R.string.event_event_edit_title)
+                            .content(R.string.event_event_edit_redirect)
+                            .positiveText(R.string.event_event_edit_go_to_web)
+                            .negativeText(R.string.event_event_edit_do_later)
+                            .autoDismiss(true)
+                            .onPositive(new MaterialDialog.SingleButtonCallback() {
+                                @Override
+                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                    Utils.browseUrl(getActivity(), Constants.EDIT_EVENT + String.valueOf(mEvent.getId()));
+                                }
+                            })
+                            .build();
+
+                    dialog.show();
+//                    }
+                }
         }
     }
 

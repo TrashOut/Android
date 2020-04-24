@@ -78,13 +78,27 @@
                 android:layout_marginTop="3dp"
                 android:backgroundTint="@color/button_color_green_dark"
                 android:text="@string/global.readMore"
-                android:textColor="@color/text_color_white"
-                app:backgroundTint="@color/button_color_green_dark" />
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="@color/button_color_green_dark" />
 
         </LinearLayout>
 
 
     </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/collection_point_list_order_trash_pickup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/button_color_green_dark"
+        android:text="@string/home.orderTrashPickup"
+        android:textColor="@color/text_color_white"
+        app:backgroundTint="@color/button_color_green_dark" />
 
     <TextView
         android:id="@+id/collection_point_list_header_other_junkyards"

@@ -521,6 +521,19 @@
 
                         </LinearLayout>
 
+                        <android.support.v7.widget.AppCompatButton
+                            android:id="@+id/dashboard_order_trash_pickup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginBottom="12dp"
+                            android:backgroundTint="@color/button_color_green_dark"
+                            android:text="@string/home.orderTrashPickup"
+                            android:textColor="@color/text_color_white"
+                            app:backgroundTint="@color/button_color_green_dark" />
+
+
                         <TextView
                             android:id="@+id/dashboard_recent_activity_title"
                             android:layout_width="match_parent"
@@ -643,8 +656,8 @@
                             android:id="@+id/dashboard_trash_hunter_btn"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
                             android:backgroundTint="@color/button_color_green_dark"
                             android:text="@string/trashHunter.stopHunting"
                             android:textColor="@color/text_color_white"
@@ -824,6 +837,21 @@
                         </LinearLayout>
 
                     </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/dashboard_support_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:backgroundTint="@color/button_color_green_dark"
+                        android:text="@string/info.supportUs"
+                        android:textColor="@color/text_color_white"
+                        app:backgroundTint="@color/button_color_green_dark" />
+
 
                 </LinearLayout>
             </LinearLayout>

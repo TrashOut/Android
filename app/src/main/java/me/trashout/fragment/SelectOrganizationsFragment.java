@@ -19,6 +19,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import butterknife.BindView;
@@ -150,6 +152,13 @@ public class SelectOrganizationsFragment extends BaseFragment implements IProfil
 
         if (organizationList == null)
             return;
+
+        Collections.sort(organizationList, new Comparator<Organization>() {
+            @Override
+            public int compare(final Organization object1, final Organization object2) {
+                return object2.getName().compareTo(object1.getName());
+            }
+        });
 
         // Api returns only descending order not ascending
         for (int i = organizationList.size() - 1; i >= 0; i--) {

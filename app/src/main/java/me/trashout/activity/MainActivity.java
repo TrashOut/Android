@@ -334,6 +334,12 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         BottomNavigationViewHelper.disableShiftMode(navigation);
     }
 
+
+    public void triggerBottomMenuButton(){
+        onNavigationItemSelected(navigation.getMenu().findItem(R.id.action_main_home));
+    }
+
+
     /**
      * Setting toolbar title
      *

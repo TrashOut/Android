@@ -312,6 +312,7 @@ public abstract class BaseService extends Service {
         }
         mRequestList.add(apiBaseRequest);
 
+        //TODO: Jakub Brehuv android O
         context.startService(new Intent(context, clazz));
     }
 

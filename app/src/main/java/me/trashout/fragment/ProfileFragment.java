@@ -306,7 +306,7 @@ public class ProfileFragment extends BaseFragment implements IProfileFragment, B
                 mUser = apiGetUserResult.getUser();
                 setupUserData(mUser);
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         }
     }

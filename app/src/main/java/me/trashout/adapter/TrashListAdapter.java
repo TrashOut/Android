@@ -100,7 +100,7 @@ public class TrashListAdapter extends RecyclerView.Adapter<TrashListAdapter.Tras
 
         // TODO update needed state?
         if (trash.isUpdateNeeded()) {
-            trashViewHolder.statusIcon.setImageResource(R.drawable.ic_trash_status_unknown);
+            trashViewHolder.statusIcon.setImageResource(R.drawable.ic_trash_status_unknown_red);
         } else if (Constants.TrashStatus.CLEANED.equals(trash.getStatus())) {
             trashViewHolder.statusIcon.setImageResource(R.drawable.ic_trash_activity_cleaned);
         } else if (Constants.TrashStatus.STILL_HERE.equals(trash.getStatus()) && (trash.getUpdateHistory() == null || trash.getUpdateHistory().isEmpty())) {

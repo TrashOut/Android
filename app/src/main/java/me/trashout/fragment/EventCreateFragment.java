@@ -29,7 +29,9 @@ package me.trashout.fragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.location.Geocoder;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.AppCompatButton;
 import android.text.TextUtils;
 import android.util.Log;
@@ -48,6 +50,10 @@ import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -67,7 +73,9 @@ import me.trashout.fragment.base.BaseFragment;
 import me.trashout.fragment.base.ITrashFragment;
 import me.trashout.model.Contact;
 import me.trashout.model.Event;
+import me.trashout.model.EventResponse;
 import me.trashout.model.Gps;
+import me.trashout.model.TrashResponse;
 import me.trashout.model.User;
 import me.trashout.service.CreateEventService;
 import me.trashout.service.base.BaseService;
@@ -75,6 +83,8 @@ import me.trashout.utils.DateTimeUtils;
 import me.trashout.utils.GeocoderTask;
 import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.ViewUtils;
+import okhttp3.ResponseBody;
+import retrofit2.Response;
 
 public class EventCreateFragment extends BaseFragment implements ITrashFragment, BaseService.UpdateServiceListener {
 
@@ -136,6 +146,8 @@ public class EventCreateFragment extends BaseFragment implements ITrashFragment,
     private Date dateTo;
 
     private User user;
+    private Gson gson;
+
 
     public interface OnSelectTrashIdsOnMapListener {
         void onTrashIdsOnMapSelected(ArrayList<Long> selectedTrash);
@@ -158,6 +170,7 @@ public class EventCreateFragment extends BaseFragment implements ITrashFragment,
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_event_create, container, false);
         ButterKnife.bind(this, view);
+        gson = new Gson();
 
         user = PreferencesHandler.getUserData(getContext());
         if (user != null && !TextUtils.isEmpty(user.getEmail()))
@@ -365,8 +378,7 @@ public class EventCreateFragment extends BaseFragment implements ITrashFragment,
                 if (getTargetFragment() != null && getTargetFragment() instanceof OnCreateEventListener) {
                     ((OnCreateEventListener) getTargetFragment()).onEventCreated();
                 }
-                showToast(R.string.event_created);
-                finish();
+                redirectToSharePage(apiResult);
             } else {
                 showToast(R.string.event_create_failed);
             }
@@ -377,6 +389,18 @@ public class EventCreateFragment extends BaseFragment implements ITrashFragment,
     public void onNewUpdate(ApiUpdate apiUpdate) {
 
     }
+
+    private void redirectToSharePage(ApiResult apiResult) {
+        try {
+            EventResponse eventResponse = gson.fromJson(((ResponseBody) apiResult.getResponse().body()).string(), EventResponse.class);
+
+            ThankYouFragmentEvent thankYouFragmentEvent = ThankYouFragmentEvent.newInstance(eventResponse);
+            getBaseActivity().replaceFragment(thankYouFragmentEvent, false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void showDateTimePickerDialog(final boolean isdateFrom, final Date specifiedDate) {
 
