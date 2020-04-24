@@ -172,7 +172,7 @@ public class UserActivityListFragment extends BaseFragment implements IProfileFr
                 mAdapter.notifyDataSetChanged();
 
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
             recyclerview.setLoading(false);
         }

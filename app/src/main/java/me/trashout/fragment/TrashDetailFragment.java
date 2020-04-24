@@ -52,7 +52,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -305,7 +304,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
 
         trashDetailStateName.setText(trash.getStatus().getStringResId());
         if (trash.isUpdateNeeded()) {
-            trashDetailStateIcon.setImageResource(R.drawable.ic_trash_status_unknown);
+            trashDetailStateIcon.setImageResource(R.drawable.ic_trash_status_unknown_red);
             trashDetailStateName.setText(R.string.trash_updateNeeded);
         } else if (Constants.TrashStatus.CLEANED.equals(trash.getStatus())) {
             trashDetailStateIcon.setImageResource(R.drawable.ic_trash_activity_cleaned);
@@ -577,7 +576,11 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
             // create container of fullscreen photos for each update history row
             for (Image image: updateHistory.getChanged().getImages())
             {
-                fullScreenImages.add(new FullScreenImage(image, updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
+                if(updateHistory.isAnonymous()){
+                    fullScreenImages.add(new FullScreenImage(image, getResources().getString(R.string.trash_anonymous), updateHistory.getUpdateTime()));
+                }else{
+                    fullScreenImages.add(new FullScreenImage(image, updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
+                }
             }
 
             for (Image image : updateHistory.getChanged().getImages()) {
@@ -749,7 +752,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 trashDetailViewContainer.setVisibility(View.VISIBLE);
             } else {
                 dismissProgressDialog();
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         } else if (apiResult.getRequestId() == TRASH_CREATE_SPAM_REQUEST_ID) {
             dismissProgressDialog();
@@ -882,7 +885,11 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         UpdateHistory latestUpdateHistory = UpdateHistory.createLastUpdateHistoryFromTrash(trash);
         for (Image image: trash.getImages())
         {
-            fullScreenImages.add(new FullScreenImage(image, latestUpdateHistory.getUserInfo().getFullName(getContext()), latestUpdateHistory.getUpdateTime()));
+            if(latestUpdateHistory.isAnonymous()){
+                fullScreenImages.add(new FullScreenImage(image, getResources().getString(R.string.trash_anonymous), latestUpdateHistory.getUpdateTime()));
+            }else{
+                fullScreenImages.add(new FullScreenImage(image, latestUpdateHistory.getUserInfo().getFullName(getContext()), latestUpdateHistory.getUpdateTime()));
+            }
         }
 
         if (trash.getUpdateHistory() != null && !trash.getUpdateHistory().isEmpty()) {
@@ -890,7 +897,11 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
             for (UpdateHistory updateHistory : preparedUpdateHistory) {
                 for (Image image: updateHistory.getChanged().getImages())
                 {
-                    fullScreenImages.add(new FullScreenImage(image, updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
+                    if(updateHistory.isAnonymous()){
+                        fullScreenImages.add(new FullScreenImage(image, getResources().getString(R.string.trash_anonymous), updateHistory.getUpdateTime()));
+                    }else{
+                        fullScreenImages.add(new FullScreenImage(image, updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
+                    }
                 }
             }
         }

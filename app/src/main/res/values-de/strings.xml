@@ -3,15 +3,14 @@
     <string name="tab.profile">"Profil"</string>
     <string name="global.nearby">"In der Nähe"</string>
     <string name="tab.home">"Start"</string>
-    <string name="tab.dumps">"Deponien"</string>
+    <string name="tab.dumps">"Müllkippe"</string>
     <string name="tab.news">"Nachrichten"</string>
     <string name="tab.recycling">"Recycling"</string>
-    <string name="global.menu.events">"Veranstaltungen
-"</string>
+    <string name="global.menu.events">"Veranstaltungen"</string>
     <string name="global.menu.geoAreas">"Geographische Gebiete"</string>
     <string name="global.menu.notifications">"Benachrichtigungen"</string>
     <string name="global.menu.organizations">"Organisationen"</string>
-    <string name="global.menu.dumps">"Deponien"</string>
+    <string name="global.menu.dumps">"Müllkippe"</string>
     <string name="global.menu.collectionPoints">"Recyclingstellen"</string>
     <string name="global.showAll">"Alles zeigen"</string>
     <string name="global.save">"Speichern"</string>
@@ -172,8 +171,7 @@ Bitte komm zurück, wenn du wieder online bist."</string>
     <string name="trash.create.success">"Abfall wurde erfolgreich gemeldet. Vielen Dank."</string>
     <string name="trash.photosOfTrash">"Fotos von diesem Müll"</string>
     <string name="trash.comments">"Kommentare"</string>
-    <string name="global.fetchError">"Hoppla, irgendwas ist schief gelaufen.
-Der Server antwortet gerade nicht, bitte versuche es später noch einmal."</string>
+    <string name="global.fetchError">"Wir haben ein vorübergehendes Problem mit unserem Server. Wir tun unser Bestes, um es bald zu beheben, bitte versuche es später noch einmal."</string>
     <string name="trash.discardChanges">"Alle Änderungen verwerfen?"</string>
     <string name="trash.spam.comfirmation">"Willst du diesen Müll wirklich als Spam melden?"</string>
     <string name="global.detail">"Detail"</string>
@@ -190,7 +188,7 @@ Der Server antwortet gerade nicht, bitte versuche es später noch einmal."</stri
     <string name="home.noDumpsNear">"Keine illegalen Deponien in der Nähe"</string>
     <string name="global.enableGps">"Standortdienste zulassen"</string>
     <string name="trash.loadingDumps">"Deponien in deiner Nähe werden geladen...."</string>
-    <string name="global.loadingError">"Laden fehlgeschlagen"</string>
+    <string name="global.loadingError">"Bitte verbinden Sie sich mit dem Internet, um diesen Abschnitt zu sehen."</string>
     <string name="trash.edit.betterLocation">"Versuche, einen besseren Standort zu finden."</string>
     <string name="trash.create.error">"Das Senden wurde unterbrochen."</string>
     <string name="global.dbError">"Hoppla, wir konnten die Daten NICHT speichern."</string>
@@ -247,10 +245,9 @@ Der Server antwortet gerade nicht, bitte versuche es später noch einmal."</stri
     <string name="home.nearestDumps">"Nächste Deponien"</string>
     <string name="home.goAndFindDumps">"Suche und aktualisiere diese Deponien"</string>
     <string name="home.didYouKnow">"Neuigkeiten und Updates"</string>
-    <string name="home.nearestRecyclingPoints">Nächste Recyclingpunkte</string>
-    <string name="home.nearestRecyclingPoint">Nächster Recyclingpunkt</string>
+    <string name="home.nearestRecyclingPoints">"Nächste Recyclingpunkte"</string>
     <string name="collectionPoint.size.recyclingBin">"Lagerort"</string>
-    <string name="collectionPoint.size.recyclingCenter">"Mitte"</string>
+    <string name="collectionPoint.size.recyclingCenter">"Recyclinghof (groß)"</string>
     <string name="collectionPoint.size.all">"Alle"</string>
     <string name="collectionPoint.header">"Recyclingstandort"</string>
     <string name="collectionPoint.list.header">"Recycling-Punktliste"</string>
@@ -346,7 +343,6 @@ Der Server antwortet gerade nicht, bitte versuche es später noch einmal."</stri
     <string name="collectionPoint.openingHours">"Öffnungszeiten"</string>
     <string name="global.noLongerExistQuestion">"Gibt es nicht?"</string>
     <string name="global.forgotPassword">"Passwort vergessen?"</string>
-    <string name="global.internet.offline">Bitte verbinden Sie sich mit dem Internet, um diesen Abschnitt zu sehen.</string>
     <string name="user.validation.firstNameRequired">"Vorname ist erforderlich"</string>
     <string name="user.validation.lastNameRequired">"Nachname ist erforderlich"</string>
     <string name="profile.yourActivities">"Deine Aktivitäten"</string>
@@ -355,8 +351,8 @@ Der Server antwortet gerade nicht, bitte versuche es später noch einmal."</stri
     <string name="global.edit">"Bearbeiten"</string>
     <string name="trash.anonymous">"Anonym"</string>
     <string name="global.phoneNotSet">"Telefon nicht eingestellt"</string>
-    <string name="profile.earnedPoints_X">"Du hast bisher% d Punkte verdient! Suche nach weiteren Deponien, es bringt dir neue Abzeichen!"</string>
-    <string name="profile.points_X">"% Punkte"</string>
+    <string name="profile.earnedPoints_X">"Du hast bisher %d Punkte verdient! Suche nach weiteren Deponien, es bringt dir neue Abzeichen!"</string>
+    <string name="profile.points_X">"%d Punkte"</string>
     <string name="global.numberOfTimes_X">"%dx"</string>
 
     <!-- Bei Spielen oder Apps wird geduzt -->
@@ -383,7 +379,7 @@ Der Server antwortet gerade nicht, bitte versuche es später noch einmal."</stri
     <string name="trashHunter.startHunting">"Beginne mit der Jagd"</string>
     <string name="trashHunter.huntingArea">"Jagdgebiet"</string>
     <string name="trashHunter.stopHunting">"STOPP DIE JAGD"</string>
-    <string name="trash.foundDumps_X">"Gefundene Deponien :% d"</string>
+    <string name="trash.foundDumps_X">"Gefundene Deponien : %d"</string>
     <string name="trashHunter.turnedOnInfo">"\"Mülljäger-Modus\" wurde aktiviert und ist für den folgenden Zeitraum aktiv."</string>
     <string name="trash.updateNeeded">"Update erforderlich"</string>
     <string name="trash.filter.lastUpdate.noLimit">"Keine Begrenzung"</string>
@@ -505,7 +501,7 @@ Der Server antwortet gerade nicht, bitte versuche es später noch einmal."</stri
     <string name="trash.confirmation.deleteImage">"Möchtest du das Bild wirklich löschen?"</string>
     <string name="trash.confirmation.deleteTrash">"Möchtest du das Bild wirklich löschen?"</string>
     <string name="global.confirmation.header">"Bestätigung"</string>
-    <string name="event.confirmation.joinEvent">"Willst du wirklich an der Veranstaltung teilnehmen?"</string>
+    <string name="event.confirmation.joinEvent">"Bitte bestätigen Sie Ihre Teilnahme. Informationen zu den Teilnehmern stehen den Organisatoren zur Verfügung, um sie bei den Vorbereitungen zu unterstützen"</string>
     <string name="trash.confirmation.markSpam">"Willst du diesen Müll wirklich als Spam melden?"</string>
     <string name="global.confirmation.reject">"wirklich ablehnen"</string>
 
@@ -612,7 +608,7 @@ Kleinbuchstaben und 1 Nummer enthalten."</string>
     <string name="global.validation.warning">"Warnung"</string>
     <string name="global.validation.noEmailClientInstalled">"Kein E-Mail-Client instaliert"</string>
     <string name="trash.edit.greaterDistanceText">"Du bist mehr als 100 m vom Müll entfernt. Du sollst in der Nähe sein."</string>
-    <string name="trash.edit.minPhotosText">"Um einen Abfall-Eintrag zu erstellen oder zu aktualisieren, müssen mindestens% d Fotos gemacht werden"</string>
+    <string name="trash.edit.minPhotosText">"Um einen Abfall-Eintrag zu erstellen oder zu aktualisieren, müssen mindestens %d Fotos gemacht werden"</string>
     <string name="trash.validation.mustSelectMeetingPoint">"Wähle zuerst die Lage zum Treffen"</string>
     <string name="event.detail.bring">"Bringen"</string>
     <string name="event.detail.pleaseBring">"Bitte bring"</string>
@@ -961,7 +957,7 @@ Täglich, wöchentlich oder monatlich benachrichtigt werden und über Aktivität
     <string name="export.selectAttributes">"Wähle die zu exportierenden Attribute aus"</string>
     <string name="export.itemsPerFile">"Elemente pro Datei"</string>
     <string name="export.itemsPerFile.currentValue">"Wert"</string>
-    <string name="export.preparingExport">"Der Export wird vorbereitet …"</string>
+    <string name="export.preparingExport">"Der Export wird vorbereitet ..."</string>
     <string name="global.latitude">"Breitengrad"</string>
     <string name="global.longitude">"Längengrad"</string>
     <string name="collectionPoint.created">"Erstellte Zeit"</string>
@@ -1160,7 +1156,6 @@ Täglich, wöchentlich oder monatlich benachrichtigt werden und über Aktivität
     <string name="global.validation.imageRatio">"Du kannst keine großen Bilder verwenden. Bitte verwende ein anderes Bild. Das Bildverhältnis muss kleiner als 1: 2 sein."</string>
     <string name="global.validation.maxiumNumberReached">"Maximale Anzahl der hochgeladenen Bilder erreicht (maximal 20 Dateien hochladen)."</string>
     <string name="global.error.api.title">"API-Fehler"</string>
-    <string name="global.error.api.text">Wir haben ein vorübergehendes Problem mit unserem Server. Wir tun unser Bestes, um es bald zu beheben, bitte versuche es später noch einmal.</string>
     <string name="global.error.api.description">"Ein Fehler in der API. Seite aktualisieren bitte."</string>
     <string name="trash.types.glass">"Glas"</string>
     <string name="global.occupation">"Beruf"</string>
@@ -1193,7 +1188,7 @@ Täglich, wöchentlich oder monatlich benachrichtigt werden und über Aktivität
 Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit wir gemeinsam zu einer saubereren Welt für alle beitragen können."</string>
     <string name="info.appVerison_X">"Version von% @"</string>
     <string name="tutorial.register">"Registrieren"</string>
-    <string name="global.distanceAttribute.away">"Weg"</string>
+    <string name="global.distanceAttribute.away">"entfernt"</string>
     <string name="event.create.successMobile">"Vielen Dank, die Veranstaltung wurde erfolgreich erstellt. Du kannst deine Veranstaltung bearbeiten und die Teilnehmer unter www.admin.trashout.ngo sehen."</string>
     <string name="home.recentActivity.you">"du"</string>
     <string name="global.continue">"Fortfahren"</string>
@@ -1216,13 +1211,12 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="global.other">"Andere"</string>
     <string name="profile.delete.confirm">"Bist du sicher, du möchtest dein Profil löschen?"</string>
     <string name="news.success.photo.deleted">"Das Bild aus dem Artikel wurde gelöscht"</string>
-    <string name="global.resendVerificationEmail">"Senden sie e-mail verifizierung
-"</string>
+    <string name="global.resendVerificationEmail">"Senden sie e-mail verifizierung"</string>
     <string name="global.emailResent">"Bestätigungs e-mail wurde gesendet."</string>
-    <string name="event.addToCalendar">"Zum kalender hinzufügen
-"</string>
-    <string name="global.add">"ergänzen
-"</string>
+
+    <!-- Fuzzy -->
+    <string name="event.addToCalendar">"Zum kalender hinzufügen"</string>
+    <string name="global.add">"ergänzen"</string>
     <string name="profile.myEvents.timeDecision.ongoing">"Laufend"</string>
     <string name="mail.eventConfirm.subject">"Anwesenheitsbestätigung"</string>
     <string name="mail.eventFeedback.subject">"Wie war die Veranstaltung gestern?"</string>
@@ -1238,14 +1232,69 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="collectionPoint.validation.chooseDay">"Bitte wähle einen Tag aus"</string>
     <string name="collectionPoint.validation.dayIsUsed">"Der Tag wurde ausgewählt"</string>
     <string name="statistics.countryPicker.header">"Wählen Sie das Land aus"</string>
-
     <string name="notification.recentActivity.header">"Ihr Bericht eines illegalen Speicherauszugs wurde aktualisiert"</string>
     <string name="notification.recentActivity.text">"Überprüfen Sie seinen neuen Status in der TrashOut App und bleiben Sie immer informiert"</string>
-    <string name="mail.eventCreate.subject"></string>
-    <string name="global.signUp.acceptRegister.startSentense">Indem du dich registrierst, stimmst du den</string>
-    <string name="global.signUp.acceptRegister.privatePolicy">Allgemeinen Geschäftsbedingungen</string>
-    <string name="global.signUp.acceptRegister.and">und</string>
-    <string name="global.signUp.acceptRegister.terms">Datenschutzrichtlinien</string>
+    <string name="mail.eventCreate.subject">"TrashOut - wichtige Informationen über das von Ihnen erstellte Ereignis"</string>
 
-    <string name="global.internet.error.offline">Ihr Mobilgerät ist nicht mit dem Internet verbunden. Machen Sie ein Foto und melden Sie es später über www.admin.trashout.ngo.</string>
+    <!-- note -->
+    <!-- Fuzzy -->
+    <string name="global.signUp.acceptRegister.startSentense">"Ich stimme der Verarbeitung meiner persönlichen Daten zu. Ich stimme den "</string>
+    <string name="global.signUp.acceptRegister.privatePolicy">"Datenschutzrichtlinien"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.signUp.acceptRegister.and">"und"</string>
+    <string name="global.signUp.acceptRegister.terms">"Nutzungsbedingungen"</string>
+
+    <!-- error with communication with API server -->
+    <!-- Fuzzy -->
+    <string name="global.error.api.text">"Wir haben ein vorübergehendes Problem mit unserem Server. Wir tun unser Bestes, um es bald zu beheben, bitte versuche es später noch einmal."</string>
+    <string name="global.internet.offline">"Bitte verbinden Sie sich mit dem Internet, um diesen Abschnitt zu sehen."</string>
+    <string name="global.cookiesPolicy">"Diese Website verwendet Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. Stimmen Sie zu, indem Sie auf die Schaltfläche \"Akzeptieren\" klicken. Wir verwenden Cookies, um Social-Media-Funktionen bereitzustellen, unseren Traffic und das Verhalten der Besucher auf unserer Website und zu Marketingzwecken zu analysieren. Manchmal teilen wir diese anonymisierten Informationen mit den Tools von Drittanbietern. Lesen Sie unsere"</string>
+    <string name="global.acceptCookiesPolicy">"Akzeptieren"</string>
+    <string name="global.cookiesPolicy.link">"Datenschutz-Bestimmungen"</string>
+
+    <!-- Error show only if there is issue with creating dumps -->
+    <string name="global.internet.error.offline">"Ihr Mobilgerät ist nicht mit dem Internet verbunden. Machen Sie ein Foto und melden Sie es später über www.admin.trashout.ngo."</string>
+    <string name="global.images.requirements">"Verwenden Sie Bilder mit einem Seitenverhältnis von 1: 2 oder weniger (kein Breitbild) und bis zu 2 MB."</string>
+
+    <!-- On the screen "Recycling" in singular -->
+    <string name="home.nearestRecyclingPoint">"Nächster Recyclingpunkt"</string>
+    <string name="home.recycling_point_add_new_do_later">"Stornieren"</string>
+    <string name="home.recycling_point_add_new_go_to_web">"Jetzt hinzufügen"</string>
+    <string name="home.recycling_point_add_new_redirect">"Die Sammelstelle kann nur über Webanwendung hinzugefügt werden, in die Sie sich über einen Webbrowser einloggen können"</string>
+
+    <!-- Fuzzy -->
+    <string name="info.frequentlyAskedQuestions">"Häufig gestellte Fragen"</string>
+    <string name="info.supportUs">"unterstütze uns"</string>
+    <string name="home.recycling_point_edit_redirect">"Der Sammelpunkt kann nur in der Webanwendung bearbeitet werden, auf die Sie über einen Webbrowser zugreifen können"</string>
+    <string name="collectionPoint.email_is_missing">"E-Mail-Adresse hinzufügen"</string>
+    <string name="collectionPoint.phone_is_missing">"Telefonnummer hinzufügen"</string>
+    <string name="collectionPoint.web_is_missing">"Webadresse hinzufügen"</string>
+    <string name="event.meeting_point">"Treffpunkt"</string>
+    <string name="home.recycling_point_add_new_tittle">"Sammelstelle hinzufügen"</string>
+    <string name="home.recycling_point_edit_title">"Aktualisieren Sie die Sammelstelle"</string>
+    <string name="home.recycling_point_edit_go_to_web">"Bearbeiten Sie jetzt"</string>
+    <string name="home.recycling_point_edit_do_later">"Stornieren"</string>
+    <string name="event.event_edit_title">"Bearbeiten Sie dieses Ereignis"</string>
+    <string name="event.event_edit_redirect">"Ereignisse können nur in der Webanwendung bearbeitet werden, auf die über einen Webbrowser zugegriffen werden kann"</string>
+
+    <!-- Fuzzy -->
+    <string name="event.event_edit_do_later">"Stornieren"</string>
+    <string name="event.event_edit_go_to_web">"Bearbeiten Sie jetzt"</string>
+    <string name="event.event_joinEventTitle">"Mach mit bei der Veranstaltung"</string>
+    <string name="home.orderTrashPickup">"Müllabholung bestellen"</string>
+    <string name="event.create_event_meeting_date_title">"Datum des Treffens"</string>
+    <string name="notification_new_trash_formatter">"Sie suchen nach neuen oder aktualisierten Abfällen."</string>
+    <string name="about_version_date_formatted">"Version von %s"</string>
+    <string name="skip_btn">"ÜBERSPRINGEN"</string>
+    <string name="event.create.thankYou.sentence1">"Vielen Dank, dass Sie diese Veranstaltung erstellt haben"</string>
+    <string name="event.create.thankYou.sentence2">"Du bist toll!"</string>
+    <string name="event.create.thankYou.sentence3">"Vergessen Sie nicht, alle Dumps zu aktualisieren, die Sie während des Ereignisses bereinigt haben"</string>
+    <string name="event.create.thankYou.shareTitle">"Mit anderen teilen"</string>
+    <string name="event.create.thankYou.detail">"Siehe Veranstaltung"</string>
+    <string name="trash.create.thankYou.detail">"Siehe Bericht"</string>
+    <string name="organization.statistics.title">"Statistiken über die Aktivitäten der Mitglieder"</string>
+    <string name="organization.dumpsReported">"Berichte"</string>
+    <string name="organization.dumpsUpdated">"Aktualisierung"</string>
+    <string name="organization.dumpsCleaned">"Dumps gereinigt"</string>
 </resources>

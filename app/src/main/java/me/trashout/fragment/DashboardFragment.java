@@ -31,6 +31,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.res.Resources;
 import android.graphics.Rect;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -65,6 +66,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
@@ -230,7 +232,10 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     FrameLayout createReportLayout;
     @BindView(R.id.swiperefresh)
     SwipeRefreshLayout swiperefresh;
-
+    @BindView(R.id.dashboard_support_btn)
+    AppCompatButton dashboardSupportBtn;
+    @BindView(R.id.dashboard_order_trash_pickup)
+    AppCompatButton orderTrashPickupButton;
 
     private List<Trash> dashboardTrashList;
     private CollectionPoint dashboardCollectionPointDustbin;
@@ -255,6 +260,8 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     int scrollYPosition = 0;
     private boolean needRefresh = true;
 
+    private FirebaseAnalytics mFirebaseAnalytics;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -270,6 +277,8 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         ButterKnife.bind(this, view);
         this.inflater = inflater;
         joinedEvent = null;
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
 
         user = PreferencesHandler.getUserData(getContext());
 
@@ -391,6 +400,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         showProgressDialog();
         setLastPosition();
         GetHomeScreenDataService.startForRequest(getContext(), GET_HOME_SCREEN_DATA_REQUEST_ID, lastPosition, user != null ? user.getId() : -1);
+
         handleLayoutsVisibility(user != null);
     }
 
@@ -548,8 +558,9 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             dashboardEventsContainer.setVisibility(View.VISIBLE);
 
             for (Event event : dashboardEventList) {
-                if (dashboardEventsContainer.getChildCount() > 0)
+                if (dashboardEventsContainer.getChildCount() > 0){
                     dashboardEventsContainer.addView(ViewUtils.getDividerView(getContext()));
+                }
 
                 dashboardEventsContainer.addView(getDashboardEventView(event));
             }
@@ -634,19 +645,26 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             userActivityDistance.setVisibility(View.GONE);
         }
 
-        final Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
-        new GeocoderTask(geocoder, userActivity.getGps().getLat(), userActivity.getGps().getLng(), new GeocoderTask.Callback() {
-            @Override
-            public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
-                if (!TextUtils.isEmpty(geocoderResult.getFormattedShortAddress())) {
-                    userActivityPosition.setText(geocoderResult.getFormattedShortAddress());
-                    userActivityPosition.setVisibility(View.VISIBLE);
-                } else {
-                    userActivityPosition.setVisibility(View.GONE);
-                }
-            }
-        }).execute();
+        String locationText = userActivity.getGps().getArea().getFormatedLocation();
+        if(!TextUtils.isEmpty(locationText)){
+            userActivityPosition.setText(userActivity.getGps().getArea().getFormatedLocation());
+            userActivityPosition.setVisibility(View.VISIBLE);
+        }else{
+            userActivityPosition.setVisibility(View.GONE);
+        }
 
+//        final Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
+//        new GeocoderTask(geocoder, userActivity.getGps().getLat(), userActivity.getGps().getLng(), new GeocoderTask.Callback() {
+//            @Override
+//            public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
+//                if (!TextUtils.isEmpty(geocoderResult.getFormattedShortAddress())) {
+//                    userActivityPosition.setText(geocoderResult.getFormattedShortAddress());
+//                    userActivityPosition.setVisibility(View.VISIBLE);
+//                } else {
+//                    userActivityPosition.setVisibility(View.GONE);
+//                }
+//            }
+//        }).execute();
 
         return userActivityView;
     }
@@ -674,6 +692,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
         if (user == null || event.getUserId() == user.getId()) {
             trashEventJoinBtn.setVisibility(View.GONE);
+
         } else {
             int visibility = View.VISIBLE;
             for (User usr : event.getUsers()) {
@@ -693,7 +712,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                     showToast(R.string.event_signToJoin);
                 } else {
                     MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
-                            .title(R.string.global_validation_warning)
+                            .title(R.string.event_event_joinEventTitle)
                             .content(R.string.event_joinEventConfirmationMessage)
                             .positiveText(android.R.string.ok)
                             .negativeText(android.R.string.cancel)
@@ -717,6 +736,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         trashEventDetailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                joinedEvent = event;
                 EventDetailFragment eventDetailFragment = EventDetailFragment.newInstance(event.getId());
                 getBaseActivity().replaceFragment(eventDetailFragment);
             }
@@ -727,12 +747,14 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         return trashEventView;
     }
 
+
+
     /**
      * Hide event view join button
      *
      * @param event
      */
-    private void hideEventJoinButton(Event event) {
+    public void hideEventJoinButton(Event event) {
         View eventView = dashboardEventsContainer.findViewWithTag(EVENT_ID_TAG + event.getId());
 
         if (eventView == null)
@@ -761,6 +783,53 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         ((MainActivity) getActivity()).setToolbarTitle(getString(R.string.app_name));
         checkTrashHunterState();
         dashboardTrashHunterFoundDumps.setText(String.format(getString(R.string.trash_foundDumps_X), amountOfFoundTrash));
+
+        if(dashboardEventList != null){
+            if(!dashboardEventList.isEmpty()) {
+                getDashboardData();
+                checkEvents(dashboardEventList);
+            }
+        }
+
+    }
+
+
+
+    private void checkEvents(List<Event> eventList){
+        if(eventList != null && !eventList.isEmpty()){
+            for(Event ev : eventList){
+                if(ev != null){
+                    if (user == null || ev.getUserId() == user.getId()) {
+
+                        View eventView = dashboardEventsContainer.findViewWithTag(EVENT_ID_TAG + ev.getId());
+                        if (eventView == null){
+                            return;
+                        }
+
+                        AppCompatButton trashEventJoinBtn = eventView.findViewById(R.id.trash_event_join_btn);
+                        trashEventJoinBtn.setVisibility(View.GONE);
+
+
+                    } else {
+                        int visibility = View.VISIBLE;
+                        for (User usr : ev.getUsers()) {
+                            if (usr.getId() == user.getId()) {
+                                visibility = View.GONE;
+                                break;
+                            }
+                        }
+                        View eventView = dashboardEventsContainer.findViewWithTag(EVENT_ID_TAG + ev.getId());
+
+                        if (eventView == null) {
+                            return;
+                        }
+
+                        AppCompatButton trashEventJoinBtn = eventView.findViewById(R.id.trash_event_join_btn);
+                        trashEventJoinBtn.setVisibility(visibility);
+                    }
+                }
+            }
+        }
     }
 
     @Override
@@ -779,7 +848,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
         this.needRefresh = true;
     }
 
-    @OnClick({R.id.dashboard_nearest_trash_first, R.id.dashboard_nearest_trash_second, R.id.dashboard_nearest_trash_more, R.id.dashboard_nearest_collection_point_dustbin_card_view, R.id.dashboard_nearest_collection_point_scrapyard_card_view, R.id.dashboard_statistics_more, R.id.dashboard_news_read_more_btn, R.id.dashboard_news_more, R.id.dashboard_trash_hunter_more})
+    @OnClick({R.id.dashboard_nearest_trash_first, R.id.dashboard_nearest_trash_second, R.id.dashboard_nearest_trash_more, R.id.dashboard_nearest_collection_point_dustbin_card_view, R.id.dashboard_nearest_collection_point_scrapyard_card_view, R.id.dashboard_statistics_more, R.id.dashboard_news_read_more_btn, R.id.dashboard_news_more, R.id.dashboard_trash_hunter_more, R.id.dashboard_support_btn, R.id.dashboard_order_trash_pickup})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.dashboard_nearest_trash_first:
@@ -832,6 +901,86 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                 TrashListFragment hunterTrashListFragment = TrashListFragment.newInstance(true, trashHunterState != null ? trashHunterState.getAreaSize() : -1);
                 getBaseActivity().replaceFragment(hunterTrashListFragment);
                 break;
+
+
+            case R.id.dashboard_order_trash_pickup:
+                Bundle params1 = new Bundle();
+                params1.putString("order_trash_pickup_clicked", "clicked");
+                mFirebaseAnalytics.logEvent("order_trash_pickup_button_dashboard", params1);
+
+                switch (Utils.getCurrentLanguage(getResources())) {
+                    case "sk":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_SK);
+                        break;
+                    case "cs":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_CS);
+                        break;
+                    case "de":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_DE);
+                        break;
+                    case "es":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_ES);
+                        break;
+                    case "fr":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_FR);
+                        break;
+                    case "ru":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_RU);
+                        break;
+                    case "pt":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_PT);
+                        break;
+                    case "it":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_IT);
+                        break;
+                    case "hu":
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK_HU);
+                        break;
+                    default:
+                        Utils.browseUrl(getActivity(), Constants.ORDER_TRASH_PICKUP_HYPERLINK);
+                        break;
+                }
+                break;
+
+
+            case R.id.dashboard_support_btn:
+                Bundle params2 = new Bundle();
+                params2.putString("support_us_button_clicked", "clicked");
+                mFirebaseAnalytics.logEvent("support_us_button_dashboard", params2);
+
+                switch (Utils.getCurrentLanguage(getResources())) {
+                    case "sk":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_SK);
+                        break;
+                    case "cs":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_CS);
+                        break;
+                    case "de":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_DE);
+                        break;
+                    case "es":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_ES);
+                        break;
+                    case "fr":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_FR);
+                        break;
+                    case "ru":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_RU);
+                        break;
+                    case "pt":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_PT);
+                        break;
+                    case "it":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_IT);
+                        break;
+                    case "hu":
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK_HU);
+                        break;
+                    default:
+                        Utils.browseUrl(getActivity(), Constants.SUPPORT_HYPERLINK);
+                        break;
+                }
+                break;
         }
     }
 
@@ -873,7 +1022,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
                     setupDashboard(dashboardTrashList, dashboardCollectionPointDustbin, dashboardCollectionPointScrapyard, dashboardStatisticsCleanedCount, dashboardStatisticsReportedCount, dashboardUserActivityList, dashboardNews, dashboardEventList);
                 }
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         } else if (apiResult.getRequestId() == JOIN_TO_EVENT_REQUEST_ID) {
             dismissProgressDialog();
@@ -885,7 +1034,7 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
 
                 joinedEvent = null;
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         }
     }

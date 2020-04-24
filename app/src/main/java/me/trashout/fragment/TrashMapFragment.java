@@ -337,6 +337,7 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
     }
 
     public void onRefreshTrashMap() {
+        preSetupMapIfNeeded();
         trashFilter = PreferencesHandler.getTrashFilterData(getContext());
         refreshMapData(true);
     }
@@ -366,7 +367,7 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                 trashMapItems.addAll(apiGetZoomPointListResult.getZoomPoints());
                 setTrashList(trashMapItems);
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
 
         } else if (apiResult.getRequestId() == GET_TRASH_LIST_REQUEST_ID) {
@@ -377,7 +378,7 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                 trashMapItems.addAll(apiGetTrashListResult.getTrashList());
                 setTrashList(trashMapItems);
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
         }
     }
@@ -392,6 +393,8 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
      *
      * @param trashMapItems
      */
+//    TODO: JAKUB BREHUV - check other way
+//    min 16 but kitkat - 19
     private void setTrashList(final List<TrashMapItem> trashMapItems) {
         if (mClusterManager == null) {
             mClusterManager = new ClusterManager<>(getActivity(), mMap);
@@ -460,11 +463,11 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
             if (getContext() != null) {
                 colorGreen = ContextCompat.getColor(getContext(), R.color.cluster_color_green);
                 colorRed = ContextCompat.getColor(getContext(), R.color.cluster_color_red);
-                colorYellow = ContextCompat.getColor(getContext(), R.color.cluster_color_yellow);
+                colorYellow = ContextCompat.getColor(getContext(), R.color.cluster_color_red);
             } else {
                 colorGreen = Color.GREEN;
                 colorRed = Color.RED;
-                colorYellow = Color.YELLOW;
+                colorYellow = Color.RED;
             }
         }
 
@@ -472,7 +475,7 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
         protected void onBeforeClusterItemRendered(TrashMapItem trashMapItem, MarkerOptions markerOptions) {
             // Draw a single dump.
 
-            int dumpMarkerIconRes = R.drawable.ic_trash_status_unknown;
+            int dumpMarkerIconRes = R.drawable.ic_trash_status_unknown_red;
 
             if (trashMapItem instanceof Trash) {
 
@@ -483,17 +486,17 @@ public class TrashMapFragment extends BaseFragment implements BaseService.Update
                         case STILL_HERE:
                         case LESS:
                         case MORE:
-                            dumpMarkerIconRes = trash.isUpdateNeeded() ? R.drawable.ic_trash_status_unknown : R.drawable.ic_trash_status_remain;
+                            dumpMarkerIconRes = trash.isUpdateNeeded() ? R.drawable.ic_trash_status_unknown_red : R.drawable.ic_trash_status_remain;
                             break;
                         case CLEANED:
                             dumpMarkerIconRes = R.drawable.ic_trash_status_clean;
                             break;
                         default:
-                            dumpMarkerIconRes = R.drawable.ic_trash_status_unknown;
+                            dumpMarkerIconRes = R.drawable.ic_trash_status_unknown_red;
                             break;
                     }
                 } else {
-                    dumpMarkerIconRes = R.drawable.ic_trash_status_unknown;
+                    dumpMarkerIconRes = R.drawable.ic_trash_status_unknown_red;
                 }
 
                 markerOptions.icon(BitmapDescriptorFactory.fromResource(dumpMarkerIconRes));

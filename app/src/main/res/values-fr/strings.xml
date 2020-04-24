@@ -166,8 +166,8 @@ Lorsque vous serez en ligne, lancez l'appli TrashOut et votre signalement sera e
     <string name="trash.create.sendWasInterruptedHeader">"L'envoi a été interrompu"</string>
     <string name="trash.create.sendWasInterruptedText">"Ne vous inquiétez pas. Votre signalement est sauvegardé et nous essaierons de l'envoyer au prochain lancement de l'appli."</string>
     <string name="trash.status.cleaned">"Nettoyé"</string>
-    <string name="trash.status.less">"Mieux"</string>
-    <string name="trash.status.more">"Pire"</string>
+    <string name="trash.status.less">"Moins"</string>
+    <string name="trash.status.more">"Plus"</string>
     <string name="trash.status.stillHere">"Inchangé"</string>
     <string name="trash.updated">"Mis à jour"</string>
     <string name="trash.address">"Localisation"</string>
@@ -504,7 +504,7 @@ Lorsque vous serez en ligne, lancez l'appli TrashOut et votre signalement sera e
     <string name="trash.confirmation.deleteImage">"Voulez-vous vraiment supprimer cette image ?"</string>
     <string name="trash.confirmation.deleteTrash">"Voulez-vous vraiment supprimer cette décharge ?"</string>
     <string name="global.confirmation.header">"Confirmation"</string>
-    <string name="event.confirmation.joinEvent">"Voulez-vous vraiment vous inscrire à cet évènement ?"</string>
+    <string name="event.confirmation.joinEvent">"Veuillez confirmer votre présence. Des informations sur les participants sont disponibles pour les organisateurs afin de les aider dans la préparation"</string>
     <string name="trash.confirmation.markSpam">"Voulez-vous vraiment signaler cette décharge comme inappropriée ?"</string>
     <string name="global.confirmation.reject">"voulez-vous vraiment rejeter"</string>
     <string name="event.confirmation.unjoinEvent">"Voulez-vous vraiment vous désinscrire à cet évènement ?"</string>
@@ -1195,6 +1195,8 @@ Notre but est d'impliquer les citoyens, gouvernements, autorités locales et org
     <string name="news.success.photo.deleted">"Image supprimée"</string>
     <string name="global.resendVerificationEmail">"Réenvoyer mail de validation"</string>
     <string name="global.emailResent">"Mail de validation envoyé à nouveau"</string>
+
+    <!-- Fuzzy -->
     <string name="event.addToCalendar">"Ajouter à l'agenda"</string>
     <string name="global.add">"Ajouter"</string>
     <string name="profile.myEvents.timeDecision.ongoing">"En cours"</string>
@@ -1235,4 +1237,42 @@ Notre but est d'impliquer les citoyens, gouvernements, autorités locales et org
 
     <!-- On the screen "Recycling" in singular -->
     <string name="home.nearestRecyclingPoint">"Point de collecte le plus proche"</string>
+    <string name="home.recycling_point_add_new_do_later">"Annuler"</string>
+    <string name="home.recycling_point_add_new_go_to_web">"Ajouter maintenant"</string>
+    <string name="home.recycling_point_add_new_redirect">"Le point de collecte ne peut être ajouté qu'à partir de l'application Web à laquelle vous pouvez vous connecter via un navigateur Web"</string>
+
+    <!-- Fuzzy -->
+    <string name="info.frequentlyAskedQuestions">"Questions fréquemment posées"</string>
+    <string name="info.supportUs">"Nous soutenir"</string>
+    <string name="home.recycling_point_edit_redirect">"Le point de collecte ne peut être modifié qu'à partir de l'application Web à laquelle vous pouvez accéder via un navigateur Web"</string>
+    <string name="collectionPoint.email_is_missing">"Ajouter une adresse e-mail"</string>
+    <string name="collectionPoint.phone_is_missing">"Ajouter un numéro de téléphone"</string>
+    <string name="collectionPoint.web_is_missing">"Ajouter une adresse Web"</string>
+    <string name="event.meeting_point">"Point de rencontre"</string>
+    <string name="home.recycling_point_add_new_tittle">"Ajouter un point de collecte"</string>
+    <string name="home.recycling_point_edit_title">"Mettre à jour le point de collecte"</string>
+    <string name="home.recycling_point_edit_go_to_web">"Modifier maintenant"</string>
+    <string name="home.recycling_point_edit_do_later">"Annuler"</string>
+    <string name="event.event_edit_title">"Modifier cet événement"</string>
+    <string name="event.event_edit_redirect">"Les événements ne peuvent être modifiés qu'à partir de l'application Web accessible via un navigateur Web"</string>
+
+    <!-- Fuzzy -->
+    <string name="event.event_edit_do_later">"Annuler"</string>
+    <string name="event.event_edit_go_to_web">"Modifier maintenant"</string>
+    <string name="event.event_joinEventTitle">"Rejoignez l'événement"</string>
+    <string name="home.orderTrashPickup">"Commander le ramassage des déchets"</string>
+    <string name="event.create_event_meeting_date_title">"Date de la réunion"</string>
+    <string name="notification_new_trash_formatter">"Vous avez créé ou ou mises à jour %d décharge(s)."</string>
+    <string name="about_version_date_formatted">"Version de %s"</string>
+    <string name="skip_btn">"Passer"</string>
+    <string name="event.create.thankYou.sentence1">"Merci d'avoir créé cet événement"</string>
+    <string name="event.create.thankYou.sentence2">"Vous êtes formidable !"</string>
+    <string name="event.create.thankYou.sentence3">"N'oubliez pas de mettre à jour toutes les décharges que vous avez nettoyées lors de l'événement"</string>
+    <string name="event.create.thankYou.shareTitle">"Partager avec les autres"</string>
+    <string name="event.create.thankYou.detail">"Voir l'événement"</string>
+    <string name="trash.create.thankYou.detail">"Voir le rapport"</string>
+    <string name="organization.statistics.title">"Statistiques sur les activités des membres"</string>
+    <string name="organization.dumpsReported">"Rapports"</string>
+    <string name="organization.dumpsUpdated">"Mises à jour"</string>
+    <string name="organization.dumpsCleaned">"Décharges nettoyées"</string>
 </resources>

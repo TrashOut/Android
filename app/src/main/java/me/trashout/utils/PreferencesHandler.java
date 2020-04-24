@@ -33,6 +33,7 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.gson.Gson;
 
 import me.trashout.model.CollectionPointFilter;
@@ -285,6 +286,8 @@ public class PreferencesHandler {
 
         return GSON.fromJson(lastLocationJson, LatLng.class);
     }
+
+
 
 
     /**

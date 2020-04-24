@@ -29,7 +29,9 @@ package me.trashout.fragment;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -45,13 +47,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import me.trashout.Configuration;
 import me.trashout.R;
 import me.trashout.activity.MainActivity;
@@ -64,10 +70,12 @@ import me.trashout.fragment.base.BaseFragment;
 import me.trashout.fragment.base.ICollectionPointFragment;
 import me.trashout.model.CollectionPoint;
 import me.trashout.model.CollectionPointFilter;
+import me.trashout.model.Constants;
 import me.trashout.service.GetCollectionPointListService;
 import me.trashout.service.base.BaseService;
 import me.trashout.ui.EmptyRecyclerView;
 import me.trashout.utils.PreferencesHandler;
+import me.trashout.utils.Utils;
 
 /**
  * @author Miroslav Cupalka
@@ -86,6 +94,8 @@ public class CollectionPointListFragment extends BaseFragment implements ICollec
     ProgressWheel progressWheel;
     @BindView(R.id.swiperefresh)
     SwipeRefreshLayout swiperefresh;
+    @BindView(R.id.add_collection_point_fab)
+    FloatingActionButton addCollectionPointFab;
 
     private LatLng lastPosition;
 
@@ -99,6 +109,7 @@ public class CollectionPointListFragment extends BaseFragment implements ICollec
     private boolean loading = true;
     int pastVisiblesItems, visibleItemCount, totalItemCount;
     private int previousTotal = 0;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     public interface OnRefreshCollectionPointListListener {
         void onRefreshCollectionPointList();
@@ -107,6 +118,9 @@ public class CollectionPointListFragment extends BaseFragment implements ICollec
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
+
         setHasOptionsMenu(true);
     }
 
@@ -309,7 +323,7 @@ public class CollectionPointListFragment extends BaseFragment implements ICollec
                 collectionPointList.addAll(apiGetCollectionPointListResult.getCollectionPoints());
                 mAdapter.notifyDataSetChanged();
             } else {
-                showToast(R.string.global_error_api_text);
+                showToast(R.string.global_fetchError);
             }
 
             recyclerview.setLoading(false);
@@ -320,4 +334,37 @@ public class CollectionPointListFragment extends BaseFragment implements ICollec
     public void onNewUpdate(ApiUpdate apiUpdate) {
 
     }
+
+    @OnClick(R.id.add_collection_point_fab)
+    public void onClick() {
+        addCollectionPoint();
+    }
+
+    public void addCollectionPoint() {
+        if (isNetworkAvailable()) {
+
+            Bundle params = new Bundle();
+            params.putString("add_collection_point_button_clicked", "clicked");
+            mFirebaseAnalytics.logEvent("add_collection_point_button", params);
+
+            MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
+                    .title(R.string.home_recycling_point_add_new_tittle)
+                    .content(R.string.home_recycling_point_add_new_redirect)
+                    .positiveText(R.string.home_recycling_point_add_new_go_to_web)
+                    .negativeText(R.string.home_recycling_point_add_new_do_later)
+                    .autoDismiss(true)
+                    .onPositive(new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                            Utils.browseUrl(getActivity(), Constants.ADD_RECYCLING_POINT);
+                        }
+                    })
+                    .build();
+
+            dialog.show();
+        } else {
+            showToast(R.string.global_internet_error_offline);
+        }
+    }
+
 }

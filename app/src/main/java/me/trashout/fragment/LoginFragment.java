@@ -46,6 +46,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -218,7 +219,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     public void onResume() {
         super.onResume();
         if (getActivity() != null && getActivity() instanceof MainActivity) {
-            ((MainActivity) getActivity()).setToolbarTitle(getString(R.string.global_login));
+            ((MainActivity) getActivity()).setToolbarTitle(getString(R.string.app_name));
             ((MainActivity) getActivity()).setNavigationBottomViewCheckedItem(NAVIGATION_PROFILE_ITEM);
         }
     }
@@ -240,6 +241,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                     public void onSuccess(final LoginResult loginResult) {
 
                         Log.d(TAG, "FB login success - loginResult = " + loginResult);
+                        Toast.makeText(getContext(),  "login success", Toast.LENGTH_SHORT).show();
 
                         GraphRequest request = GraphRequest.newMeRequest(
                                 loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
@@ -270,6 +272,9 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
                     @Override
                     public void onError(FacebookException exception) {
+                        Toast.makeText(getContext(),  exception.getMessage(), Toast.LENGTH_LONG).show();
+                        Log.e("FUCK", exception.toString());
+                        Log.e("FUCK" , exception.getMessage());
                         Log.d(TAG, "FB login onError");
                     }
                 });
@@ -587,13 +592,13 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     }
 
     private void goToMainActivity() {
-        ProfileFragment profileFragment = new ProfileFragment();
-        getBaseActivity().replaceFragment(profileFragment, false);
+        DashboardFragment dashboardFragment = new DashboardFragment();
+        getBaseActivity().replaceFragment(dashboardFragment, false);
         ((MainActivity) getBaseActivity()).setUserNavigationState();
+        ((MainActivity) getBaseActivity()).triggerBottomMenuButton();
     }
 
     // FIREBASE
-
     public void checkAccountExists(final String email, final String password) {
         showProgressDialog();
         if (!TextUtils.isEmpty(email)) {

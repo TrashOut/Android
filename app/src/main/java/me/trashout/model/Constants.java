@@ -46,6 +46,45 @@ public class Constants {
     public static final String YOUTUBE_URL_SUFIX = "/default.jpg";
     public static final String EN_LOCALE = "en_US";
 
+    public static String FAQ_HYPERLINK = "https://www.trashout.ngo/FAQ";
+    public static String FAQ_HYPERLINK_SK = "https://www.trashout.ngo/sk/FAQ";
+    public static String FAQ_HYPERLINK_FR = "https://www.trashout.ngo/fr/FAQ";
+    public static String FAQ_HYPERLINK_ES = "https://www.trashout.ngo/es-ar/FAQ";
+    public static String FAQ_HYPERLINK_RU = "https://www.trashout.ngo/ru/FAQ";
+    public static String FAQ_HYPERLINK_DE = "https://www.trashout.ngo/de/FAQ";
+    public static String FAQ_HYPERLINK_CS = "https://www.trashout.ngo/cs/FAQ";
+    public static String FAQ_HYPERLINK_PT = "https://www.trashout.ngo/pt/FAQ";
+    public static String FAQ_HYPERLINK_IT = "https://www.trashout.ngo/it/FAQ";
+    public static String FAQ_HYPERLINK_HU = "https://www.trashout.ngo/hu/FAQ";
+
+
+    public static String SUPPORT_HYPERLINK = "https://www.trashout.ngo/projectsupport";
+    public static String SUPPORT_HYPERLINK_SK = "https://www.trashout.ngo/sk/projectsupport";
+    public static String SUPPORT_HYPERLINK_FR = "https://www.trashout.ngo/fr/projectsupport";
+    public static String SUPPORT_HYPERLINK_ES = "https://www.trashout.ngo/es-ar/projectsupport";
+    public static String SUPPORT_HYPERLINK_RU = "https://www.trashout.ngo/ru/projectsupport";
+    public static String SUPPORT_HYPERLINK_DE = "https://www.trashout.ngo/de/projectsupport";
+    public static String SUPPORT_HYPERLINK_CS = "https://www.trashout.ngo/cs/projectsupport";
+    public static String SUPPORT_HYPERLINK_PT = "https://www.trashout.ngo/pt/projectsupport";
+    public static String SUPPORT_HYPERLINK_IT = "https://www.trashout.ngo/it/projectsupport";
+    public static String SUPPORT_HYPERLINK_HU = "https://www.trashout.ngo/hu/projectsupport";
+
+    public static String ORDER_TRASH_PICKUP_HYPERLINK = "https://www.trashout.ngo/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_SK = "https://www.trashout.ngo/sk/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_RU = "https://www.trashout.ngo/ru/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_DE = "https://www.trashout.ngo/de/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_ES = "https://www.trashout.ngo/es-ar/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_CS = "https://www.trashout.ngo/cs/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_FR = "https://www.trashout.ngo/fr/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_PT = "https://www.trashout.ngo/pt/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_IT = "https://www.trashout.ngo/it/waste-management";
+    public static String ORDER_TRASH_PICKUP_HYPERLINK_HU = "https://www.trashout.ngo/hu/waste-management";
+
+    public static String ADD_RECYCLING_POINT = "https://admin.trashout.ngo/collection-points/create/ ";
+    public static String EDIT_RECYCLING_POINT = "https://admin.trashout.ngo/collection-points/update/";
+    public static String EDIT_EVENT = "https://admin.trashout.ngo/events/detail/";
+
+
     public enum TrashSize {
         BAG(0, "bag", R.string.trash_size_bag, R.drawable.ic_trash_size_bag),
         WHEELBARROW(1, "wheelbarrow", R.string.trash_size_wheelbarrow, R.drawable.ic_trash_size_wheelbarrow),
@@ -194,7 +233,7 @@ public class Constants {
         LESS(1, "less", R.string.trash_status_less, R.drawable.ic_trash_status_remain, R.string.trash_updated, R.drawable.ic_trash_activity_updated),
         MORE(2, "more", R.string.trash_status_more, R.drawable.ic_trash_status_remain, R.string.trash_updated, R.drawable.ic_trash_activity_updated),
         CLEANED(3, "cleaned", R.string.trash_status_cleaned, R.drawable.ic_trash_status_clean, R.string.trash_updated, R.drawable.ic_trash_activity_cleaned),
-        UNKNOWN(4, "unknown", R.string.global_unknow, R.drawable.ic_trash_status_unknown, R.string.notifications_reported, R.drawable.ic_trash_activity_reported);
+        UNKNOWN(4, "unknown", R.string.global_unknow, R.drawable.ic_trash_status_unknown_red, R.string.notifications_reported, R.drawable.ic_trash_activity_reported);
 
         private int id;
         private String name;
