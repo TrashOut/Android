@@ -33,6 +33,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -244,6 +247,10 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     private OnTrashChangedListener onTrashChangedListener;
     private OnDashboardChangedListener onDashboardChangedListener;
 
+    private LocationManager locationManager;
+    private LocationListener locationListener;
+    private float bestAccuracy = 999999;
+
     public interface OnTrashChangedListener {
         void onTrashChanged();
     }
@@ -301,6 +308,11 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 //        setHasOptionsMenu(true);
         gson = new Gson();
         onAddPhotoClick();
+
+        mLastLocation = ((MainActivity) getActivity()).getLastPosition();
+        if (mLastLocation != null) {
+            Log.d(TAG, "GPS: " + mLastLocation.longitude + " " + mLastLocation.latitude + " - INIT (last position)");
+        }
     }
 
     @Override
@@ -354,6 +366,65 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         pager.setPageMargin(getResources().getDimensionPixelOffset(R.dimen.photo_page_margin));
 
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        startLocationUpdatesIfNeed();;
+    }
+
+    private void startLocationUpdatesIfNeed() {
+        locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
+
+        locationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                Log.d(TAG, "GPS changed: " + location.getLongitude() + " " + location.getLatitude() + "     ...     " + location.getAccuracy());
+
+                if (bestAccuracy > location.getAccuracy()) {
+                    bestAccuracy = location.getAccuracy();
+                    mLastLocation = new LatLng(location.getLatitude(), location.getLongitude());
+                    Log.d(TAG, "Found better GPS: " + mLastLocation.longitude + " " + mLastLocation.latitude + "     ...     " + location.getAccuracy());
+
+                    setPosition(mLastLocation.latitude, mLastLocation.longitude);
+
+                    Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
+                    new GeocoderTask(geocoder, mLastLocation.latitude, mLastLocation.longitude, new GeocoderTask.Callback() {
+                        @Override
+                        public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
+                            Log.d(TAG, "geocoderResult  = " + geocoderResult);
+                            if (geocoderResult.getAddress() != null) {
+                                trashReportPlace.setText(geocoderResult.getFormattedAddress());
+                            }
+                        }
+                    }).execute();
+
+                    if (location.getAccuracy() < 2) {
+                        Log.d(TAG, "Location Manager STOP Updates (good accuracy)");
+                        locationManager.removeUpdates(locationListener);
+                    }
+                }
+            }
+
+            @Override
+            public void onStatusChanged(String s, int i, Bundle bundle) {}
+
+            @Override
+            public void onProviderEnabled(String s) {}
+
+            @Override
+            public void onProviderDisabled(String s) {}
+        };
+
+        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+
+        if (bestAccuracy >=2 ) {
+            Log.d(TAG, "Location Manager START Updates");
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 1, locationListener);
+        }
     }
 
     //    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -668,7 +739,6 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                     },
                     LOCATION_REQUEST_CODE);
         } else {
-            mLastLocation = ((MainActivity) getActivity()).getLastPosition();
             if (mLastLocation != null) {
                 trashReportLocationBetterAccuracyDistance.setVisibility(GONE);
                 setPosition(mLastLocation.latitude, mLastLocation.longitude);
@@ -848,6 +918,14 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                 showToast("Cancelling, required permissions are not granted");
             }
         }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        Log.d(TAG, "Location Manager STOP Updates (if need)");
+        locationManager.removeUpdates(locationListener);
     }
 
     @Override
