@@ -371,7 +371,10 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     @Override
     public void onStart() {
         super.onStart();
-        startLocationUpdatesIfNeed();;
+
+        if (getTrash() == null) {
+            startLocationUpdatesIfNeed();
+        }
     }
 
     private void startLocationUpdatesIfNeed() {
@@ -924,8 +927,10 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     public void onStop() {
         super.onStop();
 
-        Log.d(TAG, "Location Manager STOP Updates (if need)");
-        locationManager.removeUpdates(locationListener);
+        if (locationManager != null) {
+            Log.d(TAG, "Location Manager STOP Updates (if need)");
+            locationManager.removeUpdates(locationListener);
+        }
     }
 
     @Override
