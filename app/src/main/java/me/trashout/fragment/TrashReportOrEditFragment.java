@@ -249,7 +249,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
     private LocationManager locationManager;
     private LocationListener locationListener;
-    private float bestAccuracy = 999999;
+    private float bestAccuracy = 500;
 
     public interface OnTrashChangedListener {
         void onTrashChanged();
@@ -336,7 +336,9 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                         showProgressDialog();
                         String note = !TextUtils.isEmpty(trashReportAdditionalInformationEdit.getText()) ? trashReportAdditionalInformationEdit.getText().toString() : "";
                         if (getTrash() == null) {
-                            Trash newTrash = Trash.createNewTrash(Gps.createGPSFromLatLng(mLastLocation), note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+                            Gps gps = Gps.createGPSFromLatLng(mLastLocation);
+                            gps.setAccuracy((int) bestAccuracy);
+                            Trash newTrash = Trash.createNewTrash(gps, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
                             CreateTrashService.startForRequest(getContext(), CREATE_TRASH_REQUEST_ID, newTrash, photos);
                         } else if (isTrashStillHere()) {
                             Trash updateTrash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.STILL_HERE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
