@@ -250,7 +250,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
     private LocationManager locationManager;
     private LocationListener locationListener;
-    private float bestAccuracy = 500;
+    private float bestAccuracy = 100;
 
     public interface OnTrashChangedListener {
         void onTrashChanged();
