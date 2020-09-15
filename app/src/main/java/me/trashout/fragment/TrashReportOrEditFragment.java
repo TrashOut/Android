@@ -61,6 +61,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -430,6 +431,9 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             if (locationManager.getAllProviders().contains(LocationManager.GPS_PROVIDER) && locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                 Log.d(TAG, "Location Manager START Updates");
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 1, locationListener);
+            } else {
+                Log.d(TAG, "GPS provider is not available");
+                showToast(R.string.trash_create_noGps);
             }
         }
     }
