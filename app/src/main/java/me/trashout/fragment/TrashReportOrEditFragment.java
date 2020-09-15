@@ -427,8 +427,10 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         }
 
         if (bestAccuracy >=2 ) {
-            Log.d(TAG, "Location Manager START Updates");
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 1, locationListener);
+            if (locationManager.getAllProviders().contains(LocationManager.GPS_PROVIDER) && locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                Log.d(TAG, "Location Manager START Updates");
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 1, locationListener);
+            }
         }
     }
 
