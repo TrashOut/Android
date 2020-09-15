@@ -44,3 +44,5 @@ keystore.properties
 
 # Google service connfig file
 google-services.json
+
+app/release/output.json
