@@ -160,7 +160,7 @@ Por favor, regrese cuando tenga conexión."</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Haga por lo menos una foto"</string>
     <string name="trash.removeImage">"Eliminar imagen"</string>
     <string name="trash.removeImageConfirm">"¿Desea eliminar la foto seleccionada?"</string>
-    <string name="trash.create.noGps">"No hay señal GPS"</string>
+    <string name="trash.create.noGps">"¡La vieja ubicación del GPS! Enciende el compartir de la ubicación. "</string>
     <string name="trash.create.noInternetHeader">"¡Sin conexión!"</string>
     <string name="trash.create.noInternetText">"Este vertedero ilegal se enviará más tarde porque no tiene conexión.
 

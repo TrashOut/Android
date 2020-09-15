@@ -169,7 +169,7 @@ Please come back when you are online"</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Take at least one photo "</string>
     <string name="trash.removeImage">"Remove image"</string>
     <string name="trash.removeImageConfirm">"Do you want to delete selected photo?"</string>
-    <string name="trash.create.noGps">"No gps"</string>
+    <string name="trash.create.noGps">Old GPS location! Turn on location sharing.</string>
     <string name="trash.create.noInternetHeader">"You are offline!"</string>
     <string name="trash.create.noInternetText">"This illegal dump will be submitted later, because your phone is offline.
 

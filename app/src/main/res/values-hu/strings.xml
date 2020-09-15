@@ -157,7 +157,7 @@ Próbálja újra később."</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Készítsen legalább egy fényképet!"</string>
     <string name="trash.removeImage">"Kép eltávolítása"</string>
     <string name="trash.removeImageConfirm">"Törli a kiválasztott fotót?"</string>
-    <string name="trash.create.noGps">"Nincs GPS jel."</string>
+    <string name="trash.create.noGps">"Régi GPS hely! Kapcsolja be a helymegosztást. "</string>
     <string name="trash.create.noInternetHeader">"Ön Offline."</string>
     <string name="trash.create.noInternetText">"Ezt az illegális hulladéklerakót most nem tudja bejelenteni, mert telefonja offline állapotban van.
 

@@ -153,7 +153,7 @@ Bitte komm zurück, wenn du wieder online bist."</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Mach mindestens ein Foto"</string>
     <string name="trash.removeImage">"Bild entfernen"</string>
     <string name="trash.removeImageConfirm">"Möchtest du das ausgewählte Foto löschen?"</string>
-    <string name="trash.create.noGps">"Kein GPS"</string>
+    <string name="trash.create.noGps">"Alter GPS-Standort! Aktivieren Sie die Standortfreigabe. "</string>
     <string name="trash.create.noInternetHeader">"Du bist offline!"</string>
     <string name="trash.create.noInternetText">"Wenn du online gehst, schalte bitte die TrashOut App ein und dein Bericht wird automatisch übermittelt."</string>
     <string name="trash.create.sendWasInterruptedHeader">"Das Senden wurde unterbrochen."</string>

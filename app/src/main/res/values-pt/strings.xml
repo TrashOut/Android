@@ -157,7 +157,7 @@ Volte quando estiver online"</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Tire pelo menos uma foto "</string>
     <string name="trash.removeImage">"Remover imagem"</string>
     <string name="trash.removeImageConfirm">"Deseja excluir a foto selecionada?"</string>
-    <string name="trash.create.noGps">"Sem GPS"</string>
+    <string name="trash.create.noGps">"Antiga localização GPS! Ligue a partilha de localização. "</string>
     <string name="trash.create.noInternetHeader">"Você está offline!"</string>
     <string name="trash.create.noInternetText">"Este despejo ilegal será enviado posteriormente, porque seu telefone está offline.
 

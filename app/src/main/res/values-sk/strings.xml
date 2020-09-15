@@ -160,7 +160,7 @@ Prosím, skúste znova, keď budete online"</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Urobte aspoň jednu fotografiu"</string>
     <string name="trash.removeImage">"Odstrániť obrázok"</string>
     <string name="trash.removeImageConfirm">"Chcete odstrániť vybranú fotku?"</string>
-    <string name="trash.create.noGps">"Nemám polohu"</string>
+    <string name="trash.create.noGps">Stará GPS poloha! Zapnite zdieľanie polohy.</string>
     <string name="trash.create.noInternetHeader">"Ste bez internetu!"</string>
     <string name="trash.create.noInternetText">"Táto nelegálna skládka nemôže byť odoslaná, pretože nie ste pripojený na internet.
 

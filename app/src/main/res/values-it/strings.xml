@@ -155,7 +155,7 @@ Riceverai dei punti per le tue attività."</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Richiesta almeno una foto"</string>
     <string name="trash.removeImage">"Rimuovi immagine"</string>
     <string name="trash.removeImageConfirm">"Vuoi eliminare l'immagine selezionata?"</string>
-    <string name="trash.create.noGps">"No gps"</string>
+    <string name="trash.create.noGps">"Vecchia posizione GPS! Attivare la condivisione della posizione. "</string>
     <string name="trash.create.noInternetHeader">"Sei offline!"</string>
     <string name="trash.create.noInternetText">"Questa discarica abusiva verrà inviata più tardi, perché risulti offline.
 

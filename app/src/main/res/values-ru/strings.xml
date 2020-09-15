@@ -154,7 +154,7 @@
     <string name="trash.create.takeAtLeastOnePhoto">"сделайте по крайней мере одно фото"</string>
     <string name="trash.removeImage">"Удалить изображение"</string>
     <string name="trash.removeImageConfirm">"Удалить выбранное фото?"</string>
-    <string name="trash.create.noGps">"Нет сигнала GPS"</string>
+    <string name="trash.create.noGps">"Старое местоположение по GPS! Включите обмен местоположениями. "</string>
     <string name="trash.create.noInternetHeader">"Вы не подключены к сети!"</string>
     <string name="trash.create.noInternetText">"Отчет об этой незаконной свалке будет отправлен позже, так ваш телефон не подключен в Интернету.
 

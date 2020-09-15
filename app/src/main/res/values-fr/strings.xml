@@ -158,7 +158,7 @@ S'il vous plait ré-essayez une fois en ligne."</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Prenez au moins une photo"</string>
     <string name="trash.removeImage">"Supprimer image"</string>
     <string name="trash.removeImageConfirm">"Voulez-vous supprimer la photo choisie ?"</string>
-    <string name="trash.create.noGps">"Position GPS manquante"</string>
+    <string name="trash.create.noGps">"Ancienne localisation GPS ! Activez le partage de la localisation. "</string>
     <string name="trash.create.noInternetHeader">"Pas d'internet disponible !"</string>
     <string name="trash.create.noInternetText">"Ce signalement sera envoyée plus tard. Votre appareil est hors ligne.
 
