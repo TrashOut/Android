@@ -1,20 +1,20 @@
 package me.trashout;
 
-import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.otaliastudios.cameraview.CameraListener;
 import com.otaliastudios.cameraview.CameraView;
 import com.otaliastudios.cameraview.FileCallback;
 import com.otaliastudios.cameraview.PictureResult;
-import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.io.File;
 import java.util.Date;
@@ -39,7 +39,7 @@ public class PhotoActivity extends AppCompatActivity {
                 result.toFile(new File(filename), new FileCallback() {
                     @Override
                     public void onFileReady(File file) {
-                        Utils.resizeBitmap(file);
+                        Utils.resizeBitmapToSquare(file);
                         Uri uri = Uri.fromFile(file);
                         Intent intent = new Intent();
                         intent.setData(uri);
@@ -49,6 +49,14 @@ public class PhotoActivity extends AppCompatActivity {
                 });
             }
         });
+
+        // crop image preview
+        LinearLayout camLayout = findViewById(R.id.camLayout);
+        ViewGroup.LayoutParams params = camLayout.getLayoutParams();
+        int size = Resources.getSystem().getDisplayMetrics().widthPixels;
+        params.width = size;
+        params.height = size;
+        camLayout.setLayoutParams(params);
     }
 
     @Override

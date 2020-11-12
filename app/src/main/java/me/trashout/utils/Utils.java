@@ -182,6 +182,36 @@ public class Utils {
         context.startActivity(intent);
     }
 
+    public static void resizeBitmapToSquare(File pathOfInputImage) {
+        try {
+            InputStream in = new FileInputStream(pathOfInputImage);
+            Bitmap originalBitmap = BitmapFactory.decodeStream(in);
+
+            // get size
+            int size;
+            int x = 0;
+            int y = 0;
+            int width = originalBitmap.getWidth();
+            int height = originalBitmap.getHeight();
+            if (width > height) {
+                size = height;
+                x = Math.round((width - height) / 2);
+            } else {
+                size = width;
+                y = Math.round((height - width) / 2);
+            }
+
+            // resize
+            Bitmap croppedBitmap = Bitmap.createBitmap(originalBitmap, x, y, size, size);
+
+            // save image
+            FileOutputStream out = new FileOutputStream(pathOfInputImage);
+            croppedBitmap.compress(Bitmap.CompressFormat.JPEG, 70, out);
+        } catch (Exception e) {
+            Log.e("Image", e.getMessage(), e);
+        }
+    }
+
     public static void resizeBitmap(File pathOfInputImage) {
         try {
             int inWidth = 0;

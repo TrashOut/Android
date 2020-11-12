@@ -6,17 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".PhotoActivity">
 
-    <com.otaliastudios.cameraview.CameraView
-        android:id="@+id/camera"
+    <LinearLayout
+        android:id="@+id/camLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:keepScreenOn="true"
-        app:cameraPictureFormat="jpeg"
-        app:cameraAudio="off"
-        app:cameraPlaySounds="false"
-        app:cameraPictureSizeAspectRatio="1:1"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <com.otaliastudios.cameraview.CameraView
+            android:id="@+id/camera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:keepScreenOn="true"
+            app:cameraPictureFormat="jpeg"
+            app:cameraAudio="off"
+            app:cameraPlaySounds="false" />
+
+    </LinearLayout>
 
     <ImageButton
         android:id="@+id/take"
