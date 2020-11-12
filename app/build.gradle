@@ -105,6 +105,10 @@ dependencies {
     implementation 'ru.noties:markwon-view:1.0.1'
 
     implementation 'com.android.support:multidex:1.0.0'
+
+    api ('com.otaliastudios:cameraview:2.6.4') {
+        exclude group: 'com.google.android.gms'
+    }
 }
 
 apply plugin: 'com.google.gms.google-services'

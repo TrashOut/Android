@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrashOut"
         tools:replace="android:theme">
+        <activity android:name=".PhotoActivity"></activity>
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"

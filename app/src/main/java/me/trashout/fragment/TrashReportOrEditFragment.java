@@ -82,6 +82,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.trashout.Configuration;
+import me.trashout.PhotoActivity;
 import me.trashout.R;
 import me.trashout.activity.MainActivity;
 import me.trashout.api.base.ApiResult;
@@ -122,6 +123,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     private static final int CREATE_TRASH_REQUEST_ID = 450;
     private static final int UPDATE_TRASH_REQUEST_ID = 451;
     private static final int LOCATION_REQUEST_CODE = 6;
+    private static final int TAKEN_PHOTO = 33;
 
     @BindView(R.id.trash_report_take_image_fab)
     FloatingActionButton trashReportTakeImageFab;
@@ -757,15 +759,21 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         }
     }
 
+    private void openCamera() {
+        Intent intent = new Intent(getContext(), PhotoActivity.class);
+        getActivity().startActivityForResult(intent, TAKEN_PHOTO);
+    }
+
     @OnClick(R.id.trash_report_take_image_fab)
     public void onAddPhotoClick() {
+        openCamera();
 
-        if (CropImage.isExplicitCameraPermissionRequired(getActivity())) {
-            requestPermissions(new String[]{Manifest.permission.CAMERA}, CropImage.CAMERA_CAPTURE_PERMISSIONS_REQUEST_CODE);
-        } else {
-            //CropImage.startPickImageActivity(getActivity());
-            createCameraIntentChooser();
-        }
+//        if (CropImage.isExplicitCameraPermissionRequired(getActivity())) {
+//            requestPermissions(new String[]{Manifest.permission.CAMERA}, CropImage.CAMERA_CAPTURE_PERMISSIONS_REQUEST_CODE);
+//        } else {
+//            //CropImage.startPickImageActivity(getActivity());
+//            createCameraIntentChooser();
+//        }
     }
 
     private void createCameraIntentChooser() {
@@ -815,6 +823,8 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }
+        } else if (requestCode == TAKEN_PHOTO && resultCode == RESULT_OK) {
+            onPhotosReturned(Collections.singletonList(data.getData()));
         }
     }
 
