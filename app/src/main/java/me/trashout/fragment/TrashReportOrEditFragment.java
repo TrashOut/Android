@@ -38,8 +38,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.os.StrictMode;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
@@ -61,15 +59,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.gson.Gson;
-import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -81,7 +75,6 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import me.trashout.Configuration;
 import me.trashout.PhotoActivity;
 import me.trashout.R;
 import me.trashout.activity.MainActivity;
@@ -103,12 +96,10 @@ import me.trashout.utils.GeocoderTask;
 import me.trashout.utils.GlideApp;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
-import me.trashout.utils.Utils;
 import okhttp3.ResponseBody;
 
 import static android.app.Activity.RESULT_OK;
 import static android.view.View.GONE;
-import static com.theartofdev.edmodo.cropper.CropImage.getCameraIntents;
 
 public class TrashReportOrEditFragment extends BaseFragment implements ITrashFragment, BaseService.UpdateServiceListener {
 
@@ -241,7 +232,6 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
     private ArrayList<Uri> photos = new ArrayList<>();
 
-    private Uri mCropImageUri;
     private LatLng mLastLocation;
 
     private User user;
@@ -310,7 +300,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         super.onCreate(savedInstanceState);
 //        setHasOptionsMenu(true);
         gson = new Gson();
-        onAddPhotoClick();
+        openCamera();
 
         mLastLocation = ((MainActivity) getActivity()).getLastPosition();
         if (mLastLocation != null) {
@@ -759,84 +749,19 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         }
     }
 
-    private void openCamera() {
+    @OnClick(R.id.trash_report_take_image_fab)
+    public void openCamera() {
         Intent intent = new Intent(getContext(), PhotoActivity.class);
         getActivity().startActivityForResult(intent, TAKEN_PHOTO);
     }
-
-    @OnClick(R.id.trash_report_take_image_fab)
-    public void onAddPhotoClick() {
-        openCamera();
-
-//        if (CropImage.isExplicitCameraPermissionRequired(getActivity())) {
-//            requestPermissions(new String[]{Manifest.permission.CAMERA}, CropImage.CAMERA_CAPTURE_PERMISSIONS_REQUEST_CODE);
-//        } else {
-//            //CropImage.startPickImageActivity(getActivity());
-//            createCameraIntentChooser();
-//        }
-    }
-
-    private void createCameraIntentChooser() {
-        List<Intent> allIntents = new ArrayList<>();
-        PackageManager packageManager = getActivity().getPackageManager();
-        allIntents.addAll(getCameraIntents(getActivity(), packageManager));
-        Intent target;
-        if (allIntents.isEmpty()) {
-            target = new Intent();
-        } else {
-            target = allIntents.get(allIntents.size() - 1);
-            allIntents.remove(allIntents.size() - 1);
-        }
-
-        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-        StrictMode.setVmPolicy(builder.build());
-
-        Intent chooserIntent = Intent.createChooser(target, getString(com.theartofdev.edmodo.cropper.R.string.pick_image_intent_chooser_title));
-        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, allIntents.toArray(new Parcelable[allIntents.size()]));
-        getActivity().startActivityForResult(chooserIntent, CropImage.PICK_IMAGE_CHOOSER_REQUEST_CODE);
-    }
-
 
     @Override
     public void onActivityResultFragment(int requestCode, int resultCode, Intent data) {
         super.onActivityResultFragment(requestCode, resultCode, data);
 
-        if (requestCode == CropImage.PICK_IMAGE_CHOOSER_REQUEST_CODE && resultCode == RESULT_OK) {
-            Uri imageUri = CropImage.getPickImageResultUri(getActivity(), data);
-
-            // For API >= 23 we need to check specifically that we have permissions to read external storage.
-            if (CropImage.isReadExternalStoragePermissionsRequired(getActivity(), imageUri)) {
-                // request permissions and handle the result in onRequestPermissionsResult()
-                mCropImageUri = imageUri;
-                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, CropImage.PICK_IMAGE_PERMISSIONS_REQUEST_CODE);
-            } else {
-                // no permissions required or already grunted, can start crop image activity
-                startCropImageActivity(imageUri);
-            }
-        } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if (resultCode == RESULT_OK) {
-                Uri resultUri = result.getUri();
-                File file = new File(URI.create(resultUri.toString()));
-                Utils.resizeBitmap(file);
-                onPhotosReturned(Collections.singletonList(resultUri));
-            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                Exception error = result.getError();
-            }
-        } else if (requestCode == TAKEN_PHOTO && resultCode == RESULT_OK) {
+        if (requestCode == TAKEN_PHOTO && resultCode == RESULT_OK) {
             onPhotosReturned(Collections.singletonList(data.getData()));
         }
-    }
-
-    private void startCropImageActivity(Uri imageUri) {
-        CropImage.activity(imageUri)
-                .setGuidelines(CropImageView.Guidelines.ON_TOUCH)
-                .setRequestedSize(Configuration.TAKE_PHOTO_SIZE, Configuration.TAKE_PHOTO_SIZE)
-                .setInitialCropWindowPaddingRatio(0f)
-                .setFixAspectRatio(true)
-                .setBackgroundColor(R.color.colorPrimary)
-                .setActivityTitle(getString(R.string.global_cropImage))
-                .start(getActivity());
     }
 
     /**
@@ -924,19 +849,6 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         if (requestCode == LOCATION_REQUEST_CODE) {
             if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 getLocation();
-            }
-        } else if (requestCode == CropImage.CAMERA_CAPTURE_PERMISSIONS_REQUEST_CODE) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                createCameraIntentChooser();
-            } else {
-                showToast("Cancelling, required permissions are not granted");
-            }
-        } else if (requestCode == CropImage.PICK_IMAGE_PERMISSIONS_REQUEST_CODE) {
-            if (mCropImageUri != null && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // required permissions granted, start crop image activity
-                startCropImageActivity(mCropImageUri);
-            } else {
-                showToast("Cancelling, required permissions are not granted");
             }
         }
     }
