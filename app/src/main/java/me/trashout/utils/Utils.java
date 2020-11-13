@@ -39,6 +39,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.RectF;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.CalendarContract;
@@ -201,8 +202,22 @@ public class Utils {
                 y = Math.round((height - width) / 2);
             }
 
+            // Handle orientation
+            ExifInterface exif = new ExifInterface(pathOfInputImage.getAbsolutePath());
+            int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+            Matrix matrix = new Matrix();
+            if (orientation == 6) {
+                matrix.postRotate(90);
+            }
+            else if (orientation == 3) {
+                matrix.postRotate(180);
+            }
+            else if (orientation == 8) {
+                matrix.postRotate(270);
+            }
+
             // resize
-            Bitmap croppedBitmap = Bitmap.createBitmap(originalBitmap, x, y, size, size);
+            Bitmap croppedBitmap = Bitmap.createBitmap(originalBitmap, x, y, size, size, matrix, true);
 
             // save image
             FileOutputStream out = new FileOutputStream(pathOfInputImage);
