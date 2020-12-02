@@ -70,4 +70,6 @@
     <color name="statistics_chart_reported">#DE371C</color>
 
     <color name="progress_bar_color">#0E8A51</color>
+
+    <color name="camera_bg">#80000000</color>
 </resources>

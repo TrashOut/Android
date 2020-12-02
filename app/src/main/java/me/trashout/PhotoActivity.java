@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -15,21 +16,28 @@ import com.otaliastudios.cameraview.CameraListener;
 import com.otaliastudios.cameraview.CameraView;
 import com.otaliastudios.cameraview.FileCallback;
 import com.otaliastudios.cameraview.PictureResult;
+import com.otaliastudios.cameraview.controls.Flash;
 
 import java.io.File;
 import java.util.Date;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import me.trashout.utils.Utils;
 
 public class PhotoActivity extends AppCompatActivity {
+    @BindView(R.id.camera)
     CameraView camera;
+
+    @BindView(R.id.flash)
+    ImageButton flash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
 
-        camera = findViewById(R.id.camera);
+        ButterKnife.bind(this);
 
         camera.addCameraListener(new CameraListener() {
             @Override
@@ -51,7 +59,7 @@ public class PhotoActivity extends AppCompatActivity {
         });
 
         // crop image preview
-        LinearLayout camLayout = findViewById(R.id.camLayout);
+        View camLayout = findViewById(R.id.camVis);
         ViewGroup.LayoutParams params = camLayout.getLayoutParams();
         int size = Resources.getSystem().getDisplayMetrics().widthPixels;
         params.width = size;
@@ -69,6 +77,28 @@ public class PhotoActivity extends AppCompatActivity {
 
     public void take(View view) {
         camera.takePicture();
+    }
+
+    public void flash(View view) {
+        switch(flash.getTag().toString()) {
+            case "auto":
+                camera.setFlash(Flash.ON);
+                flash.setImageResource(R.drawable.flash_on);
+                flash.setTag("on");
+                break;
+
+            case "on":
+                camera.setFlash(Flash.OFF);
+                flash.setImageResource(R.drawable.flash_off);
+                flash.setTag("off");
+                break;
+
+            case "off":
+                camera.setFlash(Flash.AUTO);
+                flash.setImageResource(R.drawable.flash_auto);
+                flash.setTag("auto");
+                break;
+        }
     }
 
     @Override
