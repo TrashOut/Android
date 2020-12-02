@@ -25,6 +25,8 @@ import butterknife.ButterKnife;
 import me.trashout.utils.Utils;
 
 public class PhotoActivity extends AppCompatActivity {
+    private static final int CONFIRM = 34;
+
     @BindView(R.id.camera)
     CameraView camera;
 
@@ -48,10 +50,10 @@ public class PhotoActivity extends AppCompatActivity {
                     public void onFileReady(File file) {
                         Utils.resizeBitmapToSquare(file);
                         Uri uri = Uri.fromFile(file);
-                        Intent intent = new Intent();
+
+                        Intent intent = new Intent(getApplicationContext(), PreviewActivity.class);
                         intent.setData(uri);
-                        setResult(RESULT_OK, intent);
-                        finish();
+                        startActivityForResult(intent, CONFIRM);
                     }
                 });
             }
@@ -64,6 +66,18 @@ public class PhotoActivity extends AppCompatActivity {
         params.width = size;
         params.height = size;
         camLayout.setLayoutParams(params);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == CONFIRM && resultCode == RESULT_OK) {
+            Intent intent = new Intent();
+            intent.setData(data.getData());
+            setResult(RESULT_OK, intent);
+            finish();
+        }
     }
 
     @Override

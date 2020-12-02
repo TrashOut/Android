@@ -17,10 +17,11 @@ android {
         applicationId "me.trashout"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 94
-        versionName "4.9.0"
+        versionCode 95
+        versionName "4.10.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
     }
 
     dexOptions {
