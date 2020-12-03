@@ -17,29 +17,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/ok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:onClick="onOk"
-        android:padding="100px"
-        app:layout_constraintEnd_toStartOf="@+id/repeat"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/done" />
-
-    <ImageButton
         android:id="@+id/repeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
         android:onClick="onRepeat"
         android:padding="100px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ok"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/repeat" />
+
+    <ImageButton
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:onClick="onOk"
+        android:padding="100px"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/ok"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/repeat" />
+        app:layout_constraintStart_toEndOf="@+id/repeat"
+        app:srcCompat="@drawable/done" />
 
 </android.support.constraint.ConstraintLayout>
