@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrashOut"
         tools:replace="android:theme">
-        <activity android:name=".PreviewActivity"></activity>
+        <activity android:name=".PositionPickerActivity"></activity>
+        <activity android:name=".PreviewActivity" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"

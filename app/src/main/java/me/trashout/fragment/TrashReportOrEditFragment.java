@@ -76,6 +76,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.trashout.PhotoActivity;
+import me.trashout.PositionPickerActivity;
 import me.trashout.R;
 import me.trashout.activity.MainActivity;
 import me.trashout.api.base.ApiResult;
@@ -115,6 +116,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     private static final int UPDATE_TRASH_REQUEST_ID = 451;
     private static final int LOCATION_REQUEST_CODE = 6;
     private static final int TAKEN_PHOTO = 33;
+    private static final int PICK_POSITION = 34;
 
     @BindView(R.id.trash_report_take_image_fab)
     FloatingActionButton trashReportTakeImageFab;
@@ -729,6 +731,12 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             case R.id.trash_report_type_glass_btn:
                 break;
         }
+    }
+
+    @OnClick({R.id.trash_report_location_card_view})
+    public void onLocationClick(View view) {
+        Intent intent = new Intent(getContext(), PositionPickerActivity.class);
+        getActivity().startActivityForResult(intent, PICK_POSITION);
     }
 
     private void getLocation() {

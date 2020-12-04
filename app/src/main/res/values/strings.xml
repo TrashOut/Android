@@ -1448,30 +1448,6 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="organization.dumpsCleaned">"Dumps cleaned"</string>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!--MISSING STRINGS-->
     <string name="share_to" translatable="false">Share to…</string>
     <string name="recyclable_gray" translatable="false"><![CDATA[<font color=\"#8b8b8b\">%1$s: </font>]]></string>
