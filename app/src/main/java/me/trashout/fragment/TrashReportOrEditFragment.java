@@ -388,17 +388,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                     Log.d(TAG, "Found better GPS: " + mLastLocation.longitude + " " + mLastLocation.latitude + "     ...     " + location.getAccuracy());
 
                     setPosition(mLastLocation.latitude, mLastLocation.longitude);
-
-                    Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
-                    new GeocoderTask(geocoder, mLastLocation.latitude, mLastLocation.longitude, new GeocoderTask.Callback() {
-                        @Override
-                        public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
-                            Log.d(TAG, "geocoderResult  = " + geocoderResult);
-                            if (geocoderResult.getAddress() != null) {
-                                trashReportPlace.setText(geocoderResult.getFormattedAddress());
-                            }
-                        }
-                    }).execute();
+                    setPlaceAddress(mLastLocation);
 
                     if (location.getAccuracy() < 2) {
                         Log.d(TAG, "Location Manager STOP Updates (good accuracy)");
@@ -581,17 +571,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             trashReportStatusCardView.setVisibility(GONE);
 
             setPosition(mLastLocation.latitude, mLastLocation.longitude);
-
-            Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
-            new GeocoderTask(geocoder, mLastLocation.latitude, mLastLocation.longitude, new GeocoderTask.Callback() {
-                @Override
-                public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
-                    Log.d(TAG, "geocoderResult  = " + geocoderResult);
-                    if (geocoderResult.getAddress() != null) {
-                        trashReportPlace.setText(geocoderResult.getFormattedAddress());
-                    }
-                }
-            }).execute();
+            setPlaceAddress(mLastLocation);
         } else {
             trashReportStatus.setVisibility(GONE);
             trashReportStatusCardView.setVisibility(GONE);
@@ -770,7 +750,33 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
         if (requestCode == TAKEN_PHOTO && resultCode == RESULT_OK) {
             onPhotosReturned(Collections.singletonList(data.getData()));
+        } else if (requestCode == PICK_POSITION && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            if (extras != null) {
+                mLastLocation = extras.getParcelable("latlng");
+                bestAccuracy = 0;
+                Log.d(TAG, "Picked GPS: " + mLastLocation.longitude + ", " + mLastLocation.latitude);
+
+                Log.d(TAG, "Location Manager STOP Updates (picked manually)");
+                locationManager.removeUpdates(locationListener);
+
+                setPosition(mLastLocation.latitude, mLastLocation.longitude);
+                setPlaceAddress(mLastLocation);
+            }
         }
+    }
+
+    private void setPlaceAddress(LatLng latLng) {
+        Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
+        new GeocoderTask(geocoder, latLng.latitude, latLng.longitude, new GeocoderTask.Callback() {
+            @Override
+            public void onAddressComplete(GeocoderTask.GeocoderResult geocoderResult) {
+                Log.d(TAG, "geocoderResult  = " + geocoderResult);
+                if (geocoderResult.getAddress() != null) {
+                    trashReportPlace.setText(geocoderResult.getFormattedAddress());
+                }
+            }
+        }).execute();
     }
 
     /**

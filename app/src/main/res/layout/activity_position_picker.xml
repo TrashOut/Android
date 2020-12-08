@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/map"
-    tools:context=".PositionPickerActivity"
-    android:name="com.google.android.gms.maps.SupportMapFragment" />
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/map"
+        tools:context=".PositionPickerActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+    <ImageView
+        android:id="@+id/pointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/loc_pointer" />
+
+    <ImageView
+        android:id="@+id/confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        app:srcCompat="@drawable/confirm"
+        android:onClick="onConfirm"/>
+
+</RelativeLayout>

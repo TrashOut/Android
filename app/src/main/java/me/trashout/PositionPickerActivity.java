@@ -1,7 +1,9 @@
 package me.trashout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -30,5 +32,14 @@ public class PositionPickerActivity extends AppCompatActivity implements OnMapRe
             LatLng latLng = extras.getParcelable("latlng");
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18));
         }
+    }
+
+    public void onConfirm(View view) {
+        LatLng latLng = mMap.getCameraPosition().target;
+
+        Intent intent = new Intent();
+        intent.putExtra("latlng", latLng);
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }
