@@ -338,6 +338,16 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/test_map" />
 
+                    <ImageView
+                        android:id="@+id/edit_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignBottom="@id/trash_report_map"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="20dp"
+                        app:srcCompat="@drawable/edit" />
+
                     <TextView
                         android:id="@+id/trash_report_position"
                         android:layout_width="wrap_content"
