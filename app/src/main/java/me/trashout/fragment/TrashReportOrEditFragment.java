@@ -715,6 +715,10 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
     @OnClick({R.id.trash_report_location_card_view})
     public void onLocationClick(View view) {
+        if (getTrash() != null) {
+            return; // disable for edit
+        }
+
         Intent intent = new Intent(getContext(), PositionPickerActivity.class);
         intent.putExtra("latlng", mLastLocation);
         getActivity().startActivityForResult(intent, PICK_POSITION);
