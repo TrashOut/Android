@@ -228,6 +228,8 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     TextView trashReportTakeImagesText;
     @BindView(R.id.trash_detail_photo_count)
     TextView photoCountTextView;
+    @BindView(R.id.edit_location)
+    ImageView editLocation;
 
     private Trash mTrash;
     private Gson gson;
@@ -314,6 +316,11 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_trash_report_or_edit, container, false);
         ButterKnife.bind(this, view);
+
+        // hide edit location icon for editing trash
+        if (getTrash() != null) {
+            editLocation.setVisibility(GONE);
+        }
 
         user = PreferencesHandler.getUserData(getContext());
         if (user == null)
