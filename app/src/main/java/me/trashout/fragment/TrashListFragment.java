@@ -353,11 +353,7 @@ public class TrashListFragment extends BaseFragment implements BaseService.Updat
     }
 
     public void addDump() {
-        if (isNetworkAvailable()) {
-            TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
-            getBaseActivity().replaceFragment(trashReportOrEditFragment);
-        } else {
-            showToast(R.string.global_internet_error_offline);
-        }
+        TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
+        getBaseActivity().replaceFragment(trashReportOrEditFragment);
     }
 }

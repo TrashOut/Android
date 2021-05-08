@@ -95,6 +95,7 @@ import me.trashout.service.base.BaseService;
 import me.trashout.ui.SelectableImageButton;
 import me.trashout.utils.GeocoderTask;
 import me.trashout.utils.GlideApp;
+import me.trashout.service.offline.OfflineTrashManager;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
 import okhttp3.ResponseBody;
@@ -337,26 +338,32 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                     if (validateNewData()) {
                         showProgressDialog();
                         String note = !TextUtils.isEmpty(trashReportAdditionalInformationEdit.getText()) ? trashReportAdditionalInformationEdit.getText().toString() : "";
+                        Trash trash;
                         if (getTrash() == null) {
                             Gps gps = Gps.createGPSFromLatLng(mLastLocation);
                             gps.setAccuracy((int) bestAccuracy);
-                            Trash newTrash = Trash.createNewTrash(gps, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            CreateTrashService.startForRequest(getContext(), CREATE_TRASH_REQUEST_ID, newTrash, photos);
+                            trash = Trash.createNewTrash(gps, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
                         } else if (isTrashStillHere()) {
-                            Trash updateTrash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.STILL_HERE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), updateTrash, photos);
+                            trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.STILL_HERE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
                         } else if (isTrashMore()) {
-                            Trash updateTrash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.MORE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), updateTrash, photos);
+                            trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.MORE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
                         } else if (isTrashLess()) {
-                            Trash updateTrash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.LESS, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), updateTrash, photos);
+                            trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.LESS, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
                         } else if (isTrashCleaned()) {
-                            Trash updateTrash = Trash.createCleanedUpdateTrash(getTrash().getId(), getTrash().getGps(), getTrash().getSize(), getTrash().getTypes(), getTrash().getAccessibility(), trashReportStatusCleanedByMeSwitch.isChecked(), note, trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), updateTrash, photos);
+                            trash = Trash.createCleanedUpdateTrash(getTrash().getId(), getTrash().getGps(), getTrash().getSize(), getTrash().getTypes(), getTrash().getAccessibility(), trashReportStatusCleanedByMeSwitch.isChecked(), note, trashReportSendAnonymouslySwitch.isChecked(), user.getId());
                         } else {
-                            Trash updateTrash = Trash.createUpdateTrash(getTrash().getId(), getTrash().getGps(), note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), updateTrash, photos);
+                            trash = Trash.createUpdateTrash(getTrash().getId(), getTrash().getGps(), note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+                        }
+
+                        if (isNetworkAvailable()) {
+                            if (getTrash() == null) {
+                                CreateTrashService.startForRequest(getContext(), CREATE_TRASH_REQUEST_ID, trash, photos);
+                            } else {
+                                UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), trash, photos);
+                            }
+                        } else {
+                            OfflineTrashManager offlineTrashManager = new OfflineTrashManager(getContext());
+                            offlineTrashManager.add(trash, photos, getTrash() != null);
                         }
                     }
                 }
