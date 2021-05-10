@@ -68,4 +68,19 @@ public class OfflineTrashManager {
         remove();
         return true;
     }
+
+    public void processAll() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (process()) {
+                    try {
+                        Thread.sleep(1000 * 30);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }).start();
+    }
 }
