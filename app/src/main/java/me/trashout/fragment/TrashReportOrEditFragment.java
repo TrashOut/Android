@@ -364,6 +364,8 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
                         } else {
                             OfflineTrashManager offlineTrashManager = new OfflineTrashManager(getContext());
                             offlineTrashManager.add(trash, photos, getTrash() != null);
+                            dismissProgressDialog();
+                            getBaseActivity().replaceFragment(new ThankYouFragmentOfflineTrash(), false);
                         }
                     }
                 }
