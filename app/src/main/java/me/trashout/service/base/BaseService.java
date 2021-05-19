@@ -46,6 +46,8 @@ import com.google.firebase.storage.UploadTask;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -130,7 +132,6 @@ public abstract class BaseService extends Service {
                 final Image image = new Image();
                 image.setCreated(DateTimeUtils.TIMESTAMP_FORMAT.format(new Date()));
                 image.setFullStorageLocation(tempRef.toString());
-                image.setFullDownloadUrl((taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null && taskSnapshot.getMetadata().getReference().getDownloadUrl() != null) ? taskSnapshot.getMetadata().getReference().getDownloadUrl().toString() : null);
 
                 try {
                     byte[] thumbnailByteArray = Utils.resizeBitmap(BaseService.this, imagesToUpload.get(index), 150);
@@ -139,12 +140,27 @@ public abstract class BaseService extends Service {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             image.setThumbStorageLocation(tempRefThumbnail.toString());
-                            image.setThumbDownloadUrl((taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null && taskSnapshot.getMetadata().getReference().getDownloadUrl() != null) ? taskSnapshot.getMetadata().getReference().getDownloadUrl().toString() : null);
-                            images.add(image);
-                            if (index != imagesToUpload.size() - 1) {
-                                uploadImages(ref, imagesToUpload, index + 1, images, onImageUploadListener);
-                            } else {
-                                onImageUploadListener.onComplete(UploadStatus.SUCCESS, images);
+
+                            if (taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null && taskSnapshot.getMetadata().getReference().getDownloadUrl() != null) {
+                                taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        String downloadUrl = uri.toString();
+                                        image.setThumbDownloadUrl(downloadUrl);
+                                        image.setFullDownloadUrl(downloadUrl);
+                                        images.add(image);
+                                        if (index != imagesToUpload.size() - 1) {
+                                            uploadImages(ref, imagesToUpload, index + 1, images, onImageUploadListener);
+                                        } else {
+                                            onImageUploadListener.onComplete(UploadStatus.SUCCESS, images);
+                                        }
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        onImageUploadListener.onComplete(UploadStatus.FAILED, null);
+                                    }
+                                });
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
