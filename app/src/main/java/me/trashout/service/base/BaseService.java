@@ -34,7 +34,7 @@ import android.net.Uri;
 import android.os.Binder;
 import android.os.Handler;
 import android.os.IBinder;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -130,7 +130,7 @@ public abstract class BaseService extends Service {
                 final Image image = new Image();
                 image.setCreated(DateTimeUtils.TIMESTAMP_FORMAT.format(new Date()));
                 image.setFullStorageLocation(tempRef.toString());
-                image.setFullDownloadUrl(taskSnapshot.getDownloadUrl() != null ? taskSnapshot.getDownloadUrl().toString() : null);
+                image.setFullDownloadUrl((taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null && taskSnapshot.getMetadata().getReference().getDownloadUrl() != null) ? taskSnapshot.getMetadata().getReference().getDownloadUrl().toString() : null);
 
                 try {
                     byte[] thumbnailByteArray = Utils.resizeBitmap(BaseService.this, imagesToUpload.get(index), 150);
@@ -139,7 +139,7 @@ public abstract class BaseService extends Service {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             image.setThumbStorageLocation(tempRefThumbnail.toString());
-                            image.setThumbDownloadUrl(taskSnapshot.getDownloadUrl() != null ? taskSnapshot.getDownloadUrl().toString() : null);
+                            image.setThumbDownloadUrl((taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null && taskSnapshot.getMetadata().getReference().getDownloadUrl() != null) ? taskSnapshot.getMetadata().getReference().getDownloadUrl().toString() : null);
                             images.add(image);
                             if (index != imagesToUpload.size() - 1) {
                                 uploadImages(ref, imagesToUpload, index + 1, images, onImageUploadListener);

@@ -27,7 +27,7 @@
 package me.trashout.ui;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatRadioButton;
+import androidx.appcompat.widget.AppCompatRadioButton;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewTreeObserver;

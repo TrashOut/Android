@@ -7,9 +7,9 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -21,8 +21,8 @@ import java.util.Map;
 import me.trashout.R;
 import me.trashout.activity.StartActivity;
 
-import static android.support.v4.app.NotificationCompat.DEFAULT_ALL;
-import static android.support.v4.app.NotificationCompat.VISIBILITY_PUBLIC;
+import static androidx.core.app.NotificationCompat.DEFAULT_ALL;
+import static androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC;
 
 public class TrashoutFirebaseMessagingService extends FirebaseMessagingService {
 

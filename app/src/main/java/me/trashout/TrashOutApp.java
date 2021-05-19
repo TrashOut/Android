@@ -27,16 +27,14 @@
 package me.trashout;
 
 import android.os.Build;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 import android.util.Log;
 
-import com.crashlytics.android.Crashlytics;
 import com.facebook.stetho.Stetho;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.security.ProviderInstaller;
 
-import io.fabric.sdk.android.Fabric;
 import me.trashout.notification.TrashoutFirebaseMessagingService;
 import me.trashout.utils.ApplicationLifecycleHandler;
 

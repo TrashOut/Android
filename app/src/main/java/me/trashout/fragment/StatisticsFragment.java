@@ -27,8 +27,8 @@
 package me.trashout.fragment;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatSpinner;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.widget.AppCompatSpinner;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

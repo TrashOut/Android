@@ -1,6 +1,6 @@
 package me.trashout.notification;
 
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 
 import me.trashout.R;
 
