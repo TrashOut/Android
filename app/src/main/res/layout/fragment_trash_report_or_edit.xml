@@ -428,6 +428,17 @@
                     android:text="@string/trash.sendAnonymously" />
             </RelativeLayout>
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/trash_report_send"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@color/button_color_green_dark"
+                android:text="@string/global.create.send"
+                android:textColor="@color/text_color_white"
+                app:backgroundTint="@color/button_color_green_dark" />
 
         </LinearLayout>
 
