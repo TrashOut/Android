@@ -160,7 +160,6 @@ Prosím, skúste znova, keď budete online"</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Urobte aspoň jednu fotografiu"</string>
     <string name="trash.removeImage">"Odstrániť obrázok"</string>
     <string name="trash.removeImageConfirm">"Chcete odstrániť vybranú fotku?"</string>
-    <string name="trash.create.noGps">Stará GPS poloha! Zapnite zdieľanie polohy.</string>
     <string name="trash.create.noInternetHeader">"Ste bez internetu!"</string>
     <string name="trash.create.noInternetText">"Táto nelegálna skládka nemôže byť odoslaná, pretože nie ste pripojený na internet.
 
@@ -293,7 +292,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="trash.accessibility">"Dostupnosť skládky"</string>
     <string name="trash.accessibility.byCar">"Dostupné autom"</string>
     <string name="trash.accessibility.inCave">"Nachádza sa v jaskyni"</string>
-    <string name="trash.accessibility.underWater">"Nachádza sa pod vodou"</string>
+    <string name="trash.accessibility.underWater">"Nachádza sa pod vodou/ na brehu"</string>
     <string name="trash.accessibility.notForGeneralCleanup">"Nie je pre bežné čistenie"</string>
     <string name="trash.valiadation.accessibilityRequired">"Prístupnosť je požadovaná"</string>
     <string name="global.status">"Stav"</string>
@@ -362,7 +361,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="global.phoneNotSet">"Telefón nie je nastavený"</string>
     <string name="profile.earnedPoints_X">"Získali ste doteraz %d bodov! Aktualizujte skládky, aby ste získali viac."</string>
     <string name="profile.points_X">"%d bodov"</string>
-    <string name="global.numberOfTimes_X">"%dx"</string>
+    <string name="global.numberOfTimes_X">"% dx"</string>
     <string name="profile.youReported">"Vaše hlásenia"</string>
     <string name="profile.youUpdated">"Vaše aktivity"</string>
     <string name="profile.youCleaned">"Vyčistené skládky"</string>
@@ -750,7 +749,9 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="global.accountCreated">"Účet bol vytvorený"</string>
     <string name="global.activateAccount">"Prejdite do Vášho e-mailu a aktivujte si účet"</string>
     <string name="user.myProfile">"Môj profil"</string>
-    <string name="user.addArea">"Pridajte oblastí záujmu"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addArea">"Nastaviť oznámenia o oblasti"</string>
     <string name="user.generateApiKey">"Generovať API kľúč"</string>
     <string name="user.aboutMe">"O mne"</string>
     <string name="trash.markedAsSpam.success">"Ďakujem Vám za aktualizáciu našej databázy! Naši administrátori zrevidujú Vaše hlásenie."</string>
@@ -760,7 +761,9 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="user.roles.superAdmin">"SuperAdministrátor"</string>
     <string name="profile.myEvents">"Moje udalosti"</string>
     <string name="organization.description">"Opis"</string>
-    <string name="user.geo.notificationFrequency">"Frekvencia oznámení"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency">"Frekvencia oznámení"</string>
     <string name="user.reviewed">"Zrevidovaný používateľ"</string>
     <string name="user.created">"Konto vytvorené"</string>
     <string name="trash.create.successs">"Ďakujeme Vám za aktualizáciu našej databázy a starostlivosť o naše životné prostredie."</string>
@@ -777,12 +780,24 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="collectionPoint.contact.header">"Kontakty"</string>
     <string name="global.url.placeholder">"http://www.trashout.ngo"</string>
     <string name="collectionPoint.update.success">"Zberné miesto bolo úspešne aktualizované"</string>
-    <string name="user.editArea">"Upraviť oblasť záujmu"</string>
-    <string name="user.geo.notificationFrequency.perHour">"Za hodinu"</string>
-    <string name="user.geo.notificationFrequency.never">"Nikdy"</string>
-    <string name="user.geo.notificationFrequency.perDay">"Za deň"</string>
-    <string name="user.geo.notificationFrequency.perWeek">"Týždenne"</string>
-    <string name="user.geo.notificationFrequency.perMonth">"Za mesiac"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea">"Upraviť oblasť záujmu"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perHour">"Za hodinu"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.never">"Nikdy"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perDay">"Za deň"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perWeek">"Týždenne"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perMonth">"Za mesiac"</string>
     <string name="user.level">"Úroveň"</string>
     <string name="geo.userAdd.success">"Používateľ bol úspešne pridaný"</string>
     <string name="geo.userDelete.success">"Oblasť používateľa bola úspešne odstránená"</string>
@@ -860,7 +875,9 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="collectionPoint.category.other">"Ostatné"</string>
     <string name="collectionPoint.category.everything">"Všetko"</string>
     <string name="collectionPoint.category">"Kategória zberného miesta"</string>
-    <string name="user.editArea.success">"Oblasť bola úspešne aktualizovaná"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea.success">"Oblasť bola úspešne aktualizovaná"</string>
     <string name="user.roles.organization.manager">"Manažér"</string>
     <string name="user.roles.organization">"Úloha organizácie"</string>
     <string name="profile.changeEmail">"Zmeniť E-mail"</string>
@@ -1048,7 +1065,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="mail.newsletter.p2">"Ak chcete zmeniť frekvenciu tejto e-mailovej notifikácie, navštívte svoj"</string>
     <string name="mail.newsletter.p3">"profil"</string>
     <string name="mail.newsletter.p4">"v aplikácii TrashOut."</string>
-    <string name="mail.newsletter.p5">"Ďakujeme, že prispievate k tomu, aby bol svet čistejší! Nezabudnite používať mobilnú aplikáciu TrashOut na nahlasovanie a aktualizovanie nelegálnych skládok vo svojom okolí, nájdenie njabližšieho zberného miesta, či zúčastnenie sa čistiacej akcie."</string>
+    <string name="mail.newsletter.p5">"Ďakujeme, že prispievate k tomu, aby bol svet čistejší! Nezabudnite používať mobilnú aplikáciu TrashOut na nahlasovanie a aktualizovanie nelegálnych skládok vo svojom okolí, nájdenie najbližšieho zberného miesta, či zúčastnenie sa čistiacej akcie."</string>
     <string name="mail.newsletter.footer">"Tento e-mail ste dostali, pretože vo svojom profile na admin.trashout.ngo ste si nastavili pravidelné notifikácie na sledovanie vybranej oblasti a súhlasili ste s podmienkami používania aplikácie TrashOut. Svoje preferencie môžete zmeniť kedykoľvek"</string>
     <string name="mail.newsletter.footerLink">"tu"</string>
     <string name="global.language.russia">"Ruština"</string>
@@ -1065,7 +1082,9 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="user.google.hint">"Link vášho profilu"</string>
     <string name="global.phone.hint">"Číslo s predvoľbou začínajúce +/ 00"</string>
     <string name="profile.currentPassword">"Aktuálne heslo"</string>
-    <string name="user.addToArea.success">"Oblasť bola úspešne pridaná"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addToArea.success">"Oblasť bola úspešne pridaná"</string>
     <string name="collectionPoint.created.success">"Zberné miesto bolo úspešne vytvorené"</string>
     <string name="collectionPoint.markedAsSpam.success">"Zberné miesto bolo úspešne označené ako spam."</string>
     <string name="collectionPoint.removed.success">"Zberné miesto bolo úspešne odstránené"</string>
@@ -1114,7 +1133,9 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="notifications.user.approve.header">"Schváliť používateľa"</string>
     <string name="geo.description.admin">"V tejto sekcii môžete vidieť a pridať manažérov oblastí a podoblastí, ktoré maju spravovať. Manažéri v porovnaní s inými používateľmi sú schopní pridať články, ktoré sa zobrazí aj v mobile a na webovej aplikácii. Okrem toho môže vidieť používateľov, dostávať upozornenia o aktivitách vo Vašich oblastiach."</string>
     <string name="geo.description.superAdmin">"V tejto sekcii môžete vidieť administrátorov, manažérov a používateľov. Môžete pridať alebo odstrániť administrátorov pre oblasti alebo podoblasti, môžete spravovať aliasy k oblastiam."</string>
-    <string name="user.geo.description">"Vyberte si geografické oblasti, ktoré vás zaujímajú. Nastavte si e-mailové upozornenia a ich frekvencie, takže môžete zostať informovaní o hlásených skládkach a udalostiach v týchto oblastiach. Môžete sledovať oblastí koľko uznáte za vhodné, jednotlivé nastavenia môžete kedykoľvek meniť."</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.description">"Vyberte si geografické oblasti, ktoré vás zaujímajú. Nastavte si e-mailové upozornenia a ich frekvencie, takže môžete zostať informovaní o hlásených skládkach a udalostiach v týchto oblastiach. Môžete sledovať oblastí koľko uznáte za vhodné, jednotlivé nastavenia môžete kedykoľvek meniť."</string>
     <string name="geo.confirm.removeAdmin">"Chcete odstrániť administrátora z danej oblasti?"</string>
     <string name="geo.confirm.removeManager">"Chcete odstrániť manažéra z danej oblasti?"</string>
     <string name="geo.addAlias.description">"Alias môžete vytvoriť tu, ale buďte nanajvýš opatrný, zmeny sú nevratné. Napríklad môžete vytvoriť alias \"Česko\" pre oblasť \"Česká republika\". Potom, tejto zmene uvidíte v zozname oblasti už len jednu hlavnú oblasť \"Česká republika\"."</string>
@@ -1123,7 +1144,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="event.validation.endTimeRequired">"Čas ukončenia je povinný."</string>
     <string name="news.videoUrl">"Video URL"</string>
     <string name="global.addNext">"Pridať ďalší"</string>
-    <string name="global.validation.sizeExceeded">"Veľkosť obrázkov bola prekročená. Nahrajte menší obrázok (max 2 MB)."</string>
+    <string name="global.validation.sizeExceeded">"Veľkosť obrázkov bola prekročená. Nahrajte menší obrázok (max 3 MB)."</string>
     <string name="global.image.mainImage">"Hlavný obrázok"</string>
     <string name="global.image.setAsMain">"Nastaviť obrázok ako hlavný"</string>
     <string name="news.validation.nameRequired">"Meno je povinné"</string>
@@ -1225,7 +1246,7 @@ Našou snahou je zapojiť občanov, vlády, obce a organizácie, aby sme mohli s
 
     <!-- note -->
     <!-- Fuzzy -->
-    <string name="global.signUp.acceptRegister.startSentense">"Súhlasím so spracovaním mojich osobných údajov. Prečítal/a som si a prijímam"</string>
+    <string name="global.signUp.acceptRegister.startSentense">"Pokračovaním vyjadrujete súhlas s"</string>
     <string name="global.signUp.acceptRegister.privatePolicy">"Zásady ochrany osobných údajov"</string>
 
     <!-- Fuzzy -->
@@ -1241,7 +1262,7 @@ Našou snahou je zapojiť občanov, vlády, obce a organizácie, aby sme mohli s
     <string name="global.cookiesPolicy.link">"Zásady ochrany osobných údajov"</string>
 
     <!-- Error show only if there is issue with creating dumps -->
-    <string name="global.internet.error.offline">"Vaše mobilné zariadenie nie je pripojené k internetu. Urobte fotografiu a nahláste skládku
+    <string name="global.internet.error.offline">"Vaše mobilné zariadenie nie je pripojené k internetu. Urobte fotografiu a nahláste skládku 
 neskôr prostredníctvom stránky www.admin.trashout.ngo."</string>
     <string name="global.images.requirements">"Používajte obrázky s pomerom strán 1: 2 alebo menším (nie širokouhlý obrázok) a veľkosťou do 2 MB."</string>
 
@@ -1260,7 +1281,7 @@ neskôr prostredníctvom stránky www.admin.trashout.ngo."</string>
     <string name="info.supportUs">"Podporiť projekt"</string>
 
     <!-- Fuzzy -->
-    <string name="home.recycling_point_edit_redirect">"Zberné miesto je zatiaľ možné upravovať len z webovej aplikácie, do ktorej sa prihlásite cez webový prehliada"</string>
+    <string name="home.recycling_point_edit_redirect">"Zberné miesto je zatiaľ možné upravovať len z webovej aplikácie, do ktorej sa prihlásite cez webový prehliadač"</string>
     <string name="collectionPoint.email_is_missing">"Pridať emailovú adresu"</string>
     <string name="collectionPoint.phone_is_missing">"Pridať telefónne číslo"</string>
     <string name="collectionPoint.web_is_missing">"Pridať webovú adresu"</string>

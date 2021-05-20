@@ -153,7 +153,6 @@ Bitte komm zurück, wenn du wieder online bist."</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Mach mindestens ein Foto"</string>
     <string name="trash.removeImage">"Bild entfernen"</string>
     <string name="trash.removeImageConfirm">"Möchtest du das ausgewählte Foto löschen?"</string>
-    <string name="trash.create.noGps">"Alter GPS-Standort! Aktivieren Sie die Standortfreigabe. "</string>
     <string name="trash.create.noInternetHeader">"Du bist offline!"</string>
     <string name="trash.create.noInternetText">"Wenn du online gehst, schalte bitte die TrashOut App ein und dein Bericht wird automatisch übermittelt."</string>
     <string name="trash.create.sendWasInterruptedHeader">"Das Senden wurde unterbrochen."</string>
@@ -351,8 +350,8 @@ Bitte komm zurück, wenn du wieder online bist."</string>
     <string name="global.edit">"Bearbeiten"</string>
     <string name="trash.anonymous">"Anonym"</string>
     <string name="global.phoneNotSet">"Telefon nicht eingestellt"</string>
-    <string name="profile.earnedPoints_X">"Du hast bisher %d Punkte verdient! Suche nach weiteren Deponien, es bringt dir neue Abzeichen!"</string>
-    <string name="profile.points_X">"%d Punkte"</string>
+    <string name="profile.earnedPoints_X">"Du hast bisher% d Punkte verdient! Suche nach weiteren Deponien, es bringt dir neue Abzeichen!"</string>
+    <string name="profile.points_X">"% Punkte"</string>
     <string name="global.numberOfTimes_X">"%dx"</string>
 
     <!-- Bei Spielen oder Apps wird geduzt -->
@@ -379,7 +378,7 @@ Bitte komm zurück, wenn du wieder online bist."</string>
     <string name="trashHunter.startHunting">"Beginne mit der Jagd"</string>
     <string name="trashHunter.huntingArea">"Jagdgebiet"</string>
     <string name="trashHunter.stopHunting">"STOPP DIE JAGD"</string>
-    <string name="trash.foundDumps_X">"Gefundene Deponien : %d"</string>
+    <string name="trash.foundDumps_X">"Gefundene Deponien :% d"</string>
     <string name="trashHunter.turnedOnInfo">"\"Mülljäger-Modus\" wurde aktiviert und ist für den folgenden Zeitraum aktiv."</string>
     <string name="trash.updateNeeded">"Update erforderlich"</string>
     <string name="trash.filter.lastUpdate.noLimit">"Keine Begrenzung"</string>
@@ -551,7 +550,7 @@ Bitte komm zurück, wenn du wieder online bist."</string>
     <string name="trash.validation.statusRequired">"Status ist erforderlich"</string>
     <string name="event.validation.nameRequired">"Name ist erforderlich"</string>
     <string name="global.validation.locationRequired">"Standort erforderlich"</string>
-    <string name="user.validation.passwordShouldContain">"Passwort muss mindestens 1 Großbuchstaben, 1
+    <string name="user.validation.passwordShouldContain">"Passwort muss mindestens 1 Großbuchstaben, 1 
 Kleinbuchstaben und 1 Nummer enthalten."</string>
     <string name="organizations.name">"Organisationsname"</string>
     <string name="organizations.id">"Organisations-ID"</string>
@@ -608,7 +607,7 @@ Kleinbuchstaben und 1 Nummer enthalten."</string>
     <string name="global.validation.warning">"Warnung"</string>
     <string name="global.validation.noEmailClientInstalled">"Kein E-Mail-Client instaliert"</string>
     <string name="trash.edit.greaterDistanceText">"Du bist mehr als 100 m vom Müll entfernt. Du sollst in der Nähe sein."</string>
-    <string name="trash.edit.minPhotosText">"Um einen Abfall-Eintrag zu erstellen oder zu aktualisieren, müssen mindestens %d Fotos gemacht werden"</string>
+    <string name="trash.edit.minPhotosText">"Um einen Abfall-Eintrag zu erstellen oder zu aktualisieren, müssen mindestens% d Fotos gemacht werden"</string>
     <string name="trash.validation.mustSelectMeetingPoint">"Wähle zuerst die Lage zum Treffen"</string>
     <string name="event.detail.bring">"Bringen"</string>
     <string name="event.detail.pleaseBring">"Bitte bring"</string>
@@ -748,7 +747,9 @@ Kleinbuchstaben und 1 Nummer enthalten."</string>
     <string name="global.accountCreated">"Konto wurde erstellt"</string>
     <string name="global.activateAccount">"Gehe zu deiner E-Mail und aktiviere dein Konto"</string>
     <string name="user.myProfile">"Mein Profil"</string>
-    <string name="user.addArea">"Gebiete von Interesse hinzufügen"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addArea">"Gebiete von Interesse hinzufügen"</string>
     <string name="user.generateApiKey">"API-Schlüssel generieren"</string>
     <string name="user.aboutMe">"Über mich"</string>
     <string name="trash.markedAsSpam.success">"Danke, dass du unsere Datenbank auf dem neuesten Stand hälst! Unsere Administratoren überprüfen deinen Bericht."</string>
@@ -758,7 +759,9 @@ Kleinbuchstaben und 1 Nummer enthalten."</string>
     <string name="user.roles.superAdmin">"SuperAdministrator"</string>
     <string name="profile.myEvents">"Meine Veranstaltungen"</string>
     <string name="organization.description">"Beschreibung"</string>
-    <string name="user.geo.notificationFrequency">"Benachrichtigungsfrequenz"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency">"Benachrichtigungsfrequenz"</string>
 
     <!-- Rezensent / Geprüfter Nutzer -->
     <string name="user.reviewed">"Rezensent / Geprüfter Nutzer"</string>
@@ -783,12 +786,24 @@ Kleinbuchstaben und 1 Nummer enthalten."</string>
     <string name="collectionPoint.contact.header">"Kontakte"</string>
     <string name="global.url.placeholder">"https://www.trashout.ngo"</string>
     <string name="collectionPoint.update.success">"Recyclingstandort wurde erfolgreich aktualisiert."</string>
-    <string name="user.editArea">"Interessenbereich bearbeiten"</string>
-    <string name="user.geo.notificationFrequency.perHour">"Pro Stunde"</string>
-    <string name="user.geo.notificationFrequency.never">"Nie"</string>
-    <string name="user.geo.notificationFrequency.perDay">"Pro Tag"</string>
-    <string name="user.geo.notificationFrequency.perWeek">"Pro Woche"</string>
-    <string name="user.geo.notificationFrequency.perMonth">"Pro Monat"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea">"Interessenbereich bearbeiten"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perHour">"Pro Stunde"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.never">"Nie"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perDay">"Pro Tag"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perWeek">"Pro Woche"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perMonth">"Pro Monat"</string>
     <string name="user.level">"Niveau"</string>
     <string name="geo.userAdd.success">"Benutzer wurde erfolgreich hinzugefügt."</string>
     <string name="geo.userDelete.success">"Benutzerbereich wurde erfolgreich gelöscht."</string>
@@ -868,7 +883,9 @@ Täglich, wöchentlich oder monatlich benachrichtigt werden und über Aktivität
     <string name="collectionPoint.category.other">"Sonstiges"</string>
     <string name="collectionPoint.category.everything">"Alles"</string>
     <string name="collectionPoint.category">"Recyclingstandort-Kategorie"</string>
-    <string name="user.editArea.success">"Bereich wurde erfolgreich aktualisiert"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea.success">"Bereich wurde erfolgreich aktualisiert"</string>
     <string name="user.roles.organization.manager">"Manager"</string>
     <string name="user.roles.organization">"Organisationsrolle"</string>
     <string name="profile.changeEmail">"Ändere die E-Mail"</string>
@@ -1073,7 +1090,9 @@ Täglich, wöchentlich oder monatlich benachrichtigt werden und über Aktivität
     <string name="user.google.hint">"Google+ Hinweis"</string>
     <string name="global.phone.hint">"Telefonhinweis"</string>
     <string name="profile.currentPassword">"Aktuelles Passwort"</string>
-    <string name="user.addToArea.success">"Bereich wurde erfolgreich hinzugefügt"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addToArea.success">"Bereich wurde erfolgreich hinzugefügt"</string>
     <string name="collectionPoint.created.success">"Recyclingstandort wurde erfolgreich erstellt."</string>
     <string name="collectionPoint.markedAsSpam.success">"Recyclingstandort wurde erfolgreich als Spam markiert."</string>
     <string name="collectionPoint.removed.success">"Recyclingstandort wurde erfolgreich entfernt."</string>
@@ -1122,7 +1141,9 @@ Täglich, wöchentlich oder monatlich benachrichtigt werden und über Aktivität
     <string name="notifications.user.approve.header">"Benutzer genehmigen"</string>
     <string name="geo.description.admin">"In diesem Abschnitt kannst du Manager für Bereiche und Teilbereiche anzeigen lassen und hinzufügen, die du verwaltest. Manager, im Vergleich zu anderen Benutzern, können Artikel hinzufügen, die weltweit in mobilen und Webanwendungen angezeigt werden. Darüber hinaus kannst du Benutzer sehen, die E-Mail-Benachrichtigungen über Aktivitäten in deiner Umgebung erhalten haben."</string>
     <string name="geo.description.superAdmin">"In diesem Abschnitt siehst du Administratoren, Manager und Benutzer. Du kannst Administratoren für Bereiche und Unterbereiche hinzufügen oder entfernen. Du kannst auch Alias verwalten."</string>
-    <string name="user.geo.description">"Fühl dich frei, um Bereiche auszuwählen, die dir wichtig sind. Legen dir E-Mail-Benachrichtigungen und deren Häufigkeit fest, damit du über gemeldete und bereinigte Deponien in diesen Bereichen informiert bleibst. Du kannst beliebig viele Bereiche überwachen und Einstellungen von Benachrichtigungen jederzeit ändern!"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.description">"Fühl dich frei, um Bereiche auszuwählen, die dir wichtig sind. Legen dir E-Mail-Benachrichtigungen und deren Häufigkeit fest, damit du über gemeldete und bereinigte Deponien in diesen Bereichen informiert bleibst. Du kannst beliebig viele Bereiche überwachen und Einstellungen von Benachrichtigungen jederzeit ändern!"</string>
     <string name="geo.confirm.removeAdmin">"Möchtest du den Administrator aus dem Bereich löschen?"</string>
     <string name="geo.confirm.removeManager">"Möchtest du den Manager aus dem Bereich löschen?"</string>
     <string name="geo.addAlias.description">"Du kannst Alias ​​hier erstellen. Sei vorsichtig. Der Prozess ist irreversibel. Zum Beispiel kannst du Alias ​​\"Tschechien\" für den Stamm  Tschechische Republik erstellen. Danach siehst du in der Liste der Gebiete nur den Stamm Tschechische Republik."</string>
@@ -1131,7 +1152,7 @@ Täglich, wöchentlich oder monatlich benachrichtigt werden und über Aktivität
     <string name="event.validation.endTimeRequired">"Endzeit ist erforderlich"</string>
     <string name="news.videoUrl">"Video-URL"</string>
     <string name="global.addNext">"Nächstes hinzufügen"</string>
-    <string name="global.validation.sizeExceeded">"Die Größe einiger Bilder wurde überschritten. Füge ein kleineres Bild ein (max 2 MB)."</string>
+    <string name="global.validation.sizeExceeded">"Die Größe einiger Bilder wurde überschritten. Füge ein kleineres Bild ein (max 3 MB)."</string>
     <string name="global.image.mainImage">"Hauptbild"</string>
     <string name="global.image.setAsMain">"Bild als primär festlegen"</string>
     <string name="news.validation.nameRequired">"Name erforderlich"</string>
@@ -1237,8 +1258,7 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="mail.eventCreate.subject">"TrashOut - wichtige Informationen über das von Ihnen erstellte Ereignis"</string>
 
     <!-- note -->
-    <!-- Fuzzy -->
-    <string name="global.signUp.acceptRegister.startSentense">"Ich stimme der Verarbeitung meiner persönlichen Daten zu. Ich stimme den "</string>
+    <string name="global.signUp.acceptRegister.startSentense">"Indem Sie fortfahren, erklären Sie sich mit TrashOut's"</string>
     <string name="global.signUp.acceptRegister.privatePolicy">"Datenschutzrichtlinien"</string>
 
     <!-- Fuzzy -->
@@ -1285,7 +1305,7 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="home.orderTrashPickup">"Müllabholung bestellen"</string>
     <string name="event.create_event_meeting_date_title">"Datum des Treffens"</string>
     <string name="notification_new_trash_formatter">"Sie suchen nach neuen oder aktualisierten Abfällen."</string>
-    <string name="about_version_date_formatted">"Version von %s"</string>
+    <string name="about_version_date_formatted">"Version von% s"</string>
     <string name="skip_btn">"ÜBERSPRINGEN"</string>
     <string name="event.create.thankYou.sentence1">"Vielen Dank, dass Sie diese Veranstaltung erstellt haben"</string>
     <string name="event.create.thankYou.sentence2">"Du bist toll!"</string>

@@ -105,11 +105,14 @@
     <string name="profile.badge">"Insignă"</string>
     <string name="user.roles.administrator">"Administrator"</string>
     <string name="profile.logoutQuestion">"Chiar doresti sa te deloghezi?"</string>
-    <string name="profile.whyRegister">"Toată activitatea ta va fi sincronizată. Vei obține puncte pentru activitățile tale."</string>
+    <string name="profile.whyRegister">"
+Toată activitatea ta va fi sincronizată.
+Vei obține puncte pentru activitățile tale."</string>
     <string name="profile.validation.invalidEmail">"Ups, e-mailul introdus este invalid"</string>
     <string name="profile.validation.enterPassword">"Ups, vă rugăm introduceți parola dumneavoastră "</string>
     <string name="profile.validation.invalidPasswordOrEmail">"Ups, parola și e-mailul dumneavoastră nu se potrivesc"</string>
-    <string name="profile.enterEmail">"Vă rugăm să introduceți o adresă de e-mail pe care ați folosit-o anterior pentru a vă înregistra în aplicația TrashOut"</string>
+    <string name="profile.enterEmail">"
+Vă rugăm să introduceți o adresă de e-mail pe care ați folosit-o anterior pentru a vă înregistra în aplicația TrashOut"</string>
     <string name="profile.emailExists">"Ups, se pare că cineva este deja înregistrat cu acest e-mail"</string>
     <string name="profile.resetPassword">"Am uitat parola"</string>
     <string name="profile.signedInStatus">"Acum ești logat..."</string>
@@ -124,10 +127,14 @@
     <string name="user.header">"Utilizatori"</string>
     <string name="user.changePassword">"Schimbă parola"</string>
     <string name="user.bulk.changeRole">"Schimbă rolul"</string>
-    <string name="profile.noInternetWhileRegister">"Oops, nu vă putem înregistra fără access la internet. Vă rugăm să reveniți când vă conectați online"</string>
-    <string name="profile.noInternetWhileSignIn">"Oops, nu vă putem loga fără access la internet. Vă rugăm să reveniți când vă conectați online"</string>
-    <string name="profile.noName">"Niciun nume furnizat"</string>
-    <string name="profile.resetPasswordInfoToMail">"Informații despre cum să vă resetați parola au fost trimise la adresa dvs. de e-mail."</string>
+    <string name="profile.noInternetWhileRegister">"Oops, nu vă putem înregistra fără access la internet.
+Vă rugăm să reveniți când vă conectați online"</string>
+    <string name="profile.noInternetWhileSignIn">"Oops, nu vă putem loga fără access la internet.
+Vă rugăm să reveniți când vă conectați online"</string>
+    <string name="profile.noName">"
+Niciun nume furnizat"</string>
+    <string name="profile.resetPasswordInfoToMail">"
+Informații despre cum să vă resetați parola au fost trimise la adresa dvs. de e-mail."</string>
     <string name="profile.welcome">"Bun venit"</string>
     <string name="profile.signOut">"Delogare"</string>
     <string name="profile.validation.passwordRequired">"Vă rugăm să introduceți parola"</string>
@@ -135,7 +142,8 @@
     <string name="profile.validation.mailAndPasswordrequired">"Vă rugăm să introduceți parola și adresa de e-mail"</string>
     <string name="profile.validation.somethingMissing">"Oops, nu ai completat toate câmpurile."</string>
     <string name="profile.userNotRegistered">"Ups, acest utilizator nu este înregistrat"</string>
-    <string name="profile.signOutNoInternet">"Oops, nu vă putem loga fără access la internet. Vă rugăm să reveniți când vă conectați online"</string>
+    <string name="profile.signOutNoInternet">"Oops, nu vă putem loga fără access la internet.
+Vă rugăm să reveniți când vă conectați online"</string>
     <string name="profile.organization.remove">"Anuleaza abonamentul"</string>
     <string name="trash.accuracy">"Acuratețe"</string>
     <string name="trash.metersAway">"metri depărtare"</string>
@@ -147,7 +155,10 @@
     <string name="trash.removeImage">"Șterge imaginea"</string>
     <string name="trash.removeImageConfirm">"Dorești sa ștergi imaginea selectată?"</string>
     <string name="trash.create.noInternetHeader">"Esti offline!"</string>
-    <string name="trash.create.noInternetText">"Aceast raport cu  deșeu ilegal  va fi trimis mai târziu, deoarece telefonul dvs. nu este conectat la internet. Când vă conectați la internet, activați aplicația TrashOut și raportul dvs. va fi trimis automat."</string>
+    <string name="trash.create.noInternetText">"
+Aceast raport cu  deșeu ilegal  va fi trimis mai târziu, deoarece telefonul dvs. nu este conectat la internet.
+
+Când vă conectați la internet, activați aplicația TrashOut și raportul dvs. va fi trimis automat."</string>
     <string name="trash.create.sendWasInterruptedHeader">"Trimiterea a fost întreruptă."</string>
     <string name="trash.create.sendWasInterruptedText">"Nu vă faceți griji. V-am salvat progresul și vom încerca să vă trimitem raportul imediat după ce accesati din nou TrashOut."</string>
     <string name="trash.status.cleaned">"Curățat"</string>
@@ -180,34 +191,44 @@
     <string name="home.noDumpsNear">"Nu sunt deseuri ilegale in apropiere"</string>
     <string name="global.enableGps">"Permite serviciile de localizare"</string>
     <string name="trash.loadingDumps">"Încărcare deșeuri în zona dvs."</string>
-    <string name="global.loadingError">"\"Vă rugăm să vă conectați la internet pentru a vedea această secțiune.\""</string>
-    <string name="trash.edit.betterLocation">"Încearcă să obții o locație mai bună"</string>
-    <string name="trash.create.error">"Expedierea a fost întreruptă"</string>
+    <string name="global.loadingError">"
+\"Vă rugăm să vă conectați la internet pentru a vedea această secțiune.\""</string>
+    <string name="trash.edit.betterLocation">"
+Încearcă să obții o locație mai bună"</string>
+    <string name="trash.create.error">"
+Expedierea a fost întreruptă"</string>
     <string name="global.dbError">"Trimiterea a fost întreruptă "</string>
     <string name="global.gps">"GPS"</string>
     <string name="global.search">"caută"</string>
     <string name="global.remove">"Șterge"</string>
-    <string name="global.allowGpsInPhone">"TrashOut dorește să utilizeze locația dvs. pentru a afișa depozite ilegale de gunoi  în jurul dvs. Vă rugăm să îl activați în setările telefonului."</string>
+    <string name="global.allowGpsInPhone">"
+TrashOut dorește să utilizeze locația dvs. pentru a afișa depozite ilegale de gunoi  în jurul dvs. Vă rugăm să îl activați în setările telefonului."</string>
     <string name="global.settings">"Setări"</string>
     <string name="trash.detail.header">"Detalii despre deseuri"</string>
-    <string name="organizations.assignToOrganization">"Alocați organizațiilor disponibile"</string>
+    <string name="organizations.assignToOrganization">"
+Alocați organizațiilor disponibile"</string>
     <string name="statistics.header">"Statistici"</string>
     <string name="statistics.hint">"Vedeți statisticile la nivel mondial sau statisticile pe țări."</string>
     <string name="statistics.show">"Arată statisticile"</string>
     <string name="global.selectArea">"Selectează zonă"</string>
     <string name="notifications.reported">"Raportat"</string>
     <string name="global.cleaned">"Curățat"</string>
-    <string name="notification.noEmailAddress">"Ne pare rău, nu avem nicio adresă de e-mail setată pentru această zonă. Vă rugăm să introduceți manual."</string>
-    <string name="event.header">"Evenimente de curățare"</string>
+    <string name="notification.noEmailAddress">"
+Ne pare rău, nu avem nicio adresă de e-mail setată pentru această zonă. Vă rugăm să introduceți manual."</string>
+    <string name="event.header">"
+Evenimente de curățare"</string>
     <string name="event.create.header">"Crează un eveniment "</string>
     <string name="event.name">"Numele evenimentului"</string>
     <string name="event.duration">"Alege durata unui eveniment"</string>
     <string name="event.about">"Despre un eveniment"</string>
     <string name="event.equipment">"Echipament"</string>
     <string name="event.whatWeHave">"Ceea ce avem deja"</string>
-    <string name="event.whatBring">"Ce pot aduce participanții"</string>
-    <string name="event.whatWeHave.hint">"De exemplu: mănuși, saci, roabe ..."</string>
-    <string name="event.wahtBring.hint">"De ex .: lopată, pungi, apă ..."</string>
+    <string name="event.whatBring">"
+Ce pot aduce participanții"</string>
+    <string name="event.whatWeHave.hint">"
+De exemplu: mănuși, saci, roabe ..."</string>
+    <string name="event.wahtBring.hint">"
+De ex .: lopată, pungi, apă ..."</string>
     <string name="event.meetingPoint">"Punct de intalnire"</string>
     <string name="global.city">"Oras"</string>
     <string name="global.street">"Strada si numarul"</string>
@@ -221,8 +242,10 @@
     <string name="event.validation.checkName">"Te rog verifica numele evenimentului"</string>
     <string name="event.validation.durationInvalid">"Te rog verifica data si durata evenimentului"</string>
     <string name="event.validation.checkAddress">"Te rog verifica adresa"</string>
-    <string name="event.validation.checkEmail">"Vă rugăm să verifici e-mailul în informațiile de contact."</string>
-    <string name="event.validation.checkPhone">"Vă rugăm să verifici numărul de telefon din informațiile de contact."</string>
+    <string name="event.validation.checkEmail">"
+Vă rugăm să verifici e-mailul în informațiile de contact."</string>
+    <string name="event.validation.checkPhone">"
+Vă rugăm să verifici numărul de telefon din informațiile de contact."</string>
     <string name="event.created">"Evenimentul a fost creat cu succes"</string>
     <string name="event.signToJoin">"Te rog sa te loghezi pentru a participa la eveniment"</string>
     <string name="event.join">"Alatura-te"</string>
@@ -256,7 +279,8 @@
     <string name="home.recentActivity.header">"Activitățile recente ale Deșeurilor pe care Tu le Urmărești "</string>
     <string name="home.recentActivity.noActivity">"Nicio activitate recentă"</string>
     <string name="events.header">"Evenimente"</string>
-    <string name="home.events.text">"Evenimente viitoare în cartierul tău"</string>
+    <string name="home.events.text">"
+Evenimente viitoare în cartierul tău"</string>
     <string name="home.numberDumpsWorldwide">"Numărul deșeurilor din toată lumea "</string>
     <string name="home.more">"Mai multe statistici "</string>
     <string name="global.noCameraSupport">"Dispozitivul tău nu suportă camera."</string>
@@ -278,14 +302,16 @@
     <string name="trash.accessibility.inCave">"Localizat într-o peșteră "</string>
     <string name="trash.accessibility.underWater">"Sub Apă/ pe zona apei "</string>
     <string name="trash.accessibility.notForGeneralCleanup">"Nu pentru curățare generală "</string>
-    <string name="trash.valiadation.accessibilityRequired">"Este necesară accesibilitatea"</string>
+    <string name="trash.valiadation.accessibilityRequired">"
+Este necesară accesibilitatea"</string>
     <string name="global.status">"Starea"</string>
     <string name="trash.status">"Starea deșeurilor"</string>
     <string name="trash.note">"Informații suplimentare "</string>
     <string name="global.note">"Notă"</string>
     <string name="global.validation.noteRequired">"Notă cerută"</string>
     <string name="trash.sendAnonymously">"Trimite anonim"</string>
-    <string name="trash.create.additionalInfo.hint">"Este în apropiere ... Conține produse de marcă specifică ... Am găsit-o când ..."</string>
+    <string name="trash.create.additionalInfo.hint">"
+Este în apropiere ... Conține produse de marcă specifică ... Am găsit-o când ..."</string>
     <string name="trash.create.takeLeastOnePhoto">"Trebuie să faci cel puțin o poză "</string>
     <string name="trash.create.takeLeastTwoPhotos">"Trebuie să faci cel puțin o poză "</string>
     <string name="trash.edit.youAreMoreThan100FromDump">"Ești la mai mult de 100 m de deșeu ori ai acuratețe rea"</string>
@@ -306,9 +332,12 @@
     <string name="event.whatWeHaveFull">"Ce avem (ex: Mănuși...)"</string>
     <string name="event.create.setLocationOnMap">"Setează locația pe hartă"</string>
     <string name="event.create.selectDumpsOnMap">"Selectează deșeurile pe hartă "</string>
-    <string name="event.create.saved">"Mulțumesc, evenimentul a fost creat cu succes. Puteți să vă editați evenimentul și să vedeți participanții la www.admin.trashout.ngo."</string>
-    <string name="event.create.validation.setStartFirst">"Mai întâi trebuie să setați începutul unei întâlniri"</string>
-    <string name="event.create.validation.setMeetingPointFirst">"Mai întâi trebuie să setați punctul de întâlnire"</string>
+    <string name="event.create.saved">"
+Mulțumesc, evenimentul a fost creat cu succes. Puteți să vă editați evenimentul și să vedeți participanții la www.admin.trashout.ngo."</string>
+    <string name="event.create.validation.setStartFirst">"
+Mai întâi trebuie să setați începutul unei întâlniri"</string>
+    <string name="event.create.validation.setMeetingPointFirst">"
+Mai întâi trebuie să setați punctul de întâlnire"</string>
     <string name="event.create.setLocation">"Setează locația"</string>
     <string name="event.searchForLocation">"Caută locația"</string>
     <string name="event.noAddressFound">"Adresa nu a fost găsită"</string>
@@ -399,7 +428,8 @@
     <string name="collectionPoint.types.carpets">"covoare"</string>
     <string name="collectionPoint.types.wooden">"de lemn"</string>
     <string name="collectionPoint.types.window">"ferestre"</string>
-    <string name="collectionPoint.types.buildingRubble">"deseu de construcție"</string>
+    <string name="collectionPoint.types.buildingRubble">"
+deseu de construcție"</string>
     <string name="collectionPoint.types.oil">"ulei"</string>
     <string name="collectionPoint.types.fluorescentLamps">"lămpi fluorescente"</string>
     <string name="collectionPoint.types.neonLamps">"lămpi neon"</string>
@@ -413,11 +443,15 @@
     <string name="collectionPoint.types.eternitCoverings">"plăci eternit pentru acoperis"</string>
     <string name="collectionPoint.types.asbestos">"azbest"</string>
     <string name="collectionPoint.types.fireplaces">"zone de foc"</string>
-    <string name="collectionPoint.types.slag">"zgură"</string>
+    <string name="collectionPoint.types.slag">"
+zgură"</string>
     <string name="collectionPoint.types.glassWool">"lână de sticlă "</string>
-    <string name="collectionPoint.types.cinder">"zgură"</string>
+    <string name="collectionPoint.types.cinder">"
+zgură"</string>
     <string name="collectionPoint.types.asphalt">"asfalt"</string>
-    <string name="collectionPoint.types.bitumenPaper">"hârtie bituminoasă"</string>
+    <string name="collectionPoint.types.bitumenPaper">"
+hârtie bituminoasă
+"</string>
     <string name="global.undefined">"nedefinit"</string>
     <string name="trash.lastUpdate.today">"astăzi"</string>
     <string name="trash.lastUpdate.yesterday">"ieri"</string>
@@ -517,14 +551,19 @@
     <string name="global.pageNotFound.continue">"Continua aici te rog"</string>
     <string name="collectionPoint.create.everyDayFromAm">"Deschis de la (AM)"</string>
     <string name="collectionPoint.create.everyDayFromPm">"Deschis de la (PM)"</string>
-    <string name="collectionPoint.create.everyDayToAm">"Deschis pentru (AM)"</string>
-    <string name="collectionPoint.create.everyDayToPm">"Deschis pentru (PM)"</string>
+    <string name="collectionPoint.create.everyDayToAm">"
+Deschis pentru (AM)"</string>
+    <string name="collectionPoint.create.everyDayToPm">"
+Deschis pentru (PM)"</string>
     <string name="collectionPoint.create.chooseDay">"Alege ziua"</string>
     <string name="global.map">"Hartă"</string>
-    <string name="collectionPoint.validation.timeFromMustBeGreater">"Timpul DE LA (PM) trebuie să fie mai mare"</string>
-    <string name="collectionPoint.validation.timeToMustBeGreater">"Timpul trebuie să fie mai mare decât timpul DE LA"</string>
+    <string name="collectionPoint.validation.timeFromMustBeGreater">"
+Timpul DE LA (PM) trebuie să fie mai mare"</string>
+    <string name="collectionPoint.validation.timeToMustBeGreater">"
+Timpul trebuie să fie mai mare decât timpul DE LA"</string>
     <string name="global.validation.tooLong">"Valoarea prea lungă"</string>
-    <string name="global.validation.urlInvalid">"Adresă URL nevalidă (de exemplu: http://www.google.com)"</string>
+    <string name="global.validation.urlInvalid">"
+Adresă URL nevalidă (de exemplu: http://www.google.com)"</string>
     <string name="global.validation.passwordTooLong">"Parola este prea lunga"</string>
     <string name="global.validation.phoneInvalid">"Oops, telefonul introdus este invalid"</string>
     <string name="global.validation.phoneRequired">"Te rog completeaza cu numarul de telegon"</string>
@@ -586,13 +625,16 @@
     <string name="global.sendEmail">"Trimite e-mail"</string>
     <string name="global.validation.warning">"Avertizare"</string>
     <string name="global.validation.noEmailClientInstalled">"Nu a fost instalat nicio adresa de email"</string>
-    <string name="trash.edit.greaterDistanceText">"Distanța este mai mare de 100 m de gunoi. Trebuie să fii mai aproape de gunoi."</string>
-    <string name="trash.edit.minPhotosText">"Pentru a crea sau actualiza coșul de gunoi trebuie să faceți cel puțin% fotografii"</string>
+    <string name="trash.edit.greaterDistanceText">"
+Distanța este mai mare de 100 m de gunoi. Trebuie să fii mai aproape de gunoi."</string>
+    <string name="trash.edit.minPhotosText">"
+Pentru a crea sau actualiza coșul de gunoi trebuie să faceți cel puțin% fotografii"</string>
     <string name="trash.validation.mustSelectMeetingPoint">"Mai întâi trebuie să alegeți poziția întâlnirii"</string>
     <string name="event.detail.bring">"Adu"</string>
     <string name="event.detail.pleaseBring">"Ce Ne Trebuie"</string>
     <string name="global.cropImage">"Taie Imaginea"</string>
-    <string name="collectionPoint.disposeTypes">"Tipul de Coș de gunoi de eliminat"</string>
+    <string name="collectionPoint.disposeTypes">"
+Tipul de Coș de gunoi de eliminat"</string>
     <string name="global.readMore">"Citeste mai mult"</string>
     <string name="user.validation.nonEmptyOrganization">"Nu ai selectat o organizatie. Selecteaza compania sau organizatia in editarea profilului"</string>
     <string name="global.gpsFormat">"Formatul coordonatei GPS"</string>
@@ -604,18 +646,23 @@
     <string name="user.validation.confirmPasswordRequired">"Confirmarea parolei trebuie introdusa"</string>
     <string name="user.login.create.error">"Eroare de logare- crearea utilizatorului esuata"</string>
     <string name="user.login.linkError">"Eroare la conectarea utilizatorului"</string>
-    <string name="user.register.notExists">"Utilizatorul nu exista. Vă rugăm să schimbați adresa de e-mail sau să vă înregistrați."</string>
+    <string name="user.register.notExists">"
+Utilizatorul nu exista. Vă rugăm să schimbați adresa de e-mail sau să vă înregistrați."</string>
     <string name="user.register.success">"Creare reusita"</string>
     <string name="user.login.success">"Logare cu succes"</string>
     <string name="user.login.getToken">"Obtinerea tokenului utilizatorului esuata"</string>
-    <string name="user.login.anonymous.linkError">"Conectarea ca utilizator anonim a eșuat"</string>
+    <string name="user.login.anonymous.linkError">"
+Conectarea ca utilizator anonim a eșuat"</string>
     <string name="user.login.canceled">"Logare anulata"</string>
     <string name="global.validation.noNetwork">"Fără conexiune la internet"</string>
     <string name="global.commingSoon">"În curând"</string>
-    <string name="trash.edit.spamText">"Sigur doriți să marcați acest punct de gunoi ca SPAM?"</string>
+    <string name="trash.edit.spamText">"
+Sigur doriți să marcați acest punct de gunoi ca SPAM?"</string>
     <string name="trash.detail.loadingFailed">"Incarcarea detaliilor deseurilor esuata"</string>
-    <string name="trash.create.markAsSpamFailed">"Marcarea coșului de gunoi ca SPAM nu a reușit"</string>
-    <string name="trash.create.markAsSpamSuccessful">"Marcarea punctului de gunoi ca SPAM a reușit"</string>
+    <string name="trash.create.markAsSpamFailed">"
+Marcarea coșului de gunoi ca SPAM nu a reușit"</string>
+    <string name="trash.create.markAsSpamSuccessful">"
+Marcarea punctului de gunoi ca SPAM a reușit"</string>
     <string name="event.joinEventFailed">"Intrarea la eveniment esuata"</string>
     <string name="event.joinEventSuccessful">"Te-ai alaturat evenimentului"</string>
     <string name="event.joinEventConfirmationMessage">"Chiar vrei sa te alaturi evenimentului?"</string>
@@ -628,10 +675,12 @@
     <string name="collectionPoint.zeroNearbyAvailable">"Nu exista puncte de colectare in apropiere"</string>
     <string name="user.validation.authFbMalformed">"Tokenul Facebook este parola, invalid sau expirat"</string>
     <string name="user.validation.authFbCollision">"Un cont deja exista. Te rog autentifica-te cu e-mailul"</string>
-    <string name="user.validation.authFbInvalid">"Contul utilizatorului a fost dezactivat, șters sau acreditările sale nu mai sunt valabile"</string>
+    <string name="user.validation.authFbInvalid">"
+Contul utilizatorului a fost dezactivat, șters sau acreditările sale nu mai sunt valabile"</string>
     <string name="collectionPoint.validation.markAsNoLongerExistsFailed">"Marcarea punctului de colectare care nu mai exista esuata"</string>
     <string name="collectionPoint.validation.markAsNoLongerExistsFailed.success">"Marcarea punctului de colectare care nu mai exista reusita"</string>
-    <string name="collectionPoint.markAsNoLongerExistsFailed.message">"Doriți cu adevărat să marcați punctul de colectare că nu mai există?"</string>
+    <string name="collectionPoint.markAsNoLongerExistsFailed.message">"
+Doriți cu adevărat să marcați punctul de colectare că nu mai există?"</string>
     <string name="event.validation.selectTrash">"Trebuie să selectezi cel puțin o zonă cu deșeuri"</string>
     <string name="news.other">"Alte noutăți "</string>
     <string name="news.empty">"Nicio noutate "</string>
@@ -642,27 +691,37 @@
     <string name="event.user.email">"E-mailul tău"</string>
     <string name="event.user.phone">"Numărul tău de telefon"</string>
     <string name="event.cleaningAction">"Acțiunea de curățare "</string>
-    <string name="collectionPoint.activity">"Activitatea punctelor de gunoi"</string>
+    <string name="collectionPoint.activity">"
+Activitatea punctelor de gunoi"</string>
     <string name="event.activity">"Activitatea evenimentului "</string>
     <string name="global.worldwide">"În toată lumea"</string>
     <string name="home.statisticsInArea">"Statisticile pentru Zona Selectată "</string>
-    <string name="trashHunter.finished">"Mod de vânătoare terminat"</string>
+    <string name="trashHunter.finished">"
+Mod de vânătoare terminat"</string>
     <string name="global.noData">"Nicio dată"</string>
-    <string name="home.upcommingEvents">"Evenimente viitoare în cartierul tău"</string>
-    <string name="home.noUserActivities">"Nu au fost găsite activități ale utilizatorului"</string>
+    <string name="home.upcommingEvents">"
+Evenimente viitoare în cartierul tău"</string>
+    <string name="home.noUserActivities">"
+Nu au fost găsite activități ale utilizatorului"</string>
     <string name="home.userActivities">"Activitățile utilizatorului "</string>
-    <string name="widget.statistics.barChart">"Diagramă stil bare"</string>
+    <string name="widget.statistics.barChart">"
+Diagramă stil bare"</string>
     <string name="widget.statistics.donutChart">"Diagrama stil rotund"</string>
     <string name="widget.statistics.chartStatus">"După status"</string>
     <string name="widget.statistics.chartAccessibility">"După accesibilitate"</string>
     <string name="widget.statistics.chartSize">"După mărime"</string>
     <string name="widget.statistics.chartType">"După tip"</string>
-    <string name="widget.statistics.breakdownOfDumps">"Defalcarea haldelor ilegale din"</string>
+    <string name="widget.statistics.breakdownOfDumps">"
+Defalcarea haldelor ilegale din"</string>
     <string name="widget.statistics.lastUpdatedDumps">"Ultimele depozite de deseu actualizate în"</string>
-    <string name="profile.validation.emptyOrganization">"Nu ați selectat nicio organizație"</string>
-    <string name="news.noArticles">"Nu există încă articole, vă rugăm să reveniți mai târziu."</string>
-    <string name="event.dontWantOrganize">"Nu vreau să organizez sau să ajut cu organizarea vreunui eveniment de curățenie"</string>
-    <string name="event.dontWantReceiveNotification">"Nu vreau să primesc informații despre evenimente de curățenie"</string>
+    <string name="profile.validation.emptyOrganization">"
+Nu ați selectat nicio organizație"</string>
+    <string name="news.noArticles">"
+Nu există încă articole, vă rugăm să reveniți mai târziu."</string>
+    <string name="event.dontWantOrganize">"
+Nu vreau să organizez sau să ajut cu organizarea vreunui eveniment de curățenie"</string>
+    <string name="event.dontWantReceiveNotification">"
+Nu vreau să primesc informații despre evenimente de curățenie"</string>
     <string name="global.language.english">"Engleză"</string>
     <string name="global.language.czech">"Cehă"</string>
     <string name="global.language.germany">"Germană"</string>
@@ -677,7 +736,8 @@
     <string name="tutorial.title.2">"Este ușor!"</string>
     <string name="tutorial.text.2">"Cand vezi un deseu ilegal, apasa pe plus sau pe raport, fa o poza si completeaza detaliile"</string>
     <string name="tutorial.title.3">"Deseu ilegal raportat!"</string>
-    <string name="tutorial.text.3">"Municipalitățile locale, cetățenii sau ONG-urile vor fi notificate de deseurile ilegale din cartierul lor."</string>
+    <string name="tutorial.text.3">"
+Municipalitățile locale, cetățenii sau ONG-urile vor fi notificate de deseurile ilegale din cartierul lor."</string>
     <string name="tutorial.title.4">"TrashOut ofera mai mult!"</string>
     <string name="tutorial.text.4">"Găsiți cel mai apropiat punct de colectare pentru coșul de gunoi voluminos, organizati un eveniment de curățare sau aflați mai multe despre mediu."</string>
     <string name="tutorial.title.5">"Alăturați-vă nouă!"</string>
@@ -725,7 +785,9 @@
     <string name="global.accountCreated">"Contul a fost creat"</string>
     <string name="global.activateAccount">"Activează contul de pe adresa de e-mail"</string>
     <string name="user.myProfile">"Profilul meu"</string>
-    <string name="user.addArea">"Setează notificații despre zonă"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addArea">"Setează notificații despre zonă"</string>
     <string name="user.generateApiKey">"Genereaza cheie API"</string>
     <string name="user.aboutMe">"Despre mine"</string>
     <string name="trash.markedAsSpam.success">"Multumim pentru ca ne tii baza de date actualizata! Administratorii vor analiza raportul tau."</string>
@@ -735,7 +797,9 @@
     <string name="user.roles.superAdmin">"SuperAdministrator"</string>
     <string name="profile.myEvents">"Evenimentele mele"</string>
     <string name="organization.description">"Descriere"</string>
-    <string name="user.geo.notificationFrequency">"Frecvența notificărilor"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency">"Frecvența notificărilor"</string>
     <string name="user.reviewed">"Utilizator analizat"</string>
     <string name="user.created">"Cont creat"</string>
     <string name="trash.create.successs">"Multumim pentru ca ne tii baza de date actualizata si ai grija de mediul inconjurator"</string>
@@ -752,12 +816,24 @@
     <string name="collectionPoint.contact.header">"Contacte "</string>
     <string name="global.url.placeholder">"https://www.trashout.ngo"</string>
     <string name="collectionPoint.update.success">"Punctul de colectare a fost actualizat cu succes"</string>
-    <string name="user.editArea">"Editează zona de interes"</string>
-    <string name="user.geo.notificationFrequency.perHour">"Pe oră "</string>
-    <string name="user.geo.notificationFrequency.never">"Niciodată "</string>
-    <string name="user.geo.notificationFrequency.perDay">"Pe zi"</string>
-    <string name="user.geo.notificationFrequency.perWeek">"Pe săptămână "</string>
-    <string name="user.geo.notificationFrequency.perMonth">"Pe lună"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea">"Editează zona de interes"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perHour">"Pe oră "</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.never">"Niciodată "</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perDay">"Pe zi"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perWeek">"Pe săptămână "</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perMonth">"Pe lună"</string>
     <string name="user.level">"Nivel "</string>
     <string name="geo.userAdd.success">"Utilizatorul a fost adăugat cu succes"</string>
     <string name="geo.userDelete.success">"Rolul userului a fost scos cu succes"</string>
@@ -790,28 +866,39 @@
     <string name="organization.confirmation.leave">"Chiar vrei sa parasesti aceasta Organizatie?"</string>
     <string name="organization.confirmation.join">"Chiar vrei sa te alaturi acestei organizatii?"</string>
     <string name="organization.confirmation.delete">"Chiar vrei sa stergi aceasta Organizatie?"</string>
-    <string name="organization.invitation.selectFile">"Selectați fișierul cu câte un e-mail pe fiecare linie (.csv, .txt)"</string>
-    <string name="organization.invitation.writeEmails">"Scrieți e-mailuri separate prin virgulă sau de o nouă linie"</string>
+    <string name="organization.invitation.selectFile">"
+Selectați fișierul cu câte un e-mail pe fiecare linie (.csv, .txt)"</string>
+    <string name="organization.invitation.writeEmails">"
+Scrieți e-mailuri separate prin virgulă sau de o nouă linie"</string>
     <string name="organization.invitation.writeEmails.placeholder">"john@doe.com, john@example.com"</string>
     <string name="collectionPoint.validation.nameRequired">"Numele este obligatoriu"</string>
     <string name="collectionPoint.validation.dayRequired">"Te rog selecteaza cel putin o zi"</string>
-    <string name="collectionPoint.validation.timeFromRequired">"Timpul DE LA este necesar"</string>
+    <string name="collectionPoint.validation.timeFromRequired">"
+Timpul DE LA este necesar"</string>
     <string name="collectionPoint.validation.timeToRequired">"Timpul PANA LA este necesar"</string>
-    <string name="collectionPoint.validation.typeRequired">"Tipul este obligatoriu"</string>
+    <string name="collectionPoint.validation.typeRequired">"
+Tipul este obligatoriu"</string>
     <string name="user.roles.organization.member">"Membru"</string>
-    <string name="organization.create.fourthStep">"Șablon de e-mail de invitație"</string>
+    <string name="organization.create.fourthStep">"
+Șablon de e-mail de invitație"</string>
     <string name="organization.mailSubject">"TrashOut - organizare"</string>
     <string name="organization.mailBody">"TrashOut - organizare "</string>
-    <string name="organization.parentOrganization.select">"Selectați organizația părinte"</string>
-    <string name="organization.validation.nameRequired">"Numele organizației este necesar"</string>
+    <string name="organization.parentOrganization.select">"
+Selectați organizația părinte"</string>
+    <string name="organization.validation.nameRequired">"
+Numele organizației este necesar"</string>
     <string name="organization.location">"Locația organizării "</string>
-    <string name="event.detail.header">"Detaliu eveniment curățare"</string>
-    <string name="user.levelDescription">"Aveți {currentPoints} puncte. Obțineți {nextLevel} mai mult pentru a ajunge la nivelul următor. Raportați și actualizați depozitele de deseu sau participați la eventimente de curățare."</string>
+    <string name="event.detail.header">"
+Detaliu eveniment curățare"</string>
+    <string name="user.levelDescription">"
+Aveți {currentPoints} puncte. Obțineți {nextLevel} mai mult pentru a ajunge la nivelul următor. Raportați și actualizați depozitele de deseu sau participați la eventimente de curățare."</string>
     <string name="profile.preferences">"Preferințele mele"</string>
-    <string name="user.eventOrganizer">"Vreau să organizez sau să ajut cu organizarea de evenimente de curățenie"</string>
+    <string name="user.eventOrganizer">"
+Vreau să organizez sau să ajut cu organizarea de evenimente de curățenie"</string>
     <string name="user.volunteerCleanup">"Vreau sa particip la evenimente de curatare. "</string>
     <string name="profile.myAreas.description">"Zone pe care selectezi sa le monitorizezi in setarile profilului tau. Activeaza notificarile pentru emailurile despre zonele raportate si curatate. Primeste notificari zilnic, saptamanal sau lunar pentru a fi informat despre activitatile organizate in zona care te intereseaza. "</string>
-    <string name="profile.myOrganizations.description">"Organizațiile pe care le-ați creat sau faceți parte din aplicația TrashOut."</string>
+    <string name="profile.myOrganizations.description">"
+Organizațiile pe care le-ați creat sau faceți parte din aplicația TrashOut."</string>
     <string name="profile.myEvents.description">"Toate evenimentele, din trecut si din prezent, pe care le-ai organizat sau la care ai participat. "</string>
     <string name="profile.myEvents.userRole">"Creator/Alăturat"</string>
     <string name="profile.myEvents.timeDecision">"Viitor/Trecut"</string>
@@ -835,7 +922,9 @@
     <string name="collectionPoint.category.other">"Altele"</string>
     <string name="collectionPoint.category.everything">"Tot"</string>
     <string name="collectionPoint.category">"Categoriile de Tipuri de Puncte de Reciclare"</string>
-    <string name="user.editArea.success">"Zona a fost actualizată cu succes"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea.success">"Zona a fost actualizată cu succes"</string>
     <string name="user.roles.organization.manager">"Manager"</string>
     <string name="user.roles.organization">"Rolul Organizatorului"</string>
     <string name="profile.changeEmail">"Schimbă E-mail"</string>
@@ -853,18 +942,21 @@
     <string name="event.detail.map">"Harta cu locul de intalnire si zona de curatat"</string>
     <string name="event.detail.images">"Imagini de la eveniment"</string>
     <string name="global.showWholeGallery">"Arata intreaga galerie"</string>
-    <string name="event.detail.dumpsToBeCleaned">"Depozite de gunoi care trebuie curățate"</string>
+    <string name="event.detail.dumpsToBeCleaned">"
+Depozite de gunoi care trebuie curățate"</string>
     <string name="event.detail.collectionPoints">"Puncte de colectare"</string>
     <string name="event.detail.joinedUsers">"Utilizatori alăturați"</string>
     <string name="event.feedback.header">"Feedback"</string>
-    <string name="event.feedback.guessGuestCount">"Ghiciți numărul de oaspeți"</string>
+    <string name="event.feedback.guessGuestCount">"
+Ghiciți numărul de oaspeți"</string>
     <string name="event.feedback.guessCollectTrashCount">"Ghiceste cantitatea de gunoi adunat"</string>
     <string name="event.feedback.addFeedback">"Adauga feedback"</string>
     <string name="event.userConfirm.header">"Confirmați utilizatorul"</string>
     <string name="event.userConfirm">"Confirmați"</string>
     <string name="event.userConfirm.send">"Trimite confirmarea"</string>
     <string name="event.edit.otherInformation">"Alte informații"</string>
-    <string name="event.detail.attendeesCount">"Participanții numără"</string>
+    <string name="event.detail.attendeesCount">"
+Participanții numără"</string>
     <string name="event.organizer.phone">"Telefon:"</string>
     <string name="event.organizer.email">"E-mail:"</string>
     <string name="event.detail.reports">"Raportări "</string>
@@ -877,12 +969,15 @@
     <string name="event.validation.startTimeRequired">"Ora de inceput este necesara"</string>
     <string name="global.noResult">"Fără rezultat."</string>
     <string name="event.create.collectionPoints">"Zona a punctelor de colectare"</string>
-    <string name="event.filter.upcomingOrOld">"Afișați viitoare sau vechi"</string>
-    <string name="event.filter.showUpcoming">"Afișați doar viitoare"</string>
+    <string name="event.filter.upcomingOrOld">"
+Afișați viitoare sau vechi"</string>
+    <string name="event.filter.showUpcoming">"Afișați doar viitoare
+"</string>
     <string name="event.filter.showOld">"Afișați doar vechi"</string>
     <string name="event.feedback.images">"Adauga poze de la un eveniment"</string>
     <string name="event.create.setLocationDescription">"Te rugăm să desenezi un dreptunghi pentru hartă. Dacă desenezi dreptunghi mai mic de 30 km, vei putea selecta deșeuri specifice pe harta"</string>
-    <string name="event.create.largeAreaDescription">"Ați selectat o suprafață mare. Este mai mare de 30 km. Depozitele  specifice nu vor fi afișate pe hartă."</string>
+    <string name="event.create.largeAreaDescription">"
+Ați selectat o suprafață mare. Este mai mare de 30 km. Depozitele  specifice nu vor fi afișate pe hartă."</string>
     <string name="event.create.smallAreaDescription">"Ai selectat o zona mica. Deseurile vor aparea."</string>
     <string name="organization.invitation.description">"De aici poti trimite invitații prin e-mail către alți utilizatori TrashOut sau persoane din afara cu sugestii de a se alătura acestei organizații și platformei TrashOut. Aceștia vor primi șablonul de invitație prin e-mail, care a fost creat și poate fi editat de către managerii acestei organizații."</string>
     <string name="global.signingOut">"trimite"</string>
@@ -922,7 +1017,8 @@
     <string name="event.meetingPoint.listHeader">"Punctul de întâlnire "</string>
     <string name="global.select">"Selectați"</string>
     <string name="export.selectAttributes">"Selectați Atribute de exportat"</string>
-    <string name="export.itemsPerFile">"Elemente pe fișier"</string>
+    <string name="export.itemsPerFile">"
+Elemente pe fișier"</string>
     <string name="export.itemsPerFile.currentValue">"Valoare "</string>
     <string name="export.preparingExport">"Exportul este in curs de pregatire..."</string>
     <string name="global.latitude">"Latitudine"</string>
@@ -934,19 +1030,22 @@
     <string name="trash.image">"Imagine a gunoiului"</string>
     <string name="user.generateWidget">"Genereaza Widget"</string>
     <string name="user.eventOrganizer.yes">"Vreau să organizez sau să ajut cu organizarea oricărui eveniment de curățenie"</string>
-    <string name="user.eventOrganizer.no">"Nu vreau să organizez sau să ajut cu organizarea vreunui eveniment de curățenie"</string>
+    <string name="user.eventOrganizer.no">"
+Nu vreau să organizez sau să ajut cu organizarea vreunui eveniment de curățenie"</string>
     <string name="user.volunteerCleanup.yes">"Vreau sa particip la evenimente de curatare. "</string>
     <string name="user.volunteerCleanup.no">"Nu doresc să particip la evenimentele de curățat ca voluntar"</string>
     <string name="user.widget.firstStep">"Alege tipul de widget"</string>
     <string name="user.widget.secondStep">"Parametrii"</string>
     <string name="user.widget.thirdStep">"Cod Widget"</string>
     <string name="user.widget.type">"Tipul Widget-ului"</string>
-    <string name="user.widget.trashDetail">"Widget cu detalii despre coșul de gunoi"</string>
+    <string name="user.widget.trashDetail">"
+Widget cu detalii despre coșul de gunoi"</string>
     <string name="user.widget.trashMap">"Mapă a gunoiului"</string>
     <string name="user.widget.eventDetail">"Detalii eveniment "</string>
     <string name="user.widget.trashStatistics">"Widget statistici deseuri"</string>
     <string name="user.apiKey">"Cheia API"</string>
-    <string name="user.apiKey.description">"Aceasta este cheia dvs. API, poate fi utilizată decât  pentru widgeturi sau API"</string>
+    <string name="user.apiKey.description">"
+Aceasta este cheia dvs. API, poate fi utilizată decât  pentru widgeturi sau API"</string>
     <string name="user.apiKey.generate">"Generează"</string>
     <string name="user.apiKey.regenerate">"Regenerează"</string>
     <string name="user.apiKey.yourKey">"Cheia dvs API"</string>
@@ -957,7 +1056,8 @@
     <string name="organizations.address">"Adresa"</string>
     <string name="mail.eventConfirm.greeting">"Dragă"</string>
     <string name="mail.eventConfirm.eventInfo1">"am observat că te-ai alăturat evenimentului"</string>
-    <string name="mail.eventConfirm.eventInfo2">"în aplicația TrashOut. Are loc mâine"</string>
+    <string name="mail.eventConfirm.eventInfo2">"
+în aplicația TrashOut. Are loc mâine"</string>
     <string name="mail.eventConfirm.eventInfo3">"la"</string>
     <string name="mail.eventConfirm.eventInfo4">"Punctul de întâlnire este la"</string>
 
@@ -969,7 +1069,8 @@
 
     <!--  please see -->
     <string name="mail.eventConfirm.eventDetail1">"Pentru mai multe detalii si contacte"</string>
-    <string name="mail.eventConfirm.eventDetail2">"detaliu eveniment"</string>
+    <string name="mail.eventConfirm.eventDetail2">"
+detaliu eveniment"</string>
     <string name="mail.eventConfirm.eventDetail3">"în aplicația TrashOut"</string>
     <string name="mail.eventConfirm.thanks">"Vă mulțumim că ați făcut lumea noastră mai curată pentru toată lumea."</string>
     <string name="mail.eventConfirm.organizer">"Organizatorul evenimentului este"</string>
@@ -1040,7 +1141,9 @@
     <string name="user.google.hint">"Link-ul profilului tău"</string>
     <string name="global.phone.hint">"Numărul de telefon începe cu +/ 00"</string>
     <string name="profile.currentPassword">"Parola curentă"</string>
-    <string name="user.addToArea.success">"Zonă adaugată cu succes"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addToArea.success">"Zonă adaugată cu succes"</string>
     <string name="collectionPoint.created.success">"Punctul de colectare a fost creat cu succes"</string>
     <string name="collectionPoint.markedAsSpam.success">"Punctul de colectare a fost marcat drept spam cu succes."</string>
     <string name="collectionPoint.removed.success">"Punctul de colectare a fost eliminat cu succes"</string>
@@ -1089,7 +1192,9 @@
     <string name="notifications.user.approve.header">"Aproba utilizator"</string>
     <string name="geo.description.admin">"În această secțiune poti vedea și adăuga manageri pentru zonele și subzonele pe care le administrezi. Managerii care compară cu utilizatorii obișnuiți pot adăuga articole, care vor fi afișate atât în aplicația mobilă, cât și în cea web la nivel mondial. Mai mult, poti vedea utilizatorii care primesc notificări prin e-mail despre activitățile din zonele tale."</string>
     <string name="geo.description.superAdmin">"În această secțiune poti vedea administratori, manageri și utilizatori. Poti adăuga sau elimina administratori pentru zone și subzone. De asemenea, poti gestiona pseudonimele."</string>
-    <string name="user.geo.description">"Simte-te liber sa alegi zonele de care iti pasa. Seteaza notificari de tip email si frecventa acestora pentru a fi informat despre deseurile raportate si curatate in aceste zone. Poti monitoriza cat de multe zone vrei si poti schimba setarile notificarilor in orice moment!"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.description">"Simte-te liber sa alegi zonele de care iti pasa. Seteaza notificari de tip email si frecventa acestora pentru a fi informat despre deseurile raportate si curatate in aceste zone. Poti monitoriza cat de multe zone vrei si poti schimba setarile notificarilor in orice moment!"</string>
     <string name="geo.confirm.removeAdmin">"Vrei sa stergi administratorul din zona?"</string>
     <string name="geo.confirm.removeManager">"Vrei sa stergi managerul din zona?"</string>
     <string name="geo.addAlias.description">"Aici poti crea Alias. Fii atent. Procesul este ireversibil. De exemplu, poti crea alias „Cehia” pentru Republica Cehă rădăcină. După aceea, vei vedea în listele de zone doar rădăcina Republica Cehă."</string>
@@ -1098,18 +1203,20 @@
     <string name="event.validation.endTimeRequired">"Ora de încheiere este cerută"</string>
     <string name="news.videoUrl">"URL video "</string>
     <string name="global.addNext">"Adaugă text "</string>
-    <string name="global.validation.sizeExceeded">"Dimensiunea unor imagini a depășit limita. Încărcați o imagine mai mică (maxim 2 MB)."</string>
+    <string name="global.validation.sizeExceeded">"Dimensiunea unor imagini a depășit limita. Încărcați o imagine mai mică (maxim 3 MB)."</string>
     <string name="global.image.mainImage">"Imaginea principală "</string>
     <string name="global.image.setAsMain">"Setează imaginea ca principală "</string>
     <string name="news.validation.nameRequired">"Nume cerut"</string>
     <string name="spam.delete.permissionDenied">"Nu ai permisiunea să ștergi acest SPAM"</string>
     <string name="global.photos">"Fotografii"</string>
     <string name="global.list">"Listă"</string>
-    <string name="global.dumps">"Depozite de gunoi"</string>
+    <string name="global.dumps">"
+Depozite de gunoi"</string>
     <string name="global.lastUpdate">"Ultimul update"</string>
     <string name="global.subscribe">"Seteaza notificari regulate de tip email pentru a monitoriza zonele care te intereseaza. "</string>
     <string name="global.validation.invalidUrl">"URL invalid"</string>
-    <string name="spam.user.permissionDenied">"Nu aveți permisiunea de a aproba utilizatorul."</string>
+    <string name="spam.user.permissionDenied">"
+Nu aveți permisiunea de a aproba utilizatorul."</string>
     <string name="trash.filter.area.hint">"In aceasta sectiune alegi zona pe care vrei sa o vezi. Poti alege de la continente pana la sectoare dintr-un oras. Selecteaza cateva optiuni din meniul de mai jos sau pastreaza optiunea \"select\" si apasa trimite. "</string>
     <string name="user.emailNotFound">"User regăsit în TrashOut"</string>
     <string name="global.trashoutShareDescription">"TrashOut este un proiect legat de mediul inconjurator care are ca scop lovalizarea tuturor deseurilor ilegale din lume si indemnarea cetatenilor sa recicleze mai mult. "</string>
@@ -1145,15 +1252,19 @@
     <string name="collectionPoint.markedAsSpam.success.thanksMobile">"Mulțumim pentru informații, vom verifica."</string>
     <string name="collectionPoint.filter.selectAll">"Selectează tot"</string>
     <string name="profile.activity.mobileHeader">"Activitate"</string>
-    <string name="info.aboutApp">"TrashOut este un proiect de mediu care își propune să cartografieze și să monitorizeze toate depozitele ilegale din întreaga lume.Scopul nostru este de a implica cetățeni, guverne, municipalități și organizații, astfel încât să putem contribui împreună la o lume mai curată pentru toată lumea."</string>
-    <string name="info.appVerison_X">"Versiune de la% @"</string>
+    <string name="info.aboutApp">"TrashOut este un proiect de mediu care își propune să cartografieze și să monitorizeze toate depozitele ilegale din întreaga lume.Scopul nostru este de a implica cetățeni, guverne, municipalități și organizații, astfel încât să putem contribui împreună la o lume mai curată pentru toată lumea.
+"</string>
+    <string name="info.appVerison_X">"
+Versiune de la% @"</string>
     <string name="tutorial.register">"Înregistrare/Logare"</string>
     <string name="global.distanceAttribute.away">"depărtare "</string>
     <string name="event.create.successMobile">"Mulțumim, evenimentul a fost creat. Poți edita evenimentul și vedea însoțitorii la www.admin.trashout.ngo."</string>
     <string name="home.recentActivity.you">"dumneavoastră"</string>
     <string name="global.continue">"Continuați "</string>
-    <string name="event.feedbackGuessGuestCount.required">"Este necesar să ghiciți numărul de clienți"</string>
-    <string name="event.feedbackGuessTrashCount.required">"Este necesar să ghiciți numărul de gunoi"</string>
+    <string name="event.feedbackGuessGuestCount.required">"
+Este necesar să ghiciți numărul de clienți"</string>
+    <string name="event.feedbackGuessTrashCount.required">"
+Este necesar să ghiciți numărul de gunoi"</string>
     <string name="home.recentActivity.as">"ca"</string>
     <string name="global.cameraAccess">"Trebuie sa importam poze ale deseurilor"</string>
     <string name="event.feedback.integerRequired">"intreg necesar"</string>
@@ -1181,9 +1292,11 @@
     <string name="mail.newsletter.subject">" TrashOut- informatii despre deseurile din zona pe care o monitorizezi"</string>
     <string name="user.validation.failedToReadFacebookProfile">"Nu s-au citit datele din profilul Facebook"</string>
     <string name="user.validation.facebookNotGrantedPermissionForEmail">"Permisiune neacordată pentru email"</string>
-    <string name="user.validation.firebaseUidNotReceived">"Firebase nu a fost primit"</string>
+    <string name="user.validation.firebaseUidNotReceived">"
+Firebase nu a fost primit"</string>
     <string name="user.validation.noFirebaseUser">"Niciun utilizator firebase"</string>
-    <string name="mail.newsletter.emptyBlock">"Nu a existat nicio activitate nouă în această categorie în perioada de timp selectată. Puteți vedea lista tuturor depozitelor"</string>
+    <string name="mail.newsletter.emptyBlock">"Nu a existat nicio activitate nouă în această categorie în perioada de timp selectată. Puteți vedea lista tuturor depozitelor
+"</string>
     <string name="mail.newsletter.trashLink">"Link"</string>
 
     <!-- Choose day -->
@@ -1195,7 +1308,7 @@
     <string name="mail.eventCreate.subject">"TrashOut - informație importantă despre evenimentul creat"</string>
 
     <!-- note -->
-    <string name="global.signUp.acceptRegister.startSentense">"Sunt de acord cu procesarea datelor personale. Am citit si acceptat"</string>
+    <string name="global.signUp.acceptRegister.startSentense">"Continuând, sunteți de acord cu TrashOut's"</string>
     <string name="global.signUp.acceptRegister.privatePolicy">"Politica de privare"</string>
     <string name="global.signUp.acceptRegister.and">"și"</string>
     <string name="global.signUp.acceptRegister.terms">"Termeni și Condiții"</string>
@@ -1209,7 +1322,8 @@
 
     <!-- Error show only if there is issue with creating dumps -->
     <string name="global.internet.error.offline">"Telefonul nu este conectat la Internet. Fa o poza si raporteaz-o mai tarziu prin www.admin.trashout.ngo."</string>
-    <string name="global.images.requirements">"Vă rugăm să utilizați imagini cu un raport de aspect 1: 2 sau mai mic (nu o imagine cu ecran lat) și cu dimensiuni de până la 2 MB."</string>
+    <string name="global.images.requirements">"
+Vă rugăm să utilizați imagini cu un raport de aspect 1: 2 sau mai mic (nu o imagine cu ecran lat) și cu dimensiuni de până la 2 MB."</string>
 
     <!-- On the screen "Recycling" in singular -->
     <string name="home.nearestRecyclingPoint">"Cele mai apropiate puncte"</string>
@@ -1232,9 +1346,11 @@
     <string name="event.event_edit_do_later">"Închide"</string>
     <string name="event.event_edit_go_to_web">"Editează acum"</string>
     <string name="event.event_joinEventTitle">"Alătură-te evenimentului"</string>
-    <string name="home.orderTrashPickup">"Comandați preluarea deșeurilor"</string>
+    <string name="home.orderTrashPickup">"
+Comandați preluarea deșeurilor"</string>
     <string name="event.create_event_meeting_date_title">"Data întâlnirii"</string>
-    <string name="notification_new_trash_formatter">"Vânați% d coșuri de gunoi noi sau actualizate."</string>
+    <string name="notification_new_trash_formatter">"
+Vânați% d coșuri de gunoi noi sau actualizate."</string>
     <string name="about_version_date_formatted">"Versiunea de la %s"</string>
     <string name="skip_btn">"SARI"</string>
     <string name="event.create.thankYou.sentence1">"Mulțumim pentru crearea acestui eveniment"</string>
@@ -1258,9 +1374,11 @@
     <string name="comment.body">"Corp"</string>
     <string name="comment.commentAs">"Comentează ca"</string>
     <string name="comment.addComment">"Comentează"</string>
-    <string name="comment.intro">"Dacă faceți comentarii ca organizație, vă recomandăm să adăugați o semnătură la comentariu (de exemplu, numele, funcția, departamentul etc.)"</string>
+    <string name="comment.intro">"
+Dacă faceți comentarii ca organizație, vă recomandăm să adăugați o semnătură la comentariu (de exemplu, numele, funcția, departamentul etc.)"</string>
     <string name="mail.activity.greeting">"Dragă"</string>
-    <string name="mail.activity.p1">"A existat o activitate nouă în &lt;a href=\"%s\"&gt; raportul privind depozitul ilegal &lt;/a&gt; pe care îl urmăriți. Aflați dacă a fost actualizat sau dacă există un comentariu nou."</string>
+    <string name="mail.activity.p1">"
+A existat o activitate nouă în &lt;a href=\"%s\"&gt; raportul privind depozitul ilegal &lt;/a&gt; pe care îl urmăriți. Aflați dacă a fost actualizat sau dacă există un comentariu nou."</string>
     <string name="mail.activity.p2">"Multumim pentru ca ai facut mediul inconjurator mai curat! Nu uita sa folosesti aplicatia TrashOut pentru a raporta si a actualiza starea deseurilor ilegale in zona ta, pentru a gasi punctul de colectare sau pentru a participa la un eveniment de curatare. "</string>
     <string name="mail.activity.footer">"Ați primit acest e-mail deoarece ați acceptat Termenii și condițiile TrashOut. Pentru a dezactiva notificările prin e-mail ale actualizărilor din rapoartele dvs., accesați &lt;a href=\"%s\"&gt; profilul &lt;/a&gt; prin intermediul aplicației web TrashOut. Dacă doriți să modificați periodicitatea rapoartelor care monitorizează o anumită zonă, le puteți modifica  prin&lt;a href=\"%s\"&gt; aici &lt;/a&gt;"</string>
     <string name="mail.activity.subject">"TrashOut-exista o nouă activitate la raportul pe care îl urmărești "</string>

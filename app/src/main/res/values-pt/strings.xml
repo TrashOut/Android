@@ -157,7 +157,6 @@ Volte quando estiver online"</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Tire pelo menos uma foto "</string>
     <string name="trash.removeImage">"Remover imagem"</string>
     <string name="trash.removeImageConfirm">"Deseja excluir a foto selecionada?"</string>
-    <string name="trash.create.noGps">"Antiga localização GPS! Ligue a partilha de localização. "</string>
     <string name="trash.create.noInternetHeader">"Você está offline!"</string>
     <string name="trash.create.noInternetText">"Este despejo ilegal será enviado posteriormente, porque seu telefone está offline.
 
@@ -327,14 +326,14 @@ Ao ficar on-line, ative o aplicativo TrashOut e seu relatório será enviado aut
     <string name="event.searchForLocation">"Procurar localização"</string>
     <string name="event.noAddressFound">"Nenhum endereço encontrado"</string>
     <string name="event.nearbyDumps">"Despejos nas proximidades"</string>
-    <string name="event.create.youSelectedDumps_X">"Você selecionou %d dumps"</string>
+    <string name="event.create.youSelectedDumps_X">"Você selecionou% d dumps"</string>
     <string name="event.create.setDate">"Definir data"</string>
     <string name="event.listOfDumpsToBeCleaned">"Lista de lixões a serem limpos"</string>
     <string name="global.direction">"instruções"</string>
     <string name="global.minutes">"minutos"</string>
     <string name="global.noAddress">"Nenhum endereço"</string>
     <string name="global.noDateToSave">"Sem data para salvar"</string>
-    <string name="event.header_X">"Evento de limpeza:%s"</string>
+    <string name="event.header_X">"Evento de limpeza:% s"</string>
     <string name="event.validation.cannotBeAddedToCalendar">"O evento de limpeza não pode ser adicionado ao seu calendário"</string>
     <string name="event.addedToCalender.success">"O evento de limpeza foi adicionado ao seu calendário"</string>
     <string name="global.enableAccessToCalendar">"Ativar acesso ao calendário nas configurações"</string>
@@ -357,9 +356,9 @@ Ao ficar on-line, ative o aplicativo TrashOut e seu relatório será enviado aut
     <string name="global.edit">"Editar"</string>
     <string name="trash.anonymous">"Anônimo"</string>
     <string name="global.phoneNotSet">"Telefone não definido"</string>
-    <string name="profile.earnedPoints_X">"Você ganhou %d pontos até agora! Atualize mais dumps para receber mais. Obrigado!"</string>
-    <string name="profile.points_X">"%d pontos"</string>
-    <string name="global.numberOfTimes_X">"%dx"</string>
+    <string name="profile.earnedPoints_X">"Você ganhou% d pontos até agora! Atualize mais dumps para receber mais. Obrigado!"</string>
+    <string name="profile.points_X">"% d pontos"</string>
+    <string name="global.numberOfTimes_X">"% dx"</string>
     <string name="profile.youReported">"Seus relatórios"</string>
     <string name="profile.youUpdated">"Suas atualizações"</string>
     <string name="profile.youCleaned">"Despejos limpos"</string>
@@ -372,8 +371,8 @@ Ao ficar on-line, ative o aplicativo TrashOut e seu relatório será enviado aut
     <string name="global.pullToRefresh">"Puxe para atualizar"</string>
     <string name="trash.accuracyOfLocationSmaller">"Precisão da localização: &lt; "</string>
     <string name="global.sendEmail.error">"Não é possível enviar um email."</string>
-    <string name="trash.illegalDumpIn_X">"Despejo ilegal em %s"</string>
-    <string name="trash.reportedDetailsonWeb_X">"Despejo ilegal foi relatado! Detalhes sobre despejo ilegal podem ser encontrados no site: %s"</string>
+    <string name="trash.illegalDumpIn_X">"Despejo ilegal em% s"</string>
+    <string name="trash.reportedDetailsonWeb_X">"Despejo ilegal foi relatado! Detalhes sobre despejo ilegal podem ser encontrados no site:% s"</string>
     <string name="trash.messageWasReceived">"Obrigado, a mensagem foi recebida"</string>
     <string name="global.noDate">"Sem data"</string>
     <string name="global.unknow">"desconhecido"</string>
@@ -383,7 +382,7 @@ Ao ficar on-line, ative o aplicativo TrashOut e seu relatório será enviado aut
     <string name="trashHunter.startHunting">"Comece a Caçar"</string>
     <string name="trashHunter.huntingArea">"Área de caça"</string>
     <string name="trashHunter.stopHunting">"PARAR A CAÇA"</string>
-    <string name="trash.foundDumps_X">"Despejos encontrados:%d"</string>
+    <string name="trash.foundDumps_X">"Despejos encontrados:% d"</string>
     <string name="trashHunter.turnedOnInfo">"O \"modo Caçador de Lixo\" foi ativado e ficará ativo no período seguinte."</string>
     <string name="trash.updateNeeded">"Atualização necessária"</string>
     <string name="trash.filter.lastUpdate.noLimit">"Sem limite"</string>
@@ -601,7 +600,7 @@ Ao ficar on-line, ative o aplicativo TrashOut e seu relatório será enviado aut
     <string name="global.validation.warning">"Atenção"</string>
     <string name="global.validation.noEmailClientInstalled">"Nenhum cliente de email instalado"</string>
     <string name="trash.edit.greaterDistanceText">"A distância é superior a 100m do lixo. Você deve estar perto do despejo."</string>
-    <string name="trash.edit.minPhotosText">"Para criar ou atualizar a lixeira, você precisa tirar pelo menos %d foto"</string>
+    <string name="trash.edit.minPhotosText">"Para criar ou atualizar a lixeira, você precisa tirar pelo menos% d foto"</string>
     <string name="trash.validation.mustSelectMeetingPoint">"Você deve primeiro escolher a posição da reunião"</string>
     <string name="event.detail.bring">"Trazer"</string>
     <string name="event.detail.pleaseBring">"O que precisamos"</string>
@@ -739,7 +738,9 @@ Ao ficar on-line, ative o aplicativo TrashOut e seu relatório será enviado aut
     <string name="global.accountCreated">"A conta foi criada"</string>
     <string name="global.activateAccount">"Acesse seu e-mail para ativar sua conta"</string>
     <string name="user.myProfile">"Meu perfil"</string>
-    <string name="user.addArea">"Adicionar áreas de interesse"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addArea">"Definir notificações"</string>
     <string name="user.generateApiKey">"Gerar chave de API"</string>
     <string name="user.aboutMe">"Sobre mim"</string>
     <string name="trash.markedAsSpam.success">"Obrigado por manter nosso banco de dados atualizado! Nossos administradores revisarão seu relatório."</string>
@@ -749,7 +750,9 @@ Ao ficar on-line, ative o aplicativo TrashOut e seu relatório será enviado aut
     <string name="user.roles.superAdmin">"SuperAdministrator"</string>
     <string name="profile.myEvents">"Meus Eventos"</string>
     <string name="organization.description">"Descrição"</string>
-    <string name="user.geo.notificationFrequency">"Frequência de notificação"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency">"Frequência de notificação"</string>
     <string name="user.reviewed">"Usuário revisado"</string>
     <string name="user.created">"Conta criada"</string>
     <string name="trash.create.successs">"Obrigado por manter nosso banco de dados atualizado e cuidar do nosso ambiente."</string>
@@ -766,12 +769,24 @@ Ao ficar on-line, ative o aplicativo TrashOut e seu relatório será enviado aut
     <string name="collectionPoint.contact.header">"Contatos"</string>
     <string name="global.url.placeholder">"https://www.trashout.ngo"</string>
     <string name="collectionPoint.update.success">"O ponto de coleta foi atualizado com sucesso."</string>
-    <string name="user.editArea">"Editar área de interesse"</string>
-    <string name="user.geo.notificationFrequency.perHour">"Por hora"</string>
-    <string name="user.geo.notificationFrequency.never">"Nunca"</string>
-    <string name="user.geo.notificationFrequency.perDay">"Por dia"</string>
-    <string name="user.geo.notificationFrequency.perWeek">"Por semana"</string>
-    <string name="user.geo.notificationFrequency.perMonth">"Por mês"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea">"Editar área de interesse"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perHour">"Por hora"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.never">"Nunca"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perDay">"Por dia"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perWeek">"Por semana"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perMonth">"Por mês"</string>
     <string name="user.level">"Nível"</string>
     <string name="geo.userAdd.success">"Usuário foi adicionado com sucesso."</string>
     <string name="geo.userDelete.success">"A função do usuário foi removida com sucesso."</string>
@@ -851,7 +866,9 @@ diariamente, semanalmente ou mensalmente para se manter informado sobre as ativi
     <string name="collectionPoint.category.other">"De outros"</string>
     <string name="collectionPoint.category.everything">"Tudo"</string>
     <string name="collectionPoint.category">"Categoria de tipo de ponto de reciclagem"</string>
-    <string name="user.editArea.success">"A área foi atualizada com sucesso"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea.success">"A área foi atualizada com sucesso"</string>
     <string name="user.roles.organization.manager">"Gerente"</string>
     <string name="user.roles.organization">"Função da organização"</string>
     <string name="profile.changeEmail">"Mude o e-mail"</string>
@@ -1056,7 +1073,9 @@ diariamente, semanalmente ou mensalmente para se manter informado sobre as ativi
     <string name="user.google.hint">"Link do seu perfil"</string>
     <string name="global.phone.hint">"O número de telefone começa com + / 00"</string>
     <string name="profile.currentPassword">"senha atual"</string>
-    <string name="user.addToArea.success">"A área foi adicionada com sucesso"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addToArea.success">"A área foi adicionada com sucesso"</string>
     <string name="collectionPoint.created.success">"O ponto de coleta foi criado com sucesso"</string>
     <string name="collectionPoint.markedAsSpam.success">"O ponto de coleta foi marcado com sucesso como spam."</string>
     <string name="collectionPoint.removed.success">"O ponto de coleta foi removido com sucesso"</string>
@@ -1105,7 +1124,9 @@ diariamente, semanalmente ou mensalmente para se manter informado sobre as ativi
     <string name="notifications.user.approve.header">"Aprovar usuário"</string>
     <string name="geo.description.admin">"Nesta seção, você pode ver e adicionar gerentes para áreas e subáreas que você administra. Os gerentes em comparação com usuários comuns podem adicionar artigos, que serão mostrados em aplicativos para celular e web em todo o mundo. Além disso, você pode ver os usuários que recebem notificações por email sobre atividades em suas áreas."</string>
     <string name="geo.description.superAdmin">"Nesta seção, você pode ver administradores, gerentes e usuários. Você pode adicionar ou remover administradores de áreas e subáreas. Você também pode gerenciar aliases."</string>
-    <string name="user.geo.description">"Sinta-se livre para escolher as áreas de seu interesse. Defina as notificações por email e a frequência delas, para que você possa se manter informado sobre os despejos informados e limpos nessas áreas. Você pode monitorar quantas áreas desejar e alterar as configurações das notificações a qualquer momento!"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.description">"Sinta-se livre para escolher as áreas de seu interesse. Defina as notificações por email e a frequência delas, para que você possa se manter informado sobre os despejos informados e limpos nessas áreas. Você pode monitorar quantas áreas desejar e alterar as configurações das notificações a qualquer momento!"</string>
     <string name="geo.confirm.removeAdmin">"Deseja excluir o administrador da área?"</string>
     <string name="geo.confirm.removeManager">"Deseja excluir o gerente da área?"</string>
     <string name="geo.addAlias.description">"Você pode criar Alias aqui. Cuidado. Processo é irreversível. Por exemplo, você pode criar o alias \"Czechia\" para a República Tcheca raiz. Depois disso, você verá na lista de áreas apenas a raiz da república tcheca. "</string>
@@ -1114,7 +1135,7 @@ diariamente, semanalmente ou mensalmente para se manter informado sobre as ativi
     <string name="event.validation.endTimeRequired">"Hora de término é necessária"</string>
     <string name="news.videoUrl">"URL do vídeo"</string>
     <string name="global.addNext">"Adicionar próximo"</string>
-    <string name="global.validation.sizeExceeded">"O tamanho de uma imagem excedeu o limite. Carregar imagem menor (no máximo 2 MB)."</string>
+    <string name="global.validation.sizeExceeded">"O tamanho de uma imagem excedeu o limite. Carregar imagem menor (no máximo 3 MB)."</string>
     <string name="global.image.mainImage">"Imagem principal"</string>
     <string name="global.image.setAsMain">"Definir imagem como principal"</string>
     <string name="news.validation.nameRequired">"Nome obrigatório"</string>
@@ -1213,7 +1234,7 @@ Nosso objetivo é envolver cidadãos, governos, municípios e organizações par
     <string name="mail.eventCreate.subject">"TrashOut - informações importantes sobre o evento que você criou"</string>
 
     <!-- note -->
-    <string name="global.signUp.acceptRegister.startSentense">"Concordo com o processamento dos meus dados pessoais. Eu li e aceito"</string>
+    <string name="global.signUp.acceptRegister.startSentense">"Ao continuar, você concorda com o TrashOut's"</string>
     <string name="global.signUp.acceptRegister.privatePolicy">"Política de Privacidade"</string>
     <string name="global.signUp.acceptRegister.and">"e"</string>
     <string name="global.signUp.acceptRegister.terms">"Termos e Condições"</string>
@@ -1252,8 +1273,8 @@ Nosso objetivo é envolver cidadãos, governos, municípios e organizações par
     <string name="event.event_joinEventTitle">"Participe deste evento"</string>
     <string name="home.orderTrashPickup">"Encomendar recolha de resíduos"</string>
     <string name="event.create_event_meeting_date_title">"Data da Reunião"</string>
-    <string name="notification_new_trash_formatter">"Você caça %d lixos novos ou atualizados."</string>
-    <string name="about_version_date_formatted">"Versão de %s"</string>
+    <string name="notification_new_trash_formatter">"Você caça% d lixos novos ou atualizados."</string>
+    <string name="about_version_date_formatted">"Versão de% s"</string>
     <string name="skip_btn">"PULAR"</string>
     <string name="event.create.thankYou.sentence1">"Obrigado por criar este evento"</string>
     <string name="event.create.thankYou.sentence2">"Você é demais!"</string>

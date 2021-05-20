@@ -157,7 +157,6 @@ Próbálja újra később."</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Készítsen legalább egy fényképet!"</string>
     <string name="trash.removeImage">"Kép eltávolítása"</string>
     <string name="trash.removeImageConfirm">"Törli a kiválasztott fotót?"</string>
-    <string name="trash.create.noGps">"Régi GPS hely! Kapcsolja be a helymegosztást. "</string>
     <string name="trash.create.noInternetHeader">"Ön Offline."</string>
     <string name="trash.create.noInternetText">"Ezt az illegális hulladéklerakót most nem tudja bejelenteni, mert telefonja offline állapotban van.
 
@@ -334,7 +333,7 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="global.minutes">"percek"</string>
     <string name="global.noAddress">"Nincs cím"</string>
     <string name="global.noDateToSave">"Nincs elmentendő dátum"</string>
-    <string name="event.header_X">"Takarítási esemény: %s"</string>
+    <string name="event.header_X">"Takarítási esemény:% s"</string>
     <string name="event.validation.cannotBeAddedToCalendar">"A takarítási esemény nem adható hozzá a naptárához"</string>
     <string name="event.addedToCalender.success">"A takarítási eseményt hozzá adta a naptárához"</string>
     <string name="global.enableAccessToCalendar">"Engedélyezze a naptárához való hozzáférést a beállításokban"</string>
@@ -357,9 +356,9 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="global.edit">"Szerkesztés"</string>
     <string name="trash.anonymous">"Névtelen"</string>
     <string name="global.phoneNotSet">"A telefon nincs beállítva"</string>
-    <string name="profile.earnedPoints_X">"Eddig %d pontot szerzett! Frissítsen több szennyezett területet, hogy többet érjen el. Köszönöm!"</string>
-    <string name="profile.points_X">"%d pont"</string>
-    <string name="global.numberOfTimes_X">"%dx"</string>
+    <string name="profile.earnedPoints_X">"Eddig% d pontot szerzett! Frissítsen több szennyezett területet, hogy többet érjen el. Köszönöm!"</string>
+    <string name="profile.points_X">"% d pont"</string>
+    <string name="global.numberOfTimes_X">"% dx"</string>
     <string name="profile.youReported">"Az Ön jelentései"</string>
     <string name="profile.youUpdated">"Az Ön frissítései"</string>
     <string name="profile.youCleaned">"Megtisztított szennyezett területek"</string>
@@ -372,8 +371,8 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="global.pullToRefresh">"Húzza a frissítéshez"</string>
     <string name="trash.accuracyOfLocationSmaller">"A hely pontossága: &lt; "</string>
     <string name="global.sendEmail.error">"Nem lehet e-mailt küldeni."</string>
-    <string name="trash.illegalDumpIn_X">"Szennyezett terület %s-ban"</string>
-    <string name="trash.reportedDetailsonWeb_X">"Szennyezett területet jelentettek! A szennyezett területtel kapcsolatos részletet a következő webhelyen találhatók: %s"</string>
+    <string name="trash.illegalDumpIn_X">"Szennyezett terület % s-ban"</string>
+    <string name="trash.reportedDetailsonWeb_X">"Szennyezett területet jelentettek! A szennyezett területtel kapcsolatos részletet a következő webhelyen találhatók:% s"</string>
     <string name="trash.messageWasReceived">"Köszönöm, az üzenet megérkezett"</string>
     <string name="global.noDate">"Nincs dátum"</string>
     <string name="global.unknow">"ismeretlen"</string>
@@ -383,7 +382,7 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="trashHunter.startHunting">"Kezdjen vadászni"</string>
     <string name="trashHunter.huntingArea">"Vadászterület"</string>
     <string name="trashHunter.stopHunting">"A vadászat leállítása"</string>
-    <string name="trash.foundDumps_X">"Talált szennyezett területek: %d"</string>
+    <string name="trash.foundDumps_X">"Talált szennyezett területek:% d"</string>
     <string name="trashHunter.turnedOnInfo">"A \"Szemét vadász mód\" be van kapcsolva, és a következő időszakban aktív lesz."</string>
     <string name="trash.updateNeeded">"Frissítésre van szükség"</string>
     <string name="trash.filter.lastUpdate.noLimit">"Korlátozás nélkül"</string>
@@ -739,7 +738,9 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="global.accountCreated">"Fiók létrehozva"</string>
     <string name="global.activateAccount">"Lépjen be az e-mail fiókjába a felhasználói fiók aktiválásához!"</string>
     <string name="user.myProfile">"Profilom"</string>
-    <string name="user.addArea">"Adja meg érdeklődési területeit!"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addArea">"Értesítések beállítása"</string>
     <string name="user.generateApiKey">"API kulcs generálása"</string>
     <string name="user.aboutMe">"Rólam"</string>
     <string name="trash.markedAsSpam.success">"Köszönjük, hogy adatbázisunkat naprakészen tartja! Rendszergazdáink hamarosan felülvizsgálják a bejelentését."</string>
@@ -749,7 +750,9 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="user.roles.superAdmin">"Főadminisztrátor"</string>
     <string name="profile.myEvents">"Eseményeim"</string>
     <string name="organization.description">"Leírás"</string>
-    <string name="user.geo.notificationFrequency">"Értesítési gyakoriság"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency">"Értesítési gyakoriság"</string>
     <string name="user.reviewed">"Felülvizsgált felhasználó"</string>
     <string name="user.created">"Fiók létrehozva"</string>
     <string name="trash.create.successs">"Köszönjük, hogy naprakészen tartja adatbázisunkat és óvja környezetünket!"</string>
@@ -766,12 +769,24 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="collectionPoint.contact.header">"Kapcsolatok"</string>
     <string name="global.url.placeholder">"https://www.trashout.ngo"</string>
     <string name="collectionPoint.update.success">"Gyűjtési pont frissítve"</string>
-    <string name="user.editArea">"Érdeklődési terület szerkesztése"</string>
-    <string name="user.geo.notificationFrequency.perHour">"Óránként"</string>
-    <string name="user.geo.notificationFrequency.never">"Soha"</string>
-    <string name="user.geo.notificationFrequency.perDay">"Naponta"</string>
-    <string name="user.geo.notificationFrequency.perWeek">"Hetente"</string>
-    <string name="user.geo.notificationFrequency.perMonth">"Havonta"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea">"Érdeklődési terület szerkesztése"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perHour">"Óránként"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.never">"Soha"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perDay">"Naponta"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perWeek">"Hetente"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perMonth">"Havonta"</string>
     <string name="user.level">"Szint"</string>
     <string name="geo.userAdd.success">"Felhasználó hozzáadva"</string>
     <string name="geo.userDelete.success">"Felhasználói szerep eltávolításra került"</string>
@@ -849,7 +864,9 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="collectionPoint.category.other">"Egyéb"</string>
     <string name="collectionPoint.category.everything">"Minden"</string>
     <string name="collectionPoint.category">"Újrahasznosítási pont típusa"</string>
-    <string name="user.editArea.success">"A terület sikeresen frissült"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea.success">"A terület sikeresen frissült"</string>
     <string name="user.roles.organization.manager">"Menedzser"</string>
     <string name="user.roles.organization">"Szervezet szerepe"</string>
     <string name="profile.changeEmail">"E-mail cím megváltozása"</string>
@@ -1054,7 +1071,9 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="user.google.hint">"Profilod linkje"</string>
     <string name="global.phone.hint">"A telefonszám + / 00-val kezdődik"</string>
     <string name="profile.currentPassword">"Aktuális jelszó"</string>
-    <string name="user.addToArea.success">"A terület sikeresen hozzáadva"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addToArea.success">"A terület sikeresen hozzáadva"</string>
     <string name="collectionPoint.created.success">"A gyűjtőpont sikeresen létrejött"</string>
     <string name="collectionPoint.markedAsSpam.success">"A gyűjtési pont sikeresen meg lett jelölve spamként."</string>
     <string name="collectionPoint.removed.success">"A gyűjtőpont sikeresen eltávolításra került"</string>
@@ -1103,7 +1122,9 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="notifications.user.approve.header">"Felhasználó jóváhagyása"</string>
     <string name="geo.description.admin">"Ebben a szakaszban láthatja és hozzáadhatja az adminisztrátorokat a területhez és alterületek. A hétköznapi felhasználókkal összehasonlítva a menedzserek hozzá tudnak adni cikkeket, amelyek világszerte megjelennek mind a mobil, mind a webes alkalmazásokban. Ezen felül láthatja a felhasználókat, akik e-mailben értesítést kapnak az Ön területén zajló tevékenységekről."</string>
     <string name="geo.description.superAdmin">"Ebben a szakaszban láthatja az adminisztrátorokat, a menedzsereket és a felhasználókat. Felveheti vagy eltávolíthatja az adminisztrátorokat a területekről és alterületekről. Az álneveket is itt kezelheti."</string>
-    <string name="user.geo.description">"Szabadon kiválaszthatja az Ön számára fontos területeket, csak állítsa be az e-mail értesítéseket és azok gyakoriságát, így tájékozódhat ezen területekről érkező bejelentésekről és megtisztított hulladéklerakókról. Figyelemmel kísérheti a kiválasztott területet, és bármikor megváltoztathatja az értesítések beállításait!"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.description">"Szabadon kiválaszthatja az Ön számára fontos területeket, csak állítsa be az e-mail értesítéseket és azok gyakoriságát, így tájékozódhat ezen területekről érkező bejelentésekről és megtisztított hulladéklerakókról. Figyelemmel kísérheti a kiválasztott területet, és bármikor megváltoztathatja az értesítések beállításait!"</string>
     <string name="geo.confirm.removeAdmin">"Törölni szeretné a adminisztrátort a területről?"</string>
     <string name="geo.confirm.removeManager">"Törölni szeretné a menedzsert a területről?"</string>
     <string name="geo.addAlias.description">"Itt létrehozhat álnevet, fedőnevet, de legyen óvatos, a folyamat visszafordíthatatlan. Például létrehozhat álnevet \"Czechia\" a Cseh Köztársaság számára. Ezt követően csak a Cseh Köztársaságot fogja látni a térségi listákban. "</string>
@@ -1112,7 +1133,7 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="event.validation.endTimeRequired">"Befejezési időpont megadása szükséges"</string>
     <string name="news.videoUrl">"Video URL"</string>
     <string name="global.addNext">"Következő hozzáadása"</string>
-    <string name="global.validation.sizeExceeded">"Néhány kép mérete meghaladja a maximális méretet. Töltsön fel kisebb képet (legfeljebb 2 MB)."</string>
+    <string name="global.validation.sizeExceeded">"Néhány kép mérete meghaladja a maximális méretet. Töltsön fel kisebb képet (legfeljebb 3 MB)."</string>
     <string name="global.image.mainImage">"Elsődleges kép"</string>
     <string name="global.image.setAsMain">"Állítsa be elsődleges képpé"</string>
     <string name="news.validation.nameRequired">"Szükséges a név megadása"</string>
@@ -1211,7 +1232,7 @@ Célunk, hogy bevonjuk a polgárokat, a kormányokat, az önkormányzatokat és 
     <string name="mail.eventCreate.subject">"TrashOut - fontos információ az Ön által létrehozott eseményről"</string>
 
     <!-- note -->
-    <string name="global.signUp.acceptRegister.startSentense">"Egyetértek a személyes adataim feldolgozásával. Elolvastam és elfogadtam"</string>
+    <string name="global.signUp.acceptRegister.startSentense">"A folytatással Ön elfogadja a TrashOut"</string>
     <string name="global.signUp.acceptRegister.privatePolicy">"Adatvédelmi irányelvek"</string>
     <string name="global.signUp.acceptRegister.and">"és"</string>
     <string name="global.signUp.acceptRegister.terms">"Felhasználási feltételek"</string>
@@ -1219,7 +1240,8 @@ Célunk, hogy bevonjuk a polgárokat, a kormányokat, az önkormányzatokat és 
     <!-- error with communication with API server -->
     <string name="global.error.api.text">"Ideiglenesen probléma merült fel a szerverünkkel kapcsolatban. Mindent megteszünk a hiba elhárításáért. Látogasson vissza később."</string>
     <string name="global.internet.offline">"Kérjük, csatlakozzon az internethez, hogy megtekinthesse ezt a részt."</string>
-    <string name="global.cookiesPolicy">"Ez a weboldal sütiket használ a kényelmesebb böngészés érdekében. Engedélyeztetheti az 'Elfogadás' gombra kattintva. Sütiket használunk annak érdekében, hogy a közösségi média funkciókat biztosítsunk, illetve elemezzük a látogatók számát, viselkedését üzleti célokra. Az így szerzett anoním információkat időnként harmadik fél felé is megosztjuk. Olvassa el"</string>
+    <string name="global.cookiesPolicy">"Ez a weboldal sütiket használ a kényelmesebb böngészés érdekében. Engedélyeztetheti az 'Elfogadás' gombra kattintva. Sütiket használunk annak érdekében, hogy a közösségi média funkciókat biztosítsunk, illetve elemezzük a látogatók számát, viselkedését üzleti célokra. Az így szerzett anoním információkat időnként harmadik fél felé is megosztjuk. Olvassa el 
+"</string>
     <string name="global.acceptCookiesPolicy">"Sütik elfogadása"</string>
     <string name="global.cookiesPolicy.link">"Adatvédelmi irányelvek"</string>
 

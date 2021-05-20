@@ -1295,7 +1295,7 @@ daily, weekly or monthly to stay informed about activities in the location you c
     <string name="global.occupation">"Occupation"</string>
     <string name="event.create.loginMessage">"You must be logged in to create an event"</string>
     <string name="trash.create.thankYou.title">"Thank you!"</string>
-    <string name="trash.create.thankYou.offline">You are currently offline, so the report will be uploaded when you will be online.</string>
+    <string name="trash.create.thankYou.offline">"It seems you are offline. Do not worry! This report will upload automatically later once your phone is online again."</string>
     <string name="trash.create.thankYou.sentence1">"Thank you for your report!"</string>
     <string name="trash.create.thankYou.sentence2">"You are awesome!"</string>
     <string name="trash.create.thankYou.sentence3">"Do not forget to update dumps around you or join cleaning event."</string>
