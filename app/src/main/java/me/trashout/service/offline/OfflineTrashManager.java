@@ -4,6 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 
+import androidx.work.Constraints;
+import androidx.work.ExistingWorkPolicy;
+import androidx.work.NetworkType;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.WorkManager;
+
 import java.util.ArrayList;
 
 import me.trashout.model.Trash;
@@ -19,6 +25,8 @@ public class OfflineTrashManager {
     private static final int UPDATE_TRASH_REQUEST_ID = 451;
     private static final String PREFS_NAME = "Offline";
     private static final String PREFS_KEY = "TrashList";
+
+    private static boolean running = false;
 
     public OfflineTrashManager(Context context) {
         this.context = context;
@@ -50,6 +58,20 @@ public class OfflineTrashManager {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(PREFS_KEY, offlineTrashList.serialize());
         editor.commit();
+
+        setPlan();
+    }
+
+    private void setPlan() {
+        Constraints constraints = new Constraints.Builder()
+            .setRequiredNetworkType(NetworkType.CONNECTED)
+            .build();
+
+        OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(OfflineTrashWorker.class)
+                .setConstraints(constraints)
+                .build();
+
+        WorkManager.getInstance(context).enqueueUniqueWork("offlineTrash", ExistingWorkPolicy.REPLACE, workRequest);
     }
 
     public boolean process() {
@@ -70,6 +92,12 @@ public class OfflineTrashManager {
     }
 
     public void processAll() {
+        if (OfflineTrashManager.running) {
+            return;
+        } else {
+            OfflineTrashManager.running = true;
+        }
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -80,6 +108,8 @@ public class OfflineTrashManager {
                         e.printStackTrace();
                     }
                 }
+
+                OfflineTrashManager.running = false;
             }
         }).start();
     }

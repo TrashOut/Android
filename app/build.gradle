@@ -111,6 +111,9 @@ dependencies {
     implementation 'ru.noties:markwon-image-loader:1.0.1'
     implementation 'ru.noties:markwon-view:1.0.1'
 
+    // Jetpack Work manager
+    implementation "androidx.work:work-runtime:2.5.0"
+
     api ('com.otaliastudios:cameraview:2.6.4') {
         exclude group: 'com.google.android.gms'
     }
