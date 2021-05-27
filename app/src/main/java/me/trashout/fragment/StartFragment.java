@@ -194,7 +194,11 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
     public void onNewResult(ApiResult apiResult) {
         if (isAdded()) {
             if (apiResult.getRequestId() == GET_USER_BY_FIREBASE_REQUEST_ID) {
-                if (apiResult.isValidResponse()) {
+                if (!isNetworkAvailable()) {
+                    dismissProgressDialog();
+                    ((StartActivity) getActivity()).startMainActivity();
+                    finish();
+                } else if (apiResult.isValidResponse()) {
                     dismissProgressDialog();
                     ApiGetUserResult apiGetUserResult = (ApiGetUserResult) apiResult.getResult();
                     Log.d(TAG, "onNewResult: User = " + apiGetUserResult.getUser());
