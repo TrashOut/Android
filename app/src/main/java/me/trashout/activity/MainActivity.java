@@ -85,7 +85,7 @@ import me.trashout.fragment.base.ITrashFragment;
 import me.trashout.model.Organization;
 import me.trashout.notification.PushNotification;
 import me.trashout.notification.TrashoutFirebaseInstanceIdService;
-import me.trashout.service.offline.OfflineTrashManager;
+import me.trashout.offline.OfflineTrashManager;
 import me.trashout.utils.BottomNavigationViewHelper;
 import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.Utils;

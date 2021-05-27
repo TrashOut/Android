@@ -1,4 +1,4 @@
-package me.trashout.service.offline;
+package me.trashout.offline;
 
 import android.content.Context;
 import android.content.SharedPreferences;

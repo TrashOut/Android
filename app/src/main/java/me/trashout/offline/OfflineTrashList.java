@@ -1,4 +1,4 @@
-package me.trashout.service.offline;
+package me.trashout.offline;
 
 import com.google.gson.Gson;
 
