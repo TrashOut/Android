@@ -82,6 +82,7 @@ import me.trashout.api.base.ApiResult;
 import me.trashout.api.base.ApiUpdate;
 import me.trashout.api.result.ApiGetHomeScreenDataResult;
 import me.trashout.fragment.base.BaseFragment;
+import me.trashout.model.Area;
 import me.trashout.model.CollectionPoint;
 import me.trashout.model.Constants;
 import me.trashout.model.Event;
@@ -637,12 +638,17 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             userActivityDistance.setVisibility(View.GONE);
         }
 
-        String locationText = userActivity.getGps().getArea().getFormatedLocation();
-        if(!TextUtils.isEmpty(locationText)){
-            userActivityPosition.setText(userActivity.getGps().getArea().getFormatedLocation());
-            userActivityPosition.setVisibility(View.VISIBLE);
-        }else{
+        Area area = userActivity.getGps().getArea();
+        if (area == null) {
             userActivityPosition.setVisibility(View.GONE);
+        } else {
+            String locationText = userActivity.getGps().getArea().getFormatedLocation();
+            if (TextUtils.isEmpty(locationText)){
+                userActivityPosition.setVisibility(View.GONE);
+            } else {
+                userActivityPosition.setText(locationText);
+                userActivityPosition.setVisibility(View.VISIBLE);
+            }
         }
 
 //        final Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());
