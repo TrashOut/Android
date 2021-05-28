@@ -1448,6 +1448,9 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="organization.dumpsUpdated">"Updates"</string>
     <string name="organization.dumpsCleaned">"Dumps cleaned"</string>
 
+    <string name="trash.create.notification.title">"Trash was successfully reported"</string>
+    <string name="trash.create.notification.text">"Thank you for creating this trash. You are awesome!"</string>
+
 
     <!--MISSING STRINGS-->
     <string name="share_to" translatable="false">Share to…</string>
@@ -1492,6 +1495,7 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="push.notification.channel.trash" translatable="false">Trash</string>
     <string name="push.notification.channel.event" translatable="false">Event</string>
     <string name="push.notification.channel.news" translatable="false">News</string>
+    <string name="push.notification.channel.offline" translatable="false">Offline</string>
     <string name="push.notification.channel.default" translatable="false">Trashout</string>
 
 
