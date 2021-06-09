@@ -43,6 +43,12 @@ public class TrashoutFirebaseMessagingService extends FirebaseMessagingService {
 
         for (Map.Entry<String, String> entry : remoteMessage.getData().entrySet()) {
             Log.d(TAG, (entry.getKey() + "/" + entry.getValue()));
+
+            if (entry.getKey().equals("extratype")) {
+                Log.d(TAG, "This message has extratype, so I will be silent");
+                return;
+            }
+
             if (entry.getKey().equals("type")) {
                 pushNotificationType = PushNotification.getNotificationType(entry.getValue());
             }
