@@ -133,26 +133,40 @@ public abstract class BaseService extends Service {
                 image.setCreated(DateTimeUtils.TIMESTAMP_FORMAT.format(new Date()));
                 image.setFullStorageLocation(tempRef.toString());
 
-                try {
-                    byte[] thumbnailByteArray = Utils.resizeBitmap(BaseService.this, imagesToUpload.get(index), 150);
-                    final StorageReference tempRefThumbnail = ref.child(uuid + "_thumb");
-                    tempRefThumbnail.putBytes(thumbnailByteArray).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                if (taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null && taskSnapshot.getMetadata().getReference().getDownloadUrl() != null) {
+                    taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            image.setThumbStorageLocation(tempRefThumbnail.toString());
+                        public void onSuccess(Uri uri) {
+                            String downloadUrl = uri.toString();
+                            image.setFullDownloadUrl(downloadUrl);
 
-                            if (taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null && taskSnapshot.getMetadata().getReference().getDownloadUrl() != null) {
-                                taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            try {
+                                byte[] thumbnailByteArray = Utils.resizeBitmap(BaseService.this, imagesToUpload.get(index), 150);
+                                final StorageReference tempRefThumbnail = ref.child(uuid + "_thumb");
+                                tempRefThumbnail.putBytes(thumbnailByteArray).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                                     @Override
-                                    public void onSuccess(Uri uri) {
-                                        String downloadUrl = uri.toString();
-                                        image.setThumbDownloadUrl(downloadUrl);
-                                        image.setFullDownloadUrl(downloadUrl);
-                                        images.add(image);
-                                        if (index != imagesToUpload.size() - 1) {
-                                            uploadImages(ref, imagesToUpload, index + 1, images, onImageUploadListener);
-                                        } else {
-                                            onImageUploadListener.onComplete(UploadStatus.SUCCESS, images);
+                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                        image.setThumbStorageLocation(tempRefThumbnail.toString());
+
+                                        if (taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null && taskSnapshot.getMetadata().getReference().getDownloadUrl() != null) {
+                                            taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                @Override
+                                                public void onSuccess(Uri uri) {
+                                                    String downloadUrl = uri.toString();
+                                                    image.setThumbDownloadUrl(downloadUrl);
+                                                    images.add(image);
+                                                    if (index != imagesToUpload.size() - 1) {
+                                                        uploadImages(ref, imagesToUpload, index + 1, images, onImageUploadListener);
+                                                    } else {
+                                                        onImageUploadListener.onComplete(UploadStatus.SUCCESS, images);
+                                                    }
+                                                }
+                                            }).addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    onImageUploadListener.onComplete(UploadStatus.FAILED, null);
+                                                }
+                                            });
                                         }
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
@@ -161,6 +175,8 @@ public abstract class BaseService extends Service {
                                         onImageUploadListener.onComplete(UploadStatus.FAILED, null);
                                     }
                                 });
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
@@ -169,8 +185,6 @@ public abstract class BaseService extends Service {
                             onImageUploadListener.onComplete(UploadStatus.FAILED, null);
                         }
                     });
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
