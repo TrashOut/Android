@@ -130,9 +130,9 @@ public class OfflineTrashManager {
         }
 
         if (offlineTrash.isUpdate()) {
-            UpdateTrashService.startForRequest(context, UPDATE_TRASH_REQUEST_ID, offlineTrash.getTrash().getId(), offlineTrash.getTrash(), offlineTrash.getPhotos());
+            UpdateTrashService.startForRequest(context, UPDATE_TRASH_REQUEST_ID, offlineTrash.getTrash().getId(), offlineTrash.getTrash(), offlineTrash.getPhotos(), true);
         } else {
-            CreateTrashService.startForRequest(context, CREATE_TRASH_REQUEST_ID, offlineTrash.getTrash(), offlineTrash.getPhotos());
+            CreateTrashService.startForRequest(context, CREATE_TRASH_REQUEST_ID, offlineTrash.getTrash(), offlineTrash.getPhotos(), true);
         }
 
         remove();
