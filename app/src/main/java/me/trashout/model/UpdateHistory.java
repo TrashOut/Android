@@ -47,6 +47,9 @@ public class UpdateHistory implements Parcelable {
     @SerializedName("userInfo")
     @Expose
     private UserInfo userInfo;
+    @SerializedName("organization")
+    @Expose
+    private Organization organization;
     @SerializedName("anonymous")
     @Expose
     private boolean anonymous;
@@ -62,6 +65,7 @@ public class UpdateHistory implements Parcelable {
         updateHistory.setChanged(Changed.createChangedFromTrash(trash));
         updateHistory.setUpdateTime(trash.getLastChangeDate());
         updateHistory.setUserInfo(trash.getUserInfo());
+        updateHistory.setOrganization(trash.getOrganization());
         updateHistory.setAnonymous(trash.isAnonymous());
         return updateHistory;
     }
@@ -106,6 +110,20 @@ public class UpdateHistory implements Parcelable {
      */
     public void setUserInfo(UserInfo userInfo) {
         this.userInfo = userInfo;
+    }
+
+    /**
+     * @return The organization
+     */
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    /**
+     * @param organization The organization
+     */
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
     }
 
     /**
@@ -243,6 +261,7 @@ public class UpdateHistory implements Parcelable {
                 "userId=" + userId +
                 ", activityId=" + activityId +
                 ", userInfo=" + userInfo +
+                ", organization=" + organization +
                 ", anonymous=" + anonymous +
                 ", updateTime=" + updateTime +
                 ", changed=" + changed +

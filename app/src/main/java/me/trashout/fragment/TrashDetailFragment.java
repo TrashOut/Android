@@ -565,7 +565,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         if (updateHistory.isAnonymous()) {
             trashUpdateName.setText(getString(R.string.trash_anonymous));
         } else {
-            trashUpdateName.setText(updateHistory.getUserInfo().getFullName(getContext()));
+            trashUpdateName.setText(updateHistory.getOrganization() != null ? updateHistory.getOrganization().getName() : updateHistory.getUserInfo().getFullName(getContext()));
         }
         trashUpdate.setText(DateTimeUtils.getRoundedTimeAgo(getContext(), updateHistory.getUpdateTime()));
 
@@ -579,7 +579,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 if(updateHistory.isAnonymous()){
                     fullScreenImages.add(new FullScreenImage(image, getResources().getString(R.string.trash_anonymous), updateHistory.getUpdateTime()));
                 }else{
-                    fullScreenImages.add(new FullScreenImage(image, updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
+                    fullScreenImages.add(new FullScreenImage(image, updateHistory.getOrganization() != null ? updateHistory.getOrganization().getName() : updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
                 }
             }
 
@@ -888,7 +888,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
             if(latestUpdateHistory.isAnonymous()){
                 fullScreenImages.add(new FullScreenImage(image, getResources().getString(R.string.trash_anonymous), latestUpdateHistory.getUpdateTime()));
             }else{
-                fullScreenImages.add(new FullScreenImage(image, latestUpdateHistory.getUserInfo().getFullName(getContext()), latestUpdateHistory.getUpdateTime()));
+                fullScreenImages.add(new FullScreenImage(image, latestUpdateHistory.getOrganization() != null ? latestUpdateHistory.getOrganization().getName() : latestUpdateHistory.getUserInfo().getFullName(getContext()), latestUpdateHistory.getUpdateTime()));
             }
         }
 
@@ -900,7 +900,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                     if(updateHistory.isAnonymous()){
                         fullScreenImages.add(new FullScreenImage(image, getResources().getString(R.string.trash_anonymous), updateHistory.getUpdateTime()));
                     }else{
-                        fullScreenImages.add(new FullScreenImage(image, updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
+                        fullScreenImages.add(new FullScreenImage(image, updateHistory.getOrganization() != null ? updateHistory.getOrganization().getName() : updateHistory.getUserInfo().getFullName(getContext()), updateHistory.getUpdateTime()));
                     }
                 }
             }

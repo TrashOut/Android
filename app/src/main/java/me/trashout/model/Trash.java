@@ -68,6 +68,9 @@ public class Trash implements Parcelable, TrashMapItem {
     @SerializedName("userInfo")
     @Expose
     private UserInfo userInfo;
+    @SerializedName("organization")
+    @Expose
+    private Organization organization;
     @SerializedName("anonymous")
     @Expose
     private boolean anonymous;
@@ -265,6 +268,20 @@ public class Trash implements Parcelable, TrashMapItem {
      */
     public void setUserInfo(UserInfo userInfo) {
         this.userInfo = userInfo;
+    }
+
+    /**
+     * @return The organization
+     */
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    /**
+     * @param organization The organization
+     */
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
     }
 
     /**
@@ -552,6 +569,7 @@ public class Trash implements Parcelable, TrashMapItem {
                 ", types=" + types +
                 ", note='" + note + '\'' +
                 ", userInfo=" + userInfo +
+                ", organization=" + organization +
                 ", anonymous=" + anonymous +
                 ", accessibility=" + accessibility +
                 ", status=" + status +
