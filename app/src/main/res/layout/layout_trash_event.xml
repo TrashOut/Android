@@ -34,7 +34,7 @@
         android:padding="3dp"
         android:text="Come and help us to clean this mess in our city park." />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/trash_event_join_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
         android:textColor="@color/text_color_white"
         app:backgroundTint="@color/button_color_green_dark" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/trash_event_detail_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

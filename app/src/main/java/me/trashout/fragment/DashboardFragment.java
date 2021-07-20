@@ -31,22 +31,20 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.content.res.Resources;
 import android.graphics.Rect;
-import android.location.Geocoder;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.RemoteException;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.CardView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.core.widget.NestedScrollView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.cardview.widget.CardView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -74,7 +72,6 @@ import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -85,6 +82,7 @@ import me.trashout.api.base.ApiResult;
 import me.trashout.api.base.ApiUpdate;
 import me.trashout.api.result.ApiGetHomeScreenDataResult;
 import me.trashout.fragment.base.BaseFragment;
+import me.trashout.model.Area;
 import me.trashout.model.CollectionPoint;
 import me.trashout.model.Constants;
 import me.trashout.model.Event;
@@ -102,7 +100,6 @@ import me.trashout.service.TrashHunterService;
 import me.trashout.service.base.BaseService;
 import me.trashout.ui.SquareImageView;
 import me.trashout.utils.DateTimeUtils;
-import me.trashout.utils.GeocoderTask;
 import me.trashout.utils.GlideApp;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
@@ -347,12 +344,8 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
     }
 
     public void addDump() {
-        if (isNetworkAvailable()) {
-            TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
-            getBaseActivity().replaceFragment(trashReportOrEditFragment);
-        } else {
-            showToast(R.string.global_internet_error_offline);
-        }
+        TrashReportOrEditFragment trashReportOrEditFragment = new TrashReportOrEditFragment();
+        getBaseActivity().replaceFragment(trashReportOrEditFragment);
     }
 
     @OnClick({R.id.add_dump_fab, R.id.create_report_layout, R.id.create_report_btn})
@@ -645,12 +638,17 @@ public class DashboardFragment extends BaseFragment implements BaseService.Updat
             userActivityDistance.setVisibility(View.GONE);
         }
 
-        String locationText = userActivity.getGps().getArea().getFormatedLocation();
-        if(!TextUtils.isEmpty(locationText)){
-            userActivityPosition.setText(userActivity.getGps().getArea().getFormatedLocation());
-            userActivityPosition.setVisibility(View.VISIBLE);
-        }else{
+        Area area = userActivity.getGps().getArea();
+        if (area == null) {
             userActivityPosition.setVisibility(View.GONE);
+        } else {
+            String locationText = userActivity.getGps().getArea().getFormatedLocation();
+            if (TextUtils.isEmpty(locationText)){
+                userActivityPosition.setVisibility(View.GONE);
+            } else {
+                userActivityPosition.setText(locationText);
+                userActivityPosition.setVisibility(View.VISIBLE);
+            }
         }
 
 //        final Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());

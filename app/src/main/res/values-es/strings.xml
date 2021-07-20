@@ -71,7 +71,7 @@
 Vuelva a iniciarla."</string>
     <string name="global.now">"ahora"</string>
     <string name="profile.header">"Perfil"</string>
-    <string name="global.welcomeText">"Denunciar Residuos le permite denunciar un vertedero ilegal en cualquier lugar del mundo. El informe es el paso previo a la limpieza
+    <string name="global.welcomeText">"Denunciar Residuos le permite denunciar un vertedero ilegal en cualquier lugar del mundo. El informe es el paso previo a la limpieza 
 
 ¡ADELANTE! Localize el vertedero ilegal pulsando el botón \"Denunciar Residuos\"!"</string>
     <string name="info.header.aboutApp">"Acerca de TrashOut"</string>
@@ -116,7 +116,7 @@ Gracias por unirse a la comunidad ambiental TrashOut y mantenerla viva."</string
     <string name="profile.badge">"Insignia"</string>
     <string name="user.roles.administrator">"Administrador"</string>
     <string name="profile.logoutQuestion">"¿Desea cerrar la sesión?"</string>
-    <string name="profile.whyRegister">"Se sincronizará toda su actividad.
+    <string name="profile.whyRegister">"Se sincronizará toda su actividad. 
 Obtendrá puntos por sus actividades."</string>
     <string name="profile.validation.invalidEmail">"Ups, el correo electrónico introducido no es válido :("</string>
     <string name="profile.validation.enterPassword">"Ups, por favor, introduzca su contraseña"</string>
@@ -136,9 +136,9 @@ Obtendrá puntos por sus actividades."</string>
     <string name="user.header">"Usuarios"</string>
     <string name="user.changePassword">"Cambiar la contraseña"</string>
     <string name="user.bulk.changeRole">"Cambiar el papel"</string>
-    <string name="profile.noInternetWhileRegister">"No podemos registrarlo sin conexión a internet.
+    <string name="profile.noInternetWhileRegister">"No podemos registrarlo sin conexión a internet. 
 Por favor, regrese cuando tenga conexión"</string>
-    <string name="profile.noInternetWhileSignIn">"Ups, no puede entrar sin conexión a internet.
+    <string name="profile.noInternetWhileSignIn">"Ups, no puede entrar sin conexión a internet. 
 Por favor, regrese cuando tenga conexión."</string>
     <string name="profile.noName">"No se proporcionó ningún nombre"</string>
     <string name="profile.resetPasswordInfoToMail">"Se ha enviado información para restablecer la contraseña a su dirección de correo electrónico"</string>
@@ -160,7 +160,6 @@ Por favor, regrese cuando tenga conexión."</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Haga por lo menos una foto"</string>
     <string name="trash.removeImage">"Eliminar imagen"</string>
     <string name="trash.removeImageConfirm">"¿Desea eliminar la foto seleccionada?"</string>
-    <string name="trash.create.noGps">"¡La vieja ubicación del GPS! Enciende el compartir de la ubicación. "</string>
     <string name="trash.create.noInternetHeader">"¡Sin conexión!"</string>
     <string name="trash.create.noInternetText">"Este vertedero ilegal se enviará más tarde porque no tiene conexión.
 
@@ -612,7 +611,7 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="global.validation.warning">"Advertencia"</string>
     <string name="global.validation.noEmailClientInstalled">"Ningún cliente de correo electrónico instalado"</string>
     <string name="trash.edit.greaterDistanceText">"La distancia es superior a 100 m desde la basura. Debe estar cerca del vertedero."</string>
-    <string name="trash.edit.minPhotosText">"Para crear o actualizar la basura, debe tomar al menos %d fotos"</string>
+    <string name="trash.edit.minPhotosText">"Para crear o actualizar la basura, debe tomar al menos% d fotos"</string>
     <string name="trash.validation.mustSelectMeetingPoint">"Primero debe elegir el puesto de reunión"</string>
     <string name="event.detail.bring">"Traer"</string>
     <string name="event.detail.pleaseBring">"Traiga"</string>
@@ -750,7 +749,9 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="global.accountCreated">"La cuenta se ha creado"</string>
     <string name="global.activateAccount">"Vaya a su correo electrónico para activar la cuenta"</string>
     <string name="user.myProfile">"Mi perfil"</string>
-    <string name="user.addArea">"Agregar áreas de interés"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addArea">"Establecer notificaciones"</string>
     <string name="user.generateApiKey">"Generar clave de API"</string>
     <string name="user.aboutMe">"Sobre mi"</string>
     <string name="trash.markedAsSpam.success">"¡Gracias por mantener nuestra base de datos actualizada! Nuestros administradores revisarán su informe."</string>
@@ -760,7 +761,9 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="user.roles.superAdmin">"SuperAdministrador"</string>
     <string name="profile.myEvents">"Mis eventos"</string>
     <string name="organization.description">"Descripción"</string>
-    <string name="user.geo.notificationFrequency">"Frecuencia de notificación"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency">"Frecuencia de notificación"</string>
     <string name="user.reviewed">"Usuario revisado"</string>
     <string name="user.created">"Cuenta creada"</string>
     <string name="trash.create.successs">"Gracias por mantener nuestra base de datos actualizada y por cuidar nuestro medio ambiente."</string>
@@ -777,12 +780,24 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="collectionPoint.contact.header">"Contactos"</string>
     <string name="global.url.placeholder">"http://www.trashout.ngo"</string>
     <string name="collectionPoint.update.success">"El punto de reciclaje se actualizó con éxito."</string>
-    <string name="user.editArea">"Editar área de interés"</string>
-    <string name="user.geo.notificationFrequency.perHour">"Por hora"</string>
-    <string name="user.geo.notificationFrequency.never">"Nunca"</string>
-    <string name="user.geo.notificationFrequency.perDay">"Por día"</string>
-    <string name="user.geo.notificationFrequency.perWeek">"Por semana"</string>
-    <string name="user.geo.notificationFrequency.perMonth">"Por mes"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea">"Editar área de interés"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perHour">"Por hora"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.never">"Nunca"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perDay">"Por día"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perWeek">"Por semana"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perMonth">"Por mes"</string>
     <string name="user.level">"Nivel"</string>
     <string name="geo.userAdd.success">"El usuario se ha añadido correctamente."</string>
     <string name="geo.userDelete.success">"El área de usuario se eliminó con éxito."</string>
@@ -860,7 +875,9 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="collectionPoint.category.other">"Otro"</string>
     <string name="collectionPoint.category.everything">"Todo"</string>
     <string name="collectionPoint.category">"Categoría de tipo de punto de reciclaje"</string>
-    <string name="user.editArea.success">"El área se actualizó con éxito"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea.success">"El área se actualizó con éxito"</string>
     <string name="user.roles.organization.manager">"Administrador"</string>
     <string name="user.roles.organization">"Papel de la organización"</string>
     <string name="profile.changeEmail">"Cambiar correo electrónico"</string>
@@ -1065,7 +1082,9 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="user.google.hint">"Sugerencia de Google+"</string>
     <string name="global.phone.hint">"Sugerencia telefónica"</string>
     <string name="profile.currentPassword">"Contraseña actual"</string>
-    <string name="user.addToArea.success">"El área se ha añadido correctamente"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addToArea.success">"El área se ha añadido correctamente"</string>
     <string name="collectionPoint.created.success">"El punto de reciclaje se ha creado correctamente"</string>
     <string name="collectionPoint.markedAsSpam.success">"El punto de reciclaje se ha marcado correctamente como spam."</string>
     <string name="collectionPoint.removed.success">"El punto de reciclaje se ha eliminado correctamente"</string>
@@ -1114,7 +1133,9 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="notifications.user.approve.header">"Aprobar usuario"</string>
     <string name="geo.description.admin">"En esta sección, puede ver y agregar administradores para las áreas y subáreas que administra. Los administradores, en comparación con otros usuarios normales, pueden agregar artículos, que se mostrarán tanto en la aplicación móvil como en la web en todo el mundo. Además, puede ver a los usuarios que reciben notificaciones por correo electrónico sobre las actividades en sus áreas."</string>
     <string name="geo.description.superAdmin">"En esta sección, puede ver los administradores y usuarios. Puede agregar o eliminar administradores para áreas y subáreas. También puedes administrar los alias."</string>
-    <string name="user.geo.description">"Elija las áreas que le interesan. Defina las notificaciones por correo electrónico y su frecuencia, para que pueda mantenerse informado sobre los vertederos denunciados y limpiados en estas áreas. ¡Puede controlar tantas áreas como desee y cambiar la configuración de las notificaciones en cualquier momento!"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.description">"Elija las áreas que le interesan. Defina las notificaciones por correo electrónico y su frecuencia, para que pueda mantenerse informado sobre los vertederos denunciados y limpiados en estas áreas. ¡Puede controlar tantas áreas como desee y cambiar la configuración de las notificaciones en cualquier momento!"</string>
     <string name="geo.confirm.removeAdmin">"¿Desea eliminar el administrador del área?"</string>
     <string name="geo.confirm.removeManager">"¿Desea eliminar el administrador del área?"</string>
     <string name="geo.addAlias.description">"Puede crear alias ​​aquí. Preste atención. El proceso es irreversible. Por ejemplo, puede crear alias \"Czechia\" para la raíz República Checa. Después de eso, verá en las listas de áreas solo la raíz República Checa."</string>
@@ -1123,7 +1144,7 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="event.validation.endTimeRequired">"La hora de finalización es obligatoria"</string>
     <string name="news.videoUrl">"URL del vídeo"</string>
     <string name="global.addNext">"Agregar Siguiente"</string>
-    <string name="global.validation.sizeExceeded">"El tamaño de algunas imágenes supera el límite. Suba una imagen más pequeña (máximo 2 MB)."</string>
+    <string name="global.validation.sizeExceeded">"El tamaño de algunas imágenes supera el límite. Suba una imagen más pequeña (máximo 3 MB)."</string>
     <string name="global.image.mainImage">"Imagen principal"</string>
     <string name="global.image.setAsMain">"Establecer la imagen como principal"</string>
     <string name="news.validation.nameRequired">"Nombre obligatorio"</string>
@@ -1227,8 +1248,7 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="mail.eventCreate.subject">"TrashOut: información importante sobre el evento que ha creado"</string>
 
     <!-- note -->
-    <!-- Fuzzy -->
-    <string name="global.signUp.acceptRegister.startSentense">"Estoy de acuerdo con el procesamiento de mis datos personales. He leído y acepto"</string>
+    <string name="global.signUp.acceptRegister.startSentense">"Al continuar, usted acepta que TrashOut"</string>
     <string name="global.signUp.acceptRegister.privatePolicy">"La política de privacidad"</string>
 
     <!-- Fuzzy -->
@@ -1274,8 +1294,8 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="event.event_joinEventTitle">"Únete al evento"</string>
     <string name="home.orderTrashPickup">"Orden de recogida de residuos"</string>
     <string name="event.create_event_meeting_date_title">"Fecha de la reunión"</string>
-    <string name="notification_new_trash_formatter">"Cazas %d papeleras nuevas o actualizadas."</string>
-    <string name="about_version_date_formatted">"Versión de %s"</string>
+    <string name="notification_new_trash_formatter">"Cazas% d papeleras nuevas o actualizadas."</string>
+    <string name="about_version_date_formatted">"Versión de% s"</string>
     <string name="skip_btn">"OMITIR"</string>
     <string name="event.create.thankYou.sentence1">"Gracias por crear este evento."</string>
     <string name="event.create.thankYou.sentence2">"¡Usted es maravilloso!"</string>

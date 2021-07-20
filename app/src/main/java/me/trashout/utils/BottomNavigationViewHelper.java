@@ -27,9 +27,11 @@
 package me.trashout.utils;
 
 import android.annotation.SuppressLint;
-import android.support.design.internal.BottomNavigationItemView;
-import android.support.design.internal.BottomNavigationMenuView;
-import android.support.design.widget.BottomNavigationView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.google.android.material.bottomnavigation.LabelVisibilityMode;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import android.util.Log;
 
 import java.lang.reflect.Field;
@@ -37,6 +39,7 @@ import java.lang.reflect.Field;
 public class BottomNavigationViewHelper {
     private static final String TAG = BottomNavigationViewHelper.class.getSimpleName();
 
+    @SuppressLint("RestrictedApi")
     public static void disableShiftMode(BottomNavigationView view) {
         BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
         try {
@@ -46,7 +49,7 @@ public class BottomNavigationViewHelper {
             shiftingMode.setAccessible(false);
             for (int i = 0; i < menuView.getChildCount(); i++) {
                 BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
-                item.setShiftingMode(false);
+                item.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);;
                 // set once again checked value, so view will be updated
                 item.setChecked(item.getItemData().isChecked());
             }

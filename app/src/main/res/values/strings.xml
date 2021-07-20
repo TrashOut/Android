@@ -1295,6 +1295,7 @@ daily, weekly or monthly to stay informed about activities in the location you c
     <string name="global.occupation">"Occupation"</string>
     <string name="event.create.loginMessage">"You must be logged in to create an event"</string>
     <string name="trash.create.thankYou.title">"Thank you!"</string>
+    <string name="trash.create.thankYou.offline">"It seems you are offline. Do not worry! This report will upload automatically later once your phone is online again."</string>
     <string name="trash.create.thankYou.sentence1">"Thank you for your report!"</string>
     <string name="trash.create.thankYou.sentence2">"You are awesome!"</string>
     <string name="trash.create.thankYou.sentence3">"Do not forget to update dumps around you or join cleaning event."</string>
@@ -1447,6 +1448,9 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="organization.dumpsUpdated">"Updates"</string>
     <string name="organization.dumpsCleaned">"Dumps cleaned"</string>
 
+    <string name="trash.create.notification.title">"Trash was successfully reported"</string>
+    <string name="trash.create.notification.text">"Thank you for creating this trash. You are awesome!"</string>
+
 
     <!--MISSING STRINGS-->
     <string name="share_to" translatable="false">Share to…</string>
@@ -1491,6 +1495,7 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="push.notification.channel.trash" translatable="false">Trash</string>
     <string name="push.notification.channel.event" translatable="false">Event</string>
     <string name="push.notification.channel.news" translatable="false">News</string>
+    <string name="push.notification.channel.offline" translatable="false">Offline</string>
     <string name="push.notification.channel.default" translatable="false">Trashout</string>
 
 

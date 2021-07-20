@@ -72,7 +72,7 @@
 
 Вперед, определите местонахождение незаконной свалки, нажав кнопку «Отметить свалку»!"</string>
     <string name="info.header.aboutApp">"О приложении TrashOut"</string>
-    <string name="global.aboutProject">"TrashOut — это экологический проект, цель которого — определять местонахождение незаконных свалок по всему миру.
+    <string name="global.aboutProject">"TrashOut — это экологический проект, цель которого — определять местонахождение незаконных свалок по всему миру. 
 
 Наши усилия направлены на то, чтобы вовлекать в участие в проекте обычных людей, местные власти и организации. Так мы сможем изменить мир к лучшему и сделать его еще более прекрасным местом для жизни.
 
@@ -132,7 +132,7 @@
     <string name="user.bulk.changeRole">"Изменить роль"</string>
     <string name="profile.noInternetWhileRegister">"Ой, невозможно зарегистрироваться без доступа к Интернету.
 Восстановите подключение к сети и попробуйте снова."</string>
-    <string name="profile.noInternetWhileSignIn">"Ой, невозможно войти в систему без доступа к Интернету.
+    <string name="profile.noInternetWhileSignIn">"Ой, невозможно войти в систему без доступа к Интернету. 
 Восстановите подключение к сети и попробуйте снова."</string>
     <string name="profile.noName">"Имя не указано"</string>
     <string name="profile.resetPasswordInfoToMail">"Информация о том, как восстановить пароль, была отправлена на ваш адрес эл. почты"</string>
@@ -154,10 +154,9 @@
     <string name="trash.create.takeAtLeastOnePhoto">"сделайте по крайней мере одно фото"</string>
     <string name="trash.removeImage">"Удалить изображение"</string>
     <string name="trash.removeImageConfirm">"Удалить выбранное фото?"</string>
-    <string name="trash.create.noGps">"Старое местоположение по GPS! Включите обмен местоположениями. "</string>
     <string name="trash.create.noInternetHeader">"Вы не подключены к сети!"</string>
     <string name="trash.create.noInternetText">"Отчет об этой незаконной свалке будет отправлен позже, так ваш телефон не подключен в Интернету.
-
+ 
 Восстановите подключение к сети и запустите приложение TrashOut. Ваш отчет будет отправлен автоматически."</string>
     <string name="trash.create.sendWasInterruptedHeader">"Отправка была прервана."</string>
     <string name="trash.create.sendWasInterruptedText">"Не беспокойтесь, все изменения сохранены. Мы попытаемся повторить отправку отчета, как только вы снова включите приложение TrashOut."</string>
@@ -738,7 +737,9 @@
     <string name="global.accountCreated">"Была создана учетная запись"</string>
     <string name="global.activateAccount">"Откройте свой почтовый ящик, чтобы активировать учетную запись"</string>
     <string name="user.myProfile">"Мой профиль"</string>
-    <string name="user.addArea">"Добавить интересующие районы"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addArea">"Установить уведомления"</string>
     <string name="user.generateApiKey">"Создать ключ API"</string>
     <string name="user.aboutMe">"Обо мне"</string>
     <string name="trash.markedAsSpam.success">"Благодарим вас за актуальность нашей базы данных! Наши администраторы рассмотрят ваш отчет."</string>
@@ -748,7 +749,9 @@
     <string name="user.roles.superAdmin">"Главный администратор"</string>
     <string name="profile.myEvents">"Мои мероприятия"</string>
     <string name="organization.description">"Описание"</string>
-    <string name="user.geo.notificationFrequency">"Частота уведомлений"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency">"Частота уведомлений"</string>
     <string name="user.reviewed">"Проверенный пользователь"</string>
     <string name="user.created">"Учетная запись создана"</string>
     <string name="trash.create.successs">"Благодарим за то, что вы обновляете нашу базу данных и заботитесь о нашей среде."</string>
@@ -765,12 +768,24 @@
     <string name="collectionPoint.contact.header">"Контакты"</string>
     <string name="global.url.placeholder">"http://www.trashout.ngo"</string>
     <string name="collectionPoint.update.success">"Пункт переработки был успешно обновлен."</string>
-    <string name="user.editArea">"Редактировать интересуюший район"</string>
-    <string name="user.geo.notificationFrequency.perHour">"В час"</string>
-    <string name="user.geo.notificationFrequency.never">"Никогда"</string>
-    <string name="user.geo.notificationFrequency.perDay">"В день"</string>
-    <string name="user.geo.notificationFrequency.perWeek">"В неделю"</string>
-    <string name="user.geo.notificationFrequency.perMonth">"В месяц"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea">"Редактировать интересуюший район"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perHour">"В час"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.never">"Никогда"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perDay">"В день"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perWeek">"В неделю"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perMonth">"В месяц"</string>
     <string name="user.level">"Уровень"</string>
     <string name="geo.userAdd.success">"Пользователь был успешно добавлен."</string>
     <string name="geo.userDelete.success">"Район пользователя был успешно удален."</string>
@@ -849,7 +864,9 @@
     <string name="collectionPoint.category.other">"Другие отходы"</string>
     <string name="collectionPoint.category.everything">"Все"</string>
     <string name="collectionPoint.category">"Категория типа пункта переработки"</string>
-    <string name="user.editArea.success">"Район был успешно обновлен"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea.success">"Район был успешно обновлен"</string>
     <string name="user.roles.organization.manager">"Менеджер"</string>
     <string name="user.roles.organization">"Роль организации"</string>
     <string name="profile.changeEmail">"Сменить адрес эл. почты"</string>
@@ -1054,7 +1071,9 @@
     <string name="user.google.hint">"Подсказка Google+"</string>
     <string name="global.phone.hint">"Подсказка телефона"</string>
     <string name="profile.currentPassword">"Текущий пароль"</string>
-    <string name="user.addToArea.success">"Район успешно добавлен"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addToArea.success">"Район успешно добавлен"</string>
     <string name="collectionPoint.created.success">"Пункт переработки успешно создан"</string>
     <string name="collectionPoint.markedAsSpam.success">"Пункт переработки успешно отмечен как спам."</string>
     <string name="collectionPoint.removed.success">"Пункт переработки успешно удален"</string>
@@ -1103,7 +1122,9 @@
     <string name="notifications.user.approve.header">"Утвердить пользователя"</string>
     <string name="geo.description.admin">"В этом разделе вы можете просматривать и добавлять менеджеров для областей и районов, которыми вы управляете. Менеджеры, в отличие от обычных пользователей, могут добавлять статьи, которые будут отображаться как в мобильных, так и в веб-приложениях по всему миру. Кроме того, вы можете видеть пользователей, которые получают уведомления по электронной почте о деятельности в ваших районах."</string>
     <string name="geo.description.superAdmin">"В этом разделе вы можете просматривать администраторов, менеджеров и пользователей. Вы можете добавлять или удалять администраторов для областей и районов. Вы также можете управлять альтернативными названиями."</string>
-    <string name="user.geo.description">"Не стесняйтесь выбирать те районы, которые вам интересны. Настройте уведомления по электронной почте и их частоту, чтобы вы могли получать информацию об отмеченных и очищенных свалках в этих районах. Вы можете отслеживать столько районов, сколько пожелаете, и изменять настройки уведомлений в любое время!"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.description">"Не стесняйтесь выбирать те районы, которые вам интересны. Настройте уведомления по электронной почте и их частоту, чтобы вы могли получать информацию об отмеченных и очищенных свалках в этих районах. Вы можете отслеживать столько районов, сколько пожелаете, и изменять настройки уведомлений в любое время!"</string>
     <string name="geo.confirm.removeAdmin">"Вы хотите удалить администратора из района?"</string>
     <string name="geo.confirm.removeManager">"Вы хотите удалить менеджера из района?"</string>
     <string name="geo.addAlias.description">"Здесь вы можете создать альтернативное название. Будьте внимательны, этот процесс необратим. Например, вы можете создать альтернативное название «Чехия» для исходного названия «Чешская республика». После этого вы увидите в списках регионов только исходную Чешскую республику."</string>
@@ -1213,8 +1234,7 @@
     <string name="mail.eventCreate.subject">"TrashOut - важная информация о событии, которое вы создали"</string>
 
     <!-- note -->
-    <!-- Fuzzy -->
-    <string name="global.signUp.acceptRegister.startSentense">"Я согласен с обработкой моих личных данных. Я прочитал и принял"</string>
+    <string name="global.signUp.acceptRegister.startSentense">"Продолжая, вы соглашаетесь с тем, что TrashOut"</string>
     <string name="global.signUp.acceptRegister.privatePolicy">"политика конфиденциальности"</string>
 
     <!-- Fuzzy -->
@@ -1260,8 +1280,8 @@
     <string name="event.event_joinEventTitle">"Присоединяйтесь к событию"</string>
     <string name="home.orderTrashPickup">"Заказать вывоз мусора"</string>
     <string name="event.create_event_meeting_date_title">"Дата встречи"</string>
-    <string name="notification_new_trash_formatter">"Вы охотитесь на %d новых или обновленных корзин."</string>
-    <string name="about_version_date_formatted">"Версия от %s"</string>
+    <string name="notification_new_trash_formatter">"Вы охотитесь на% d новых или обновленных корзин."</string>
+    <string name="about_version_date_formatted">"Версия от% s"</string>
     <string name="skip_btn">"ПРОПУСКАТЬ"</string>
     <string name="event.create.thankYou.sentence1">"Спасибо за создание этого события"</string>
     <string name="event.create.thankYou.sentence2">"Ты обалденный!"</string>

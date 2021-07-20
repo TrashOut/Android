@@ -54,9 +54,13 @@ public class UpdateTrashService extends BaseService {
 
     private static List<ApiBaseRequest> mRequestList = new ArrayList<>();
 
-    public static void startForRequest(Context context, int requestId, long trashId, Trash trash, ArrayList<Uri> imagesUri) {
+    public static void startForRequest(Context context, int requestId, long trashId, Trash trash, ArrayList<Uri> imagesUri, boolean foreground) {
         ApiUpdateTrashRequest apiUpdateTrashRequest = new ApiUpdateTrashRequest(requestId, trashId, trash, imagesUri);
-        addRequest(context, UpdateTrashService.class, apiUpdateTrashRequest, mRequestList);
+        addRequest(context, UpdateTrashService.class, apiUpdateTrashRequest, mRequestList, foreground);
+    }
+
+    public static void startForRequest(Context context, int requestId, long trashId, Trash trash, ArrayList<Uri> imagesUri) {
+        startForRequest(context, requestId, trashId, trash, imagesUri, false);
     }
 
     @Override

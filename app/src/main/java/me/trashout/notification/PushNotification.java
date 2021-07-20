@@ -1,6 +1,6 @@
 package me.trashout.notification;
 
-import android.support.annotation.StringRes;
+import androidx.annotation.StringRes;
 
 import me.trashout.R;
 
@@ -8,6 +8,7 @@ public enum PushNotification {
     TRASH_DETAIL_NOTIFICATION("trash", "trash_id", 1337, PushNotificationChannel.TRASH_NOTIFICATION_CHANNEL),
     TRASH_EVENT_NOTIFICATION("event", "event_id", 1338, PushNotificationChannel.EVENT_NOTIFICATION_CHANNEL),
     TRASH_NEWS_NOTIFICATION("news", "news_id", 1339, PushNotificationChannel.NEWS_NOTIFICATION_CHANNEL),
+    TRASH_OFFLINE_NOTIFICATION("offline", "offline_id", 1340, PushNotificationChannel.NEWS_OFFLINE_CHANNEL),
     TRASH_DEFAULT_NOTIFICATION("default", "", 0, PushNotificationChannel.DEFAULT_NOTIFICATION_CHANNEL);
 
     private final String type;
@@ -54,6 +55,7 @@ public enum PushNotification {
         TRASH_NOTIFICATION_CHANNEL("TRASH_NOTIFICATION_CHANNEL", R.string.push_notification_channel_trash),
         EVENT_NOTIFICATION_CHANNEL("EVENT_NOTIFICATION_CHANNEL", R.string.push_notification_channel_event),
         NEWS_NOTIFICATION_CHANNEL("NEWS_NOTIFICATION_CHANNEL", R.string.push_notification_channel_news),
+        NEWS_OFFLINE_CHANNEL("NEWS_OFFLINE_CHANNEL", R.string.push_notification_channel_offline),
         DEFAULT_NOTIFICATION_CHANNEL("DEFAULT_NOTIFICATION_CHANNEL", R.string.push_notification_channel_default);
 
         private final String channelId;

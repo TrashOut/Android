@@ -2,9 +2,9 @@ package me.trashout.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatCheckBox;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatCheckBox;
 import android.text.Html;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
@@ -293,7 +293,7 @@ public class TutorialFragmentItem extends BaseFragment {
 
     private void getGetUserTokenAndUserdata(final boolean signUp, final String firtName, final String lastName, final String email, final String facebookToken) {
         if (auth.getCurrentUser() != null) {
-            auth.getCurrentUser().getToken(false).addOnCompleteListener(getActivity(), new OnCompleteListener<GetTokenResult>() {
+            auth.getCurrentUser().getIdToken(false).addOnCompleteListener(getActivity(), new OnCompleteListener<GetTokenResult>() {
                 @Override
                 public void onComplete(@NonNull Task<GetTokenResult> task) {
 

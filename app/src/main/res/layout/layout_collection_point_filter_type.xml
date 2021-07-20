@@ -17,7 +17,7 @@
         android:padding="5dp"
         android:text="@string/trash.types.domestic" />
 
-    <android.support.v7.widget.AppCompatCheckBox
+    <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/collection_point_filter_type_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

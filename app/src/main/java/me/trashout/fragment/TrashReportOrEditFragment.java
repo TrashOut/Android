@@ -38,19 +38,17 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.SwitchCompat;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.cardview.widget.CardView;
+import androidx.appcompat.widget.SwitchCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -59,6 +57,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -95,6 +94,7 @@ import me.trashout.service.base.BaseService;
 import me.trashout.ui.SelectableImageButton;
 import me.trashout.utils.GeocoderTask;
 import me.trashout.utils.GlideApp;
+import me.trashout.offline.OfflineTrashManager;
 import me.trashout.utils.PositionUtils;
 import me.trashout.utils.PreferencesHandler;
 import okhttp3.ResponseBody;
@@ -328,42 +328,6 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
         getLocation();
 
-        trashReportToolbar.inflateMenu(R.menu.menu_trash_edit);
-        trashReportToolbar.getMenu().findItem(R.id.action_send);
-        trashReportToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                if (item.getItemId() == R.id.action_send) {
-                    if (validateNewData()) {
-                        showProgressDialog();
-                        String note = !TextUtils.isEmpty(trashReportAdditionalInformationEdit.getText()) ? trashReportAdditionalInformationEdit.getText().toString() : "";
-                        if (getTrash() == null) {
-                            Gps gps = Gps.createGPSFromLatLng(mLastLocation);
-                            gps.setAccuracy((int) bestAccuracy);
-                            Trash newTrash = Trash.createNewTrash(gps, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            CreateTrashService.startForRequest(getContext(), CREATE_TRASH_REQUEST_ID, newTrash, photos);
-                        } else if (isTrashStillHere()) {
-                            Trash updateTrash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.STILL_HERE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), updateTrash, photos);
-                        } else if (isTrashMore()) {
-                            Trash updateTrash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.MORE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), updateTrash, photos);
-                        } else if (isTrashLess()) {
-                            Trash updateTrash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.LESS, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), updateTrash, photos);
-                        } else if (isTrashCleaned()) {
-                            Trash updateTrash = Trash.createCleanedUpdateTrash(getTrash().getId(), getTrash().getGps(), getTrash().getSize(), getTrash().getTypes(), getTrash().getAccessibility(), trashReportStatusCleanedByMeSwitch.isChecked(), note, trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), updateTrash, photos);
-                        } else {
-                            Trash updateTrash = Trash.createUpdateTrash(getTrash().getId(), getTrash().getGps(), note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
-                            UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), updateTrash, photos);
-                        }
-                    }
-                }
-                return false;
-            }
-        });
-
         setupData(getTrash(), isTrashCleaned(), isTrashStillHere(), isTrashMore(), isTrashLess());
 
         pager.setAdapter(new PhotoPagerAdapter(getContext()));
@@ -378,6 +342,43 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
 
         if (getTrash() == null) {
             startLocationUpdatesIfNeed();
+        }
+    }
+
+    @OnClick({R.id.trash_report_send})
+    public void onSendClick(View view) {
+        if (validateNewData()) {
+            showProgressDialog();
+            String note = !TextUtils.isEmpty(trashReportAdditionalInformationEdit.getText()) ? trashReportAdditionalInformationEdit.getText().toString() : "";
+            Trash trash;
+            if (getTrash() == null) {
+                Gps gps = Gps.createGPSFromLatLng(mLastLocation);
+                gps.setAccuracy((int) bestAccuracy);
+                trash = Trash.createNewTrash(gps, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+            } else if (isTrashStillHere()) {
+                trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.STILL_HERE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+            } else if (isTrashMore()) {
+                trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.MORE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+            } else if (isTrashLess()) {
+                trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.LESS, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+            } else if (isTrashCleaned()) {
+                trash = Trash.createCleanedUpdateTrash(getTrash().getId(), getTrash().getGps(), getTrash().getSize(), getTrash().getTypes(), getTrash().getAccessibility(), trashReportStatusCleanedByMeSwitch.isChecked(), note, trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+            } else {
+                trash = Trash.createUpdateTrash(getTrash().getId(), getTrash().getGps(), note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+            }
+
+            if (isNetworkAvailable()) {
+                if (getTrash() == null) {
+                    CreateTrashService.startForRequest(getContext(), CREATE_TRASH_REQUEST_ID, trash, photos);
+                } else {
+                    UpdateTrashService.startForRequest(getContext(), UPDATE_TRASH_REQUEST_ID, getTrash().getId(), trash, photos);
+                }
+            } else {
+                OfflineTrashManager offlineTrashManager = new OfflineTrashManager(getContext());
+                offlineTrashManager.add(trash, photos, getTrash() != null);
+                dismissProgressDialog();
+                getBaseActivity().replaceFragment(new ThankYouFragmentOfflineTrash(), false);
+            }
         }
     }
 

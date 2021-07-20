@@ -31,11 +31,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.NonNull;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -85,6 +85,7 @@ import me.trashout.fragment.base.ITrashFragment;
 import me.trashout.model.Organization;
 import me.trashout.notification.PushNotification;
 import me.trashout.notification.TrashoutFirebaseInstanceIdService;
+import me.trashout.offline.OfflineTrashManager;
 import me.trashout.utils.BottomNavigationViewHelper;
 import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.Utils;
@@ -187,6 +188,9 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         }
 
         onBackStackChanged();
+
+        OfflineTrashManager offlineTrashManager = new OfflineTrashManager(getApplicationContext());
+        offlineTrashManager.processAll();
     }
 
     /**
@@ -483,7 +487,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
     private void getGetUserTokenAndUserdata() {
         if (auth.getCurrentUser() != null) {
-            auth.getCurrentUser().getToken(false).addOnCompleteListener(this, new OnCompleteListener<GetTokenResult>() {
+            auth.getCurrentUser().getIdToken(false).addOnCompleteListener(this, new OnCompleteListener<GetTokenResult>() {
                 @Override
                 public void onComplete(@NonNull Task<GetTokenResult> task) {
 

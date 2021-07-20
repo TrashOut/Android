@@ -27,16 +27,21 @@
 
 package me.trashout.service.base;
 
+import android.app.Notification;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Binder;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -55,6 +60,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 import me.trashout.Configuration;
+import me.trashout.R;
 import me.trashout.api.ApiServer;
 import me.trashout.api.base.ApiBaseDataResult;
 import me.trashout.api.base.ApiBaseRequest;
@@ -69,6 +75,7 @@ import me.trashout.model.serialize.TrashSizeSerializer;
 import me.trashout.model.serialize.TrashStatusSerializer;
 import me.trashout.model.serialize.TrashTypeSerializer;
 import me.trashout.model.serialize.UserActivityTypeSerializer;
+import me.trashout.notification.PushNotification;
 import me.trashout.utils.DateTimeUtils;
 import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.Utils;
@@ -85,6 +92,8 @@ public abstract class BaseService extends Service {
 
     private static final int SOCKET_OPERATION_TIMEOUT = 60 * 1000;
     private static final int READ_CONNECTION_TIMEOUT = 30 * 1000;
+
+    private static final String EXTRA_FOREGROUND = "foreground";
 
     private final IBinder mBinder = new LocalBinder();
     private static Handler mHandler;
@@ -130,21 +139,51 @@ public abstract class BaseService extends Service {
                 final Image image = new Image();
                 image.setCreated(DateTimeUtils.TIMESTAMP_FORMAT.format(new Date()));
                 image.setFullStorageLocation(tempRef.toString());
-                image.setFullDownloadUrl(taskSnapshot.getDownloadUrl() != null ? taskSnapshot.getDownloadUrl().toString() : null);
 
-                try {
-                    byte[] thumbnailByteArray = Utils.resizeBitmap(BaseService.this, imagesToUpload.get(index), 150);
-                    final StorageReference tempRefThumbnail = ref.child(uuid + "_thumb");
-                    tempRefThumbnail.putBytes(thumbnailByteArray).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                if (taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null && taskSnapshot.getMetadata().getReference().getDownloadUrl() != null) {
+                    taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            image.setThumbStorageLocation(tempRefThumbnail.toString());
-                            image.setThumbDownloadUrl(taskSnapshot.getDownloadUrl() != null ? taskSnapshot.getDownloadUrl().toString() : null);
-                            images.add(image);
-                            if (index != imagesToUpload.size() - 1) {
-                                uploadImages(ref, imagesToUpload, index + 1, images, onImageUploadListener);
-                            } else {
-                                onImageUploadListener.onComplete(UploadStatus.SUCCESS, images);
+                        public void onSuccess(Uri uri) {
+                            String downloadUrl = uri.toString();
+                            image.setFullDownloadUrl(downloadUrl);
+
+                            try {
+                                byte[] thumbnailByteArray = Utils.resizeBitmap(BaseService.this, imagesToUpload.get(index), 150);
+                                final StorageReference tempRefThumbnail = ref.child(uuid + "_thumb");
+                                tempRefThumbnail.putBytes(thumbnailByteArray).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                        image.setThumbStorageLocation(tempRefThumbnail.toString());
+
+                                        if (taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null && taskSnapshot.getMetadata().getReference().getDownloadUrl() != null) {
+                                            taskSnapshot.getMetadata().getReference().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                @Override
+                                                public void onSuccess(Uri uri) {
+                                                    String downloadUrl = uri.toString();
+                                                    image.setThumbDownloadUrl(downloadUrl);
+                                                    images.add(image);
+                                                    if (index != imagesToUpload.size() - 1) {
+                                                        uploadImages(ref, imagesToUpload, index + 1, images, onImageUploadListener);
+                                                    } else {
+                                                        onImageUploadListener.onComplete(UploadStatus.SUCCESS, images);
+                                                    }
+                                                }
+                                            }).addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    onImageUploadListener.onComplete(UploadStatus.FAILED, null);
+                                                }
+                                            });
+                                        }
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        onImageUploadListener.onComplete(UploadStatus.FAILED, null);
+                                    }
+                                });
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
@@ -153,8 +192,6 @@ public abstract class BaseService extends Service {
                             onImageUploadListener.onComplete(UploadStatus.FAILED, null);
                         }
                     });
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -253,6 +290,22 @@ public abstract class BaseService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        // Android O+ fix (part 2 of 2) (https://www.programmersought.com/article/152032662/)
+        boolean foreground = intent.getBooleanExtra(EXTRA_FOREGROUND, false);
+        if (foreground && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Context context = getBaseContext();
+
+            PushNotification pushNotificationType = PushNotification.TRASH_OFFLINE_NOTIFICATION;
+            Notification notification = new NotificationCompat.Builder(context, pushNotificationType.getNotificationChannel().getChannelId())
+                    .setContentTitle(context.getString(R.string.app_name))
+                    .setSmallIcon(R.drawable.ic_trash_type_organic)
+                    .setColor(ContextCompat.getColor(context, R.color.colorPrimary))
+                    .setGroup(pushNotificationType.getNotificationChannel().getChannelId())
+                    .build();
+
+            startForeground(1, notification);
+        }
+
         this.intent = intent;
         Log.i("Service" + getServiceTAGSuffix(), "onStartCommand");
         startCommunicationProcess();
@@ -301,8 +354,9 @@ public abstract class BaseService extends Service {
      * @param clazz          Communication service class
      * @param apiBaseRequest Communication request
      * @param mRequestList   List of requests
+     * @param foreground     Run foreground service? (for Android O+)
      */
-    protected static synchronized void addRequest(Context context, Class<?> clazz, ApiBaseRequest apiBaseRequest, List<ApiBaseRequest> mRequestList) {
+    protected static synchronized void addRequest(Context context, Class<?> clazz, ApiBaseRequest apiBaseRequest, List<ApiBaseRequest> mRequestList, boolean foreground) {
         Log.d("BaseService", "startForRequest");
         if (context == null)
             return;
@@ -312,8 +366,26 @@ public abstract class BaseService extends Service {
         }
         mRequestList.add(apiBaseRequest);
 
-        //TODO: Jakub Brehuv android O
-        context.startService(new Intent(context, clazz));
+        // Android O+ fix (part 1 of 2) (https://www.programmersought.com/article/152032662/)
+        if (foreground && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Intent intent = new Intent(context, clazz);
+            intent.putExtra(EXTRA_FOREGROUND, true);
+            context.startForegroundService(intent);
+        } else {
+            context.startService(new Intent(context, clazz));
+        }
+    }
+
+    /**
+     * Add communication request
+     *
+     * @param context        Context
+     * @param clazz          Communication service class
+     * @param apiBaseRequest Communication request
+     * @param mRequestList   List of requests
+     */
+    protected static synchronized void addRequest(Context context, Class<?> clazz, ApiBaseRequest apiBaseRequest, List<ApiBaseRequest> mRequestList) {
+        addRequest(context, clazz, apiBaseRequest, mRequestList, false);
     }
 
     protected abstract List<ApiBaseRequest> getRequestList();

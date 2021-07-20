@@ -30,8 +30,8 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -156,7 +156,7 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
 
     private void getGetUserTokenAndUserdata() {
         if (auth.getCurrentUser() != null) {
-            auth.getCurrentUser().getToken(false).addOnCompleteListener(getActivity(), new OnCompleteListener<GetTokenResult>() {
+            auth.getCurrentUser().getIdToken(false).addOnCompleteListener(getActivity(), new OnCompleteListener<GetTokenResult>() {
                 @Override
                 public void onComplete(@NonNull Task<GetTokenResult> task) {
 
@@ -194,7 +194,11 @@ public class StartFragment extends BaseFragment implements BaseService.UpdateSer
     public void onNewResult(ApiResult apiResult) {
         if (isAdded()) {
             if (apiResult.getRequestId() == GET_USER_BY_FIREBASE_REQUEST_ID) {
-                if (apiResult.isValidResponse()) {
+                if (!isNetworkAvailable()) {
+                    dismissProgressDialog();
+                    ((StartActivity) getActivity()).startMainActivity();
+                    finish();
+                } else if (apiResult.isValidResponse()) {
                     dismissProgressDialog();
                     ApiGetUserResult apiGetUserResult = (ApiGetUserResult) apiResult.getResult();
                     Log.d(TAG, "onNewResult: User = " + apiGetUserResult.getUser());

@@ -27,7 +27,7 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/event.create.thankYou.sentence1"
+                android:contentDescription="@string/trash.create.thankYou.sentence1"
                 android:src="@drawable/thank_you_page_icon" />
 
             <TextView
@@ -36,48 +36,30 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/full_layout_padding"
                 android:gravity="center_horizontal"
-                android:text="@string/event.create.thankYou.sentence1"
+                android:text="@string/trash.create.thankYou.sentence1"
                 android:textSize="@dimen/text_size_large" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@string/event.create.thankYou.sentence2"
+                android:text="@string/trash.create.thankYou.sentence2"
                 android:textSize="@dimen/text_size_large" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/share_with_others_btn"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/full_layout_padding"
-                android:backgroundTint="@color/button_color_green_dark"
-                android:padding="@dimen/full_layout_padding"
-                android:text="@string/event.create.thankYou.shareTitle"
-                android:textAllCaps="true"
-                android:textColor="@color/text_color_white"
-                app:backgroundTint="@color/button_color_green_dark" />
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/go_to_event_detail_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/full_layout_padding"
-                android:backgroundTint="@color/button_color_green_dark"
-                android:padding="@dimen/full_layout_padding"
-                android:text="@string/event.create.thankYou.detail"
-                android:textAllCaps="true"
-                android:textColor="@color/text_color_white"
-                app:backgroundTint="@color/button_color_green_dark" />
-
+                android:layout_margin="@dimen/margin_48"
+                android:gravity="center_horizontal"
+                android:text="@string/trash.create.thankYou.offline"
+                android:textSize="@dimen/text_size_large" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:padding="@dimen/full_layout_padding"
-                android:text="@string/event.create.thankYou.sentence3"
+                android:text="@string/trash.create.thankYou.sentence3"
                 android:textSize="@dimen/text_size_normal" />
 
         </LinearLayout>

@@ -158,7 +158,6 @@ S'il vous plait ré-essayez une fois en ligne."</string>
     <string name="trash.create.takeAtLeastOnePhoto">"Prenez au moins une photo"</string>
     <string name="trash.removeImage">"Supprimer image"</string>
     <string name="trash.removeImageConfirm">"Voulez-vous supprimer la photo choisie ?"</string>
-    <string name="trash.create.noGps">"Ancienne localisation GPS ! Activez le partage de la localisation. "</string>
     <string name="trash.create.noInternetHeader">"Pas d'internet disponible !"</string>
     <string name="trash.create.noInternetText">"Ce signalement sera envoyée plus tard. Votre appareil est hors ligne.
 
@@ -743,7 +742,9 @@ Lorsque vous serez en ligne, lancez l'appli TrashOut et votre signalement sera e
     <string name="global.accountCreated">"Compte créé"</string>
     <string name="global.activateAccount">"Regardez vos mails pour activer votre compte"</string>
     <string name="user.myProfile">"Mon profil"</string>
-    <string name="user.addArea">"Ajouter un secteur d'intérêt"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addArea">"Définir des notifications"</string>
     <string name="user.generateApiKey">"Créer une clé API"</string>
     <string name="user.aboutMe">"A propos de moi"</string>
     <string name="trash.markedAsSpam.success">"Merci de garder notre base de données à jour ! Nos administrateurs vont examiner votre signalement."</string>
@@ -753,7 +754,9 @@ Lorsque vous serez en ligne, lancez l'appli TrashOut et votre signalement sera e
     <string name="user.roles.superAdmin">"SuperAdmin"</string>
     <string name="profile.myEvents">"Mes évènements"</string>
     <string name="organization.description">"Description"</string>
-    <string name="user.geo.notificationFrequency">"Fréquence de notification"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency">"Fréquence de notification"</string>
     <string name="user.reviewed">"Utilisateur validé"</string>
     <string name="user.created">"Compte créé"</string>
     <string name="trash.create.successs">"Merci de garder notre base de données à jour et de prendre soin de notre environnement."</string>
@@ -770,12 +773,24 @@ Lorsque vous serez en ligne, lancez l'appli TrashOut et votre signalement sera e
     <string name="collectionPoint.contact.header">"Contacts"</string>
     <string name="global.url.placeholder">"https://www.trashout.ngo"</string>
     <string name="collectionPoint.update.success">"Le point de collecte a été mis à jour avec succès."</string>
-    <string name="user.editArea">"Modifier secteur favori"</string>
-    <string name="user.geo.notificationFrequency.perHour">"Par heure"</string>
-    <string name="user.geo.notificationFrequency.never">"Jamais"</string>
-    <string name="user.geo.notificationFrequency.perDay">"Par jour"</string>
-    <string name="user.geo.notificationFrequency.perWeek">"Par semaine"</string>
-    <string name="user.geo.notificationFrequency.perMonth">"Par mois"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea">"Modifier secteur favori"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perHour">"Par heure"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.never">"Jamais"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perDay">"Par jour"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perWeek">"Par semaine"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.notificationFrequency.perMonth">"Par mois"</string>
     <string name="user.level">"Niveau"</string>
     <string name="geo.userAdd.success">"Utilisateur ajouté avec succès"</string>
     <string name="geo.userDelete.success">"Le role de l'utilisateur a été supprimé avec succès"</string>
@@ -853,7 +868,9 @@ Lorsque vous serez en ligne, lancez l'appli TrashOut et votre signalement sera e
     <string name="collectionPoint.category.other">"Autre"</string>
     <string name="collectionPoint.category.everything">"Tout venant"</string>
     <string name="collectionPoint.category">"Catégories de déchets acceptés"</string>
-    <string name="user.editArea.success">"Secteur mis à jour avec succès"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.editArea.success">"Secteur mis à jour avec succès"</string>
     <string name="user.roles.organization.manager">"Représentant"</string>
     <string name="user.roles.organization">"Objet de l'organisation"</string>
     <string name="profile.changeEmail">"Modifier mail"</string>
@@ -1060,7 +1077,9 @@ Lorsque vous serez en ligne, lancez l'appli TrashOut et votre signalement sera e
     <string name="user.google.hint">"Lien vers votre profil"</string>
     <string name="global.phone.hint">"Numéro de téléphone commençant par + / 00"</string>
     <string name="profile.currentPassword">"Mot de passe actuel"</string>
-    <string name="user.addToArea.success">"Secteur ajouté avec succès"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.addToArea.success">"Secteur ajouté avec succès"</string>
     <string name="collectionPoint.created.success">"Le point de collecte a été créé avec succès"</string>
     <string name="collectionPoint.markedAsSpam.success">"Le point de collecte a été signalé comme inapproprié."</string>
     <string name="collectionPoint.removed.success">"Le point de collecte a été supprimé avec succès"</string>
@@ -1109,7 +1128,9 @@ Lorsque vous serez en ligne, lancez l'appli TrashOut et votre signalement sera e
     <string name="notifications.user.approve.header">"Validation utilisateurs"</string>
     <string name="geo.description.admin">"Dans cette section vous pouvez voir et ajouter des représentants pour les secteurs et sous-secteurs que vous administrez. Les représentants contrairement aux utilisateurs peuvent rajouter des articles qui seront visibles sur le site et l'appli au niveau mondial. De plus, vous pouvez voir les utilisateurs qui reçoivent des notifications sur les activités sur vos secteurs."</string>
     <string name="geo.description.superAdmin">"Dans cette section vous pouvez voir les administrateurs, représentants et utilisateurs. Vous pouvez également ajouter ou supprimer des administrateurs pour des secteurs et sous-secteurs. Vous pouvez aussi gérer les Alias."</string>
-    <string name="user.geo.description">"Vous pouvez choisir les secteurs qui vous intéressent. Définissez des notifications par mail et leur fréquence. Vous pourrez ainsi rester informé à propos des décharges signalées et nettoyées sur ces secteurs. Vous pouvez suivre autant de zones que vous le souhaitez et changer vos préférences de notifications à tout moment."</string>
+
+    <!-- Fuzzy -->
+    <string name="global.geo.description">"Vous pouvez choisir les secteurs qui vous intéressent. Définissez des notifications par mail et leur fréquence. Vous pourrez ainsi rester informé à propos des décharges signalées et nettoyées sur ces secteurs. Vous pouvez suivre autant de zones que vous le souhaitez et changer vos préférences de notifications à tout moment."</string>
     <string name="geo.confirm.removeAdmin">"Voulez-vous supprimer l'administrateur du secteur ?"</string>
     <string name="geo.confirm.removeManager">"Voulez-vous supprimer le représentant du secteur ?"</string>
     <string name="geo.addAlias.description">"Vous pouvez créer des Alias ici. Mais soyez prudent c'est irréversible. Si par exemple vous créez un Alias \"Tchéquie\" pour la République tchèque, l'ensemble des secteurs seront regroupés sur la République tchèque."</string>
@@ -1118,7 +1139,7 @@ Lorsque vous serez en ligne, lancez l'appli TrashOut et votre signalement sera e
     <string name="event.validation.endTimeRequired">"Heure de fin requise"</string>
     <string name="news.videoUrl">"URL de la vidéo"</string>
     <string name="global.addNext">"Ajout suivant"</string>
-    <string name="global.validation.sizeExceeded">"La taille de certaines images est trop grande. La taille max est de 2MB"</string>
+    <string name="global.validation.sizeExceeded">"La taille de certaines images est trop grande. La taille max est de 3MB"</string>
     <string name="global.image.mainImage">"Image principale"</string>
     <string name="global.image.setAsMain">"Choisissez une image principale"</string>
     <string name="news.validation.nameRequired">"Nom requis"</string>
@@ -1219,7 +1240,7 @@ Notre but est d'impliquer les citoyens, gouvernements, autorités locales et org
     <string name="mail.eventCreate.subject">"TrashOut - informations importantes à propos de l'évènement que vous avez créé"</string>
 
     <!-- note -->
-    <string name="global.signUp.acceptRegister.startSentense">"J'accepte le traitement de mes données personnelles. J'ai lu et accepté"</string>
+    <string name="global.signUp.acceptRegister.startSentense">"En continuant, vous acceptez les conditions suivantes de TrashOut"</string>
     <string name="global.signUp.acceptRegister.privatePolicy">"Politique de confidentialité"</string>
     <string name="global.signUp.acceptRegister.and">"et"</string>
     <string name="global.signUp.acceptRegister.terms">"Conditions d'utilisation"</string>
