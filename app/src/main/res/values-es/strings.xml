@@ -1307,4 +1307,5 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="organization.dumpsReported">"Informes"</string>
     <string name="organization.dumpsUpdated">"Actualizaciones"</string>
     <string name="organization.dumpsCleaned">"Vertederos limpiados"</string>
+    <string name="trash.reportAs">Reporta como</string>
 </resources>

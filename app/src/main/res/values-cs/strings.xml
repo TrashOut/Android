@@ -1334,4 +1334,5 @@ později prostřednictvím stránky www.admin.trashout.ngo."</string>
     <string name="organization.dumpsReported">"Počet hlášení"</string>
     <string name="organization.dumpsUpdated">"Počet aktualizací"</string>
     <string name="organization.dumpsCleaned">"Vyčištěné skládky"</string>
+    <string name="trash.reportAs">Nahlásit jako</string>
 </resources>

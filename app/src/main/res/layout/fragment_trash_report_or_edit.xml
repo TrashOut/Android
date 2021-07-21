@@ -405,28 +405,21 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/trash_report_as"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/base_layout_padding"
-                android:padding="@dimen/base_layout_padding">
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginStart="@dimen/sides_margin"
+                android:padding="5dp"
+                android:text="@string/trash.reportAs"
+                android:textSize="@dimen/text_size_large" />
 
-                <androidx.appcompat.widget.SwitchCompat
-                    android:id="@+id/trash_report_send_anonymously_switch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@+id/trash_report_send_anonymously"
-                    android:layout_alignBottom="@+id/trash_report_send_anonymously"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true" />
-
-                <TextView
-                    android:id="@+id/trash_report_send_anonymously"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:text="@string/trash.sendAnonymously" />
-            </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/trash_report_send_as_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawSelectorOnTop="true" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/trash_report_send"

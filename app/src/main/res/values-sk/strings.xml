@@ -1314,4 +1314,5 @@ neskôr prostredníctvom stránky www.admin.trashout.ngo."</string>
     <string name="organization.dumpsReported">"Hlásenia"</string>
     <string name="organization.dumpsUpdated">"Aktualizácie"</string>
     <string name="organization.dumpsCleaned">"Vyčistené skládky"</string>
+    <string name="trash.reportAs">Nahlásiť ako</string>
 </resources>

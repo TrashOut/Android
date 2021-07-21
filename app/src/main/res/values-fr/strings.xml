@@ -1296,4 +1296,5 @@ Notre but est d'impliquer les citoyens, gouvernements, autorités locales et org
     <string name="organization.dumpsReported">"Rapports"</string>
     <string name="organization.dumpsUpdated">"Mises à jour"</string>
     <string name="organization.dumpsCleaned">"Décharges nettoyées"</string>
+    <string name="trash.reportAs">Rapporter comme</string>
 </resources>

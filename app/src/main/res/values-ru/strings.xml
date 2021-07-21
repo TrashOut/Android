@@ -1293,4 +1293,5 @@
     <string name="organization.dumpsReported">"Отчеты"</string>
     <string name="organization.dumpsUpdated">"Обновления"</string>
     <string name="organization.dumpsCleaned">"Отвалы убраны"</string>
+    <string name="trash.reportAs">Сообщить как</string>
 </resources>

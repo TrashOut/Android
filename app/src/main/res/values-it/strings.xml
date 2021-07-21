@@ -1318,4 +1318,5 @@ Il nostro obiettivo è coinvolgere cittadini, governi, comuni e organizzazioni i
     <string name="organization.dumpsReported">"Rapporti"</string>
     <string name="organization.dumpsUpdated">"aggiornamenti"</string>
     <string name="organization.dumpsCleaned">"Discariche pulite"</string>
+    <string name="trash.reportAs">Segnala come</string>
 </resources>

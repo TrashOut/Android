@@ -40,6 +40,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import androidx.appcompat.widget.AppCompatSpinner;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
@@ -51,6 +53,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -85,6 +89,7 @@ import me.trashout.fragment.base.ITrashFragment;
 import me.trashout.model.Accessibility;
 import me.trashout.model.Constants;
 import me.trashout.model.Gps;
+import me.trashout.model.Organization;
 import me.trashout.model.Trash;
 import me.trashout.model.TrashResponse;
 import me.trashout.model.User;
@@ -198,10 +203,8 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     TextView trashReportAdditionalInformation;
     @BindView(R.id.trash_report_additional_information_edit)
     EditText trashReportAdditionalInformationEdit;
-    @BindView(R.id.trash_report_send_anonymously_switch)
-    SwitchCompat trashReportSendAnonymouslySwitch;
-    @BindView(R.id.trash_report_send_anonymously)
-    TextView trashReportSendAnonymously;
+    @BindView(R.id.trash_report_send_as_spinner)
+    AppCompatSpinner trashReportAsSpinner;
     @BindView(R.id.trash_report_take_another_image)
     LinearLayout trashReportTakeAnotherImage;
     @BindView(R.id.trash_report_size_container)
@@ -247,6 +250,10 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
     private LocationManager locationManager;
     private LocationListener locationListener;
     private float bestAccuracy = 100;
+
+    private ArrayList<String> reportAsLabels = new ArrayList<>();
+    private ArrayList<Integer> reportAsIds = new ArrayList<>();
+    private Integer reportAsSelected = 0;
 
     public interface OnTrashChangedListener {
         void onTrashChanged();
@@ -326,6 +333,9 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         if (user == null)
             ((MainActivity) getActivity()).signInAnonymously();
 
+        // setup "Report as" spinner values
+        setupReportAsSpinner();
+
         getLocation();
 
         setupData(getTrash(), isTrashCleaned(), isTrashStillHere(), isTrashMore(), isTrashLess());
@@ -334,6 +344,41 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         pager.setPageMargin(getResources().getDimensionPixelOffset(R.dimen.photo_page_margin));
 
         return view;
+    }
+
+    private void setupReportAsSpinner() {
+        // report as current user
+        if (user != null && user.getEmail() != null) {
+            reportAsLabels.add(user.getFullName());
+            reportAsIds.add(0);
+        } else {
+            reportAsSelected = -1;
+        }
+
+        // report anonymously
+        reportAsLabels.add(getString(R.string.trash_anonymous));
+        reportAsIds.add(-1);
+
+        // report as organization
+        if (user != null) {
+            for (Organization organization : user.getOrganizations()) {
+                reportAsLabels.add(organization.getName());
+                reportAsIds.add(organization.getId());
+            }
+        }
+
+        // set adapter
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, reportAsLabels);
+        trashReportAsSpinner.setAdapter(adapter);
+        trashReportAsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                reportAsSelected = reportAsIds.get(i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {}
+        });
     }
 
     @Override
@@ -351,20 +396,21 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
             showProgressDialog();
             String note = !TextUtils.isEmpty(trashReportAdditionalInformationEdit.getText()) ? trashReportAdditionalInformationEdit.getText().toString() : "";
             Trash trash;
+            boolean sendAnonymously = reportAsSelected == -1;
             if (getTrash() == null) {
                 Gps gps = Gps.createGPSFromLatLng(mLastLocation);
                 gps.setAccuracy((int) bestAccuracy);
-                trash = Trash.createNewTrash(gps, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+                trash = Trash.createNewTrash(gps, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), sendAnonymously, user.getId(), reportAsSelected);
             } else if (isTrashStillHere()) {
-                trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.STILL_HERE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+                trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.STILL_HERE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), sendAnonymously, user.getId(), reportAsSelected);
             } else if (isTrashMore()) {
-                trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.MORE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+                trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.MORE, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), sendAnonymously, user.getId(), reportAsSelected);
             } else if (isTrashLess()) {
-                trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.LESS, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+                trash = Trash.createStillHereUpdateTrash(getTrash().getId(), getTrash().getGps(), Constants.TrashStatus.LESS, note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), sendAnonymously, user.getId(), reportAsSelected);
             } else if (isTrashCleaned()) {
-                trash = Trash.createCleanedUpdateTrash(getTrash().getId(), getTrash().getGps(), getTrash().getSize(), getTrash().getTypes(), getTrash().getAccessibility(), trashReportStatusCleanedByMeSwitch.isChecked(), note, trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+                trash = Trash.createCleanedUpdateTrash(getTrash().getId(), getTrash().getGps(), getTrash().getSize(), getTrash().getTypes(), getTrash().getAccessibility(), trashReportStatusCleanedByMeSwitch.isChecked(), note, sendAnonymously, user.getId(), reportAsSelected);
             } else {
-                trash = Trash.createUpdateTrash(getTrash().getId(), getTrash().getGps(), note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), trashReportSendAnonymouslySwitch.isChecked(), user.getId());
+                trash = Trash.createUpdateTrash(getTrash().getId(), getTrash().getGps(), note, getSelectedTrashSize(), getSelectedTrashType(), getAccessibility(), sendAnonymously, user.getId(), reportAsSelected);
             }
 
             if (isNetworkAvailable()) {

@@ -1389,4 +1389,6 @@ A existat o activitate nouă în &lt;a href=\"%s\"&gt; raportul privind depozitu
 
     <!-- Error message when GPS is turned off and we cannot get up to date location -->
     <string name="trash.create.noGps">"Locatie GPS veche! Porneste optiunea de GPS"</string>
+
+    <string name="trash.reportAs">Raportați ca</string>
 </resources>

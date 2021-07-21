@@ -71,6 +71,9 @@ public class Trash implements Parcelable, TrashMapItem {
     @SerializedName("organization")
     @Expose
     private Organization organization;
+    @SerializedName("organizationId")
+    @Expose
+    private int organizationId;
     @SerializedName("anonymous")
     @Expose
     private boolean anonymous;
@@ -105,7 +108,7 @@ public class Trash implements Parcelable, TrashMapItem {
     @Expose
     private long userId;
 
-    public static Trash createCleanedUpdateTrash(long trashId, Gps gps, Constants.TrashSize size, List<Constants.TrashType> types, Accessibility accessibility,  boolean cleanedByMe, String note, boolean anonymous, long userId) {
+    public static Trash createCleanedUpdateTrash(long trashId, Gps gps, Constants.TrashSize size, List<Constants.TrashType> types, Accessibility accessibility,  boolean cleanedByMe, String note, boolean anonymous, long userId, int organizationId) {
         Trash updatedTrash = new Trash();
         updatedTrash.setId(trashId);
         updatedTrash.setGps(gps);
@@ -117,10 +120,13 @@ public class Trash implements Parcelable, TrashMapItem {
         updatedTrash.setNote(note);
         updatedTrash.setAnonymous(anonymous);
         updatedTrash.setUserId(userId);
+        if (organizationId > 0) {
+            updatedTrash.setOrganizationId(organizationId);
+        }
         return updatedTrash;
     }
 
-    public static Trash createStillHereUpdateTrash(long trashId, Gps gps, Constants.TrashStatus status, String note, Constants.TrashSize size, List<Constants.TrashType> types, Accessibility accessibility, boolean anonymous, long userId) {
+    public static Trash createStillHereUpdateTrash(long trashId, Gps gps, Constants.TrashStatus status, String note, Constants.TrashSize size, List<Constants.TrashType> types, Accessibility accessibility, boolean anonymous, long userId, int organizationId) {
         Trash updatedTrash = new Trash();
         updatedTrash.setId(trashId);
         updatedTrash.setGps(gps);
@@ -131,10 +137,13 @@ public class Trash implements Parcelable, TrashMapItem {
         updatedTrash.setAccessibility(accessibility);
         updatedTrash.setAnonymous(anonymous);
         updatedTrash.setUserId(userId);
+        if (organizationId > 0) {
+            updatedTrash.setOrganizationId(organizationId);
+        }
         return updatedTrash;
     }
 
-    public static Trash createUpdateTrash(long trashId, Gps gps, String note, Constants.TrashSize size, List<Constants.TrashType> types, Accessibility accessibility, boolean anonymous, long userId) {
+    public static Trash createUpdateTrash(long trashId, Gps gps, String note, Constants.TrashSize size, List<Constants.TrashType> types, Accessibility accessibility, boolean anonymous, long userId, int organizationId) {
         Trash updatedTrash = new Trash();
         updatedTrash.setId(trashId);
         updatedTrash.setGps(gps);
@@ -144,10 +153,13 @@ public class Trash implements Parcelable, TrashMapItem {
         updatedTrash.setAccessibility(accessibility);
         updatedTrash.setAnonymous(anonymous);
         updatedTrash.setUserId(userId);
+        if (organizationId > 0) {
+            updatedTrash.setOrganizationId(organizationId);
+        }
         return updatedTrash;
     }
 
-    public static Trash createNewTrash(Gps gps, String note, Constants.TrashSize size, List<Constants.TrashType> types, Accessibility accessibility, boolean anonymous, long userId) {
+    public static Trash createNewTrash(Gps gps, String note, Constants.TrashSize size, List<Constants.TrashType> types, Accessibility accessibility, boolean anonymous, long userId, int organizationId) {
         Trash newTrash = new Trash();
         newTrash.setGps(gps);
         newTrash.setNote(note);
@@ -157,6 +169,9 @@ public class Trash implements Parcelable, TrashMapItem {
         newTrash.setAccessibility(accessibility);
         newTrash.setAnonymous(anonymous);
         newTrash.setUserId(userId);
+        if (organizationId > 0) {
+            newTrash.setOrganizationId(organizationId);
+        }
         return newTrash;
     }
 
@@ -282,6 +297,21 @@ public class Trash implements Parcelable, TrashMapItem {
      */
     public void setOrganization(Organization organization) {
         this.organization = organization;
+    }
+
+
+    /**
+     * @return The organization ID
+     */
+    public int getOrganizationId() {
+        return organizationId;
+    }
+
+    /**
+     * @param organizationId The organization ID
+     */
+    public void setOrganizationId(int organizationId) {
+        this.organizationId = organizationId;
     }
 
     /**
@@ -570,6 +600,7 @@ public class Trash implements Parcelable, TrashMapItem {
                 ", note='" + note + '\'' +
                 ", userInfo=" + userInfo +
                 ", organization=" + organization +
+                ", organizationId=" + organizationId +
                 ", anonymous=" + anonymous +
                 ", accessibility=" + accessibility +
                 ", status=" + status +

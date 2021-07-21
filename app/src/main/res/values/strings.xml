@@ -1450,6 +1450,7 @@ Our goal is to involve citizens, governments, municipalities and organizations s
 
     <string name="trash.create.notification.title">"Trash was successfully reported"</string>
     <string name="trash.create.notification.text">"Thank you for creating this trash. You are awesome!"</string>
+    <string name="trash.reportAs">Report as</string>
 
 
     <!--MISSING STRINGS-->

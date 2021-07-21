@@ -1285,4 +1285,5 @@ Célunk, hogy bevonjuk a polgárokat, a kormányokat, az önkormányzatokat és 
     <string name="organization.dumpsReported">"Jelentések"</string>
     <string name="organization.dumpsUpdated">"Frissítések"</string>
     <string name="organization.dumpsCleaned">"Megtiszított területek"</string>
+    <string name="trash.reportAs">Jelentés mint</string>
 </resources>
