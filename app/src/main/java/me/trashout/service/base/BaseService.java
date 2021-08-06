@@ -297,7 +297,7 @@ public abstract class BaseService extends Service {
 
             PushNotification pushNotificationType = PushNotification.TRASH_OFFLINE_NOTIFICATION;
             Notification notification = new NotificationCompat.Builder(context, pushNotificationType.getNotificationChannel().getChannelId())
-                    .setContentTitle(context.getString(R.string.app_name))
+                    .setContentTitle(context.getString(R.string.trash_offline_checking))
                     .setSmallIcon(R.drawable.ic_trash_type_organic)
                     .setColor(ContextCompat.getColor(context, R.color.colorPrimary))
                     .setGroup(pushNotificationType.getNotificationChannel().getChannelId())
