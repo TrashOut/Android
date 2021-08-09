@@ -1335,4 +1335,7 @@ později prostřednictvím stránky www.admin.trashout.ngo."</string>
     <string name="organization.dumpsUpdated">"Počet aktualizací"</string>
     <string name="organization.dumpsCleaned">"Vyčištěné skládky"</string>
     <string name="trash.reportAs">Nahlásit jako</string>
+    <string name="trash.create.notification.title">Hlášení skládek byly úspěšně nahrány</string>
+    <string name="trash.create.notification.text">Nahrávání hlášení skládek vytvořených v offline režimu bylo úspěšné. Děkujeme</string>
+    <string name="trash.offline.checking">Kontrolujeme nahlášené skládky během offline režimu</string>
 </resources>

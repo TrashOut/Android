@@ -1286,4 +1286,7 @@ Célunk, hogy bevonjuk a polgárokat, a kormányokat, az önkormányzatokat és 
     <string name="organization.dumpsUpdated">"Frissítések"</string>
     <string name="organization.dumpsCleaned">"Megtiszított területek"</string>
     <string name="trash.reportAs">Jelentés mint</string>
+    <string name="trash.create.notification.title">"A szemétjelentések sikeresen feltöltésre kerültek "</string>
+    <string name="trash.create.notification.text">Az offline módban létrehozott szemétjelentések feltöltése sikeres volt. Köszönöm.</string>
+    <string name="trash.offline.checking">Ellenőrzi a feltöltendő offline jelentések feltöltését</string>
 </resources>

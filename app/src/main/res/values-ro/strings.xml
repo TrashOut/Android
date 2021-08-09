@@ -1391,4 +1391,7 @@ A existat o activitate nouă în &lt;a href=\"%s\"&gt; raportul privind depozitu
     <string name="trash.create.noGps">"Locatie GPS veche! Porneste optiunea de GPS"</string>
 
     <string name="trash.reportAs">Raportați ca</string>
+    <string name="trash.create.notification.title">"Rapoartele de gunoi au fost încărcate cu succes "</string>
+    <string name="trash.create.notification.text">Încărcarea rapoartelor privind gunoiul pe care le-ați creat în modul offline a avut succes. Vă mulțumim</string>
+    <string name="trash.offline.checking">Verificarea tuturor rapoartelor offline care trebuie încărcate</string>
 </resources>

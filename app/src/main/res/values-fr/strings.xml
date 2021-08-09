@@ -1297,4 +1297,7 @@ Notre but est d'impliquer les citoyens, gouvernements, autorités locales et org
     <string name="organization.dumpsUpdated">"Mises à jour"</string>
     <string name="organization.dumpsCleaned">"Décharges nettoyées"</string>
     <string name="trash.reportAs">Rapporter comme</string>
+    <string name="trash.create.notification.title">"Les rapports sur les déchets ont été téléchargés avec succès "</string>
+    <string name="trash.create.notification.text">Le téléchargement des rapports sur les déchets que vous avez créés en mode hors ligne a réussi. Nous vous remercions</string>
+    <string name="trash.offline.checking">Vérification des rapports hors ligne à télécharger.</string>
 </resources>

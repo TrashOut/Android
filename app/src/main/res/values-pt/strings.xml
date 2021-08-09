@@ -1287,4 +1287,7 @@ Nosso objetivo é envolver cidadãos, governos, municípios e organizações par
     <string name="organization.dumpsUpdated">"Atualizações"</string>
     <string name="organization.dumpsCleaned">"Despejos limpos"</string>
     <string name="trash.reportAs">Relatar como</string>
+    <string name="trash.create.notification.title">"Os relatórios do lixo foram carregados com sucesso "</string>
+    <string name="trash.create.notification.text">O upload de relatórios de lixo que você criou no modo offline foi bem sucedido. Obrigado</string>
+    <string name="trash.offline.checking">Verificação de quaisquer relatórios offline a serem carregados</string>
 </resources>

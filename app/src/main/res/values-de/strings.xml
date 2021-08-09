@@ -1317,4 +1317,7 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="organization.dumpsReported">"Berichte"</string>
     <string name="organization.dumpsUpdated">"Aktualisierung"</string>
     <string name="organization.dumpsCleaned">"Dumps gereinigt"</string>
+    <string name="trash.create.notification.title">"Papierkorbberichte wurden erfolgreich hochgeladen "</string>
+    <string name="trash.create.notification.text">Der Upload von Müllberichten, die Sie im Offline-Modus erstellt haben, war erfolgreich. Dankeschön</string>
+    <string name="trash.offline.checking">Überprüfung, ob Offline-Berichte hochgeladen werden können</string>
 </resources>

@@ -1319,4 +1319,7 @@ Il nostro obiettivo è coinvolgere cittadini, governi, comuni e organizzazioni i
     <string name="organization.dumpsUpdated">"aggiornamenti"</string>
     <string name="organization.dumpsCleaned">"Discariche pulite"</string>
     <string name="trash.reportAs">Segnala come</string>
+    <string name="trash.create.notification.title">"I rapporti sul cestino sono stati caricati con successo "</string>
+    <string name="trash.create.notification.text">L\'upload dei rapporti spazzatura che hai creato in modalità offline è andato a buon fine. Grazie</string>
+    <string name="trash.offline.checking">Controllo di eventuali rapporti offline da caricare</string>
 </resources>

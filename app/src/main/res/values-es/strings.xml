@@ -1308,4 +1308,7 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="organization.dumpsUpdated">"Actualizaciones"</string>
     <string name="organization.dumpsCleaned">"Vertederos limpiados"</string>
     <string name="trash.reportAs">Reporta como</string>
+    <string name="trash.create.notification.title">"Los informes de la basura se han cargado con éxito "</string>
+    <string name="trash.create.notification.text">La carga de los informes de basura que creaste en el modo sin conexión fue exitosa. Gracias</string>
+    <string name="trash.offline.checking">Comprobación de los informes fuera de línea que deben cargarse</string>
 </resources>

@@ -1294,4 +1294,7 @@
     <string name="organization.dumpsUpdated">"Обновления"</string>
     <string name="organization.dumpsCleaned">"Отвалы убраны"</string>
     <string name="trash.reportAs">Сообщить как</string>
+    <string name="trash.create.notification.title">"Отчеты о мусоре были успешно загружены "</string>
+    <string name="trash.create.notification.text">Загрузка мусорных отчетов, созданных вами в автономном режиме, прошла успешно. Спасибо</string>
+    <string name="trash.offline.checking">Проверка загрузки любых автономных отчетов</string>
 </resources>
