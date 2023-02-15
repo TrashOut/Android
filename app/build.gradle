@@ -12,13 +12,13 @@ def getDateAsMillis() {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     defaultConfig {
         applicationId "me.trashout"
         minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 105
-        versionName "4.14.0"
+        targetSdkVersion 31
+        versionCode 106
+        versionName "4.14.1"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -112,7 +112,7 @@ dependencies {
     implementation 'ru.noties:markwon-view:1.0.1'
 
     // Jetpack Work manager
-    implementation "androidx.work:work-runtime:2.5.0"
+    implementation "androidx.work:work-runtime:2.7.1"
 
     api ('com.otaliastudios:cameraview:2.6.4') {
         exclude group: 'com.google.android.gms'

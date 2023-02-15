@@ -32,10 +32,10 @@
 
         <activity
             android:name=".activity.StartActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -114,12 +114,14 @@
         android:name="com.facebook.FacebookContentProvider"
         android:exported="false"/>
         -->
-        <service android:name=".notification.TrashoutFirebaseMessagingService">
+        <service android:name=".notification.TrashoutFirebaseMessagingService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".notification.TrashoutFirebaseInstanceIdService">
+        <service android:name=".notification.TrashoutFirebaseInstanceIdService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
