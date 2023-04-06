@@ -75,6 +75,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.auth.SignInMethodQueryResult;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.gson.Gson;
 
 import org.json.JSONObject;
@@ -805,6 +806,7 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.d(TAG, "signInWithCredential:onComplete:" + e.getMessage());
+                        FirebaseCrashlytics.getInstance().recordException(e);
 
                         dismissProgressDialog();
 

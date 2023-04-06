@@ -38,6 +38,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GetTokenResult;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.gson.Gson;
 
 import org.json.JSONObject;
@@ -219,6 +220,8 @@ public class TutorialFragmentItem extends BaseFragment {
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                FirebaseCrashlytics.getInstance().recordException(e);
+
                 dismissProgressDialog();
 
                 String exceptionMessage = getString(R.string.user_login_anonymous_linkError);

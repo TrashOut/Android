@@ -84,7 +84,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
     implementation 'com.google.android.gms:play-services-places:17.0.0'
-    implementation 'com.facebook.android:facebook-android-sdk:8.2.0'
+    implementation 'com.facebook.android:facebook-android-sdk:12.3.0'
     // Utils
     implementation 'com.firebaseui:firebase-ui:6.0.2'
     implementation 'com.jakewharton:butterknife:8.8.1'
