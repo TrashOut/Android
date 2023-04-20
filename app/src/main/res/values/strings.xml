@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">TrashOut</string>
-    <string name="facebook_app_id" translatable="false">933769097660259</string>
-    <string name="fb_login_protocol_scheme" translatable="false">fb933769097660259</string>
+    <string name="facebook_app_id" translatable="false">310706718951561</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb310706718951561</string>
 
     <string name="tab.profile">"Profile"</string>
     <string name="global.nearby">"Nearby"</string>
