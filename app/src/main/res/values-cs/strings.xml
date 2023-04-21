@@ -464,6 +464,7 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="trash.history">"Historie"</string>
     <string name="trash.created">"Skládka reportována"</string>
     <string name="global.facebookLogin">"Přihlásit se přes Facebook"</string>
+    <string name="global.googleLogin">Přihlásit se přes Google</string>
     <string name="global.login">"Přihlásit se   "</string>
     <string name="global.backToLogin">"Zpět na přihlášení"</string>
     <string name="notifications.header">"Oznámení"</string>

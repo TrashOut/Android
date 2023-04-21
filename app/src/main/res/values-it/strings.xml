@@ -445,6 +445,7 @@ Quando il tuo dispositivo tornerà onine accedi a TrashOut e il tuo report sarà
     <string name="trash.history">"Storia"</string>
     <string name="trash.created">"Segnalato"</string>
     <string name="global.facebookLogin">"Fai il login con Facebook"</string>
+    <string name="global.googleLogin">Accedi con Google</string>
     <string name="global.login">"Log in"</string>
     <string name="global.backToLogin">"Torna al login"</string>
     <string name="notifications.header">"Notifiche"</string>

@@ -454,6 +454,7 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="trash.history">"História"</string>
     <string name="trash.created">"Nahlásené"</string>
     <string name="global.facebookLogin">"Prihlásiť sa pomocou Facebook-u"</string>
+    <string name="global.googleLogin">Prihlásiť sa pomocou Google</string>
     <string name="global.login">"Prihlásiť sa"</string>
     <string name="global.backToLogin">"Späť k prihláseniu"</string>
     <string name="notifications.header">"Upozornenia"</string>

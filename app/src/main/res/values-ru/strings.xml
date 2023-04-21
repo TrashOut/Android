@@ -446,6 +446,7 @@
     <string name="trash.history">"История"</string>
     <string name="trash.created">"Отмечено"</string>
     <string name="global.facebookLogin">"Войти через Facebook"</string>
+    <string name="global.googleLogin">Войти через Google</string>
     <string name="global.login">"Войти в систему"</string>
     <string name="global.backToLogin">"Вернуться на страницу входа"</string>
     <string name="notifications.header">"Уведомления"</string>

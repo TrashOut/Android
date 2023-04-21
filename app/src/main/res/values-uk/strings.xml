@@ -434,6 +434,7 @@
     <string name="trash.history">"Історія"</string>
     <string name="trash.created">"Звітувати"</string>
     <string name="global.facebookLogin">"Увійдіть з фейсбука"</string>
+    <string name="global.googleLogin">Увійдіть за допомогою Google</string>
     <string name="global.login">"Увійдіть"</string>
     <string name="global.backToLogin">"Назад до входу"</string>
     <string name="notifications.header">"Повідомлення"</string>

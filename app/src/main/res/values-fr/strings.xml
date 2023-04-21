@@ -450,6 +450,7 @@ Lorsque vous serez en ligne, lancez l'appli TrashOut et votre signalement sera e
     <string name="trash.history">"Historique"</string>
     <string name="trash.created">"Signalement"</string>
     <string name="global.facebookLogin">"Connecter avec Facebook"</string>
+    <string name="global.googleLogin">Connectez-vous avec Google</string>
     <string name="global.login">"Connection"</string>
     <string name="global.backToLogin">"Retour à la page de connexion"</string>
     <string name="notifications.header">"Notifications"</string>

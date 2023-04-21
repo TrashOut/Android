@@ -468,6 +468,7 @@ hârtie bituminoasă
     <string name="trash.history">"Istoric"</string>
     <string name="trash.created">"Raportat"</string>
     <string name="global.facebookLogin">"Înregistrează-te utilizând Facebook"</string>
+    <string name="global.googleLogin">Conectați-vă cu Google</string>
     <string name="global.login">"Logare"</string>
     <string name="global.backToLogin">"Inapoi la logare"</string>
     <string name="notifications.header">"Notificari"</string>

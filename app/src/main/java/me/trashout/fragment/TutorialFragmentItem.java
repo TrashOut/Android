@@ -25,6 +25,11 @@ import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.firebase.ui.auth.util.data.TaskFailureLogger;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -38,6 +43,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GetTokenResult;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.gson.Gson;
 
@@ -56,6 +62,7 @@ import me.trashout.activity.base.BaseActivity;
 import me.trashout.fragment.base.BaseFragment;
 import me.trashout.model.FacebookProfile;
 import me.trashout.model.User;
+import me.trashout.service.CreateUserService;
 import me.trashout.service.GetUserByFirebaseTokenService;
 import me.trashout.service.UpdateUserService;
 import me.trashout.utils.PreferencesHandler;
@@ -79,6 +86,9 @@ public class TutorialFragmentItem extends BaseFragment {
     public static final int TUTORIAL_PAGE_3 = 3;
     public static final int TUTORIAL_PAGE_4 = 4;
     public static final int TUTORIAL_PAGE_5 = 5;
+
+    private static final int RC_SIGN_IN = 906;
+    private static final int CREATE_USER_REQUEST_ID = 903;
 
     @BindView(R.id.imageView)
     ImageView imageView;
@@ -112,6 +122,8 @@ public class TutorialFragmentItem extends BaseFragment {
     private User user;
     private int page;
 
+    private GoogleSignInClient mGoogleSignInClient;
+
     public static TutorialFragmentItem newInstance(int page) {
 
         Bundle args = new Bundle();
@@ -136,6 +148,13 @@ public class TutorialFragmentItem extends BaseFragment {
         readBundle(getArguments());
         auth = FirebaseAuth.getInstance();
         user = PreferencesHandler.getUserData(getContext());
+
+        // For Google Login
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.google_login_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(getContext(), gso);
 
         return view;
     }
@@ -375,6 +394,16 @@ public class TutorialFragmentItem extends BaseFragment {
         LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email"));
     }
 
+    @OnClick(R.id.sign_up_google_btn)
+    public void clickOnSignUpGoogle() {
+        if (!handleTermsAndPolicyAgreement()) return;
+
+        tutorialCompleted();
+
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
     private boolean handleTermsAndPolicyAgreement() {
         if (!acceptTermsAndPolicyCheckBox.isChecked()) {
             acceptTermsAndPolicyCheckBox.setError("");
@@ -386,7 +415,57 @@ public class TutorialFragmentItem extends BaseFragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        callbackManager.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from Google login
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                firebaseAuthWithGoogle(account);
+            } catch (ApiException e) {
+                // Google Sign In failed
+                Log.w(TAG, "Google sign in failed", e);
+                showToast(getString(R.string.user_login_getToken));
+            }
+        } else {
+            // Result returned from Facebook Login
+            callbackManager.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        auth.signInWithCredential(credential)
+                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success
+                            Log.d(TAG, "signInWithCredential:success");
+                            showToast(getString(R.string.user_login_success));
+
+                            User newUser = new User();
+                            FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                            if (firebaseUser != null) {
+                                newUser.setFirstName(firebaseUser.getDisplayName());
+                                newUser.setEmail(firebaseUser.getEmail());
+                                newUser.setUid(firebaseUser.getUid());
+                            }
+
+                            CreateUserService.startForRequest(getActivity(), CREATE_USER_REQUEST_ID, newUser); // Create user in API
+
+                            PreferencesHandler.setUserData(getContext(), newUser);
+
+                            startActivity(new Intent(getContext(), StartActivity.class));
+                            finish();
+                        } else {
+                            // Sign in failed
+                            Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            showToast(getString(R.string.user_login_getToken));
+                        }
+                    }
+                });
     }
 
     @OnClick(R.id.sign_up_btn)

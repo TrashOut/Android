@@ -445,6 +445,7 @@ Bitte komm zurück, wenn du wieder online bist."</string>
     <string name="trash.history">"Verlauf"</string>
     <string name="trash.created">"Gemeldet"</string>
     <string name="global.facebookLogin">"Via Facebook einloggen"</string>
+    <string name="global.googleLogin">Melden Sie sich mit Google an</string>
     <string name="global.login">"Anmelden"</string>
     <string name="global.backToLogin">"Zurück zur Anmeldung"</string>
     <string name="notifications.header">"Benachrichtigungen"</string>

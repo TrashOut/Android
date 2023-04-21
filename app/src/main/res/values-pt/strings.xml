@@ -447,6 +447,7 @@ Ao ficar on-line, ative o aplicativo TrashOut e seu relatório será enviado aut
     <string name="trash.history">"História"</string>
     <string name="trash.created">"Relatado"</string>
     <string name="global.facebookLogin">"Entrar com o Facebook"</string>
+    <string name="global.googleLogin">Entrar com o Google</string>
     <string name="global.login">"Conecte-se"</string>
     <string name="global.backToLogin">"Volte ao login"</string>
     <string name="notifications.header">"Notificações"</string>

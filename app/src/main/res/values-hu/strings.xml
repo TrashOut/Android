@@ -447,6 +447,7 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="trash.history">"Történet"</string>
     <string name="trash.created">"Bejelentett"</string>
     <string name="global.facebookLogin">"Jelentkezzen be Facebookkal!"</string>
+    <string name="global.googleLogin">Jelentkezzen be a Google-lal</string>
     <string name="global.login">"Bejelentkezés"</string>
     <string name="global.backToLogin">"Vissza a bejelentkezéshez"</string>
     <string name="notifications.header">"Értesítések"</string>

@@ -30,6 +30,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -73,6 +79,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GetTokenResult;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.SignInMethodQueryResult;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
@@ -112,9 +119,11 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
     private static final int GET_USER_BY_FIREBASE_AFTER_LOGIN_REQUEST_ID = 901;
     private static final int GET_USER_BY_FIREBASE_AFTER_SIGN_UP_REQUEST_ID = 902;
-    private static final int GET_USER_BY_FIREBASE_AFTER_LINKING_ACCOUNT_REQUEST_ID = 903;
+    private static final int GET_USER_BY_FIREBASE_AFTER_LINKING_ACCOUNT_REQUEST_ID = 900;
     private static final int CREATE_USER_REQUEST_ID = 903;
     private static final int UPDATE_USER_REQUEST_ID = 904;
+    private static final int RC_SIGN_IN = 906;
+    private static final int CREATE_USER_REQUEST_ID_GOOGLE = 907;
 
     public static final String EXTRA_SELECTED_TAB = "EXTRA_SELECTED_TAB";
 
@@ -177,12 +186,21 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
     private int preSelectedTab = -1;
 
+    private GoogleSignInClient mGoogleSignInClient;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         callbackManager = CallbackManager.Factory.create();
 
         if (getArguments() != null) preSelectedTab = getArguments().getInt(EXTRA_SELECTED_TAB, -1);
+
+        // For Google Login
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.google_login_web_client_id))
+            .requestEmail()
+            .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(getContext(), gso);
     }
 
     @Override
@@ -281,6 +299,20 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
                 });
 
         LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "email"));
+    }
+
+    @OnClick({R.id.login_google_btn, R.id.sign_up_google_btn})
+    public void onGoogleLoginClick(View view) {
+        if (view.getId() == R.id.sign_up_google_btn) {
+            resetLayoutError();
+            if (!signUpAccpetUserDataCollectionCheckBox.isChecked()) {
+                signUpAccpetUserDataCollectionCheckBox.setError("");
+                return;
+            }
+        }
+
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
     @OnClick(R.id.login_forgot_password)
@@ -450,7 +482,55 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        callbackManager.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from Google login
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                firebaseAuthWithGoogle(account);
+            } catch (ApiException e) {
+                // Google Sign In failed
+                Log.w(TAG, "Google sign in failed", e);
+                showToast(getString(R.string.user_login_getToken));
+            }
+        } else {
+            // Result returned from Facebook Login
+            callbackManager.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        // Sign in success
+                        Log.d(TAG, "signInWithCredential:success");
+                        showToast(getString(R.string.user_login_success));
+
+                        User newUser = new User();
+                        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                        if (firebaseUser != null) {
+                            newUser.setFirstName(firebaseUser.getDisplayName());
+                            newUser.setEmail(firebaseUser.getEmail());
+                            newUser.setUid(firebaseUser.getUid());
+                        }
+
+                        CreateUserService.startForRequest(getActivity(), CREATE_USER_REQUEST_ID_GOOGLE, newUser); // Create user in API
+
+                        PreferencesHandler.setUserData(getContext(), newUser);
+                        goToMainActivity();
+                    } else {
+                        // Sign in failed
+                        Log.w(TAG, "signInWithCredential:failure", task.getException());
+                        showToast(getString(R.string.user_login_getToken));
+                    }
+                }
+            });
     }
 
     class LoginOrSignUpPagerAdapter extends PagerAdapter {
@@ -574,6 +654,8 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
             } else {
                 showToast(R.string.user_login_create_error);
             }
+        } else if (apiResult.getRequestId() == CREATE_USER_REQUEST_ID_GOOGLE) {
+            dismissProgressDialog();
         } else if (apiResult.getRequestId() == UPDATE_USER_REQUEST_ID) {
 
             if (apiResult.isValidResponse()) {

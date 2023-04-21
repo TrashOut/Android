@@ -448,6 +448,7 @@
     <string name="trash.history">"ისტორია"</string>
     <string name="trash.created">"დარეპორტებული"</string>
     <string name="global.facebookLogin">"ფეისბუქზე შესვლა"</string>
+    <string name="global.googleLogin">შედით Google-ით</string>
     <string name="global.login">"შესვლა"</string>
     <string name="global.backToLogin">"უკან"</string>
     <string name="notifications.header">"შეტყობინება"</string>

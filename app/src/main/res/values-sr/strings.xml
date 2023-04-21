@@ -449,6 +449,7 @@
     <string name="trash.history">"Историја"</string>
     <string name="trash.created">"Пријављено"</string>
     <string name="global.facebookLogin">"Пријави се Фејсбуком"</string>
+    <string name="global.googleLogin">Пријавите се са Гоогле-ом</string>
     <string name="global.login">"Улогуј се"</string>
     <string name="global.backToLogin">"Повратак на пријаву"</string>
     <string name="notifications.header">"Обавештења"</string>

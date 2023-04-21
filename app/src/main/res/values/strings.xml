@@ -3,6 +3,7 @@
     <string name="app_name" translatable="false">TrashOut</string>
     <string name="facebook_app_id" translatable="false">310706718951561</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb310706718951561</string>
+    <string name="google_login_web_client_id" translatable="false">584020156812-e98hrolahsaktesbestise2d68oonq3o.apps.googleusercontent.com</string>
 
     <string name="tab.profile">"Profile"</string>
     <string name="global.nearby">"Nearby"</string>
@@ -470,6 +471,7 @@ When you get online please turn on TrashOut app and your report will be submitte
     <string name="trash.history">"History"</string>
     <string name="trash.created">"Reported"</string>
     <string name="global.facebookLogin">"Log in with Facebook"</string>
+    <string name="global.googleLogin">"Log in with Google"</string>
     <string name="global.login">"Log in"</string>
     <string name="global.backToLogin">"Back to login"</string>
     <string name="notifications.header">"Notifications"</string>

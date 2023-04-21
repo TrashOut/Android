@@ -454,6 +454,7 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="trash.history">"Historial"</string>
     <string name="trash.created">"Denunciado"</string>
     <string name="global.facebookLogin">"Iniciar sesión con Facebook"</string>
+    <string name="global.googleLogin">Iniciar sesión con Google</string>
     <string name="global.login">"Iniciar sesión"</string>
     <string name="global.backToLogin">"Volver atrás para iniciar sesión"</string>
     <string name="notifications.header">"Notificaciones"</string>
