@@ -24,7 +24,8 @@
             android:paddingLeft="10dp"
             android:text="Comment name"
             android:layout_toRightOf="@id/trash_comment_icon"
-            android:layout_toLeftOf="@id/trash_comment_date" />
+            android:layout_toLeftOf="@id/trash_comment_date"
+            android:layout_centerInParent="true" />
 
         <TextView
             android:id="@+id/trash_comment_date"
@@ -46,8 +47,7 @@
         android:padding="3dp"
         android:layout_marginBottom="-35dp"
         android:text="Comment body"
-        android:textColor="@color/text_color_grey"
-        android:textSize="@dimen/text_size_small" />
+        android:textSize="@dimen/text_size_normal" />
 
 
 </LinearLayout>
