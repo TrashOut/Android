@@ -81,6 +81,7 @@ import me.trashout.api.base.ApiUpdate;
 import me.trashout.api.result.ApiGetTrashDetailResult;
 import me.trashout.fragment.base.BaseFragment;
 import me.trashout.fragment.base.ITrashFragment;
+import me.trashout.model.Comment;
 import me.trashout.model.Constants;
 import me.trashout.model.Event;
 import me.trashout.model.Image;
@@ -102,6 +103,7 @@ import me.trashout.utils.PreferencesHandler;
 import me.trashout.utils.Utils;
 import me.trashout.utils.ViewUtils;
 import pub.devrel.easypermissions.EasyPermissions;
+import ru.noties.markwon.Markwon;
 
 public class TrashDetailFragment extends BaseFragment implements BaseService.UpdateServiceListener, ITrashFragment, EventCreateFragment.OnCreateEventListener {
 
@@ -194,6 +196,10 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
     CardView trashDetailEventCardView;
     @BindView(R.id.trash_detail_type_container)
     FlexboxLayout trashDetailTypeContainerFlexbox;
+    @BindView(R.id.trash_detail_comments)
+    LinearLayout trashDetailComments;
+    @BindView(R.id.trash_detail_comments_container)
+    LinearLayout trashDetailCommentsContainer;
 
     private Long mTrashId;
     private Trash mTrash;
@@ -424,6 +430,48 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
             trashDetailEventCardView.setVisibility(View.GONE);
             trashDetailNoEvent.setVisibility(View.VISIBLE);
         }
+
+        // Showing latest comments
+        if (trash.getComments() != null && !trash.getComments().isEmpty()) {
+            int showedComments = 0;
+            for (Comment comment : trash.getComments()) {
+                if (++showedComments > 3)
+                    break;
+
+                if (trashDetailCommentsContainer.getChildCount() > 0)
+                    trashDetailCommentsContainer.addView(ViewUtils.getDividerView(getContext()));
+
+                trashDetailCommentsContainer.addView(getTrashCommentView(comment));
+            }
+        } else {
+            trashDetailComments.setVisibility(View.GONE);
+        }
+    }
+
+    /**
+     * Create and return Comment view
+     *
+     * @param comment
+     * @return
+     */
+    private View getTrashCommentView(final Comment comment) {
+        View trashCommentView = inflater.inflate(R.layout.layout_trash_comment, null);
+
+        TextView trashCommentBody = trashCommentView.findViewById(R.id.trash_comment_body);
+        TextView trashCommentName = trashCommentView.findViewById(R.id.trash_comment_name);
+        TextView trashCommentDate = trashCommentView.findViewById(R.id.trash_comment_date);
+
+        Markwon.setMarkdown(trashCommentBody, comment.getBody().trim());
+
+        trashCommentDate.setText(DateTimeUtils.DATE_FORMAT.format(comment.getCreated()));
+
+        if (comment.getUser() != null) {
+            trashCommentName.setText(comment.getUser().getFullName());
+        } else if (comment.getOrganization() != null) {
+            trashCommentName.setText(comment.getOrganization().getName());
+        }
+
+        return trashCommentView;
     }
 
     /**
@@ -775,7 +823,7 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
 
     }
 
-    @OnClick({R.id.trash_detail_cleaned_btn, R.id.trash_detail_still_here_btn, R.id.trash_detail_more_btn, R.id.trash_detail_less_btn, R.id.trash_detail_direction_btn, R.id.trash_detail_create_event_btn, R.id.trash_detail_send_notification_btn, R.id.trash_detail_report_as_spam_btn, R.id.trash_detail_edit_fab, R.id.trash_detail_image})
+    @OnClick({R.id.trash_detail_cleaned_btn, R.id.trash_detail_still_here_btn, R.id.trash_detail_more_btn, R.id.trash_detail_less_btn, R.id.trash_detail_direction_btn, R.id.trash_detail_create_event_btn, R.id.trash_detail_send_notification_btn, R.id.trash_detail_report_as_spam_btn, R.id.trash_detail_edit_fab, R.id.trash_detail_image, R.id.trash_detail_create_comment_btn})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.trash_detail_cleaned_btn:
@@ -840,6 +888,25 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
                 if (mTrash != null && mTrash.getImages() != null && !mTrash.getImages().isEmpty()) {
                     PhotoFullscreenFragment photoFullscreenFragment = PhotoFullscreenFragment.newInstance(mImages, 0);
                     getBaseActivity().replaceFragment(photoFullscreenFragment);
+                }
+                break;
+            case R.id.trash_detail_create_comment_btn:
+                if (mTrash != null) {
+                    MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
+                            .title(R.string.global_validation_warning)
+                            .content(R.string.comment_createModalDesciption)
+                            .positiveText(android.R.string.yes)
+                            .negativeText(android.R.string.cancel)
+                            .autoDismiss(true)
+                            .onPositive(new MaterialDialog.SingleButtonCallback() {
+                                @Override
+                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                    Utils.browseUrl(getActivity(), Constants.CREATE_TRASH_COMMENT + mTrash.getId() + "?" + Constants.UTM_SOURCE);
+                                }
+                            })
+                            .build();
+
+                    dialog.show();
                 }
                 break;
         }

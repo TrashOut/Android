@@ -101,6 +101,9 @@ public class Trash implements Parcelable, TrashMapItem {
     @SerializedName("events")
     @Expose
     private List<Event> events = new ArrayList<Event>();
+    @SerializedName("comments")
+    @Expose
+    private List<Comment> comments = new ArrayList<Comment>();
     @SerializedName("updateNeeded")
     @Expose
     private int updateNeeded;
@@ -449,6 +452,20 @@ public class Trash implements Parcelable, TrashMapItem {
     }
 
     /**
+     * @return The comments
+     */
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    /**
+     * @param comments The comments
+     */
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    /**
      * @return The updateNeeded
      */
 
@@ -545,6 +562,7 @@ public class Trash implements Parcelable, TrashMapItem {
         dest.writeTypedList(this.updateHistory);
         dest.writeString(this.url);
         dest.writeTypedList(this.events);
+        dest.writeTypedList(this.comments);
         dest.writeInt(this.updateNeeded);
         dest.writeLong(this.userId);
     }
@@ -572,6 +590,7 @@ public class Trash implements Parcelable, TrashMapItem {
         this.updateHistory = in.createTypedArrayList(UpdateHistory.CREATOR);
         this.url = in.readString();
         this.events = in.createTypedArrayList(Event.CREATOR);
+        this.comments = in.createTypedArrayList(Comment.CREATOR);
         this.updateNeeded = in.readInt();
         this.userId = in.readLong();
     }
@@ -610,6 +629,7 @@ public class Trash implements Parcelable, TrashMapItem {
                 ", updateHistory=" + updateHistory +
                 ", url='" + url + '\'' +
                 ", events=" + events +
+                ", comments=" + comments +
                 ", updateNeeded=" + updateNeeded +
                 ", userId=" + userId +
                 '}';

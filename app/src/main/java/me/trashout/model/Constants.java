@@ -83,6 +83,8 @@ public class Constants {
     public static String ADD_RECYCLING_POINT = "https://admin.trashout.ngo/collection-points/create/ ";
     public static String EDIT_RECYCLING_POINT = "https://admin.trashout.ngo/collection-points/update/";
     public static String EDIT_EVENT = "https://admin.trashout.ngo/events/detail/";
+    public static String CREATE_TRASH_COMMENT = "https://admin.trashout.ngo/trash-management/comment-create/";
+    public static String UTM_SOURCE = "utm_source=android_app";
 
 
     public enum TrashSize {

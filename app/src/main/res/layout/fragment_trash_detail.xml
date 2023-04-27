@@ -360,6 +360,53 @@
                     android:text="Unique and rare dress from 1952. Made out of cotton with front pockets, Sleeveless with button closures."
                     android:textSize="@dimen/text_size_normal" />
 
+                <LinearLayout
+                    android:id="@+id/trash_detail_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/trash_detail_comments_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/sides_margin"
+                        android:layout_marginStart="@dimen/sides_margin"
+                        android:layout_marginTop="8dp"
+                        android:padding="5dp"
+                        android:text="@string/comment.lastComments"
+                        android:textSize="@dimen/text_size_large" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/trash_detail_comments_card_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="4dp">
+
+                        <LinearLayout
+                            android:id="@+id/trash_detail_comments_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/trash_detail_create_comment_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/sides_margin"
+                    android:layout_marginRight="@dimen/sides_margin"
+                    android:layout_marginTop="@dimen/sides_margin"
+                    android:backgroundTint="@color/button_color_green"
+                    android:text="@string/comment.create"
+                    android:textColor="@color/text_color_white"
+                    app:backgroundTint="@color/button_color_green" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

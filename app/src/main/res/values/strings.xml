@@ -190,6 +190,9 @@ When you get online please turn on TrashOut app and your report will be submitte
     <string name="trash.create.success">"Trash was successfully reported. Thank you."</string>
     <string name="trash.photosOfTrash">"Photos of this Trash"</string>
     <string name="trash.comments">"Comments"</string>
+    <string name="comment.create">"Pridať komentár"</string>
+    <string name="comment.createModalDesciption">"Komentáre je zatiaľ možné pridávať iba cez webovú aplikáciu. Pokračovať na webovú aplikáciu?"</string>
+    <string name="comment.lastComments">"Nedávne komentáre"</string>
     <string name="global.fetchError">"We are experiencing temporary issue with our server. We are doing our best to fix it soon. Please come back later."</string>
     <string name="trash.discardChanges">"Discard all changes?"</string>
     <string name="trash.spam.comfirmation">"Do you really want to report this trash as spam?"</string>
