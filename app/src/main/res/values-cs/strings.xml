@@ -464,7 +464,6 @@ Až budete připojený, prosím zapněte TrashOut aplikaci a Vaše hlášení bu
     <string name="trash.history">"Historie"</string>
     <string name="trash.created">"Skládka reportována"</string>
     <string name="global.facebookLogin">"Přihlásit se přes Facebook"</string>
-    <string name="global.googleLogin">Přihlásit se přes Google</string>
     <string name="global.login">"Přihlásit se   "</string>
     <string name="global.backToLogin">"Zpět na přihlášení"</string>
     <string name="notifications.header">"Oznámení"</string>
@@ -1316,6 +1315,7 @@ později prostřednictvím stránky www.admin.trashout.ngo."</string>
     <string name="home.recycling_point_edit_do_later">"Zrušit"</string>
     <string name="event.event_edit_title">"Upravit událost"</string>
     <string name="event.event_edit_redirect">"V současné době lze události upravovat pouze z naší webové aplikace, ke které přistupíte prostřednictvím webového prohlížeče"</string>
+
     <!-- Fuzzy -->
     <string name="event.event_edit_do_later">"Zrušit"</string>
     <string name="event.event_edit_go_to_web">"Upravit nyní"</string>
@@ -1335,8 +1335,68 @@ později prostřednictvím stránky www.admin.trashout.ngo."</string>
     <string name="organization.dumpsReported">"Počet hlášení"</string>
     <string name="organization.dumpsUpdated">"Počet aktualizací"</string>
     <string name="organization.dumpsCleaned">"Vyčištěné skládky"</string>
-    <string name="trash.reportAs">Nahlásit jako</string>
-    <string name="trash.create.notification.title">Hlášení skládek byly úspěšně nahrány</string>
-    <string name="trash.create.notification.text">Nahrávání hlášení skládek vytvořených v offline režimu bylo úspěšné. Děkujeme</string>
-    <string name="trash.offline.checking">Kontrolujeme nahlášené skládky během offline režimu</string>
+    <string name="global.language.portuguese">"portugalština"</string>
+    <string name="global.language.italian">"italština"</string>
+    <string name="global.language.hungarian">"maďarština"</string>
+    <string name="global.language.france">"francouzština"</string>
+    <string name="trash.removeComment.success">"Komentář byl smazán"</string>
+    <string name="global.createComment">"Přidat komentář"</string>
+    <string name="comment.validation.bodyIsRequired">"Text je vyžadován"</string>
+    <string name="trash.createComment.success">"Komentář byl úspěšně přidán"</string>
+    <string name="comment.body">"Tělo"</string>
+    <string name="comment.commentAs">"Komentář jako:"</string>
+    <string name="comment.addComment">"Komentář"</string>
+    <string name="comment.intro">"V případě, že komentujete jako organizace doporučujeme přidat do komentáře i podpis (například jméno, funkce, oddělení)"</string>
+    <string name="mail.activity.greeting">"Vážený/á"</string>
+    <string name="mail.activity.p1">"Na &lt;a href=\"%s\"&gt; hlášení nelegální skládky &lt;/a&gt;, které sledujete, došlo k nové aktivitě. Zjistěte, zda byol aktualizováno nebo přibyl nový komentář."</string>
+    <string name="mail.activity.p2">"Děkujeme vám, že se staráte o životní prostředí! Nezapomeňte pomocí mobilní aplikace TrashOut nahlásit a aktualizovat nelegální skládky ve vaší oblasti, najít nejbližší sběrné místo nebo se zúčastnit čistící akce."</string>
+    <string name="mail.activity.footer">"Tento e-mail jste obdrželi, protože jste souhlasili se smluvními podmínkami TrashOut. Chcete-li vypnout e-mailová upozornění o aktualizacích na sledovaných skládkach, můžete tak učinit ve svém &lt;a href=\"%s\"&gt; profilu &lt;/a&gt; cez webovou aplikaci TrashOut. Pokud chcete změnit periodicitu emailovcých přehledů o konkrétní oblast, můžete ji změnit &lt;a href=\"%s\"&gt; zde &lt;/a&gt;. "</string>
+    <string name="mail.activity.subject">"TrashOut - na skládke, kterou sledujete, došlo k nové aktivitě"</string>
+    <string name="mail.activity.button">"Zobrazit hlášení"</string>
+    <string name="user.trashActivityEmailNotification">"Chci dostávat e-mailová upozornění na novou aktivitu na mých hlášení skládek"</string>
+    <string name="user.trashActivityEmailNotification.yes">"Ano, chci dostávat e-mailová upozornění na novou aktivitu mých hlášení skládek"</string>
+    <string name="user.trashActivityEmailNotification.no">"Ne, nechci dostávat e-mailová upozornění na novou aktivitu na mých hlášení skládek"</string>
+
+    <!-- Error message when GPS is turned off and we cannot get up to date location -->
+    <string name="trash.create.noGps">"Stará GPS poloha. Zapněte sdílení polohy."</string>
+    <string name="trash.reportAs">"Nahlásit jako"</string>
+    <string name="global.createNewAccountDesc">"Chcete-li zaregistrovat organizaci, zaregistrujte si nejprve svůj osobní účet. Poté se přihlaste a vytvořte organizaci."</string>
+
+    <!-- Fuzzy -->
+    <string name="organization.language">"Jazyk"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.validation.required">"Pole je povinné"</string>
+
+    <!-- Heading saying which areas the organization follows -->
+    <string name="organization.notifications">"Sledované oblasti"</string>
+
+    <!-- Description -->
+    <string name="organization.notifications.description">"Tato organizace má nastaveno pravidelné emailové notifikace o těchto oblastech:"</string>
+    <string name="organization.type">"Typ organizace"</string>
+    <string name="organization.type.other">"jiný"</string>
+    <string name="organization.type.government">"Vláda"</string>
+    <string name="organization.type.municipality">"Obec"</string>
+    <string name="organization.type.business">"Obchodní"</string>
+    <string name="organization.type.ngo">"Nevládní organizace"</string>
+    <string name="organization.type.school">"Vzdělávací instituce"</string>
+    <string name="organizations.changeUserRole">"Změnit roli uživatele v organizaci:"</string>
+    <string name="organizations.changeUserRole.manager">"Manažer"</string>
+    <string name="organizations.changeUserRole.manager.desc">"Správce může upravovat profil organizace, měnit role jejích členů. Uživatelé s touto rolí mohou jménem organizace komentovat, hlásit a aktualizovat skládky."</string>
+    <string name="organizations.changeUserRole.member">"Člen"</string>
+    <string name="organizations.changeUserRole.member.desc">"Člen je uživatel, který se rozhodl připojit a sledovat vaši organizaci na platformě TrashOut. Tento uživatel nemá ve vaší organizaci žádná zvláštní práva, ale zprávy a aktualizace provedené tímto uživatelem jsou zahrnuty do statistik vaší organizace. "</string>
+    <string name="organizations.changeUserRole.delete">"Odebrat z organizace"</string>
+    <string name="organizations.changeUserRole.delete.desc">"Tím odeberete vybraného uživatele z vaší organizace. Předchozí aktivity uživatele budou ze statistik organizace vyloučeny. "</string>
+    <string name="global.changesSaved">"Změny byly úspěšně uloženy. "</string>
+    <string name="global.language.romanian">"rumunština"</string>
+    <string name="global.register.terms">"Registrací souhlasíte s našimi smluvními podmínkami a zásadami ochrany osobních údajů."</string>
+    <string name="trash.create.thankYou.offline">"Zdá se, že jste nyní offline. Když se znovu připojíte k internetu, otevřete aplikaci a hlášení se nahraje."</string>
+    <string name="trash.create.notification.title">"Hlášení skládek byly úspěšně nahrány"</string>
+    <string name="trash.create.notification.text">"Nahrávání hlášení skládek vytvořených v offline režimu bylo úspěšné. Děkujeme"</string>
+    <string name="trash.offline.checking">"Kontrolujeme nahlášené skládky během offline režimu"</string>
+    <string name="user.widget.trashMapInit">"Klikněte pro zobrazení Trash mapy"</string>
+    <string name="global.googleLogin">"Přihlásit se přes Google"</string>
+    <string name="comment.create">"Přidat komentář"</string>
+    <string name="comment.createModalDesciption">"Přidávání komentářů je v současné době možné pouze prostřednictvím naší webové aplikace. Chcete v tom pokračovat? "</string>
+    <string name="comment.lastComments">"Poslední komentáře"</string>
 </resources>

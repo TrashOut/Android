@@ -445,7 +445,6 @@ Bitte komm zurück, wenn du wieder online bist."</string>
     <string name="trash.history">"Verlauf"</string>
     <string name="trash.created">"Gemeldet"</string>
     <string name="global.facebookLogin">"Via Facebook einloggen"</string>
-    <string name="global.googleLogin">Melden Sie sich mit Google an</string>
     <string name="global.login">"Anmelden"</string>
     <string name="global.backToLogin">"Zurück zur Anmeldung"</string>
     <string name="notifications.header">"Benachrichtigungen"</string>
@@ -1318,7 +1317,68 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="organization.dumpsReported">"Berichte"</string>
     <string name="organization.dumpsUpdated">"Aktualisierung"</string>
     <string name="organization.dumpsCleaned">"Dumps gereinigt"</string>
+    <string name="global.language.portuguese">"Portugiesisch"</string>
+    <string name="global.language.italian">"Italienisch"</string>
+    <string name="global.language.hungarian">"ungarisch"</string>
+    <string name="global.language.france">"Französisch"</string>
+    <string name="trash.removeComment.success">"Kommentar wurde gelöscht"</string>
+    <string name="global.createComment">"Einen Kommentar hinzufügen"</string>
+    <string name="comment.validation.bodyIsRequired">"Text ist erforderlich"</string>
+    <string name="trash.createComment.success">"Kommentar erfolgreich hinzugefügt"</string>
+    <string name="comment.body">"Körper"</string>
+    <string name="comment.commentAs">"Kommentar als:"</string>
+    <string name="comment.addComment">"Kommentar"</string>
+    <string name="comment.intro">"Wenn Sie als Organisation Kommentare abgeben, empfehlen wir, dem Kommentar eine Signatur hinzuzufügen (z. B. Name, Position, Abteilung usw.)."</string>
+    <string name="mail.activity.greeting">"sehr geehrter"</string>
+    <string name="mail.activity.p1">"Es gab eine neue Aktivität im &lt;a href=\"%s\"&gt; Bericht über den illegalen Speicherauszug &lt;/a&gt;, dem Sie folgen. Finden Sie heraus, ob es aktualisiert wurde oder ob es einen neuen Kommentar gibt."</string>
+    <string name="mail.activity.p2">"Vielen Dank, dass Sie unsere Umwelt sauberer machen! Vergessen Sie nicht, die mobile TrashOut-Anwendung zu verwenden, um illegale Dumps in Ihrer Nähe zu melden und zu aktualisieren, die nächste Sammelstelle zu finden oder an einer Reinigungsveranstaltung teilzunehmen."</string>
+    <string name="mail.activity.footer">"Sie erhalten diese E-Mail, weil Sie den Allgemeinen Geschäftsbedingungen von TrashOut zugestimmt haben. Um E-Mail-Benachrichtigungen über Aktualisierungen Ihrer Berichte zu deaktivieren, besuchen Sie Ihr &lt;a href=\"%s\"&gt; Profil &lt;/a&gt; über die TrashOut-Web-App. Wenn Sie die Periodizität von Berichten ändern möchten, die einen bestimmten Bereich überwachen, können Sie diese unter &lt;a href=\"%s\"&gt; hier &lt;/a&gt; ändern. "</string>
+    <string name="mail.activity.subject">"TrashOut - Der Bericht, dem Sie folgen, enthält eine neue Aktivität"</string>
+    <string name="mail.activity.button">"Zeige Bericht"</string>
+    <string name="user.trashActivityEmailNotification">"Ich möchte E-Mail-Benachrichtigungen über neue Aktivitäten in meinen Berichten erhalten"</string>
+    <string name="user.trashActivityEmailNotification.yes">"Ja, ich möchte E-Mail-Benachrichtigungen über neue Aktivitäten in meinen Berichten erhalten"</string>
+    <string name="user.trashActivityEmailNotification.no">"Nein, ich möchte keine E-Mail-Benachrichtigungen über neue Aktivitäten in meinen Berichten erhalten"</string>
+
+    <!-- Error message when GPS is turned off and we cannot get up to date location -->
+    <string name="trash.create.noGps">"Alter GPS-Standort! Aktivieren Sie die Standortfreigabe. "</string>
+    <string name="trash.reportAs">"Bericht als"</string>
+    <string name="global.createNewAccountDesc">"Wenn Sie Ihre Organisation registrieren möchten, registrieren Sie zuerst Ihr persönliches Konto. Danach melden Sie sich an und erstellen eine Organisation. "</string>
+
+    <!-- Fuzzy -->
+    <string name="organization.language">"Spracheinstellung"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.validation.required">"Dieses Feld ist erforderlich"</string>
+
+    <!-- Heading saying which areas the organization follows -->
+    <string name="organization.notifications">"Überwachte Bereiche"</string>
+
+    <!-- Description -->
+    <string name="organization.notifications.description">"Diese Organisation hat regelmäßige E-Mail-Benachrichtigungen zu folgenden Bereichen eingerichtet:"</string>
+    <string name="organization.type">"Art der Organisation"</string>
+    <string name="organization.type.other">"Andere"</string>
+    <string name="organization.type.government">"Regierung"</string>
+    <string name="organization.type.municipality">"Kommune"</string>
+    <string name="organization.type.business">"Geschäftlich"</string>
+    <string name="organization.type.ngo">"Nicht-Regierungs-Organisation"</string>
+    <string name="organization.type.school">"Bildungseinrichtung"</string>
+    <string name="organizations.changeUserRole">"Ändern Sie die Rolle des Benutzers in der Organisation:"</string>
+    <string name="organizations.changeUserRole.manager">"Manager"</string>
+    <string name="organizations.changeUserRole.manager.desc">"Manager kann das Profil der Organisation bearbeiten, die Rollen der Mitglieder ändern. Außerdem können Benutzer mit dieser Rolle im Namen der Organisation Dumpsites kommentieren, melden und aktualisieren."</string>
+    <string name="organizations.changeUserRole.member">"Mitglied"</string>
+    <string name="organizations.changeUserRole.member.desc">"Mitglied ist ein Benutzer, der sich entschieden hat, Ihrer Organisation auf der TrashOut-Plattform beizutreten und zu folgen. Dieser Benutzer hat keine besonderen Rechte in Ihrer Organisation, aber Berichte und Aktualisierungen, die von diesem Benutzer gemacht werden, sind in den Statistiken Ihrer Organisation enthalten. "</string>
+    <string name="organizations.changeUserRole.delete">"Aus Organisation entfernen"</string>
+    <string name="organizations.changeUserRole.delete.desc">"Dadurch wird der ausgewählte Benutzer aus Ihrer Organisation entfernt. Die bisherigen Aktivitäten des Benutzers werden aus den Statistiken der Organisation ausgeschlossen. "</string>
+    <string name="global.changesSaved">"Die Änderungen wurden erfolgreich gespeichert. "</string>
+    <string name="global.language.romanian">"rumänisch"</string>
+    <string name="global.register.terms">"Mit der Anmeldung erklären Sie sich mit unseren Allgemeinen Geschäftsbedingungen und der Datenschutzrichtlinie einverstanden. "</string>
+    <string name="trash.create.thankYou.offline">"Sie scheinen jetzt offline zu sein. Wenn Sie sich wieder mit dem Internet verbinden, öffnen Sie die Anwendung und der Bericht wird hochgeladen."</string>
     <string name="trash.create.notification.title">"Papierkorbberichte wurden erfolgreich hochgeladen "</string>
-    <string name="trash.create.notification.text">Der Upload von Müllberichten, die Sie im Offline-Modus erstellt haben, war erfolgreich. Dankeschön</string>
-    <string name="trash.offline.checking">Überprüfung, ob Offline-Berichte hochgeladen werden können</string>
+    <string name="trash.create.notification.text">"Der Upload von Müllberichten, die Sie im Offline-Modus erstellt haben, war erfolgreich. Dankeschön"</string>
+    <string name="trash.offline.checking">"Überprüfung, ob Offline-Berichte hochgeladen werden können"</string>
+    <string name="user.widget.trashMapInit">"Klicken Sie hier, um die TrashMap anzuzeigen"</string>
+    <string name="global.googleLogin">"Melden Sie sich mit Google an"</string>
+    <string name="comment.create">"Kommentar hinzufügen"</string>
+    <string name="comment.createModalDesciption">"Das Hinzufügen von Kommentaren ist derzeit nur über unsere Web-App möglich. Möchten Sie dort weitermachen? "</string>
+    <string name="comment.lastComments">"Letzte Kommentare"</string>
 </resources>

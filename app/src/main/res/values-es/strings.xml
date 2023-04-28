@@ -454,7 +454,6 @@ Cuando esté en línea, active la aplicación TrashOut y su denuncia se enviará
     <string name="trash.history">"Historial"</string>
     <string name="trash.created">"Denunciado"</string>
     <string name="global.facebookLogin">"Iniciar sesión con Facebook"</string>
-    <string name="global.googleLogin">Iniciar sesión con Google</string>
     <string name="global.login">"Iniciar sesión"</string>
     <string name="global.backToLogin">"Volver atrás para iniciar sesión"</string>
     <string name="notifications.header">"Notificaciones"</string>
@@ -1308,8 +1307,68 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="organization.dumpsReported">"Informes"</string>
     <string name="organization.dumpsUpdated">"Actualizaciones"</string>
     <string name="organization.dumpsCleaned">"Vertederos limpiados"</string>
-    <string name="trash.reportAs">Reporta como</string>
+    <string name="global.language.portuguese">"portugués"</string>
+    <string name="global.language.italian">"italiano"</string>
+    <string name="global.language.hungarian">"húngaro"</string>
+    <string name="global.language.france">"francés"</string>
+    <string name="trash.removeComment.success">"El comentario fue eliminado"</string>
+    <string name="global.createComment">"Agregar comentario"</string>
+    <string name="comment.validation.bodyIsRequired">"Se requiere texto"</string>
+    <string name="trash.createComment.success">"Comentario agregado exitosamente"</string>
+    <string name="comment.body">"Cuerpo"</string>
+    <string name="comment.commentAs">"Comenta como:"</string>
+    <string name="comment.addComment">"Comentario"</string>
+    <string name="comment.intro">"Si está comentando como organización, le recomendamos agregar una firma al comentario (por ejemplo, nombre, cargo, departamento, etc.)"</string>
+    <string name="mail.activity.greeting">"querido"</string>
+    <string name="mail.activity.p1">"Hubo una nueva actividad en el &lt;a href=\"%s\"&gt; informe del vertedero ilegal &lt;/a&gt; que sigue. Averigüe si se actualizó o si hay un nuevo comentario."</string>
+    <string name="mail.activity.p2">"¡Gracias por hacer que nuestro medio ambiente sea más limpio! No olvide utilizar la aplicación móvil TrashOut para informar y actualizar los vertederos ilegales en su área, encontrar el punto de recolección más cercano o participar en un evento de limpieza."</string>
+    <string name="mail.activity.footer">"Está recibiendo este correo electrónico porque ha aceptado los Términos y condiciones de TrashOut. Para desactivar las notificaciones por correo electrónico de actualizaciones en sus informes, visite su &lt;a href=\"%s\"&gt; perfil &lt;/a&gt; a través de la aplicación web TrashOut. Si desea cambiar la periodicidad de los informes que supervisan un área específica, puede cambiarlos en &lt;a href=\"%s\"&gt; aquí &lt;/a&gt;. "</string>
+    <string name="mail.activity.subject">"TrashOut: hubo una nueva actividad en el informe que sigue"</string>
+    <string name="mail.activity.button">"Vista del informe"</string>
+    <string name="user.trashActivityEmailNotification">"Deseo recibir notificaciones por correo electrónico sobre nuevas actividades en mis informes"</string>
+    <string name="user.trashActivityEmailNotification.yes">"Sí, deseo recibir notificaciones por correo electrónico sobre nuevas actividades en mis informes."</string>
+    <string name="user.trashActivityEmailNotification.no">"No, no quiero recibir notificaciones por correo electrónico sobre nuevas actividades en mis informes"</string>
+
+    <!-- Error message when GPS is turned off and we cannot get up to date location -->
+    <string name="trash.create.noGps">"¡La vieja ubicación del GPS! Enciende el compartir de la ubicación. "</string>
+    <string name="trash.reportAs">"Reporta como"</string>
+    <string name="global.createNewAccountDesc">"Si desea registrar su organización, registre primero su cuenta personal. Después, inicie sesión y cree una organización. "</string>
+
+    <!-- Fuzzy -->
+    <string name="organization.language">"Preferencia de idioma para las notificaciones por correo electrónico"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.validation.required">"El campo es obligatorio"</string>
+
+    <!-- Heading saying which areas the organization follows -->
+    <string name="organization.notifications">"Áreas monitoreadas"</string>
+
+    <!-- Description -->
+    <string name="organization.notifications.description">"Esta organización ha configurado notificaciones periódicas por correo electrónico sobre las siguientes áreas:"</string>
+    <string name="organization.type">"Tipo de organización"</string>
+    <string name="organization.type.other">"Otros"</string>
+    <string name="organization.type.government">"Gobierno"</string>
+    <string name="organization.type.municipality">"Municipio"</string>
+    <string name="organization.type.business">"Negocios"</string>
+    <string name="organization.type.ngo">"Organización no gubernamental"</string>
+    <string name="organization.type.school">"Institución educativa"</string>
+    <string name="organizations.changeUserRole">"Cambiar el rol del usuario en la organización:"</string>
+    <string name="organizations.changeUserRole.manager">"Gerente"</string>
+    <string name="organizations.changeUserRole.manager.desc">"El administrador puede editar el perfil de la organización y cambiar los roles de sus miembros. Además, los usuarios con este rol pueden comentar, informar y actualizar los vertederos en nombre de la organización."</string>
+    <string name="organizations.changeUserRole.member">"Miembro"</string>
+    <string name="organizations.changeUserRole.member.desc">"Miembro es un usuario que ha decidido unirse y seguir a su organización en la plataforma TrashOut. Este usuario no tiene ningún derecho especial en su organización, pero los informes y actualizaciones realizados por este usuario se incluyen en las estadísticas de su organización. "</string>
+    <string name="organizations.changeUserRole.delete">"Eliminar de la organización"</string>
+    <string name="organizations.changeUserRole.delete.desc">"Esto eliminará al usuario seleccionado de su organización. Las actividades anteriores del usuario serán excluidas de las estadísticas de la organización. "</string>
+    <string name="global.changesSaved">"Los cambios se han guardado correctamente. "</string>
+    <string name="global.language.romanian">"rumano"</string>
+    <string name="global.register.terms">"Al registrarte, aceptas nuestros Términos y Condiciones y la Política de Privacidad. "</string>
+    <string name="trash.create.thankYou.offline">"Parece que ahora estás desconectado. Cuando vuelva a conectarse a Internet, abra la aplicación y se cargará el informe."</string>
     <string name="trash.create.notification.title">"Los informes de la basura se han cargado con éxito "</string>
-    <string name="trash.create.notification.text">La carga de los informes de basura que creaste en el modo sin conexión fue exitosa. Gracias</string>
-    <string name="trash.offline.checking">Comprobación de los informes fuera de línea que deben cargarse</string>
+    <string name="trash.create.notification.text">"La carga de los informes de basura que creaste en el modo sin conexión fue exitosa. Gracias"</string>
+    <string name="trash.offline.checking">"Comprobación de los informes fuera de línea que deben cargarse"</string>
+    <string name="user.widget.trashMapInit">"Haga clic para ver el mapa de basura"</string>
+    <string name="global.googleLogin">"Iniciar sesión con Google"</string>
+    <string name="comment.create">"Añadir un comentario"</string>
+    <string name="comment.createModalDesciption">"Actualmente sólo es posible añadir comentarios a través de nuestra aplicación web. Desea continuar allí? "</string>
+    <string name="comment.lastComments">"Últimos comentarios"</string>
 </resources>

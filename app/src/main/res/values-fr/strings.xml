@@ -450,7 +450,6 @@ Lorsque vous serez en ligne, lancez l'appli TrashOut et votre signalement sera e
     <string name="trash.history">"Historique"</string>
     <string name="trash.created">"Signalement"</string>
     <string name="global.facebookLogin">"Connecter avec Facebook"</string>
-    <string name="global.googleLogin">Connectez-vous avec Google</string>
     <string name="global.login">"Connection"</string>
     <string name="global.backToLogin">"Retour à la page de connexion"</string>
     <string name="notifications.header">"Notifications"</string>
@@ -1274,12 +1273,18 @@ Notre but est d'impliquer les citoyens, gouvernements, autorités locales et org
     <string name="home.recycling_point_add_new_tittle">"Ajouter un point de collecte"</string>
     <string name="home.recycling_point_edit_title">"Mettre à jour le point de collecte"</string>
     <string name="home.recycling_point_edit_go_to_web">"Modifier maintenant"</string>
+
+    <!-- Fuzzy -->
     <string name="home.recycling_point_edit_do_later">"Annuler"</string>
     <string name="event.event_edit_title">"Modifier cet événement"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_redirect">"Les événements ne peuvent être modifiés qu'à partir de l'application Web accessible via un navigateur Web"</string>
 
     <!-- Fuzzy -->
     <string name="event.event_edit_do_later">"Annuler"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_go_to_web">"Modifier maintenant"</string>
     <string name="event.event_joinEventTitle">"Rejoignez l'événement"</string>
     <string name="home.orderTrashPickup">"Commander le ramassage des déchets"</string>
@@ -1291,14 +1296,76 @@ Notre but est d'impliquer les citoyens, gouvernements, autorités locales et org
     <string name="event.create.thankYou.sentence2">"Vous êtes formidable !"</string>
     <string name="event.create.thankYou.sentence3">"N'oubliez pas de mettre à jour toutes les décharges que vous avez nettoyées lors de l'événement"</string>
     <string name="event.create.thankYou.shareTitle">"Partager avec les autres"</string>
+
+    <!-- Fuzzy -->
     <string name="event.create.thankYou.detail">"Voir l'événement"</string>
     <string name="trash.create.thankYou.detail">"Voir le rapport"</string>
     <string name="organization.statistics.title">"Statistiques sur les activités des membres"</string>
     <string name="organization.dumpsReported">"Rapports"</string>
     <string name="organization.dumpsUpdated">"Mises à jour"</string>
     <string name="organization.dumpsCleaned">"Décharges nettoyées"</string>
-    <string name="trash.reportAs">Rapporter comme</string>
+    <string name="global.language.portuguese">"Portugais"</string>
+    <string name="global.language.italian">"italien"</string>
+    <string name="global.language.hungarian">"hongrois"</string>
+    <string name="global.language.france">"français"</string>
+    <string name="trash.removeComment.success">"Le commentaire a été supprimé"</string>
+    <string name="global.createComment">"Ajouter un commentaire"</string>
+    <string name="comment.validation.bodyIsRequired">"Le texte est requis"</string>
+    <string name="trash.createComment.success">"Commentaire ajouté avec succès"</string>
+    <string name="comment.body">"Corps"</string>
+    <string name="comment.commentAs">"Commenter comme:"</string>
+    <string name="comment.addComment">"Commentaire"</string>
+    <string name="comment.intro">"Si vous commentez en tant qu'organisation, nous vous recommandons d'ajouter une signature au commentaire (par exemple, nom, poste, service, etc.)"</string>
+    <string name="mail.activity.greeting">"cher"</string>
+    <string name="mail.activity.p1">"Il y a eu une nouvelle activité sur le &lt;a href=\"%s\"&gt; rapport du vidage illégal &lt;/a&gt; que vous suivez. Découvrez s'il a été mis à jour ou s'il y a un nouveau commentaire."</string>
+    <string name="mail.activity.p2">"Merci d'avoir rendu notre environnement plus propre! N'oubliez pas d'utiliser l'application mobile TrashOut pour signaler et mettre à jour les décharges illégales dans votre région, trouver le point de collecte le plus proche ou participer à un événement de nettoyage."</string>
+    <string name="mail.activity.footer">"Vous recevez cet e-mail car vous avez accepté les conditions générales de TrashOut. Pour désactiver les notifications par e-mail des mises à jour de vos rapports, accédez à votre &lt;a href=\"%s\"&gt; profil &lt;/a&gt; via l'application Web TrashOut. Si vous souhaitez modifier la périodicité des rapports surveillant une zone spécifique, vous pouvez les modifier à &lt;a href=\"%s\"&gt; ici &lt;/a&gt;. "</string>
+    <string name="mail.activity.subject">"TrashOut - il y a eu une nouvelle activité sur le rapport que vous suivez"</string>
+    <string name="mail.activity.button">"Voir le rapport"</string>
+    <string name="user.trashActivityEmailNotification">"Je souhaite recevoir des notifications par e-mail concernant une nouvelle activité sur mes rapports"</string>
+    <string name="user.trashActivityEmailNotification.yes">"Oui, je souhaite recevoir des notifications par e-mail concernant une nouvelle activité sur mes rapports"</string>
+    <string name="user.trashActivityEmailNotification.no">"Non, je ne souhaite pas recevoir de notifications par e-mail concernant une nouvelle activité dans mes rapports"</string>
+
+    <!-- Error message when GPS is turned off and we cannot get up to date location -->
+    <string name="trash.create.noGps">"Ancienne localisation GPS ! Activez le partage de la localisation. "</string>
+    <string name="trash.reportAs">"Rapporter comme"</string>
+    <string name="global.createNewAccountDesc">"Si vous souhaitez enregistrer votre organisation, enregistrez d'abord votre compte personnel. Ensuite, connectez-vous et créez une organisation. "</string>
+
+    <!-- Fuzzy -->
+    <string name="organization.language">"Langue pour les notifications par mail"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.validation.required">"requis"</string>
+
+    <!-- Heading saying which areas the organization follows -->
+    <string name="organization.notifications">"Zones surveillées"</string>
+
+    <!-- Description -->
+    <string name="organization.notifications.description">"Cette organisation a mis en place des notifications par e-mail régulières sur les domaines suivants:"</string>
+    <string name="organization.type">"Type d'organisation"</string>
+    <string name="organization.type.other">"Autres"</string>
+    <string name="organization.type.government">"Gouvernement"</string>
+    <string name="organization.type.municipality">"Municipalité"</string>
+    <string name="organization.type.business">"Entreprises"</string>
+    <string name="organization.type.ngo">"Organisation non gouvernementale"</string>
+    <string name="organization.type.school">"Établissement d'enseignement"</string>
+    <string name="organizations.changeUserRole">"Modifier le rôle de l'utilisateur dans l'organisation :"</string>
+    <string name="organizations.changeUserRole.manager">"Directeur"</string>
+    <string name="organizations.changeUserRole.manager.desc">"Le directeur peut modifier le profil de l'organisation, changer les rôles de ses membres. De plus, les utilisateurs ayant ce rôle peuvent commenter, signaler et mettre à jour les décharges au nom de l'organisation."</string>
+    <string name="organizations.changeUserRole.member">"Membre"</string>
+    <string name="organizations.changeUserRole.member.desc">"Un membre est un utilisateur qui a décidé de rejoindre et de suivre votre organisation sur la plateforme TrashOut. Cet utilisateur n'a pas de droits spéciaux dans votre organisation, mais les rapports et les mises à jour effectués par cet utilisateur sont inclus dans les statistiques de votre organisation. "</string>
+    <string name="organizations.changeUserRole.delete">"Retirer de l'organisation"</string>
+    <string name="organizations.changeUserRole.delete.desc">"L'utilisateur sélectionné sera ainsi retiré de votre organisation. Les activités passées de l'utilisateur seront exclues des statistiques de l'organisation. "</string>
+    <string name="global.changesSaved">"Les modifications ont été sauvegardées avec succès. "</string>
+    <string name="global.language.romanian">"roumain"</string>
+    <string name="global.register.terms">"En vous inscrivant, vous acceptez nos conditions générales et notre politique de confidentialité. "</string>
+    <string name="trash.create.thankYou.offline">"Il semble que vous êtes maintenant hors ligne. Lorsque vous vous connectez à nouveau à Internet, ouvrez l'application et le rapport sera téléchargé."</string>
     <string name="trash.create.notification.title">"Les rapports sur les déchets ont été téléchargés avec succès "</string>
-    <string name="trash.create.notification.text">Le téléchargement des rapports sur les déchets que vous avez créés en mode hors ligne a réussi. Nous vous remercions</string>
-    <string name="trash.offline.checking">Vérification des rapports hors ligne à télécharger.</string>
+    <string name="trash.create.notification.text">"Le téléchargement des rapports sur les déchets que vous avez créés en mode hors ligne a réussi. Nous vous remercions"</string>
+    <string name="trash.offline.checking">"Vérification des rapports hors ligne à télécharger."</string>
+    <string name="user.widget.trashMapInit">"Cliquez pour voir la TrashMap"</string>
+    <string name="global.googleLogin">"Connectez-vous avec Google"</string>
+    <string name="comment.create">"Ajouter un commentaire"</string>
+    <string name="comment.createModalDesciption">"L'ajout de commentaires n'est actuellement possible que via notre application web. Voulez-vous continuer à le faire ? "</string>
+    <string name="comment.lastComments">"Derniers commentaires"</string>
 </resources>

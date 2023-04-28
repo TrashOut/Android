@@ -1504,6 +1504,9 @@ Our goal is to involve citizens, governments, municipalities and organizations s
     <string name="push.notification.channel.news" translatable="false">News</string>
     <string name="push.notification.channel.offline" translatable="false">Offline</string>
     <string name="push.notification.channel.default" translatable="false">Trashout</string>
+    <string name="comment.create">"Add comment"</string>
+    <string name="comment.createModalDesciption">"Adding comments is currently possible only via our web app. Do you want to continue there? "</string>
+    <string name="comment.lastComments">"Last comments"</string>
 
 
 </resources>

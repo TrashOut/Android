@@ -448,7 +448,6 @@
     <string name="trash.history">"ისტორია"</string>
     <string name="trash.created">"დარეპორტებული"</string>
     <string name="global.facebookLogin">"ფეისბუქზე შესვლა"</string>
-    <string name="global.googleLogin">შედით Google-ით</string>
     <string name="global.login">"შესვლა"</string>
     <string name="global.backToLogin">"უკან"</string>
     <string name="notifications.header">"შეტყობინება"</string>
@@ -1250,10 +1249,18 @@ mail.organizationInvitation.footer
     <string name="home.recycling_point_add_new_tittle">"დაამატე შეგროვების პუნქტი"</string>
     <string name="home.recycling_point_edit_title">"განაახლე შეგროვების პუნქტი"</string>
     <string name="home.recycling_point_edit_go_to_web">"დაარედაქტირე"</string>
+
+    <!-- Fuzzy -->
     <string name="home.recycling_point_edit_do_later">"გაუქმება"</string>
     <string name="event.event_edit_title">"დაარედაქტირე ეს ივენთი"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_redirect">"მოვლენების რედაქტირება შესაძლებელია მხოლოდ TrashOut ვებ აპლიკაციიდან, რომელიც ხელმისაწვდომია ვებ ბრაუზერის საშუალებით"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_do_later">"გაუქმება"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_go_to_web">"დაარედაქტირე ახლა"</string>
     <string name="event.event_joinEventTitle">"გაწევრიანდი "</string>
     <string name="home.orderTrashPickup">"შეუკვეთე "</string>
@@ -1265,6 +1272,8 @@ mail.organizationInvitation.footer
     <string name="event.create.thankYou.sentence2">"შენ ძალიან მაგარი ხარ! "</string>
     <string name="event.create.thankYou.sentence3">"არ დაგავიწყდეს შენს მიერ დალგებული ნაგავსაყრელების სტატუსის განახლება"</string>
     <string name="event.create.thankYou.shareTitle">"გაუზიარე სხვებს"</string>
+
+    <!-- Fuzzy -->
     <string name="event.create.thankYou.detail">"ნახე აქტივობა"</string>
     <string name="trash.create.thankYou.detail">"ნახე რეპორტი"</string>
     <string name="organization.statistics.title">"სტატისტიკა მონაწილეების აქტივობების შესახებ "</string>
@@ -1327,4 +1336,8 @@ mail.organizationInvitation.footer
     <string name="trash.create.notification.text">"თქვენს მიერ ატვირთული რეპორტები წარმატებით აისახა, მადლობა "</string>
     <string name="trash.offline.checking">"მოწმდება ოფლაინ რეპორტების სტატუსი"</string>
     <string name="user.widget.trashMapInit">"დააჭირეთ, რომ იხილოთ რუკა"</string>
+    <string name="global.googleLogin">"შედით Google-ით"</string>
+    <string name="comment.create">"Დაამატე კომენტარი"</string>
+    <string name="comment.createModalDesciption">"კომენტარების დამატება ამჟამად შესაძლებელია მხოლოდ ჩვენი ვებ აპლიკაციის საშუალებით. გინდა იქ გააგრძელო? "</string>
+    <string name="comment.lastComments">"ბოლო კომენტარები"</string>
 </resources>

@@ -70,7 +70,8 @@
     <string name="profile.header">"Profil"</string>
     <string name="global.welcomeText">"Raportarea coșului de gunoi vă permite să raportați gunoiul ilegal oriunde în lume. Raportarea este primul pas care duce la curățare.GO, localizați gunoiul ilegal apăsând butonul „Raportați gunoiul”"</string>
     <string name="info.header.aboutApp">"Despre aplicația TrashOut"</string>
-    <string name="global.aboutProject">"TrashOut este un proiect de mediu care își propune să cartografieze și să monitorizeze toate depozitele ilegale din întreaga lume."</string>
+    <string name="global.aboutProject">"
+TrashOut este un proiect de mediu care își propune să cartografieze și să monitorizeze toate depozitele ilegale din întreaga lume."</string>
     <string name="global.writeReview">"Scrie o recenzie"</string>
     <string name="info.privatePolicy">"Politica de Privare"</string>
     <string name="info.termsAndConditions">"Termeni și Condiții "</string>
@@ -468,7 +469,6 @@ hârtie bituminoasă
     <string name="trash.history">"Istoric"</string>
     <string name="trash.created">"Raportat"</string>
     <string name="global.facebookLogin">"Înregistrează-te utilizând Facebook"</string>
-    <string name="global.googleLogin">Conectați-vă cu Google</string>
     <string name="global.login">"Logare"</string>
     <string name="global.backToLogin">"Inapoi la logare"</string>
     <string name="notifications.header">"Notificari"</string>
@@ -1341,10 +1341,18 @@ Vă rugăm să utilizați imagini cu un raport de aspect 1: 2 sau mai mic (nu o 
     <string name="home.recycling_point_add_new_tittle">"Adaugă punct de colectare "</string>
     <string name="home.recycling_point_edit_title">"Updatează punct de colectare "</string>
     <string name="home.recycling_point_edit_go_to_web">"Editează acum"</string>
+
+    <!-- Fuzzy -->
     <string name="home.recycling_point_edit_do_later">"Închide"</string>
     <string name="event.event_edit_title">"Editează acest eveniment "</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_redirect">"Evenimentele pot fi editate doar din aplicația web TrashOut care este accesibilă prin intermediul browserului web"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_do_later">"Închide"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_go_to_web">"Editează acum"</string>
     <string name="event.event_joinEventTitle">"Alătură-te evenimentului"</string>
     <string name="home.orderTrashPickup">"
@@ -1358,6 +1366,8 @@ Vânați% d coșuri de gunoi noi sau actualizate."</string>
     <string name="event.create.thankYou.sentence2">"Sunteți grozav!"</string>
     <string name="event.create.thankYou.sentence3">"Nu uita să actualizezi toate deșeurile curățate de tine in timpul evenimentului"</string>
     <string name="event.create.thankYou.shareTitle">"Distribuie cu ceilalți"</string>
+
+    <!-- Fuzzy -->
     <string name="event.create.thankYou.detail">"Vezi eveniment"</string>
     <string name="trash.create.thankYou.detail">"Vezi raport"</string>
     <string name="organization.statistics.title">"Statistici ale activității membrilor"</string>
@@ -1390,9 +1400,44 @@ A existat o activitate nouă în &lt;a href=\"%s\"&gt; raportul privind depozitu
 
     <!-- Error message when GPS is turned off and we cannot get up to date location -->
     <string name="trash.create.noGps">"Locatie GPS veche! Porneste optiunea de GPS"</string>
+    <string name="trash.reportAs">"Raportați ca"</string>
+    <string name="global.createNewAccountDesc">"Dacă doriți să vă înregistrați organizația, înregistrați-vă mai întâi contul personal. Ulterior, conectați-vă și creați o organizație. "</string>
 
-    <string name="trash.reportAs">Raportați ca</string>
+    <!-- Fuzzy -->
+    <string name="organization.language">"Limba preferată pentru notificările email"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.validation.required">"Câmpul este obligatoriu"</string>
+
+    <!-- Heading saying which areas the organization follows -->
+    <string name="organization.notifications">"Zonele monitorizate"</string>
+
+    <!-- Description -->
+    <string name="organization.notifications.description">"Această organizație a creat notificări periodice prin e-mail despre următoarele domenii:"</string>
+    <string name="organization.type">"Tipul organizației"</string>
+    <string name="organization.type.other">"Alte"</string>
+    <string name="organization.type.government">"Guvern"</string>
+    <string name="organization.type.municipality">"Municipalitate"</string>
+    <string name="organization.type.business">"Afaceri"</string>
+    <string name="organization.type.ngo">"Organizație non-guvernamentală"</string>
+    <string name="organization.type.school">"Instituție educațională"</string>
+    <string name="organizations.changeUserRole">"Schimbați rolul utilizatorului în organizație:"</string>
+    <string name="organizations.changeUserRole.manager">"Administrator"</string>
+    <string name="organizations.changeUserRole.manager.desc">"Managerul poate edita profilul organizației, poate schimba rolurile membrilor săi. Mai mult, utilizatorii cu acest rol pot comenta, raporta și actualiza site-urile de reținere în numele organizației."</string>
+    <string name="organizations.changeUserRole.member">"Membru"</string>
+    <string name="organizations.changeUserRole.member.desc">"Membru este un utilizator care a decis să se alăture și să vă urmeze organizația pe platforma TrashOut. Acest utilizator nu are drepturi speciale în organizația dvs., dar rapoartele și actualizările făcute de acest utilizator sunt incluse în statisticile organizației dvs. "</string>
+    <string name="organizations.changeUserRole.delete">"Eliminați din organizație"</string>
+    <string name="organizations.changeUserRole.delete.desc">"Aceasta va elimina utilizatorul selectat din organizația dvs. Activitățile anterioare ale utilizatorului vor fi excluse din statisticile organizației. "</string>
+    <string name="global.changesSaved">"Modificările au fost salvate cu succes. "</string>
+    <string name="global.language.romanian">"Română"</string>
+    <string name="global.register.terms">"Prin înscriere, sunteți de acord cu Termenii și condițiile noastre și cu Politica de confidențialitate. "</string>
+    <string name="trash.create.thankYou.offline">"Se pare că sunteți acum offline. Când vă conectați din nou la internet, deschideți aplicația și raportul va fi încărcat."</string>
     <string name="trash.create.notification.title">"Rapoartele de gunoi au fost încărcate cu succes "</string>
-    <string name="trash.create.notification.text">Încărcarea rapoartelor privind gunoiul pe care le-ați creat în modul offline a avut succes. Vă mulțumim</string>
-    <string name="trash.offline.checking">Verificarea tuturor rapoartelor offline care trebuie încărcate</string>
+    <string name="trash.create.notification.text">"Încărcarea rapoartelor privind gunoiul pe care le-ați creat în modul offline a avut succes. Vă mulțumim"</string>
+    <string name="trash.offline.checking">"Verificarea tuturor rapoartelor offline care trebuie încărcate"</string>
+    <string name="user.widget.trashMapInit">"Faceți clic pentru a vizualiza TrashMap"</string>
+    <string name="global.googleLogin">"Conectați-vă cu Google"</string>
+    <string name="comment.create">"Adăugați un comentariu"</string>
+    <string name="comment.createModalDesciption">"În prezent, adăugarea de comentarii este posibilă doar prin intermediul aplicației noastre web. Doriți să continuați acolo? "</string>
+    <string name="comment.lastComments">"Ultimele comentarii"</string>
 </resources>

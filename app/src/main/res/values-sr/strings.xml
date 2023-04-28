@@ -449,7 +449,6 @@
     <string name="trash.history">"Историја"</string>
     <string name="trash.created">"Пријављено"</string>
     <string name="global.facebookLogin">"Пријави се Фејсбуком"</string>
-    <string name="global.googleLogin">Пријавите се са Гоогле-ом</string>
     <string name="global.login">"Улогуј се"</string>
     <string name="global.backToLogin">"Повратак на пријаву"</string>
     <string name="notifications.header">"Обавештења"</string>
@@ -1266,10 +1265,18 @@ john@doe.com, john@example.com
     <string name="home.recycling_point_add_new_tittle">"Додај место сакупљања"</string>
     <string name="home.recycling_point_edit_title">"Ажурирај место сакупљања"</string>
     <string name="home.recycling_point_edit_go_to_web">"Уреди одмах"</string>
+
+    <!-- Fuzzy -->
     <string name="home.recycling_point_edit_do_later">"Откажи"</string>
     <string name="event.event_edit_title">"Уреди овај догађај"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_redirect">"Догађаји се могу уређивати само из веб апликације ТрешОут којој је могуће приступити путем веб прегледача"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_do_later">"Откажи"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_go_to_web">"Уредите одмах"</string>
     <string name="event.event_joinEventTitle">"Придружите се овом догађају"</string>
     <string name="home.orderTrashPickup">"Наручите одвоз отпада"</string>
@@ -1281,6 +1288,8 @@ john@doe.com, john@example.com
     <string name="event.create.thankYou.sentence2">"Дивни сте!"</string>
     <string name="event.create.thankYou.sentence3">"Не заборавите да ажурирате све депоније које сте очистили током догађаја"</string>
     <string name="event.create.thankYou.shareTitle">"Поделите са другима"</string>
+
+    <!-- Fuzzy -->
     <string name="event.create.thankYou.detail">"Погледај догађај"</string>
     <string name="trash.create.thankYou.detail">"Погледај извештај"</string>
     <string name="organization.statistics.title">"Статистика о активностима чланова"</string>
@@ -1343,4 +1352,8 @@ john@doe.com, john@example.com
     <string name="trash.create.notification.text">"Отпремање извештаја о смећу које сте креирали у режиму рада ван мреже је било успешно. Хвала"</string>
     <string name="trash.offline.checking">"Провера да ли треба отпремити све извештаје ван мреже"</string>
     <string name="user.widget.trashMapInit">"Кликните да бисте приказали трасхМап"</string>
+    <string name="global.googleLogin">"Пријавите се са Гоогле-ом"</string>
+    <string name="comment.create">"Додај коментар"</string>
+    <string name="comment.createModalDesciption">"Додавање коментара је тренутно могуће само путем наше веб апликације. Желите ли да наставите тамо? "</string>
+    <string name="comment.lastComments">"Последњи коментари"</string>
 </resources>

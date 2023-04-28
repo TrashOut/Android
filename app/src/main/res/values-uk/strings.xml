@@ -434,7 +434,6 @@
     <string name="trash.history">"Історія"</string>
     <string name="trash.created">"Звітувати"</string>
     <string name="global.facebookLogin">"Увійдіть з фейсбука"</string>
-    <string name="global.googleLogin">Увійдіть за допомогою Google</string>
     <string name="global.login">"Увійдіть"</string>
     <string name="global.backToLogin">"Назад до входу"</string>
     <string name="notifications.header">"Повідомлення"</string>
@@ -1229,10 +1228,18 @@
     <string name="home.recycling_point_add_new_tittle">"Додайте пункт збору"</string>
     <string name="home.recycling_point_edit_title">"Оновити пункт збору"</string>
     <string name="home.recycling_point_edit_go_to_web">"Редагувати зараз"</string>
+
+    <!-- Fuzzy -->
     <string name="home.recycling_point_edit_do_later">"Скасувати"</string>
     <string name="event.event_edit_title">"Редагувати цю подію"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_redirect">"Події можна редагувати лише за допомогою веб-програми TrashOut, доступної через веб-браузер"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_do_later">"Скасувати"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_go_to_web">"Редагувати зараз"</string>
     <string name="event.event_joinEventTitle">"Приєднуйтесь до цієї події"</string>
     <string name="home.orderTrashPickup">"Замовити вивіз сміття"</string>
@@ -1244,6 +1251,8 @@
     <string name="event.create.thankYou.sentence2">"Ти надзвичайний!"</string>
     <string name="event.create.thankYou.sentence3">"Не забудьте оновити всі звалища, які ви очистили під час заходу"</string>
     <string name="event.create.thankYou.shareTitle">"Поділіться з іншими"</string>
+
+    <!-- Fuzzy -->
     <string name="event.create.thankYou.detail">"Дивіться подію"</string>
     <string name="trash.create.thankYou.detail">"Див. Звіт"</string>
     <string name="organization.statistics.title">"Статистика про діяльність членів"</string>
@@ -1306,4 +1315,8 @@
     <string name="trash.create.notification.text">"Завантаження звітів про смітник, створених вами в автономному режимі, пройшло успішно. Дякую"</string>
     <string name="trash.offline.checking">"Перевірка наявності офлайн -звітів для завантаження"</string>
     <string name="user.widget.trashMapInit">"Натисніть, щоб переглянути TrashMap"</string>
+    <string name="global.googleLogin">"Увійдіть за допомогою Google"</string>
+    <string name="comment.create">"Додати коментар"</string>
+    <string name="comment.createModalDesciption">"Наразі додавання коментарів можливе лише через наш веб-додаток. Ви хочете продовжити там? "</string>
+    <string name="comment.lastComments">"Останні коментарі"</string>
 </resources>

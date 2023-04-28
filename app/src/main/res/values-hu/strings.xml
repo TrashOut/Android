@@ -447,7 +447,6 @@ Ha az alkalmazás legközelebb csatlakozik az internethez, automatikusan elküld
     <string name="trash.history">"Történet"</string>
     <string name="trash.created">"Bejelentett"</string>
     <string name="global.facebookLogin">"Jelentkezzen be Facebookkal!"</string>
-    <string name="global.googleLogin">Jelentkezzen be a Google-lal</string>
     <string name="global.login">"Bejelentkezés"</string>
     <string name="global.backToLogin">"Vissza a bejelentkezéshez"</string>
     <string name="notifications.header">"Értesítések"</string>
@@ -1265,29 +1264,100 @@ Célunk, hogy bevonjuk a polgárokat, a kormányokat, az önkormányzatokat és 
     <string name="home.recycling_point_add_new_tittle">"Adjon hozzá egy begyűjtési pontot"</string>
     <string name="home.recycling_point_edit_title">"Frissítse a begyűjtési pontot"</string>
     <string name="home.recycling_point_edit_go_to_web">"Szerkesztés most"</string>
+
+    <!-- Fuzzy -->
     <string name="home.recycling_point_edit_do_later">"Mégsem"</string>
     <string name="event.event_edit_title">"Szerkessze ezt az eseményt"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_redirect">"Az események csak a TrashOut webalkalmazásból szerkeszthetők, amely webböngészőn keresztül érhető el"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_do_later">"Mégsem"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_go_to_web">"Szerkesztés most"</string>
     <string name="event.event_joinEventTitle">"Csatlakozzon ehhez az eseményhez"</string>
     <string name="home.orderTrashPickup">"Rendeljen meg a hulladék összeszedőt"</string>
     <string name="event.create_event_meeting_date_title">"Találkozó dátuma"</string>
     <string name="notification_new_trash_formatter">"%d új vagy frissített hulladék"</string>
-    <string name="about_version_date_formatted">"A (z) %s verziója"</string>
-    <string name="skip_btn">"Kihagyás"</string>
+    <string name="about_version_date_formatted">"A (z)% s verziója"</string>
+    <string name="skip_btn">"Kihagyás
+"</string>
     <string name="event.create.thankYou.sentence1">"Köszönjük, hogy létrehozta ezt az eseményt"</string>
     <string name="event.create.thankYou.sentence2">"Király vagy!"</string>
     <string name="event.create.thankYou.sentence3">"Ne felejtse el frissíteni a megtisztított területeket az esemény során"</string>
     <string name="event.create.thankYou.shareTitle">"Oszd meg másokkal"</string>
+
+    <!-- Fuzzy -->
     <string name="event.create.thankYou.detail">"Lásd az eseményt"</string>
     <string name="trash.create.thankYou.detail">"Lásd a jelentést"</string>
     <string name="organization.statistics.title">"Statisztika a tagok aktivitásáról"</string>
     <string name="organization.dumpsReported">"Jelentések"</string>
     <string name="organization.dumpsUpdated">"Frissítések"</string>
     <string name="organization.dumpsCleaned">"Megtiszított területek"</string>
-    <string name="trash.reportAs">Jelentés mint</string>
+    <string name="global.language.portuguese">"portugál"</string>
+    <string name="global.language.italian">"olasz"</string>
+    <string name="global.language.hungarian">"Magyar"</string>
+    <string name="global.language.france">"Francia"</string>
+    <string name="trash.removeComment.success">"A megjegyzés törölve"</string>
+    <string name="global.createComment">"Megjegyzés hozzáadása"</string>
+    <string name="comment.validation.bodyIsRequired">"Szöveg szükséges"</string>
+    <string name="trash.createComment.success">"A megjegyzés sikeresen hozzáadva"</string>
+    <string name="comment.body">"Test"</string>
+    <string name="comment.commentAs">"Megjegyzés:"</string>
+    <string name="comment.addComment">"Megjegyzés"</string>
+    <string name="comment.intro">"Ha szervezetként kommentál, akkor azt javasoljuk, hogy írjon aláírást a megjegyzéshez (például név, beosztás, osztály stb.)"</string>
+    <string name="mail.activity.greeting">"kedves"</string>
+    <string name="mail.activity.p1">"Új tevékenység történt a követett &lt;a href=\"%s\"&gt; az illegális hulladéklerakóról szóló jelentésben &lt;/a&gt;. Tudja meg, hogy frissítették-e, vagy van-e új megjegyzés."</string>
+    <string name="mail.activity.p2">"Köszönjük, hogy tisztábbá tette környezetünket! Ne felejtsd el a TrashOut mobilalkalmazást alkalmazni a környéken lévő illegális hulladéklerakók bejelentésére és frissítésére, a legközelebbi gyűjtőhely megkeresésére vagy a tisztítási eseményekben való részvételre."</string>
+    <string name="mail.activity.footer">"Azért kapja ezt az e-mailt, mert elfogadta a TrashOut Általános Szerződési Feltételeit. A jelentések frissítésével kapcsolatos e-mail értesítések kikapcsolásához keresse fel a &lt;a href=\"%s\"&gt; profilod &lt;/a&gt; a TrashOut webes alkalmazáson keresztül. Ha meg akarja változtatni a jelentések időszakos gyakoriságát, ellenőrzi az egyes területeket, &lt;a href=\"%s\"&gt; itt &lt;/a&gt;. "</string>
+    <string name="mail.activity.subject">"TrashOut - új tevékenység történt a követett jelentésben"</string>
+    <string name="mail.activity.button">"Jelentés megtekintése"</string>
+    <string name="user.trashActivityEmailNotification">"E-mail értesítéseket szeretnék kapni a jelentéseimben szereplő új tevékenységekről"</string>
+    <string name="user.trashActivityEmailNotification.yes">"Igen, e-mail értesítéseket szeretnék kapni a jelentéseimben szereplő új tevékenységekről"</string>
+    <string name="user.trashActivityEmailNotification.no">"Nem, nem akarok e-mail értesítést kapni a jelentéseim új tevékenységeiről"</string>
+
+    <!-- Error message when GPS is turned off and we cannot get up to date location -->
+    <string name="trash.create.noGps">"Régi GPS hely! Kapcsolja be a helymegosztást. "</string>
+    <string name="trash.reportAs">"Jelentés mint"</string>
+    <string name="global.createNewAccountDesc">"Ha regisztrálni kívánja szervezetét, először regisztrálja személyes fiókját. Ezután jelentkezzen be, és hozzon létre egy szervezetet. "</string>
+
+    <!-- Fuzzy -->
+    <string name="organization.language">"Az e-mail értesítések nyelve"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.validation.required">"A mező kitöltése kötelező"</string>
+
+    <!-- Heading saying which areas the organization follows -->
+    <string name="organization.notifications">"Megfigyelt területek"</string>
+
+    <!-- Description -->
+    <string name="organization.notifications.description">"Ez a szervezet rendszeres e-mailes értesítéseket állított be a következő területekről:"</string>
+    <string name="organization.type">"Szervezet típusa"</string>
+    <string name="organization.type.other">"Egyéb"</string>
+    <string name="organization.type.government">"Kormány"</string>
+    <string name="organization.type.municipality">"Község"</string>
+    <string name="organization.type.business">"Üzleti"</string>
+    <string name="organization.type.ngo">"Nem kormányzati szervezet"</string>
+    <string name="organization.type.school">"Oktatási intézmény"</string>
+    <string name="organizations.changeUserRole">"A felhasználó szerepének megváltoztatása a szervezetben:"</string>
+    <string name="organizations.changeUserRole.manager">"Menedzser"</string>
+    <string name="organizations.changeUserRole.manager.desc">"A menedzser szerkesztheti a szervezet profilját, megváltoztathatja a tagok szerepét. Ezenkívül az ezzel a szerepkörrel rendelkező felhasználók a szervezet nevében megjegyzést fűzhetnek, jelentést tehetnek és frissíthetik a szemétlerakókat."</string>
+    <string name="organizations.changeUserRole.member">"Tag"</string>
+    <string name="organizations.changeUserRole.member.desc">"A tag olyan felhasználó, aki úgy döntött, hogy csatlakozik a szervezetéhez, és követi a szervezetét a TrashOut platformon. Ez a felhasználó nem rendelkezik különleges jogokkal a szervezetében, de a felhasználó által készített jelentéseket és frissítéseket a szervezet statisztikái tartalmazzák. "</string>
+    <string name="organizations.changeUserRole.delete">"Eltávolítás a szervezetből"</string>
+    <string name="organizations.changeUserRole.delete.desc">"Ezzel eltávolítja a kiválasztott felhasználót a szervezetéből. A felhasználó korábbi tevékenységeit kizárjuk a szervezet statisztikáiból. "</string>
+    <string name="global.changesSaved">"A módosításokat sikeresen mentette. "</string>
+    <string name="global.language.romanian">"román"</string>
+    <string name="global.register.terms">"A regisztrációval Ön elfogadja a Felhasználási feltételek és adatvédelmi irányelveket. "</string>
+    <string name="trash.create.thankYou.offline">"Úgy tűnik, most már offline állapotban van. Amikor újra csatlakozik az internethez, nyissa meg az alkalmazást, és a jelentés feltöltésre kerül."</string>
     <string name="trash.create.notification.title">"A szemétjelentések sikeresen feltöltésre kerültek "</string>
-    <string name="trash.create.notification.text">Az offline módban létrehozott szemétjelentések feltöltése sikeres volt. Köszönöm.</string>
-    <string name="trash.offline.checking">Ellenőrzi a feltöltendő offline jelentések feltöltését</string>
+    <string name="trash.create.notification.text">"Az offline módban létrehozott szemétjelentések feltöltése sikeres volt. Köszönöm."</string>
+    <string name="trash.offline.checking">"Ellenőrzi a feltöltendő offline jelentések feltöltését"</string>
+    <string name="user.widget.trashMapInit">"Kattintson a TrashMap megtekintéséhez"</string>
+    <string name="global.googleLogin">"Jelentkezzen be a Google-lal"</string>
+    <string name="comment.create">"Hozzászólás hozzáadása"</string>
+    <string name="comment.createModalDesciption">"A hozzászólások hozzáadása jelenleg csak a webes alkalmazásunkon keresztül lehetséges. Szeretné ott folytatni? "</string>
+    <string name="comment.lastComments">"Utolsó megjegyzések"</string>
 </resources>

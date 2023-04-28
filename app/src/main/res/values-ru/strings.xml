@@ -446,7 +446,6 @@
     <string name="trash.history">"История"</string>
     <string name="trash.created">"Отмечено"</string>
     <string name="global.facebookLogin">"Войти через Facebook"</string>
-    <string name="global.googleLogin">Войти через Google</string>
     <string name="global.login">"Войти в систему"</string>
     <string name="global.backToLogin">"Вернуться на страницу входа"</string>
     <string name="notifications.header">"Уведомления"</string>
@@ -1271,12 +1270,18 @@
     <string name="home.recycling_point_add_new_tittle">"Добавить пункт сбора"</string>
     <string name="home.recycling_point_edit_title">"Обновить точку сбора"</string>
     <string name="home.recycling_point_edit_go_to_web">"Изменить сейчас"</string>
+
+    <!-- Fuzzy -->
     <string name="home.recycling_point_edit_do_later">"Отмена"</string>
     <string name="event.event_edit_title">"Изменить это событие"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_redirect">"События можно редактировать только из веб-приложения, которое доступно через веб-браузер"</string>
 
     <!-- Fuzzy -->
     <string name="event.event_edit_do_later">"Отмена"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_go_to_web">"Изменить сейчас"</string>
     <string name="event.event_joinEventTitle">"Присоединяйтесь к событию"</string>
     <string name="home.orderTrashPickup">"Заказать вывоз мусора"</string>
@@ -1288,14 +1293,76 @@
     <string name="event.create.thankYou.sentence2">"Ты обалденный!"</string>
     <string name="event.create.thankYou.sentence3">"Не забудьте обновить все дампы, которые вы очистили во время мероприятия"</string>
     <string name="event.create.thankYou.shareTitle">"Поделиться с другими"</string>
+
+    <!-- Fuzzy -->
     <string name="event.create.thankYou.detail">"Посмотреть событие"</string>
     <string name="trash.create.thankYou.detail">"Посмотреть отчет"</string>
     <string name="organization.statistics.title">"Статистика о деятельности участников"</string>
     <string name="organization.dumpsReported">"Отчеты"</string>
     <string name="organization.dumpsUpdated">"Обновления"</string>
     <string name="organization.dumpsCleaned">"Отвалы убраны"</string>
-    <string name="trash.reportAs">Сообщить как</string>
+    <string name="global.language.portuguese">"португальский"</string>
+    <string name="global.language.italian">"итальянский"</string>
+    <string name="global.language.hungarian">"Венгерский"</string>
+    <string name="global.language.france">"французский язык"</string>
+    <string name="trash.removeComment.success">"Комментарий был удален"</string>
+    <string name="global.createComment">"Добавить комментарий"</string>
+    <string name="comment.validation.bodyIsRequired">"Текст обязателен"</string>
+    <string name="trash.createComment.success">"Комментарий успешно добавлен"</string>
+    <string name="comment.body">"тело"</string>
+    <string name="comment.commentAs">"Комментарий как:"</string>
+    <string name="comment.addComment">"Комментарий"</string>
+    <string name="comment.intro">"Если вы комментируете как организацию, мы рекомендуем добавить к комментарию подпись (например, имя, должность, отдел и т. Д.)"</string>
+    <string name="mail.activity.greeting">"дорогой"</string>
+    <string name="mail.activity.p1">"В &lt;a href=\"%s\"&gt; отчете о незаконной свалке &lt;/a&gt;, за которым вы следите, появилось новое действие. Узнайте, было ли оно обновлено или есть новый комментарий."</string>
+    <string name="mail.activity.p2">"Спасибо за то, что сделали нашу окружающую среду чище! Не забудьте использовать мобильное приложение TrashOut, чтобы сообщать и обновлять незаконные свалки в вашем регионе, находить ближайший пункт сбора или принимать участие в уборке."</string>
+    <string name="mail.activity.footer">"Вы получаете это письмо, потому что вы согласны с Условиями TrashOut. Чтобы отключить уведомления об обновлениях ваших отчетов по электронной почте, перейдите в свой &lt;a href=\"%s\"&gt; профиль &lt;/a&gt; через веб-приложение TrashOut. Если вы хотите изменить периодичность отчетов, отслеживающих конкретную область, вы можете изменить их в &lt;a href=\"%s\"&gt; здесь &lt;/a&gt;. "</string>
+    <string name="mail.activity.subject">"TrashOut - в отчете, за которым вы следите, появилось новое действие"</string>
+    <string name="mail.activity.button">"Посмотреть отчет"</string>
+    <string name="user.trashActivityEmailNotification">"Я хочу получать уведомления по электронной почте о новых действиях в моих отчетах"</string>
+    <string name="user.trashActivityEmailNotification.yes">"Да, я хочу получать уведомления по электронной почте о новых действиях в моих отчетах"</string>
+    <string name="user.trashActivityEmailNotification.no">"Нет, я не хочу получать уведомления по электронной почте о новых действиях в моих отчетах"</string>
+
+    <!-- Error message when GPS is turned off and we cannot get up to date location -->
+    <string name="trash.create.noGps">"Старое местоположение по GPS! Включите обмен местоположениями. "</string>
+    <string name="trash.reportAs">"Сообщить как"</string>
+    <string name="global.createNewAccountDesc">"Если вы хотите зарегистрировать свою организацию, сначала зарегистрируйте личный кабинет. После этого войдите в систему и создайте организацию. "</string>
+
+    <!-- Fuzzy -->
+    <string name="organization.language">"Предпочтительный язык электронных уведомлений"</string>
+
+    <!-- Fuzzy -->
+    <string name="global.validation.required">"Поле обязательно для заполнения"</string>
+
+    <!-- Heading saying which areas the organization follows -->
+    <string name="organization.notifications">"Наблюдаемые территории"</string>
+
+    <!-- Description -->
+    <string name="organization.notifications.description">"Eta organizatsiya nastroila regulyarnyye uvedomleniya po elektronnoy pochte o sleduyushchikh oblastyakh:"</string>
+    <string name="organization.type">"Тип организации"</string>
+    <string name="organization.type.other">"Другое"</string>
+    <string name="organization.type.government">"Правительство"</string>
+    <string name="organization.type.municipality">"Муниципалитет"</string>
+    <string name="organization.type.business">"Бизнес"</string>
+    <string name="organization.type.ngo">"неправительственная организация"</string>
+    <string name="organization.type.school">"учебное заведение"</string>
+    <string name="organizations.changeUserRole">"Изменить роль пользователя в организации:"</string>
+    <string name="organizations.changeUserRole.manager">"Менеджер"</string>
+    <string name="organizations.changeUserRole.manager.desc">"Менеджер может редактировать профиль организации, изменять роли ее членов. Более того, пользователи с этой ролью могут комментировать, создавать отчеты и обновлять дампы от имени организации."</string>
+    <string name="organizations.changeUserRole.member">"Член"</string>
+    <string name="organizations.changeUserRole.member.desc">"Член - это пользователь, который решил присоединиться и следовать за вашей организацией на платформе TrashOut. Этот пользователь не имеет никаких специальных прав в Вашей организации, но отчеты и обновления, сделанные этим пользователем, включаются в статистику Вашей организации. "</string>
+    <string name="organizations.changeUserRole.delete">"Удалить из организации"</string>
+    <string name="organizations.changeUserRole.delete.desc">"Это удалит выбранного пользователя из Вашей организации. Прошлые действия пользователя будут исключены из статистики организации. "</string>
+    <string name="global.changesSaved">"Изменения были успешно сохранены. "</string>
+    <string name="global.language.romanian">"румынский"</string>
+    <string name="global.register.terms">"Подписываясь, вы соглашаетесь с нашими Положениями и условиями и Политикой конфиденциальности. "</string>
+    <string name="trash.create.thankYou.offline">"Кажется, вы сейчас не в сети. Когда вы снова подключитесь к Интернету, откройте приложение, и отчет будет загружен."</string>
     <string name="trash.create.notification.title">"Отчеты о мусоре были успешно загружены "</string>
-    <string name="trash.create.notification.text">Загрузка мусорных отчетов, созданных вами в автономном режиме, прошла успешно. Спасибо</string>
-    <string name="trash.offline.checking">Проверка загрузки любых автономных отчетов</string>
+    <string name="trash.create.notification.text">"Загрузка мусорных отчетов, созданных вами в автономном режиме, прошла успешно. Спасибо"</string>
+    <string name="trash.offline.checking">"Проверка загрузки любых автономных отчетов"</string>
+    <string name="user.widget.trashMapInit">"Нажмите, чтобы просмотреть карты свалки"</string>
+    <string name="global.googleLogin">"Войти через Google"</string>
+    <string name="comment.create">"Добавить комментарий"</string>
+    <string name="comment.createModalDesciption">"Добавление комментариев в настоящее время возможно только через наше веб-приложение. Вы хотите продолжить там? "</string>
+    <string name="comment.lastComments">"Последние комментарии"</string>
 </resources>
