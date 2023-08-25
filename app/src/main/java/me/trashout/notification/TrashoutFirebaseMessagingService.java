@@ -76,7 +76,7 @@ public class TrashoutFirebaseMessagingService extends FirebaseMessagingService {
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         if (pushNotificationType != null && notificationManager != null) {
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, pushNotificationType.getNotificationChannel().getChannelId())
                     .setContentTitle(title)
