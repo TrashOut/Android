@@ -80,7 +80,6 @@ public class PreferencesHandler {
         return pref.getBoolean(FIRST_RUN, true);
     }
 
-
     /**
      * Save firebase token
      *
@@ -126,7 +125,6 @@ public class PreferencesHandler {
         editor.putString(TRASH_FILTER_DATA, GSON.toJson(trashFilter, TrashFilter.class)).apply();
     }
 
-
     /**
      * Get trash filtr
      *
@@ -163,7 +161,6 @@ public class PreferencesHandler {
         editor.putString(COLLECTION_POINT_FILTER_DATA, GSON.toJson(collectionPointFilter, CollectionPointFilter.class)).apply();
     }
 
-
     /**
      * Get collection point filter
      *
@@ -184,7 +181,6 @@ public class PreferencesHandler {
 
     }
 
-
     /**
      * Save user
      *
@@ -198,7 +194,6 @@ public class PreferencesHandler {
             editor.putString(USER_DATA, GSON.toJson(user, User.class)).apply();
         }
     }
-
 
     /**
      * Get user
@@ -266,7 +261,6 @@ public class PreferencesHandler {
         editor.putString(LAST_LOCATION, GSON.toJson(lastLocation, LatLng.class)).apply();
     }
 
-
     /**
      * Get user's last known location
      *
@@ -287,9 +281,6 @@ public class PreferencesHandler {
         return GSON.fromJson(lastLocationJson, LatLng.class);
     }
 
-
-
-
     /**
      * Save Trash Hunter State
      *
@@ -305,7 +296,6 @@ public class PreferencesHandler {
         SharedPreferences.Editor editor = pref.edit();
         editor.putString(TRASH_HUNTER_STATE, GSON.toJson(trashHunterState, TrashHunterState.class)).apply();
     }
-
 
     /**
      * Get Trash Hunter State

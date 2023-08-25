@@ -25,12 +25,18 @@ import me.trashout.R;
 import me.trashout.activity.MainActivity;
 import me.trashout.activity.base.BaseActivity;
 import me.trashout.fragment.DashboardFragment;
+import me.trashout.fragment.TrashListFragment;
 import me.trashout.model.Trash;
+import me.trashout.model.TrashFilter;
 import me.trashout.notification.PushNotification;
 import me.trashout.service.CreateTrashService;
+import me.trashout.service.GetTrashListService;
 import me.trashout.service.UpdateTrashService;
+import me.trashout.utils.PreferencesHandler;
 
 import static androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC;
+
+import com.google.android.gms.maps.model.LatLng;
 
 public class OfflineTrashManager {
     private Context context;
@@ -162,6 +168,11 @@ public class OfflineTrashManager {
 
                 if (notify) {
                     notifyUploaded();
+
+                    // Update Trash list
+                    LatLng lastPosition = PreferencesHandler.getUserLastLocation(context);
+                    TrashFilter trashFilter = PreferencesHandler.getTrashFilterData(context);
+                    GetTrashListService.startForRequest(context, TrashListFragment.GET_TRASH_LIST_REQUEST_ID, trashFilter, lastPosition, 1);
                 }
 
                 OfflineTrashManager.running = false;

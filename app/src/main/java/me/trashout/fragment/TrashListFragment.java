@@ -70,7 +70,7 @@ import me.trashout.utils.PreferencesHandler;
 public class TrashListFragment extends BaseFragment implements BaseService.UpdateServiceListener, TrashListAdapter.OnDumpItemClickListener, ITrashFragment {
 
 
-    private static final int GET_TRASH_LIST_REQUEST_ID = 101;
+    public static final int GET_TRASH_LIST_REQUEST_ID = 101;
 
     private static final String BUNDLE_TRASH_HUNTER = "BUNDLE_TRASH_HUNTER";
     private static final String BUNDLE_TRASH_HUNTER_AREA = "BUNDLE_TRASH_HUNTER_AREA";
