@@ -93,7 +93,7 @@ public class OfflineTrashManager {
     private void notifyUploaded() {
         Bundle args = new Bundle();
         Intent intent = BaseActivity.generateIntent(context, DashboardFragment.class.getName(), args, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         PushNotification pushNotificationType = PushNotification.TRASH_OFFLINE_NOTIFICATION;
 
