@@ -360,7 +360,7 @@ public class TrashReportOrEditFragment extends BaseFragment implements ITrashFra
         reportAsIds.add(-1);
 
         // report as organization
-        if (user != null) {
+        if (user != null && user.getOrganizations() != null) {
             for (Organization organization : user.getOrganizations()) {
                 reportAsLabels.add(organization.getName());
                 reportAsIds.add(organization.getId());
