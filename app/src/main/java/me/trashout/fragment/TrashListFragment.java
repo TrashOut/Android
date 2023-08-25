@@ -269,13 +269,8 @@ public class TrashListFragment extends BaseFragment implements BaseService.Updat
         if (!isNetworkAvailable()) {
             showToast(R.string.global_internet_offline);
 
-            if (!isNetworkAvailable()) {
-                showToast(R.string.global_internet_offline);
-
-                if (swiperefresh.isRefreshing()) {
-                    swiperefresh.setRefreshing(false);
-                }
-                return;
+            if (swiperefresh.isRefreshing()) {
+                swiperefresh.setRefreshing(false);
             }
 
             return;
