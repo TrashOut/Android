@@ -327,7 +327,7 @@ public class TrashListFragment extends BaseFragment implements BaseService.Updat
                     trashList = new ArrayList<>();
                     setTrashList(trashList);
                 }
-                if (apiGetTrashListRequest.getApiGetTrashListParam().getPage() < 1)
+                if (apiGetTrashListRequest.getApiGetTrashListParam().getPage() < 2)
                     trashList.clear();
                 trashList.addAll(apiGetTrashListResult.getTrashList());
                 mAdapter.notifyDataSetChanged();
