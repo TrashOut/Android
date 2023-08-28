@@ -578,15 +578,37 @@
                         android:padding="15dp">
 
                         <TextView
+                            android:id="@+id/trash_detail_state_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/trash_detail_state_time"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/trash_detail_state_icon"
+                            android:layout_toRightOf="@+id/trash_detail_state_icon"
+                            android:text="Reported"
+                            android:textColor="@color/text_color_white"
+                            android:textSize="@dimen/text_size_medium"
+                            android:textStyle="bold" />
+
+                        <TextView
                             android:id="@+id/trash_detail_state_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/trash_detail_id"
+                            android:layout_alignLeft="@+id/trash_detail_state_name"
+                            android:text="3 months ago"
+                            android:textColor="@color/text_color_white" />
+
+                        <TextView
+                            android:id="@+id/trash_detail_id"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignBottom="@+id/trash_detail_state_icon"
                             android:layout_alignLeft="@+id/trash_detail_state_name"
                             android:layout_alignParentBottom="true"
                             android:layout_alignStart="@+id/trash_detail_state_name"
-
-                            android:text="3 months ago"
+                            android:text="ID: 99999"
                             android:textColor="@color/text_color_white" />
 
                         <ImageView
@@ -618,20 +640,6 @@
                             android:padding="5dp"
                             android:text="3"
                             android:textColor="@color/text_color_white" />
-
-                        <TextView
-                            android:id="@+id/trash_detail_state_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_above="@+id/trash_detail_state_time"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_toEndOf="@+id/trash_detail_state_icon"
-                            android:layout_toRightOf="@+id/trash_detail_state_icon"
-                            android:text="Reported"
-                            android:textColor="@color/text_color_white"
-                            android:textSize="@dimen/text_size_medium"
-                            android:textStyle="bold" />
 
                     </RelativeLayout>
 

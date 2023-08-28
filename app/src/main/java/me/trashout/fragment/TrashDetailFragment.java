@@ -128,6 +128,8 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
     TextView trashDetailStateName;
     @BindView(R.id.trash_detail_state_time)
     TextView trashDetailStateTime;
+    @BindView(R.id.trash_detail_id)
+    TextView trashDetailId;
     @BindView(R.id.trash_detail_photo_count)
     TextView trashDetailPhotoCount;
     @BindView(R.id.trash_detail_still_here_btn)
@@ -321,6 +323,8 @@ public class TrashDetailFragment extends BaseFragment implements BaseService.Upd
         }
 
         trashDetailStateTime.setText(DateTimeUtils.getRoundedTimeAgo(getContext(), trash.getLastChangeDate()));
+
+        trashDetailId.setText("ID: " + trash.getId());
 
         trashDetailSizeIcon.setImageResource(trash.getSize().getIconResId());
         trashDetailSizeText.setText(trash.getSize().getStringResId());
