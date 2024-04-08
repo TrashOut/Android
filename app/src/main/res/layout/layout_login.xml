@@ -92,6 +92,16 @@
             android:textColor="@color/text_color_white"
             app:backgroundTint="@color/button_color_red" />
 
+
+        <TextView
+            android:id="@+id/sign_in_accept_user_data_collection_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="20dp"
+            android:text="" />
+
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

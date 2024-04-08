@@ -157,6 +157,8 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
     AppCompatCheckBox signUpAccpetUserDataCollectionCheckBox;
     @BindView(R.id.sign_up_accept_user_data_collection_text)
     TextView signUpAccpetUserDataCollectionTextView;
+    @BindView(R.id.sign_in_accept_user_data_collection_text)
+    TextView signInAccpetUserDataCollectionTextView;
     @BindView(R.id.sign_up_btn)
     AppCompatButton signUpBtn;
     @BindView(R.id.sign_up_facebook_btn)
@@ -222,13 +224,17 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
             preSelectedTab = -1;
         }
 
-
-        signUpAccpetUserDataCollectionTextView.setText(Html.fromHtml(getString(R.string.global_signUp_acceptRegister_startSentense)
+        CharSequence acceptDataCollectionText = Html.fromHtml(getString(R.string.global_signUp_acceptRegister_startSentense)
                 + " <a href=\"http://trashout.ngo/policy\">" + getString(R.string.global_signUp_acceptRegister_privatePolicy) + "</a> "
                 + getString(R.string.global_signUp_acceptRegister_and)
                 + " <a href=\"http://trashout.ngo/terms\">" + getString(R.string.global_signUp_acceptRegister_terms) + "</a>"
-        ));
+        );
+
+        signUpAccpetUserDataCollectionTextView.setText(acceptDataCollectionText);
         signUpAccpetUserDataCollectionTextView.setMovementMethod(LinkMovementMethod.getInstance());
+
+        signInAccpetUserDataCollectionTextView.setText(acceptDataCollectionText);
+        signInAccpetUserDataCollectionTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
 
         return view;
