@@ -72,6 +72,7 @@
         <service android:name=".service.GetCollectionPointListService" />
         <service android:name=".service.GetCollectionPointDetailService" />
         <service android:name=".service.UpdateUserService" />
+        <service android:name=".service.DeleteAccountService" />
         <service android:name=".service.GetHomeScreenDataService" />
         <service android:name=".service.CreateCollectionPointNewSpamService" />
         <service android:name=".service.GetUserByIdService" />

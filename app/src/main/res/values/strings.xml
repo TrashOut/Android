@@ -736,6 +736,8 @@ When you get online please turn on TrashOut app and your report will be submitte
     <string name="profile.myAreas">"My Areas"</string>
     <string name="profile.myOrganizations">"My Organizations"</string>
     <string name="profile.role">"Role"</string>
+    <string name="profile.deleteAccount">"Delete my account"</string>
+    <string name="profile.deleteAccountConfirm">"Do you really want to delete your account?"</string>
     <string name="geo.header">"Geographical Areas"</string>
 
     <!-- Fuzzy -->

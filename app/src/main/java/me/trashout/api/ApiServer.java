@@ -125,6 +125,9 @@ public interface ApiServer {
     @DELETE("/v1/user/devices/{tokenFCM}")
     Call<ResponseBody> deleteUserDevice(@Path("tokenFCM") String tokenFcm);
 
+    @DELETE("/v1/user/{id}")
+    Call<ResponseBody> deleteAccount(@Path("id") Long id);
+
 
     // COLLECTION POINT
     @GET("/v1/collection-point/")

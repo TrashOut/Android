@@ -34,6 +34,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -77,6 +80,7 @@ import me.trashout.fragment.base.BaseFragment;
 import me.trashout.fragment.base.IProfileFragment;
 import me.trashout.model.Organization;
 import me.trashout.model.User;
+import me.trashout.service.DeleteAccountService;
 import me.trashout.service.UpdateUserService;
 import me.trashout.service.base.BaseService;
 import me.trashout.utils.GlideApp;
@@ -93,6 +97,7 @@ import static android.app.Activity.RESULT_OK;
 public class ProfileEditFragment extends BaseFragment implements IProfileFragment, BaseService.UpdateServiceListener {
 
     private static final int UPDATE_USER_REQUEST_ID = 750;
+    private static final int DELETE_ACCOUNT_REQUEST_ID = 752;
 
     @BindView(R.id.profile_edit_image_fab)
     FloatingActionButton profileEditFab;
@@ -369,6 +374,7 @@ public class ProfileEditFragment extends BaseFragment implements IProfileFragmen
     protected ArrayList<Class<?>> getServiceClass() {
         ArrayList<Class<?>> serviceClass = new ArrayList<>();
         serviceClass.add(UpdateUserService.class);
+        serviceClass.add(DeleteAccountService.class);
         return serviceClass;
     }
 
@@ -385,6 +391,15 @@ public class ProfileEditFragment extends BaseFragment implements IProfileFragmen
                 showToast(R.string.global_fetchError);
             }
 
+        } else if (apiResult.getRequestId() == DELETE_ACCOUNT_REQUEST_ID) {
+            dismissProgressDialog();
+
+            if (apiResult.isValidResponse()) {
+                showToast("The account has been successfully deleted");
+                finish();
+            } else {
+                showToast(R.string.global_fetchError);
+            }
         }
     }
 
@@ -393,12 +408,34 @@ public class ProfileEditFragment extends BaseFragment implements IProfileFragmen
 
     }
 
-    @OnClick(R.id.profile_edit_image_fab)
-    public void onClick() {
-        if (CropImage.isExplicitCameraPermissionRequired(getActivity())) {
-            requestPermissions(new String[]{Manifest.permission.CAMERA}, CropImage.CAMERA_CAPTURE_PERMISSIONS_REQUEST_CODE);
-        } else {
-            CropImage.startPickImageActivity(getActivity());
+    @OnClick({R.id.profile_edit_image_fab, R.id.profile_edit_delete_account})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.profile_edit_image_fab:
+                if (CropImage.isExplicitCameraPermissionRequired(getActivity())) {
+                    requestPermissions(new String[]{Manifest.permission.CAMERA}, CropImage.CAMERA_CAPTURE_PERMISSIONS_REQUEST_CODE);
+                } else {
+                    CropImage.startPickImageActivity(getActivity());
+                }
+                break;
+
+            case R.id.profile_edit_delete_account:
+                MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
+                    .title(R.string.global_validation_warning)
+                    .content(R.string.profile_deleteAccountConfirm)
+                    .positiveText(android.R.string.yes)
+                    .negativeText(android.R.string.no)
+                    .autoDismiss(true)
+                    .onPositive(new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                            showProgressDialog();
+                            DeleteAccountService.startForRequest(getContext(), DELETE_ACCOUNT_REQUEST_ID, mUser.getId());
+                        }
+                    })
+                    .build();
+                dialog.show();
+                break;
         }
     }
 

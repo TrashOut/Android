@@ -751,6 +751,8 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="user.myProfile">"Môj profil"</string>
 
     <!-- Fuzzy -->
+    <string name="profile.deleteAccount">Odstrániť môj účet</string>
+    <string name="profile.deleteAccountConfirm">Naozaj chcete odstrániť svoj účet?</string>
     <string name="global.addArea">"Nastaviť oznámenia o oblasti"</string>
     <string name="user.generateApiKey">"Generovať API kľúč"</string>
     <string name="user.aboutMe">"O mne"</string>

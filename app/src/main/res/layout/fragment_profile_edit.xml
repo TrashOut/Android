@@ -250,6 +250,18 @@
 
             </LinearLayout>
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/profile_edit_delete_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sides_margin"
+                android:layout_marginRight="@dimen/sides_margin"
+                android:layout_marginTop="@dimen/sides_margin"
+                android:backgroundTint="@color/button_color_red"
+                android:text="@string/profile.deleteAccount"
+                android:textColor="@color/text_color_white"
+                app:backgroundTint="@color/button_color_red" />
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
