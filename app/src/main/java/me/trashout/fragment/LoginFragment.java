@@ -31,6 +31,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.facebook.FacebookSdk;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -207,6 +208,8 @@ public class LoginFragment extends BaseFragment implements BaseService.UpdateSer
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        FacebookSdk.sdkInitialize(getContext());
+
         view = inflater.inflate(R.layout.fragment_login, container, false);
         ButterKnife.bind(this, view);
 

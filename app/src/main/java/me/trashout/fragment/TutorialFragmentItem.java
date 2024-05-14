@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
@@ -143,6 +144,8 @@ public class TutorialFragmentItem extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        FacebookSdk.sdkInitialize(getContext());
+
         View view = inflater.inflate(R.layout.fragment_tutorial_item, container, false);
 
         readBundle(getArguments());

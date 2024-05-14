@@ -15,10 +15,10 @@ android {
     compileSdkVersion 34
     defaultConfig {
         applicationId "me.trashout"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 34
-        versionCode 113
-        versionName "4.18.0"
+        versionCode 114
+        versionName "4.19.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -80,11 +80,11 @@ dependencies {
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
     // Firebase + maps + FB
     implementation 'com.google.firebase:firebase-messaging:17.0.0'
-    implementation 'com.google.firebase:firebase-core:17.0.0'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
     implementation 'com.google.android.gms:play-services-places:17.0.0'
-    implementation 'com.facebook.android:facebook-android-sdk:12.3.0'
+    implementation 'com.facebook.android:facebook-android-sdk:17.0.0'
     // Utils
     implementation 'com.firebaseui:firebase-ui:6.0.2'
     implementation 'com.jakewharton:butterknife:8.8.1'
