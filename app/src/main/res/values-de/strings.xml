@@ -1294,12 +1294,18 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="home.recycling_point_add_new_tittle">"Sammelstelle hinzufügen"</string>
     <string name="home.recycling_point_edit_title">"Aktualisieren Sie die Sammelstelle"</string>
     <string name="home.recycling_point_edit_go_to_web">"Bearbeiten Sie jetzt"</string>
+
+    <!-- Fuzzy -->
     <string name="home.recycling_point_edit_do_later">"Stornieren"</string>
     <string name="event.event_edit_title">"Bearbeiten Sie dieses Ereignis"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_redirect">"Ereignisse können nur in der Webanwendung bearbeitet werden, auf die über einen Webbrowser zugegriffen werden kann"</string>
 
     <!-- Fuzzy -->
     <string name="event.event_edit_do_later">"Stornieren"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_go_to_web">"Bearbeiten Sie jetzt"</string>
     <string name="event.event_joinEventTitle">"Mach mit bei der Veranstaltung"</string>
     <string name="home.orderTrashPickup">"Müllabholung bestellen"</string>
@@ -1311,6 +1317,8 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="event.create.thankYou.sentence2">"Du bist toll!"</string>
     <string name="event.create.thankYou.sentence3">"Vergessen Sie nicht, alle Dumps zu aktualisieren, die Sie während des Ereignisses bereinigt haben"</string>
     <string name="event.create.thankYou.shareTitle">"Mit anderen teilen"</string>
+
+    <!-- Fuzzy -->
     <string name="event.create.thankYou.detail">"Siehe Veranstaltung"</string>
     <string name="trash.create.thankYou.detail">"Siehe Bericht"</string>
     <string name="organization.statistics.title">"Statistiken über die Aktivitäten der Mitglieder"</string>
@@ -1381,4 +1389,6 @@ Wir wollen Bürger, Regierungen, Gemeinden und Organisationen einbeziehen, damit
     <string name="comment.create">"Kommentar hinzufügen"</string>
     <string name="comment.createModalDesciption">"Das Hinzufügen von Kommentaren ist derzeit nur über unsere Web-App möglich. Möchten Sie dort weitermachen? "</string>
     <string name="comment.lastComments">"Letzte Kommentare"</string>
+    <string name="profile.deleteAccount">"Mein Konto löschen"</string>
+    <string name="profile.deleteAccountConfirm">"Wollen Sie Ihr Konto wirklich löschen?"</string>
 </resources>

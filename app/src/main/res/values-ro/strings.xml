@@ -1440,4 +1440,6 @@ A existat o activitate nouă în &lt;a href=\"%s\"&gt; raportul privind depozitu
     <string name="comment.create">"Adăugați un comentariu"</string>
     <string name="comment.createModalDesciption">"În prezent, adăugarea de comentarii este posibilă doar prin intermediul aplicației noastre web. Doriți să continuați acolo? "</string>
     <string name="comment.lastComments">"Ultimele comentarii"</string>
+    <string name="profile.deleteAccount">"Ștergeți-mi contul"</string>
+    <string name="profile.deleteAccountConfirm">"Chiar doriți să vă ștergeți contul?"</string>
 </resources>

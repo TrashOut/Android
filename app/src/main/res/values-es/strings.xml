@@ -1284,12 +1284,18 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="home.recycling_point_add_new_tittle">"Añadir punto de reciclaje"</string>
     <string name="home.recycling_point_edit_title">"Actualizar punto de recogida"</string>
     <string name="home.recycling_point_edit_go_to_web">"Editar ahora"</string>
+
+    <!-- Fuzzy -->
     <string name="home.recycling_point_edit_do_later">"Cancelar"</string>
     <string name="event.event_edit_title">"Editar este evento"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_redirect">"Los eventos solo se pueden editar desde la aplicación web a la que se puede acceder a través de un navegador web"</string>
 
     <!-- Fuzzy -->
     <string name="event.event_edit_do_later">"Cancelar"</string>
+
+    <!-- Fuzzy -->
     <string name="event.event_edit_go_to_web">"Editar ahora"</string>
     <string name="event.event_joinEventTitle">"Únete al evento"</string>
     <string name="home.orderTrashPickup">"Orden de recogida de residuos"</string>
@@ -1301,6 +1307,8 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="event.create.thankYou.sentence2">"¡Usted es maravilloso!"</string>
     <string name="event.create.thankYou.sentence3">"No olvides actualizar todos los volcados que limpiaste durante el evento"</string>
     <string name="event.create.thankYou.shareTitle">"Comparte con otros"</string>
+
+    <!-- Fuzzy -->
     <string name="event.create.thankYou.detail">"Ver evento"</string>
     <string name="trash.create.thankYou.detail">"Ver informe"</string>
     <string name="organization.statistics.title">"Estadísticas sobre las actividades de los miembros."</string>
@@ -1371,4 +1379,6 @@ organización.añadirAdministrador.validación.AdministradorRequerido
     <string name="comment.create">"Añadir un comentario"</string>
     <string name="comment.createModalDesciption">"Actualmente sólo es posible añadir comentarios a través de nuestra aplicación web. Desea continuar allí? "</string>
     <string name="comment.lastComments">"Últimos comentarios"</string>
+    <string name="profile.deleteAccount">"Eliminar mi cuenta"</string>
+    <string name="profile.deleteAccountConfirm">"¿De verdad quieres borrar tu cuenta?"</string>
 </resources>

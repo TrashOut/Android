@@ -1356,4 +1356,6 @@ john@doe.com, john@example.com
     <string name="comment.create">"Додај коментар"</string>
     <string name="comment.createModalDesciption">"Додавање коментара је тренутно могуће само путем наше веб апликације. Желите ли да наставите тамо? "</string>
     <string name="comment.lastComments">"Последњи коментари"</string>
+    <string name="profile.deleteAccount">"Избриши мој налог"</string>
+    <string name="profile.deleteAccountConfirm">"Желите ли заиста да избришете налог?"</string>
 </resources>

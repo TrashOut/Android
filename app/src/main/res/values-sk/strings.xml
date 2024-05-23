@@ -751,8 +751,6 @@ Prosím, keď budete pripojený, zapnite TrashOut aplikáciu a Vaše hlásenie b
     <string name="user.myProfile">"Môj profil"</string>
 
     <!-- Fuzzy -->
-    <string name="profile.deleteAccount">Odstrániť môj účet</string>
-    <string name="profile.deleteAccountConfirm">Naozaj chcete odstrániť svoj účet?</string>
     <string name="global.addArea">"Nastaviť oznámenia o oblasti"</string>
     <string name="user.generateApiKey">"Generovať API kľúč"</string>
     <string name="user.aboutMe">"O mne"</string>
@@ -1388,4 +1386,6 @@ neskôr prostredníctvom stránky www.admin.trashout.ngo."</string>
     <string name="comment.create">"Pridať komentár"</string>
     <string name="comment.createModalDesciption">"Komentáre je zatiaľ možné pridávať iba cez webovú aplikáciu. Pokračovať na webovú aplikáciu?"</string>
     <string name="comment.lastComments">"Nedávne komentáre"</string>
+    <string name="profile.deleteAccount">"Odstrániť môj účet"</string>
+    <string name="profile.deleteAccountConfirm">"Naozaj chcete odstrániť svoj účet?"</string>
 </resources>

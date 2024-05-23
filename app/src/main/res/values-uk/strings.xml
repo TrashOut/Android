@@ -1319,4 +1319,6 @@
     <string name="comment.create">"Додати коментар"</string>
     <string name="comment.createModalDesciption">"Наразі додавання коментарів можливе лише через наш веб-додаток. Ви хочете продовжити там? "</string>
     <string name="comment.lastComments">"Останні коментарі"</string>
+    <string name="profile.deleteAccount">"Видалити мій обліковий запис"</string>
+    <string name="profile.deleteAccountConfirm">"Ви дійсно хочете видалити свій обліковий запис?"</string>
 </resources>

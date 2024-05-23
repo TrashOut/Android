@@ -1340,4 +1340,6 @@ mail.organizationInvitation.footer
     <string name="comment.create">"Დაამატე კომენტარი"</string>
     <string name="comment.createModalDesciption">"კომენტარების დამატება ამჟამად შესაძლებელია მხოლოდ ჩვენი ვებ აპლიკაციის საშუალებით. გინდა იქ გააგრძელო? "</string>
     <string name="comment.lastComments">"ბოლო კომენტარები"</string>
+    <string name="profile.deleteAccount">"წაშალე ჩემი ანგარიში"</string>
+    <string name="profile.deleteAccountConfirm">"ნამდვილად გსურთ თქვენი ანგარიშის წაშლა?"</string>
 </resources>

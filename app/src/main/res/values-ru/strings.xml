@@ -1365,4 +1365,6 @@
     <string name="comment.create">"Добавить комментарий"</string>
     <string name="comment.createModalDesciption">"Добавление комментариев в настоящее время возможно только через наше веб-приложение. Вы хотите продолжить там? "</string>
     <string name="comment.lastComments">"Последние комментарии"</string>
+    <string name="profile.deleteAccount">"Удалить мой аккаунт"</string>
+    <string name="profile.deleteAccountConfirm">"Вы действительно хотите удалить свой аккаунт?"</string>
 </resources>

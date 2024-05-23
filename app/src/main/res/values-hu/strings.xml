@@ -1360,4 +1360,6 @@ Célunk, hogy bevonjuk a polgárokat, a kormányokat, az önkormányzatokat és 
     <string name="comment.create">"Hozzászólás hozzáadása"</string>
     <string name="comment.createModalDesciption">"A hozzászólások hozzáadása jelenleg csak a webes alkalmazásunkon keresztül lehetséges. Szeretné ott folytatni? "</string>
     <string name="comment.lastComments">"Utolsó megjegyzések"</string>
+    <string name="profile.deleteAccount">"Fiókom törlése"</string>
+    <string name="profile.deleteAccountConfirm">"Tényleg törölni szeretné a fiókját?"</string>
 </resources>

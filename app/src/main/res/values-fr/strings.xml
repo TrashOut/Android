@@ -1368,4 +1368,6 @@ Notre but est d'impliquer les citoyens, gouvernements, autorités locales et org
     <string name="comment.create">"Ajouter un commentaire"</string>
     <string name="comment.createModalDesciption">"L'ajout de commentaires n'est actuellement possible que via notre application web. Voulez-vous continuer à le faire ? "</string>
     <string name="comment.lastComments">"Derniers commentaires"</string>
+    <string name="profile.deleteAccount">"Supprimer mon compte"</string>
+    <string name="profile.deleteAccountConfirm">"Voulez-vous vraiment supprimer votre compte ?"</string>
 </resources>
