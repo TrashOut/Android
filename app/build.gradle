@@ -17,8 +17,8 @@ android {
         applicationId "me.trashout"
         minSdkVersion 21
         targetSdkVersion 34
-        versionCode 116
-        versionName "4.21.0"
+        versionCode 117
+        versionName "4.21.1"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
